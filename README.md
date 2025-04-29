@@ -1,1 +1,4 @@
 **Nested Fibrational Cosmology**, a novel model suggesting our universe is an **8-dimensional sphere** within a 9-dimensional vacuum, stabilized by nested **Hopf fibrations**. It posits that observed **3D spacetime** emerges as a projection of these higher structures, with particles and forces arising from geometric patterns or "locked eigenfunctions" within the vacuum. The model connects mathematical concepts like **fiber bundles** and division algebras to physical phenomena and integrates ideas from **Penrose's twistor theory**, **Walter Russell's** cosmology, and speculative research on **Exotic Vacuum Objects (EVOs)**. A bold aspect suggests that consciousness could correspond to specific vibrational modes on an 8-dimensional torus structure inherent to this cosmic geometry.
+
+
+[Chat with my notes](https://notebooklm.google.com/notebook/a04e0a70-4eda-4772-abe8-e022db7a4f6c)
