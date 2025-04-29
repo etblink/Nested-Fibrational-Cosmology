@@ -1,0 +1,96 @@
+latex_content = r"""
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\geometry{margin=1in}
+\title{\textbf{Nested Fibrational Cosmology (NFC): A Mathematical Framework}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{1. Nested Fibrational Architecture}
+
+Nested Fibrational Cosmology (NFC) is built on a hierarchical structure of fiber bundles, elegantly encoding different physical layers. Formally, this is expressed as:
+\[
+E \xrightarrow{p_2} B \xrightarrow{p_1} M,
+\]
+where each projection map $p_i$ is a surjective submersion. Here:
+\begin{itemize}
+    \item $M$: the 4D Lorentzian spacetime manifold
+    \item $B$: an intermediate geometrical layer (e.g., internal symmetry space)
+    \item $E$: a total space that encapsulates hidden internal degrees of freedom
+\end{itemize}
+
+This hierarchy allows physical phenomena to emerge through geometrical nesting, from observable spacetime to deeper internal structure.
+
+\section*{2. Unified Field Structure}
+
+The unified field is defined as:
+\[
+\Psi: M \times X^9 \rightarrow \mathbb{C}, \quad \text{where } X^9 = S^8 \times S^1
+\]
+This setup allows the field $\Psi$ to propagate across both spacetime and extra dimensions, enabling complex particle interactions and geometric constraints.
+
+\section*{3. Topological Foundations}
+
+The model leverages topological stability, invoking homotopy groups:
+\[
+\pi_n(S^m), \quad \text{with} \quad \pi_3(S^2) \cong \mathbb{Z},
+\]
+where nontrivial homotopy groups classify topological solitons, such as Hopfions. These solitonic solutions serve as candidate models for particles, stabilized by topological charge.
+
+\section*{4. Dynamics via the Master Action}
+
+The full dynamics are governed by the action:
+\[
+S = \int_M d^4x \sqrt{-g} \left( \frac{R}{2\kappa} + \mathcal{L}_\Psi \right),
+\]
+where:
+\begin{itemize}
+    \item $R$ is the Ricci scalar curvature
+    \item $\kappa = 8\pi G$ is the gravitational coupling
+    \item $\mathcal{L}_\Psi$ is the Lagrangian for the unified field $\Psi$
+\end{itemize}
+
+The resulting field equations are:
+\[
+G_{\mu\nu} = \kappa T_{\mu\nu}[\Psi], \quad (\Box_g + \Delta_h)\Psi = \frac{\partial V}{\partial \Psi^*},
+\]
+with:
+\begin{itemize}
+    \item $\Box_g$: the spacetime d'Alembert operator
+    \item $\Delta_h$: Laplacian on the internal manifold $X^9$
+\end{itemize}
+
+\section*{5. Particle Spectrum and Gauge Interactions}
+
+The mass spectrum arises from the internal eigenvalue problem:
+\[
+\Delta_h Y_n = -\lambda_n Y_n, \quad m_n^2 = m_0^2 + \lambda_n,
+\]
+where:
+\begin{itemize}
+    \item $Y_n$: internal eigenfunctions
+    \item $\lambda_n$: eigenvalues determining particle masses
+\end{itemize}
+
+Gauge fields are modeled by:
+\[
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu + [A_\mu, A_\nu],
+\]
+with $A_\mu$ taking values in a Lie algebra $\mathfrak{g}$.
+
+\section*{Summary}
+
+NFC delivers a unified framework where:
+\begin{itemize}
+    \item Spacetime, internal geometry, and quantum fields are deeply interwoven
+    \item Particles and forces emerge from topological and spectral structures
+    \item The geometry of nesting guides physical law
+\end{itemize}
+
+\end{document}
