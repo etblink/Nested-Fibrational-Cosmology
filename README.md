@@ -43,12 +43,6 @@ All claims are framed as *structural and ontological proposals*, not empirical a
 
 The repository is intentionally document-centric and organized by role:
 
-### 📘 Core Manuscripts
-- **NFC – current**  
-  The most up-to-date unified narrative of the framework.
-- **NFC – Master Manuscript – One File (PDF)**  
-  Consolidated long-form presentation.
-
 ### 🧭 Orientation & Governance
 - **Canonical Map**  
   Required reading. Explains how the repository fits together and how claims should be interpreted.
@@ -87,4 +81,57 @@ This repository may be of interest to:
 - Philosophers of physics
 - Readers exploring alternative ontological frameworks
 
-It assumes familiarity w
+It assumes familiarity with advanced mathematical and physical concepts.
+
+---
+
+## Status of the Work
+
+- 🚧 **Exploratory / Pre-theoretical**
+- 📄 Not peer-reviewed
+- 🧪 No experimental validation
+- 📚 Actively curated and reorganized
+
+This is a **framework proposal**, not a finished theory.
+
+---
+
+## How to Read This Repository
+
+1. Start with **Canonical Map**
+2. Read **SCOPE_AND_NON_CLAIMS.md**
+3. Explore Phase Papers as needed
+4. Use mathematical references for clarification—not proof
+
+Skipping the Canonical Map is strongly discouraged.
+
+---
+
+## Contributions & Use
+
+This repository is shared for transparency and discussion.
+
+- Issues and critiques are welcome
+- Forks for commentary or analysis are acceptable
+- Attribution is expected for reuse
+- No endorsement or correctness is implied by availability
+
+---
+
+## Disclaimer
+
+Nested Fibrational Cosmology is a **speculative research program**.  
+It makes **no claims of physical truth, experimental confirmation, or practical applicability**.
+
+Any interpretation beyond what is explicitly stated in scope documents is the responsibility of the reader.
+
+---
+
+## License
+
+See repository license file (if present).  
+If no license is specified, all rights are reserved by the author.
+
+---
+
+*“This repository is an attempt to take geometry seriously enough that physics becomes a consequence rather than a starting assumption.”*
