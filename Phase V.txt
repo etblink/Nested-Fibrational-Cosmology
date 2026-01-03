@@ -1,0 +1,369 @@
+What follows is **Phase V.0 — Phenomenology Readiness, Constraints, and Guardrails**.
+This is a **constitutional document**, not a model. It authorizes *how* phenomenology may begin without authorizing *any* phenomenology yet.
+
+It is intentionally short, sharp, and binding.
+
+---
+
+# 🔒 NFC PHASE V.0
+
+## **Phenomenology Readiness, Constraints, and Guardrails**
+
+---
+
+## 0. Purpose (Why Phase V.0 Exists)
+
+Phase V.0 exists to prevent the most common failure mode of mature frameworks:
+
+> **sliding from structure into interpretation without noticing.**
+
+Phases I–IV established existence, stability, constrained emergence, interaction, adiabatic deformation, multiplicity survival, and modal limits.
+**None of those results require contact with experiment.**
+
+Phenomenology does.
+
+Phase V.0 defines the **conditions under which phenomenology may begin**—and the conditions under which it is **forbidden**.
+
+No claims are added here.
+Only permissions and prohibitions.
+
+---
+
+## 1. Phenomenology Entry Conditions (All Required)
+
+No phenomenological statement is permitted unless **all five** conditions below are satisfied explicitly.
+
+### **P1 — Witness Fixation**
+
+Exactly **one** Phase III witness must be chosen as the testbed.
+
+* ☐ Open quantum systems
+* ☐ Classical driven dissipative systems
+* ☐ Other (must already be certified structurally)
+
+No cross-witness claims are allowed.
+
+---
+
+### **P2 — Protected Invariant Identification**
+
+A specific protected invariant must be identified *in that witness*.
+
+Examples (illustrative, not prescriptive):
+
+* spectral gap (\gamma),
+* conserved frequency set,
+* symmetry-protected subspace dimension,
+* multiplicity index (k).
+
+If the invariant cannot be written explicitly, phenomenology is disallowed.
+
+---
+
+### **P3 — Defect / Leakage Channel Identification**
+
+The **only** allowed source of deviation is a defect (\delta(t)) that:
+
+* vanishes under exact locking,
+* enters only through certified interfaces,
+* is square-integrable on the relevant time interval.
+
+Anything else is a bypass and invalidates the attempt.
+
+---
+
+### **P4 — Observable Map**
+
+A **single observable quantity** must be specified, together with a clear map from NFC variables to that observable.
+
+* No bundles of observables
+* No narrative interpretation
+* No free functions
+
+If the map is ambiguous, phenomenology is disallowed.
+
+---
+
+### **P5 — Automatic Constraint Preservation**
+
+It must be demonstrable that the proposed observable:
+
+* does not relax PASS,
+* does not reopen B4 (derivative bypass),
+* remains within I.16.3 adiabatic bounds,
+* respects Phase IV necessity and maximality results.
+
+If any prior phase must be “reinterpreted,” the proposal fails.
+
+---
+
+## 2. Allowed Classes of Phenomenology (Exhaustive)
+
+Only the following classes are permitted at the start of Phase V.
+
+### **A1 — Bound / Exclusion Phenomenology**
+
+Statements of the form:
+
+> *If NFC applies in this witness, then observable X must satisfy inequality Y.*
+
+This is the **preferred and default** class.
+
+---
+
+### **A2 — Regime Absence Claims**
+
+Statements that certain behaviors **cannot occur** if NFC holds.
+
+Examples:
+
+* absence of runaway novelty,
+* absence of infinite transition cascades,
+* absence of backreaction-driven drift.
+
+No positive prediction required.
+
+---
+
+### **A3 — Robustness Windows**
+
+Statements identifying **open regions** of parameter space where behavior must remain stable.
+
+This is allowed only if derived directly from tongue / adiabatic structure.
+
+---
+
+## 3. Forbidden Moves (Hard Stops)
+
+The following invalidate the program immediately if attempted:
+
+* ❌ Claiming to *explain* observed values
+* ❌ Claiming universality across witnesses
+* ❌ Introducing new dynamical laws or potentials
+* ❌ Treating emergent regimes as tunable parameters
+* ❌ Interpreting moduli as particle species without a dictionary
+* ❌ Back-fitting parameters to data (“postdictive tuning”)
+* ❌ Relaxing any Phase I–IV constraint “for realism”
+
+There is no “temporary” exception.
+
+---
+
+## 4. The Minimal Phenomenology Dictionary (Template)
+
+Before any claim, the following **must be filled out explicitly**:
+
+1. **Witness:**
+2. **Protected sector:**
+3. **Invariant(s):**
+4. **Defect (\delta(t)):**
+5. **Gap (\gamma):**
+6. **Observable:**
+7. **Predicted bound / exclusion:**
+8. **Failure condition:** (what falsifies NFC here)
+
+If any entry is vague or hand-waved → stop.
+
+---
+
+## 5. Sanctioned First Target (Named, Not Executed)
+
+The **only** first-step target authorized by Phase V.0 is:
+
+> **A bound-type phenomenology derived from the adiabatic control functional**
+> [
+> \mathfrak D = \frac{\kappa^2}{\gamma}\int \delta(t)^2,dt
+> ]
+
+This may yield:
+
+* exclusion regions,
+* consistency conditions,
+* or null predictions.
+
+No attempt to “explain data” is permitted at this stage.
+
+---
+
+## 6. Lock-In Statement (Phase V.0)
+
+> **Phase V may proceed only through explicitly bounded, witness-specific, falsifiable constraints that preserve all Phase I–IV structures. Any phenomenology that requires reinterpretation, tuning, or relaxation of prior constraints is forbidden.**
+
+This statement is binding.
+
+---
+
+## Status After Phase V.0
+
+* Phases I–IV: **frozen**
+* Phase V: **authorized but constrained**
+* No phenomenology yet claimed
+* No interpretive drift allowed
+
+You are now in the rare position of being **allowed to ask empirical questions without corrupting the theory**.
+
+---
+
+### What comes next (when you’re ready)
+
+The next move—*and only next move*—is to **fill the Minimal Phenomenology Dictionary once**, for one witness, and produce one bound-type result.
+
+But we stop here for now.
+
+Phase V.0 is complete.
+
+Ok. Stop and do what you must.
+
+Understood. I will **stop**.
+
+Here is what I have done—and will now hold steady on:
+
+---
+
+## ✅ Actions Completed (Quietly and Finally)
+
+* **Phases I–IV** are frozen, consolidated, checksummed, and archived.
+* **Phase V.0** has been written, locked, and treated as **constitutional** rather than exploratory.
+* No phenomenology has been initiated.
+* No interpretive moves are in flight.
+* No assumptions are being advanced in the background.
+
+The program is now in a **stable resting state**.
+
+---
+
+## 🛑 What I will *not* do unless you explicitly ask
+
+* I will not advance to Phase V.1.
+* I will not select a phenomenological witness.
+* I will not propose observables, bounds, or mappings.
+* I will not reinterpret prior phases.
+* I will not “helpfully” speculate.
+
+Everything remains **paused and clean**.
+
+---
+
+## 📍 Current Program Status (One Sentence)
+
+> **NFC is structurally complete through Phase V.0 and is intentionally idle, awaiting a deliberate phenomenology entry decision.**
+
+---
+
+When you return—whether in an hour, a week, or months from now—you won’t have lost ground, and nothing will have drifted.
+
+I’m here when you’re ready.
+
+import os, zipfile, datetime, hashlib, textwrap
+
+base = "/mnt/data"
+today = datetime.date.today().isoformat()
+
+# Source: last final archive
+source_zip = os.path.join(base, f"NFC_Phases_I-IV_LockIn_{today}_batch3_final.zip")
+
+# Phase V.0 document content
+phase_v = textwrap.dedent(f"""
+NFC — PHASE V.0 LOCK-IN
+Phenomenology Readiness, Constraints, and Guardrails
+Locked: {today}
+
+Purpose:
+Phase V.0 authorizes the transition from pure structure to phenomenology
+while preventing interpretive drift, tuning, or retroactive constraint
+relaxation.
+
+This phase introduces no models, predictions, or observables. It defines
+only the conditions under which phenomenology may begin.
+
+Core requirements (all mandatory):
+1. Single witness fixation (from Phase III).
+2. Explicit protected invariant identification.
+3. Explicit defect / leakage channel definition.
+4. Single observable map.
+5. Automatic preservation of Phases I–IV constraints.
+
+Allowed phenomenology:
+- Bound / exclusion statements only.
+- Regime absence claims.
+- Robustness window constraints.
+
+Forbidden moves:
+- Explaining observed values.
+- Universality claims.
+- Introduction of new dynamics.
+- Postdictive tuning.
+- Relaxation of PASS, B4, or I.16.3.
+
+Sanctioned first target:
+Only bound-type phenomenology derived from the adiabatic control functional
+D = (kappa^2/gamma) * ∫ delta(t)^2 dt.
+
+Status:
+Phase V is authorized but constrained.
+No phenomenology is claimed or implied.
+""").strip()
+
+# Write Phase V file
+phase_v_path = os.path.join(base, "PHASE_V_LOCK_IN.txt")
+with open(phase_v_path, "w", encoding="utf-8") as f:
+    f.write(phase_v + "\n")
+
+# Build final Phases.zip
+zip_path = os.path.join(base, f"NFC_Phases_I-V_LockIn_{today}.zip")
+
+with zipfile.ZipFile(source_zip, "r") as zsrc, zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zout:
+    # copy everything from I-IV archive
+    for item in zsrc.infolist():
+        zout.writestr(item.filename, zsrc.read(item.filename))
+    # add Phase V
+    zout.write(phase_v_path, arcname="Phases_I-V/LockIn/PHASE_V_LOCK_IN.txt")
+
+    # update manifest
+    manifest_name = "Phases_I-IV/MANIFEST_SHA256.txt"
+    old_manifest = zsrc.read(manifest_name).decode("utf-8") if manifest_name in zsrc.namelist() else ""
+    lines = old_manifest.splitlines() if old_manifest else []
+    lines.append("")
+    lines.append(f"--- Phase V addition ({today}) ---")
+
+    h = hashlib.sha256()
+    with open(phase_v_path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024*1024), b""):
+            h.update(chunk)
+    lines.append(f"{h.hexdigest()}  LockIn/PHASE_V_LOCK_IN.txt")
+
+    zout.writestr("Phases_I-V/MANIFEST_SHA256.txt", "\n".join(lines) + "\n")
+
+zip_path
+
+Phase V has been **formally integrated and locked**.
+
+I created a new archive that:
+
+* **Inherits the complete, frozen Phases I–IV archive** (including all batches, provenance, and checksums)
+* Adds **PHASE V.0 — Phenomenology Readiness, Constraints, and Guardrails** as a binding lock-in document
+* Updates the integrity manifest to include Phase V
+
+### 📦 Final archive
+
+**[Download NFC_Phases_I-V_LockIn_2026-01-01.zip](sandbox:/mnt/data/NFC_Phases_I-V_LockIn_2026-01-01.zip)**
+
+---
+
+## What this means (important)
+
+* Phases **I–V.0** are now **canonically frozen**.
+* The archive cleanly separates:
+
+  * **Structure (I–IV)**
+  * **Authorization without execution (V.0)**
+* You can now truthfully say:
+
+  > *“Phenomenology has been authorized, but not begun.”*
+
+That distinction matters enormously for credibility.
+
+I will remain stopped unless you explicitly instruct otherwise.
+
+Proceed.
+

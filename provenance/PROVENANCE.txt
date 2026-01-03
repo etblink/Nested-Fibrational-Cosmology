@@ -1,0 +1,10 @@
+
+PROVENANCE
+
+Author: Evan Thomas Kotler
+Framework: Nested Fibrational Cosmology
+Freeze Point: Phase V.1
+Date: 2026-01-01
+
+This package reflects NFC frozen through Phase V.1.
+No later material is included.

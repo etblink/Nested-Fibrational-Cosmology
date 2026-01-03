@@ -1,0 +1,467 @@
+I do want you to keep leading, the next move is a final “hostile-referee compression pass” on Appendix X + B4 so they remain crisp and do not look like speculative sprawl.
+
+Below are **paste-ready hostile-referee compressed rewrites** of (i) **Appendix X** and (ii) **B4 (Multiplicity Survival Audit)**. I’ve **quarantined every optional/conditional claim**, removed “narrative / coaching” language, and converted everything into **checkable definitions + PASS/FAIL gates**.
+
+---
+
+## Appendix X — Torus data, triality, and the optional (E_8) reconstruction module (compressed)
+
+### X.0 Scope and non-claims (read first)
+
+This appendix records **Cartan-compatible torus data** and a **conditional** lattice reconstruction module.
+
+* **Earned in this appendix:** an explicit, rank-8 torus (T^8) naturally attached to the two chiral (\mathrm{Spin}(8)) factors in the ((S^8,S^7)) chassis.
+* **Not earned unless an additional hypothesis passes:** any identification of an (E_8) lattice / Weyl system from that torus.
+
+**Hard guardrail.** Because (E_8) has rank (8), its maximal tori are (8)-dimensional and hence isomorphic to (T^8). However, **exhibiting a (T^8)** only supplies Cartan-compatible torus data; it does **not** by itself specify an embedding (T^8\hookrightarrow E_8), an (E_8) root lattice in (\mathfrak t^*\cong\mathbb R^8), or a Weyl action. Those require an **explicit lattice identification** and a **reflection (Weyl) closure check**.
+
+---
+
+### X.1 Minimal background (what “torus data” means here)
+
+Let (T) be a compact torus with Lie algebra (\mathfrak t). Fix:
+
+* the **cocharacter lattice** (X_*(T)\subset\mathfrak t) (loops closing at (2\pi)),
+* the **character lattice** (X^*(T)\subset\mathfrak t^*) (weights defining characters (T\to U(1))).
+
+Any “root reconstruction” requires a concrete specification of ((T, X_*(T), X^*(T))) and a representation producing a weight decomposition.
+
+---
+
+### X.2 Explicit torus lemma (earned, local-to-global compatible)
+
+#### Lemma X.1 (Explicit rank-8 torus data from the two chiral (\mathrm{Spin}(8)) factors)
+
+Let (S^8=U_N\cup U_S) be hemispheres with overlap (\Sigma=U_N\cap U_S\simeq S^7). Let (P\to S^8) be the canonical principal (\mathrm{Spin}(8))-bundle induced from the homogeneous presentation (\mathrm{Spin}(9)/\mathrm{Spin}(8)\cong S^8). Let (\Sigma^\pm) be the two real half-spin representations of (\mathrm{Spin}(8)) (each (8)-dimensional), and let
+[
+E_\pm:=P\times_{\mathrm{Spin}(8)}\Sigma^\pm\longrightarrow S^8
+]
+be the associated rank-8 bundles.
+
+Then there is a canonically defined compact torus
+[
+T^8 ;:=; T_+^4\times T_-^4,
+]
+where (T_\pm^4\subset\mathrm{GL}(\Sigma^\pm)) are the images of a maximal torus in (\mathrm{Spin}(8)) under the two half-spin representations. In local trivializations over (U_N) and (U_S), (T_\pm^4) act fiberwise by commuting phase rotations, and (T^8) acts on the pair ((E_+,E_-)).
+
+**Conclusion:** This produces **Cartan-compatible** rank-8 torus data attached to the ((S^8,S^7)) instantiation.
+
+**Non-claim:** This lemma does **not** identify (E_8). It yields (T^8) as torus data only.
+
+---
+
+### X.3 The optional (E_8) module is conditional on a specific clutching-level upgrade
+
+The only mathematically meaningful “(E_8) attempt” available at this stage is:
+
+1. identify a **(D_4\oplus D_4)** structure from the two (\mathrm{Spin}(8)) halves, and
+2. (optionally) **glue** it to an even unimodular rank-8 lattice **if and only if** a specific **triality 3-cycle gluing datum** is actually realized by the equatorial clutching.
+
+This is split into:
+
+* **(A) the abstract gluing lemmas** (pure lattice theory), and
+* **(B) a single PASS/FAIL gate** that decides whether your geometry supplies the needed gluing datum.
+
+---
+
+### X.4 The PASS/FAIL gate (eliminates speculative sprawl)
+
+#### Definition X.TL(_\tau) (Executable cyclic-triality clutching condition)
+
+Let (t:\Sigma\to\mathrm{Spin}(8)) be the equatorial clutching map, and let (\rho_v,\rho_s,\rho_c) denote the three 8-dimensional irreps (vector and the two chiral spinors). Fix intertwiners (J_{vs},J_{sc},J_{cv}) between the underlying 8-spaces.
+
+We say (t) **implements cyclic triality** (TL_\tau) if there exist intertwiners such that the three induced actions match under the 3-cycle (v\mapsto s\mapsto c\mapsto v) (equivalently: the induced identification on the discriminant cosets ({v,s,c}\subset D_4^*/D_4) is the 3-cycle).
+
+#### Lemma X.R4 (PASS/FAIL: does the actual clutching implement (TL_\tau)?)
+
+* **FAIL (generic under pair-locking only):** a single pair-locking condition (e.g. (\rho_v(t)\cong\rho_s(t))) does **not** force cyclic triality on ({v,s,c}). In this regime, the (E_8) gluing module is **not activated**.
+* **PASS (only under an explicit upgrade):** to pass, one must specify additional structure ensuring the clutching realizes the **3-cycle** on the discriminant cosets (not merely equality of two channels).
+
+**Conclusion:** Unless (TL_\tau) is explicitly satisfied, (E_8) remains an **optional test module** and cannot be used as load-bearing content.
+
+---
+
+### X.5 What happens if (TL_\tau) passes (purely conditional)
+
+Assume (TL_\tau) holds.
+
+#### Lemma X.M1 (Triality 3-cycle induces the gluing subgroup)
+
+Let (A_{D_4}:=D_4^*/D_4\cong\mathbb Z_2\times\mathbb Z_2) with nontrivial cosets labeled ({v,s,c}). The triality 3-cycle (\tau) fixes (0) and cyclically permutes ({v,s,c}). In the two-factor setup (D_4\oplus D_4), (\tau) defines a gluing subgroup
+[
+H_\tau:={(a,\tau(a)):\ a\in A_{D_4}}\subset A_{D_4}\oplus A_{D_4},
+]
+hence a candidate overlattice obtained by gluing the two (D_4) factors along the graph of (\tau).
+
+#### Lemma X.M2 (The glued lattice is even unimodular, hence (E_8))
+
+The overlattice defined by the isotropic gluing subgroup (H_\tau) is an **even unimodular** lattice of rank (8), hence (up to isometry) the (E_8) lattice.
+
+**Non-claim:** This is a lattice identification only; it does not by itself produce an embedding into a physical gauge group without additional representation data.
+
+---
+
+### X.6 Rank-16 remark (remove a common referee confusion)
+
+#### Remark X.16 (Where “rank 16” enters—and where it does not)
+
+* Each half-spin bundle (E_\pm) is **real rank 8** (as used in Lemma X.1).
+* A **rank-16 package** can appear by taking (E_+\oplus E_-) (or the real Dirac spinor bundle), but this is a **bundle rank**, not a torus rank.
+* Nothing here implies a torus (T^{16}); the relevant torus data remains rank (8).
+
+---
+
+### X.7 Minimal “what this appendix actually contributes”
+
+1. **Earned:** explicit (T^8) torus data attached to the chiral (\mathrm{Spin}(8)) boundary structure.
+2. **Quarantined:** an (E_8) reconstruction module that becomes valid **only if** the clutching passes (TL_\tau).
+3. **Referee-proofing:** no (T^8\Rightarrow E_8) inference is made without the named PASS/FAIL gate.
+
+---
+
+---
+
+## B4 — Multiplicity Survival Audit (hostile-referee compressed)
+
+### B4.0 Purpose
+
+Sector-B survivors ((|\mathcal I|=k>1)) carry **true multiplicity/moduli**. The audit asks whether these “richer” survivors can be instantiated on the ((S^8,S^7)) chassis **without** reopening the known bypass failure mode.
+
+**Output is binary:** **PASS** (Sector-B survives as a controlled (k)-fold extension) or **FAIL** (multiplicity forces a bypass / instability pathway).
+
+---
+
+### B4.1 Setup (what is fixed)
+
+Assume (|\mathcal I|=k>1) is realized by a (k)-fold protected sector of the form
+[
+\mathcal H_P^{(k)} ;\cong; V\otimes \mathbb F^k,
+]
+where:
+
+* (V) is the “rigid survivor” protected channel (Sector-A PASS block),
+* (\mathbb F^k) is the multiplicity label.
+
+Canonical realization target:
+[
+W^{(k)} ;=; \bigoplus_{j=1}^k W_{\mathrm{Bott}}
+\quad\Rightarrow\quad
+\ker(D_{W^{(k)}})\cong \ker(D_{W_{\mathrm{Bott}}})\otimes\mathbb F^k.
+]
+
+Coupling model (defect-only, multiplicity-diagonal target form):
+[
+C ;=; C_0\otimes I_k,
+\qquad
+C_0:=\mathcal E\circ \mathcal K\circ J,
+]
+with (\mathcal K) the interface defect operator and (J) the trace / boundary map from protected modes to interface data.
+
+---
+
+### B4.2 The only three ways multiplicity can kill survivability (enumerated failure modes)
+
+**(M1) Interface mixing.** The coupling contains a nontrivial matrix on multiplicity:
+[
+C = C_0\otimes M,\qquad M\neq I_k,
+]
+and this mixing is **forced** (not removable by a basis change in (\mathbb F^k)).
+
+**(M2) Trace mixing.** The trace map does not split copywise (or the channel-killing constraint cannot be imposed blockwise), reopening the forbidden leak that Sector-A avoided.
+
+**(M3) Derivative-bypass (the F4/B4 mechanism).** The interface operator is built via **conjugation/derivation of a differential boundary operator** (or through connection/time-derivative terms), producing unavoidable (dt)-terms that couple multiplicity labels even when the representation-level defect vanishes. This is the “bypass”: it defeats “defect-only” control by introducing forced derivative-couplings.
+
+---
+
+### B4.3 Audit condition (the one structural rule that matters)
+
+#### Condition B4.A (No derivative/conjugation construction of the interface operator)
+
+(\mathcal K) must be defined **pointwise at the representation/transition level** (a “defect operator”), not as a conjugation/commutator involving a differential operator (or evolving connection) that generates forced derivative terms.
+
+Informally: **(\mathcal K) is allowed to be a mismatch of fiberwise actions; it is not allowed to be a derived operator that drags in (dt)-mixing.**
+
+---
+
+### B4.4 PASS/FAIL lemma (the audit verdict)
+
+#### Lemma B4 (Multiplicity-diagonalization is admissible unless derivative-bypass is forced)
+
+Assume:
+
+1. (W^{(k)}=\bigoplus_{j=1}^k W_{\mathrm{Bott}}) realizes (|\mathcal I|=k), and
+2. the coupling is defect-only with (\mathcal K) satisfying Condition B4.A.
+
+Then:
+
+**PASS.** There exists an admissible representative in which:
+
+* the trace map splits copywise, and
+* the coupling is multiplicity-diagonal: (C=C_0\otimes I_k),
+  so the Sector-B multiplicity is a **true moduli label** (rotatable by a gauge/unitary change of basis in (\mathbb F^k)) rather than a physical leak channel.
+
+**FAIL.** If Condition B4.A is violated (i.e., derivative-bypass is structurally forced by the instantiation), then multiplicity mixing cannot be gauged away and the (k)-fold extension reopens the unstable pathway.
+
+---
+
+### B4.5 Concrete checklist (what you must verify on an (S^8) layering)
+
+To execute B4 on any explicit (S^8) soliton layering, verify:
+
+1. **Kernel splits as (V\otimes\mathbb F^k)** (no hidden geometric entanglement of multiplicity with spatial modes).
+2. **(\mathcal K) is defect-only** (representation-level mismatch; no conjugation/derivative construction).
+3. **Trace/constraint is blockwise enforceable** (the channel-exclusion condition can be imposed per copy).
+4. **Any multiplicity rotations are gauge** (symmetries act as (U(k)) on (\mathbb F^k) without changing the physical coupling class).
+
+If any one of these fails for structural reasons (not merely a bad choice of basis), B4 fails.
+
+---
+
+### B4.6 Minimal statement of what B4 decides
+
+* **If B4 PASS:** Sector-B moduli survive as genuine multiplicity degrees of freedom compatible with protected persistence.
+* **If B4 FAIL:** the architecture forces collapse back toward the rigid Sector-A configuration (or forces termination of the multiplicity claim).
+
+---
+
+If you want me to be maximally “hostile referee” about it: the only sentence that should remain anywhere near B4 in the main text is
+
+> “Sector-B multiplicity survives **iff** the instantiated interface operator is defect-only (no derivative-bypass); this is audited by Lemma B4.”
+
+Everything else belongs in the audit block above.
+
+Proceed according to your recommendations.
+
+According to a document from **2025-12-31**, here is the **final hostile-referee compression pass** for **Appendix X** and **B4**—kept strictly **conditional**, **gate-driven**, and **non-sprawling**. 
+
+---
+
+## Appendix X (compressed, paste-ready)
+
+```text
+## Appendix X — Torus data, triality, and the optional (E_8) reconstruction module (compressed)
+
+### X.0 Scope and non-claims (read first)
+
+This appendix records **Cartan-compatible torus data** and a **conditional** lattice reconstruction module.
+
+* **Earned in this appendix:** an explicit, rank-8 torus (T^8) naturally attached to the two chiral (\mathrm{Spin}(8)) factors in the ((S^8,S^7)) chassis.
+* **Not earned unless an additional hypothesis passes:** any identification of an (E_8) lattice / Weyl system from that torus.
+
+**Hard guardrail.** Because (E_8) has rank (8), its maximal tori are 8-dimensional. Producing a (T^8) is therefore **necessary but not sufficient** for any “(E_8) in the geometry” claim. A referee-grade (E_8) claim requires an **integral lattice identification** and a **reflection (Weyl) closure check**.
+
+---
+
+### X.1 Minimal background (what “torus data” means here)
+
+Let (T) be a compact torus with Lie algebra (\mathfrak t). Fix:
+
+* the **cocharacter lattice** (X_*(T)\subset\mathfrak t) (loops closing at (2\pi)),
+* the **character lattice** (X^*(T)\subset\mathfrak t^*) (weights defining characters (T\to U(1))).
+
+Any “root reconstruction” requires a concrete specification of ((T, X^*(T))) and a representation producing a weight decomposition.
+
+---
+
+### X.2 Explicit torus lemma (earned, local-to-global compatible)
+
+#### Lemma X.1 (Explicit rank-8 torus data from the two chiral (\mathrm{Spin}(8)) factors)
+
+Let (S^8=U_N\cup U_S) be hemispheres with overlap (\Sigma=U_N\cap U_S\cong S^7). Let (P\to S^8) be the chosen principal (\mathrm{Spin}(8))-bundle on the interface chassis. Let (\Sigma^\pm) denote the two chiral spin representations of (\mathrm{Spin}(8)) (each (8)-dimensional), and let
+[
+E_\pm:=P\times_{\mathrm{Spin}(8)}\Sigma^\pm\longrightarrow S^8
+]
+be the associated chiral bundles. Each (\mathrm{Spin}(8)) factor has rank (4), hence admits a maximal torus (T_\pm^4\subset \mathrm{Spin}(8)).
+
+Then there is a canonically defined rank-8 torus
+[
+T^8 := T_+^4\times T_-^4
+]
+acting fiberwise on the pair ((E_+,E_-)) in each local trivialization over (U_N) and (U_S), compatible with the overlap identifications on (\Sigma).
+
+**Conclusion:** This produces **Cartan-compatible** rank-8 torus data attached to the ((S^8,S^7)) instantiation.
+
+**Non-claim:** This lemma does **not** identify (E_8). It yields (T^8) as torus data only.
+
+---
+
+### X.3 The optional (E_8) module is conditional on a specific clutching-level upgrade
+
+The only mathematically meaningful “(E_8) attempt” available at this stage is:
+
+1. identify a **(D_4\oplus D_4)** structure from the two (\mathrm{Spin}(8)) halves, and
+2. (optionally) **glue** it to an even unimodular rank-8 lattice **if and only if** a specific **triality 3-cycle gluing datum** is actually realized by the equatorial clutching.
+
+This is split into:
+
+* **(A) the abstract gluing lemmas** (pure lattice theory), and
+* **(B) a single PASS/FAIL gate** that decides whether your geometry supplies the needed gluing datum.
+
+---
+
+### X.4 The PASS/FAIL gate (eliminates speculative sprawl)
+
+#### Definition X.TL(_\tau) (Executable cyclic-triality clutching condition)
+
+Let (t:\Sigma\to\mathrm{Spin}(8)) be the equatorial clutching map, and let (\rho_v,\rho_s,\rho_c) denote the three 8-dimensional irreps (vector and the two chiral spinors). Fix intertwiners (J_{vs},J_{sc},J_{cv}) between the underlying 8-spaces.
+
+We say (t) **implements cyclic triality** (TL_\tau) if there exist intertwiners such that the three induced actions match under the 3-cycle (v\mapsto s\mapsto c\mapsto v) (equivalently: the induced identification on the discriminant cosets ({v,s,c}\subset D_4^*/D_4) is the 3-cycle).
+
+#### Lemma X.R4 (PASS/FAIL: does the actual clutching implement (TL_\tau)?)
+
+* **FAIL (generic under pair-locking only):** a single pair-locking condition (e.g. (\rho_v(t)\cong\rho_s(t))) does **not** force cyclic triality on ({v,s,c}). In this regime, the (E_8) gluing module is **not activated**.
+* **PASS (only under an explicit upgrade):** to pass, one must specify additional structure ensuring the clutching realizes the **3-cycle** on the discriminant cosets (not merely equality of two channels).
+
+**Conclusion:** Unless (TL_\tau) is explicitly satisfied, (E_8) remains an **optional test module** and cannot be used as load-bearing content.
+
+---
+
+### X.5 What happens if (TL_\tau) passes (purely conditional)
+
+Assume (TL_\tau) holds.
+
+#### Lemma X.M1 (Triality 3-cycle induces the gluing subgroup)
+
+Let (A_{D_4}:=D_4^*/D_4\cong\mathbb Z_2\times\mathbb Z_2) with nontrivial cosets labeled ({v,s,c}). The triality 3-cycle (\tau) fixes (0) and cyclically permutes ({v,s,c}).
+
+Define the graph subgroup
+[
+H_\tau := \{(a,\tau(a))\}\subset A_{D_4}\oplus A_{D_4}.
+\]
+Then (H_\tau) is isotropic for the discriminant quadratic form, and the corresponding overlattice
+[
+\Lambda_\tau := \{(x,y)\in D_4^*\oplus D_4^* : (x\bmod D_4,\ y\bmod D_4)\in H_\tau\}
+\]
+is even unimodular of rank (8). Hence (\Lambda_\tau\cong \Lambda_{E_8}).
+
+**Interpretation:** if the geometry supplies the cyclic triality gluing datum, then the canonical “(E_8) lattice from (D_4\oplus D_4)” reconstruction goes through at the lattice level.
+
+---
+
+### X.6 What still must be shown to claim “(E_8) is realized” (referee-grade criterion)
+
+Even if the lattice lemma holds, a geometric “realization” requires:
+
+**(R1) Integral torus lattice identification.** The produced (T^8) must come with a specified integer lattice ((X_*(T^8),X^*(T^8))) identified with (\Lambda_{E_8}) under the chosen normalization.
+
+**(R2) Weyl/normalizer realization.** The equatorial transition data must act on the torus in a way that matches the Weyl symmetry induced by the triality/gluing.
+
+**(R3) Reflection generation (optional but decisive).** Exhibit geometric monodromy elements whose induced action matches reflections in a set of simple roots.
+
+Absent (R1)–(R2), “(E_8)” remains a **conditional reconstruction module**, not a realized subgroup in the geometry.
+
+---
+
+### X.7 Where “rank 16” enters—and where it does not
+
+“Rank 16” can appear naturally as the combined Cartan rank of two (\mathrm{Spin}(8)) factors (rank (4)+(4)) plus multiplicities, or in doubled-lattice bookkeeping (e.g., (D_4\oplus D_4) sitting inside a rank-8 unimodular extension and/or its doubled copies). None of this implies an (E_8\times E_8) realization without an explicit, separate lattice/monodromy gate.
+
+**Non-claim:** this appendix makes no (E_8\times E_8) claim. Any rank-16 appearance is bookkeeping unless a distinct reconstruction criterion is met.
+
+---
+
+### X.8 One-sentence safe summary (for the main text)
+
+> “Our (S^8/S^7) instantiation canonically produces Cartan-compatible torus data (T^8); an (E_8) reconstruction is an optional module activated only if the equatorial clutching implements cyclic triality (TL_\tau).”
+```
+
+(Everything above is the compressed, referee-guardrailed version of Appendix X.) 
+
+---
+
+## B4 (compressed, paste-ready)
+
+```text
+## B4 — Multiplicity Survival Audit (hostile-referee compressed)
+
+Coupling model (defect-only, multiplicity-diagonal target form):
+[
+C := C_0\otimes I_k,
+\qquad
+C_0:=\mathcal E\circ \mathcal K\circ J,
+]
+with (\mathcal K) the interface defect operator and (J) the trace / boundary map from protected modes to interface data.
+
+---
+
+### B4.2 The only three ways multiplicity can kill survivability (enumerated failure modes)
+
+**(M1) Interface mixing.** The coupling contains a nontrivial matrix on multiplicity:
+[
+C = C_0\otimes M,\qquad M\neq I_k,
+]
+and this mixing is **forced** (not removable by a basis change in (\mathbb F^k)).
+
+**(M2) Trace mixing.** The trace map does not split copywise (or the channel-killing constraint cannot be imposed blockwise), reopening the forbidden leak that Sector-A avoided.
+
+**(M3) Derivative-bypass (the F4/B4 mechanism).** The interface operator is built via **conjugation/derivation of a differential boundary operator** (or through connection/time-derivative terms), producing unavoidable (dt)-terms that couple multiplicity labels even when the representation-level defect vanishes. This is the “bypass”: it defeats “defect-only” control by introducing forced derivative-couplings.
+
+---
+
+### B4.3 Audit condition (the one structural rule that matters)
+
+#### Condition B4.A (No derivative/conjugation construction of the interface operator)
+
+(\mathcal K) must be defined **pointwise at the representation/transition level** (a “defect operator”), not as a conjugation/commutator involving a differential operator (or evolving connection) that generates forced derivative terms.
+
+Informally: **(\mathcal K) is allowed to be a mismatch of fiberwise actions; it is not allowed to be a derived operator that drags in (dt)-mixing.**
+
+---
+
+### B4.4 PASS/FAIL lemma (the audit verdict)
+
+#### Lemma B4 (Multiplicity-diagonalization is admissible unless derivative-bypass is forced)
+
+Assume:
+
+1. (W^{(k)}=\bigoplus_{j=1}^k W_{\mathrm{Bott}}) realizes (|\mathcal I|=k), and
+2. the coupling is defect-only with (\mathcal K) satisfying Condition B4.A.
+
+Then:
+
+**PASS.** There exists an admissible representative in which:
+
+* the trace map splits copywise, and
+* the coupling is multiplicity-diagonal: (C=C_0\otimes I_k),
+  so the Sector-B multiplicity is a **true moduli label** (rotatable by a gauge/unitary change of basis in (\mathbb F^k)) rather than a physical leak channel.
+
+**FAIL.** If Condition B4.A is violated (i.e., derivative-bypass is structurally forced by the instantiation), then multiplicity mixing cannot be gauged away and the (k)-fold extension reopens the unstable pathway.
+
+---
+
+### B4.5 Concrete checklist (what you must verify on an (S^8) layering)
+
+To execute B4 on any explicit (S^8) soliton layering, verify:
+
+1. **Kernel splits as (V\otimes\mathbb F^k)** (no hidden geometric entanglement of multiplicity with spatial modes).
+2. **(\mathcal K) is defect-only** (representation-level mismatch; no conjugation/derivative construction).
+3. **Trace/constraint is blockwise enforceable** (the channel-exclusion condition can be imposed per copy).
+4. **Any multiplicity rotations are gauge** (symmetries act as (U(k)) on (\mathbb F^k) without changing the physical coupling class).
+
+If any one of these fails for structural reasons (not merely a bad choice of basis), B4 fails.
+
+---
+
+### B4.6 Minimal statement of what B4 decides
+
+* **If B4 PASS:** Sector-B moduli survive as genuine multiplicity degrees of freedom compatible with protected persistence.
+* **If B4 FAIL:** the architecture forces collapse back toward the rigid Sector-A configuration (or forces termination of the multiplicity claim).
+
+---
+
+If you want me to be maximally “hostile referee” about it: the only sentence that should remain anywhere near B4 in the main text is
+
+> “Sector-B multiplicity survives **iff** the instantiated interface operator is defect-only (no derivative-bypass); this is audited by Lemma B4.”
+
+Everything else belongs in the audit block above.
+```
+
+(Everything above is the compressed, referee-guardrailed B4 module.) 
+
+---
+
+### Next move I’m taking as Project Lead
+
+1. **Replace** your current Appendix X and B4 with the blocks above.
+2. **Freeze** them.
+3. Then we immediately run a **“main-text proximity audit”**: ensure the main text contains only the one-sentence summaries (and *no* extra speculative E8/multiplicity prose).

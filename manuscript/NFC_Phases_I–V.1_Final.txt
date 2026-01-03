@@ -1,0 +1,153 @@
+
+NESTED FIBRATIONAL COSMOLOGY
+A Constraint-First Structural Framework with Minimal Phenomenological Contact
+
+Author: Evan Thomas Kotler
+Version: Frozen through Phase V.1
+Status: Phase V beyond V.1 is Work in Progress (excluded)
+
+ABSTRACT
+Nested Fibrational Cosmology (NFC) is a structural framework formalizing a sharp asymmetry
+between a dynamically protected backbone and an unprotected halo in which all emergence,
+dissipation, and complexity reside. The framework is defined not by generative power but by
+explicit prohibitions: backreaction, autonomous novelty, infinite regime landscapes, and
+derivative bypass mechanisms are excluded by construction.
+
+Phases I–IV establish existence, linear stability, admissible coupling (PASS), constrained
+emergence, and a complete catalog of failure modes, demonstrating that the framework is
+maximally brittle rather than adaptable. Phase V introduces phenomenology only under strict
+constitutional guardrails. In this manuscript, phenomenological contact is limited to Phase V.1,
+which provides a single bound-type exclusion result using one concrete witness system.
+
+No explanatory, predictive, or cosmological claims are made. This manuscript presents NFC in
+its fully stabilized, indexed, and falsifiable form.
+
+------------------------------------------------------------
+
+READER’S GUIDE AND SCOPE DECLARATION
+
+This paper is organized as a constraint ladder. Each phase forbids additional classes of behavior.
+All quantitative claims are tied to explicitly numbered equations. Prose carries no independent force.
+
+This paper does not claim that NFC is a Theory of Everything, a cosmological model, or a source
+of physical law generation. Phase V beyond V.1 is intentionally excluded.
+
+------------------------------------------------------------
+
+PHASE I — EXISTENCE, STABILITY, AND ADMISSIBLE COUPLING
+
+(I.1-1) Existence witness:
+∃ H_P ≠ {0}
+
+(I.2-1) Protected dynamics:
+dψ/dt = Ωψ,  Ω^T = −Ω
+
+(I.2-2) Norm invariance:
+d|ψ|^2/dt = 0
+
+(I.3-1) Uniform gap:
+Re σ(L) ≤ −γ
+
+(I.4-1) Defect-only coupling (PASS):
+C = E ∘ (ρ_v − ρ_s) ∘ J
+
+(I.4-2) Free-channel exclusion:
+J_c = 0
+
+(I.4-3) Locking null:
+ρ_v = ρ_s ⇒ C = 0
+
+(I.5-1) No backreaction:
+∂H_backbone / ∂H_halo = 0
+
+(I.5-2) No derivative bypass:
+Exact locking eliminates all dt / connection terms
+
+(I.6-1) Non-landscape selection:
+Finite admissible protected classes on compact domains
+
+------------------------------------------------------------
+
+PHASE II — CAPACITY AND CONSTRAINED EMERGENCE
+
+(II.1-1) Zero capacity of protected sector:
+C(H_P) = 0
+
+(II.2-1) Localization of emergence:
+Emergence ⊂ H_halo
+
+(II.3-1) Finite regime alphabet:
+|R(Ω)| < ∞ for compact Ω
+
+(II.4-1) Robust regime selection:
+Attractors persist on open parameter sets
+
+(II.5-1) No autonomous novelty:
+dI_backbone/dt = 0
+
+------------------------------------------------------------
+
+PHASE III — STRUCTURAL WITNESSES
+
+(III.A-1) Protected subspace invariance (quantum):
+L_env | H_P = 0
+
+(III.A-2) Witness gap condition:
+Re σ(L_env | H_L) ≤ −γ
+
+(III.A-3) Defect operator:
+K(t) = Π_L L_env(t) Π_P
+
+(III.B-1) Classical backbone–halo split:
+dx/dt = f_cons(x) + ε f_diss(x,t)
+
+(III.B-2) Regime selection:
+x(t) → R_i on open sets
+
+------------------------------------------------------------
+
+PHASE IV — NECESSITY, MAXIMALITY, AND COLLAPSE
+
+(IV.1-1) PASS necessity:
+∂H_backbone / ∂H_halo = 0
+
+(IV.2-1) Finite regime bound:
+|R(Ω)| < ∞
+
+(IV.2-2) Bounded hierarchy depth
+
+(IV.3-1) Backreaction collapse:
+Any persistent backreaction ⇒ collapse
+
+(IV.3-2) Infinite alphabet collapse:
+|R| = ∞ ⇒ loss of explanatory power
+
+(IV.3-3) Approximate PASS failure:
+Accumulated violation ⇒ delayed collapse
+
+------------------------------------------------------------
+
+PHASE V — MINIMAL PHENOMENOLOGY (V.1 ONLY)
+
+(V.1-1) Adiabatic control functional:
+D(T) = (κ²/γ) ∫ δ(t)² dt
+
+(V.1-2) Leakage bound:
+P_leak(T) ≤ C₁ e^(−γT) + C₂ ∫ e^(−γ(T−t)) δ(t) dt
+
+(V.1-3) Protected drift bound:
+Δ_protected(T) ≤ (C₃/γ) ∫ δ(t)² dt
+
+Phase V beyond V.1 is excluded and remains a work in progress.
+
+------------------------------------------------------------
+
+APPENDIX — NON-CLAIMS
+
+This framework does not:
+• explain cosmological initial conditions
+• predict particles or constants
+• generate physical laws
+• assert universality
+
+Violation of any hard constraint collapses the framework.

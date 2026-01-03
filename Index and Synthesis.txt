@@ -1,0 +1,1910 @@
+`NFC - current 12-29-25.txt`, `Paper I.txt`, `Paper II and III.txt`, `Paper IV.txt`, `Paper V.txt`, `Paper VI.txt`
+
+According to a document from **December 29, 2025** (“NFC – current 12-29-25”), the NFC writing has been handled with an explicit “claims strictly bounded / no speculative physics” posture, and Paper 1 is treated as a *frozen object* suitable for submission packaging. 
+
+Below is the **NFC Arc I Meta-Synthesis (Papers I–VI)** in a form that’s easy to archive, cite internally, and reuse as a forward/cover document.
+
+---
+
+## NFC Arc I Meta-Synthesis (Papers I–VI)
+
+### 1) What NFC is (and is not), after Arc I
+
+**NFC’s stable thesis after Arc I:** it is a **pre-model constraint framework**—a disciplined way to restrict what kinds of effective structure *could* emerge from a hierarchy of compatible nested fibrations, without claiming a finished physical theory. 
+
+**Key posture locks:**
+
+* NFC treats algebraic resemblance/rank matching as *hints*, not conclusions, unless an explicit correspondence is constructed. 
+* “Flow” is interpreted primarily as evolution across *fibrational depth / admissible structural resolution*, not automatically as an energy scale. 
+
+---
+
+### 2) Paper-by-paper arc logic (what each paper contributes)
+
+Paper VI explicitly pins the series role map as:
+**I:** existence & geometric consistency → **II:** structural selectivity → **III:** explicit realizations → **IV:** dynamics & stability → **V:** emergent effective structure → **VI:** failure / falsification. 
+
+#### Paper I — Existence & geometric consistency
+
+**Deliverable:** a coherent “architecture” claim: nested fibrations + compatibility constraints as the primary lever (not a specific new fundamental object). 
+
+#### Paper II — Structural selectivity (constraints without dynamics)
+
+**Role (series-level):** establish that compatibility constraints *exclude* possibilities—i.e., the framework forbids things (a major credibility feature).
+
+#### Paper III — Explicit realizations (toy constructions)
+
+**Hard constraints:** must show concrete constructions *and* at least one concrete failure mode; no Standard Model identification, no numerical predictions, no “physical realism” framing. 
+**Success condition:** still succeeds even if constructions are crude or fail often, because the win is demonstrating *operational constraints* on explicit builds. 
+
+#### Paper IV — Dynamics & stability (viability filter)
+
+**Guardrail:** dynamics are not “the laws of nature,” and the paper must not make cosmological/observational claims or assert universal stability. 
+**Positive content allowed:** explicitly identified failure modes and conditional stability language (stable/unstable under perturbations, topologically protected vs dynamically fragile, etc.). 
+
+#### Paper V — Emergent effective structure (under constraint)
+
+**Role:** analyze *what effective descriptions are compatible* with NFC constraints, while explicitly forbidding “derivation of the Standard Model,” predictions, uniqueness/inevitability, or observational alignment. 
+**Vocabulary lock:** “emergent / effective / conditional / compatible with / excluded by constraints,” and avoid “derives / predicts / matches experiment.” 
+
+#### Paper VI — Failure & no-go tests (falsification)
+
+Paper VI is explicitly **adversarial**: it is not constructive, not a rescue, and is allowed to be more decisive than Paper V. 
+
+**Allowed claims:** explicit no-go results; incompatibility of desirable properties under NFC; stability filters eliminating all target-property configurations; possible total failure of emergent descriptions; and mandatory limits on what NFC can be. 
+
+**Forbidden moves:** relaxing earlier assumptions, deferring failure to unknown physics, phenomenological salvage, or optimistic “partial success” framing. 
+
+**Binary endpoint:** either (i) restricted survival under explicit viability criteria, or (ii) termination as a framework under the fixed assumptions. 
+
+---
+
+### 3) Arc I endpoint definition (what is now “closed”)
+
+Paper VI ends Arc I by requiring explicit “if–then” failure conditions and forcing a **binary survival/termination** posture. 
+
+Paper VI is also explicitly marked **FROZEN**: claim ledger locked; assumptions fixed; no rescue language; no deferred fixes; and it stands as a “terminal evaluation document.” 
+
+---
+
+### 4) What Arc I *achieved*, operationally
+
+From an archiving/indexing standpoint, Arc I produces four durable assets:
+
+1. **A bounded framework definition** (what NFC is / is not) suitable for reuse without claim creep. 
+2. **A construction discipline**: explicit toy realizations where failure is informative and required (Paper III). 
+3. **A viability filter layer**: stability language and failure modes defined without pretending to be physical law (Paper IV). 
+4. **A falsification gate** that prevents “framework inflation”: Paper VI’s adversarial no-go posture and binary outcome. 
+
+---
+
+### 5) Practical “reuse snippets” (for a cover note / intro paragraph)
+
+If you need a one-paragraph canonical framing consistent with the arc:
+
+* NFC is a **constraint-generating architecture** over a hierarchy of nested fibrations; it is not presented as a complete physical theory. 
+* The arc progresses from consistency → selectivity → explicit constructions → stability filtering → constrained emergence → adversarial failure tests. 
+* The endpoint is intentionally binary: either a *restricted* framework survives under explicit viability conditions, or NFC terminates under its own fixed assumptions. 
+
+`Death of NFC.txt`, `Project D.txt`, `Structure not prose.txt`
+
+According to a document from **December 29, 2025**, here is the **appendix-grade NFC Claim Ledger (v1)**—**normative** (later text must not contradict it) and explicitly separating **proven** results from **conditional** or **retired** overclaims. 
+
+---
+
+# Appendix A — NFC Claim Ledger (v1)
+
+## Purpose and legend
+
+**Purpose.** Enumerate NFC’s core claims with current status: **Proven**, **Conditional**, **Replaced**, **Retired**. The ledger is **normative**. 
+
+**Legend.** ✅ Proven · 🟡 Conditional · 🔁 Replaced · ❌ Retired 
+
+---
+
+## A.1 Foundational geometry
+
+### Claim A1.1 — Existence of the octonionic Hopf fibration
+
+**Statement.** There exists a canonical fibration (S^7 \to S^{15} \to S^8) arising from the octonionic division algebra.
+**Status.** ✅ Proven (standard result). 
+
+### Claim A1.2 — Half-spin sphere bundle realization of (S^{15})
+
+**Statement.** For the canonical principal bundle (\mathrm{Spin}(9)\to \mathrm{Spin}(9)/\mathrm{Spin}(8)\cong S^8), the associated half-spin sphere bundle has total space diffeomorphic to (S^{15}).
+**Status.** ✅ Proven.
+**Notes.** Via (\mathrm{Spin}(9)/\mathrm{Spin}(7)\cong S^{15}); this replaces heuristic “collapse” language. 
+
+---
+
+## A.2 Dual-chiral / triality structure
+
+### Claim A2.1 — Dual chiral sphere bundles over (S^8)
+
+**Statement.** Over (S^8), there exist two inequivalent rank-8 real sphere bundles corresponding to the two half-spin representations.
+**Status.** ✅ Proven. 
+
+### Claim A2.2 — Global triality (\mathbb{Z}_3) quotient collapse
+
+**Statement (legacy).** A global free (\mathbb{Z}_3) quotient collapses dual-chiral fibers into a single effective fiber.
+**Status.** ❌ Retired (false as stated).
+**Reason.** No free global action is supplied; fixed strata/orbifold behavior breaks the claim. 
+
+### Claim A2.3 — Patchwise triality locking (constraint formulation)
+
+**Statement.** Triality is implemented via a **patchwise locking constraint** between chiral fibers, defined locally and glued by transition data, yielding the half-spin sphere bundle structure.
+**Status.** 🔁 Replaced claim (correct formulation). 
+
+---
+
+## A.3 Dimensionality and “encoding” language
+
+### Claim A3.1 — Effective 15D structure
+
+**Statement.** The triality-locked chiral construction yields a 15-dimensional total space.
+**Status.** 🟡 Conditional (structure-level, not dynamical).
+**Conditions.** Graph/constraint (not quotient); interpreted as associated-bundle total space (not an embedded submanifold elsewhere). 
+
+### Claim A3.2 — Embedding (S^{15}) into (\mathbb{R}^9)
+
+**Statement (legacy).** The (S^{15}) structure is embedded in a 9D real bulk.
+**Status.** ❌ Retired (false as stated). 
+
+### Claim A3.3 — Holographic encoding in 9D
+
+**Statement.** Higher-dimensional structure associated with (S^{15}) is **encoded (not embedded)** via boundary data / associated-bundle geometry on an (S^8) soliton in a 9D bulk.
+**Status.** 🟡 Conditional.
+**Requirement.** An explicit kernel/operator dictionary (no “handwave holography”). 
+
+---
+
+## A.4 Clifford, torus, and (E_8) structure
+
+### Claim A4.1 — (T^8) as maximal-torus/Cartan data
+
+**Statement.** An (8)-torus (T^8) arises naturally as rank-8 torus (Cartan) data compatible with Clifford/triality structure.
+**Status.** 🟡 Conditional (explicit construction required). 
+
+### Claim A4.2 — Full (E_8) root system realization
+
+**Statement.** The full (E_8) root system is realized within NFC.
+**Status.** 🟡 Conditional (not yet demonstrated).
+**Notes.** (T^8)/Cartan compatibility ≠ full root realization; a refined Jordan/Freudenthal (or equivalent) construction is anticipated but not yet proven. 
+
+---
+
+## A.5 Dynamics and stability
+
+### Claim A5.1 — Dynamical stability of NFC structures
+
+**Statement.** Nested fibrational configurations are dynamically stable under admissible flows.
+**Status.** ⬜ Not yet evaluated.
+**Notes.** This is the core task of Paper IV; not asserted earlier. 
+
+### Claim A5.2 — Hierarchical decoupling with nontrivial influence
+
+**Statement.** Deep layers decouple enough to permit effective descriptions **while retaining nontrivial influence**.
+**Status.** 🟡 Conditional / Restricted.
+**Notes.** Subject to Paper VI no-go constraints; may fail under stability requirements. 
+
+---
+
+## A.6 Emergence / physics-facing claims
+
+### Claim A6.1 — Existence of effective low-energy descriptions
+
+**Statement.** Coarse-grained effective descriptions may arise under stability + decoupling.
+**Status.** 🟡 Conditional (non-unique; not guaranteed). 
+
+### Claim A6.2 — Recovery of known physics (SM-like / gravity)
+
+**Statement.** Standard-model-like structures or gravity arise as effective limits.
+**Status.** ⬜ Not yet evaluated / not claimed at this stage. 
+
+---
+
+## A.7 Global “no-go” gates (meta-constraints)
+
+### Claim A7.1 — Global triality locking requires a unit section
+
+**Statement.** A globally defined canonical triality locking map exists **iff** a global unit section exists (equivalently, a (\mathrm{Spin}(7)) reduction).
+**Status.** ✅ Proven.
+**Notes.** Obstructed in the canonical (S^8) case; enforces patchwise formulation. 
+
+### Claim A7.2 — Free (\mathbb{Z}_3) quotient as a foundation
+
+**Statement.** A free (\mathbb{Z}_3) quotient underwrites the foundational reduction.
+**Status.** ❌ Retired. 
+
+---
+
+## Mandatory guardrail sentence (must appear at least once)
+
+> *This identification is a supporting geometric result and does not by itself imply dynamical stability, emergence, or physical realization.* 
+
+`Appendix X.txt`, `Grok the hostile referee.txt`, `Hostile referee pass of B4 and Appendix X.txt`, Next Steps.txt`, `Project E.txt`, `Project I.txt`
+
+According to a document from **December 30–31, 2025**, your next move is explicitly a **final hostile-referee compression pass** on **Appendix X + B4** so they stay crisp and non-speculative. 
+
+Below are **paste-ready**, referee-compressed versions (PASS/FAIL gates only), pulled from your “Hostile referee pass of B4 and Appendix X” file.
+
+---
+
+## Appendix X — Torus data, triality, and the optional (E_8) reconstruction module (compressed)
+
+### X.0 Scope and non-claims (read first)
+
+This appendix records **Cartan-compatible torus data** and a **conditional** lattice reconstruction module.
+
+* **Earned in this appendix:** an explicit rank-8 torus (T^8) naturally attached to the two chiral (\mathrm{Spin}(8)) factors in the ((S^8,S^7)) chassis.
+* **Not earned unless an additional hypothesis passes:** any identification of an (E_8) lattice / Weyl system from that torus. 
+
+**Hard guardrail.** Since (E_8) has rank 8, its maximal tori are 8-dimensional and hence isomorphic to (T^8). But **exhibiting a (T^8)** only supplies Cartan-compatible torus **data**; it does **not** specify an embedding (T^8\hookrightarrow E_8), an (E_8) root lattice in (\mathfrak t^*\cong\mathbb R^8), or a Weyl action. Those require an **explicit lattice identification** and a **reflection (Weyl) closure check**. 
+
+### X.1 Minimal background (torus data)
+
+Fix a compact torus (T) with Lie algebra (\mathfrak t), and:
+
+* cocharacter lattice (X_*(T)\subset\mathfrak t),
+* character lattice (X^*(T)\subset\mathfrak t^*). 
+
+### X.2 Earned lemma: explicit rank-8 torus data
+
+**Lemma X.1 (Torus data from the two chiral (\mathrm{Spin}(8)) factors).**
+Let (S^8=U_N\cup U_S) with overlap (\Sigma\simeq S^7). Let (P\to S^8) be the canonical principal (\mathrm{Spin}(8))-bundle induced from (\mathrm{Spin}(9)/\mathrm{Spin}(8)\cong S^8). Let (\Sigma^\pm) be the two real half-spin reps (each 8-dimensional) and (E_\pm:=P\times_{\mathrm{Spin}(8)}\Sigma^\pm\to S^8).
+Then there is a canonically defined compact torus
+[
+T^8 := T_+^4\times T_-^4,
+]
+where (T_\pm^4) are the images of a maximal torus in (\mathrm{Spin}(8)) under the half-spin representations.
+**Non-claim:** this does **not** identify (E_8); it yields (T^8) as torus data only. 
+
+### X.3–X.4 The single PASS/FAIL gate that activates the optional (E_8) module
+
+Define the equatorial clutching map (t:\Sigma\to\mathrm{Spin}(8)), and let ((\rho_v,\rho_s,\rho_c)) be the three 8-dim irreps.
+
+**Definition X.TL(_\tau)** (Executable cyclic-triality clutching).
+Say (t) **implements cyclic triality** iff the induced identifications on the discriminant cosets ({v,s,c}\subset D_4^*/D_4) realize the **3-cycle** (v\mapsto s\mapsto c\mapsto v). 
+
+**Lemma X.R4 (PASS/FAIL).**
+
+* **FAIL (generic):** pair-locking (e.g. (\rho_v(t)\cong\rho_s(t))) does **not** force cyclic triality on ({v,s,c}). In this regime, the (E_8) module is **not activated**.
+* **PASS (only under explicit upgrade):** you must explicitly supply structure ensuring the clutching realizes the **3-cycle** (not merely equality of two channels). 
+
+### X.5–X.6 Conditional lattice result (only if TL(_\tau) passes)
+
+If TL(_\tau) holds, then the standard lattice-gluing construction identifies the glued overlattice as **even unimodular rank 8**, hence (E_8) (as a lattice).
+**Non-claim:** lattice identification ≠ physical gauge embedding without added representation data. 
+
+**Remark X.16 (rank-16 confusion).** Rank-16 can appear as a *bundle rank* (e.g. (E_+\oplus E_-)), but it does **not** imply a (T^{16}). The torus data remains rank 8. 
+
+### X.7 Minimal “what this appendix contributes”
+
+1. **Earned:** explicit (T^8) torus data attached to the chiral boundary structure.
+2. **Quarantined:** an (E_8) reconstruction module valid **only if** TL(_\tau) passes.
+3. **Referee-proofing:** no (T^8\Rightarrow E_8) inference without the named PASS/FAIL gate. 
+
+---
+
+## B4 — Multiplicity Survival Audit (hostile-referee compressed)
+
+### B4.0 Purpose
+
+Sector-B survivors ((|\mathcal I|=k>1)) carry **true multiplicity/moduli**. Audit whether these can be instantiated on ((S^8,S^7)) **without** reopening the known bypass failure mode.
+**Output is binary:** **PASS** (controlled (k)-fold extension) or **FAIL** (multiplicity forces bypass/instability). 
+
+### B4.1 Setup (fixed)
+
+Assume a (k)-fold protected sector
+[
+\mathcal H_P^{(k)} \cong V\otimes\mathbb F^k,
+]
+with (V) the rigid survivor block and (\mathbb F^k) the multiplicity label.
+Canonical realization target:
+[
+W^{(k)}=\bigoplus_{j=1}^k W_{\mathrm{Bott}}
+\Rightarrow
+\ker(D_{W^{(k)}})\cong \ker(D_{W_{\mathrm{Bott}}})\otimes\mathbb F^k.
+]
+Coupling model (defect-only, multiplicity-diagonal target):
+[
+C=C_0\otimes I_k,\qquad C_0=\mathcal E\circ\mathcal K\circ J.
+] 
+
+### B4.2 The only three multiplicity failure modes
+
+* **(M1) Interface mixing:** (C=C_0\otimes M) with (M\neq I_k), and mixing is **forced** (not removable by basis change).
+* **(M2) Trace mixing:** trace/constraint cannot be enforced copywise.
+* **(M3) Derivative-bypass (F4/B4 mechanism):** (\mathcal K) built via conjugation/derivation of a differential boundary operator (or connection/time-derivative), forcing (dt)-terms that mix multiplicity even if representation-level defect vanishes. 
+
+### B4.3 The structural condition that matters
+
+**Condition B4.A (No derivative/conjugation construction of (\mathcal K)).**
+(\mathcal K) must be defined **pointwise at the representation/transition level** (“defect operator”), not as a commutator/conjugation involving differential operators or evolving connections that generate forced derivative terms. 
+
+### B4.4 PASS/FAIL lemma (audit verdict)
+
+**Lemma B4 (Multiplicity diagonalization is admissible unless derivative-bypass is forced).**
+Assume (i) (W^{(k)}=\bigoplus_{j=1}^k W_{\mathrm{Bott}}) realizes (|\mathcal I|=k), and (ii) coupling is defect-only with (\mathcal K) satisfying B4.A.
+
+* **PASS:** there exists an admissible representative with copywise trace splitting and multiplicity-diagonal coupling (C=C_0\otimes I_k); multiplicity is a **true moduli label** (gauge-rotatable), not a leak channel.
+* **FAIL:** if B4.A is violated (derivative-bypass is structurally forced), multiplicity mixing cannot be gauged away and the (k)-fold extension reopens the unstable pathway. 
+
+### B4.5 Concrete checklist (what must be verified on an (S^8) layering)
+
+1. Kernel splits as (V\otimes\mathbb F^k).
+2. (\mathcal K) is defect-only (no derivative/conjugation construction).
+3. Trace/constraint is blockwise enforceable.
+4. Multiplicity rotations are gauge (act as (U(k)) on (\mathbb F^k) without changing coupling class). 
+
+### B4.6 Minimal statement (the only sentence that needs to appear near the main text)
+
+> Sector-B multiplicity survives **iff** the instantiated interface operator is defect-only (no derivative-bypass); this is audited by Lemma B4. 
+
+---
+
+## If you want the instantiation track to continue (1 line)
+
+Your Project I instantiation gates are now *fully* reduced to a single checkable boundary block:
+[
+M=\Pi_{>0},\rho_+(t),\Pi_{\le 0},
+]
+with **PASS** (M=0) and **FAIL** (M\neq 0) (then extract the obstruction/price). 
+
+
+Provide a `.csv` file like how a professional data scientist would.
+
+```csv
+dataset,record_type,record_id,arc,source_file,source_date,section,title,statement,status,conditions_or_gate,dependencies,tags,notes
+NFC_ArcI_ClaimLedger,RoleMap,RM-ARC1,NFC Arc I,Paper VI.txt,2025-12-29,Series Overview,Paper Roles (I–VI),"I: existence & geometric consistency; II: structural selectivity; III: explicit realizations; IV: dynamics & stability; V: emergent effective structure; VI: failure / falsification",Proven,,,"series_map,scope_control","Series-level role map used to prevent claim creep."
+NFC_ArcI_ClaimLedger,Claim,A1.1,NFC Arc I,Death of NFC.txt,2025-12-29,A.1 Foundational geometry,Octonionic Hopf fibration exists,"There exists a canonical fibration S^7 → S^15 → S^8 arising from the octonionic division algebra.",Proven,,,"geometry,hopf_fibration,octonions","Standard result; treated as non-controversial base."
+NFC_ArcI_ClaimLedger,Claim,A1.2,NFC Arc I,NFC - current 12-29-25.txt,2025-12-29,A.1 Foundational geometry,Half-spin sphere bundle total space,"The associated half-spin sphere bundle over S^8 has total space diffeomorphic to S^15 (e.g., Spin(9)/Spin(7) ≅ S^15).",Proven,"Use bundle/associated-space language; avoid heuristic 'collapse' phrasing.",A1.1,"spin_groups,half_spin,bundles,S15","Replaces earlier informal identification language."
+NFC_ArcI_ClaimLedger,Claim,A2.1,NFC Arc I,Death of NFC.txt,2025-12-29,A.2 Dual-chiral structure,Two inequivalent half-spin sphere bundles,"Over S^8 there exist two inequivalent rank-8 real sphere bundles corresponding to the two half-spin representations.",Proven,,A1.2,"triality,spin8,half_spin,bundles","Foundational for dual-channel (±) bookkeeping."
+NFC_ArcI_ClaimLedger,Claim,A2.2,NFC Arc I,Death of NFC.txt,2025-12-29,A.2 Dual-chiral structure,Global Z3 quotient collapse (legacy),"A global free Z3 quotient collapses dual-chiral fibers into a single effective fiber.",Retired,"Retired because a free global action is not provided; fixed strata/orbifold issues invalidate the claim.",A2.1,"triality,Z3,global_action,overclaim","Explicitly marked false as stated."
+NFC_ArcI_ClaimLedger,Claim,A2.3,NFC Arc I,Structure not prose.txt,2025-12-29,A.2 Dual-chiral structure,Patchwise triality locking (replacement),"Triality is implemented via a patchwise locking constraint between chiral fibers, defined locally and glued by transition data.",Replaced,"Implemented as a constraint/graph, not a free global quotient.",A2.1,"triality,patchwise,gluing,constraints","Corrected formulation that survives hostile review."
+NFC_ArcI_ClaimLedger,Claim,A3.1,NFC Arc I,Structure not prose.txt,2025-12-29,A.3 Dimensionality,Effective 15D total space,"Triality-locked chiral construction yields a 15-dimensional total space (interpreted as associated-bundle total space).",Conditional,"Structure-level only (not dynamical); treated as associated-bundle total space, not embedded object.",A2.3,"dimension,S15,associated_bundle,non_dynamical","Avoids physics-facing claims."
+NFC_ArcI_ClaimLedger,Claim,A3.2,NFC Arc I,Structure not prose.txt,2025-12-29,A.3 Dimensionality,Embedding S15 into R9 (legacy),"The S^15 structure is embedded in a 9D real bulk.",Retired,"Retired as false as stated.",A3.1,"embedding,R9,overclaim","Replaced by 'encoding' language (A3.3)."
+NFC_ArcI_ClaimLedger,Claim,A3.3,NFC Arc I,Structure not prose.txt,2025-12-29,A.3 Dimensionality,Holographic encoding in 9D,"Higher-dimensional structure associated with S^15 is encoded (not embedded) via boundary data / associated-bundle geometry on an S^8 soliton in a 9D bulk.",Conditional,"Requires an explicit kernel/operator dictionary; no 'handwave holography'.",A3.1,"encoding,boundary_data,R9,operator_dictionary","Conditional module; may remain purely structural."
+NFC_ArcI_ClaimLedger,Claim,A4.1,NFC Arc I,Structure not prose.txt,2025-12-29,A.4 Torus and E8,T^8 as Cartan-compatible torus data,"A rank-8 torus T^8 arises naturally as Cartan/maximal-torus data compatible with the chiral Spin(8) structure.",Conditional,"Must exhibit explicit construction (what T^8 is, how it attaches, and the lattices X*(T), X_*(T)).",A2.1,"torus,T8,cartan,spin8","Important: T^8 existence does not imply E8."
+NFC_ArcI_ClaimLedger,Claim,A4.2,NFC Arc I,Structure not prose.txt,2025-12-29,A.4 Torus and E8,Full E8 root system realized,"The full E8 root system is realized within NFC.",Conditional,"Not demonstrated without explicit lattice identification and Weyl/reflection closure; treat as optional module only.",A4.1,"E8,root_system,lattice,weyl_group","Quarantine this behind explicit PASS/FAIL gate (TL_tau)."
+NFC_ArcI_ClaimLedger,Claim,A5.1,NFC Arc I,Paper IV.txt,2025-12-29,A.5 Dynamics and stability,Dynamical stability,"Nested fibrational configurations are dynamically stable under admissible flows.",NotEvaluated,"Assigned to Paper IV; do not assert without explicit analysis.",A3.1,"dynamics,stability,flows","Kept blank/unevaluated to prevent overreach."
+NFC_ArcI_ClaimLedger,Claim,A5.2,NFC Arc I,Death of NFC.txt,2025-12-29,A.5 Dynamics and stability,Hierarchical decoupling with influence,"Deep layers decouple enough to permit effective descriptions while retaining nontrivial influence.",Conditional,"Subject to Paper VI no-go constraints; may fail under stability requirements.",A5.1,"decoupling,effective_theory,no_go","Explicitly marked as restricted/conditional."
+NFC_ArcI_ClaimLedger,Claim,A6.1,NFC Arc I,Death of NFC.txt,2025-12-29,A.6 Emergence,Existence of effective low-energy descriptions,"Coarse-grained effective descriptions may arise under stability + decoupling.",Conditional,"Non-unique; not guaranteed; requires stability and a valid coarse-graining map.",A5.2,"emergence,effective_description,coarse_graining","Use 'may' / 'compatible with' language only."
+NFC_ArcI_ClaimLedger,Claim,A6.2,NFC Arc I,Death of NFC.txt,2025-12-29,A.6 Emergence,Recovery of known physics,"Standard-model-like structures or gravity arise as effective limits.",NotClaimed,"Explicitly not claimed at this stage; cannot be used as motivation claim.",A6.1,"SM,gravity,phenomenology,nonclaim","Keep out of abstracts/intros unless fully proven later."
+NFC_ArcI_ClaimLedger,Claim,A7.1,NFC Arc I,Death of NFC.txt,2025-12-29,A.7 No-go gates,Triality locking requires unit section,"A globally defined canonical triality locking map exists iff a global unit section exists (equivalently, a Spin(7) reduction).",Proven,"Obstructed in the canonical S^8 case; forces patchwise formulation.",A2.3,"no_go,spin7_reduction,global_section,triality","Primary no-go that kills global Z3 collapse."
+NFC_ArcI_ClaimLedger,Claim,A7.2,NFC Arc I,Death of NFC.txt,2025-12-29,A.7 No-go gates,Free Z3 quotient foundation,"A free Z3 quotient underwrites the foundational reduction.",Retired,"Retired; contradicts A7.1 and lacks a valid free action construction.",A7.1,"Z3,global_action,retired","Do not reference in any forward-facing text."
+NFC_ArcI_ClaimLedger,Guardrail,G-01,NFC Arc I,Death of NFC.txt,2025-12-29,Guardrail,Mandatory non-implication sentence,"This identification is a supporting geometric result and does not by itself imply dynamical stability, emergence, or physical realization.",Mandatory,"Must appear at least once in the manuscript (or equivalent).",A1.2,"guardrail,scope_control,referee_proof","Use verbatim or near-verbatim to prevent misreadings."
+NFC_ArcI_ClaimLedger,Definition,X.TL_tau,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,Appendix X,Executable cyclic-triality clutching gate,"Clutching map t implements cyclic triality iff it induces the 3-cycle v→s→c→v on the discriminant cosets {v,s,c} ⊂ D4*/D4.",Gate,"PASS: explicit 3-cycle on {v,s,c}. FAIL: only pair-locking or equality of two channels.",A4.1,"triality,clutching_map,gate,discriminant_cosets","This is the quarantine gate for any E8-lattice language."
+NFC_ArcI_ClaimLedger,Lemma,X.1,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,Appendix X,Earned torus data lemma,"There is a canonically defined compact torus T^8 = T^4_+ × T^4_- attached to the two chiral Spin(8) factors via the half-spin representations.",Proven,"Non-claim: does not identify E8; torus data only.",A2.1,"torus,T8,spin8,cartan","Use as the only 'earned' torus statement."
+NFC_ArcI_ClaimLedger,Lemma,X.R4,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,Appendix X,Pair-locking does not force cyclic triality,"Pair-locking (e.g., ρv(t) ≅ ρs(t)) does not force cyclic triality on {v,s,c}; E8 module remains inactive unless TL_tau explicitly passes.",Proven,"FAIL is generic; PASS requires explicit upgrade to a 3-cycle.",X.TL_tau,"triality,referee_gate,nonimplication","Prevents T^8 ⇒ E8 inference."
+NFC_ArcI_ClaimLedger,Remark,X.16,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,Appendix X,Rank-16 confusion note,"Rank-16 can appear as a bundle rank (e.g., E_+ ⊕ E_-), but it does not imply a T^16; the torus data remains rank 8.",Proven,,A4.1,"rank_confusion,torus_rank,bookkeeping","Use to defuse common referee objection."
+NFC_ArcI_ClaimLedger,Audit,B4.0,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,B4,Multiplicity survival audit objective,"Audit whether k>1 multiplicity/moduli can be instantiated on (S^8,S^7) without reopening the bypass failure mode; output is binary PASS/FAIL.",Proven,"Binary output requirement; no ambiguous conclusions.",,"multiplicity,audit,pass_fail","Designed for hostile-referee readability."
+NFC_ArcI_ClaimLedger,Setup,B4.1,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,B4,Multiplicity kernel model,"Assume H_P^(k) ≅ V ⊗ F^k; canonical realization target W^(k)=⊕_j W_Bott giving ker(D_W^(k)) ≅ ker(D_W_Bott) ⊗ F^k.",Proven,,B4.0,"index_theory,kernel_split,multiplicity","Formalizes what 'k-fold survivor' means."
+NFC_ArcI_ClaimLedger,FailureMode,M1,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,B4,Interface mixing,"Coupling C = C0 ⊗ M with M ≠ I_k, and mixing is forced (not removable by basis change).",Proven,"FAIL if forced and not gauge-removable.",B4.1,"multiplicity,mixing,interface","Enumerated failure mode."
+NFC_ArcI_ClaimLedger,FailureMode,M2,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,B4,Trace mixing,"Trace/constraint cannot be enforced copywise across the k copies.",Proven,"FAIL if trace constraint does not split by copy.",B4.1,"constraints,trace,multiplicity","Enumerated failure mode."
+NFC_ArcI_ClaimLedger,FailureMode,M3,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,B4,Derivative-bypass mechanism,"If K is built via conjugation/derivation of a differential boundary operator, forced derivative terms (dt-terms) mix multiplicity even if representation-level defect vanishes.",Proven,"FAIL if structurally forced; this is the critical bypass mechanism.",B4.1,"bypass,derivative_terms,boundary_operator","Main hostile-referee concern."
+NFC_ArcI_ClaimLedger,Condition,B4.A,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,B4,No derivative/conjugation construction of K,"K must be defined pointwise at the representation/transition level (defect operator), not as a commutator/conjugation involving differential operators or evolving connections.",Mandatory,"If violated, multiplicity mixing becomes forced (FAIL via M3).",M3,"defect_only,operator_construction,guardrail","Single most important technical constraint in B4."
+NFC_ArcI_ClaimLedger,Lemma,B4,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,B4,Multiplicity diagonalization admissibility,"PASS: if W^(k)=⊕ W_Bott and coupling is defect-only with K satisfying B4.A, then there exists an admissible representative with copywise trace splitting and C=C0 ⊗ I_k. FAIL: if B4.A is violated (derivative-bypass forced), mixing cannot be gauged away.",Proven,"PASS iff defect-only (no derivative-bypass). FAIL otherwise.",B4.A,"multiplicity,pass_fail,diagonalization","This is the audit verdict statement."
+NFC_ArcI_ClaimLedger,Checklist,B4.C1,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,B4,Checklist item 1,"Verify kernel splits as V ⊗ F^k.",Checklist,,B4.1,"verification,kernel_split","Operational verification step."
+NFC_ArcI_ClaimLedger,Checklist,B4.C2,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,B4,Checklist item 2,"Verify K is defect-only (no derivative/conjugation construction).",Checklist,,B4.A,"verification,defect_only","Operational verification step."
+NFC_ArcI_ClaimLedger,Checklist,B4.C3,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,B4,Checklist item 3,"Verify trace/constraint is blockwise enforceable (copywise).",Checklist,,M2,"verification,constraints","Operational verification step."
+NFC_ArcI_ClaimLedger,Checklist,B4.C4,NFC Arc I,Hostile referee pass of B4 and Appendix X.txt,2025-12-31,B4,Checklist item 4,"Verify multiplicity rotations act as gauge (U(k) on F^k) without changing coupling class.",Checklist,,B4.1,"verification,gauge,Uk","Operational verification step."
+NFC_ArcI_ClaimLedger,Gate,PI-M,NFC Arc I,Project I.txt,2025-12-31,Project I,Boundary block PASS/FAIL gate,"Define M = Π_{>0} ρ_+(t) Π_{≤0}. PASS: M=0. FAIL: M≠0; extract obstruction/price.",Gate,"PASS: M=0. FAIL: M≠0.",X.TL_tau,"instantiation,boundary_operator,gate","Concrete check used to continue/terminate instantiation track."
+```
+
+If you want, tell me whether you want this CSV to be **(a)** “claims-only” (short) or **(b)** “full index” (adds document-level metadata like *frozen/draft*, dependency graph edges, and keyword search fields), and I’ll format the next version accordingly.
+
+full index
+
+According to a document from **December 31, 2025**, the corpus is explicitly operating in a **“frozen / locked artifacts”** regime (papers + modules are treated as finished governance objects).
+
+Here is a **full-index CSV** (documents + claims + gates + checklists + dependency edges). Save as `NFC_full_index.csv`.
+
+```csv
+dataset,entity_type,entity_id,entity_name,arc,source_file,source_date,doc_status,doc_kind,doc_role,author,section,title,statement_or_payload,status,conditions_or_gate,depends_on,tags,source_line_range,source_citation,notes
+NFC_FullIndex,Document,DOC-NFC-0001,"Paper I — Geometry & Existence",NFC Arc I,"Paper I.txt","2025-12-29",FROZEN,Paper,Construction/Existence,"Evan Thomas Kotler",Series Snapshot,"Status propagation","Paper I listed as frozen in series snapshot.",Proven,,"","paper,status,frozen","L20-L25",":contentReference[oaicite:2]{index=2}","Status is asserted in later series snapshot (Paper V)."
+NFC_FullIndex,Document,DOC-NFC-0002,"Paper II — Structural Selectivity",NFC Arc I,"Paper II and III.txt","2025-12-29",FROZEN,Paper,Constraints/Selectivity,"Evan Thomas Kotler",Series Snapshot,"Status propagation","Paper II listed as frozen in series snapshot.",Proven,,"","paper,status,frozen","L20-L25",":contentReference[oaicite:3]{index=3}","Status is asserted in later series snapshot (Paper V)."
+NFC_FullIndex,Document,DOC-NFC-0003,"Paper III — Explicit Realizations",NFC Arc I,"Paper II and III.txt","2025-12-29",FROZEN,Paper,Constructions/Toys,"Evan Thomas Kotler",Freeze Block,"Paper III is now FROZEN","Paper III explicitly frozen; no new claims/examples/scope changes unless forced by referee.",Proven,"Freeze rule: no new claims/examples/scope changes unless referee forces.",DOC-NFC-0002,"paper,freeze,referee_armor","L21-L30",":contentReference[oaicite:4]{index=4}","Primary freeze authority for Paper III."
+NFC_FullIndex,Document,DOC-NFC-0004,"Paper IV — Dynamics & Stability",NFC Arc I,"Paper IV.txt","2025-12-29",FROZEN,Paper,Viability/Stability,"Evan Thomas Kotler",Freeze Block,"Paper IV is now frozen","No further changes to claims/scope/framing/stability language unless referee requires revision.",Proven,"Freeze rule: changes only if referee explicitly requires.",DOC-NFC-0003,"paper,freeze,stability","L1-L13",":contentReference[oaicite:5]{index=5}","Primary freeze authority for Paper IV."
+NFC_FullIndex,Document,DOC-NFC-0005,"Paper V — Emergence & Effective Structure",NFC Arc I,"Paper V.txt","2025-12-29",FROZEN,Paper,Emergence/Exclusion,"Evan Thomas Kotler",Freeze Block,"Paper V is frozen","Scope/claims/tone/dependencies locked; no further edits unless explicitly reopened.",Proven,"Freeze rule: no edits unless reopening explicitly requested.",DOC-NFC-0004,"paper,freeze,emergence,exclusion","L3-L15",":contentReference[oaicite:6]{index=6}","Primary freeze authority for Paper V."
+NFC_FullIndex,Document,DOC-NFC-0006,"Paper VI — Failure & No-Go Tests",NFC Arc I,"Paper VI.txt","2025-12-29",FROZEN,Paper,Terminal Evaluation,"Evan Thomas Kotler",Freeze Block,"Paper VI — Status: FROZEN","Claim ledger locked; assumptions fixed; binary survival/termination enforced; no rescue language.",Proven,"Freeze rule: terminal evaluation; no additions without violating role.",DOC-NFC-0005,"paper,freeze,no_go,terminal","L67-L82",":contentReference[oaicite:7]{index=7}","Primary freeze authority for Paper VI."
+NFC_FullIndex,Document,DOC-NFC-0007,"Death of NFC — Packaging Plan + Arc Closure",NFC Arc I,"Death of NFC.txt","2025-12-29",COMPLETE,Governance,Packaging/Closure,"Evan Thomas Kotler",Packaging Plan,"Two-part monograph structure","Specifies final packaging structure (Front Matter, Part I Papers I–III, Part II Papers IV–VI, Appendices).",Proven,,"DOC-NFC-0001|DOC-NFC-0002|DOC-NFC-0003|DOC-NFC-0004|DOC-NFC-0005|DOC-NFC-0006","packaging,governance,monograph","L64-L75",":contentReference[oaicite:8]{index=8}","Use as final compilation blueprint."
+NFC_FullIndex,Document,DOC-NFC-0008,"NFC — current 12-29-25",NFC Arc I,"NFC - current 12-29-25.txt","2025-12-29",CURRENT,Notes,Claim-bounding posture,"Evan Thomas Kotler",Posture,"Bounded-claims discipline","Framework posture: avoid speculative physics and treat paper objects as frozen where specified.",Proven,,"DOC-NFC-0001|DOC-NFC-0002|DOC-NFC-0003|DOC-NFC-0004|DOC-NFC-0005|DOC-NFC-0006","posture,scope_control","L20-L30",":contentReference[oaicite:9]{index=9}","Sourced earlier in conversation; retained for indexing."
+NFC_FullIndex,Document,DOC-NFC-0009,"Structure not prose",NFC Arc I,"Structure not prose.txt","2025-12-29",ACTIVE,Notes,Technical correction log,"Evan Thomas Kotler",Corrections,"Retire embed; use encode","Retires S^15 embedded-in-R^9 language; enforces encoding framing.",Proven,,"DOC-NFC-0008","correction,encoding_vs_embedding","L33-L56",":contentReference[oaicite:10]{index=10}","Governance utility: vocabulary lock."
+NFC_FullIndex,Document,DOC-NFC-0010,"Hostile referee pass of B4 and Appendix X",NFC Arc I,"Hostile referee pass of B4 and Appendix X.txt","2025-12-31",ACTIVE,RefereePass,Compression/Pass-Fail gates,"Evan Thomas Kotler",Appendix X + B4,"Hostile compression pass","Defines PASS/FAIL gates for Appendix X (triality) and B4 (multiplicity).",Proven,,"DOC-NFC-0006|DOC-NFC-0005","referee_armor,pass_fail","L1-L17","","Authoritative for gate phrasing."
+NFC_FullIndex,Document,DOC-NFC-0011,"Appendix X",NFC Arc I,"Appendix X.txt","2025-12-31",ACTIVE,Appendix,Torus/triality module,"Evan Thomas Kotler",Scope,"T^8 data; E8 quarantined","Establishes T^8 torus data; any E8 reconstruction is conditional on explicit cyclic-triality clutching gate.",Proven,"Gate required: TL_tau must PASS for E8 module activation.","DOC-NFC-0010","appendix,torus,triality,E8_quarantine","L9-L17","","Appendix X content is represented by the hostile-pass compression record."
+NFC_FullIndex,Document,DOC-NFC-0012,"Grok the hostile referee",Successor Arc,"Grok the hostile referee.txt","2025-12-30",ACTIVE,RefereeSim,Attack model + salvage blueprint,"(simulated referee)",Critique,"Primary attacks","Flags missing computed anchors; demands explicit index computations and explicit clutching/homotopy handling.",Proven,,"DOC-NFC-0013","referee_sim,credibility,compute_anchor","L1-L17",":contentReference[oaicite:13]{index=13}","Use as 'threat model' for presentation."
+NFC_FullIndex,Document,DOC-NFC-0013,"Next Steps",Successor Arc,"Next Steps.txt","2025-12-31",ACTIVE,Plan,Execution ordering + freeze confirmations,"Evan Thomas Kotler",Decision,"Publish a short computed note","Top strategy: publish/ circulate one short undeniable unit; compute index on S^8; freeze it; then final program summary.",Proven,,"DOC-NFC-0012","plan,execution,short_note,index","L1-L25",":contentReference[oaicite:14]{index=14}","Acts as operational roadmap post-hostile review."
+NFC_FullIndex,Document,DOC-NFC-0014,"Project D",Successor Arc,"Project D.txt","2025-12-30",ACTIVE,Project,Inversion via protection,"Evan Thomas Kotler",Executive Summary,"Protection as minimal change","Introduces protection (computable invariant such as twisted Dirac index) to allow robust stability with non-small coupling under structural constraints.",Proven,,"DOC-NFC-0006","projectD,protection,index,robust_stability","L7-L36",":contentReference[oaicite:15]{index=15}","Successor arc begins after NFC closure."
+NFC_FullIndex,Document,DOC-NFC-0015,"Project E",Successor Arc,"Project E.txt","2025-12-30",ACTIVE,Project,Controlled re-entry + classification,"Evan Thomas Kotler",E.3 reopening,"Classification of admissible protected pairings","Defines E.3 classification: admissible, dynamically viable, instantiable under Project I constraints.",Proven,,"DOC-NFC-0014|DOC-NFC-0016","projectE,classification,pairings,instantiation_gate","L30-L39",":contentReference[oaicite:16]{index=16}","E.3 becomes 'completion instrument' for classification gap."
+NFC_FullIndex,Document,DOC-NFC-0016,"Project I",Successor Arc,"Project I.txt","2025-12-31",FROZEN,Project,Instantiation on (S^8,S^7),"Evan Thomas Kotler",Freeze Status,"Project I frozen at I.15","Project I is frozen at I.15 with fixed geometry, interface axioms, exclusion theorem, explicit failure modes.",Proven,"Freeze rule: module is finished; maintain modularity and prevent scope creep.",DOC-NFC-0015,"projectI,instantiation,freeze,S8,S7","L13-L21",":contentReference[oaicite:17]{index=17}","Self-contained instantiation module."
+NFC_FullIndex,Document,DOC-NFC-0017,"Short Note — Index of Twisted Dirac Operators on (S^8)",Successor Arc,"Next Steps.txt","2025-12-31",FROZEN,Note,Public-facing computed anchor,"Evan Thomas Kotler",Freeze Confirmation,"Index-zero note frozen","Short note is frozen; explicitly computed index=0 for natural twistings and limitation theorem; bounded scope.",Proven,"Freeze rule: no further additions unless explicitly reopened.",DOC-NFC-0013,"short_note,index,dirac,S8,frozen","L35-L46",":contentReference[oaicite:18]{index=18}","Primary 'computed anchor' artifact."
+NFC_FullIndex,Claim,CL-A1.1,"Octonionic Hopf fibration exists",NFC Arc I,"Death of NFC.txt","2025-12-29",,Claim,Foundational geometry,"Evan Thomas Kotler",Appendix A,"Octonionic Hopf fibration","There exists a canonical fibration S^7 → S^15 → S^8 arising from the octonionic division algebra.",Proven,,"","geometry,hopf,octonions","L47-L52",":contentReference[oaicite:19]{index=19}","Base geometric fact."
+NFC_FullIndex,Claim,CL-A2.2,"Global Z3 quotient collapse (legacy)",NFC Arc I,"Death of NFC.txt","2025-12-29",,Claim,Retired overclaim,"Evan Thomas Kotler",Appendix A,"Z3 collapse","A global free Z3 quotient collapses dual-chiral fibers into a single effective fiber.",Retired,"Retired: free global action not supplied; fixed strata/orbifold issues.",CL-A2.1,"triality,Z3,retired","L73-L78",":contentReference[oaicite:20]{index=20}","Hard retirement: must not reappear."
+NFC_FullIndex,Guardrail,GR-ARC1-0001,"Front Disclaimer (scope)",NFC Arc I,"Death of NFC.txt","2025-12-29",,Guardrail,Interpretation governance,"Evan Thomas Kotler",Front Matter,"Disclaimer text","Series is a completed investigation under fixed assumptions; no physical completeness/empirical adequacy/inevitability; all claims internal/conditional; no conclusions beyond stated implied.",Mandatory,"Must appear in Front Matter to prevent misreading.","DOC-NFC-0007","guardrail,scope_control,front_matter","L84-L87",":contentReference[oaicite:21]{index=21}","Use verbatim or near-verbatim."
+NFC_FullIndex,Gate,GATE-X-TLTAU,"TL_tau — cyclic triality clutching",NFC Arc I,"Hostile referee pass of B4 and Appendix X.txt","2025-12-31",,Gate,Appendix X activation gate,"Evan Thomas Kotler",Appendix X,"Cyclic triality definition","Clutching map t implements cyclic triality iff it induces 3-cycle v→s→c→v on {v,s,c} ⊂ D4*/D4.",Gate,"PASS: explicit 3-cycle; FAIL: only pair-locking.",DOC-NFC-0011,"triality,clutching_map,gate","L1-L4","","Quarantines any E8 lattice language."
+NFC_FullIndex,Gate,GATE-B4-A,"B4.A — no derivative/conjugation K",NFC Arc I,"Hostile referee pass of B4 and Appendix X.txt","2025-12-31",,Gate,Multiplicity audit gate,"Evan Thomas Kotler",B4,"Defect-only interface construction","K must be defined pointwise as defect operator, not via commutator/conjugation with differential operators producing forced dt-terms.",Mandatory,"FAIL if violated: derivative-bypass (M3) forced.",DOC-NFC-0010,"multiplicity,derivative_bypass,gate","L61-L66","","Single most important technical constraint for B4."
+NFC_FullIndex,Lemma,LEM-B4-0001,"Lemma B4 — multiplicity diagonalization admissible iff defect-only",NFC Arc I,"Hostile referee pass of B4 and Appendix X.txt","2025-12-31",,Lemma,Audit verdict,"Evan Thomas Kotler",B4,"PASS/FAIL lemma","PASS if W^(k)=⊕W_Bott and coupling defect-only with K satisfying B4.A; FAIL if derivative-bypass is forced.",Proven,"PASS iff B4.A holds; otherwise FAIL.",GATE-B4-A,"multiplicity,pass_fail,lemma","L5-L23","","Binary audit outcome."
+NFC_FullIndex,Claim,PD-PROT-0001,"Protection defined as computable invariant",Successor Arc,"Project D.txt","2025-12-30",,Claim,Project D core, "Evan Thomas Kotler",Executive Summary,"Protection definition","Protection is a discrete computable invariant (e.g., twisted Dirac index) preserved under admissible evolution obstructing relaxation to trivial attractors.",Proven,,"","projectD,protection,index","L9-L23",":contentReference[oaicite:25]{index=25}","Minimal inversion ingredient."
+NFC_FullIndex,Theorem,THM-D8,"Theorem D8 — D2 autonomy possible under neutral protected evolution",Successor Arc,"Project D.txt","2025-12-30",,Theorem,Existence result,"Evan Thomas Kotler",D.8.7,"D2 autonomy theorem","Under I≠0 + skew-adjoint protected evolution + dissipative complement + constrained coupling, there exist configurations with nontrivial recurrent motion on invariant set in H_P persisting under small admissible perturbations.",Proven,"Requires stated hypotheses (1–3) in theorem.",PD-PROT-0001,"projectD,theorem,D2,autonomy","L7-L16",":contentReference[oaicite:26]{index=26}","This is the positive existence anchor for D2."
+NFC_FullIndex,Schema,SCH-E3-D1,"E.3 Deliverable D1 — Classification Table schema",Successor Arc,"Project E.txt","2025-12-30",,Schema,Artifact specification,"Evan Thomas Kotler",E.3.6,"Table schema","Defines classification table columns including: pairing signature, interface rep-type, instantiation gate (Project I F1–F4), rigidity vs moduli, notes/links.",Proven,,"DOC-NFC-0016","projectE,schema,classification_table","L12-L24",":contentReference[oaicite:27]{index=27}","Operational artifact definition."
+NFC_FullIndex,Gate,GATE-I-F1F4,"Project I failure-mode gate predicates F1–F4",Successor Arc,"Project E.txt","2025-12-30",,Gate,Instantiation gate,"Evan Thomas Kotler",Project I integration,"No-bypass predicates","Instantiation fails if any bypass occurs: F1 J_c≠0; F2 K depends on ρ_c(t); F3 coupling not factoring through J; F4 derivative bypass via conjugation of differential ops.",Proven,"A pairing class is Not Instantiable if it cannot forbid F1–F4 structurally.",DOC-NFC-0016,"projectI,gate,failure_modes,no_bypass","L1-L8",":contentReference[oaicite:28]{index=28}","Used as predicate in E.3 classification."
+NFC_FullIndex,Edge,EDGE-ARC1-01,"Paper II depends on Paper I",NFC Arc I,"Death of NFC.txt","2025-12-29",,Edge,Dependency graph,"Evan Thomas Kotler",Reader Map plan,"Dependency order","Dependency order is Paper I → Paper VI (implies II depends on I).",Proven,,"DOC-NFC-0001","dependency,graph","L100-L103",":contentReference[oaicite:29]{index=29}","Edge records are for graph reconstruction."
+NFC_FullIndex,Edge,EDGE-ARC1-02,"Paper III depends on Papers I–II",NFC Arc I,"Death of NFC.txt","2025-12-29",,Edge,Dependency graph,"Evan Thomas Kotler",Reader Map plan,"Dependency order","Dependency order is Paper I → Paper VI (implies III depends on I–II).",Proven,,"DOC-NFC-0002","dependency,graph","L100-L103",":contentReference[oaicite:30]{index=30}","Edge records are for graph reconstruction."
+NFC_FullIndex,Edge,EDGE-ARC1-03,"Paper IV depends on Papers I–III",NFC Arc I,"Death of NFC.txt","2025-12-29",,Edge,Dependency graph,"Evan Thomas Kotler",Reader Map plan,"Dependency order","Dependency order is Paper I → Paper VI (implies IV depends on I–III).",Proven,,"DOC-NFC-0003","dependency,graph","L100-L103",":contentReference[oaicite:31]{index=31}","Edge records are for graph reconstruction."
+NFC_FullIndex,Edge,EDGE-ARC1-04,"Paper V depends on Papers I–IV",NFC Arc I,"Death of NFC.txt","2025-12-29",,Edge,Dependency graph,"Evan Thomas Kotler",Reader Map plan,"Dependency order","Dependency order is Paper I → Paper VI (implies V depends on I–IV).",Proven,,"DOC-NFC-0004","dependency,graph","L100-L103",":contentReference[oaicite:32]{index=32}","Edge records are for graph reconstruction."
+NFC_FullIndex,Edge,EDGE-ARC1-05,"Paper VI depends on Papers I–V",NFC Arc I,"Death of NFC.txt","2025-12-29",,Edge,Dependency graph,"Evan Thomas Kotler",Reader Map plan,"Dependency order","Dependency order is Paper I → Paper VI (implies VI depends on I–V).",Proven,,"DOC-NFC-0005","dependency,graph","L100-L103",":contentReference[oaicite:33]{index=33}","Edge records are for graph reconstruction."
+NFC_FullIndex,Edge,EDGE-SUCC-01,"Project D begins after NFC closure",Successor Arc,"Project D.txt","2025-12-30",,Edge,Arc transition,"Evan Thomas Kotler",Executive Summary,"D after NFC","Project D begins after NFC closure; NFC negative result is binding without protection.",Proven,,"DOC-NFC-0006","successor_arc,transition","L1-L6",":contentReference[oaicite:34]{index=34}","Encodes ‘new framework, not continuation’."
+NFC_FullIndex,Edge,EDGE-SUCC-02,"Project E continues after Project D",Successor Arc,"Project E.txt","2025-12-30",,Edge,Arc transition,"Evan Thomas Kotler",Logical continuation,"E after D","Project E is framed as logical continuation options after Project D; classification program is one valid continuation.",Proven,,"DOC-NFC-0014","successor_arc,transition","L43-L66",":contentReference[oaicite:35]{index=35}","Captures controlled continuation logic."
+NFC_FullIndex,Edge,EDGE-SUCC-03,"Project I instantiates Project E constraints on (S^8,S^7)",Successor Arc,"Project E.txt","2025-12-30",,Edge,Arc transition,"Evan Thomas Kotler",Instantiation start,"I from E.2 hypotheses","Project I starts with geometry-to-E.2 dictionary on (S^8,S^7) as instantiation of E.2 hypotheses.",Proven,,"DOC-NFC-0015","successor_arc,instantiation","L12-L20",":contentReference[oaicite:36]{index=36}","Defines the 'instantiation program' start."
+```
+
+If you want, I can also emit a **second CSV** that is just an **edge list** (`from_id,to_id,relation,weight`) for direct import into Neo4j / NetworkX—but the file above already contains everything needed to reconstruct both the document catalog and the dependency graph.
+
+Sure
+
+Here’s the **edge-list CSV** (`from_id,to_id,relation,weight,notes`) you can save as `NFC_edges.csv` and import directly into **Neo4j / Gephi / NetworkX**.
+
+```csv
+from_id,to_id,relation,weight,notes
+DOC-NFC-0002,DOC-NFC-0001,depends_on,1.0,"Paper II depends on Paper I (series order)."
+DOC-NFC-0003,DOC-NFC-0001,depends_on,1.0,"Paper III depends on Paper I (series order)."
+DOC-NFC-0003,DOC-NFC-0002,depends_on,1.0,"Paper III depends on Paper II (series order)."
+DOC-NFC-0004,DOC-NFC-0001,depends_on,1.0,"Paper IV depends on Papers I–III (series order)."
+DOC-NFC-0004,DOC-NFC-0002,depends_on,1.0,"Paper IV depends on Papers I–III (series order)."
+DOC-NFC-0004,DOC-NFC-0003,depends_on,1.0,"Paper IV depends on Papers I–III (series order)."
+DOC-NFC-0005,DOC-NFC-0001,depends_on,1.0,"Paper V depends on Papers I–IV (series order)."
+DOC-NFC-0005,DOC-NFC-0002,depends_on,1.0,"Paper V depends on Papers I–IV (series order)."
+DOC-NFC-0005,DOC-NFC-0003,depends_on,1.0,"Paper V depends on Papers I–IV (series order)."
+DOC-NFC-0005,DOC-NFC-0004,depends_on,1.0,"Paper V depends on Papers I–IV (series order)."
+DOC-NFC-0006,DOC-NFC-0001,depends_on,1.0,"Paper VI depends on Papers I–V (series order)."
+DOC-NFC-0006,DOC-NFC-0002,depends_on,1.0,"Paper VI depends on Papers I–V (series order)."
+DOC-NFC-0006,DOC-NFC-0003,depends_on,1.0,"Paper VI depends on Papers I–V (series order)."
+DOC-NFC-0006,DOC-NFC-0004,depends_on,1.0,"Paper VI depends on Papers I–V (series order)."
+DOC-NFC-0006,DOC-NFC-0005,depends_on,1.0,"Paper VI depends on Papers I–V (series order)."
+DOC-NFC-0007,DOC-NFC-0001,packages,0.9,"Death of NFC specifies monograph packaging including Paper I."
+DOC-NFC-0007,DOC-NFC-0002,packages,0.9,"Death of NFC specifies monograph packaging including Paper II."
+DOC-NFC-0007,DOC-NFC-0003,packages,0.9,"Death of NFC specifies monograph packaging including Paper III."
+DOC-NFC-0007,DOC-NFC-0004,packages,0.9,"Death of NFC specifies monograph packaging including Paper IV."
+DOC-NFC-0007,DOC-NFC-0005,packages,0.9,"Death of NFC specifies monograph packaging including Paper V."
+DOC-NFC-0007,DOC-NFC-0006,packages,0.9,"Death of NFC specifies monograph packaging including Paper VI."
+DOC-NFC-0009,DOC-NFC-0008,governance_refines,0.8,"Structure-not-prose enforces vocabulary locks against NFC-current posture."
+DOC-NFC-0010,DOC-NFC-0011,referee_hardens,0.95,"Hostile referee pass provides compressed gate phrasing for Appendix X."
+DOC-NFC-0010,LEM-B4-0001,defines,0.95,"Hostile referee pass defines Lemma B4."
+DOC-NFC-0010,GATE-X-TLTAU,defines,0.95,"Hostile referee pass defines TL_tau gate."
+DOC-NFC-0010,GATE-B4-A,defines,0.95,"Hostile referee pass defines B4.A gate."
+DOC-NFC-0012,DOC-NFC-0010,attacks,0.7,"Referee simulation motivates compression/compute anchors; not a logical dependency."
+DOC-NFC-0013,DOC-NFC-0012,threat_model_from,0.8,"Next Steps operationalizes the hostile referee model."
+DOC-NFC-0017,DOC-NFC-0013,derived_from,0.85,"Short computed note is the top execution unit in Next Steps."
+DOC-NFC-0014,DOC-NFC-0006,successor_after,1.0,"Project D begins after NFC closure (Arc transition)."
+DOC-NFC-0015,DOC-NFC-0014,continues_after,0.9,"Project E continues after Project D."
+DOC-NFC-0016,DOC-NFC-0015,instantiates,0.95,"Project I instantiates Project E constraints on (S^8,S^7)."
+CL-A2.3,CL-A2.2,replaces,1.0,"Patchwise triality locking replaces retired global Z3 collapse."
+CL-A3.3,CL-A3.2,replaces,1.0,"Encoding language replaces retired embedding-in-R9 overclaim."
+CL-A4.2,GATE-X-TLTAU,requires_gate,1.0,"Any E8-root/lattice realization is quarantined behind TL_tau PASS."
+LEM-B4-0001,GATE-B4-A,requires_gate,1.0,"Lemma B4 PASS/FAIL hinges on defect-only condition B4.A."
+GATE-B4-A,FM-M3,blocks,0.9,"B4.A is designed to prevent derivative-bypass (M3)."
+GATE-X-TLTAU,MOD-E8,activates,0.9,"TL_tau PASS activates optional E8 lattice reconstruction module (if included)."
+PI-M,GATE-X-TLTAU,related_gate,0.6,"Project I boundary block gate is downstream-adjacent to triality clutching structure."
+```
+
+If you want this to be maximally “production DS,” I can also emit:
+
+* a **nodes CSV** (`id,label,type,arc,doc_status,tags`) so you can load nodes+edges cleanly, and
+* a **NetworkX starter snippet** (just a few lines) to ingest and visualize the dependency DAG.
+
+Ok, sounds good.
+
+Got it — here are the two deliverables:
+
+## 1) `NFC_nodes.csv` (nodes table)
+
+```csv
+id,label,type,arc,doc_status,tags
+DOC-NFC-0001,"Paper I — Geometry & Existence",Document,"NFC Arc I",FROZEN,"paper,arc1"
+DOC-NFC-0002,"Paper II — Structural Selectivity",Document,"NFC Arc I",FROZEN,"paper,arc1"
+DOC-NFC-0003,"Paper III — Explicit Realizations",Document,"NFC Arc I",FROZEN,"paper,arc1"
+DOC-NFC-0004,"Paper IV — Dynamics & Stability",Document,"NFC Arc I",FROZEN,"paper,arc1"
+DOC-NFC-0005,"Paper V — Emergence & Effective Structure",Document,"NFC Arc I",FROZEN,"paper,arc1"
+DOC-NFC-0006,"Paper VI — Failure & No-Go Tests",Document,"NFC Arc I",FROZEN,"paper,arc1,no_go"
+DOC-NFC-0007,"Death of NFC — Packaging Plan + Arc Closure",Document,"NFC Arc I",COMPLETE,"governance,packaging"
+DOC-NFC-0008,"NFC — current 12-29-25",Document,"NFC Arc I",CURRENT,"notes,posture"
+DOC-NFC-0009,"Structure not prose",Document,"NFC Arc I",ACTIVE,"notes,corrections"
+DOC-NFC-0010,"Hostile referee pass of B4 and Appendix X",Document,"NFC Arc I",ACTIVE,"referee_armor,pass_fail"
+DOC-NFC-0011,"Appendix X",Document,"NFC Arc I",ACTIVE,"appendix,torus,triality"
+DOC-NFC-0012,"Grok the hostile referee",Document,"Successor Arc",ACTIVE,"referee_sim,threat_model"
+DOC-NFC-0013,"Next Steps",Document,"Successor Arc",ACTIVE,"plan,execution"
+DOC-NFC-0014,"Project D",Document,"Successor Arc",ACTIVE,"projectD,protection"
+DOC-NFC-0015,"Project E",Document,"Successor Arc",ACTIVE,"projectE,classification"
+DOC-NFC-0016,"Project I",Document,"Successor Arc",FROZEN,"projectI,instantiation"
+DOC-NFC-0017,"Short Note — Index of Twisted Dirac Operators on (S^8)",Document,"Successor Arc",FROZEN,"short_note,index,computed_anchor"
+CL-A2.2,"Claim A2.2 — Global Z3 quotient collapse (legacy)",Claim,"NFC Arc I",,"triality,Z3,retired"
+CL-A2.3,"Claim A2.3 — Patchwise triality locking (replacement)",Claim,"NFC Arc I",,"triality,patchwise,replacement"
+CL-A3.2,"Claim A3.2 — Embedding S15 into R9 (legacy)",Claim,"NFC Arc I",,"embedding,R9,retired"
+CL-A3.3,"Claim A3.3 — Encoding in 9D (replacement)",Claim,"NFC Arc I",,"encoding,boundary_data,replacement"
+CL-A4.2,"Claim A4.2 — E8 root/lattice realization (conditional)",Claim,"NFC Arc I",,"E8,conditional,quarantined"
+GATE-X-TLTAU,"Gate — TL_tau (cyclic triality clutching)",Gate,"NFC Arc I",,"triality,clutching_map,gate"
+GATE-B4-A,"Gate — B4.A (defect-only K; no derivative bypass)",Gate,"NFC Arc I",,"multiplicity,defect_only,gate"
+LEM-B4-0001,"Lemma B4 — multiplicity diagonalization PASS/FAIL",Lemma,"NFC Arc I",,"multiplicity,pass_fail,lemma"
+FM-M3,"Failure Mode M3 — derivative-bypass mechanism",FailureMode,"NFC Arc I",,"bypass,derivative_terms,failure_mode"
+MOD-E8,"Module — Optional E8 lattice reconstruction",Module,"NFC Arc I",,"E8,module,conditional"
+PI-M,"Project I gate — boundary block M (PASS/FAIL)",Gate,"Successor Arc",,"projectI,boundary_block,gate"
+```
+
+## 2) NetworkX starter snippet (ingest + quick checks)
+
+```python
+import pandas as pd
+import networkx as nx
+
+# Paths (adjust as needed)
+NODES_CSV = "NFC_nodes.csv"
+EDGES_CSV = "NFC_edges.csv"
+
+nodes = pd.read_csv(NODES_CSV)
+edges = pd.read_csv(EDGES_CSV)
+
+# Build a directed graph
+G = nx.DiGraph()
+
+# Add nodes with attributes
+for _, r in nodes.iterrows():
+    G.add_node(
+        r["id"],
+        label=r.get("label", ""),
+        type=r.get("type", ""),
+        arc=r.get("arc", ""),
+        doc_status=r.get("doc_status", ""),
+        tags=r.get("tags", ""),
+    )
+
+# Add edges with attributes
+for _, r in edges.iterrows():
+    G.add_edge(
+        r["from_id"],
+        r["to_id"],
+        relation=r.get("relation", ""),
+        weight=float(r.get("weight", 1.0)),
+        notes=r.get("notes", ""),
+    )
+
+# Basic QA
+print("Nodes:", G.number_of_nodes())
+print("Edges:", G.number_of_edges())
+
+# Check for dangling edge endpoints (edge references missing from nodes table)
+missing = set()
+for u, v in G.edges():
+    if u not in G.nodes: missing.add(u)
+    if v not in G.nodes: missing.add(v)
+if missing:
+    print("WARNING: missing node records for:", sorted(missing))
+
+# Topological order if DAG (for depends_on-style graphs)
+if nx.is_directed_acyclic_graph(G):
+    topo = list(nx.topological_sort(G))
+    print("Topological order sample:", topo[:15])
+else:
+    print("Graph is not a DAG (expected if you include 'attacks', 'refines', etc.).")
+
+# Optional: subgraph only the strict dependency edges
+dep_edges = [(u, v) for u, v, d in G.edges(data=True) if d.get("relation") == "depends_on"]
+G_dep = G.edge_subgraph(dep_edges).copy()
+print("Dependency-only edges:", G_dep.number_of_edges())
+print("Dependency-only DAG:", nx.is_directed_acyclic_graph(G_dep))
+```
+
+If you want, I can also add:
+
+* a **`relation` filter map** (which relations should count as “hard dependencies” vs “soft links”), and
+* a **DAG-only export** (`NFC_edges_depends_on.csv`) for clean build ordering.
+
+Yes, please
+
+Here you go — two “production-ready” artifacts:
+
+## 1) Relation filter map (`NFC_relation_map.csv`)
+
+```csv
+relation,class,include_in_build_dag,include_in_logic_dag,default_weight,direction_semantics,description
+depends_on,hard,true,true,1.0,"A depends_on B means A requires B to be understood/used safely","Primary build-order dependency for papers/sections."
+requires_gate,hard,false,true,1.0,"Claim/Module requires Gate means Gate must PASS before Claim/Module can be activated","Quarantine mechanism (e.g., E8 module behind TL_tau)."
+requires,hard,false,true,0.95,"Entity requires another entity as a prerequisite","Generic prerequisite relation (non-build-order)."
+defines,hard,false,true,0.95,"Document defines Gate/Lemma/Schema","Definition authority; logic dependency, not build order."
+replaces,hard,false,true,1.0,"Replacement supersedes legacy claim","Governance constraint: do not cite retired claim once replaced."
+blocks,hard,false,true,0.9,"Gate/Condition blocks failure mode","Safety/robustness constraint relation."
+instantiates,hard,true,true,0.95,"Project instantiates a framework/module","Build-order relevant if instantiation depends on upstream spec."
+packages,soft,true,false,0.9,"Packaging doc includes artifact in compiled output","Compilation ordering; not logical dependency."
+governance_refines,soft,false,true,0.8,"Doc refines posture/vocabulary of another doc","Editorial governance; not required for build."
+referee_hardens,soft,false,true,0.95,"Referee pass hardens phrasing/gates for target content","Strengthens presentation; not conceptual prerequisite."
+derived_from,soft,true,false,0.85,"Artifact derived from plan/notes","Provenance; may matter for traceability."
+threat_model_from,soft,false,false,0.8,"Plan is motivated by referee sim (threat model)","Contextual provenance only."
+attacks,soft,false,false,0.7,"Referee sim attacks a target artifact","Contextual; not a dependency."
+successor_after,soft,true,false,1.0,"Successor arc begins after closure of prior arc","Chronological/organizational transition."
+continues_after,soft,true,false,0.9,"Continuation relation between successor projects","Chronological/organizational transition."
+activates,soft,false,true,0.9,"Gate activates optional module","Activation edge; only meaningful once Gate PASS is asserted."
+related_gate,soft,false,false,0.6,"Two gates are adjacent/related but not equivalent","Non-binding association."
+```
+
+**How to use it**
+
+* **Build DAG (manuscript ordering):** `include_in_build_dag == true`
+* **Logic DAG (claim activation / quarantine / no-go):** `include_in_logic_dag == true`
+
+---
+
+## 2) DAG-only edge export (`NFC_edges_depends_on.csv`)
+
+```csv
+from_id,to_id,relation,weight,notes
+DOC-NFC-0002,DOC-NFC-0001,depends_on,1.0,"Paper II depends on Paper I (series order)."
+DOC-NFC-0003,DOC-NFC-0001,depends_on,1.0,"Paper III depends on Paper I (series order)."
+DOC-NFC-0003,DOC-NFC-0002,depends_on,1.0,"Paper III depends on Paper II (series order)."
+DOC-NFC-0004,DOC-NFC-0001,depends_on,1.0,"Paper IV depends on Papers I–III (series order)."
+DOC-NFC-0004,DOC-NFC-0002,depends_on,1.0,"Paper IV depends on Papers I–III (series order)."
+DOC-NFC-0004,DOC-NFC-0003,depends_on,1.0,"Paper IV depends on Papers I–III (series order)."
+DOC-NFC-0005,DOC-NFC-0001,depends_on,1.0,"Paper V depends on Papers I–IV (series order)."
+DOC-NFC-0005,DOC-NFC-0002,depends_on,1.0,"Paper V depends on Papers I–IV (series order)."
+DOC-NFC-0005,DOC-NFC-0003,depends_on,1.0,"Paper V depends on Papers I–IV (series order)."
+DOC-NFC-0005,DOC-NFC-0004,depends_on,1.0,"Paper V depends on Papers I–IV (series order)."
+DOC-NFC-0006,DOC-NFC-0001,depends_on,1.0,"Paper VI depends on Papers I–V (series order)."
+DOC-NFC-0006,DOC-NFC-0002,depends_on,1.0,"Paper VI depends on Papers I–V (series order)."
+DOC-NFC-0006,DOC-NFC-0003,depends_on,1.0,"Paper VI depends on Papers I–V (series order)."
+DOC-NFC-0006,DOC-NFC-0004,depends_on,1.0,"Paper VI depends on Papers I–V (series order)."
+DOC-NFC-0006,DOC-NFC-0005,depends_on,1.0,"Paper VI depends on Papers I–V (series order)."
+```
+
+If you want, I can also give you a **second DAG export** for the **logic-only graph** (e.g., `requires_gate`, `replaces`, `blocks`, `defines`) so you can visualize “what activates what” separately from “what gets read first.”
+
+Sure.
+
+Absolutely — here’s the **logic-only DAG export** (gates, replacements, blocking relations, and definition authority), saved as `NFC_edges_logic.csv`.
+
+```csv
+from_id,to_id,relation,weight,notes
+CL-A2.3,CL-A2.2,replaces,1.0,"Patchwise triality locking supersedes retired global Z3 collapse."
+CL-A3.3,CL-A3.2,replaces,1.0,"Encoding language supersedes retired embedding-in-R9 overclaim."
+CL-A4.2,GATE-X-TLTAU,requires_gate,1.0,"Any E8-root/lattice realization is quarantined behind TL_tau PASS."
+MOD-E8,GATE-X-TLTAU,requires_gate,1.0,"Optional E8 lattice module requires TL_tau PASS to activate."
+GATE-X-TLTAU,MOD-E8,activates,0.9,"If TL_tau passes, E8 lattice reconstruction module may be activated."
+LEM-B4-0001,GATE-B4-A,requires_gate,1.0,"Lemma B4 PASS/FAIL hinges on defect-only condition B4.A."
+GATE-B4-A,FM-M3,blocks,0.9,"B4.A is designed to prevent derivative-bypass failure mode (M3)."
+DOC-NFC-0010,GATE-X-TLTAU,defines,0.95,"Hostile referee pass defines TL_tau gate wording."
+DOC-NFC-0010,GATE-B4-A,defines,0.95,"Hostile referee pass defines B4.A gate wording."
+DOC-NFC-0010,LEM-B4-0001,defines,0.95,"Hostile referee pass defines Lemma B4 wording."
+DOC-NFC-0010,MOD-E8,defines,0.7,"Hostile referee pass defines the conditional E8 module boundary (activation semantics)."
+DOC-NFC-0009,CL-A3.2,retires,0.9,"Structure-not-prose explicitly retires embedding-in-R9 language."
+DOC-NFC-0009,CL-A3.3,governance_refines,0.8,"Structure-not-prose enforces encode-not-embed vocabulary for replacement claim."
+DOC-NFC-0006,CL-A2.2,forbids_revival,0.95,"Terminal evaluation forbids resurrecting retired Z3-collapse claims under fixed assumptions."
+DOC-NFC-0006,CL-A3.2,forbids_revival,0.95,"Terminal evaluation forbids resurrecting retired embedding claims under fixed assumptions."
+PI-M,GATE-X-TLTAU,related_gate,0.6,"Project I boundary block gate is adjacent to clutching/triality structure but not equivalent."
+```
+
+If you want a clean import into Neo4j as two relationship types (HARD vs SOFT), tell me whether you want me to **collapse relation labels** into `{HARD,SOFT}` plus `relation_raw`, or keep the fine-grained relations as-is.
+
+Now, I'd like you to synthesize the entire body of work into a coherent paper.
+
+According to a document from **December 31, 2025**, the corpus is explicitly being treated as a **closed investigation under fixed assumptions**, with later material allowed to **restrict or eliminate earlier claims**, and with **Paper VI** serving as a terminal, binary **survival/termination** evaluation (no rescue moves).
+
+Below is a single, coherent **synthesis paper** that integrates **Papers I–VI + Appendix X + the hostile-referee compression + Projects D/E/I** into one referee-facing narrative.
+
+---
+
+# Nested Fibrational Cosmology and Its Closure: Construction, Viability Filters, Terminal No-Go, and a Minimal Post-NFC Inversion via Protected Persistence
+
+**Author:** Evan Thomas Kotler (as attributed throughout the corpus)
+
+## Abstract
+
+Nested Fibrational Cosmology (NFC) is developed as a nested geometric/representation-theoretic architecture and evaluated under a deliberately strict methodology: all major claims are enumerated in a normative Claim Ledger; legacy overclaims are retired; and the program terminates cleanly if no internally viable realization exists under fixed assumptions. The core geometric identification is stabilized by replacing heuristic “triality collapse” language with an associated-bundle formulation: the canonical half-spin sphere bundle over (S^8) has total space diffeomorphic to (S^{15}). Crucially, this geometric fact is explicitly guarded against illegitimate inference: it does not imply stability, emergence, or physical realization.
+
+The NFC arc proceeds in six stages: existence and geometric consistency (Paper I), structural selectivity (Paper II), explicit realizations (Paper III), stability as a viability filter (Paper IV), constrained emergence of effective descriptions (Paper V), and a terminal adversarial no-go evaluation (Paper VI). Appendix X contributes earned rank-8 torus data and quarantines any (E_8) reconstruction behind an explicit PASS/FAIL gate requiring true cyclic triality on discriminant cosets; pair-locking alone does not activate the (E_8) module.
+
+After NFC’s closure, Project D introduces a minimal “failure inversion”: add **protection** via a discrete computable invariant (canonically a twisted Dirac index) to show that robust stability can coexist with nontrivial organization without fine tuning—while maintaining explicit non-claims of phenomenology or unification. Projects E and I organize classification and instantiation gates, including a single operator-level PASS/FAIL test on ((S^8,S^7)) based on a spectral mixing block (M=\Pi_{>0}\rho_+(t)\Pi_{\le 0}).
+
+---
+
+## 1. Scope, posture, and what this paper is
+
+This synthesis paper does **not** argue that NFC is physically correct, observationally adequate, or “a theory of everything.” It documents a disciplined arc: build a geometric framework, constrain it, test it against dynamics and emergence criteria, and then enforce a **binary terminal verdict** under fixed assumptions.
+
+A governing methodological commitment is that the NFC corpus is meant to be read in order, because later papers can **restrict or eliminate** earlier claims; skipping the sequence invalidates interpretation. A second governance commitment is that all major claims are enumerated in a **normative Claim Ledger** with statuses (proven/conditional/replaced/retired), and later text must not contradict it.
+
+---
+
+## 2. Governance mechanics: freezing, ledgers, and falsifiability
+
+### 2.1 Claim Ledger as a hard interface
+
+The corpus explicitly elevates the Claim Ledger to a *normative* object: “later text must not contradict it,” and any future claim must either be included with a status or explicitly labeled conjectural.
+
+### 2.2 Terminal evaluation in Paper VI
+
+Paper VI’s role is adversarial: it is “deliberately negative-facing,” allowed to state no-go criteria and incompatibilities, and **forbidden** from “rescue moves” (no new structure, no relaxed assumptions, no ad hoc extensions). The closure section emphasizes that further work cannot retroactively weaken the criteria without abandoning the analyzed framework.
+
+---
+
+## 3. NFC Part I: the geometric core, corrected and stabilized
+
+### 3.1 Foundational geometry
+
+The Claim Ledger fixes as “Proven” the existence of the octonionic Hopf fibration (S^7\to S^{15}\to S^8).
+
+### 3.2 The flagship identification: half-spin sphere bundle total space is (S^{15})
+
+A core correction is the replacement of “triality collapse” heuristics with an associated-bundle formulation: for the canonical (\mathrm{Spin}(9)\to \mathrm{Spin}(9)/\mathrm{Spin}(8)\cong S^8), the associated half-spin sphere bundle has total space diffeomorphic to (S^{15}) (via (\mathrm{Spin}(9)/\mathrm{Spin}(7)\cong S^{15})).
+
+### 3.3 Dual-chiral structure and the retirement of the global (\mathbb Z_3) quotient
+
+The dual half-spin bundles over (S^8) are treated as standard and “Proven.” The legacy claim that a *global free* (\mathbb Z_3) quotient collapses the chiral structure is explicitly “Retired,” with the reason that no free global action is supplied and fixed strata invalidate the claim.
+
+The replacement is **patchwise triality locking**: triality is implemented locally (as a constraint glued by transition data), not as a global quotient, and this is explicitly framed to respect obstruction theory (no illegal “global unit section” assumptions).
+
+### 3.4 A mandatory guardrail against over-inference
+
+The corpus requires at least one explicit sentence of the form: the (S^{15}) identification is a supporting geometric result and **does not** imply dynamical stability, emergence, or physical realization. This synthesis adopts that guardrail as binding.
+
+### 3.5 “Encoding” replaces “embedding”
+
+The corpus explicitly retires any “low-dimensional embedding” rhetoric and replaces it with a **holographic/encoding** stance: boundary data on the (S^8) soliton maps to equivalence classes of higher-dimensional geometric structure, and the correspondence need not be injective.
+
+---
+
+## 4. NFC Part II: dynamics, emergence, and why nothing is “derived”
+
+### 4.1 Paper IV: dynamics as a viability filter, not phenomenology
+
+Paper IV is framed as the point where NFC “earns physical credibility without yet committing to phenomenology,” asking whether nested structures are dynamically meaningful or collapse under reasonable (minimal) dynamics. It is explicitly **not** a prediction paper and must avoid Standard Model dynamics and observational fits. The allowed tone is “admits,” “permits,” “is stable under,” and stability is conditional rather than inevitable.
+
+### 4.2 Paper V: emergence as constrained effective description (selection, not universality)
+
+The emergence stance is tightened: “Emergence” means a coarse-grained effective description compatible with stability constraints and without introducing new fundamental degrees of freedom; it explicitly forbids premature moves like particle-spectrum assignment, Standard Model mapping, Lorentz invariance assumptions, or fitting data. Paper V narrows “possible physics,” not “actual physics,” and forbids Standard Model matching or claims of derivation/inevitability.
+
+---
+
+## 5. NFC Paper VI: survival vs termination (binary)
+
+Paper VI defines NFC’s endpoint as a binary: **restricted survival** (as a constraint-generating architecture) or **termination** (no viable realization exists under fixed assumptions). Termination conditions are explicit: NFC fails if all dynamically viable configurations trivialize structure, if all structurally rich ones are unstable, if no persistent effective description exists, etc.; and this failure is not an invitation to “rescue” the framework under the same assumptions. The closure emphasizes that this completes a transition from speculative construction to scientific evaluation by making internal falsifiability real.
+
+---
+
+## 6. Appendix X: torus data earned; (E_8) quarantined behind a named gate
+
+Appendix X contributes a disciplined separation:
+
+1. **Earned:** explicit (T^8) torus data attached to the chiral (\mathrm{Spin}(8)) boundary structure.
+2. **Quarantined:** an (E_8) reconstruction module that becomes valid only if a clutching gate (TL_\tau) passes.
+3. **Referee-proofing:** no (T^8\Rightarrow E_8) inference without the named PASS/FAIL gate.
+
+### 6.1 The gate (TL_\tau): cyclic triality on discriminant cosets
+
+The hostile-referee compression defines (TL_\tau) as requiring a genuine 3-cycle (v\mapsto s\mapsto c\mapsto v) at the discriminant coset level; pair-locking like (\rho_v(t)\cong \rho_s(t)) does **not** force cyclic triality and therefore does not activate the (E_8) module.
+
+### 6.2 If (TL_\tau) passes: explicit gluing and a mechanical reconstruction protocol
+
+Appendix X specifies an explicit coset-graph gluing subgroup (H_\tau={(a,\tau(a))}) and a candidate glued lattice (\Lambda_{\mathrm{cand}}(\tau)), together with a PASS protocol (even unimodular rank 8; 240 norm-2 roots; reflection closure/Weyl group). This is presented as a test module: if the coset-level triality/gluing map cannot be exhibited, the (E_8) reconstruction is “not executed.”
+
+---
+
+## 7. Instantiation discipline on ((S^8,S^7)): Project I’s single-operator gate
+
+Project I reduces a key instantiation question to evaluating one operator:
+[
+M=\Pi_{>0},\rho_+(t),\Pi_{\le 0},
+]
+the “danger block” measuring whether clutching creates unstable boundary components from allowed data.
+
+* If (M=0): proceed with a clean structural exclusion proof (no tuning).
+* If (M\neq 0): extract an explicit no-go (the resonance trap persists unless an additional geometric constraint is paid and labeled).
+
+Project I formalizes this in a boundary spectral decomposition and makes explicit how (M) is the whole game: (M=0) is equivalent to (\rho) being block-lower-triangular with no (\le0\to>0) leak.
+
+---
+
+## 8. Post-NFC: Project D as a minimal failure inversion (protection)
+
+Project D begins **after** NFC’s closure and treats NFC’s negative result as binding: without protected structure, robust stability generically forces weak coupling and collapse into trivial configurations. Project D introduces exactly one new structural ingredient:
+
+> **Protection:** a discrete, computable invariant preserved under admissible evolution that obstructs relaxation to trivial attractors.
+
+Protection is realized canonically via index/characteristic data: a nonzero twisted Dirac index (\mathcal I) enforces a persistent protected subspace, and then coupling is constrained so strong interaction can coexist with robust stability (protected neutral sector + dissipative complement + structurally constrained interface).
+
+Project D’s non-claims are explicit: it does not claim physical interpretation, phenomenology, unification, or “resurrection” of NFC’s ambitions; it is presented as a closed classification framework about conditions for persistence under robustness.
+
+---
+
+## 9. Multiplicity survival audit (B4): how “extra richness” can fail
+
+The hostile-referee compression isolates the only three ways multiplicity ((|\mathcal I|=k>1)) can kill survivability: forced interface mixing, trace/constraint mixing, or a derivative-bypass mechanism where the interface operator is built via conjugation/derivation of differential boundary operators, producing unavoidable derivative terms that re-open forbidden leaks.
+
+The key structural rule is **Condition B4.A**: the interface defect operator must be defined pointwise at the representation/transition level, not via conjugation/commutator constructions that force derivative terms. Lemma B4 then gives a binary verdict: multiplicity survives iff defect-only construction holds; otherwise FAIL is structural and unavoidable.
+
+---
+
+## 10. What the unified program achieves (and what it definitively does not)
+
+### Achievements (internal, structural)
+
+* A corrected and defensible geometric backbone: (S^7\to S^{15}\to S^8) plus the associated-bundle (S^{15}) identification, without illicit global quotient or embedding claims.
+* A disciplined, referee-proof claim/status system that prevents narrative drift (Claim Ledger + governance rule).
+* A well-defined viability pipeline: dynamics as a filter (Paper IV) and emergence as constrained effective description (Paper V), explicitly forbidding Standard Model matching and observational claims at these stages.
+* A terminal falsifiability statement: NFC either survives narrowly as a constraint architecture or terminates cleanly under fixed assumptions (Paper VI).
+* A modular “optional test” approach to (E_8): the (E_8) reconstruction is quarantined behind an explicit cyclic-triality gate and a mechanical pass protocol, preventing illegitimate inference.
+
+### Non-claims (explicitly excluded)
+
+* No claim that NFC “explains” or “derives” physics; no Standard Model identifications; no observational fits; no inevitability claims. (Paper IV and Paper V framing rules.)
+* No physical interpretation is claimed for Project D; it is a post-NFC structural classification framework, not a theory of the world.
+
+---
+
+## 11. Recommended presentation package (if you want this paper to be the “one coherent artifact”)
+
+The corpus already endorses a “Reader Map” and a packaging posture designed to prevent selective citation and to make the closure explicit: read in order; Paper VI overrides interpretive ambiguity; do not reframe as fixable “under the same assumptions.”
+
+A practical execution move consistent with the corpus is to circulate (i) this synthesis paper + (ii) the Claim Ledger appendix + (iii) Appendix X + (iv) Project I’s (M)-gate and B4 audit blocks as explicitly optional, pass/fail modules.
+
+---
+
+## Appendix A (included by reference): NFC Claim Ledger v1
+
+**Purpose & governance:** enumerates central claims, classifies their status, and is normative for the corpus (no contradictions allowed).
+
+Key examples used in this synthesis:
+
+* A1.1 Octonionic Hopf fibration (S^7\to S^{15}\to S^8): **Proven**.
+* A1.2 Half-spin sphere bundle total space (S^{15}): **Proven**; replaces collapse heuristics.
+* A2.2 Global (\mathbb Z_3) quotient collapse: **Retired** (no free global action; fixed strata).
+* A9.1 Global triality locking requires a unit section / Spin(7) reduction: **Proven**; obstructed for canonical (S^8), enforcing patchwise formulation.
+
+---
+
+If you want the *same paper* in a submission-ready format, tell me whether you prefer **LaTeX** (article class) or **Markdown** (pandoc-ready). I can output it in that format with theorem/lemma environments for the gates (TL_(\tau), (M), B4.A) exactly as they appear in the hostile-referee compression.
+
+Let's do what you recommend.
+
+According to a document from **December 31, 2025**, the NFC arc is designed to be **referee-auditable and terminal**: it enforces a **binary survival/termination verdict**, explicitly forbids “rescue” language under fixed assumptions, and treats the Claim Ledger as **normative** (later text must not contradict it).
+
+Below is the **submission-ready LaTeX master file** that implements the packaging I recommended: **one coherent synthesis paper** with appendices that (i) lock scope/guardrails, (ii) embed the core geometric lemma + mandatory guardrail sentence, (iii) present Appendix X as an **optional, gated module** via (TL_\tau), and (iv) include the Project I instantiation gate (M) and the Project D “protected persistence” inversion as clearly **post-NFC**. Key load-bearing statements are grounded directly in your documents (see the provenance bullets after the TeX).
+
+---
+
+## `NFC_Master_Synthesis.tex` (paste into a file and compile)
+
+```tex
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+
+\title{\textbf{Nested Fibrational Cosmology and Its Closure:}\\
+Geometry, Viability Filters, Terminal No-Go, and a Minimal Successor via Protected Persistence}
+\author{Evan Thomas Kotler}
+\date{December 31, 2025}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper synthesizes the completed NFC arc (Papers I--VI) into a single referee-facing narrative: (i) a corrected and globally well-defined geometric backbone over $S^8$ (octonionic Hopf fibration; half-spin sphere bundle realization of $S^{15}$), (ii) a disciplined interpretive posture implemented by a normative Claim Ledger and vocabulary locks, (iii) dynamics and emergence treated strictly as viability filters rather than phenomenology, and (iv) a terminal binary verdict: \emph{restricted survival} of NFC as a constraint-generating framework or \emph{termination} under fixed assumptions.
+We also package two explicitly optional extensions: Appendix X as a gated $(E_8)$ test-module activated only by a specific cyclic-triality clutching condition $TL_\tau$, and a post-NFC successor framework (Project D) that minimally inverts NFC's collapse chain by introducing \emph{protection} via a discrete computable invariant.
+\end{abstract}
+
+\section{Scope and non-negotiable guardrails}
+\subsection{What this paper is (and is not)}
+NFC is treated here as a \emph{constrained geometric--dynamical framework} whose value lies in restriction, elimination, and clarification, not unification or inevitability. This paper does not claim physical interpretation, empirical adequacy, or derivation of known laws.
+
+\subsection{Mandatory guardrail sentence (must appear at least once)}
+\begin{quote}
+\emph{This identification is a supporting geometric result and does not by itself imply dynamical stability, emergence, or physical realization.}
+\end{quote}
+
+\section{Governance: Claim Ledger, freezing, and falsifiability}
+\subsection{The Claim Ledger is normative}
+All core claims are classified (Proven / Conditional / Replaced / Retired). The ledger is normative: later text must not contradict it; any new claim must be either added with a status or explicitly labeled conjectural.
+
+\subsection{Paper VI is terminal under fixed assumptions}
+Paper VI enforces a binary outcome. If NFC fails, that failure is final under the assumptions held fixed and does not invite rescue through extension, reinterpretation, or appeal to unknown physics.
+
+\section{NFC Part I: geometric core (corrected and stabilized)}
+\subsection{Foundational geometry}
+We take as fixed input the octonionic Hopf fibration $S^7 \to S^{15} \to S^8$.
+
+\subsection{Canonical half-spin sphere bundle realization of $S^{15}$}
+Earlier heuristic ``triality collapse'' language is replaced by a global associated-bundle formulation.
+
+\begin{lemma}[Canonical half-spin realization over $S^8$]
+Let
+\[
+P \;=\; \mathrm{Spin}(9)\longrightarrow \mathrm{Spin}(9)/\mathrm{Spin}(8)\cong S^8
+\]
+be the canonical principal $\mathrm{Spin}(8)$-bundle over $S^8$.
+Let $\Delta_+$ denote the positive chiral half-spin representation of $\mathrm{Spin}(8)$ and let
+\[
+E_+ \;=\; P\times_{\mathrm{Spin}(8)} \Delta_+
+\]
+be the associated real rank-8 bundle. Then the unit sphere bundle $S(E_+)$ is diffeomorphic to $S^{15}$:
+\[
+S(E_+) \;\cong\; \mathrm{Spin}(9)/\mathrm{Spin}(7) \;\cong\; S^{15}.
+\]
+\end{lemma}
+
+\begin{remark}[Explicit negations]
+No global unit section, no free $\mathbb{Z}_3$ quotient, and no low-dimensional embedding is assumed in this formulation.
+\end{remark}
+
+\subsection{Triality: from retired global collapse to patchwise locking}
+A legacy ``global $\mathbb{Z}_3$ quotient collapse'' claim is retired. The replacement is \emph{patchwise triality locking}: local graph-type constraints glued by transition data, consistent with obstruction theory (no illicit global section assumptions).
+
+\section{NFC Part II: dynamics and emergence as viability filters}
+\subsection{Dynamics (Paper IV) as a viability filter}
+Dynamics is used only to ask whether nested structure can be stable under minimal admissible evolution. The correct vocabulary is ``permits,'' ``admits,'' ``stable under,'' and ``fails if'' --- not ``predicts'' or ``derives.''
+
+\subsection{Emergence (Paper V) as constrained effective description}
+``Emergence'' means coarse-grained effective description compatible with the framework's stability/compatibility constraints, with explicit exclusions against premature phenomenology.
+
+\section{Paper VI: terminal survival vs termination}
+\subsection{Restricted survival criterion}
+NFC survives only if a configuration exists that is dynamically stable under minimal evolution, retains structural richness, and admits a finite persistent effective description. Even then, survival is narrow: NFC is a constraint-generating architecture, not a complete explanatory theory.
+
+\subsection{Termination criterion}
+If any global no-go condition holds (e.g., all viable configurations trivialize nested structure; all rich ones are unstable; no persistent effective description exists), NFC is terminated under fixed assumptions and the failure does not invite rescue.
+
+\section{Appendix X as an optional gated module: torus data vs $(E_8)$}
+\subsection{$T^8$ is earned; $(E_8)$ is quarantined}
+The corpus distinguishes (i) Cartan-compatible rank-8 torus data from the $(S^8,S^7)$ instantiation, and (ii) an \emph{optional} $(E_8)$ attempt that is conditional on a single explicit PASS/FAIL gate.
+
+\subsection{The PASS/FAIL gate $TL_\tau$ (cyclic triality clutching)}
+\begin{definition}[$TL_\tau$ (Executable cyclic-triality clutching condition)]
+Let $t:\Sigma\to \mathrm{Spin}(8)$ be the equatorial clutching map for $S^8=U_N\cup U_S$ with overlap $\Sigma\simeq S^7$.
+Let $\rho_v,\rho_s,\rho_c$ be the three 8-dimensional irreps (vector and two chiral spinors).
+We say $t$ implements cyclic triality ($TL_\tau$) if the induced identification on discriminant cosets $\{v,s,c\}\subset D_4^\ast/D_4$ is the 3-cycle $v\mapsto s\mapsto c\mapsto v$ (not merely a two-channel equality).
+\end{definition}
+
+\begin{remark}[Activation rule]
+Unless $TL_\tau$ is explicitly satisfied, the $(E_8)$ gluing module is \emph{not activated} and cannot be used as load-bearing content.
+\end{remark}
+
+\section{Instantiation module (Project I): the single-operator gate $M$}
+\subsection{Why Project I is separate and citable}
+Project I is packaged as a self-contained instantiation module on the canonical testbed $(S^8,\Sigma=S^7)$: it documents a failed route, isolates a successful mechanism, and freezes as a complete mathematical unit.
+
+\subsection{The single operator you must evaluate}
+Let $\mathcal{H}_\Sigma=L^2(S^7;E_+)$ carry the relevant boundary operator $\mathcal{A}_\Sigma$ with spectral projectors $\Pi_{\le 0}$ and $\Pi_{>0}$.
+Write $\rho_+(t)$ for the clutching action on boundary data. Define the spectral-mixing block
+\[
+M \;=\; \Pi_{>0}\,\rho_+(t)\,\Pi_{\le 0}.
+\]
+\begin{itemize}[leftmargin=*]
+\item If $M=0$, proceed with the structural exclusion proof (no tuning).
+\item If $M\neq 0$, extract an explicit no-go: leakage into the unstable channel persists unless an additional geometric constraint is paid and labeled.
+\end{itemize}
+
+\section{Post-NFC minimal inversion (Project D): protected persistence}
+\subsection{NFC's binding negative control}
+Completed NFC establishes a binding diagnosis: \emph{without protected structure}, robust stability generically forces weak coupling and collapse into trivial configurations.
+
+\subsection{The minimal new ingredient: protection}
+\begin{definition}[Protection]
+Protection is a discrete, computable invariant preserved under admissible evolution that obstructs complete relaxation to trivial attractors (canonically realized via index/characteristic data such as a twisted Dirac index $\mathcal{I}$).
+\end{definition}
+
+\subsection{Explicit non-claims}
+Project D is not a theory of physics: no physical interpretation, no phenomenology, no derivation of laws/scales/observables, and no resurrection of NFC ambitions.
+
+\section{Classification and gating downstream (Project E)}
+Project E.3 classifies protected pairings by a layered invariant scheme and uses Project I as an explicit instantiation filter: a pairing class is instantiable only if it supports triality-defect / no-bypass interface constraints (with a concrete obstruction checklist F1--F4).
+
+\section{Conclusion: what survived, what failed, what is legitimately claimed}
+NFC's enduring output is a referee-auditable map of constraints: which kinds of nested geometric structure can coexist with stability and bounded emergence \emph{under fixed assumptions}, and which cannot. Appendix X remains strictly optional and gated. The post-NFC successor (Project D) is a separate, completed framework that inverts one specific failure mode minimally by introducing protection.
+
+\appendix
+
+\section{Appendix A: Claim Ledger excerpt (normative governance object)}
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Claim & Status & One-line meaning \\
+\midrule
+A1.1 & Proven & Octonionic Hopf fibration $S^7\to S^{15}\to S^8$ exists.\\
+A1.2 & Proven & Half-spin sphere bundle $S(E_+)$ over $S^8$ has total space $S^{15}$.\\
+A2.2 & Retired & No global free $\mathbb{Z}_3$ ``collapse'' is assumed or allowed.\\
+A2.3 & Replaced/Current & Patchwise triality locking (constraint + gluing), not quotient.\\
+A9.1 & Proven & Global triality locking requires a unit section / Spin(7) reduction.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Appendix X (executive): torus data and the $TL_\tau$ gate}
+This appendix is explicitly modular: $T^8$ is claimed as torus data; $(E_8)$ reconstruction is an optional test module activated only by $TL_\tau$.
+
+\section{Appendix I (executive): $M$-gate statement and pass/fail logic}
+This appendix is the instantiation ``one-operator'' decision point for the canonical testbed $(S^8,S^7)$.
+
+\end{document}
+```
+
+---
+
+## Provenance map for the LaTeX (so you can audit every “load-bearing” line)
+
+* **Claim Ledger is normative** (“later text must not contradict it”):
+* **Mandatory guardrail sentence** (must appear at least once):
+* **Terminal no-rescue termination language** (Paper VI):
+* **“Cannot retroactively weaken criteria” closure rule** (Paper VI):
+* **(TL_\tau) gate definition + “FAIL under pair-locking only” + “E8 not activated”**:
+* **Project I “single operator” (M=\Pi_{>0}\rho_+(t)\Pi_{\le0}) and verdict logic**:
+* **Project D: “minimal change,” protection definition, and explicit non-claims**:
+* **Short computed anchor note: index vanishes + freeze confirmation**:
+* **Project I frozen/module packaging rationale**:
+
+---
+
+If you want the “professional submission bundle” exactly as I’d ship it to a referee/editor, the next step is to split this into **four compiled PDFs** (same style, shared macros):
+
+1. `NFC_Synthesis.pdf` (main paper, ~10–15 pages)
+2. `AppendixA_ClaimLedger.pdf` (full ledger verbatim)
+3. `AppendixX_Torus_and_E8_Gate.pdf` (gated module, theorem/definition style)
+4. `ProjectI_Instantiation_Module.pdf` (boxed axioms, theorem I.15, (M)-gate, failure modes F1–F4)
+
+Say **“Split into the 4-PDF bundle”** and I’ll output the LaTeX sources for each file (cleanly cross-referenced, with shared `macros.tex`).
+
+Split into the 4-PDF bundle
+
+According to a document from **December 29, 2025**, the **authoritative packaging** is: Front Matter → Part I (Papers I–III) → Part II (Papers IV–VI, terminal) → Appendices, with **Appendix A = Claim Ledger (v1)** treated as a governance artifact. 
+Since I can’t compile LaTeX into PDFs directly in this chat environment, I’m giving you the **4-file LaTeX bundle** (plus a shared `macros.tex`) that you can compile into the four PDFs exactly as specified.
+
+---
+
+## Folder layout
+
+```
+NFC_BUNDLE/
+  macros.tex
+  NFC_Synthesis.tex
+  AppendixA_ClaimLedger.tex
+  AppendixX_Torus_E8_Gate_and_B4.tex
+  ProjectI_Instantiation_Module.tex
+```
+
+## Build commands
+
+From inside `NFC_BUNDLE/`:
+
+```bash
+latexmk -pdf NFC_Synthesis.tex
+latexmk -pdf AppendixA_ClaimLedger.tex
+latexmk -pdf AppendixX_Torus_E8_Gate_and_B4.tex
+latexmk -pdf ProjectI_Instantiation_Module.tex
+```
+
+---
+
+# 0) `macros.tex`
+
+```tex
+% macros.tex — shared formatting for the 4-PDF bundle
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{microtype}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+
+% Lists
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+
+% Status badges (ledger)
+\newcommand{\Proven}{\textbf{Proven}}
+\newcommand{\Conditional}{\textbf{Conditional}}
+\newcommand{\Replaced}{\textbf{Replaced}}
+\newcommand{\Retired}{\textbf{Retired}}
+\newcommand{\Mandatory}{\textbf{Mandatory}}
+
+% Guardrail sentence (must appear at least once in the main paper)
+\newcommand{\GuardrailSentence}{%
+\begin{quote}
+\emph{This identification is a supporting geometric result and does not by itself imply dynamical stability, emergence, or physical realization.}
+\end{quote}
+}
+```
+
+---
+
+# 1) `NFC_Synthesis.tex` (Main synthesis paper)
+
+```tex
+\documentclass[11pt]{article}
+\input{macros.tex}
+
+\title{\textbf{Nested Fibrational Cosmology and Its Closure:}\\
+Construction, Viability Filters, Terminal No-Go, and a Minimal Successor via Protected Persistence}
+\author{Evan Thomas Kotler}
+\date{December 31, 2025}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper synthesizes the completed NFC arc (Papers I--VI) into a single referee-facing narrative: a corrected geometric backbone over $S^8$, a disciplined claim-governance system (Claim Ledger + retired-language locks), dynamics and emergence treated strictly as viability filters, and a terminal binary verdict in Paper VI (survival only as a restricted framework, or termination under fixed assumptions).
+We also package two explicitly optional modules: Appendix X as a gated $(E_8)$ reconstruction attempt activated only by an explicit cyclic-triality clutching condition $TL_\tau$, and a post-NFC successor pivot (Protected Persistence) that minimally inverts NFC's collapse mechanism by introducing protection via computable invariants.
+\end{abstract}
+
+\section{Front disclaimer (locked posture)}
+This document presents a completed investigation of Nested Fibrational Cosmology under fixed assumptions. It does not claim physical completeness, empirical adequacy, or inevitability. All claims are internal, conditional, and subject to explicit failure criteria. No conclusions beyond those stated are implied.
+
+\section{How to read this corpus (Reader Map compressed)}
+Later papers depend on earlier ones and may restrict or eliminate claims introduced previously. Read in order: Papers I $\rightarrow$ VI. Paper VI is terminal.
+
+\section{Non-negotiable guardrail}
+\GuardrailSentence
+
+\section{Arc overview (what each paper does)}
+\begin{itemize}
+  \item \textbf{Paper I:} existence and geometric consistency (architecture defined; no dynamics).
+  \item \textbf{Paper II:} structural selectivity (constraints eliminate possibilities).
+  \item \textbf{Paper III:} explicit realizations (toy constructions + explicit failure modes).
+  \item \textbf{Paper IV:} dynamics and stability as viability filter (no phenomenology).
+  \item \textbf{Paper V:} emergence as constrained effective description (selection, not derivation).
+  \item \textbf{Paper VI:} adversarial failure/no-go; binary endpoint under fixed assumptions.
+\end{itemize}
+
+\section{Geometric core (corrected and stabilized)}
+We take as foundational the octonionic Hopf fibration $S^7 \to S^{15} \to S^8$ and the associated-bundle realization of the $S^{15}$ total space via half-spin sphere bundle language rather than heuristic ``triality collapse.''
+
+\begin{lemma}[Half-spin sphere bundle realization of $S^{15}$ (architecture-level)]
+Let
+\[
+P = \mathrm{Spin}(9)\rightarrow \mathrm{Spin}(9)/\mathrm{Spin}(8)\cong S^8
+\]
+be the canonical principal $\mathrm{Spin}(8)$-bundle. Let $\Delta_+$ be the positive half-spin representation and set
+\[
+E_+ = P\times_{\mathrm{Spin}(8)} \Delta_+.
+\]
+Then the unit sphere bundle $S(E_+)$ is diffeomorphic to $S^{15}$ (canonically, via $\mathrm{Spin}(9)/\mathrm{Spin}(7)\cong S^{15}$).
+\end{lemma}
+
+\begin{remark}[Explicit negations]
+This formulation does not assume (i) a global unit section, (ii) any free global $\mathbb{Z}_3$ quotient, or (iii) any ``embedding $S^{15}$ into $\mathbb{R}^9$'' claim.
+\end{remark}
+
+\section{Triality discipline: from retired global collapse to patchwise locking}
+A legacy ``global $\mathbb{Z}_3$ collapse'' claim is retired. The replacement is \emph{patchwise triality locking}: local constraints glued by transition data, consistent with obstruction-theoretic limitations.
+
+\section{Dynamics and emergence as filters (no phenomenology)}
+\subsection{Dynamics (Paper IV)}
+Dynamics is used only as a viability filter: which structurally admissible configurations survive minimal admissible evolution? No cosmological/observational claims are made; stability language is conditional.
+
+\subsection{Emergence (Paper V)}
+Emergence means compatibility with a constrained effective description under stability/decoupling criteria. It does not mean derivation of the Standard Model, uniqueness, inevitability, or observational fit.
+
+\section{Paper VI: terminal survival vs termination (binary)}
+Under fixed assumptions, the outcome must be one of:
+\begin{enumerate}
+  \item \textbf{Restricted survival:} NFC survives only as a sharply limited constraint architecture.
+  \item \textbf{Honest failure:} NFC admits no configuration compatible with minimal requirements; the framework is abandoned or radically revised.
+\end{enumerate}
+No third option; no rescue language.
+
+\section{Optional modules (bundled as separate PDFs)}
+\begin{itemize}
+  \item \textbf{Appendix X PDF:} earned $T^8$ torus data; $(E_8)$ module strictly gated by $TL_\tau$; includes the B4 multiplicity audit.
+  \item \textbf{Project I PDF:} instantiation on $(S^8,S^7)$ reduced to a single operator block $M=\Pi_{>0}\rho_+(t)\Pi_{\le 0}$ with PASS/FAIL semantics.
+  \item \textbf{Post-NFC pivot:} Protected Persistence (Project D) introduces one new ingredient—protection via computable invariants—and explicitly disclaims phenomenology.
+\end{itemize}
+
+\section{Conclusion}
+The enduring contribution is a referee-auditable constraint map: what combinations of structure, stability, and bounded emergence are compatible under fixed assumptions, and what combinations are ruled out. Optional modules are explicitly gated; successor work is declared a new framework rather than an extension.
+
+\end{document}
+```
+
+---
+
+# 2) `AppendixA_ClaimLedger.tex` (full ledger PDF)
+
+```tex
+\documentclass[11pt]{article}
+\input{macros.tex}
+
+\title{\textbf{Appendix A — NFC Claim Ledger (v1)}\\(Normative Governance Artifact)}
+\author{Evan Thomas Kotler}
+\date{December 31, 2025}
+
+\begin{document}
+\maketitle
+
+\section{Purpose and rule}
+This ledger is \textbf{normative}: later text must not contradict it. Each claim is classified as \Proven, \Conditional, \Replaced, or \Retired.
+
+\section{Legend}
+\begin{itemize}
+  \item \Proven: established mathematical statement or explicitly proved within the corpus.
+  \item \Conditional: allowed only with explicit conditions; not asserted unconditionally.
+  \item \Replaced: supersedes a legacy claim; legacy wording must not reappear.
+  \item \Retired: explicitly false/unsupported as stated; must not reappear.
+\end{itemize}
+
+\section{Foundational geometry}
+\begin{tabular}{@{}p{0.12\linewidth}p{0.16\linewidth}p{0.66\linewidth}@{}}
+\toprule
+ID & Status & Statement \\
+\midrule
+A1.1 & \Proven &
+Octonionic Hopf fibration exists: $S^7 \to S^{15} \to S^8$. \\
+A1.2 & \Proven &
+Half-spin sphere bundle realization: for canonical $P\to S^8$, the associated half-spin unit sphere bundle has total space diffeomorphic to $S^{15}$. \\
+\bottomrule
+\end{tabular}
+
+\section{Dual-chiral / triality structure}
+\begin{tabular}{@{}p{0.12\linewidth}p{0.16\linewidth}p{0.66\linewidth}@{}}
+\toprule
+ID & Status & Statement \\
+\midrule
+A2.1 & \Proven &
+Over $S^8$ there exist two inequivalent rank-8 real sphere bundles corresponding to the two half-spin representations. \\
+A2.2 & \Retired &
+Legacy: A global free $\mathbb{Z}_3$ quotient collapses dual-chiral fibers into a single effective fiber. \\
+A2.3 & \Replaced &
+Patchwise triality locking: triality implemented locally and glued by transition data (constraint/graph formulation), not via global free quotient. \\
+\bottomrule
+\end{tabular}
+
+\section{Dimensionality and encoding vs embedding}
+\begin{tabular}{@{}p{0.12\linewidth}p{0.16\linewidth}p{0.66\linewidth}@{}}
+\toprule
+ID & Status & Statement \\
+\midrule
+A3.1 & \Conditional &
+``Effective 15D'' refers to associated-bundle total space structure (not dynamics). \\
+A3.2 & \Retired &
+Legacy: ``Embedding $S^{15}$ into $\mathbb{R}^9$'' (false as stated). \\
+A3.3 & \Conditional &
+Encoding (not embedding): higher structure may be represented via boundary/associated-bundle data on an $S^8$ soliton in a $9$D bulk; requires an explicit operator/dictionary. \\
+\bottomrule
+\end{tabular}
+
+\section{Torus and $(E_8)$}
+\begin{tabular}{@{}p{0.12\linewidth}p{0.16\linewidth}p{0.66\linewidth}@{}}
+\toprule
+ID & Status & Statement \\
+\midrule
+A4.1 & \Conditional &
+A rank-8 torus $T^8$ appears as Cartan-compatible torus data attached to the chiral $\mathrm{Spin}(8)$ boundary structure (explicit construction required). \\
+A4.2 & \Conditional &
+Full $(E_8)$ root/lattice realization is \emph{not} automatic from $T^8$ and is quarantined behind the explicit gate $TL_\tau$ (Appendix X). \\
+\bottomrule
+\end{tabular}
+
+\section{Dynamics and emergence (explicitly bounded)}
+\begin{tabular}{@{}p{0.12\linewidth}p{0.16\linewidth}p{0.66\linewidth}@{}}
+\toprule
+ID & Status & Statement \\
+\midrule
+A5.1 & \Conditional &
+Dynamical stability is a filter, not assumed; must be proved/ruled out under specified evolution rules. \\
+A6.1 & \Conditional &
+Effective descriptions may exist only under stability + admissible coarse-graining; non-unique and not guaranteed. \\
+A6.2 & \Retired/Not-Claimed &
+Any claim of Standard Model recovery, gravity recovery, observational matching, inevitability, or uniqueness is out of scope unless explicitly proved later. \\
+\bottomrule
+\end{tabular}
+
+\section{Global no-go gates}
+\begin{tabular}{@{}p{0.12\linewidth}p{0.16\linewidth}p{0.66\linewidth}@{}}
+\toprule
+ID & Status & Statement \\
+\midrule
+A7.1 & \Proven &
+A global canonical triality locking requires a global unit section (equivalently a $\mathrm{Spin}(7)$ reduction); obstructed in the canonical $S^8$ case, forcing patchwise formulation. \\
+A7.2 & \Retired &
+Free $\mathbb{Z}_3$ quotient as foundation is not allowed. \\
+\bottomrule
+\end{tabular}
+
+\section{Mandatory guardrail sentence (verbatim)}
+\GuardrailSentence
+
+\end{document}
+```
+
+---
+
+# 3) `AppendixX_Torus_E8_Gate_and_B4.tex` (Appendix X + B4 PDF)
+
+```tex
+\documentclass[11pt]{article}
+\input{macros.tex}
+
+\title{\textbf{Appendix X — Torus Data, Triality, and an Optional $(E_8)$ Module}\\
+\textbf{+ Appendix B4 — Multiplicity Survival Audit (Hostile-Referee Form)}}
+\author{Evan Thomas Kotler}
+\date{December 31, 2025}
+
+\begin{document}
+\maketitle
+
+\section{Scope and non-claims}
+This appendix records (i) earned rank-8 torus data and (ii) a strictly optional $(E_8)$ reconstruction module.
+\textbf{Non-claim:} $T^8$ existence does \emph{not} imply $(E_8)$ without an explicit lattice identification and Weyl/reflection closure check.
+
+\section{Earned torus data}
+Fix $S^8=U_N\cup U_S$ with overlap $\Sigma\simeq S^7$ and the canonical principal $\mathrm{Spin}(8)$-bundle $P\to S^8$ induced from $\mathrm{Spin}(9)/\mathrm{Spin}(8)\cong S^8$.
+Let $\Sigma^\pm$ be the half-spin representations and $E_\pm=P\times_{\mathrm{Spin}(8)}\Sigma^\pm\to S^8$.
+
+\begin{lemma}[Torus data (earned)]
+There is a canonically defined compact torus
+\[
+T^8 := T^4_+\times T^4_-,
+\]
+where $T^4_\pm$ are the images of a maximal torus of $\mathrm{Spin}(8)$ under the two half-spin representations.
+\textbf{Non-claim:} this does not identify $(E_8)$; it is torus data only.
+\end{lemma}
+
+\section{The single PASS/FAIL gate for $(E_8)$ activation}
+Let $t:\Sigma\to\mathrm{Spin}(8)$ be the equatorial clutching map.
+Let $\rho_v,\rho_s,\rho_c$ be the three 8-dimensional irreps (vector and two chiral spinors).
+
+\begin{definition}[$TL_\tau$ (Executable cyclic-triality clutching)]
+We say $t$ implements cyclic triality iff the induced identification on discriminant cosets
+$\{v,s,c\}\subset D_4^\ast/D_4$ realizes the 3-cycle $v\mapsto s\mapsto c\mapsto v$.
+\end{definition}
+
+\begin{lemma}[Pair-locking does not activate $(E_8)$]
+Pair-locking (e.g.\ $\rho_v(t)\cong\rho_s(t)$) does not force cyclic triality on $\{v,s,c\}$.
+Therefore, unless $TL_\tau$ passes, the $(E_8)$ module is \emph{inactive}.
+\end{lemma}
+
+\section{Optional module: $(E_8)$ lattice reconstruction protocol (only if $TL_\tau$ passes)}
+\textbf{Activation rule:} The following is executed only if $TL_\tau$ is explicitly verified.
+
+\begin{proposition}[Protocol sketch]
+If $TL_\tau$ holds, then a standard gluing construction yields a candidate rank-8 even unimodular lattice
+$\Lambda_{\mathrm{cand}}$.
+The module is declared \textbf{PASS} iff:
+\begin{enumerate}
+  \item $\Lambda_{\mathrm{cand}}$ is even unimodular of rank 8;
+  \item it has 240 norm-2 roots (root-count check);
+  \item it is closed under reflections in norm-2 roots (Weyl/reflection closure).
+\end{enumerate}
+If any check fails or if $TL_\tau$ is not proven, the module is \textbf{not executed}.
+\end{proposition}
+
+\begin{remark}[Rank-16 confusion]
+Rank-16 may appear as a bundle rank (e.g.\ $E_+\oplus E_-$) but this does not imply a $T^{16}$.
+The torus data remains rank 8.
+\end{remark}
+
+% --------------------- B4 ------------------------
+
+\section{Appendix B4 — Multiplicity Survival Audit (hostile-referee form)}
+\subsection{Objective}
+If $|\mathcal I|=k>1$ survivors exist, test whether multiplicity is a true moduli label or a leak channel.
+Output is binary: PASS or FAIL.
+
+\subsection{Setup}
+Assume
+\[
+\mathcal H_P^{(k)} \cong V\otimes\mathbb F^k
+\]
+and a canonical realization target
+\[
+W^{(k)}=\bigoplus_{j=1}^k W_{\mathrm{Bott}}
+\quad\Rightarrow\quad
+\ker(D_{W^{(k)}})\cong \ker(D_{W_{\mathrm{Bott}}})\otimes\mathbb F^k.
+\]
+Coupling target:
+\[
+C=C_0\otimes I_k,\qquad C_0=\mathcal E\circ \mathcal K\circ J.
+\]
+
+\subsection{Failure modes}
+\begin{itemize}
+  \item (M1) Interface mixing: $C=C_0\otimes M$ with $M\neq I_k$ and mixing is forced.
+  \item (M2) Trace mixing: the constraint/trace cannot be enforced copywise.
+  \item (M3) Derivative-bypass: $\mathcal K$ constructed via conjugation/derivation of differential boundary operators forces derivative terms that mix multiplicity.
+\end{itemize}
+
+\subsection{The key condition}
+\begin{definition}[B4.A (No derivative/conjugation construction of $\mathcal K$)]
+$\mathcal K$ must be defined pointwise at the representation/transition level (defect operator),
+not as a commutator/conjugation involving differential operators or evolving connections.
+\end{definition}
+
+\begin{lemma}[Multiplicity diagonalization PASS/FAIL]
+Assume (i) $W^{(k)}=\bigoplus_{j=1}^k W_{\mathrm{Bott}}$ realizes $|\mathcal I|=k$ and
+(ii) coupling is defect-only with $\mathcal K$ satisfying B4.A.
+Then:
+\begin{itemize}
+  \item \textbf{PASS:} there exists an admissible representative with copywise trace splitting and $C=C_0\otimes I_k$.
+  \item \textbf{FAIL:} if B4.A is violated (derivative-bypass structurally forced), mixing cannot be gauged away.
+\end{itemize}
+\end{lemma}
+
+\subsection{Checklist}
+\begin{enumerate}
+  \item Kernel splits as $V\otimes\mathbb F^k$.
+  \item $\mathcal K$ is defect-only (B4.A).
+  \item Trace constraint splits by copy.
+  \item Multiplicity rotations act as gauge ($U(k)$ action) without changing coupling class.
+\end{enumerate}
+
+\end{document}
+```
+
+---
+
+# 4) `ProjectI_Instantiation_Module.tex` (Project I PDF)
+
+```tex
+\documentclass[11pt]{article}
+\input{macros.tex}
+
+\title{\textbf{Project I — Instantiation Module on $(S^8,S^7)$}\\
+(Operator-Level PASS/FAIL Gate and No-Bypass Discipline)}
+\author{Evan Thomas Kotler}
+\date{December 31, 2025}
+
+\begin{document}
+\maketitle
+
+\section{Purpose (module contract)}
+This document is a self-contained instantiation module: it binds abstract constraints to the explicit testbed $(S^8,\Sigma=S^7)$ and reduces viability to a checkable operator block.
+It does not claim phenomenology; it does not resurrect NFC ambition.
+
+\section{Geometric testbed}
+Let $S^8=U_N\cup U_S$ with overlap $\Sigma\simeq S^7$ and clutching map $t:\Sigma\to \mathrm{Spin}(8)$.
+Let $E_+$ denote the half-spin associated bundle data used for boundary states.
+
+\section{Boundary spectral split and the single block $M$}
+Let $\mathcal{H}_\Sigma=L^2(S^7;E_+)$ carry a boundary operator $\mathcal A_\Sigma$ with spectral projectors
+$\Pi_{\le 0}$ and $\Pi_{>0}$.
+Let $\rho_+(t)$ be the induced clutching action on boundary data.
+
+\begin{definition}[Danger block]
+\[
+M := \Pi_{>0}\,\rho_+(t)\,\Pi_{\le 0}.
+\]
+\end{definition}
+
+\begin{lemma}[PASS/FAIL gate]
+\begin{itemize}
+  \item \textbf{PASS:} $M=0$ (no leakage from allowed channel into unstable channel). Proceed with exclusion theorem without tuning.
+  \item \textbf{FAIL:} $M\neq 0$. The leakage obstruction must be extracted explicitly; any fix requires an added constraint that is paid for and labeled.
+\end{itemize}
+\end{lemma}
+
+\begin{remark}[Equivalent structural form]
+$M=0$ is equivalent to $\rho_+(t)$ being block-lower-triangular with respect to the spectral split
+$\mathcal H_\Sigma = \mathcal H_{\le 0}\oplus \mathcal H_{>0}$, i.e.\ no $\le 0\to >0$ mixing.
+\end{remark}
+
+\section{No-bypass discipline (failure predicates)}
+Instantiation is disallowed if any bypass mechanism is structurally forced.
+The canonical list of bypass predicates is treated as a checklist (use as a filter in classification work).
+
+\begin{itemize}
+  \item \textbf{F1:} Nonzero coupling into forbidden channel at the interface.
+  \item \textbf{F2:} Interface defect depends on excluded channel representation data (illegal dependency).
+  \item \textbf{F3:} Coupling does not factor through the allowed interface map (non-modular coupling).
+  \item \textbf{F4:} Derivative-bypass: interface defect constructed via conjugation/commutator with differential operators forces time-derivative leakage.
+\end{itemize}
+
+\section{Multiplicity integration note (handoff to B4)}
+If $|\mathcal I|=k>1$ is present, multiplicity survival is audited by Appendix B4:
+PASS iff defect-only construction prevents derivative-bypass mixing and constraints split copywise.
+
+\section{Module close}
+Project I is complete when $M$ is evaluated (or bounded) for the chosen clutching class and the PASS/FAIL verdict is recorded with the extracted obstruction (if FAIL).
+
+\end{document}
+```
+
+---
+
+## What this bundle matches in your governance docs
+
+* The “locked packaging” structure and mandated appendices (Claim Ledger + encoding/embedding discipline) come from the packaging plan. 
+* The Reader Map requirement (“read in order; later papers can restrict/eliminate earlier claims”) is explicit. 
+* The terminal Paper VI posture (“survival or termination; no third option; avoid rescue language”) is codified. 
+* The “Protected Persistence” successor framing (NFC as negative control; protection as minimal inversion) is written as the post-arc summary. 
+
+---
+
+If you want, I can also generate a **`manifest.csv`** (files, version hashes, build commands, and a dependency graph) so the bundle is archivally clean and machine-indexable.
+
+Yes, please
+
+Here’s an archivally clean **`manifest.csv`** you can drop into `NFC_BUNDLE/`. Because I can’t actually write files or compute hashes in your environment from here, the `sha256` and `bytes` fields are left as `TBD`—I’ve included a one-liner script at the end that will populate them automatically.
+
+## `manifest.csv`
+
+```csv
+bundle_name,bundle_version,created_date,file_path,file_type,role,format,depends_on,build_command,sha256,bytes,notes
+NFC_BUNDLE,1.0.0,2025-12-31,macros.tex,tex,Shared macros,LaTeX,,,"TBD","TBD","Imported by all other .tex files via \\input{macros.tex}."
+NFC_BUNDLE,1.0.0,2025-12-31,NFC_Synthesis.tex,tex,Main synthesis paper,LaTeX,macros.tex,"latexmk -pdf NFC_Synthesis.tex","TBD","TBD","Primary narrative; references optional modules but stays self-contained."
+NFC_BUNDLE,1.0.0,2025-12-31,AppendixA_ClaimLedger.tex,tex,Appendix A (governance ledger),LaTeX,macros.tex,"latexmk -pdf AppendixA_ClaimLedger.tex","TBD","TBD","Normative claim-status object (Proven/Conditional/Replaced/Retired)."
+NFC_BUNDLE,1.0.0,2025-12-31,AppendixX_Torus_E8_Gate_and_B4.tex,tex,Appendix X + B4 (gated module + audit),LaTeX,macros.tex,"latexmk -pdf AppendixX_Torus_E8_Gate_and_B4.tex","TBD","TBD","Includes TL_tau gate + E8 activation semantics + B4 multiplicity survival audit."
+NFC_BUNDLE,1.0.0,2025-12-31,ProjectI_Instantiation_Module.tex,tex,Project I instantiation module,LaTeX,macros.tex,"latexmk -pdf ProjectI_Instantiation_Module.tex","TBD","TBD","Defines operator gate M = Π_{>0} ρ_+(t) Π_{≤0} with PASS/FAIL semantics."
+NFC_BUNDLE,1.0.0,2025-12-31,NFC_Synthesis.pdf,pdf,Compiled main paper,PDF,NFC_Synthesis.tex,,"TBD","TBD","Output artifact (generated)."
+NFC_BUNDLE,1.0.0,2025-12-31,AppendixA_ClaimLedger.pdf,pdf,Compiled Claim Ledger,PDF,AppendixA_ClaimLedger.tex,,"TBD","TBD","Output artifact (generated)."
+NFC_BUNDLE,1.0.0,2025-12-31,AppendixX_Torus_E8_Gate_and_B4.pdf,pdf,Compiled Appendix X + B4,PDF,AppendixX_Torus_E8_Gate_and_B4.tex,,"TBD","TBD","Output artifact (generated)."
+NFC_BUNDLE,1.0.0,2025-12-31,ProjectI_Instantiation_Module.pdf,pdf,Compiled Project I module,PDF,ProjectI_Instantiation_Module.tex,,"TBD","TBD","Output artifact (generated)."
+NFC_BUNDLE,1.0.0,2025-12-31,NFC_edges.csv,csv,Graph edges (full),CSV,,"","TBD","TBD","Edge list for full graph (build+logic+soft links)."
+NFC_BUNDLE,1.0.0,2025-12-31,NFC_nodes.csv,csv,Graph nodes,CSV,,"","TBD","TBD","Node catalog for graph imports."
+NFC_BUNDLE,1.0.0,2025-12-31,NFC_relation_map.csv,csv,Relation filter map,CSV,,"","TBD","TBD","Defines which relations belong in build DAG vs logic DAG."
+NFC_BUNDLE,1.0.0,2025-12-31,NFC_edges_depends_on.csv,csv,Build DAG edges,CSV,,"","TBD","TBD","Strict manuscript build order (depends_on only)."
+NFC_BUNDLE,1.0.0,2025-12-31,NFC_edges_logic.csv,csv,Logic DAG edges,CSV,,"","TBD","TBD","Gates/replacements/blocks/defines (activation + governance)."
+```
+
+## Hash+bytes auto-fill (recommended)
+
+Run this **from inside `NFC_BUNDLE/`** to generate a fully-populated manifest:
+
+```bash
+python - << 'PY'
+import csv, hashlib, os
+
+in_path = "manifest.csv"
+out_path = "manifest.filled.csv"
+
+def sha256_file(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+rows = []
+with open(in_path, newline="", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    fieldnames = reader.fieldnames
+    for r in reader:
+        p = r["file_path"]
+        if os.path.exists(p) and r.get("sha256") == "TBD":
+            r["sha256"] = sha256_file(p)
+        if os.path.exists(p) and r.get("bytes") == "TBD":
+            r["bytes"] = str(os.path.getsize(p))
+        rows.append(r)
+
+with open(out_path, "w", newline="", encoding="utf-8") as f:
+    w = csv.DictWriter(f, fieldnames=fieldnames)
+    w.writeheader()
+    w.writerows(rows)
+
+print("Wrote", out_path)
+PY
+```
+
+If you want, I can also add a **`manifest.json`** (same info, easier for tooling) and a **`REPRODUCIBILITY.md`** with exact build steps and expected outputs.
+
+Yes, please. Only if you think it'll help.
+
+Yes — these help. `manifest.json` is easier for tooling (scripts, CI, dashboards), and `REPRODUCIBILITY.md` makes the bundle “referee/archival safe” (someone else can rebuild the PDFs and verify hashes without guessing).
+
+## `manifest.json`
+
+```json
+{
+  "bundle_name": "NFC_BUNDLE",
+  "bundle_version": "1.0.0",
+  "created_date": "2025-12-31",
+  "root": ".",
+  "artifacts": [
+    {
+      "path": "macros.tex",
+      "type": "tex",
+      "role": "Shared macros",
+      "format": "LaTeX",
+      "depends_on": [],
+      "build_command": null,
+      "sha256": null,
+      "bytes": null,
+      "notes": "Imported by all other .tex files via \\\\input{macros.tex}."
+    },
+    {
+      "path": "NFC_Synthesis.tex",
+      "type": "tex",
+      "role": "Main synthesis paper",
+      "format": "LaTeX",
+      "depends_on": ["macros.tex"],
+      "build_command": "latexmk -pdf NFC_Synthesis.tex",
+      "sha256": null,
+      "bytes": null,
+      "notes": "Primary narrative; references optional modules but stays self-contained."
+    },
+    {
+      "path": "AppendixA_ClaimLedger.tex",
+      "type": "tex",
+      "role": "Appendix A (governance ledger)",
+      "format": "LaTeX",
+      "depends_on": ["macros.tex"],
+      "build_command": "latexmk -pdf AppendixA_ClaimLedger.tex",
+      "sha256": null,
+      "bytes": null,
+      "notes": "Normative claim-status object (Proven/Conditional/Replaced/Retired)."
+    },
+    {
+      "path": "AppendixX_Torus_E8_Gate_and_B4.tex",
+      "type": "tex",
+      "role": "Appendix X + B4 (gated module + audit)",
+      "format": "LaTeX",
+      "depends_on": ["macros.tex"],
+      "build_command": "latexmk -pdf AppendixX_Torus_E8_Gate_and_B4.tex",
+      "sha256": null,
+      "bytes": null,
+      "notes": "Includes TL_tau gate + E8 activation semantics + B4 multiplicity survival audit."
+    },
+    {
+      "path": "ProjectI_Instantiation_Module.tex",
+      "type": "tex",
+      "role": "Project I instantiation module",
+      "format": "LaTeX",
+      "depends_on": ["macros.tex"],
+      "build_command": "latexmk -pdf ProjectI_Instantiation_Module.tex",
+      "sha256": null,
+      "bytes": null,
+      "notes": "Defines operator gate M = Π_{>0} ρ_+(t) Π_{≤0} with PASS/FAIL semantics."
+    },
+
+    {
+      "path": "NFC_Synthesis.pdf",
+      "type": "pdf",
+      "role": "Compiled main paper",
+      "format": "PDF",
+      "depends_on": ["NFC_Synthesis.tex", "macros.tex"],
+      "build_command": null,
+      "sha256": null,
+      "bytes": null,
+      "notes": "Output artifact (generated)."
+    },
+    {
+      "path": "AppendixA_ClaimLedger.pdf",
+      "type": "pdf",
+      "role": "Compiled Claim Ledger",
+      "format": "PDF",
+      "depends_on": ["AppendixA_ClaimLedger.tex", "macros.tex"],
+      "build_command": null,
+      "sha256": null,
+      "bytes": null,
+      "notes": "Output artifact (generated)."
+    },
+    {
+      "path": "AppendixX_Torus_E8_Gate_and_B4.pdf",
+      "type": "pdf",
+      "role": "Compiled Appendix X + B4",
+      "format": "PDF",
+      "depends_on": ["AppendixX_Torus_E8_Gate_and_B4.tex", "macros.tex"],
+      "build_command": null,
+      "sha256": null,
+      "bytes": null,
+      "notes": "Output artifact (generated)."
+    },
+    {
+      "path": "ProjectI_Instantiation_Module.pdf",
+      "type": "pdf",
+      "role": "Compiled Project I module",
+      "format": "PDF",
+      "depends_on": ["ProjectI_Instantiation_Module.tex", "macros.tex"],
+      "build_command": null,
+      "sha256": null,
+      "bytes": null,
+      "notes": "Output artifact (generated)."
+    },
+
+    {
+      "path": "NFC_nodes.csv",
+      "type": "csv",
+      "role": "Graph nodes",
+      "format": "CSV",
+      "depends_on": [],
+      "build_command": null,
+      "sha256": null,
+      "bytes": null,
+      "notes": "Node catalog for Neo4j/NetworkX/Gephi."
+    },
+    {
+      "path": "NFC_edges.csv",
+      "type": "csv",
+      "role": "Graph edges (full)",
+      "format": "CSV",
+      "depends_on": [],
+      "build_command": null,
+      "sha256": null,
+      "bytes": null,
+      "notes": "Full edge list (build+logic+soft links)."
+    },
+    {
+      "path": "NFC_relation_map.csv",
+      "type": "csv",
+      "role": "Relation filter map",
+      "format": "CSV",
+      "depends_on": [],
+      "build_command": null,
+      "sha256": null,
+      "bytes": null,
+      "notes": "Defines which relations belong in build DAG vs logic DAG."
+    },
+    {
+      "path": "NFC_edges_depends_on.csv",
+      "type": "csv",
+      "role": "Build DAG edges",
+      "format": "CSV",
+      "depends_on": ["NFC_edges.csv", "NFC_relation_map.csv"],
+      "build_command": null,
+      "sha256": null,
+      "bytes": null,
+      "notes": "Strict manuscript build order (depends_on only)."
+    },
+    {
+      "path": "NFC_edges_logic.csv",
+      "type": "csv",
+      "role": "Logic DAG edges",
+      "format": "CSV",
+      "depends_on": ["NFC_edges.csv", "NFC_relation_map.csv"],
+      "build_command": null,
+      "sha256": null,
+      "bytes": null,
+      "notes": "Gates/replacements/blocks/defines (activation + governance)."
+    }
+  ]
+}
+```
+
+## `REPRODUCIBILITY.md`
+
+````md
+# NFC_BUNDLE Reproducibility
+
+This bundle is designed to be rebuilt and verified by third parties.
+
+## Contents (expected files)
+- `macros.tex`
+- `NFC_Synthesis.tex`
+- `AppendixA_ClaimLedger.tex`
+- `AppendixX_Torus_E8_Gate_and_B4.tex`
+- `ProjectI_Instantiation_Module.tex`
+- `manifest.csv` (or `manifest.filled.csv`)
+- `manifest.json`
+- Graph exports:
+  - `NFC_nodes.csv`
+  - `NFC_edges.csv`
+  - `NFC_relation_map.csv`
+  - `NFC_edges_depends_on.csv`
+  - `NFC_edges_logic.csv`
+
+## Build prerequisites
+- LaTeX distribution (one of):
+  - TeX Live (recommended), or MacTeX, or MiKTeX
+- `latexmk` available on PATH
+- Python 3.9+ (for manifest hashing script)
+
+### Recommended LaTeX packages
+This bundle uses common packages:
+- amsmath, amssymb, amsthm, mathtools
+- geometry
+- hyperref
+- enumitem
+- booktabs
+- microtype
+
+## Build steps (PDFs)
+Run from inside the bundle directory:
+
+```bash
+latexmk -pdf -interaction=nonstopmode -halt-on-error NFC_Synthesis.tex
+latexmk -pdf -interaction=nonstopmode -halt-on-error AppendixA_ClaimLedger.tex
+latexmk -pdf -interaction=nonstopmode -halt-on-error AppendixX_Torus_E8_Gate_and_B4.tex
+latexmk -pdf -interaction=nonstopmode -halt-on-error ProjectI_Instantiation_Module.tex
+````
+
+Expected outputs:
+
+* `NFC_Synthesis.pdf`
+* `AppendixA_ClaimLedger.pdf`
+* `AppendixX_Torus_E8_Gate_and_B4.pdf`
+* `ProjectI_Instantiation_Module.pdf`
+
+## Manifest hashing (recommended)
+
+The repository includes `manifest.csv` with `sha256` and `bytes` fields set to `TBD`.
+Run the following to generate `manifest.filled.csv`:
+
+```bash
+python - << 'PY'
+import csv, hashlib, os
+
+in_path = "manifest.csv"
+out_path = "manifest.filled.csv"
+
+def sha256_file(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+rows = []
+with open(in_path, newline="", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    fieldnames = reader.fieldnames
+    for r in reader:
+        p = r["file_path"]
+        if os.path.exists(p) and r.get("sha256") == "TBD":
+            r["sha256"] = sha256_file(p)
+        if os.path.exists(p) and r.get("bytes") == "TBD":
+            r["bytes"] = str(os.path.getsize(p))
+        rows.append(r)
+
+with open(out_path, "w", newline="", encoding="utf-8") as f:
+    w = csv.DictWriter(f, fieldnames=fieldnames)
+    w.writeheader()
+    w.writerows(rows)
+
+print("Wrote", out_path)
+PY
+```
+
+## Determinism notes
+
+PDF builds are usually stable but may differ slightly across TeX distributions (timestamps, font subsetting, object ordering).
+For strict reproducibility:
+
+* Use the same TeX distribution/version across machines.
+* Prefer building in a container (optional) or pin a TeX Live release year.
+* Hashes should be treated as "best effort" unless the environment is pinned.
+
+## Graph exports
+
+* `NFC_edges_depends_on.csv` is the manuscript build-order DAG (strict dependencies).
+* `NFC_edges_logic.csv` is the governance/activation DAG (gates, replacements, blocks, defines).
+* `NFC_edges.csv` is the full graph (includes soft links).
+
+## Quick integrity checks
+
+After compilation:
+
+* Confirm all four PDFs exist.
+* Confirm `latexmk` exited with code 0.
+* Generate `manifest.filled.csv` and confirm `sha256`/`bytes` fields are populated for all present files.
+
+```
+
+If you want one more “small but useful” file, I’d add **`README.md`** with a 10-line explanation of what each PDF is for (referee vs internal), but it’s optional.
+::contentReference[oaicite:0]{index=0}
+```
+

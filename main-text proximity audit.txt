@@ -1,0 +1,151 @@
+Run "main-text proximity audit" as mentioned in `Hostile referee pass of B4 and Appendix X.txt`. `Index and Synthesis.txt` may be helpful.
+
+According to a document from **December 31, 2025**, the **“main-text proximity audit”** means: after freezing Appendix X + B4, ensure the **main paper** contains **only the one-sentence summaries** of Appendix X and B4, and **no extra speculative prose** about *(E₈)* reconstruction or multiplicity mechanics beyond those one-liners.【turn1:15†Hostile referee pass of B4 and Appendix X.txt†L44-L48】
+
+## Audit result: **FAIL (currently)**
+
+### 1) Appendix X material is too “close” to main text
+
+**Violation A (full gate definition living in main text):** the current main-text draft includes an entire section that *defines* (TL_\tau) and adds activation remarks.【turn8:5†Index and Synthesis.txt†L28-L40】
+This is exactly what the proximity rule is trying to prevent: the gate mechanics belong in the Appendix X module PDF, not the narrative paper.
+
+**Violation B (abstract contains extra detail beyond the one-liner):** the abstract line about Appendix X currently includes “discriminant cosets” and “pair-locking alone…,” i.e., more than the permitted one-sentence summary framing.【turn8:9†Index and Synthesis.txt†L11-L15】
+
+**Required main-text replacement (the allowed one-sentence summary):**
+
+> “Our ((S^8/S^7)) instantiation canonically produces Cartan-compatible torus data ((T^8)); an ((E_8)) reconstruction is an optional module activated only if the equatorial clutching implements cyclic triality ((TL_\tau)).”【turn6:4†Hostile referee pass of B4 and Appendix X.txt†L42-L44】
+
+**Action:** delete the whole “Appendix X as an optional gated module…” section (including the (TL_\tau) definition) from the main paper, and keep only the one sentence above (e.g., in Abstract + optional-modules bullet list).
+
+---
+
+### 2) B4 multiplicity content is too “close” to main text
+
+**Violation:** the main narrative currently states **Condition B4.A** and explains what it means (“pointwise… not via conjugation… derivative terms”), which exceeds the one-sentence proximity allowance.【turn8:2†Index and Synthesis.txt†L1-L1】
+
+**Required main-text replacement (the allowed one-sentence summary):**
+
+> “Sector-B multiplicity survives iff the instantiated interface operator is defect-only (no derivative-bypass); this is audited by Lemma B4.”【turn1:15†Hostile referee pass of B4 and Appendix X.txt†L33-L35】
+
+**Action:** remove any mention of “Condition B4.A” and the derivative/conjugation discussion from the main paper; leave it inside the B4 appendix/module.
+
+---
+
+## Minimal patch list to make the audit PASS
+
+1. **Main paper (NFC_Synthesis / NFC_Master_Synthesis):**
+
+* **Remove** the Appendix-X gate definition section from the main text.【turn8:5†Index and Synthesis.txt†L28-L40】
+* **Replace** any Appendix-X abstract prose with the single allowed sentence.【turn6:4†Hostile referee pass of B4 and Appendix X.txt†L42-L44】
+* **Replace** any B4 prose (including Condition B4.A) with the single allowed sentence.【turn1:15†Hostile referee pass of B4 and Appendix X.txt†L33-L35】
+
+2. **Keep all mechanics where they belong:**
+
+* (TL_\tau) definition + activation semantics stay in Appendix X module.【turn6:4†Hostile referee pass of B4 and Appendix X.txt†L42-L44】
+* B4.A mechanics stay in B4 module; main text only points to Lemma B4 by the one-liner.【turn1:15†Hostile referee pass of B4 and Appendix X.txt†L33-L35】
+
+If you want, paste your current **NFC_Synthesis.tex** (or point me to the exact excerpt you’re using as “main text”), and I’ll return a *surgical* edit: a “delete/replace” map that converts it from FAIL → PASS without touching anything else.
+
+It may not exist. The closest thing to it would exist in `Index and Synthesis.txt`.
+
+According to a document from **2025-12-31**, the **main-text proximity audit** is simple: after freezing Appendix X + B4, the **main text must contain only the one-sentence summaries** (and **no extra** speculative or technical prose about **E₈** or **multiplicity**).【turn10:8†Hostile referee pass of B4 and Appendix X.txt†L44-L48】
+
+If the closest thing to “main text” is **`Index and Synthesis.txt`**, then the audit is:
+
+## Result on `Index and Synthesis.txt`: **FAIL (currently)**
+
+### FAIL 1 — B4 is expanded beyond the one-sentence allowance
+
+`Index and Synthesis.txt` explicitly states and explains **Condition B4.A** (“defined pointwise… not via conjugation… derivative terms”), which is exactly what the proximity rule forbids in main text.【turn9:1†Index and Synthesis.txt†L1-L1】
+
+**Required replacement (the only allowed main-text sentence near B4):**
+
+> “Sector-B multiplicity survives iff the instantiated interface operator is defect-only (no derivative-bypass); this is audited by Lemma B4.”【turn10:3†Hostile referee pass of B4 and Appendix X.txt†L46-L50】
+
+### FAIL 2 — Appendix X / E₈ is expanded beyond the one-sentence allowance
+
+The synthesis abstract includes extra Appendix-X details (“discriminant cosets”; “pair-locking alone…”), which exceeds the one-sentence “safe summary” boundary.【turn9:2†Index and Synthesis.txt†L24-L28】【turn10:11†Index and Synthesis.txt†L12-L15】
+
+**Required replacement (the only allowed main-text sentence near Appendix X):**
+
+> “Our (S^8/S^7) instantiation canonically produces Cartan-compatible torus data (T^8); an (E_8) reconstruction is an optional module activated only if the equatorial clutching implements cyclic triality (TL_\tau).”【turn10:1†Hostile referee pass of B4 and Appendix X.txt†L37-L40】
+
+### FAIL 3 — “Main paper” TeX in `Index and Synthesis.txt` carries extra gate prose
+
+If `Index and Synthesis.txt` is being treated as the shareable “main artifact,” it currently embeds extended packaging/TeX content that reiterates TL_\tau and module semantics in more than the one-liner form.【turn9:16†Index and Synthesis.txt†L42-L59】
+
+That’s not “wrong,” but it **fails the proximity rule** *if this file is the thing a referee reads as main text*.
+
+---
+
+## Minimal edit plan to make `Index and Synthesis.txt` PASS (as proxy main text)
+
+1. **Replace** any B4 explanation (Condition B4.A / derivative-bypass mechanics) with the single B4 sentence.【turn9:1†Index and Synthesis.txt†L1-L1】【turn10:3†Hostile referee pass of B4 and Appendix X.txt†L46-L50】
+
+2. **Replace** any Appendix-X/E₈ elaboration in the abstract (and elsewhere) with the single Appendix X sentence.【turn10:11†Index and Synthesis.txt†L12-L15】【turn10:1†Hostile referee pass of B4 and Appendix X.txt†L37-L40】
+
+3. **Move** the long TeX/packaging blocks (and any gate definitions) out of the “main text” view (keep them as build notes / appendix objects), if this file is what you’ll circulate as a main narrative artifact.【turn9:16†Index and Synthesis.txt†L42-L59】
+
+If you want, I can produce a **surgical “delete/replace map”** (exact paragraphs to cut + exact one-liners to paste) using the same citations, so you can implement it in under 5 minutes.
+
+As I have said in the past, "It is not about what I want, it is about what is best for the project."
+
+Agreed — and “best for the project” here is to **enforce the proximity rule even if we don’t yet have a standalone main manuscript**.
+
+So we’ll treat **`Index and Synthesis.txt` as the main-text proxy** and make it **audit-passable** by construction.
+
+## Project-lead decision
+
+**Make `Index and Synthesis.txt` a referee-safe gateway document** (not a place where any B4/X mechanics live). That means:
+
+* **Only one sentence** about **B4** (multiplicity survival), and it must be the allowed one-liner.
+* **Only one sentence** about **Appendix X / E₈**, and it must be the allowed one-liner.
+* Everything else becomes **pointers** (“see Appendix X”, “see B4”), not definitions, not conditions, not explanations.
+
+## What to change in `Index and Synthesis.txt` (surgical rules)
+
+1. **Delete/relocate** any explicit B4 content:
+
+* Remove any appearance of **“Condition B4.A”** or derivative-bypass discussion.
+* Replace with exactly this sentence (and nothing more):
+
+  > “Sector-B multiplicity survives iff the instantiated interface operator is defect-only (no derivative-bypass); this is audited by Lemma B4.”
+
+2. **Delete/relocate** any explicit Appendix X gate content:
+
+* Remove “discriminant cosets”, “pair-locking alone…”, and any gate definition prose like (TL_\tau) definitions.
+* Replace with exactly this sentence (and nothing more):
+
+  > “Our ((S^8/S^7)) instantiation canonically produces Cartan-compatible torus data ((T^8)); an ((E_8)) reconstruction is an optional module activated only if the equatorial clutching implements cyclic triality ((TL_\tau)).”
+
+3. **Move** any TeX/build scaffolding out of the “main narrative” portion:
+
+* Keep it, but put it under a clearly labeled **“Build Notes (non-narrative)”** divider so a referee doesn’t interpret it as argumentative text.
+
+## The “PASS template” to paste near the top of `Index and Synthesis.txt`
+
+Use this as the **only** place where B4/X are mentioned in the proxy main text:
+
+* **Optional Module: Appendix X (E₈ Reconstruction Gate).**
+  Our ((S^8/S^7)) instantiation canonically produces Cartan-compatible torus data ((T^8)); an ((E_8)) reconstruction is an optional module activated only if the equatorial clutching implements cyclic triality ((TL_\tau)). *(See Appendix X.)*
+
+* **Audit: B4 (Multiplicity Survival).**
+  Sector-B multiplicity survives iff the instantiated interface operator is defect-only (no derivative-bypass); this is audited by Lemma B4. *(See B4.)*
+
+That’s it. No more proximity leakage.
+
+## Next best step
+
+Once `Index and Synthesis.txt` is cleaned to **PASS**, we immediately fork a minimal **Main Text skeleton** (even 1–2 pages) that contains *only*:
+
+* executive thesis
+* claim ledger pointers
+* those two one-liners for B4/X
+* and a “what is proved vs. what is modular/optional” table of contents
+
+If you want, I’ll do the exact edit pass on the file contents in one go: I’ll output a *diff-style* “remove this paragraph / replace with this sentence” map keyed to the phrases that currently violate proximity (e.g., “Condition B4.A”, “discriminant cosets”, “TL_\tau definition”).
+
+Quick pause for context.
+
+As you may have noticed, all the text documents are previous conversations I have had with other "instances of ChatGPT." I'd like to replace these text documents (remove all the conversation about what our next steps should be) and leave *only the necessary parts*. Do you follow?
+

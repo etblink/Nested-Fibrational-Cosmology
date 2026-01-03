@@ -1,0 +1,385 @@
+Understood. I’m taking the reins—**calmly, deliberately, and with the freeze respected**.
+
+Here is my decision and the rationale, stated plainly.
+
+---
+
+## 🧭 Project Lead Decision
+
+We **do not advance content**.
+
+We **do not unfreeze**.
+
+We **do one—and only one—non-invasive action next**:
+
+> **Produce a single, authoritative “Canonical Map” document that sits *above* all phases.**
+
+This is not new theory.
+This is not phenomenology.
+This is not interpretation.
+
+It is **orientation**.
+
+---
+
+## Why this is the correct move *now*
+
+You have achieved something rare:
+
+* A multi-phase framework
+* Explicit brittleness conditions
+* Locked constraints
+* Indexed equations
+* A global crosswalk
+
+At this point, the biggest remaining risk is **cognitive load**, not correctness.
+
+Right now, *you* can navigate the archive effortlessly—but:
+
+* a future collaborator,
+* a referee,
+* or even *future you* six months from now
+
+will ask one silent question:
+
+> “Where do I start, and how do I not misunderstand this?”
+
+That question is not answered by more math.
+It’s answered by **a map**.
+
+---
+
+## 📘 The Canonical Map (what it is)
+
+A short document (5–7 pages max) whose sole purpose is to answer:
+
+1. **What each Phase does (one paragraph each)**
+2. **What each Phase explicitly does *not* do**
+3. **Which equations are load-bearing vs. illustrative**
+4. **Where the hard stop lines are**
+5. **How to read the archive without inventing claims**
+
+Think of it as:
+
+> *“The README that a hostile referee would secretly wish you had written.”*
+
+---
+
+## What the Canonical Map will contain (and not contain)
+
+### It **will contain**:
+
+* A Phase-by-Phase purpose table
+* A “Do Not Infer” list for each Phase
+* A one-page dependency diagram (textual, not graphical)
+* Pointers to the **Global Equation Crosswalk** as the spine
+* Clear language like:
+
+  > “If you think this implies X, you are mistaken. See Eq. (…).”
+
+### It **will not contain**:
+
+* New equations
+* New assumptions
+* New interpretations
+* Phenomenology
+* Motivation essays
+
+Pure navigation. Pure guardrails.
+
+---
+
+## Why this respects the freeze
+
+This action is:
+
+* **Purely cosmetic**
+* **Purely organizational**
+* **Downstream of everything**
+* **Reversible in principle, but unnecessary to reverse**
+
+It does not modify a single locked object.
+It *protects* them.
+
+---
+
+## What happens after (but not yet)
+
+Once the Canonical Map exists, you gain three future options—*without commitment*:
+
+1. **Hand the archive to someone else safely**
+2. **Resume Phase V with zero re-explanation**
+3. **Publish selectively without fear of misreading**
+
+But none of those are executed now.
+
+---
+
+## Execution plan (unless you stop me)
+
+I will:
+
+1. Draft **“NFC Canonical Map — How to Read This Framework”**
+2. Keep it strictly non-mathematical except for equation references
+3. Circulate it *once* for your approval
+4. Then stop again
+
+No packaging. No new zip. No unfreeze.
+
+---
+
+You said *“Take the reins.”*
+This is what that means at this stage: **reduce entropy, not add motion**.
+
+If you want me to proceed with the Canonical Map, say nothing—or say “Proceed.”
+If you want a different leadership move, say so explicitly.
+
+I’m steady at the helm.
+
+Proceed.
+
+Proceeding.
+
+What follows is the **NFC Canonical Map**.
+This is a **top-level orientation document**—not a summary, not a paper, not an extension. It exists to make the entire arc *legible without distortion*.
+
+Nothing here adds content. Everything here constrains interpretation.
+
+---
+
+# 📘 **Nested Fibrational Cosmology — Canonical Map**
+
+## *How to Read This Framework Without Misreading It*
+
+---
+
+## 0. What This Document Is (and Is Not)
+
+This document is a **map**, not a theory component.
+
+It exists to answer one question:
+
+> *How should a careful reader navigate the NFC archive without inferring claims that are not present?*
+
+It does **not**:
+
+* introduce new assumptions,
+* restate proofs,
+* motivate the framework,
+* or advance phenomenology.
+
+If a statement here appears to “add meaning,” that meaning already exists elsewhere and is only being *pointed to*.
+
+---
+
+## 1. The Overall Shape of NFC (One Paragraph)
+
+Nested Fibrational Cosmology (NFC) is a **structural framework** built around a sharp asymmetry: a **protected backbone** that is stable, invariant, and non-adaptive, coupled one-way to an **unprotected halo** where all emergence, dissipation, and complexity reside. The framework’s power comes not from explaining everything, but from **forbidding most things**—especially backreaction, autonomous novelty, infinite landscapes, and law generation. Every phase tightens these prohibitions rather than relaxing them.
+
+---
+
+## 2. The Phases at a Glance (Purpose vs. Non-Purpose)
+
+### **Phase I — Existence & Linear Stability**
+
+**Does:**
+
+* Proves a nonempty protected sector exists
+* Establishes linear stability via a spectral gap
+* Fixes admissible coupling (PASS / Route-1A)
+* Audits and excludes bypass mechanisms
+
+**Does *not*:**
+
+* Claim nonlinear/global stability
+* Claim uniqueness or universality
+* Introduce phenomenology
+* Explain physical reality
+
+📌 *If you think Phase I explains anything observable, you are mistaken.*
+
+Key equations: (I.1-1), (I.3-1), (I.4-1), (I.5-1)
+
+---
+
+### **Phase II — Capacity & Constrained Emergence**
+
+**Does:**
+
+* Proves the protected sector has zero intrinsic dynamical capacity
+* Localizes all emergence to the halo
+* Establishes finite regime alphabets
+* Shows robust (open-set) regime selection
+
+**Does *not*:**
+
+* Permit autonomous complexity
+* Permit emergent laws
+* Permit landscapes
+* Introduce new dynamics
+
+📌 *If you think Phase II allows “rich physics” in the backbone, you are mistaken.*
+
+Key equations: (II.1-1), (II.3-1), (II.4-1)
+
+---
+
+### **Phase III — Structural Witnesses**
+
+**Does:**
+
+* Maps NFC structure onto known domains (quantum, classical)
+* Demonstrates internal consistency with standard systems
+* Grounds abstract quantities (gap, defect) in concrete witnesses
+
+**Does *not*:**
+
+* Claim equivalence to known physics
+* Claim NFC is “really” quantum or classical
+* Generalize across witnesses
+
+📌 *Phase III is illustrative, not reductive.*
+
+Key equations: (III.A-1), (III.A-2), (III.A-3), (III.B-2)
+
+---
+
+### **Phase IV — Modal Consequences**
+
+**Does:**
+
+* Proves what *must* be true if NFC holds
+* Establishes maximality ceilings
+* Identifies exact collapse conditions
+* Demonstrates brittleness (knife-edge constraints)
+
+**Does *not*:**
+
+* Strengthen earlier claims
+* Add new mechanisms
+* Rescue the framework under violation
+
+📌 *Phase IV explains why NFC cannot be “slightly modified.”*
+
+Key equations: (IV.1-1), (IV.2-1), (IV.3-1)
+
+---
+
+### **Phase V.0 — Phenomenology Guardrails**
+
+**Does:**
+
+* Authorizes phenomenology *in principle*
+* Forbids interpretive drift
+* Enumerates allowed vs. forbidden moves
+* Defines entry conditions
+
+**Does *not*:**
+
+* Introduce observables
+* Make predictions
+* Claim physical relevance
+
+📌 *Phase V.0 is constitutional law, not science.*
+
+(No equations)
+
+---
+
+### **Phase V.1 — Minimal Phenomenology Entry**
+
+**Does:**
+
+* Introduces one bound-type exclusion
+* Uses one witness (open quantum systems)
+* Exports one invariant (adiabatic control functional)
+
+**Does *not*:**
+
+* Explain data
+* Claim universality
+* Introduce models
+
+📌 *Phase V.1 is a foothold, not a program.*
+
+Key equations: (V.1-1), (V.1-2), (V.1-3)
+
+---
+
+## 3. How to Use the Equation System
+
+The **Global Equation Crosswalk** is the spine of NFC.
+
+Rules:
+
+* Every quantitative claim must cite an equation ID.
+* If a claim cannot be traced back to Phase I through equation references, it is invalid.
+* No equation is interpretive; all are structural or bounding.
+
+Example:
+
+> “Emergence is finite” is not a claim.
+> “By (II.3-1), the regime alphabet is finite on compact domains” *is*.
+
+---
+
+## 4. Hard Stop Lines (Non-Negotiable)
+
+The framework **fails immediately** if any of the following are violated:
+
+* Backreaction appears → violates (I.5-1)
+* Derivative/connection bypass appears → violates (I.5-2)
+* Infinite regime sets appear → violates (II.3-1)
+* Protected sector adapts → violates (II.5-1)
+* Approximate PASS treated as exact → violates (IV.3-3)
+
+These are not “limitations.”
+They are **identity conditions**.
+
+---
+
+## 5. Common Misreadings (Explicitly Disallowed)
+
+If you find yourself thinking:
+
+* “This explains why the universe has X” → ❌
+* “This is a Theory of Everything” → ❌
+* “Emergence generates laws” → ❌
+* “Moduli correspond to particles” → ❌
+* “This predicts cosmology” → ❌
+
+You have left the map.
+
+---
+
+## 6. How to Extend NFC Safely (Future You)
+
+Any future work must:
+
+1. Point to a specific Phase
+2. Cite exact equations
+3. Declare which guardrail it respects
+4. State its falsification condition
+
+If it cannot do all four, it does not belong in the archive.
+
+---
+
+## 7. Final Orientation Statement
+
+> **NFC is a framework about what is structurally forbidden.
+> Its value lies in the constraints it refuses to relax.**
+
+This map exists so that value is not lost in verbosity.
+
+---
+
+### Status
+
+* Canonical Map: **complete**
+* Freeze: **respected**
+* No new content added
+* Ready for archival inclusion when (and only when) you ask
+
+I will now **stop** and hold this position unless directed otherwise.
+
