@@ -1,137 +1,162 @@
 # Nested Fibrational Cosmology (NFC)
 
-**Nested Fibrational Cosmology (NFC)** is a speculative theoretical framework proposing that physical reality emerges from a deeper, higher-dimensional geometric structure organized as *nested fiber bundles*. In this view, spacetime, matter, forces, and cosmological dynamics are not fundamental entities, but emergent projections of an underlying fibrational vacuum.
+## Abstract
 
-This repository is a **research archive and manuscript workspace**, not a software package.
+Nested Fibrational Cosmology (NFC) is a speculative geometric framework exploring the possibility that spacetime, matter, and interactions emerge from a higher-dimensional vacuum structure organized as nested fibrations. Rather than postulating fundamental fields or forces, the framework investigates whether known physical phenomena may arise as stable projections, eigenstructures, and constraint effects of an underlying fibrational geometry.
 
----
-
-## Repository Purpose
-
-This repository exists to:
-
-- Present a **coherent geometric framework** for emergent spacetime and physics
-- Organize a large body of conceptual, mathematical, and explanatory material
-- Preserve provenance, scope boundaries, and internal consistency
-- Support long-form theoretical development prior to any experimental claims
-
-It is **not** intended to:
-- Replace established physical theories
-- Claim experimental verification
-- Serve as an implementation or simulation toolkit
-- Promote metaphysical or technological conclusions
+This repository serves as a pre-theoretical research archive and manuscript workspace. The materials collected here are not peer-reviewed and do not claim experimental verification.
 
 ---
 
-## Core Ideas (High-Level)
+## Scope and Status
 
-At its core, NFC proposes that:
+- **Status:** Exploratory / preprint-level research program  
+- **Peer Review:** None  
+- **Experimental Claims:** None  
+- **Intended Use:** Conceptual and mathematical investigation  
 
-- Reality originates from a **high-dimensional vacuum manifold** (often described as 9D)
-- This manifold is structured as **nested fibrations**
-- Observable **3+1D spacetime** is an emergent, stable projection
-- **Matter** corresponds to locked eigenmodes of the geometry
-- **Forces** arise from geometric constraints rather than fundamental fields
-- **Time** emerges as an ordering of fibrational reconfigurations
-- **Cosmological evolution** is a phase-transition process, not a singularity
-
-All claims are framed as *structural and ontological proposals*, not empirical assertions.
+The framework is presented as a structural proposal and should not be interpreted as a replacement for established physical theories or as making claims of empirical adequacy.
 
 ---
 
-## Repository Structure
+## Conceptual Motivation
 
-The repository is intentionally document-centric and organized by role:
+Contemporary physical theories treat spacetime, fields, and particles as fundamental primitives. NFC investigates an alternative ontological ordering in which:
 
-### 🧭 Orientation & Governance
+- Geometry precedes dynamics
+- Spacetime is emergent rather than fundamental
+- Matter corresponds to stable geometric eigenmodes
+- Interactions arise from topological and fibrational constraints
+
+The motivation is to examine whether a sufficiently rich geometric substrate can account for observed physical structure without introducing independent fundamental forces or fields.
+
+---
+
+## High-Level Framework
+
+The core assumptions explored in NFC include:
+
+1. **High-Dimensional Vacuum Geometry**  
+   A higher-dimensional manifold (often modeled as 9-dimensional) serves as the underlying vacuum structure.
+
+2. **Nested Fibrational Structure**  
+   The vacuum is organized as a hierarchy of fiber bundles, with lower-dimensional effective descriptions arising as projections.
+
+3. **Emergent Spacetime**  
+   Observable 3+1 dimensional spacetime is treated as a stable projection or slice of the fibrational hierarchy.
+
+4. **Matter as Eigenstructure**  
+   Particles are modeled as topologically protected or spectrally stable configurations of the geometry.
+
+5. **Interactions as Constraints**  
+   Gravitational and gauge-like behaviors arise from curvature, holonomy, and symmetry constraints within the fibration.
+
+6. **Emergent Temporality**  
+   Time is not assumed as a fundamental coordinate but as an ordering parameter associated with geometric reconfiguration.
+
+7. **Cosmological Evolution Without Singularities**  
+   Early-universe behavior is treated as a phase transition in geometry rather than a singular origin.
+
+These assumptions are explored for internal consistency rather than empirical completeness.
+
+---
+
+## Hopf Fibration Tower
+\[
+\mathbb{S}^7 \to \mathcal{O}^{15} \text{(15-Dimensional Stratafied Orbifold)}\to \mathbb{S}^8
+\hookrightarrow \mathbb{S}^4 \to
+\mathbb{S}^7 \to \mathbb{S}^3
+\hookrightarrow \mathbb{S}^2 \to
+\mathbb{S}^3 \to \mathbb{S}^1
+\hookrightarrow \mathbb{S}^0 \to
+\mathbb{S}^1 \to \mathbb{S}^1
+\subset \mathbb{R}^9
+\]
+
+---
+
+## Repository Organization
+
+The repository is structured to separate ontology, formalism, and interpretation.
+
+### Orientation and Governance
 - **Canonical Map**  
-  Required reading. Explains how the repository fits together and how claims should be interpreted.
+  Defines how documents relate to one another and establishes interpretive constraints.
 - **SCOPE_AND_NON_CLAIMS.md**  
-  Explicit boundaries of what NFC does and does not assert.
+  Explicit limitations on what the framework does and does not assert.
 - **PROVENANCE.txt**  
-  Authorship and development history.
+  Development history and authorship context.
 - **REPRODUCIBILITY.md**  
-  Clarifies the current non-empirical status of the work.
+  Clarifies the non-empirical status of the work.
 
-### 📄 Phase Papers
-- **Paper I – VI**  
-  Modular development of the framework:
-  - Ontology and geometry
-  - Cosmological dynamics
-  - Matter and interaction structure
-  - Extensions and speculative domains
+### Phase Papers
+The framework is developed in modular phases:
 
-Later phases **do not retroactively justify earlier ones**.
+- **Phase I–II:** Ontological and geometric foundations  
+- **Phase III:** Cosmological dynamics  
+- **Phase IV:** Matter and interaction structure  
+- **Phase V+:** Labeled speculative extensions  
 
-### 🧮 Mathematical References
-- Equation crosswalks
-- Mathematical appendices
-- Structural consistency documents
+Later phases do not provide justification for earlier ones.
 
-These materials serve as **constraints and formal support**, not predictive engines.
+### Mathematical Materials
+- Equation references and crosswalks  
+- Formal appendices  
+- Structural consistency checks  
+
+These materials serve as formal constraints rather than predictive models.
+
+---
+
+## Methodological Notes
+
+- Mathematical tools are drawn from differential geometry, topology, and fiber bundle theory.
+- Equations are used to express structural consistency and existence conditions.
+- No parameter fitting or observational calibration is performed.
+- Mathematical inclusion does not imply physical realization.
+
+---
+
+## Relation to Existing Work
+
+NFC does not claim equivalence to, or replacement of, General Relativity, the Standard Model, string theory, loop quantum gravity, or other established frameworks. Comparisons, where present, are interpretive and exploratory rather than competitive.
 
 ---
 
 ## Intended Audience
 
-This repository may be of interest to:
+This repository is intended for readers with background in:
 
-- Theoretical physicists (geometry, cosmology, foundations)
-- Mathematicians (topology, fiber bundles, spectral geometry)
-- Philosophers of physics
-- Readers exploring alternative ontological frameworks
+- Theoretical or mathematical physics
+- Geometry and topology
+- Philosophy of physics and foundations
 
-It assumes familiarity with advanced mathematical and physical concepts.
-
----
-
-## Status of the Work
-
-- 🚧 **Exploratory / Pre-theoretical**
-- 📄 Not peer-reviewed
-- 🧪 No experimental validation
-- 📚 Actively curated and reorganized
-
-This is a **framework proposal**, not a finished theory.
+The material assumes familiarity with advanced formal concepts.
 
 ---
 
-## How to Read This Repository
+## Use, Citation, and Discussion
 
-1. Start with **Canonical Map**
-2. Read **SCOPE_AND_NON_CLAIMS.md**
-3. Explore Phase Papers as needed
-4. Use mathematical references for clarification—not proof
+The repository is made publicly available to encourage:
 
-Skipping the Canonical Map is strongly discouraged.
+- Critical examination
+- Conceptual discussion
+- Independent analysis
 
----
-
-## Contributions & Use
-
-This repository is shared for transparency and discussion.
-
-- Issues and critiques are welcome
-- Forks for commentary or analysis are acceptable
-- Attribution is expected for reuse
-- No endorsement or correctness is implied by availability
+Attribution is expected for citation or reuse. Availability does not imply endorsement or correctness.
 
 ---
 
 ## Disclaimer
 
-Nested Fibrational Cosmology is a **speculative research program**.  
-It makes **no claims of physical truth, experimental confirmation, or practical applicability**.
+Nested Fibrational Cosmology is a speculative geometric research program.  
+It makes no claims of empirical validation, predictive completeness, or physical truth.
 
-Any interpretation beyond what is explicitly stated in scope documents is the responsibility of the reader.
+Interpretation beyond the explicitly stated scope is the responsibility of the reader.
 
 ---
 
 ## License
 
-See repository license file (if present).  
+See the repository license file, if present.  
 If no license is specified, all rights are reserved by the author.
-
----
-
-*“This repository is an attempt to take geometry seriously enough that physics becomes a consequence rather than a starting assumption.”*
