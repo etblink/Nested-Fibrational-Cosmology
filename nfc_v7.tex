@@ -34,6 +34,12 @@
   \medskip\noindent\textcolor{darkgray}{\textit{Status Notice.} #1}\medskip
 }
 
+% ─── Claim governance macros ───
+\newcommand{\claimtag}[1]{\textcolor{blue!60!black}{\textbf{[Claim class: #1]}}}
+\newcommand{\assumptionfooter}[3]{%
+  \par\smallskip\noindent\textcolor{darkgray}{\footnotesize\textit{Provenance.} Depends on #1; Layer: #2; Status: #3.}\par\medskip
+}
+
 % ─── Headers ───
 \pagestyle{fancy}
 \fancyhf{}
@@ -87,6 +93,15 @@ To prevent over-claiming, we distinguish four classes of results:
 
 \textbf{Research Program (Open):} Conjectured results and identified derivation targets that have not yet been proved. Included to define the research frontier, not to claim completed work. Examples: Einstein field equations, Navier--Stokes structure, Standard Model gauge group, generation bounds.
 
+\section*{Claim Legend}
+\addcontentsline{toc}{section}{Claim Legend}
+\begin{itemize}[leftmargin=1.5em]
+  \item \claimtag{Unconditional} --- proved from the core kernel (Definitions~1.1--1.6) and finite set theory only.
+  \item \claimtag{Conditional} --- proved only under additional structural hypotheses, all stated explicitly.
+  \item \claimtag{Representational (V7)} --- proved only after adding NF/RBA/PNA; non-retroactive to lower layers.
+  \item \claimtag{Open} --- conjectural target or research direction; not claimed as completed.
+\end{itemize}
+
 \newpage
 \tableofcontents
 \newpage
@@ -134,6 +149,14 @@ An \emph{admissible extension class} $\mathfrak{E}$ is a maximal class of extens
 Condition~(iii) is the \emph{definability closure} axiom. It constrains the admissible class to be structurally complete: no extension-invariant partition of $\Omega$ can exist that is not already definable from the base $\mathcal{L}$-structure. This prevents artificial admissible classes, hidden partition injection, and entropy inflation. The formulation is purely syntactic (first-order definability over given relations) and does not introduce semantic primitives or model-theoretic ontology. Since any incidence-definable partition is automatically $\mathrm{Aut}(\mathfrak{A})$-invariant, definability closure aligns with automorphism reduction and prevents hidden gauge freedom. It does \emph{not}, by itself, force the induced symmetry group $G$ to act transitively on $\Sigma$ (see Remark~\ref{rem:transitivity} below).
 \end{remark}
 
+\begin{definition}[Locality-Respecting Admissible Class]\label{def:local-class}
+Fix a graph metric $d_\Omega$ on each configuration's site set. An admissible extension class $\mathfrak{E}$ is \emph{$R$-locality-respecting} if there exists $R \in \mathbb{N}$ such that every primitive operation used by each $E \in \mathfrak{E}$ has support contained in a ball of radius $R$ in $d_\Omega$. Operations with unbounded support (for example, global complement) are excluded.
+\end{definition}
+
+\begin{remark}
+Definition~\ref{def:local-class} provides the canonical formal meaning of ``R-local'' used later in Toy Model~5 and in the Part~VI diversity discussion.
+\end{remark}
+
 \begin{definition}[Behavioral Congruence]\label{def:behav}
 Define a relation $\sim$ on $\Omega$ by:
 \[
@@ -160,6 +183,7 @@ That is, the behavioral congruence classes are exactly the isomorphism classes o
 
 ($\Rightarrow$) The identity operator $E_{\mathrm{id}}(\omega) := \omega$ satisfies all four conditions of Definition~\ref{def:admiss} and is therefore in every admissible class (it is also required by closure, since $E \circ E_{\mathrm{id}} = E$). If $\omega \sim \omega'$, then in particular $E_{\mathrm{id}}(\omega) \cong E_{\mathrm{id}}(\omega')$, i.e., $\omega \cong \omega'$.
 \end{proof}
+\assumptionfooter{Definitions~\ref{def:admiss}, \ref{def:behav}}{Kernel}{Proved.}
 
 \begin{remark}\label{rem:survivor-iso}
 Theorem~\ref{thm:behav-iso} implies that the survivor space $\Sigma$ is canonically identified with the set of isomorphism types realized in $\Omega$. Compression $q \colon \Omega \to \Sigma$ is the quotient by structural isomorphism. This holds for \emph{any} admissible extension class, not only for specific choices.
@@ -175,6 +199,7 @@ If $\Omega$ contains distinct but isomorphic configurations (i.e., distinct labe
 \begin{proof}
 If $\omega \neq \omega'$ but $\omega \cong \omega'$, then $\omega \sim \omega'$ by Theorem~\ref{thm:behav-iso}, so $q(\omega) = q(\omega')$.
 \end{proof}
+\assumptionfooter{Theorem~\ref{thm:behav-iso}}{Kernel}{Proved.}
 
 \section{Structural Entropy and Uniformity}
 
@@ -198,6 +223,7 @@ For all admissible extensions $E \in \mathfrak{E}$:
 \begin{proof}
 By Lemma~\ref{lem:quotient}, $|\Sigma_E| \leq |\Sigma|$. Taking logarithms yields the result.
 \end{proof}
+\assumptionfooter{Definition~\ref{def:entropy}, Lemma~\ref{lem:quotient}}{Kernel}{Proved.}
 
 \section{Admissible Laws and Structural Constraints}
 
@@ -214,11 +240,12 @@ wherever both sides are defined.
 \end{definition}
 
 \begin{theorem}[Law Selection]\label{thm:law}
-Every admissible law preserves each $G$-orbit setwise: if $\sigma \in O_i$, then $\ell(\sigma) \in O_i$. No admissible law exchanges distinct orbits.
+Assume distinct $G$-orbits are extension-separable: for every $i \neq j$, there exists $E \in \mathfrak{E}$ with $\bar{E}(O_i) \neq \bar{E}(O_j)$. Then every admissible law preserves each $G$-orbit setwise: if $\sigma \in O_i$, then $\ell(\sigma) \in O_i$. In particular, no admissible law exchanges distinct orbits.
 \end{theorem}
 \begin{proof}
-An admissible law $\ell$ must commute with every element of $G$ (since $G$ is generated by admissible self-extensions). Therefore $\ell$ must map each $G$-orbit to itself: if $\ell$ mapped some $\sigma \in O_i$ to $\sigma' \in O_j$ with $i \neq j$, then for any $g \in G$ with $g\sigma = \sigma''$, commutativity gives $\ell(\sigma'') = g\sigma' \in O_j$, so $\ell$ maps all of $O_i$ into $O_j$. By bijectivity, $|O_i| = |O_j|$ and $\ell$ maps $O_j$ back to $O_i$. But if non-bijective admissible extensions $E$ map $O_i$ and $O_j$ to different images (which generically occurs), the commutation requirement $\ell \circ \bar{E} = \bar{E} \circ \ell$ is violated. Hence $\ell$ preserves each orbit.
+An admissible law $\ell$ commutes with every element of $G$ (since $G$ is generated by admissible self-extensions). If $\ell(\sigma) \in O_j$ for some $\sigma \in O_i$, then for any $g \in G$ with $g\sigma = \sigma''$, commutativity gives $\ell(\sigma'') = g\ell(\sigma) \in O_j$, so $\ell(O_i) \subseteq O_j$. By bijectivity, $\ell(O_i)=O_j$. Apply commutation with an extension-separating $E$: if $\bar{E}(O_i) \neq \bar{E}(O_j)$, then $\ell \circ \bar{E} = \bar{E} \circ \ell$ is impossible on $O_i$. Contradiction. Therefore $\ell(O_i)=O_i$ for each $i$.
 \end{proof}
+\assumptionfooter{Definitions~\ref{def:admiss-sym}, \ref{def:law}; extension-separability hypothesis in Theorem~\ref{thm:law}}{Kernel}{Proved under stated separability condition.}
 
 \begin{remark}[Structural exclusion is weight-free]\label{rem:weight-free}
 Theorem~\ref{thm:law} excludes inadmissible laws on purely algebraic grounds: commutation with the continuation structure, not numerical weights or frequencies. No probability measure, stationary distribution, or counting argument is used. This is the primary structural constraint of the kernel.
@@ -242,6 +269,7 @@ Any admissible weighting $w$ is uniform within each $G$-orbit: if $\sigma, \sigm
 \begin{proof}
 $G$ acts transitively within each orbit (by definition). Invariance of $w$ under $G$ gives $w(\sigma) = w(g\sigma) = w(\sigma')$ for any $g \in G$ with $g\sigma = \sigma'$.
 \end{proof}
+\assumptionfooter{Definition~\ref{def:weight}, group action of $G$ on each orbit}{Kernel}{Proved.}
 
 \begin{corollary}[Structure of Admissible Weightings]\label{cor:weight}
 Every admissible weighting has the form
@@ -785,9 +813,14 @@ for a unique positive semidefinite operator $\rho$ with $\mathrm{Tr}(\rho) = 1$.
 \begin{proof}
 By Lemma~\ref{lem:project}, probability must be defined on rays. PNA imposes non-contextual additivity across orthogonal decompositions. By a Gleason-class result (a mathematical theorem about measures on projective spaces, not a physical assumption), the only such function for $\dim \geq 3$ is quadratic in the ray representative.
 \end{proof}
+\assumptionfooter{Axioms~\ref{ax:nf}, \ref{ax:rba}, \ref{ax:pna}; Lemma~\ref{lem:project}; Gleason-class theorem for $\dim \ge 3$}{Representational (V7)}{Proved conditional on V7 axioms.}
 
 \begin{remark}[Dimension caveat]
 For $\dim(H) = 2$, additional conditions are required. This is a known structural fact about projective measures, not a defect of the framework.
+\end{remark}
+
+\begin{remark}[Scope boundary for V7]
+Section~\ref{sec:born} derives only the measure form on rays under NF+RBA+PNA. It does \emph{not} derive Hamiltonian dynamics, decoherence mechanisms, measurement-update dynamics, or a preferred ontology for Hilbert structure.
 \end{remark}
 
 
@@ -849,19 +882,44 @@ The following are identified derivation targets and conjectured results. They de
 
 \section{Strengthening Dimensional Selection}
 
-\textbf{Status:} Conditional theorem (Theorem~\ref{thm:ceiling}), with $\tau = 4$ now achieved computationally on the barbell $K_3\text{-}b_3\text{-}K_3$ ($n = 9$) under R=2 local extensions (Toy Model~5).
+\textbf{Status:} Conditional theorem (Theorem~\ref{thm:ceiling}), with $\tau = 4$ now achieved computationally on the barbell $K_3\text{-}b_3\text{-}K_3$ ($n = 9$) under locality-respecting radius-$2$ extensions in the sense of Definition~\ref{def:local-class} (Toy Model~5).
 
 \textbf{Key finding (Toy Model~5):} The refinement ceiling $\tau$ scales linearly with bridge length for the barbell family, reaching $\tau = 4$ at $n = 9$ and growing without bound. Under the unrestricted maximal class, $\tau = 0$; locality is necessary and sufficient for non-trivial $\tau$.
 
 \textbf{Remaining open problems:}
 \begin{enumerate}[nosep]
   \item \textbf{Minimum degree condition.} The local load $g \geq 32$ is met at clique-adjacent vertices but not at degree-2 bridge midpoints ($g_{\min} = 30$ on $K_4$-lad$_2$-$K_4$). Formalize the minimum-degree requirement as a condition on the local separability hypothesis.
-  \item \textbf{Locality axiomatization.} Formalize ``R=2 local'' as a condition on the admissible class. The complement boundary suggests: admissible extensions act within bounded-radius neighborhoods.
+  \item \textbf{Locality axiomatization.} Adopt Definition~\ref{def:local-class} as the canonical locality condition and instantiate it at radius $R=2$ for current computations. The complement boundary suggests: admissible extensions act within bounded-radius neighborhoods.
   \item \textbf{Defect analysis on barbells.} Compute defect densities for $\tau = 4, 5, 6$ on the barbell family.
   \item \textbf{Full $g \geq 32$ closure.} Determine whether degree-$\geq 3$ ladder-bridge structures with multi-arity refinements achieve $g_{\min} \geq 32$ uniformly.
 \end{enumerate}
 
 \textbf{Priority:} High. The $\tau = 4$ achievement provides the first direct computational support for the dimensional selection mechanism on a connected substrate.
+
+\subsection*{V7.5 Integration: Dimension-Selection Enumeration Protocol}\label{sec:v75-enum}
+To integrate the V7.5 dimension-selection program into the canonical monograph, we fix an explicit finite enumeration protocol for claims about threshold attainment and scaling. This subsection is methodological: it does not introduce new kernel axioms and does not upgrade any open claim to theorem status.
+
+\textbf{Protocol inputs.}
+\begin{enumerate}[label=\textbf{E\arabic*.},nosep]
+  \item A finite graph family $\mathcal{F}_n$ at each size $n$ (exhaustive for small $n$, curated families for larger $n$).
+  \item A fixed locality-respecting admissible class $\mathfrak{E}_{R}$ as in Definition~\ref{def:local-class} with radius parameter $R$ (currently $R=2$ baseline).
+  \item A refinement alphabet specification (vertex-only, then multi-arity tiers).
+  \item A canonical survivor-independence criterion (GF(2) rank over surviving projectable refinements).
+\end{enumerate}
+
+\textbf{Enumeration outputs.}
+\begin{enumerate}[label=\textbf{O\arabic*.},nosep]
+  \item $\tau_{\max}(n;\mathfrak{E}_R,\mathcal{A})$: maximal certified refinement ceiling at size $n$.
+  \item Witness family achieving $\tau_{\max}$, with orbit profile and local-load profile.
+  \item Boundary-collapse diagnostics under global augmentations (e.g., complement) to certify locality sensitivity.
+  \item Confidence class: exhaustive / certificate-backed / heuristic (must be explicitly tagged in tables).
+\end{enumerate}
+
+\textbf{Current integrated status (V7.5 baseline).} Under radius-2 locality-respecting extensions, the barbell family provides certified threshold attainment at $n=9$ with $\tau=4$, and linear bridge-length scaling thereafter (Toy Model~5). Under global augmentation classes, collapse to $\tau=0$ persists as the controlling boundary effect.
+
+\textbf{Reproducibility hooks (repository scripts).} The V7.5 pipeline is implemented by the local analysis scripts `multi_arity_extraction.py`, `q5_q12_diagnosis.py`, `ladder_certificate_v2.py`, `lc_explicit.py`, and `verify_preadapt_ls2.py`. These scripts define the operational meaning of the enumeration/certificate steps and should be treated as the canonical computational companion for this subsection.
+
+\textbf{Governance rule.} Any future statement of the form ``minimum $n$ for $\tau\ge k$'' must cite: (i) extension class, (ii) refinement alphabet tier, (iii) witness family, and (iv) confidence class. Statements missing one of these are downgraded to exploratory notes.
 
 \section{Maximality, Transitivity, and Local Diversity}\label{sec:diversity}
 
@@ -869,7 +927,7 @@ The following are identified derivation targets and conjectured results. They de
 
 \textbf{Resolved.} Behavioral congruence equals isomorphism in every admissible class. Admissible laws must preserve $G$-orbits on purely algebraic grounds (Theorem~\ref{thm:law}). The admissible symmetry group $G$ is generically non-transitive (Toy Model~1: $G \cong \mathbb{Z}_2$ on 3-vertex graphs). Cross-orbit weighting is empirical input; all structural exclusions are weight-free (Remark~\ref{rem:weight-free}).
 
-\textbf{New finding: barbell threshold and scaling.} Toy Model~5 reveals a sharp hierarchy: $\tau = 0$ under global operations but $\tau$ grows without bound under R=2 local extensions. The barbell family $K_3$-$b_N$-$K_3$ achieves $\tau = 4$ at $n = 9$ and $\tau = 6$ at $n = 13$, confirming linear scaling. Complement is the critical boundary: adding it collapses $\tau$ to~0 at all sizes.
+\textbf{New finding: barbell threshold and scaling.} Toy Model~5 reveals a sharp hierarchy: $\tau = 0$ under global operations but $\tau$ grows without bound under locality-respecting radius-$2$ extensions (Definition~\ref{def:local-class}). The barbell family $K_3$-$b_N$-$K_3$ achieves $\tau = 4$ at $n = 9$ and $\tau = 6$ at $n = 13$, confirming linear scaling. Complement is the critical boundary: adding it collapses $\tau$ to~0 at all sizes.
 
 \textbf{Candidate strengthening (revised).}
 
@@ -915,6 +973,13 @@ The barbell data provides partial support: $\tau$ grows linearly with $n$ on the
 
 \textbf{Status:} Open. GI-completeness conjectured.
 
+\subsection*{Complexity Roadmap}
+\begin{enumerate}[label=\textbf{C\arabic*.}]
+  \item \textbf{Reduction baseline.} Build explicit many-one reductions between behavioral congruence on restricted signatures and graph isomorphism instances.
+  \item \textbf{Parameterized regimes.} Classify fixed-parameter behavior under bounded arity, bounded degree, and bounded locality radius.
+  \item \textbf{Benchmark families.} Maintain canonical finite families (cycles, ladders, barbells, multi-arity ladders) with exact instance generators and expected complexity profiles.
+  \item \textbf{Certificate formats.} Develop machine-checkable witness/counterexample certificates aligned with LS-2 and recurrence certification.
+\end{enumerate}
 
 \appendix
 \section{Toy Models: Empirical Evidence for Finite Refinement Ceiling and Stability Selection}
@@ -1021,7 +1086,7 @@ This appendix consolidates four small finite toy models constructed entirely wit
 \textbf{Method.} For each graph, we: (i)~compute the automorphism orbit structure via color refinement, (ii)~enumerate all non-trivial projectable 2-color vertex refinements (colorings constant on orbits), (iii)~test survival under each extension, and (iv)~count independent survivors via GF(2) rank. Extension classes of increasing strength are tested:
 \begin{itemize}[nosep]
   \item \textbf{R=1 local:} identity, degree-based edge filtering, pendant removal, local complementation.
-  \item \textbf{R=2 local:} R=1 plus transitive closure, common-neighbor edge addition, 2-core extraction.
+  \item \textbf{Radius-2 locality-respecting:} Radius-1 operations plus transitive closure, common-neighbor edge addition, 2-core extraction (Definition~\ref{def:local-class}).
   \item \textbf{R=2 + complement:} R=2 plus graph complement and compositions.
   \item \textbf{Nuclear (maximal):} all of the above plus delete-all, complete-all.
 \end{itemize}
@@ -1034,16 +1099,16 @@ This appendix consolidates four small finite toy models constructed entirely wit
 \textbf{Extension class} & \textbf{$n{=}3$} & \textbf{$n{=}4$} & \textbf{$n{=}5$} & \textbf{$n{=}6$} & \textbf{Best graph ($n{=}6$)} \\
 \midrule
 R=1 local         & 0 & 2 & 3 & 4 & $(2,2,2,2,3,3)$ \\
-R=2 local          & 0 & 0 & $2^*$ & 3 & $(1,1,3,3,3,3)$ \\
+Radius-2 local      & 0 & 0 & $2^*$ & 3 & $(1,1,3,3,3,3)$ \\
 R=2 + complement & 0 & 0 & 0 & 0 & --- \\
 Nuclear          & 0 & 0 & 0 & 0 & --- \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-{\footnotesize ${}^*$Achieved only on disconnected graphs ($K_3 \sqcup K_2$); first \emph{connected} R=2-local survivor at $n = 6$.}
+{\footnotesize ${}^*$Achieved only on disconnected graphs ($K_3 \sqcup K_2$); first \emph{connected} radius-2 locality-respecting survivor at $n = 6$ (Definition~\ref{def:local-class}).}
 
-\textbf{Phase 2: The barbell family (connected, $n = 7$--$13$).} Targeted search over graph families reveals that barbell graphs---two cliques connected by a bridge path---achieve the highest $\tau$ under R=2 local extensions. The key discovery:
+\textbf{Phase 2: The barbell family (connected, $n = 7$--$13$).} Targeted search over graph families reveals that barbell graphs---two cliques connected by a bridge path---achieve the highest $\tau$ under locality-respecting radius-$2$ extensions (Definition~\ref{def:local-class}). The key discovery:
 
 \begin{center}
 \begin{tabular}{lcccc}
@@ -1063,7 +1128,7 @@ $K_3\text{-}b_4\text{-}K_4$ & 11 & 8 & \textbf{5} & 3 \\
 
 \textbf{$\tau = 4$ is achieved at $n = 9$ on the connected barbell $K_3\text{-}b_3\text{-}K_3$.} This is the minimal connected structure meeting the threshold required by Theorem~\ref{thm:ceiling}. Furthermore, $\tau$ scales linearly with bridge length: $\tau \approx \lceil b/2 \rceil + 1$ for $K_3$-$b_N$-$K_3$.
 
-\textbf{Why barbells work.} The barbell structure resists R=2 local extensions because:
+\textbf{Why barbells work.} The barbell structure resists radius-2 locality-respecting extensions because:
 (a)~cliques are internally stable (transitive closure is a no-op on complete subgraphs);
 (b)~bridge vertices at different distances from the cliques are in distinct orbits with distinct neighborhoods;
 (c)~degree-based filtering separates bridge (degree 2) from clique boundary vertices (degree $\geq 3$), preserving rather than erasing orbit distinctions.
@@ -1091,8 +1156,8 @@ The remaining gap is \emph{structural and honest}: the local separability hypoth
 
 \textbf{Findings:}
 \begin{enumerate}[nosep]
-  \item \textbf{Locality is the critical variable.} Under R=2 + complement or nuclear classes, $\tau = 0$ at all sizes. Under R=2 local, $\tau$ grows without bound. Complement (a global operation) is the primary erasure mechanism.
-  \item \textbf{The $\tau = 4$ threshold is achievable.} Barbell $K_3\text{-}b_3\text{-}K_3$ at $n = 9$ achieves $\tau = 4$ under R=2 local extensions. This confirms that the dimensional selection mechanism can engage on modest connected structures.
+  \item \textbf{Locality is the critical variable.} Under radius-2 locality plus complement or nuclear classes, $\tau = 0$ at all sizes. Under radius-2 locality-respecting classes, $\tau$ grows without bound. Complement (a global operation) is the primary erasure mechanism.
+  \item \textbf{The $\tau = 4$ threshold is achievable.} Barbell $K_3\text{-}b_3\text{-}K_3$ at $n = 9$ achieves $\tau = 4$ under locality-respecting radius-$2$ extensions (Definition~\ref{def:local-class}). This confirms that the dimensional selection mechanism can engage on modest connected structures.
   \item \textbf{Unbounded scaling.} $\tau$ grows linearly with bridge length for the barbell family, confirming that locality-respecting extension classes support arbitrarily high refinement ceilings.
   \item \textbf{Local load closes under multi-arity refinements on ladder bridges.} With vertex, edge, path, triangle, and 4-cycle orbit types, $g_{\min} = 30$ on $K_4$-lad$_2$-$K_4$ ($n = 12$). The $g \geq 32$ threshold is met at clique-adjacent vertices; the remaining gap at bridge midpoints requires minimum degree $\geq 3$, a natural structural condition.
 \end{enumerate}
@@ -1104,9 +1169,9 @@ The remaining gap is \emph{structural and honest}: the local separability hypoth
 
 \statusnotice{Computational experiment ($n = 9$, $300$ Monte Carlo trials). Tests whether the Defect Selection Principle (DSP)---the assumption that Phase-A dynamics preferentially follow low-defect histories---emerges from the geometry of the configuration space rather than requiring independent postulation.}
 
-\textbf{Setup.} Substrate: $K_3\text{-}b_3\text{-}K_3$ ($n = 9$, $\tau = 4$ under R=2 local extensions, $14$ non-trivial projectable refinements). At each time step, a random R=2 local extension (single-edge modification within a radius-2 ball) is applied. The \emph{defect} of a step is the fraction of refinements broken by the extension; the \emph{cumulative defect} of a history is the time-average of per-step defects. We compare three dynamics: (i)~uniform random; (ii)~defect-minimizing (greedy); (iii)~Boltzmann-weighted with inverse temperature $\beta$.
+\textbf{Setup.} Substrate: $K_3\text{-}b_3\text{-}K_3$ ($n = 9$, $\tau = 4$ under radius-2 locality-respecting extensions, $14$ non-trivial projectable refinements). At each time step, a random radius-2 locality-respecting extension (single-edge modification within a radius-2 ball) is applied. The \emph{defect} of a step is the fraction of refinements broken by the extension; the \emph{cumulative defect} of a history is the time-average of per-step defects. We compare three dynamics: (i)~uniform random; (ii)~defect-minimizing (greedy); (iii)~Boltzmann-weighted with inverse temperature $\beta$.
 
-\textbf{Finding 1: Landscape pre-adaptation.} Of $28$ distinct R=2 local extensions from $K_3\text{-}b_3\text{-}K_3$, \textbf{22 (79\%) are defect-free}. Extensions that do break refinements exhibit all-or-nothing behavior: they break exactly $8/14$ refinements simultaneously, or none. The configuration space is geometrically pre-adapted for low-defect dynamics.
+\textbf{Finding 1: Landscape pre-adaptation.} Of $28$ distinct radius-2 locality-respecting extensions from $K_3\text{-}b_3\text{-}K_3$, \textbf{22 (79\%) are defect-free}. Extensions that do break refinements exhibit all-or-nothing behavior: they break exactly $8/14$ refinements simultaneously, or none. The configuration space is geometrically pre-adapted for low-defect dynamics.
 
 \textbf{Finding 2: Bimodal attractor structure.} Under uniform random dynamics ($300$ trials, $15$ steps), the final state is \emph{bimodal}: $42\%$ of trials preserve all $14$ refinements (full-preservation basin), $22\%$ destroy all refinements (full-destruction basin), and $36\%$ are partial. Mean cumulative defect: $0.35$. The full-preservation basin has mean defect $0.17$; the full-destruction basin has mean defect $0.64$.
 
@@ -1122,7 +1187,7 @@ Full destruction & 22\% & 0.64 & 0/14 & 5.7 \\
 \end{tabular}
 \end{center}
 
-\textbf{Finding 3: Structural feedback loop.} Trajectory tracing reveals a self-reinforcing mechanism. In the preservation basin, the fraction of defect-free extensions \emph{increases} along the trajectory (from $22/28 = 79\%$ to $33/36 = 92\%$): graphs that gain edges (via R=2 local additions) develop richer local structure that stabilizes refinements. In the destruction basin, a single defect-producing step drops the defect-free fraction to near zero ($1/18$), trapping the trajectory. The first few steps determine the basin: early defect~$\leq 0.0$ predicts $66\%$ final survival; early defect~$> 0.5$ predicts $29\%$ final survival.
+\textbf{Finding 3: Structural feedback loop.} Trajectory tracing reveals a self-reinforcing mechanism. In the preservation basin, the fraction of defect-free extensions \emph{increases} along the trajectory (from $22/28 = 79\%$ to $33/36 = 92\%$): graphs that gain edges (via radius-2 local additions) develop richer local structure that stabilizes refinements. In the destruction basin, a single defect-producing step drops the defect-free fraction to near zero ($1/18$), trapping the trajectory. The first few steps determine the basin: early defect~$\leq 0.0$ predicts $66\%$ final survival; early defect~$> 0.5$ predicts $29\%$ final survival.
 
 \textbf{Finding 4: Sharp Boltzmann phase transition.} Even mild selective pressure ($\beta = 0.25$, corresponding to a ${\sim}22\%$ multiplicative preference for defect-free extensions) collapses mean defect from $0.37$ to $0.11$ and raises full-preservation probability from $45\%$ to $81\%$:
 
@@ -1476,13 +1541,22 @@ The V7 extension introduces three explicit axioms (NF, RBA, PNA). A detailed smu
 \section{Experimental Discriminators}\label{app:predict}
 
 Potential empirical signatures, conditional on the framework's conditional realizations holding in the physical regime:
-\begin{enumerate}
-  \item \textbf{Discrete Spectra:} Physical quantities quantized by $|\Sigma|$; deviations from exact Lorentz symmetry at $\tau$-saturation scales.
-  \item \textbf{Holographic Noise:} Specific power spectrum from finite survivor counting.
-  \item \textbf{Dimensional Transitions:} Phase~C reorganizations observable as effective dimensionality shifts.
-  \item \textbf{Structural Uncertainty:} Complementary refinements satisfying $\delta_A \cdot \delta_B \geq |\Sigma|/\tau$.
-\end{enumerate}
 
+\begin{center}\small
+\begin{tabular}{p{3.2cm}p{2.2cm}p{5.2cm}p{3.2cm}}
+\toprule
+\textbf{Signature} & \textbf{Required layer} & \textbf{Falsification condition} & \textbf{Approximate scale} \\
+\midrule
+Discrete spectra & Conditional (Part~III) & No survivor-count quantization window and no detectable Lorentz-violation onset near predicted saturation bands. & Regimes approaching $\tau$-saturation. \\
+\addlinespace
+Holographic noise & Conditional (Part~V) & Measured boundary/bulk fluctuation spectrum incompatible with finite survivor counting in exceptionally projectable systems. & Boundary-dominated high-coherence systems. \\
+\addlinespace
+Dimensional transitions & Conditional (Part~III) & No statistically significant Phase~C-style reorganization across controlled structural loading transitions. & Mesoscopic-to-cosmological crossover candidates. \\
+\addlinespace
+Structural uncertainty & Conditional (Part~IV) & Violation of the predicted complementary-refinement lower bound $\delta_A \cdot \delta_B \geq |\Sigma|/\tau$ in certified compatible setups. & Interference-sensitive finite-configuration experiments. \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section{Framework Hierarchy and Version History}\label{app:hierarchy}
 
@@ -1536,6 +1610,52 @@ Pre-adaptation and mild selection provide one mechanism by which Phase-A conditi
 The $\tau$-selection chain (S1--S7) depends only on LS-0, LS-2, recurrence certification, and local branching---all purely structural. It does \emph{not} depend on pre-adaptation, defect aversion, or any selection principle. The Phase-A mechanism package (PA1--PA3) provides one sufficient route to floor-attainment but is not logically required by the ceiling theorem. No result at level S depends on any result at level PA. The dependency graph is acyclic.
 
 
+\section{Assumption and Claim Registry}\label{app:registry}
+
+This registry centralizes the current assumption/load-bearing claim surface so audits can be run without traversing the full text.
+
+\subsection*{Core assumptions and role}
+\begin{center}\small
+\begin{tabular}{p{2.7cm}p{3.4cm}p{2.2cm}p{3.8cm}}
+\toprule
+\textbf{Item} & \textbf{Statement class} & \textbf{Layer} & \textbf{Primary use} \\
+\midrule
+Definition~\ref{def:admiss} & Admissible extension axioms (closure/congruence/definability/finiteness) & Kernel & Enables behavioral congruence, entropy monotonicity, and law constraints. \\
+\addlinespace
+Definition~\ref{def:local-class} & Locality-respecting admissible classes (radius-bounded support) & Conditional interface & Canonical locality condition for Toy Model~5 and diversity scaling statements. \\
+\addlinespace
+Assumption~\ref{ass:LS0} & Canonical probe family exists & Conditional & Entry point for certified floor construction. \\
+\addlinespace
+Definition~\ref{def:LS2} & Pairwise obstruction sufficiency & Conditional & Supplies $N_{\mathrm{cert}}(U)$ in the ceiling chain. \\
+\addlinespace
+Definition~\ref{def:reccert} & Coverage-epoch recurrence certificate & Conditional & Supplies $T_{\mathrm{cov}}(U)$ for certified floor. \\
+\addlinespace
+Axioms~\ref{ax:nf},~\ref{ax:rba},~\ref{ax:pna} & Representational extension inputs & V7 & Projectivization and Born-type measure theorem. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Flagship results and status}
+\begin{center}\small
+\begin{tabular}{p{3.5cm}p{2cm}p{2.2cm}p{4.2cm}}
+\toprule
+\textbf{Result} & \textbf{Tag} & \textbf{Status} & \textbf{Dependency pointer} \\
+\midrule
+Behavioral congruence $=$ isomorphism (Theorem~\ref{thm:behav-iso}) & Unconditional & Proved & Definition~\ref{def:admiss}, Definition~\ref{def:behav}. \\
+\addlinespace
+Law Selection (Theorem~\ref{thm:law}) & Unconditional$^\dagger$ & Proved & Definitions~\ref{def:admiss-sym},~\ref{def:law} + extension-separability premise. \\
+\addlinespace
+Refinement ceiling selection (Theorem~\ref{thm:ceiling}) & Conditional & Proved conditional & LS-0, LS-2, recurrence certificate, branching/obstruction chain. \\
+\addlinespace
+Born-Type probability (Theorem~\ref{thm:born}) & Representational (V7) & Proved conditional & NF+RBA+PNA + Gleason-class theorem for $\dim \ge 3$. \\
+\addlinespace
+Einstein/Navier--Stokes/SM derivations (Part~VI) & Open & Not derived & Research targets only; no completion claim. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+{\footnotesize $^\dagger$Unconditional relative to the kernel plus the explicit orbit extension-separability condition stated in Theorem~\ref{thm:law}.}
+
 \section{Structural Hardening Catalog}\label{app:hardening}
 
 This section catalogs the structural upgrades applied to the theoretical framework, with status and provenance.
@@ -1572,6 +1692,8 @@ Recurrence Certificate & \textbf{Integrated} & Coverage epoch $T_{\mathrm{cov}}(
 Certified Phase Definitions & \textbf{Integrated} & Phase A/B/C defined by LS-2 cert.\ + recurrence cert.\ + floor small + slack small. No dynamics, temperature, or equilibrium. Pre-adaptation demoted to one sufficient mechanism. \\
 \addlinespace
 Admissible Words & \textbf{Integrated} & ``Histories'' reinterpreted as finite words in admissible semigroup. Eliminates temporal reading. All results algebraic. \\
+\addlinespace
+V7.5 Enumeration Protocol (Section~\ref{sec:v75-enum}) & \textbf{Integrated} & Canonical E/O protocol for dimension-threshold claims with explicit confidence classes and script hooks; prevents unsupported threshold assertions. \\
 \addlinespace
 LS-2 Certificate Format & \textbf{Open} & Machine-checkable obstruction certificates for canonical probes. \\
 \bottomrule
