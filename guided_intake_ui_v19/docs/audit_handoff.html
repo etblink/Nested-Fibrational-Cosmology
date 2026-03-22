@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Suite — Governance Audit &amp; Handoff Note</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #1a1917; --ink-2: #3d3b37; --ink-3: #6b6964; --ink-4: #999791;
+    --paper: #faf8f3; --paper-2: #f3f0e9; --paper-3: #ebe7de;
+    --rule: #d4cfc4; --rule-2: #c5bfb2;
+    --gold: #8a6a2a; --gold-lt: #b8922e; --gold-bg: #fdf5e0;
+    --red: #8b2020; --red-bg: #fdf0f0;
+    --green: #2a5c3a; --green-bg: #edf5ef;
+    --blue: #1e3f70; --blue-bg: #eef3fa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: var(--paper); color: var(--ink); line-height: 1.75; max-width: 900px; margin: 0 auto; padding: 4rem 3rem 6rem; }
+
+  h1 { font-size: 2rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 0.2rem; }
+  h2 { font-size: 0.98rem; font-weight: 400; color: var(--ink-3); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2.5rem; }
+  h3 { font-size: 1.25rem; font-weight: 500; margin-bottom: 0.6rem; }
+  h4 { font-size: 1rem; font-weight: 500; color: var(--ink-2); margin: 1.1rem 0 0.4rem; }
+  p  { margin-bottom: 0.85rem; color: var(--ink-2); }
+  code { font-family: 'JetBrains Mono', monospace; font-size: 0.8em; background: var(--paper-3); padding: 0.1em 0.35em; border-radius: 3px; color: var(--ink-2); }
+  strong { font-weight: 500; color: var(--ink); }
+  em { font-style: italic; color: var(--ink-3); }
+
+  .masthead { margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1.5px solid var(--rule-2); }
+  .masthead-meta { font-size: 0.88rem; color: var(--ink-4); margin-top: 0.4rem; font-style: italic; }
+
+  hr { border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+  /* ── SECTION HEADERS ── */
+  .sec-header {
+    display: flex; align-items: baseline; gap: 1rem;
+    margin-bottom: 1.1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sec-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+    font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.2em 0.55em; border-radius: 3px; flex-shrink: 0;
+  }
+  .tag-critical { background: var(--red-bg);   color: var(--red); }
+  .tag-finding  { background: var(--gold-bg);  color: var(--gold); }
+  .tag-ok       { background: var(--green-bg); color: var(--green); }
+  .tag-action   { background: var(--blue-bg);  color: var(--blue); }
+  .tag-handoff  { background: var(--paper-3);  color: var(--ink-3); }
+
+  /* ── FINDING BLOCKS ── */
+  .finding {
+    border: 1px solid var(--rule); border-radius: 5px;
+    margin: 0.8rem 0 1.4rem; overflow: hidden;
+  }
+  .finding-head {
+    display: flex; align-items: center; gap: 0.8rem;
+    background: var(--paper-2); padding: 0.55rem 1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .finding-id {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+    font-weight: 500; color: var(--red);
+  }
+  .finding-title { font-size: 0.95rem; font-weight: 500; }
+  .finding-body { padding: 0.8rem 1rem; }
+  .finding-body p { margin-bottom: 0.5rem; font-size: 0.93rem; }
+  .finding-body p:last-child { margin-bottom: 0; }
+
+  .finding.ok   .finding-id   { color: var(--green); }
+  .finding.warn .finding-id   { color: var(--gold); }
+
+  /* ── DELTA TABLE ── */
+  .delta-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0.8rem 0 1.2rem; }
+  .delta-table th { text-align: left; padding: 0.35rem 0.7rem; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); border-bottom: 1.5px solid var(--rule-2); }
+  .delta-table td { padding: 0.45rem 0.7rem; border-bottom: 1px solid var(--rule); color: var(--ink-2); vertical-align: top; }
+  .delta-table tr:last-child td { border-bottom: none; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.78em; }
+  .stale { color: var(--red); text-decoration: line-through; }
+  .live  { color: var(--green); font-weight: 500; }
+
+  /* ── NOTE BOXES ── */
+  .note { font-size: 0.9rem; padding: 0.8rem 1rem; border-radius: 4px; margin: 0.8rem 0; }
+  .note-critical { background: var(--red-bg);   border-left: 3px solid var(--red);      color: var(--red-2, #4a1111); }
+  .note-warn     { background: var(--gold-bg);  border-left: 3px solid var(--gold-lt);  color: var(--gold); }
+  .note-ok       { background: var(--green-bg); border-left: 3px solid var(--green);    color: var(--green); }
+  .note-info     { background: var(--blue-bg);  border-left: 3px solid var(--blue);     color: var(--blue); }
+  .note p { margin-bottom: 0.3rem; color: inherit; }
+  .note p:last-child { margin-bottom: 0; }
+
+  /* ── REVISION NOTICE ── */
+  .revision-block {
+    background: var(--paper-2); border: 1px solid var(--rule);
+    border-radius: 5px; padding: 1rem 1.2rem; margin: 0.8rem 0 1.4rem;
+    font-size: 0.9rem;
+  }
+  .revision-block .rev-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-4);
+    margin-bottom: 0.4rem;
+  }
+  .revision-block p { color: var(--ink-2); margin-bottom: 0.4rem; }
+  .revision-block p:last-child { margin-bottom: 0; }
+
+  /* ── HANDOFF NOTE ── */
+  .handoff {
+    border: 1.5px solid var(--rule-2); border-radius: 6px;
+    padding: 1.5rem 1.8rem; margin: 1rem 0;
+    background: var(--paper);
+  }
+  .handoff-title {
+    font-size: 1.1rem; font-weight: 500; margin-bottom: 0.2rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule);
+    margin-bottom: 1rem;
+  }
+  .handoff-q {
+    font-weight: 500; color: var(--ink); margin-bottom: 0.2rem;
+    font-size: 0.93rem;
+  }
+  .handoff-a {
+    color: var(--ink-2); font-size: 0.93rem; margin-bottom: 1rem;
+    padding-left: 0.8rem; border-left: 2px solid var(--rule);
+  }
+
+  /* ── ACTION CLASSES ── */
+  .action-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin: 0.8rem 0 1.2rem; }
+  .action-table th { text-align: left; padding: 0.35rem 0.7rem; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); border-bottom: 1.5px solid var(--rule-2); }
+  .action-table td { padding: 0.45rem 0.7rem; border-bottom: 1px solid var(--rule); color: var(--ink-2); vertical-align: top; }
+  .action-table tr:last-child td { border-bottom: none; }
+  .ac-ok   { background: var(--green-bg); }
+  .ac-warn { background: var(--gold-bg); }
+  .ac-red  { background: var(--red-bg); }
+
+  .doc-footer { margin-top: 4rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--ink-4); font-style: italic; }
+
+  ul.plain { list-style: none; margin: 0; padding: 0; }
+  ul.plain li { padding-left: 1.4rem; margin-bottom: 0.35rem; font-size: 0.93rem; color: var(--ink-2); position: relative; }
+  ul.plain li::before { content: '—'; position: absolute; left: 0; color: var(--rule-2); }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <h1>Dream Paper Suite: Governance Audit &amp; Canonical Handoff Note</h1>
+  <h2>Continuation Document — Phase I–II Deliverables</h2>
+  <p class="masthead-meta">Project Lead · March 21, 2026 · Based on direct inspection of K2, J2, L2, I6, I7, I8, final_synthesis, NFC discharge papers, why_K07, three_residual</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PART A: THE LEDGER CHAIN -->
+<!-- ══════════════════════════════════════════════════════ -->
+
+<div class="sec-header">
+  <span class="sec-tag tag-finding">Part A</span>
+  <h3>The authoritative ledger chain — what was proved and when</h3>
+</div>
+
+<p>The zip contains eight ledger generations. Each constitutes a distinct, authorized suite state. Understanding the chain is prerequisite to diagnosing every staleness problem below.</p>
+
+<table class="delta-table">
+  <tr>
+    <th>Generation</th>
+    <th>Authorization event</th>
+    <th>Key claim changes</th>
+    <th>Remaining obligations after</th>
+  </tr>
+  <tr>
+    <td class="mono">IR2</td>
+    <td>Extended suite to 84 papers; issued K2/J2/L2/D2</td>
+    <td>Added BR as unconditional cross-branch source; Millennium closures <em>Conditional (SA2+Phase-A)</em></td>
+    <td>O1, O2, O3 open</td>
+  </tr>
+  <tr>
+    <td class="mono">IR3</td>
+    <td>NFC-LS2 discharge of O-LS2-Str</td>
+    <td>LS-2 boundary determinacy upgraded in chain</td>
+    <td>O1, O2, O3 open</td>
+  </tr>
+  <tr>
+    <td class="mono">IR4</td>
+    <td>NFC-3Gen, NFC-Weyl discharges (NFC† flags cleared on BM1, CA1, BL2)</td>
+    <td>Block-diagonal action, Weyl quantization: NFC† flags removed</td>
+    <td>O1, O2, O3 open</td>
+  </tr>
+  <tr>
+    <td class="mono">IR5</td>
+    <td>Intermediate update (NFC-EFE and NFC-CLU chains)</td>
+    <td>NFC-1 through NFC-7 progressively cleared</td>
+    <td>O1, O2, O3 open</td>
+  </tr>
+  <tr>
+    <td class="mono">IR6</td>
+    <td>NFC-Stage0 discharges O1 and O3</td>
+    <td>O1 (EFE exact coeff.) → <em>Conditional (SA2+Phase-A+KPO-3)</em>; O3 (NS Stage-0 Part C) → <em>Conditional</em>; BJ-O3 → <em>Conditional (Part C)</em></td>
+    <td><strong>O2 only</strong></td>
+  </tr>
+  <tr>
+    <td class="mono">IR7</td>
+    <td>Paper O2 discharges O2: SA2+Phase-A derived from K₀=7 + kernel axioms</td>
+    <td>All <em>Conditional (SA2+Phase-A)</em> → <em>Conditional (K₀=7)</em>; BB1, BY1, BH1, CE1, BZ1, AQ1, BD1-2 all updated</td>
+    <td><strong>None</strong> (proof obligations). K₀=7 described as "a parameter, not a hypothesis"</td>
+  </tr>
+  <tr style="background: var(--green-bg)">
+    <td class="mono"><strong>IR8 (live)</strong></td>
+    <td>Paper "Three Residual Questions" proves K₀=7 is a theorem (fixed point of F(p) = |Φ(g_color(p))| + 1)</td>
+    <td>K₀=7: <span class="stale">parameter</span> → <span class="live">theorem</span>. All conditions (SA2, Phase-A, K₀=7) derive from kernel axioms A1–A4 + generator class L1–L4 alone</td>
+    <td><strong>None</strong>. No free parameters. No open obligations.</td>
+  </tr>
+</table>
+
+<div class="note note-ok">
+  <strong>Terminal state (I8).</strong> The suite's honest endpoint per I8 is: from kernel axioms A1–A4 and canonical generator class L1–L4, one derives unconditionally the finite kernel, cross-branch source theorem, entropy, time, dimensional selection, Phase-A, SA2, and LS-2; and conditionally on K₀=7 (itself a theorem), the Standard Model gauge group, 3 generations, Born rule, EFE, and both Millennium Theorems. No free parameters remain. No open obligations remain.
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PART B: STALENESS AUDIT -->
+<!-- ══════════════════════════════════════════════════════ -->
+
+<hr>
+
+<div class="sec-header">
+  <span class="sec-tag tag-critical">Part B</span>
+  <h3>Staleness audit — presentation vs. live ledger</h3>
+</div>
+
+<p>Every finding below is a violation of the Canonical Presentation-Invariance requirement (Iter. 207): the outward expression of the suite does not match the currently authorized governed state.</p>
+
+<!-- F-01 -->
+<div class="finding">
+  <div class="finding-head">
+    <span class="finding-id">F-01 · Critical</span>
+    <span class="finding-title">K2 cites IR2 as the authoritative ledger — six generations stale</span>
+  </div>
+  <div class="finding-body">
+    <p><strong>Location:</strong> K2 revision notice ("All changes are governed by Paper I Revision 2, which is the sole authoritative status source of truth"), Definition 3.1, all reading paths, Section 8 metadata block, §4.5 governance branch list.</p>
+    <p><strong>Stale claims introduced:</strong></p>
+    <table class="delta-table">
+      <tr><th>K2 currently says</th><th>I8 says</th></tr>
+      <tr><td>Minimal serious package: <code>{A, D, <span class="stale">IR2</span>, JR2, BR}</code></td><td><code>{A, D, <span class="live">IR8</span>, JR2, BR}</code></td></tr>
+      <tr><td>§4.3 Millennium branch: <span class="stale">Conditional under SA2+Phase-A</span></td><td>Conditional under K₀=7 (itself a theorem from kernel axioms)</td></tr>
+      <tr><td>§4.4 Gravity branch: <span class="stale">"Open obligation O1 remains"</span></td><td>O1 discharged (I6 / NFC-Stage0)</td></tr>
+      <tr><td>§7 (C6): <span class="stale">"three named open obligations remain (O1–O3)"</span></td><td>All discharged; no obligations remain</td></tr>
+      <tr><td>§8 description: <span class="stale">"three explicitly named open obligations"</span></td><td>None</td></tr>
+      <tr><td>§8 conditions: <span class="stale">"computationally certified standing hypotheses"</span></td><td>SA2 and Phase-A are now derived, not standing hypotheses</td></tr>
+    </table>
+    <p><strong>Severity:</strong> A referee following K2's reading paths to "IR2" finds a ledger six generations behind, describing two undischarged standing hypotheses and three open obligations that have all been resolved.</p>
+  </div>
+</div>
+
+<!-- F-02 -->
+<div class="finding">
+  <div class="finding-head">
+    <span class="finding-id">F-02 · Critical</span>
+    <span class="finding-title">J2 cites IR2 as the authoritative ledger and describes Millennium closures under SA2+Phase-A</span>
+  </div>
+  <div class="finding-body">
+    <p><strong>Location:</strong> J2 revision notice, §3.3 "three conditional branch closures," §6.3, the full paper status table in the appendix.</p>
+    <p><strong>Stale claims:</strong></p>
+    <table class="delta-table">
+      <tr><th>J2 currently says</th><th>I8 says</th></tr>
+      <tr><td>Issued "in conjunction with Paper I Revision 2…sole authoritative status source of truth"</td><td>Sole authoritative source is <span class="live">IR8</span></td></tr>
+      <tr><td>YM + NS: <span class="stale">Conditional (SA2+Phase-A)</span></td><td>Conditional (K₀=7); where K₀=7 is itself a theorem</td></tr>
+      <tr><td>EFE: Conditional (Phase-A+KPO-3)</td><td>Conditional (K₀=7+KPO-3)</td></tr>
+      <tr><td>SA2, Phase-A described as <span class="stale">standing hypotheses</span></td><td>Derived theorems (Paper O2)</td></tr>
+    </table>
+    <p><strong>Severity:</strong> J2 is the first paper a referee reads after K2. Its claim that the Millennium theorems are conditional on two "computationally certified" standing hypotheses understates the suite's strongest current result: that those hypotheses are themselves derived from kernel axioms.</p>
+  </div>
+</div>
+
+<!-- F-03 -->
+<div class="finding">
+  <div class="finding-head">
+    <span class="finding-id">F-03 · Critical</span>
+    <span class="finding-title">L2 cites IR2 throughout and all transmission templates are calibrated to the wrong suite state</span>
+  </div>
+  <div class="finding-body">
+    <p><strong>Location:</strong> L2 revision notice, Theorem 4.1 (outward-governance law), Theorem 7.1 (anti-drift theorem), every abstract template and cover-letter template.</p>
+    <p><strong>Stale claims:</strong></p>
+    <table class="delta-table">
+      <tr><th>L2 currently says</th><th>I8 says</th></tr>
+      <tr><td>Templates: <span class="stale">"two computationally certified standing hypotheses (SA2 and Phase-A)"</span></td><td>SA2 and Phase-A are derived; no standing hypotheses remain</td></tr>
+      <tr><td>Templates: <span class="stale">"three named open obligations"</span></td><td>No open obligations remain</td></tr>
+      <tr><td>Prohibited-formulations list (§8): calibrated to SA2+Phase-A era — does not prohibit <em>understating</em> K₀=7 theorem result</td><td>Using L2 templates now would actively understate I8's endpoint</td></tr>
+    </table>
+    <p><strong>Severity:</strong> L2 is the suite's transmission layer. Any professor or archive-facing email drafted from L2 templates will describe the suite as having two unresolved hypotheses and three open obligations. This is the opposite failure mode from inflation — it is deflation of an authorized result.</p>
+  </div>
+</div>
+
+<!-- F-04 -->
+<div class="finding">
+  <div class="finding-head">
+    <span class="finding-id">F-04 · High</span>
+    <span class="finding-title">paper_final_synthesis cites IR6, states "one obligation remains (O2)" — stale by two generations</span>
+  </div>
+  <div class="finding-body">
+    <p><strong>Location:</strong> Governance status note, Abstract, §3, Theorem 5.1, Remark 3.2.</p>
+    <table class="delta-table">
+      <tr><th>final_synthesis currently says</th><th>I8 says</th></tr>
+      <tr><td>Authoritative ledger: <span class="stale">IR6</span></td><td><span class="live">IR8</span></td></tr>
+      <tr><td>Abstract: <span class="stale">"One named open obligation remains: O2"</span></td><td>O2 discharged (I7). No obligations remain.</td></tr>
+      <tr><td>Theorem 5.1: "cannot be strengthened without either proving O2 or providing a ledger revision event"</td><td>O2 was proved. I7 provided that event. I8 further upgraded K₀=7.</td></tr>
+      <tr><td>Remark 3.2: "If O2 were proved, Tier 2 results would upgrade from Conditional to Unconditional"</td><td>O2 has been proved. Tier 2 is now Conditional (K₀=7) where K₀=7 is a theorem.</td></tr>
+    </table>
+    <p><strong>Consequence:</strong> final_synthesis currently presents the suite as provisionally incomplete with one remaining obligation. A reader using it as a synthesis document gets a false picture of the endpoint.</p>
+  </div>
+</div>
+
+<!-- F-05 -->
+<div class="finding">
+  <div class="finding-head">
+    <span class="finding-id">F-05 · Medium</span>
+    <span class="finding-title">NFC discharge papers carry internal status language stale relative to IR7</span>
+  </div>
+  <div class="finding-body">
+    <p><strong>Affected papers:</strong> NFC-CLU, NFC-EFE, NFC-Weyl (all describe conditions as "Conditional (SA2+Phase-A)"); NFC-Stage0 (O3 discharged as "Conditional (Phase-A)" under IR6 terms).</p>
+    <p><strong>Issue:</strong> Each NFC paper contains an internal "Status ledger update" section. These sections correctly report status at the time of their ledger authorization event (IR2–IR6). However, IR7 upgraded all "Conditional (SA2+Phase-A)" conditions to "Conditional (K₀=7)." A reader of NFC-CLU's ledger section today sees "Conditional (SA2+Phase-A)" which is the pre-I7 condition.</p>
+    <p><strong>Severity:</strong> Medium — the authorization events themselves are correct and legitimate. The internal status language is simply stale relative to the I7 upgrade. These papers need a one-line revision notice pointing to IR7/IR8, not a full rewrite.</p>
+    <p><strong>Papers verified as legitimately authorized:</strong></p>
+    <ul class="plain">
+      <li>NFC-CLU: discharges O-CLU (Paper D2 §5.1); authorized by IR2 entry NFC-1 upgrade</li>
+      <li>NFC-LS2: discharges O-LS2-Str (Paper D2 §5.2); authorized by IR3</li>
+      <li>NFC-3Gen: discharges O-3Gen-Block (Paper D2 §5.3); NFC† flag cleared in IR4 entry BM1</li>
+      <li>NFC-Weyl: discharges O-KPO3-Weyl (Paper D2 §5.4); NFC† flags cleared in IR4 entries CA1, BL2</li>
+      <li>NFC-EFE: discharges three EFE obligations (NFC-5, NFC-6, NFC-7); authorized in IR4/IR5</li>
+      <li>NFC-Stage0: discharges O1 and O3; authorized by IR6</li>
+    </ul>
+  </div>
+</div>
+
+<!-- F-06 -->
+<div class="finding ok">
+  <div class="finding-head">
+    <span class="finding-id">F-06 · OK</span>
+    <span class="finding-title">paper_why_K07 and paper_three_residual correctly identified as the mathematical source of I8</span>
+  </div>
+  <div class="finding-body">
+    <p><strong>Status:</strong> These papers form the proof chain that established K₀=7 as a theorem (not a parameter) and enabled the I8 authorization event. Their classification in the public architecture has not yet been specified.</p>
+    <p><strong>Correct classification:</strong></p>
+    <ul class="plain">
+      <li><code>paper_why_K07</code>: Establishes K₀=7 as the unique odd prime satisfying the suite's three structural self-consistency conditions. Status: Unconditional (the self-consistency argument is internal). Role: <em>milestone paper feeding I8</em>, not a branch paper and not a first-contact object.</li>
+      <li><code>paper_three_residual</code>: Proves the three residual questions left by why_K07 — primality from A2, Weyl structure identity, near-miss at K₀=5. Establishes Theorems RQ-1, RQ-2, RQ-5. Status: Unconditional. Role: <em>same — milestone paper feeding I8</em>.</li>
+    </ul>
+    <p><strong>Correct placement in public architecture:</strong> These papers should be indexed alongside I8 in the governance support tier, visibly linked to I8 as its mathematical source. They are not branch papers; they close the one remaining post-I7 question about why the suite selects K₀=7.</p>
+  </div>
+</div>
+
+<!-- F-07 -->
+<div class="finding warn">
+  <div class="finding-head">
+    <span class="finding-id">F-07 · Warn</span>
+    <span class="finding-title">paper_final_synthesis should be superseded, not merely updated</span>
+  </div>
+  <div class="finding-body">
+    <p>The final_synthesis paper has its own "Honest endpoint compression" Theorem 5.1 and a canonical recovery set <code>R = {A, D, IR6, JR2, KR2, LR2}</code>. This recovery set names IR6 — which is now two generations behind. Because the paper's Theorem 5.1 contains an explicit "cannot be strengthened without proving O2 or providing a ledger revision event" and O2 has since been proved, the theorem itself is now correctly superseded by I7/I8.</p>
+    <p><strong>Recommended action:</strong> Issue a two-paragraph IR8-aware addendum to final_synthesis (or a Revision 3 cover note), updating the recovery set to <code>{A, D, IR8, JR2, KR2, LR2}</code>, correcting Theorem 5.1's conditionals to reflect the O2 discharge and K₀=7 theorem upgrade. The addendum should cite the authorization events (I7: O2 discharge; I8: K₀=7 theorem) and update the endpoint schema to reflect the current state.</p>
+  </div>
+</div>
+
+<div class="note note-critical">
+  <p><strong>Summary verdict.</strong> The suite currently has a full authorization chain (IR2 → IR8, with each ledger generation constituting a legitimate authorized state change), but the outward-facing gateway papers K2, J2, and L2 all reference IR2 as the live ledger. This means the suite's three public front doors describe a state that was superseded by six ledger revisions. Every professor, referee, or archive reader who enters through K2/J2/L2 today gets the wrong picture of what the suite has established.</p>
+  <p>This is the central finding. All other findings are downstream of this one.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PART C: REVISION NOTICES -->
+<!-- ══════════════════════════════════════════════════════ -->
+
+<hr>
+
+<div class="sec-header">
+  <span class="sec-tag tag-action">Part C</span>
+  <h3>Required revision notices — minimal-change corrective language</h3>
+</div>
+
+<p>The fastest compliant fix for each stale paper is a targeted revision notice — prepended language that explicitly cites the terminal ledger and corrects the stale claim set, without requiring a full rewrite. Below is the specific language required for each paper.</p>
+
+<h4>Revision notice for K2 (Entry-Point Dossier → Revision 3)</h4>
+
+<div class="revision-block">
+  <div class="rev-label">Insert as new first paragraph, replacing current revision notice</div>
+  <p><strong>Revision notice.</strong> This document was issued as Revision 2 on March 21, 2026. It is hereby updated by the following supersession note, pending a full Revision 3. The authoritative status source of truth for the suite is now <strong>Paper I Revision 8</strong> (terminal supplement, March 21, 2026), not Paper I Revision 2. Revision 8 records three advances beyond Revision 2: (1) Paper NFC-Stage0 discharged obligations O1 and O3 (recorded in IR6); (2) Paper O2 proved that SA2 and Phase-A hold unconditionally from K₀=7 and the kernel axioms, discharging obligation O2 and upgrading all Conditional (SA2+Phase-A) entries to Conditional (K₀=7) (recorded in IR7); (3) Paper "Three Residual Questions" established that K₀=7 is a theorem, not a parameter — it is the unique prime satisfying F(p) = p, where F(p) = |Φ(g_color(p))|+1 (recorded in IR8). As a result: the minimal serious package is <strong>{A, D, IR8, JR2, BR}</strong>; the Millennium closures are <strong>Conditional (K₀=7)</strong> where K₀=7 is itself a theorem; no named open obligations remain; and the suite's entire output derives from kernel axioms A1–A4 and generator class L1–L4 alone. Sections 4.3, 4.4, 7 (C6), and 8 of this document should be read in light of this update; specifically, all references to "SA2+Phase-A" as a standing hypothesis and all references to open obligations O1–O3 are superseded by IR8.</p>
+</div>
+
+<h4>Revision notice for J2 (Referee Brief → Revision 3)</h4>
+
+<div class="revision-block">
+  <div class="rev-label">Insert as new first paragraph, replacing current revision notice</div>
+  <p><strong>Revision notice.</strong> This document was issued as Revision 2 on March 21, 2026 in conjunction with Paper I Revision 2. It is hereby updated by the following supersession note, pending a full Revision 3. The sole authoritative status source of truth is now <strong>Paper I Revision 8</strong> (terminal supplement, March 21, 2026). Three advances beyond IR2 are recorded in the terminal chain: (IR6) obligations O1 and O3 discharged; (IR7) obligation O2 discharged — SA2 and Phase-A are now derived from K₀=7 and kernel axioms, so all Conditional (SA2+Phase-A) entries upgrade to Conditional (K₀=7); (IR8) K₀=7 is established as a theorem (fixed point of F(p) = |Φ(g_color(p))|+1), not a parameter. The terminal endpoint is: from kernel axioms A1–A4 and canonical generator class L1–L4 alone, the suite derives unconditionally the finite kernel, cross-branch source theorem, entropy, time, dimensional selection, SA2, Phase-A, and LS-2; and derives the Standard Model structure, three generations, Born rule, EFE, and both Millennium Theorems under the single condition K₀=7 (a theorem). The non-claims list of §8 should be updated accordingly: N3 and N4 have been conditionally resolved under K₀=7 (itself derived from kernel axioms). No free parameters remain. Readers should consult IR8 for the terminal claim-status table.</p>
+</div>
+
+<h4>Revision notice for L2 (Outreach Kit → Revision 3)</h4>
+
+<div class="revision-block">
+  <div class="rev-label">Insert as new first paragraph, replacing current revision notice</div>
+  <p><strong>Revision notice.</strong> This outreach kit was issued as Revision 2 on March 21, 2026, calibrated to Paper I Revision 2. It is hereby updated by the following supersession note pending a full Revision 3. The authoritative status source of truth is now <strong>Paper I Revision 8</strong>. All transmission templates in this document that describe the suite as having "two standing hypotheses (SA2 and Phase-A)" or "three named open obligations" are superseded: SA2 and Phase-A have been proved as theorems from K₀=7 and kernel axioms (Paper O2, authorized in IR7), all proof obligations have been discharged (IR7 terminal), and K₀=7 itself has been established as a theorem (Paper Three Residual Questions, authorized in IR8). The correct current description of the suite's frontier condition is: no standing hypotheses, no open obligations, one condition (K₀=7 which is a theorem), and the full output derives from kernel axioms and canonical generator class. The prohibited-formulations list (§8) should be supplemented with the following: it is now prohibited to describe SA2 or Phase-A as standing hypotheses, or to refer to open obligations O1–O3. The anti-drift theorem (§7) is updated: admissible abstracts must now describe the Millennium closures as Conditional (K₀=7) and must not imply any open obligations remain. The transmission templates in §§5–6 should not be used verbatim until Revision 3 is issued; if needed urgently, replace all instances of "SA2 and Phase-A" with "K₀=7 (a theorem derived from kernel axioms)" and remove all references to remaining open obligations.</p>
+</div>
+
+<h4>Addendum required for paper_final_synthesis</h4>
+
+<div class="revision-block">
+  <div class="rev-label">Insert as a new §0 "Supersession notice" or as a prepended cover note</div>
+  <p><strong>Supersession notice.</strong> This synthesis document was issued on March 21, 2026, subordinate to Paper I Revision 6. It is superseded in part by two subsequent ledger events: (IR7) Paper O2 discharged the sole remaining obligation O2, upgrading all Conditional (SA2+Phase-A) entries to Conditional (K₀=7); and (IR8) Paper "Three Residual Questions" established K₀=7 as a theorem, eliminating the last free parameter. The corrected terminal endpoint (superseding Theorem 1.1 and Theorem 5.1 of this document) is: the suite derives its full output from kernel axioms A1–A4 and canonical generator class L1–L4 alone, with no free parameters and no open obligations; the Millennium closures and EFE hold conditionally on K₀=7, which is itself a theorem. The recovery set should be read as <strong>R = {A, D, IR8, JR2, KR2, LR2}</strong>. Remark 3.2 ("if O2 were proved…") is now in the indicative: O2 has been proved and the upgrade has occurred. Readers should consult IR8 for the terminal status table.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PART D: ACTION TAXONOMY CLASSIFICATION -->
+<!-- ══════════════════════════════════════════════════════ -->
+
+<hr>
+
+<div class="sec-header">
+  <span class="sec-tag tag-action">Part D</span>
+  <h3>NFC papers and new papers — action class classification</h3>
+</div>
+
+<p>Per Iter. 210 (Canonical Execution), every governed move must belong to a named action class. Per Iter. 212 (Canonical Authorization), authorization status must be determinable from the canonical record. The table below classifies all unclassified new papers.</p>
+
+<table class="action-table">
+  <tr>
+    <th>Paper</th>
+    <th>Action class</th>
+    <th>Authorization event</th>
+    <th>Current status</th>
+    <th>Display tier</th>
+  </tr>
+  <tr class="ac-ok">
+    <td class="mono">NFC-CLU</td>
+    <td>Bridge discharge</td>
+    <td>IR2 entry NFC-1 upgraded from Open-Bridge to Conditional</td>
+    <td>Authorized. Internal status (SA2+Phase-A) stale → add I7 note</td>
+    <td>Branch F discharge note</td>
+  </tr>
+  <tr class="ac-ok">
+    <td class="mono">NFC-LS2</td>
+    <td>Bridge discharge</td>
+    <td>IR3 entry O-LS2-Str discharged</td>
+    <td>Authorized. Add I7 note for condition upgrade</td>
+    <td>Branch F discharge note</td>
+  </tr>
+  <tr class="ac-ok">
+    <td class="mono">NFC-EFE</td>
+    <td>Bridge discharge (×3)</td>
+    <td>IR4/IR5 entries NFC-5, NFC-6, NFC-7 discharged</td>
+    <td>Authorized. Add I7 note</td>
+    <td>Branch G discharge note</td>
+  </tr>
+  <tr class="ac-ok">
+    <td class="mono">NFC-3Gen</td>
+    <td>Bridge discharge (D-compliant)</td>
+    <td>IR4 entry BM1 NFC† flag cleared</td>
+    <td>Authorized. Condition: Unconditional core result</td>
+    <td>Branch S discharge note</td>
+  </tr>
+  <tr class="ac-ok">
+    <td class="mono">NFC-Weyl</td>
+    <td>Bridge discharge (D-compliant)</td>
+    <td>IR4 entries CA1, BL2 NFC† flags cleared</td>
+    <td>Authorized. Add I7 note for SA2+Phase-A → K₀=7</td>
+    <td>Branch S discharge note</td>
+  </tr>
+  <tr class="ac-ok">
+    <td class="mono">NFC-Stage0</td>
+    <td>Bridge discharge (O1, O3)</td>
+    <td>IR6: O1 → Conditional; O3 → Conditional; BJ-O3 → Conditional</td>
+    <td>Authorized. Add I7 note</td>
+    <td>Branch G/M discharge note</td>
+  </tr>
+  <tr class="ac-ok">
+    <td class="mono">paper_O2</td>
+    <td>Theorem upgrade (conditional→derived)</td>
+    <td>IR7: SA2+Phase-A → K₀=7; no remaining proof obligations</td>
+    <td>Authorized. Terminal proof obligation discharge.</td>
+    <td>Governance milestone — link from I7</td>
+  </tr>
+  <tr class="ac-ok">
+    <td class="mono">paper_why_K07</td>
+    <td>Theorem upgrade (parameter→theorem precursor)</td>
+    <td>Feeds IR8 via three_residual chain</td>
+    <td>Authorized (via I8). Unconditional internal consistency result.</td>
+    <td>Governance milestone — link from I8</td>
+  </tr>
+  <tr class="ac-ok">
+    <td class="mono">paper_three_residual</td>
+    <td>Theorem upgrade (K₀=7 = theorem)</td>
+    <td>IR8: K₀=7 upgraded from parameter to theorem (RQ-1, RQ-2, RQ-5)</td>
+    <td>Authorized. This is the mathematical source for I8.</td>
+    <td>Governance milestone — link from I8</td>
+  </tr>
+  <tr class="ac-warn">
+    <td class="mono">paper_final_synthesis</td>
+    <td>Intake/transmission refresh</td>
+    <td>Issued with IR6 as compression/synthesis document</td>
+    <td>Stale relative to IR7/IR8. Needs supersession notice (Part C above).</td>
+    <td>Governance support — subordinate to IR8</td>
+  </tr>
+  <tr class="ac-ok">
+    <td class="mono">paper_D2_nfc_certification</td>
+    <td>D-compliant certification catalog</td>
+    <td>Issued jointly with IR2; completes NFC monograph certification requirement</td>
+    <td>Authorized. Feeds NFC-CLU through NFC-Stage0 chain.</td>
+    <td>Governance support (Start Here tier — D slot)</td>
+  </tr>
+  <tr class="ac-ok">
+    <td class="mono">paper_O2_substrate_independence</td>
+    <td>Theorem upgrade (bridge discharge)</td>
+    <td>IR7: O2 discharged; SA2+Phase-A now derived</td>
+    <td>Authorized. Unconditional result (for canonical K₀=7 + A1–A4 + L1–L4).</td>
+    <td>Governance milestone — link from I7</td>
+  </tr>
+</table>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PART E: CANONICAL HANDOFF NOTE -->
+<!-- ══════════════════════════════════════════════════════ -->
+
+<hr>
+
+<div class="sec-header">
+  <span class="sec-tag tag-handoff">Part E</span>
+  <h3>Canonical handoff note — Phase II deliverable</h3>
+</div>
+
+<p>This is the one-page functional document required by Iteration 205 (Canonical Handoff). It answers the five canonical questions a new steward must be able to answer from the core alone. It presupposes no author memory and no prior conversation history. It is suitable for inclusion in K* Revision 3 as an appendix or as a standalone governance annex.</p>
+
+<div class="handoff">
+  <div class="handoff-title">Dream Paper Suite — Canonical Handoff Note<br>
+    <span style="font-size:0.85rem; font-weight:400; color: var(--ink-3)">For new stewards. Answers the five canonical questions from the core alone. Authoritative ledger: Paper I Revision 8 (terminal supplement, March 21, 2026).</span>
+  </div>
+
+  <div class="handoff-q">Q1. What is the theorem anchor?</div>
+  <div class="handoff-a">
+    <strong>Paper A</strong> (flagship_kernel_paper). It is the suite's finite relational kernel: observational quotient construction, stabilization, LS-2 conditional boundary determinacy, interface-capacity inequality, packing contradiction, and Phase-A exclusion. All proofs in A are unconditional. A is the base on which all downstream conditional and bridge results depend. Every other paper in the suite is either a governance layer, a certification layer, a bridge program, or a downstream closure — none replaces A.
+  </div>
+
+  <div class="handoff-q">Q2. What is currently open bridge and what has been discharged?</div>
+  <div class="handoff-a">
+    As of Paper I Revision 8 (the live ledger): <strong>no named bridge obligations remain open.</strong> The discharge chain is: NFC-CLU (O-CLU, NFC-1), NFC-LS2 (O-LS2-Str), NFC-3Gen (O-3Gen-Block), NFC-Weyl (O-KPO3-Weyl), NFC-EFE (NFC-5/6/7), NFC-Stage0 (O1, O3), Paper O2 (O2 — substrate independence), Three Residual Questions (K₀=7 theorem, feeding I8). Every bridge that was open at any prior ledger revision has been explicitly discharged and recorded. If a reader encounters a claim marked "Open-Bridge" in any paper, they should check whether the corresponding discharge paper appears in this list, then verify in IR8 that the entry has been retired.
+  </div>
+
+  <div class="handoff-q">Q3. What is computational versus unconditional?</div>
+  <div class="handoff-a">
+    <strong>Unconditional:</strong> Paper A (finite kernel), Paper BR (cross-branch coercive-transport source theorem), Papers BC–BD (entropy, time, causal order), Papers BJ/BL/BO/NFC-3Gen (dimensional selection 9→4, block-diagonal action), Paper O2 (SA2+Phase-A derived from K₀=7 + kernel axioms), Paper Three Residual Questions (K₀=7 is a theorem from A2 + generator class). <strong>Conditional (K₀=7, which is a theorem):</strong> Standard Model gauge group (K₀=7 → SU(3)×SU(2)×U(1)), Yang–Mills Millennium Theorem (Paper BB), Navier–Stokes Millennium Theorem (Paper BY), EFE in L²_loc (Papers BH/CE), 3 matter generations (Paper BM), Born rule (Papers BF/BL). <strong>Computational:</strong> Physical identifications of specific NFC parameters as Standard Model constants (certified via Paper D2 and the NFC-* discharge papers; these are certified computations, not unconditional theorems). Paper D (certificate doctrine) is the governing law for the computational tier — it specifies what computations may and may not prove within the suite.
+  </div>
+
+  <div class="handoff-q">Q4. What is admissible outward compression?</div>
+  <div class="handoff-a">
+    Paper L2 (Outreach Kit, governed by Paper L's anti-drift theorem) defines the admissible template family. <strong>However, L2 is currently stale relative to IR8</strong> (it references IR2 and describes two standing hypotheses and three open obligations that have all been resolved). Until L2 Revision 3 is issued, admissible outward compression must satisfy three conditions: (a) the Millennium closures are described as Conditional (K₀=7), not Conditional (SA2+Phase-A); (b) SA2 and Phase-A are described as derived results, not standing hypotheses; (c) no open obligations are mentioned. The canonical compact description per IR8 is: "A layered mathematical program built around a finite relational kernel (unconditional), an unconditional cross-branch coercive-transport source theorem, and closures of the Yang–Mills and Navier–Stokes Millennium Problems and the structural Einstein field equations, each conditional on K₀=7 — a value determined uniquely by internal self-consistency of the suite's structural outputs. No free parameters. No open obligations."
+  </div>
+
+  <div class="handoff-q">Q5. What currently governs status?</div>
+  <div class="handoff-a">
+    <strong>Paper I Revision 8</strong> (paper_I8_terminal, March 21, 2026) is the sole authoritative status source of truth. The terminal endpoint per IR8 is: from kernel axioms A1–A4 and canonical generator class L1–L4, the suite derives unconditionally the finite kernel, source theorem, entropy, time, dimensional selection, SA2, Phase-A, and LS-2; and under the single condition K₀=7 (itself a theorem), the Standard Model structure, 3 generations, Born rule, EFE, and both Millennium Theorems. IR8 was authorized by Paper Three Residual Questions (establishing Theorems RQ-1, RQ-2, RQ-5 that upgraded K₀=7 from parameter to theorem). The ledger chain is IR2 → IR3 → IR4 → IR5 → IR6 → IR7 → IR8. Each transition record is contained in the corresponding Iₙ paper. Any external statement that diverges from IR8's claim-status table is provisional under the ledger law until a new authorized revision event updates the ledger. <strong>Note for new stewards:</strong> the gateway papers K2, J2, and L2 currently cite IR2, not IR8. Until those papers are updated (Revision 3), IR8 overrides their status language wherever it conflicts.
+  </div>
+</div>
+
+<div class="note note-info">
+  <strong>Handoff test.</strong> To verify that the suite satisfies the Canonical Handoff requirement (Iter. 205), hand a competent new steward only this note plus: paper_I8_terminal, flagship_kernel_paper, paper_D2_nfc_certification, paper_J2_referee_brief (with revision notice), paper_K2_entry_point_dossier (with revision notice), and paper_BR_unified_coercive. Ask them to determine the five canonical answers. If they reach the same answers as above without further author input, the Canonical Handoff requirement is satisfied. The primary risk factor is the K2/J2 staleness: a steward who reads K2/J2 without the revision notices may believe two standing hypotheses remain open.
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PART F: UPDATED PUBLIC ARCHITECTURE NOTE -->
+<!-- ══════════════════════════════════════════════════════ -->
+
+<hr>
+
+<div class="sec-header">
+  <span class="sec-tag tag-ok">Part F</span>
+  <h3>Updated public architecture — new paper placements</h3>
+</div>
+
+<p>The following corrections to the Catalog R3 public architecture are required to reflect the I7/I8 advances and the correct classification of new papers.</p>
+
+<table class="delta-table">
+  <tr><th>Paper</th><th>Catalog R3 placement</th><th>Correct placement per IR8</th></tr>
+  <tr>
+    <td class="mono">paper_why_K07</td>
+    <td><em>Not listed in R3</em></td>
+    <td>Governance milestone, linked from I8. Not a branch paper. Not first-contact. Visible as: "why K₀=7 is the unique self-consistent value (feeds I8)."</td>
+  </tr>
+  <tr>
+    <td class="mono">paper_three_residual</td>
+    <td><em>Not listed in R3</em></td>
+    <td>Governance milestone, linked from I8. Mathematical source of the I8 K₀=7 theorem upgrade. Not a branch paper. Same tier as why_K07.</td>
+  </tr>
+  <tr>
+    <td class="mono">paper_O2_substrate_independence</td>
+    <td><em>Not listed in R3</em></td>
+    <td>Governance milestone, linked from I7 as the O2 discharge paper. Not a branch paper. Displays as: "derives SA2+Phase-A from K₀=7 + kernel axioms (feeds I7)."</td>
+  </tr>
+  <tr>
+    <td class="mono">paper_final_synthesis</td>
+    <td><em>Not listed in R3</em></td>
+    <td>Governance support tier, subordinate to IR8. Needs supersession notice (Part C above) before display. Do not list as a current synthesis without the notice.</td>
+  </tr>
+  <tr>
+    <td class="mono">paper_I8_terminal</td>
+    <td>Not in R3 (R3 lists I4 as live)</td>
+    <td><strong>Live I* slot.</strong> Replaces I4 in the Start Here tier. I5/I6/I7 are intermediate authorized states, archived in the ledger chain. I8 is the terminal revision.</td>
+  </tr>
+  <tr>
+    <td class="mono">paper_I5–I7</td>
+    <td>Not in R3</td>
+    <td>Ledger chain archive. Visible in the governance tier as "ledger transition records IR5, IR6, IR7" — not as public first-contact documents.</td>
+  </tr>
+  <tr>
+    <td class="mono">K2, J2, L2 (current)</td>
+    <td>Live K*, J*, L* slots</td>
+    <td>Still live slots, but must display the revision notices from Part C until Revision 3 papers are issued. Mark each as: "Revision 2 — see IR8 supersession notice."</td>
+  </tr>
+</table>
+
+
+<div class="doc-footer">
+  <p>Dream Paper Suite — Governance Audit &amp; Canonical Handoff Note · Continuation of Canonical Assembly Roadmap · Project Lead · March 21, 2026</p>
+  <p style="margin-top:0.3rem">The central finding in one sentence: the suite has a complete and legitimate authorization chain through IR8, but its three public gateway papers (K2, J2, L2) describe the suite as it stood at IR2 — six revisions, two discharged hypotheses, and three closed obligations behind the live ledger state.</p>
+</div>
+
+</body>
+</html>
