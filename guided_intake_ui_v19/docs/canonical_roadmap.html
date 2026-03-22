@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Paper Suite — Canonical Assembly Roadmap</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #1a1917;
+    --ink-2: #3d3b37;
+    --ink-3: #6b6964;
+    --ink-4: #999791;
+    --paper: #faf8f3;
+    --paper-2: #f3f0e9;
+    --paper-3: #ebe7de;
+    --rule: #d4cfc4;
+    --rule-2: #c5bfb2;
+    --gold: #8a6a2a;
+    --gold-lt: #b8922e;
+    --gold-bg: #fdf5e0;
+    --red: #8b2020;
+    --red-bg: #fdf0f0;
+    --green: #2a5c3a;
+    --green-bg: #edf5ef;
+    --blue: #1e3f70;
+    --blue-bg: #eef3fa;
+    --slate: #3d4a5c;
+    --slate-bg: #eef0f4;
+    font-size: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.75;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 3rem 6rem;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1 { font-size: 2.2rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.05rem; font-weight: 400; color: var(--ink-3); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2.5rem; }
+  h3 { font-size: 1.3rem; font-weight: 500; margin-bottom: 0.6rem; }
+  h4 { font-size: 1rem; font-weight: 500; color: var(--ink-2); margin-bottom: 0.4rem; }
+  p  { margin-bottom: 0.9rem; color: var(--ink-2); }
+  code { font-family: 'JetBrains Mono', monospace; font-size: 0.8em; background: var(--paper-3); padding: 0.1em 0.35em; border-radius: 3px; color: var(--ink-2); }
+  strong { font-weight: 500; color: var(--ink); }
+  em { font-style: italic; color: var(--ink-3); }
+
+  /* ── LAYOUT ── */
+  .masthead { margin-bottom: 3.5rem; padding-bottom: 2rem; border-bottom: 1.5px solid var(--rule-2); }
+  .masthead-meta { font-size: 0.88rem; color: var(--ink-4); margin-top: 0.4rem; font-style: italic; }
+
+  hr { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+  /* ── PHASES ── */
+  .phase { margin-bottom: 3.5rem; }
+
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .phase-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2em 0.6em;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .tag-done    { background: var(--green-bg);  color: var(--green); }
+  .tag-active  { background: var(--gold-bg);   color: var(--gold); }
+  .tag-next    { background: var(--blue-bg);   color: var(--blue); }
+  .tag-future  { background: var(--paper-3);   color: var(--ink-4); }
+  .tag-law     { background: var(--red-bg);    color: var(--red); }
+
+  .phase-iter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-4);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  /* ── THEOREM CALLOUT ── */
+  .theorem {
+    background: var(--paper-2);
+    border-left: 3px solid var(--gold-lt);
+    padding: 0.9rem 1.2rem;
+    margin: 1rem 0 1.4rem;
+    border-radius: 0 4px 4px 0;
+  }
+  .theorem-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+  }
+  .theorem p { color: var(--ink); margin-bottom: 0; font-style: italic; font-size: 0.97rem; }
+
+  /* ── TASK LISTS ── */
+  .tasks { list-style: none; margin: 0 0 1rem; }
+  .tasks li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 0.45rem;
+    font-size: 0.96rem;
+    color: var(--ink-2);
+  }
+  .tasks li::before {
+    content: '◻';
+    position: absolute;
+    left: 0;
+    color: var(--rule-2);
+    font-size: 0.9rem;
+    top: 0.05em;
+  }
+  .tasks li.done::before {
+    content: '✓';
+    color: var(--green);
+  }
+  .tasks li.warn::before {
+    content: '⚑';
+    color: var(--gold-lt);
+  }
+
+  /* ── PAPER SLOTS ── */
+  .slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem;
+    margin: 1.25rem 0 1.5rem;
+  }
+
+  .slot {
+    border: 1px solid var(--rule);
+    border-radius: 5px;
+    padding: 0.7rem 0.9rem;
+    background: var(--paper);
+  }
+  .slot-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    margin-bottom: 0.2rem;
+  }
+  .slot-name { font-size: 0.92rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
+  .slot-occ  { font-size: 0.82rem; font-style: italic; color: var(--ink-3); }
+  .slot-role { font-size: 0.8rem; color: var(--ink-4); margin-top: 0.3rem; }
+
+  .slot.live    { border-color: var(--green); border-width: 1.5px; }
+  .slot.active  { border-color: var(--gold-lt); }
+  .slot.archive { background: var(--paper-3); opacity: 0.75; }
+
+  /* ── BRANCH TABLE ── */
+  .branch-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1rem 0 1.5rem; }
+  .branch-table th {
+    text-align: left;
+    padding: 0.4rem 0.8rem;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    border-bottom: 1.5px solid var(--rule-2);
+  }
+  .branch-table td {
+    padding: 0.45rem 0.8rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-2);
+    vertical-align: top;
+  }
+  .branch-table tr:last-child td { border-bottom: none; }
+  .branch-id { font-family: 'JetBrains Mono', monospace; font-weight: 500; color: var(--ink); }
+
+  /* ── GOVERNANCE ARC ── */
+  .arc {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 1.25rem 0 1.5rem;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .arc-row {
+    display: grid;
+    grid-template-columns: 5rem 1fr 2.4fr;
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .arc-row:last-child { border-bottom: none; }
+  .arc-iter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-4);
+    padding: 0.6rem 0.6rem 0.6rem 0.9rem;
+    background: var(--paper-3);
+    border-right: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+  }
+  .arc-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.6rem 0.8rem;
+    border-right: 1px solid var(--rule);
+    background: var(--paper-2);
+    display: flex;
+    align-items: center;
+  }
+  .arc-desc {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.9rem;
+    color: var(--ink-2);
+    display: flex;
+    align-items: center;
+  }
+
+  /* ── NOTE BOXES ── */
+  .note {
+    font-size: 0.88rem;
+    padding: 0.8rem 1.1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+  }
+  .note-warn  { background: var(--gold-bg);  border-left: 3px solid var(--gold-lt); color: var(--gold); }
+  .note-law   { background: var(--red-bg);   border-left: 3px solid var(--red);      color: var(--red); }
+  .note-info  { background: var(--blue-bg);  border-left: 3px solid var(--blue);     color: var(--blue); }
+  .note-ok    { background: var(--green-bg); border-left: 3px solid var(--green);    color: var(--green); }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--ink-4);
+    font-style: italic;
+  }
+
+  @media print {
+    body { padding: 2rem; font-size: 14px; }
+    .phase { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <h1>Dream Paper Suite</h1>
+  <h2>Canonical Assembly &amp; Presentation Roadmap</h2>
+  <p class="masthead-meta">Project Lead document · Based on NFC–Push iterations 190–212 · Catalog R3 · Suite v3</p>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 0: GOVERNING FRAMEWORK -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-tag tag-law">Governing Law</span>
+    <h3>The canonical completeness arc</h3>
+  </div>
+
+  <p>Iterations 190–212 distil a precise sequence of properties a suite must have before it is canonical in the strongest sense — not merely complete in content, but complete as a transferable, reproducible, governed mathematical object. Each iteration proves the <em>weakest</em> next theorem, isolating exactly what turns the prior property into the next one.</p>
+
+  <p>Every phase of this roadmap is anchored to a theorem in the arc. No phase is "done" until the corresponding property is satisfied, not merely approximated.</p>
+
+  <div class="arc">
+    <div class="arc-row">
+      <div class="arc-iter">Iter. 204</div>
+      <div class="arc-name">Canonical Instantiation</div>
+      <div class="arc-desc">The minimal core <code>{A, D, I*, J*, K*}</code> is sufficient to lawfully regenerate the full governed suite without hidden judgment.</div>
+    </div>
+    <div class="arc-row">
+      <div class="arc-iter">Iter. 205</div>
+      <div class="arc-name">Canonical Handoff</div>
+      <div class="arc-desc">A new competent steward can reconstruct and govern the suite from the core without relying on the original author's memory, history, or unwritten interpretation.</div>
+    </div>
+    <div class="arc-row">
+      <div class="arc-iter">Iter. 206</div>
+      <div class="arc-name">Canonical Replication</div>
+      <div class="arc-desc">Independent competent stewards given the same core reconstruct the same governed suite state — same status map, entry order, admissibility law, and outward compression.</div>
+    </div>
+    <div class="arc-row">
+      <div class="arc-iter">Iter. 207</div>
+      <div class="arc-name">Presentation-Invariance</div>
+      <div class="arc-desc">Any admissible re-expression (dossier, cover note, abstract, synopsis) preserves the same status map, dependency order, admissibility boundary, and compression layer.</div>
+    </div>
+    <div class="arc-row">
+      <div class="arc-iter">Iter. 208</div>
+      <div class="arc-name">Canonical Delta</div>
+      <div class="arc-desc">Two successive authoritative suite states differ only by the explicit ledger-certified revision event; no change is introduced by packaging, summary, or steward choice.</div>
+    </div>
+    <div class="arc-row">
+      <div class="arc-iter">Iter. 209</div>
+      <div class="arc-name">Canonical Replay</div>
+      <div class="arc-desc">Every authoritative state transition is reconstructible step-by-step from the ledger-certified transition record alone — evolution is not just auditable but reproducible.</div>
+    </div>
+    <div class="arc-row">
+      <div class="arc-iter">Iter. 210</div>
+      <div class="arc-name">Canonical Execution</div>
+      <div class="arc-desc">The current authoritative state together with the governed action taxonomy determines which kinds of next moves are admissible, without hidden author-dependent judgment.</div>
+    </div>
+    <div class="arc-row">
+      <div class="arc-iter">Iter. 211</div>
+      <div class="arc-name">Canonical Verification</div>
+      <div class="arc-desc">Every admissible proposed move has a named, move-specific pre-authoritative check condition determinable from the canonical record before it can change the suite state.</div>
+    </div>
+    <div class="arc-row" style="border-bottom:none">
+      <div class="arc-iter">Iter. 212</div>
+      <div class="arc-name">Canonical Authorization</div>
+      <div class="arc-desc">A verified move changes the suite only by an explicit ledger-governed authorization act. Verification is necessary but not sufficient; passing the check does not itself update the canon.</div>
+    </div>
+  </div>
+
+  <div class="note note-law">
+    <strong>Standing governance law (all phases).</strong> Paper D forbids scope enlargement without an explicit transfer theorem. Paper I makes the ledger the sole source of truth for claim status. Papers K and L are non-enlarging packaging layers, not new theorem sources. No presentation, summary, or outward communication may function as a hidden authorization channel.
+  </div>
+</div>
+
+<hr>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PHASE I: CORE SLOT CERTIFICATION -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-tag tag-active">Phase I</span>
+    <h3>Core slot certification</h3>
+    <span class="phase-iter">Iter. 204 — Canonical Instantiation</span>
+  </div>
+
+  <div class="theorem">
+    <div class="theorem-label">Target theorem</div>
+    <p>The minimal serious package <code>{A, D, I*, J*, K*}</code> is canonically instantiating: it is sufficient to lawfully regenerate the suite's routing, transmission, and branch-status architecture without hidden extra judgment.</p>
+  </div>
+
+  <h4>Live slot assignments (current state per Catalog R3)</h4>
+  <div class="slot-grid">
+    <div class="slot live">
+      <div class="slot-label">Slot A — Kernel</div>
+      <div class="slot-name">Flagship Kernel Paper</div>
+      <div class="slot-occ">flagship_kernel_paper</div>
+      <div class="slot-role">Finite theorem anchor. Stabilization, LS-2, certificates, bridge obligations.</div>
+    </div>
+    <div class="slot live">
+      <div class="slot-label">Slot D — Doctrine</div>
+      <div class="slot-name">Certificate Theory v2</div>
+      <div class="slot-occ">paper_D2_nfc_certification</div>
+      <div class="slot-role">Evidentiary law for proof/computation interface. Supersedes paper_D.</div>
+    </div>
+    <div class="slot live">
+      <div class="slot-label">Slot I* — Ledger</div>
+      <div class="slot-name">Master Ledger (live)</div>
+      <div class="slot-occ">paper_I8_terminal · basis: I7→I6→…→I2</div>
+      <div class="slot-role">Status source of truth. Unified update chain through I8.</div>
+    </div>
+    <div class="slot live">
+      <div class="slot-label">Slot J* — Brief</div>
+      <div class="slot-name">Referee Brief v2</div>
+      <div class="slot-occ">paper_J2_referee_brief</div>
+      <div class="slot-role">First-contact synopsis for mathematically mature outsiders.</div>
+    </div>
+    <div class="slot live">
+      <div class="slot-label">Slot K* — Dossier</div>
+      <div class="slot-name">Entry-Point Dossier v2</div>
+      <div class="slot-occ">paper_K2_entry_point_dossier</div>
+      <div class="slot-role">Gateway and intake controller. Defines minimal serious package.</div>
+    </div>
+    <div class="slot active">
+      <div class="slot-label">Slot BR — Source Thm</div>
+      <div class="slot-name">Unified Coercive-Transport</div>
+      <div class="slot-occ">paper_BR_unified_coercive</div>
+      <div class="slot-role">Unconditional source theorem linking major downstream branches.</div>
+    </div>
+  </div>
+
+  <div class="note note-info">
+    <strong>Ledger slot status.</strong> The catalog R3 names I4 as the then-live slot, but the zip contains I5, I6, I7, and I8. The current authoritative ledger is <code>paper_I8_terminal</code>. Confirm that K* and J* reference this terminal ledger, not I4. Any K*/J* language derived from an earlier ledger generation is provisionally stale until verified against I8.
+  </div>
+
+  <h4>Phase I tasks</h4>
+  <ul class="tasks">
+    <li class="done">Identify live slot occupants from Catalog R3 and zip inventory.</li>
+    <li class="done">Confirm superseded gateway generations (paper_K, paper_J, paper_I, paper_I2, paper_I3, paper_L, paper_D) are archived and not public-facing.</li>
+    <li>Verify K* and J* cite <code>paper_I8_terminal</code> (not I4) as the live ledger.</li>
+    <li>Cross-check that BR is correctly indexed as a Start Here item, not a branch supplement.</li>
+    <li>Confirm no terminal-mirage titles (paper_AS, paper_BK, paper_BP, paper_CCCD, paper_CF) appear in any public navigation path.</li>
+    <li class="warn">Audit <code>paper_why_K0_7</code>, <code>paper_three_residual_questions</code>, and <code>paper_final_synthesis</code> — classify each as governance support, branch discharge note, or archive per ledger I8 status.</li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PHASE II: CANONICAL HANDOFF -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-tag tag-active">Phase II</span>
+    <h3>Canonical handoff preparation</h3>
+    <span class="phase-iter">Iter. 205 — Canonical Handoff</span>
+  </div>
+
+  <div class="theorem">
+    <div class="theorem-label">Target theorem</div>
+    <p>A new competent steward, given only the canonical core, can reconstruct and govern the suite without relying on the original author's memory, prior conversation history, or unwritten interpretation.</p>
+  </div>
+
+  <p>This phase's test is the <strong>two-steward experiment</strong>: hand two independent competent mathematicians only K*, J*, A, D, I8, and BR. Ask each to determine: (1) what is theorem anchor, (2) what is open bridge, (3) what is computational vs. unconditional, (4) what is admissible outward compression, (5) what currently governs status. If both reach the same answers without further input, handoff is satisfied.</p>
+
+  <h4>Handoff requirements (from Iter. 205)</h4>
+  <ul class="tasks">
+    <li><strong>Author-independence:</strong> All status-governing, admissibility-governing, and routing-governing facts are encoded in the core and its lawful reconstructions — nothing in unwritten author memory.</li>
+    <li><strong>Conversation-independence:</strong> No prior chat history, oral explanation, or bespoke interpretation is needed to answer the five canonical questions above.</li>
+    <li><strong>Reconstruction determinacy:</strong> Two competent stewards given the same core reconstruct the same governed suite state up to the already-licensed succession and ledger rules.</li>
+    <li><strong>Governed continuation:</strong> The new steward can not only read the canon, but also perform lawful future actions — upgrade, downgrade, reclassify, package, transmit — under the same doctrine and ledger discipline.</li>
+  </ul>
+
+  <h4>Concrete assembly tasks</h4>
+  <ul class="tasks">
+    <li>Ensure K* contains an explicit, self-contained statement of the intake law — the first-pass reading path for serious readers — that does not presuppose familiarity with any prior version.</li>
+    <li>Ensure I8 contains a self-standing revision protocol section: what events change ledger status, what the ledger entries look like, and what makes a public statement provisional vs. authoritative.</li>
+    <li>Ensure D2 contains a self-standing evidentiary law statement: what certificates may and may not do, what makes computation theorem-usable, and what the anti-smuggling boundary is.</li>
+    <li class="warn">Verify J2 does not rely on implicit knowledge of prior brief generations (J or J_early) to be correctly read. If J2 references a "previous brief," check whether that reference is still live or has been superseded.</li>
+    <li>Write a one-page handoff note (candidate for inclusion in K*) summarising: live slot occupants, ledger generation, branch status, and the five canonical questions. This note is the functional test object for Iter. 205.</li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PHASE III: CANONICAL REPLICATION -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-tag tag-next">Phase III</span>
+    <h3>Canonical replication and presentation-invariance</h3>
+    <span class="phase-iter">Iters. 206–207</span>
+  </div>
+
+  <div class="theorem">
+    <div class="theorem-label">Target theorems</div>
+    <p><strong>Replication (206):</strong> Independent competent stewards given the same core reconstruct the same governed suite state — same status map, entry order, admissibility law, compression layer. <strong>Presentation-invariance (207):</strong> Any admissible re-expression preserves that governed state exactly.</p>
+  </div>
+
+  <p>Replication means the five replication properties below are jointly satisfied by the core. Presentation-invariance means that L* outward forms, K* dossiers, and any future branch synopses cannot introduce governed differences through paraphrase or reordering.</p>
+
+  <h4>Five replication requirements (Iter. 206)</h4>
+  <ul class="tasks">
+    <li><strong>Status replication:</strong> I8 is the unique status source of truth; later public language defers to it. No paper may carry its own independent claim-status statement that could diverge.</li>
+    <li><strong>Entry replication:</strong> K* fixes the minimal serious package and the canonical first-pass routing law. No alternative entry path is legitimate unless K* names it.</li>
+    <li><strong>Admissibility replication:</strong> D2 fixes the evidentiary boundary. No steward discretion may extend what computation can prove.</li>
+    <li><strong>Compression replication:</strong> K2 and L2 are non-enlarging packaging layers. They summarise and transmit; they do not create new governed content.</li>
+    <li><strong>No hidden steward freedom:</strong> Any difference between two reconstructed suite states is traceable either to a ledger-certified succession event or to steward error — not to legitimate interpretation plurality.</li>
+  </ul>
+
+  <h4>Presentation-invariance checklist (Iter. 207)</h4>
+  <ul class="tasks">
+    <li><strong>Status invariance:</strong> Audit L2 (outreach kit) and any cover letters for paraphrase that strengthens conditional, computational, prototype, or open-bridge claims. Flag any instance where language implicitly upgrades status.</li>
+    <li><strong>Dependency invariance:</strong> Confirm all public-facing reading guides route through A→D→I8→J*→K* before frontier papers. No external synopsis may suggest reading branch papers before the core.</li>
+    <li><strong>Admissibility invariance:</strong> Check that no summary or abstract implies bounded computational success constitutes asymptotic, continuum, or physical-interpretive closure.</li>
+    <li><strong>Compression invariance:</strong> Confirm L2 is explicitly governed by and subordinate to A, D, I8, J*, K*. Any abstract or letter derived from L2 should cite the live ledger generation.</li>
+    <li class="warn">Flag <code>paper_NFC_CLU</code>, <code>paper_NFC_EFE</code>, <code>paper_NFC_LS2</code>, <code>paper_NFC_3Gen</code>, <code>paper_NFC_Weyl</code>, <code>paper_NFC_Stage0</code> — each must be visibly indexed as a <em>branch discharge note</em>, not an alternative Start Here paper, to preserve entry replication.</li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PHASE IV: CANONICAL DELTA AND REPLAY -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-tag tag-next">Phase IV</span>
+    <h3>Canonical delta visibility and replayability</h3>
+    <span class="phase-iter">Iters. 208–209</span>
+  </div>
+
+  <div class="theorem">
+    <div class="theorem-label">Target theorems</div>
+    <p><strong>Delta (208):</strong> Successive authoritative suite states differ only by the explicit ledger-certified revision event; no change is introduced by packaging or steward choice. <strong>Replay (209):</strong> Every authoritative state transition is reconstructible step-by-step from the certified transition record, using the fixed serious base <code>{A, D, I*, J*}</code>.</p>
+  </div>
+
+  <h4>Ledger transition record</h4>
+  <p>The ledger update chain I2→I3→I4→I5→I6→I7→I8 represents eight successive authoritative states. For each transition, the delta must be explicitly stated in the successor document. The replay test: given I<sub>n</sub> and the I<sub>n+1</sub> transition record, a competent steward can reconstruct I<sub>n+1</sub> without additional inputs.</p>
+
+  <ul class="tasks">
+    <li>Verify each ledger generation (I2 through I8) carries an explicit delta section: which claims changed status, which bridge was discharged, which promotion event occurred.</li>
+    <li>Confirm that I8 (terminal) either (a) carries a final-state certification or (b) explicitly names the remaining open bridge obligations without suggesting closure.</li>
+    <li>Check that no packaging difference between ledger generations introduces apparent claim changes that are not ledger-certified (e.g., removal of a claim from I7 to I8 that was not explicitly reclassified or retired).</li>
+    <li class="warn">Audit the <code>paper_O2_substrate_independence</code> and <code>paper_D2_nfc_certification</code> additions — confirm their contribution to the governed suite is captured in a ledger delta entry in I8 or later.</li>
+    <li>Ensure the ledger's revision protocol section (required from Phase II) is sufficient to replay any transition from an archived state. If it is not, extend it.</li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PHASE V: CANONICAL EXECUTION AND VERIFICATION -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-tag tag-future">Phase V</span>
+    <h3>Canonical execution and verification</h3>
+    <span class="phase-iter">Iters. 210–211</span>
+  </div>
+
+  <div class="theorem">
+    <div class="theorem-label">Target theorems</div>
+    <p><strong>Execution (210):</strong> The current authoritative state and the governed action taxonomy together determine which next move classes are admissible, without hidden judgment. <strong>Verification (211):</strong> Every admissible proposed move has a named pre-authoritative check condition determinable from the canonical record before it changes the suite state.</p>
+  </div>
+
+  <h4>Governed action taxonomy (from Iter. 210)</h4>
+  <p>Every serious next move belongs to one of the following named classes. This taxonomy should be explicitly published — ideally in K* or a dedicated governance annex:</p>
+
+  <table class="branch-table">
+    <tr>
+      <th>Action class</th>
+      <th>Description</th>
+      <th>Verification condition (Iter. 211)</th>
+    </tr>
+    <tr>
+      <td class="branch-id">theorem-upgrade</td>
+      <td>A new unconditional proof advances a currently conditional or open claim</td>
+      <td>Proof satisfies suite dependency and status law; no scope enlargement without transfer theorem</td>
+    </tr>
+    <tr>
+      <td class="branch-id">bridge-discharge</td>
+      <td>A new theorem closes a named open bridge entry in the ledger</td>
+      <td>Theorem explicitly closes the named bridge entry; ledger entry can be retired</td>
+    </tr>
+    <tr>
+      <td class="branch-id">D-compliant promotion</td>
+      <td>A soundly scoped certificate plus matching transfer theorem enters theorem flow</td>
+      <td>Certificate is soundly scoped; transfer theorem already proved; no tacit scope enlargement</td>
+    </tr>
+    <tr>
+      <td class="branch-id">reclassification</td>
+      <td>An existing entry is refactored, downgraded, or its status is revised</td>
+      <td>Explicit ledger revision justified by current theorem stack; no claim upgraded by paraphrase</td>
+    </tr>
+    <tr>
+      <td class="branch-id">intake/transmission refresh</td>
+      <td>K* or L* is updated to reflect the current ledger state</td>
+      <td>Non-enlarging packaging update; subordinate to A, D, I*, J*, K*; no new claim introduced</td>
+    </tr>
+    <tr>
+      <td class="branch-id">no-op / stable non-upgrade</td>
+      <td>A proposed action that does not pass its verification condition</td>
+      <td>Governed refusal; suite state is unchanged; no ambiguous quasi-state</td>
+    </tr>
+  </table>
+
+  <ul class="tasks">
+    <li>Publish the action taxonomy above (or an equivalent statement) in K* or a governance annex, making it accessible without reading the full iteration dialogue.</li>
+    <li>Ensure I8's revision protocol maps each ledger entry type to one of the action classes above.</li>
+    <li>Confirm D2 explicitly states the verification condition for D-compliant promotion: soundly scoped certificate + already-proved transfer theorem. The condition should be checkable without author input.</li>
+    <li class="warn">Review <code>paper_NFC_CLU</code>, <code>paper_NFC_EFE</code>, and <code>paper_NFC_LS2</code> — determine which action class each represents and confirm each has a corresponding I8 delta entry. If not, they are in pre-authorization limbo and must be marked provisional.</li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PHASE VI: CANONICAL AUTHORIZATION -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-tag tag-future">Phase VI</span>
+    <h3>Canonical authorization</h3>
+    <span class="phase-iter">Iter. 212 — Canonical Authorization</span>
+  </div>
+
+  <div class="theorem">
+    <div class="theorem-label">Target theorem</div>
+    <p>A canonically verified move changes the suite only when its successful verification is followed by an explicit ledger-governed authorization act — and not before. Verification is necessary but not sufficient.</p>
+  </div>
+
+  <p>This is the terminal governance theorem in the arc. It separates the mathematical event (a proof is found, a certificate is computed) from the governed state change (the ledger is updated). Papers may circulate, be submitted, even be accepted by referees, without altering the authoritative suite state. The suite state changes only by ledger entry.</p>
+
+  <h4>Authorization requirements</h4>
+  <ul class="tasks">
+    <li><strong>Verification ≠ authorization:</strong> Passing the move-specific check condition does not update suite status. A checked but not yet ledger-entered result is provisional only.</li>
+    <li><strong>Explicit authorization events:</strong> The suite recognizes four authorization acts — proof-upgrade entry, bridge-discharge entry, D-compliant certificate promotion entry, and explicit reclassification/factorization entry. No other event changes the canon.</li>
+    <li><strong>Authorization-source determinacy:</strong> Whether authorization has occurred is decidable from the canonical record alone — not from circulation, submission status, author intent, or social uptake.</li>
+    <li><strong>Pre-authorization limbo policy:</strong> All results currently in circulation that do not yet have corresponding I8 (or later) ledger entries are provisionally discussed but not yet suite-governing. The suite presentation must clearly communicate this distinction.</li>
+    <li class="warn">Audit publicly circulating NFC papers (<code>paper_NFC_3Gen</code>, <code>paper_NFC_Weyl</code>, <code>paper_NFC_Stage0</code>, <code>paper_NFC_CLU</code>, <code>paper_NFC_EFE</code>) for ledger authorization status. Any paper with a result not yet in I8 must be displayed as <em>pending authorization</em>, not as a settled advance.</li>
+  </ul>
+
+  <div class="note note-ok">
+    <strong>Canonical completeness criterion.</strong> The suite reaches canonical completeness when all six phases are satisfied: live slot assignments are verified (I), handoff conditions hold (II), replication and presentation-invariance hold (III), delta and replay are fully documented (IV), the action taxonomy and verification conditions are published (V), and the authorization boundary is explicit and enforced (VI). At that point the governed program becomes not just mathematically substantive but fully transferable, reproducible, and institutionally durable.
+  </div>
+</div>
+
+<hr>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION: PRESENTATION ARCHITECTURE -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-tag tag-active">Presentation</span>
+    <h3>Public landing-page architecture</h3>
+  </div>
+
+  <p>The public presentation law from Catalog R3 is: <em>a first-contact reader must never encounter the flat 84-paper corpus before seeing the six-document Start Here packet.</em> The suite should be outwardly described as one gateway, one seriousness core, four deepening branches, governance support, and a legacy archive.</p>
+
+  <h4>Tier 1 — Start Here (all readers)</h4>
+  <div class="slot-grid">
+    <div class="slot live">
+      <div class="slot-label">1</div>
+      <div class="slot-name">K* — Entry-Point Dossier</div>
+      <div class="slot-occ">paper_K2_entry_point_dossier</div>
+      <div class="slot-role">Gateway and intake controller. Read first.</div>
+    </div>
+    <div class="slot live">
+      <div class="slot-label">2</div>
+      <div class="slot-name">J* — Referee Brief</div>
+      <div class="slot-occ">paper_J2_referee_brief</div>
+      <div class="slot-role">Compact synopsis for mathematically mature readers.</div>
+    </div>
+    <div class="slot live">
+      <div class="slot-label">3</div>
+      <div class="slot-name">A — Flagship Kernel</div>
+      <div class="slot-occ">flagship_kernel_paper</div>
+      <div class="slot-role">Finite theorem anchor. All downstream depends on this.</div>
+    </div>
+    <div class="slot live">
+      <div class="slot-label">4</div>
+      <div class="slot-name">I* — Claim Ledger</div>
+      <div class="slot-occ">paper_I8_terminal (live)</div>
+      <div class="slot-role">Authoritative status source of truth.</div>
+    </div>
+    <div class="slot live">
+      <div class="slot-label">5</div>
+      <div class="slot-name">D — Certificate Doctrine</div>
+      <div class="slot-occ">paper_D2_nfc_certification</div>
+      <div class="slot-role">Evidentiary law governing proof/computation interface.</div>
+    </div>
+    <div class="slot live">
+      <div class="slot-label">6</div>
+      <div class="slot-name">BR — Source Theorem</div>
+      <div class="slot-occ">paper_BR_unified_coercive</div>
+      <div class="slot-role">Unified coercive-transport theorem. Unconditional upstream link.</div>
+    </div>
+  </div>
+
+  <h4>Tier 2 — Deepening Branches (post-Start Here only)</h4>
+  <table class="branch-table">
+    <tr>
+      <th>Branch</th>
+      <th>Purpose</th>
+      <th>Primary papers</th>
+      <th>Display notes</th>
+    </tr>
+    <tr>
+      <td class="branch-id">F — Finite Consequences</td>
+      <td>Finite locality, boundary law, capacity, certification environment</td>
+      <td>paper_B, paper_C, paper_NFC_LS2</td>
+      <td>NFC_LS2 is a live branch discharge note, not a gateway.</td>
+    </tr>
+    <tr>
+      <td class="branch-id">S — Sector &amp; Gauge</td>
+      <td>Sector extraction, projection, normalization, Yang–Mills realization</td>
+      <td>paper_E, paper_M through paper_AR, paper_AV_gauge_group</td>
+      <td>paper_AS_program_complete must be visibly subordinated or archived. paper_AU is a frontier note only.</td>
+    </tr>
+    <tr>
+      <td class="branch-id">M — Millennium Programs</td>
+      <td>Conditional YM/NS closure and downstream work</td>
+      <td>paper_F, paper_G, paper_AW, paper_BA, paper_BB, paper_BI, paper_BQ, paper_BS–BZ</td>
+      <td>paper_BY and paper_BZ must not appear before BR and I*. NS and YM closure are branch outputs, not centerpieces.</td>
+    </tr>
+    <tr>
+      <td class="branch-id">G — Gravity &amp; Emergence</td>
+      <td>Emergence, Lorentzian structure, Einstein branch, substrate universality, EFE convergence</td>
+      <td>paper_BC through paper_CE, paper_NFC_EFE, paper_NFC_CLU</td>
+      <td>NFC_EFE and NFC_CLU are live discharge notes. paper_BP, paper_CCCD, paper_CF must not be treated as public centerpieces.</td>
+    </tr>
+  </table>
+
+  <h4>Tier 3 — Governance Support</h4>
+  <ul class="tasks">
+    <li class="done">paper_H_suite_roadmap — suite-level dependency law.</li>
+    <li class="done">paper_AO_extended_roadmap — extended governance roadmap.</li>
+    <li class="done">paper_L2_outreach_kit — governed outreach language (live L* slot).</li>
+    <li>paper_BR_dependency_note — structural dependency note for the BR theorem.</li>
+  </ul>
+
+  <h4>Tier 4 — Legacy Archive</h4>
+  <div class="note note-warn">
+    The following papers must be clearly demoted or archived in any public display. They must not compete with the current architecture and must not appear in first-contact navigation paths.
+  </div>
+  <ul class="tasks">
+    <li class="done">Superseded gateway/brief/ledger: paper_K, paper_J, paper_I, paper_I2, paper_I3, paper_L, paper_D (original)</li>
+    <li class="done">Legacy bridge-era front-doors: paper_F and paper_G (historically important but not core-facing)</li>
+    <li>Terminal-mirage titles: paper_AS_program_complete, paper_BK_final_ledger, paper_BP_EFE_complete, paper_BV_terminal_architecture, paper_CCCD_final, paper_CF_complete — rename in display or archive.</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SUMMARY TABLE -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-tag tag-law">Summary</span>
+    <h3>Roadmap milestone summary</h3>
+  </div>
+
+  <table class="branch-table">
+    <tr>
+      <th>Phase</th>
+      <th>Theorem</th>
+      <th>Key deliverable</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td class="branch-id">Phase I</td>
+      <td>Canonical Instantiation</td>
+      <td>Live slot assignment verified; I8 confirmed as authoritative; superseded papers archived</td>
+      <td>Active — in progress</td>
+    </tr>
+    <tr>
+      <td class="branch-id">Phase II</td>
+      <td>Canonical Handoff</td>
+      <td>One-page handoff note; K* self-contained intake law; I8 self-standing revision protocol; two-steward test passed</td>
+      <td>Active — in progress</td>
+    </tr>
+    <tr>
+      <td class="branch-id">Phase III</td>
+      <td>Replication + Invariance</td>
+      <td>L2/J2/K2 audited for paraphrase-upgrades; NFC discharge notes visibly indexed as branch notes; dependency order enforced in all public forms</td>
+      <td>Next — requires Phase II</td>
+    </tr>
+    <tr>
+      <td class="branch-id">Phase IV</td>
+      <td>Delta + Replay</td>
+      <td>Each I2→I8 transition carries an explicit delta section; replay test documented</td>
+      <td>Next — requires Phase III</td>
+    </tr>
+    <tr>
+      <td class="branch-id">Phase V</td>
+      <td>Execution + Verification</td>
+      <td>Action taxonomy published in K* or governance annex; each action class has a named verification condition</td>
+      <td>Future — requires Phase IV</td>
+    </tr>
+    <tr>
+      <td class="branch-id">Phase VI</td>
+      <td>Canonical Authorization</td>
+      <td>Authorization boundary explicit; all circulating NFC papers have ledger status; pre-authorization limbo policy communicated</td>
+      <td>Future — requires Phase V</td>
+    </tr>
+    <tr>
+      <td class="branch-id">Presentation</td>
+      <td>Display Law</td>
+      <td>Start Here six-pack visible; four branches structured; terminal-mirage papers demoted; legacy archive separated</td>
+      <td>Active — parallel to all phases</td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="doc-footer">
+  <p>Dream Paper Suite — Canonical Assembly &amp; Presentation Roadmap · Project Lead document · Based on NFC–Push iterations 190–212 and Catalog R3 · Suite v3 · Prepared March 2026</p>
+  <p style="margin-top:0.4rem">The shortest statement of the project's canonical obligation: one universal upstream source theorem, multiple certified downstream closure theorems, governed by ledger doctrine, transferable to new stewards, invariant under admissible re-expression, and auditable at every state transition.</p>
+</div>
+
+</body>
+</html>
