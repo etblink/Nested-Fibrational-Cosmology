@@ -1,0 +1,961 @@
+{
+  "version": "V19",
+  "status_definitions": [
+    {
+      "code": "UNCOND",
+      "label": "Unconditional",
+      "css": "unconditional",
+      "description": "The suite treats this as theorem-level without additional standing input."
+    },
+    {
+      "code": "K07",
+      "label": "Conditional (K0 = 7)",
+      "css": "conditional",
+      "description": "Licensed once the K0 = 7 route is granted."
+    },
+    {
+      "code": "K07KPO3",
+      "label": "Conditional (K0 = 7, KPO-3)",
+      "css": "bridge",
+      "description": "Licensed only with the named bridge stack visible."
+    },
+    {
+      "code": "COMP",
+      "label": "Computational / governance",
+      "css": "open",
+      "description": "Supports certification, routing, or evidence discipline but does not by itself promote a theorem."
+    }
+  ],
+  "docs": {
+    "KPUB": {
+      "title": "Kernel Public Anchor",
+      "file": "kernel_public.pdf",
+      "role": "anchor",
+      "status": "UNCOND",
+      "summary": "Public-facing theorem anchor for editor and broad first contact."
+    },
+    "INTAKE": {
+      "title": "Dream Suite Intake Packet",
+      "file": "intake_packet.pdf",
+      "role": "public overview",
+      "status": "COMP",
+      "summary": "Public guided overview packet for initial orientation."
+    },
+    "A": {
+      "title": "A \u2014 Flagship Kernel",
+      "file": "a_flagship_kernel.pdf",
+      "role": "finite anchor",
+      "status": "UNCOND",
+      "summary": "Finite theorem anchor used in the serious-reader route."
+    },
+    "KR4": {
+      "title": "KR4 \u2014 Entry-Point Dossier",
+      "file": "kr4.pdf",
+      "role": "intake law",
+      "status": "COMP",
+      "summary": "Defines the stable first-contact order and serious-reader packet."
+    },
+    "JR3": {
+      "title": "JR3 \u2014 Referee Brief",
+      "file": "jr3.pdf",
+      "role": "referee compression",
+      "status": "COMP",
+      "summary": "Compressed referee-facing statement of what is proved and how it is routed."
+    },
+    "IR8": {
+      "title": "IR8 \u2014 Terminal Supplement",
+      "file": "ir8.pdf",
+      "role": "terminal ledger",
+      "status": "COMP",
+      "summary": "Terminal status source of truth for the suite."
+    },
+    "D2": {
+      "title": "D2 \u2014 Certification Doctrine",
+      "file": "d2.pdf",
+      "role": "evidentiary law",
+      "status": "COMP",
+      "summary": "Formal certification and governance doctrine."
+    },
+    "BR": {
+      "title": "BR \u2014 Unified Coercive Source",
+      "file": "br.pdf",
+      "role": "source theorem",
+      "status": "UNCOND",
+      "summary": "Unconditional cross-branch source theorem upstream of BB/BY/BH."
+    },
+    "BRN": {
+      "title": "BR Dependency Note",
+      "file": "br_note.pdf",
+      "role": "governance clarification",
+      "status": "COMP",
+      "summary": "Explains why BR must be presented upstream of the branches."
+    },
+    "K07": {
+      "title": "Why K0 = 7",
+      "file": "k07.pdf",
+      "role": "K0 theorem annex",
+      "status": "UNCOND",
+      "summary": "Explains the internal self-consistency route to K0 = 7."
+    },
+    "R3Q": {
+      "title": "Three Residual Questions",
+      "file": "r3q.pdf",
+      "role": "K0 residual closure",
+      "status": "UNCOND",
+      "summary": "Closes residual questions around the K0 = 7 route."
+    },
+    "BB": {
+      "title": "BB \u2014 Millennium Theorem",
+      "file": "bb.pdf",
+      "role": "branch closure",
+      "status": "K07",
+      "summary": "Branch-facing theorem package under the K0 = 7 route."
+    },
+    "BY": {
+      "title": "BY \u2014 Navier\u2013Stokes Millennium",
+      "file": "by.pdf",
+      "role": "branch closure",
+      "status": "K07KPO3",
+      "summary": "Most delicate branch package with a visible bridge stack."
+    },
+    "BH": {
+      "title": "BH \u2014 Einstein",
+      "file": "bh.pdf",
+      "role": "branch closure",
+      "status": "K07",
+      "summary": "Gravity-facing branch package routed through BR."
+    },
+    "DP25": {
+      "title": "Dream Paper v25",
+      "file": "dream_paper_v25.pdf",
+      "role": "flagship synthesis",
+      "status": "COMP",
+      "summary": "Large synthesis artifact, not the first governed intake stop."
+    },
+    "README": {
+      "title": "Suite README",
+      "file": "suite_readme.md",
+      "role": "handoff",
+      "status": "COMP",
+      "summary": "Bundle-level description and handoff note."
+    },
+    "SUBREADME": {
+      "title": "Submission Packet README",
+      "file": "submission_readme.md",
+      "role": "editor support",
+      "status": "COMP",
+      "summary": "Readme for the kernel submission packet."
+    },
+    "RELNOTE": {
+      "title": "Kernel Public Release Note",
+      "file": "release_note.md",
+      "role": "editor support",
+      "status": "COMP",
+      "summary": "Release framing for the public kernel anchor."
+    },
+    "COVER": {
+      "title": "Generic Cover Letter",
+      "file": "cover_letter.md",
+      "role": "editor support",
+      "status": "COMP",
+      "summary": "Generic journal cover letter."
+    },
+    "CHECK": {
+      "title": "Submission Checklist",
+      "file": "submission_checklist.md",
+      "role": "editor support",
+      "status": "COMP",
+      "summary": "Checklist for kernel submission."
+    },
+    "DECL": {
+      "title": "Declaration of Interest",
+      "file": "declaration.txt",
+      "role": "editor support",
+      "status": "COMP",
+      "summary": "Declaration text for submission."
+    },
+    "MANIFEST": {
+      "title": "Public Manifest",
+      "file": "public_manifest.md",
+      "role": "public support",
+      "status": "COMP",
+      "summary": "Manifest for the public stack."
+    },
+    "CERT": {
+      "title": "Governance Completion Certificate",
+      "file": "governance_certificate.pdf",
+      "role": "governance support",
+      "status": "COMP",
+      "summary": "Governance completion artifact."
+    },
+    "TX": {
+      "title": "Transmission Package",
+      "file": "transmission_package.pdf",
+      "role": "recovery support",
+      "status": "COMP",
+      "summary": "Transmission packet for suite handoff."
+    },
+    "B": {
+      "title": "B \u2014 Finite Consequences I",
+      "file": "b.pdf",
+      "role": "finite consequence",
+      "status": "UNCOND",
+      "summary": "Boundary-law finite consequence unlocked after A."
+    },
+    "C": {
+      "title": "C \u2014 Finite Consequences II",
+      "file": "c.pdf",
+      "role": "finite consequence",
+      "status": "UNCOND",
+      "summary": "Capacity and packing finite consequence unlocked after A."
+    },
+    "NFCLS2": {
+      "title": "NFC-LS2",
+      "file": "nfcls2.pdf",
+      "role": "finite consequence",
+      "status": "COMP",
+      "summary": "Locality / certification support layer in the finite cluster."
+    },
+    "E": {
+      "title": "E \u2014 Sector / Gauge Entry",
+      "file": "e.pdf",
+      "role": "sector/gauge",
+      "status": "K07",
+      "summary": "Sector and gauge entry paper under the K0 = 7 route."
+    },
+    "NFC3GEN": {
+      "title": "NFC-3Gen",
+      "file": "nfc3gen.pdf",
+      "role": "sector/gauge",
+      "status": "K07",
+      "summary": "Three-generation support note in the sector cluster."
+    },
+    "NFCWEYL": {
+      "title": "NFC-Weyl",
+      "file": "nfcweyl.pdf",
+      "role": "sector/gauge",
+      "status": "K07",
+      "summary": "Weyl-structure support note in the sector cluster."
+    },
+    "NFCCLU": {
+      "title": "NFC-CLU",
+      "file": "nfcclu.pdf",
+      "role": "cross-cluster support",
+      "status": "K07",
+      "summary": "Cluster-level unification support note appearing in S and G clusters."
+    },
+    "F": {
+      "title": "F \u2014 Millennium Support I",
+      "file": "f.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Yang\u2013Mills bridge paper for Millennium deepening."
+    },
+    "G": {
+      "title": "G \u2014 Millennium Support II",
+      "file": "g.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Navier\u2013Stokes bridge paper for Millennium deepening."
+    },
+    "NFCSTAGE0": {
+      "title": "NFC-Stage0",
+      "file": "nfcstage0.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Stage-0 support note for Millennium routing."
+    },
+    "NFCEFE": {
+      "title": "NFC-EFE",
+      "file": "nfcefe.pdf",
+      "role": "gravity/emergence",
+      "status": "K07KPO3",
+      "summary": "Einstein-field-equation support note in the gravity cluster."
+    },
+    "AA": {
+      "title": "AA \u2014 POT Category",
+      "file": "aa.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Opens the POT-category route within the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AB": {
+      "title": "AB \u2014 Diamond Toy Model",
+      "file": "ab.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Toy-model entry point for the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AC": {
+      "title": "AC \u2014 Master Ledger (Revised)",
+      "file": "ac.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Ledger-facing support paper inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AD": {
+      "title": "AD \u2014 Overlap Route Agreement",
+      "file": "ad.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Clarifies route agreement within the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AE": {
+      "title": "AE \u2014 Coherent Transition Maps",
+      "file": "ae.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Transition-map support for the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AF": {
+      "title": "AF \u2014 Normalization Uniqueness",
+      "file": "af.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Normalization and uniqueness support for the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AG": {
+      "title": "AG \u2014 Minimal Carrier",
+      "file": "ag.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Minimal-carrier support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AH": {
+      "title": "AH \u2014 Universal Completion",
+      "file": "ah.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Universal-completion support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AI": {
+      "title": "AI \u2014 Canonical Projection",
+      "file": "ai.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Projection support for the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AJ": {
+      "title": "AJ \u2014 Target Identification",
+      "file": "aj.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Target-identification support for the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AK": {
+      "title": "AK \u2014 Sector Embedding",
+      "file": "ak.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Sector-embedding support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AL": {
+      "title": "AL \u2014 Continuum Realization",
+      "file": "al.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Continuum-realization support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AM": {
+      "title": "AM \u2014 HCONT Verification",
+      "file": "am.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Verification support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AN": {
+      "title": "AN \u2014 Reconstruction",
+      "file": "an.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Reconstruction support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AO": {
+      "title": "AO \u2014 Extended Roadmap",
+      "file": "ao.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Roadmap-style support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AP": {
+      "title": "AP \u2014 Yang\u2013Mills Identification",
+      "file": "ap.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Yang\u2013Mills identification support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AQ": {
+      "title": "AQ \u2014 Spectral Transfer",
+      "file": "aq.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Spectral-transfer support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AR": {
+      "title": "AR \u2014 YM Closure",
+      "file": "ar.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Yang\u2013Mills closure support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AS": {
+      "title": "AS \u2014 Program Complete",
+      "file": "as.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Program-completion support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AT": {
+      "title": "AT \u2014 Exhaustion Conditions",
+      "file": "at.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Exhaustion-condition support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AU": {
+      "title": "AU \u2014 Clay Frontier",
+      "file": "au.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Clay-frontier support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "AV": {
+      "title": "AV \u2014 Gauge Group",
+      "file": "av.pdf",
+      "role": "sector/gauge support",
+      "status": "K07",
+      "summary": "Gauge-group support inside the sector/gauge cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BA": {
+      "title": "BA \u2014 Quantum Gap",
+      "file": "ba.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Quantum-gap support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BC": {
+      "title": "BC \u2014 Ledger Entropy",
+      "file": "bc.pdf",
+      "role": "gravity/emergence support",
+      "status": "K07KPO3",
+      "summary": "Entropy-facing support available from the gravity cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BD": {
+      "title": "BD \u2014 Causal Reconstruction",
+      "file": "bd.pdf",
+      "role": "gravity/emergence support",
+      "status": "K07KPO3",
+      "summary": "Causal-reconstruction support available from the gravity cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BE": {
+      "title": "BE \u2014 Unified Emergence",
+      "file": "be.pdf",
+      "role": "gravity/emergence support",
+      "status": "K07KPO3",
+      "summary": "Unified-emergence support available from the gravity cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BF": {
+      "title": "BF \u2014 Matter Representations",
+      "file": "bf.pdf",
+      "role": "gravity/emergence support",
+      "status": "K07KPO3",
+      "summary": "Matter-representation support available from the gravity cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BG": {
+      "title": "BG \u2014 Lorentzian",
+      "file": "bg.pdf",
+      "role": "gravity/emergence support",
+      "status": "K07KPO3",
+      "summary": "Lorentzian support available from the gravity cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BI": {
+      "title": "BI \u2014 NS Update",
+      "file": "bi.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Navier\u2013Stokes update support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BJ": {
+      "title": "BJ \u2014 Dimensional Selection",
+      "file": "bj.pdf",
+      "role": "cross-cluster support",
+      "status": "K07",
+      "summary": "Dimensional-selection support shared across deeper clusters.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BK": {
+      "title": "BK \u2014 Final Ledger",
+      "file": "bk.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Final-ledger support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BL": {
+      "title": "BL \u2014 Born Additivity",
+      "file": "bl.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Born-additivity support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BM": {
+      "title": "BM \u2014 Three Generations",
+      "file": "bm.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Three-generation support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BN": {
+      "title": "BN \u2014 Maximal Claim",
+      "file": "bn.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Maximal-claim support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BO": {
+      "title": "BO \u2014 WL-1 Discharge",
+      "file": "bo.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "WL-1 discharge support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BP": {
+      "title": "BP \u2014 EFE Complete",
+      "file": "bp.pdf",
+      "role": "gravity/emergence support",
+      "status": "K07KPO3",
+      "summary": "EFE-complete support available from the gravity cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BQ": {
+      "title": "BQ \u2014 NS Structural",
+      "file": "bq.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Navier\u2013Stokes structural support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BS": {
+      "title": "BS \u2014 NS Closure",
+      "file": "bs.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Navier\u2013Stokes closure support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BT": {
+      "title": "BT \u2014 Codim-2 NS",
+      "file": "bt.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Codimension-2 Navier\u2013Stokes support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BU": {
+      "title": "BU \u2014 Interior Stability",
+      "file": "bu.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Interior-stability support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BV": {
+      "title": "BV \u2014 Terminal Architecture",
+      "file": "bv.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Terminal-architecture support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BW": {
+      "title": "BW \u2014 HLR Discharge",
+      "file": "bw.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "HLR-discharge support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BX": {
+      "title": "BX \u2014 HCODIM2",
+      "file": "bx.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "HCODIM2 support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "BZ": {
+      "title": "BZ \u2014 Both Millennium",
+      "file": "bz.pdf",
+      "role": "millennium support",
+      "status": "K07",
+      "summary": "Both-Millennium synthesis support inside the Millennium cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "CA": {
+      "title": "CA \u2014 Complexification",
+      "file": "ca.pdf",
+      "role": "gravity/emergence support",
+      "status": "K07KPO3",
+      "summary": "Complexification support available from the gravity cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "CB": {
+      "title": "CB \u2014 Substrate Universality",
+      "file": "cb.pdf",
+      "role": "gravity/emergence support",
+      "status": "K07KPO3",
+      "summary": "Substrate-universality support available from the gravity cluster.",
+      "prerequisite": "cluster-governed unlock"
+    },
+    "CE": {
+      "title": "CE \u2014 EFE Limit",
+      "file": "ce.pdf",
+      "role": "gravity/emergence support",
+      "status": "K07KPO3",
+      "summary": "EFE-limit support available from the gravity cluster.",
+      "prerequisite": "cluster-governed unlock"
+    }
+  },
+  "recovery_core": [
+    "KR4",
+    "JR3",
+    "A",
+    "IR8",
+    "D2",
+    "BR"
+  ],
+  "recovery_annex": [
+    "K07",
+    "R3Q"
+  ],
+  "personas": {
+    "editor": [
+      "KPUB",
+      "SUBREADME",
+      "RELNOTE",
+      "COVER",
+      "CHECK",
+      "DECL"
+    ],
+    "mathematician": [
+      "KR4",
+      "JR3",
+      "A",
+      "IR8",
+      "D2",
+      "BR",
+      "BRN"
+    ],
+    "physicist": [
+      "KR4",
+      "JR3",
+      "A",
+      "D2",
+      "BR",
+      "K07",
+      "R3Q",
+      "BB",
+      "BY",
+      "BH"
+    ],
+    "public": [
+      "INTAKE",
+      "KPUB",
+      "MANIFEST",
+      "DP25"
+    ],
+    "collaborator": [
+      "D2",
+      "BR",
+      "K07",
+      "R3Q",
+      "IR8",
+      "README",
+      "TX",
+      "CERT"
+    ],
+    "recovery": [
+      "KR4",
+      "JR3",
+      "A",
+      "IR8",
+      "D2",
+      "BR",
+      "K07",
+      "R3Q"
+    ]
+  },
+  "branches": {
+    "BB": {
+      "claim": "Yang\u2013Mills branch closure package.",
+      "status": "K07",
+      "bridge_stack": [
+        "BR",
+        "K07"
+      ],
+      "governing_files": [
+        "BR",
+        "K07",
+        "BB"
+      ],
+      "residual": "Must still be read as downstream of BR and the K0 theorem route."
+    },
+    "BY": {
+      "claim": "Navier\u2013Stokes millennium branch package.",
+      "status": "K07KPO3",
+      "bridge_stack": [
+        "BR",
+        "K07",
+        "KPO-3 route"
+      ],
+      "governing_files": [
+        "BR",
+        "K07",
+        "R3Q",
+        "BY"
+      ],
+      "residual": "Most delicate branch; cannot be promoted without the visible bridge stack."
+    },
+    "BH": {
+      "claim": "Einstein/gravity branch package.",
+      "status": "K07",
+      "bridge_stack": [
+        "BR",
+        "K07"
+      ],
+      "governing_files": [
+        "BR",
+        "K07",
+        "BH"
+      ],
+      "residual": "Must remain routed through BR rather than treated as an independent foundation."
+    }
+  },
+  "archive_order": [
+    "KPUB",
+    "INTAKE",
+    "A",
+    "KR4",
+    "JR3",
+    "IR8",
+    "D2",
+    "BR",
+    "BRN",
+    "K07",
+    "R3Q",
+    "BB",
+    "BY",
+    "BH",
+    "DP25",
+    "README",
+    "SUBREADME",
+    "RELNOTE",
+    "COVER",
+    "CHECK",
+    "DECL",
+    "MANIFEST",
+    "CERT",
+    "TX",
+    "B",
+    "C",
+    "NFCLS2",
+    "E",
+    "AA",
+    "AB",
+    "AC",
+    "AD",
+    "AE",
+    "AF",
+    "AG",
+    "AH",
+    "AI",
+    "AJ",
+    "AK",
+    "AL",
+    "AM",
+    "AN",
+    "AO",
+    "AP",
+    "AQ",
+    "AR",
+    "AS",
+    "AT",
+    "AU",
+    "AV",
+    "NFC3GEN",
+    "NFCWEYL",
+    "NFCCLU",
+    "F",
+    "G",
+    "BA",
+    "BI",
+    "BJ",
+    "BK",
+    "BL",
+    "BM",
+    "BN",
+    "BO",
+    "BQ",
+    "BS",
+    "BT",
+    "BU",
+    "BV",
+    "BW",
+    "BX",
+    "BZ",
+    "NFCSTAGE0",
+    "BC",
+    "BD",
+    "BE",
+    "BF",
+    "BG",
+    "BP",
+    "CA",
+    "CB",
+    "CE",
+    "NFCEFE"
+  ],
+  "clusters": {
+    "FCL": {
+      "title": "F cluster \u2014 finite consequences",
+      "unlock_after": [
+        "A"
+      ],
+      "summary": "Finite consequences unlocked only after the finite anchor is in view.",
+      "items": [
+        "B",
+        "C",
+        "NFCLS2"
+      ]
+    },
+    "SCL": {
+      "title": "S cluster \u2014 sector / gauge",
+      "unlock_after": [
+        "A",
+        "D2",
+        "BR"
+      ],
+      "summary": "Sector, gauge, and structural-selection papers routed through the source layer and doctrine.",
+      "items": [
+        "E",
+        "AA",
+        "AB",
+        "AC",
+        "AD",
+        "AE",
+        "AF",
+        "AG",
+        "AH",
+        "AI",
+        "AJ",
+        "AK",
+        "AL",
+        "AM",
+        "AN",
+        "AO",
+        "AP",
+        "AQ",
+        "AR",
+        "AS",
+        "AT",
+        "AU",
+        "AV",
+        "NFC3GEN",
+        "NFCWEYL",
+        "NFCCLU"
+      ]
+    },
+    "MCL": {
+      "title": "M cluster \u2014 Millennium deepening",
+      "unlock_after": [
+        "BR",
+        "K07",
+        "R3Q"
+      ],
+      "summary": "Millennium support papers that deepen the BB/BY routes after the K0 theorem annex is visible.",
+      "items": [
+        "F",
+        "G",
+        "BA",
+        "BI",
+        "BJ",
+        "BK",
+        "BL",
+        "BM",
+        "BN",
+        "BO",
+        "BQ",
+        "BS",
+        "BT",
+        "BU",
+        "BV",
+        "BW",
+        "BX",
+        "NFCSTAGE0",
+        "BB",
+        "BY",
+        "BZ"
+      ]
+    },
+    "GCL": {
+      "title": "G cluster \u2014 gravity / emergence",
+      "unlock_after": [
+        "BR"
+      ],
+      "summary": "Gravity and emergence support papers, with stronger bridge discipline kept visible.",
+      "items": [
+        "BC",
+        "BD",
+        "BE",
+        "BF",
+        "BG",
+        "BP",
+        "CA",
+        "CB",
+        "CE",
+        "NFCEFE",
+        "NFCCLU",
+        "BH"
+      ]
+    }
+  },
+  "cluster_compare_order": [
+    "FCL",
+    "SCL",
+    "MCL",
+    "GCL"
+  ]
+}
