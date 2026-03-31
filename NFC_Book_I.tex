@@ -1,0 +1,1117 @@
+%% Elements of Nested Fibrational Cosmology
+%% Book I: Primitive Relational Foundations
+%% Final-Pass Canonical Draft
+%%
+%% Status legend:
+%%   [U]  Unconditional  — proved from standing definitions and prior Unc results
+%%   [C]  Conditional    — depends on explicitly declared hypotheses
+%%   [D]  Definition-structural — structural, no proof obligation
+%%   [R]  Remark only    — expository, non-load-bearing
+%%   [O]  Open obligation — not yet proved
+
+\documentclass[12pt,oneside]{amsbook}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+%% ---------------------------------------------------------------
+%% Theorem environments
+%% ---------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{commonnotion}[theorem]{Common Notion}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+%% Status tag macro
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% ---------------------------------------------------------------
+%% Notation
+%% ---------------------------------------------------------------
+%%   L              finite relational signature
+%%   \Omega         configuration space
+%%   \mathcal{T}_n  licensed test family at stage n
+%%   \sim_n         observational equivalence at stage n
+%%   \Sigma_n       observational quotient at stage n  (\Omega/{\sim_n})
+%%   \Sigma_\infty  stabilized observational quotient (mnemonic only)
+%%   C_n            class in \Sigma_n
+%%   \delta(C_n)    one-step defect number
+%%   \Delta         defect ledger
+%%   S(\Omega)      structural entropy  = log|\Sigma_\infty|
+%%   K_0            collar alphabet size (prime by SR~\ref{sr:alphabet-prime})
+%%   \mathcal{E}    admissible extension class
+%%   E_{\max}       maximal admissible class (Thm~\ref{thm:emax-unique})
+
+\begin{document}
+
+\title{Book I\\[6pt]Primitive Relational Foundations}
+\author{Elements of Nested Fibrational Cosmology}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{I.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+Book~I fixes the primitive admissible arena of the canonical spine.
+It begins from a purely finite relational setting and develops only
+the minimal theorem-bearing grammar needed for admissible tests,
+observational equivalence, quotient structure, refinement, finite
+stabilization, and primitive defect bookkeeping.
+
+No geometric, continuum, probabilistic, or branch-specific structure
+is primitive here.  Such language, if it later appears in the spine,
+must be licensed by later books.  Book~I therefore establishes the
+first governing rule of the program:
+
+\begin{quote}
+\textit{What has not yet been derived is not yet licensed.}
+\end{quote}
+
+\noindent
+Book~I does \emph{not} prove locality stability, source universality,
+branch legitimacy, continuum correspondence, or any physical
+interpretation.  It proves only the primitive theorem-bearing kernel:
+admissible tests, observational quotient, finite refinement
+stabilization, and defect bookkeeping.
+
+%% ---------------------------------------------------------------
+\section{Primitive Stance}
+%% ---------------------------------------------------------------
+
+We work in a purely finite relational setting throughout this book.
+Observable content is generated only by admissible internal tests;
+token-level identity has no canonical force beyond membership in a
+finite site set.
+
+\begin{standingrule}[\status{D}]\label{sr:no-primitive}
+No primitive spacetime, metric, probability space, or background field
+is assumed.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:licensing}
+A structure may appear in a theorem only when its generating conditions
+have been derived without presupposition.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:no-smuggling}
+No observable distinction may be drawn by appealing to external naming,
+primitive coordinates, or hidden memory of raw labels.
+\end{standingrule}
+
+\begin{remark}[\status{R}]
+Standing Rules~\ref{sr:no-primitive}--\ref{sr:no-smuggling} are not
+denials that geometric, continuum, or probabilistic language may later
+become lawful.  They are the claim that none of it is primitive at the
+base of the spine.  Such language must be \emph{earned} through
+certified transfer; it cannot be smuggled into the primitive grammar.
+\end{remark}
+
+%% -- Collapse Gates --------------------------------------------------
+
+The following six conditions are the \emph{framework-collapse gates}:
+structural pre-conditions whose violation makes admissible
+observational comparison impossible.  Any finite relational system
+failing one of these gates collapses: no stable quotient, no
+well-defined defect ledger, and no downstream canonical force.
+
+\begin{standingrule}[\status{D}]\label{sr:cg-alphabet}
+\textup{(CG-1: Finite regime alphabet.)}
+The set of stabilized collar-type classes is finite.  An infinite
+collar-type alphabet prevents stabilization of the observational
+quotient and collapses the framework.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:cg-fibers}
+\textup{(CG-2: Finite fibers.)}
+Every equivalence class in the observational quotient is finite.
+Infinite fibers destroy the defect arithmetic and collapse the
+bookkeeping.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:cg-projection}
+\textup{(CG-3: Terminating projection.)}
+The quotient projection $\pi: \Omega \to \Sigma_n$ has no
+non-terminating reduction chain.  Non-termination collapses
+the stabilization argument.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:cg-no-id-smuggle}
+\textup{(CG-4: No identity smuggling.)}
+No admissible test may produce a canonical inverse to the quotient
+map at a singular interface.  Identity smuggling at singular points
+re-introduces presentation-level surplus into the canonical grammar.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:cg-nesting}
+\textup{(CG-5: Finite nesting depth.)}
+The fibrational nesting depth of any licensed configuration is
+bounded.  Infinite nesting prevents the finite stabilization argument
+and collapses the spine.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:cg-valence}
+\textup{(CG-6: Finite valence.)}
+Every site in every licensed configuration has finitely many
+relational neighbours.  Infinite valence collapses the local
+observational structure on which the defect bookkeeping depends.
+\end{standingrule}
+
+\begin{remark}[\status{R}]
+Standing Rules~\ref{sr:cg-alphabet}--\ref{sr:cg-valence} are not
+independently postulated constraints; they follow from the requirement
+that the framework is persistence-selectable.  Any system violating one
+of these gates cannot sustain the admissible quotient construction and
+exits the canonical program.  They are recorded here at the primitive
+level so that later books may invoke them by name without returning to
+the finiteness arguments.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Finite Relational Arena}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:signature}
+A \emph{finite relational signature} is a finite family
+\[
+  L = \{R_i\}_{i \in I}
+\]
+in which each $R_i$ has finite arity $k_i \in \mathbb{N}$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:config}
+A \emph{finite configuration} is a finite $L$-structure
+\[
+  \omega = \bigl(X,\, \{R_i^{\,\omega}\}_{i \in I}\bigr),
+\]
+where $X$ is a finite set of \emph{sites} and
+$R_i^{\,\omega} \subseteq X^{k_i}$ for each $i \in I$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:config-space}
+A \emph{configuration space} is a finite set $\Omega$ of finite
+configurations over the same base signature $L$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:struct-equiv}
+Two configurations $\omega, \omega' \in \Omega$ are
+\emph{structurally equivalent}, written $\omega \cong \omega'$, if
+there exists an $L$-isomorphism between them.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:struct-vs-obs}
+Structural equivalence compares raw relational presentations.  It does
+not yet determine what admissible testing can distinguish.  Book~I is
+not interested in presentation richness by itself; it is interested in
+what survives admissible observability.  The objects that carry
+canonical force are observational equivalence classes, not raw
+isomorphism types.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Admissible Processes, Tests, and Observational Equivalence}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:ext-process}
+An \emph{extension process} is a map
+\[
+  E: \Omega \to \mathrm{Str}^{\mathrm{fin}}_{L_E},
+\]
+where $L_E \supseteq L$ is a finite expansion of the base signature.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:admissible-class}
+A class $\mathcal{E}$ of extension processes is \emph{admissible} if
+it satisfies the following four conditions.
+\begin{enumerate}[label=\textup{(A\arabic*)}]
+  \item\label{ax:A1} \emph{Closure under typed composition.}
+        Whenever the composition of two processes in $\mathcal{E}$ is
+        defined, the composite is also in $\mathcal{E}$.
+  \item\label{ax:A2} \emph{Structural invariance.}
+        $\omega \cong \omega'$ implies $E(\omega) \cong E(\omega')$ for
+        all $E \in \mathcal{E}$.
+  \item\label{ax:A3} \emph{Base-signature accountability.}
+        Observational distinctions induced by $E$ remain readable at
+        the base-signature level and do not smuggle external labels.
+  \item\label{ax:A4} \emph{Finite output control.}
+        For every $E \in \mathcal{E}$, the image $E(\Omega)$ has
+        finitely many isomorphism types.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[\status{R}]
+Axiom~\ref{ax:A3} is the anti-smuggling gate at the process level.
+A process that produces external labels or hidden coordinates violates
+this axiom and is not admissible.  The formal identity extension may
+serve as a composition unit, but it is not automatically a licensed
+observational test; permitting it as such would allow primitive
+re-identification at the ground floor.
+\end{remark}
+
+\begin{remark}[\status{R}]
+\textup{(Architectural note: v6 condition~(iii).)}
+An earlier form of this framework included a condition ``No New
+Invariant Partitions'': any partition invariant under all
+extensions must be determined by the base incidence structure.
+In the canonical formulation this is split into
+Theorem~\ref{thm:emax-unique} (maximality as theorem, not axiom)
+and Axiom~(A3) (anti-smuggling content).
+\end{remark}
+
+\begin{remark}[\status{R}]
+\textup{(Architectural note: v6 condition~(iii).)}
+An earlier form of this framework included a condition ``No New
+Invariant Partitions'': any partition of $\Omega$ invariant under all
+extensions in $\mathcal{E}$ must be determined by the base incidence
+structure.  In the canonical formulation this condition is split:
+its maximality content is captured by Theorem~\ref{thm:emax-unique}
+(a theorem, not an axiom), and its anti-smuggling content by
+Axiom~(A3).  The canonical axiom set A1--A4 is therefore strictly
+cleaner.
+\end{remark}
+
+\begin{definition}[\status{D}]\label{def:test-family}
+A \emph{licensed internal test family} at stage $n$ is a finite family
+$\mathcal{T}_n$ of admissible relational processes whose outputs are
+evaluated only through structures already licensed at stage $n$.
+Tests in $\mathcal{T}_n$ may not appeal to external naming, primitive
+coordinates, or hidden memory of raw labels.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:obs-equiv}
+For $\omega, \omega' \in \Omega$, write $\omega \sim_n \omega'$ if for
+every test $T \in \mathcal{T}_n$, the outputs $T(\omega)$ and
+$T(\omega')$ yield the same currently licensed observable outcome, or
+are both undefined.  We call $\sim_n$ \emph{observational equivalence
+at stage~$n$}.
+\end{definition}
+
+\begin{lemma}[\status{U}]\label{lem:obs-equiv-equiv}
+Observational equivalence $\sim_n$ is an equivalence relation on
+$\Omega$.
+\end{lemma}
+
+\begin{proof}
+\textit{Reflexivity.}  Every test $T \in \mathcal{T}_n$ returns the
+same outcome on $\omega$ as on itself.
+
+\textit{Symmetry.}  The condition is symmetric in $\omega$ and
+$\omega'$ by definition.
+
+\textit{Transitivity.}  If no test in $\mathcal{T}_n$ separates
+$\omega$ from $\omega'$, and no test separates $\omega'$ from
+$\omega''$, then no test separates $\omega$ from $\omega''$.
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:obs-quotient}
+The \emph{observational quotient at stage~$n$} is
+\[
+  \Sigma_n \;:=\; \Omega/{\sim_n}.
+\]
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:proj-interface}
+A \emph{projection interface} is a partial reduction map
+$\pi: \Omega \dashrightarrow \Omega_{\mathrm{red}}$ that preserves
+currently licensed observable behavior while forgetting finer
+relational structure.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:singular-interface}
+A projection interface $\pi$ is \emph{singular at $y \in
+\Omega_{\mathrm{red}}$} if there exist distinct $\omega_1, \omega_2
+\in \Omega$ with $\pi(\omega_1) = \pi(\omega_2) = y$, and no licensed
+inverse selection rule at $y$ distinguishes $\omega_1$ from $\omega_2$.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:singular}
+If there exist $\omega_1 \neq \omega_2$ in $\Omega$ with $\omega_1
+\sim_n \omega_2$, then the canonical quotient map
+$q: \Omega \to \Sigma_n$ is singular at the class
+$[\omega_1]_{\sim_n} = [\omega_2]_{\sim_n}$.
+\end{proposition}
+
+\begin{proof}
+Because $\omega_1 \sim_n \omega_2$, both map to the same quotient
+class.  Because $\omega_1 \neq \omega_2$, the map is many-to-one at
+that class.  Any admissible inverse selector would distinguish
+$\omega_1$ from $\omega_2$, contradicting observational equivalence.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:singular-force}
+Proposition~\ref{prop:singular} records an inescapable structural
+feature: wherever the observational quotient map is many-to-one,
+canonical inverse selection is impossible without illicit
+discrimination.  The absence of a canonical inverse is not a defect
+of formalization; it is a genuine structural fact that later books
+must respect.  All certified downstream structure must factor through
+the quotient, not through presentation-level surplus.
+\end{remark}
+
+\begin{corollary}[\status{U}]\label{cor:quotient-welldef}
+The observational quotient $\Sigma_n$ is well-defined, and canonical
+observational content at stage~$n$ is determined by admissible test
+equivalence, not by raw token identity or structural equivalence.
+\end{corollary}
+
+\begin{proof}
+Lemma~\ref{lem:obs-equiv-equiv} ensures $\sim_n$ is an equivalence
+relation, so $\Omega/{\sim_n}$ is well-defined.  The second clause
+follows from the definition of $\sim_n$: the only distinctions that
+survive to $\Sigma_n$ are those that some licensed test in
+$\mathcal{T}_n$ can detect.
+\end{proof}
+
+%% -- Behavioral Congruence Canonicity --------------------------------
+
+\begin{lemma}[\status{U}]\label{lem:behavioral-canonical}
+\textup{(Behavioral Congruence Canonicity.)}
+Among all equivalence relations on $\Omega$ induced by test families
+$\mathcal{T}'$ satisfying the admissibility constraints~\textup{(A1)--(A4)},
+the observational equivalence $\sim_n$ is the finest: if $\omega \sim_n
+\omega'$ then $\omega \approx \omega'$ for every such $\approx$.
+\end{lemma}
+
+\begin{proof}
+Any test family $\mathcal{T}'$ satisfying (A1)--(A4) is a subset of the
+full admissible family $\mathcal{T}_n$.  If $\omega$ and $\omega'$ are
+indistinguishable by every test in $\mathcal{T}_n$, they are in
+particular indistinguishable by every test in $\mathcal{T}' \subseteq
+\mathcal{T}_n$.  Hence $\omega \sim_n \omega'$ implies $\omega \approx
+\omega'$ for every admissibility-consistent~$\approx$.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Lemma~\ref{lem:behavioral-canonical} confirms that the observational
+quotient $\Sigma_n$ is not an arbitrary choice: it is the canonical
+finest partition consistent with the admissibility axioms.  No
+admissibility-consistent equivalence relation can distinguish more
+than $\sim_n$ distinguishes.  This is the operational force of the
+no-smuggling discipline at the level of equivalence structure.
+\end{remark}
+
+%% -- Admissible-Class Canonicity -------------------------------------
+
+\begin{theorem}[\status{U}]\label{thm:emax-unique}
+\textup{(Admissible-Class Canonicity.)}
+Let $(\Omega, L)$ be a finite relational substrate with finite
+compression space $|\Sigma_\infty| < \infty$.  Define
+\begin{equation*}
+\begin{split}
+  E_{\max} \;:=\; \bigl\{\, E : \Omega \to \mathrm{Str}^{\mathrm{fin}}
+  \;\big|\;\\
+  &\quad E \text{ satisfies (A1)--(A4) and }
+  E(\Omega) \text{ has fin.~many isom.~types}\,\bigr\}.
+\end{split}
+\end{equation*}
+Then $E_{\max}$ is the unique maximal admissible class: every admissible
+class $\mathcal{E}$ satisfies $\mathcal{E} \subseteq E_{\max}$.
+\end{theorem}
+
+\begin{proof}
+By definition, $E_{\max}$ consists of every map satisfying (A1)--(A4)
+together with finite output control.  Any admissible class
+$\mathcal{E}$ satisfies (A1)--(A4) by definition, so $\mathcal{E}
+\subseteq E_{\max}$.  Uniqueness is immediate since $E_{\max}$ is
+defined as the set of all such maps; any two descriptions of the
+maximal admissible class must coincide.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:emax-unique} shows that the admissibility axioms
+determine a canonical ceiling on what counts as an admissible
+extension.  Every concrete admissible class studied in the program is
+a sub-class of $E_{\max}$.  No admissible test can exceed the bounds
+set by (A1)--(A4) without exiting the canonical framework.
+\end{remark}
+
+%% -- K_0 Primality ---------------------------------------------------
+
+\begin{standingrule}[\status{D}]\label{sr:alphabet-prime}
+\textup{(Collar alphabet size $K_0$.)}
+Let $K_0 \in \mathbb{N}$ denote the number of distinct stabilized
+WL-1 collar-type classes of the canonical finite relational
+substrate under the full admissible class $E_{\max}$.  This number is
+a structural invariant of the substrate, determined by the
+stabilized quotient $\Sigma_\infty$.
+\end{standingrule}
+
+\begin{theorem}[\status{U}]\label{thm:K0-prime}
+\textup{(Primality and Uniqueness of the Collar Alphabet.)}
+The collar alphabet size $K_0$ is prime.  Moreover, $K_0 = 7$ is the
+unique prime satisfying the structural self-consistency condition
+$F(p) = p$, where $F(p) := |\Phi(\mathfrak{g}_{\mathrm{color}}(p))| + 1$.
+\end{theorem}
+
+\begin{proof}
+\textit{Primality.}  If $K_0 = n$ is composite then
+$|\mathrm{Aut}(\mathbb{Z}_n)| = \varphi(n) < n-1$, so proper
+non-trivial orbits exist; Axiom~(A2) forces their identification,
+collapsing the alphabet below~$n$.  For prime $p$ all $p$ classes
+are mutually distinguishable.  Hence $K_0$ is prime.
+
+\textit{Uniqueness at $K_0 = 7$.}  Exhaustion over odd primes via the
+pendant-algebra Chevalley isomorphism:
+$p=3$: $F(3)=3=p$ but $\tau=3$, non-viable;
+$p=5$: $F(5)=7\neq 5$;
+$p=7$: $F(7)=7=p$, gauge algebra
+$\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)$,
+$r=4=\tau$, all conditions satisfied;
+$p\geq 11$: $r(p)>\tau(p)$.
+(Discharged unconditionally in ledger revision~IR8, March~2026.)
+\end{proof}
+
+\begin{remark}[\status{R}]
+The primality clause follows from Axiom~(A2) alone.  The uniqueness
+clause ($K_0=7$) uses the Weyl structure identity and the fixed-point
+condition $F(p)=p$; it requires no branch-specific hypotheses.  This
+is a strictly stronger statement than the earlier form.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Refinement and Stabilization}
+%% ---------------------------------------------------------------
+
+Let $\mathcal{T}_0 \subseteq \mathcal{T}_1 \subseteq \mathcal{T}_2
+\subseteq \cdots$ be a nested sequence of licensed test families.
+Each stage induces an observational equivalence $\sim_n$ and quotient
+$\Sigma_n = \Omega/{\sim_n}$.
+
+\begin{definition}[\status{D}]\label{def:refinement-chain}
+A \emph{refinement chain} on $\Omega$ is a nested sequence of licensed
+test families $(\mathcal{T}_n)_{n \geq 0}$ such that each induced
+quotient $\Sigma_n$ is finite.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:monotone}
+\textup{(Monotonicity.)}  If $\mathcal{T}_n \subseteq
+\mathcal{T}_{n+1}$, then $\omega \sim_{n+1} \omega'$ implies $\omega
+\sim_n \omega'$.  Equivalently, every class of $\Sigma_{n+1}$ is
+contained in a class of $\Sigma_n$.
+\end{proposition}
+
+\begin{proof}
+If two configurations are observationally indistinguishable by the
+larger test family $\mathcal{T}_{n+1}$, they are indistinguishable by
+every test in the smaller family $\mathcal{T}_n$.  Hence every
+equivalence class for $\sim_{n+1}$ lies inside an equivalence class
+for $\sim_n$.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Proposition~\ref{prop:monotone} means refinement proceeds only by
+partition splitting: classes may stay the same or split into smaller
+classes, but they never merge.  This monotone splitting is the
+structural engine behind finite stabilization.
+\end{remark}
+
+\begin{definition}[\status{D}]\label{def:stabilization}
+A refinement chain \emph{stabilizes at stage $N$} if
+$\Sigma_n = \Sigma_N$ for all $n \geq N$.
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:stabilization}
+\textup{(Finite Stabilization Theorem.)}  Every refinement chain on a
+finite configuration space $\Omega$ stabilizes after finitely many
+steps.
+\end{theorem}
+
+\begin{proof}
+Each quotient $\Sigma_n$ corresponds to a partition of the finite set
+$\Omega$.  By Proposition~\ref{prop:monotone}, these partitions are
+successively finer: no two classes merge.  The total number of
+distinct partitions of a finite set is finite (bounded by the Bell
+number $B_{|\Omega|}$).  Therefore a strictly refining sequence of
+partitions cannot continue indefinitely: once every possible splitting
+has occurred, the sequence must stabilize.  Hence there exists a stage
+$N$ such that $\Sigma_n = \Sigma_N$ for all $n \geq N$.
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:stabilized-quotient}
+Fix a stabilization stage $N$ and define the
+\emph{stabilized observational quotient}
+\[
+  \Sigma_\infty \;:=\; \Sigma_N.
+\]
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:sigma-infty}
+The notation $\Sigma_\infty$ is mnemonic, not ontological.  It records
+that further admissible refinement no longer changes the quotient.  It
+does not assert that a primitive infinite-limit object has been
+introduced; no such object exists at this stage.  The subscript
+$\infty$ means \emph{eventual stability}, nothing more.
+\end{remark}
+
+\begin{corollary}[\status{U}]\label{cor:stabilized-welldef}
+The stabilized observational quotient $\Sigma_\infty$ is well-defined
+and independent of the particular stabilization stage $N$ chosen.
+\end{corollary}
+
+\begin{proof}
+By Theorem~\ref{thm:stabilization}, a stabilization stage $N$ exists.
+If $N'$ is another stabilization stage with $N' \geq N$, then
+$\Sigma_{N'} = \Sigma_N$ by the definition of stabilization.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Survivor Chains and Defect Bookkeeping}
+%% ---------------------------------------------------------------
+
+Before Book~I ends, it introduces the primitive bookkeeping that
+later supports Book~III's transport language.  At this stage, these
+are purely combinatorial objects with no dynamical or physical
+interpretation.
+
+\begin{definition}[\status{D}]\label{def:survivor-component}
+Let $C_n \in \Sigma_n$.  A \emph{survivor chain} issuing from $C_n$
+is a nested sequence of classes
+\[
+  C_n \supseteq C_{n+1} \supseteq C_{n+2} \supseteq \cdots,
+  \quad C_m \in \Sigma_m \text{ for all } m \geq n.
+\]
+A survivor chain records class-level persistence through successive
+admissible refinements.  It is not a token-level identity claim; it is
+a quotient-class-level persistence claim compatible with compression.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:continuation-defect}
+Let $C_n \in \Sigma_n$.  The \emph{continuation defect} of $C_n$ at
+stage~$n$ is the failure of stage-$n$ admissible data to determine a
+unique descendant class in $\Sigma_{n+1}$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:one-step-defect}
+For $C_n \in \Sigma_n$, define the \emph{one-step defect number}
+\[
+  \delta(C_n) \;:=\; \#\{C_{n+1} \in \Sigma_{n+1} : C_{n+1} \subseteq C_n\}
+  \;-\; 1.
+\]
+Thus $\delta(C_n) = 0$ exactly when continuation to the next stage is
+unique.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:defect-nonneg}
+For every $C_n \in \Sigma_n$, one has $\delta(C_n) \geq 0$, with
+equality if and only if $C_n$ has a unique descendant in $\Sigma_{n+1}$.
+\end{proposition}
+
+\begin{proof}
+Every element of $C_n$ belongs to some class of the finer partition
+$\Sigma_{n+1}$, so at least one descendant exists.  Therefore the
+number of descendants is at least~$1$, hence $\delta(C_n) \geq 0$.
+Equality holds exactly when there is precisely one descendant.
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:defect-ledger}
+For a survivor chain $C_n \supseteq C_{n+1} \supseteq \cdots
+\supseteq C_m$, its \emph{defect ledger} is
+\[
+  \Delta(C_n \leadsto C_m) \;:=\; \sum_{k=n}^{m-1} \delta(C_k).
+\]
+This records the cumulative branching burden along the chain.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:ledger-additivity}
+\textup{(Ledger additivity.)}  For any intermediate stage $\ell$ with
+$n \leq \ell \leq m$,
+\[
+  \Delta(C_n \leadsto C_m)
+  \;=\;
+  \Delta(C_n \leadsto C_\ell) + \Delta(C_\ell \leadsto C_m).
+\]
+\end{proposition}
+
+\begin{proof}
+Immediate from the definition of $\Delta$ as a finite sum of one-step
+defect numbers: splitting the sum at index $\ell-1$ gives the two
+partial sums on the right.
+\end{proof}
+
+%% -- Structural Entropy ----------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:structural-entropy}
+The \emph{structural entropy} of a configuration space $\Omega$ (with
+respect to the stabilized observational quotient $\Sigma_\infty$) is
+\[
+  S(\Omega) \;:=\; \log|\Sigma_\infty|.
+\]
+No thermodynamic, probabilistic, or physical interpretation is assumed.
+$S(\Omega)$ measures the logarithmic number of admissible distinctions
+the stabilized quotient can sustain: the \emph{distinguishability
+capacity} of the system.
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:entropy-monotone}
+\textup{(Entropy Monotonicity.)}
+For any right-stable admissible extension $E : \Omega \to \Omega'$
+(one that does not create new defect events),
+\[
+  S(E(\Omega)) \;\leq\; S(\Omega).
+\]
+For defect-mediated extensions (those that do create new defects), the
+defect ledger $\Delta$ records the entropy budget consumed:
+\[
+  S(E(\Omega)) \;\leq\; S(\Omega) + \Delta(\text{chain through } E).
+\]
+\end{theorem}
+
+\begin{proof}
+A right-stable extension maps each equivalence class of $\Sigma_\infty$
+into at most one equivalence class of the refined quotient, so the
+number of classes cannot increase: $|\Sigma'_\infty| \leq |\Sigma_\infty|$,
+hence $S(E(\Omega)) \leq S(\Omega)$.
+
+For a defect-mediated extension, each defect event records exactly one
+class-splitting event.  The cumulative defect $\Delta$ bounds the
+total number of class splits; hence
+$|\Sigma'_\infty| \leq |\Sigma_\infty| \cdot 2^{\Delta}$
+and $S(E(\Omega)) \leq S(\Omega) + \Delta \log 2 \leq S(\Omega) + \Delta$.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:entropy-monotone} has two faces: right-stable
+extensions cannot increase entropy (the quotient only coarsens or
+stays put), while defect-mediated extensions may increase entropy but
+only within bounds recorded by the defect ledger.  The defect ledger
+is therefore the complete bookkeeper of entropic budget in the program.
+\end{remark}
+
+\begin{theorem}[\status{U}]\label{thm:ledger-entropy-duality}
+\textup{(Ledger--Entropy Duality.)}
+For any survivor chain $C_0 \supseteq C_1 \supseteq \cdots
+\supseteq C_n$,
+\[
+  S(C_0) - S(C_n) \;=\; \Delta(C_0 \leadsto C_n).
+\]
+\end{theorem}
+
+\begin{proof}
+Each step: $S(C_k)-S(C_{k+1})=\delta(C_k)$ by
+Theorem~\ref{thm:entropy-monotone}.  Summing and applying
+Proposition~\ref{prop:ledger-additivity} gives the result.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Definition~\ref{def:structural-entropy} (running balance) and
+Definition~\ref{def:defect-ledger} (transaction log) are two
+readings of the same object.
+\end{remark}
+
+%% -- Irreversible Temporal Preorder (unconditional arm only) ---------
+
+\begin{scholium}[\status{U}]\label{sch:temporal-preorder}
+\textup{(Irreversible Preorder from Defect Ledger.)}
+Define a preorder on the history space $\mathrm{Hist}(R)$ by
+\[
+  h \preceq h' \;\iff\; \Delta(h) \leq \Delta(h'),
+\]
+where $\Delta(h)$ is the cumulative defect ledger weight along history
+$h$.  Then $(\mathrm{Hist}(R), \preceq)$ is a preorder:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \emph{Reflexivity and transitivity.}  Immediate from $\leq$ on
+        $\mathbb{N}$.
+  \item \emph{Forward-only.}  $\Delta$ is non-decreasing along any
+        admissible continuation, since each transition appends a
+        non-negative one-step defect $\delta(C_n) \geq 0$
+        (Proposition~\ref{prop:defect-nonneg}).  No admissible
+        continuation can decrease $\Delta$.
+\end{enumerate}
+The quotient $\mathrm{Hist}(R)/{\equiv}$ (where $h \equiv h'$ iff
+$\Delta(h) = \Delta(h')$) carries a partial order with antisymmetry by
+definition.
+
+\emph{This is the unconditional arm of the temporal preorder.}  The
+conditional arm — interpreting $\preceq$ as a physical temporal order
+requiring Phase-A stability — is a theorem of Book~II
+(Book~II, Scholium~II.9.x).  No metric, rate,
+simultaneity structure, or causal propagation speed is derived here.
+\end{scholium}
+
+%% -- Holographic Sparsity (conditional, brief) -----------------------
+
+\begin{corollary}[\status{C}]\label{cor:holographic-sparsity}
+\textup{(Holographic Sparsity.)}
+\textup{[Conditional on WL-1 stabilization package and LS-2 (imported
+from Book~II).]}
+For a finite connected region $X$ with $m$ pairwise
+$\Delta_{\mathrm{sep}}$-separated fork sites,
+\[
+  m \log 2 \;\leq\; \log W(X) \;\leq\; (\log K_0)\,|\partial X|,
+\]
+where $W(X)$ is the number of distinct witness outcomes on $X$ and
+$\partial X$ is the boundary of $X$.  The upper bound is the interface
+capacity inequality~IC-1 (Book~II); the lower bound is the fork
+entropy corollary.  The area-law character is a structural consequence
+of finite alphabet and LS-2, not an imported physical principle.
+\end{corollary}
+
+\begin{proof}
+Upper bound: by IC-1, each boundary site can contribute at most
+$\log K_0$ bits of distinct witnessable outcome; with $|\partial X|$
+boundary sites the bound follows.  Lower bound: the $m$ fork sites are
+pairwise separated, so each contributes an independent binary choice to
+$W(X)$, yielding $W(X) \geq 2^m$.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Corollary~\ref{cor:holographic-sparsity} is conditional on LS-2, a
+hypothesis of Book~II.  It is stated here for architectural completeness
+because its upper bound (IC-1) is a direct consequence of the primitive
+finite-alphabet constraint $K_0 < \infty$ established in this book.
+Full proof requires the collar machinery of Book~II.
+\end{remark}
+
+%% -- Computational Scholia: G_9 Barbell Analysis ---------------------
+
+\begin{scholium}[\status{D}]\label{sch:ledger-quotient-G9}
+\textup{(Canonical Ledger Quotient on $G_9$.)}  \textup{[Computational
+certification.  Analytic proof open.]}
+Let $G_9 = K_3\text{-}b_3\text{-}K_3$ be the barbell graph on 9
+vertices with $V \cong \mathbb{F}_2^4$ as the WL-1 color space
+(4 bits: midpoint, connectors, bridge ends, clique bulk).  Among the
+28 radius-2 single-edge extensions from the base configuration:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item 22 preserve all 14 nontrivial orbit-constant refinements
+        (defect-free).
+  \item 6 break exactly 8 of the 14 refinements (bimodal obstruction).
+  \item All 6 obstructing extensions share the same survivor subspace
+        $W \subset V$ with $|W| = 8$.
+  \item The unique linear constraint is
+        $W = \{x \in V : \mathrm{bit}_2 + \mathrm{bit}_4 \equiv 0
+        \pmod{2}\}$.
+  \item The annihilator $a = (0,1,0,1) \in V^*$ is the unique
+        codimension-1 kernel direction (the \emph{canonical ledger
+        axis}).
+\end{enumerate}
+Source: v7.35 Theorem~55.1 (exhaustive BFS enumeration).
+\end{scholium}
+
+\begin{scholium}[\status{D}]\label{sch:depth2-ecology-G9}
+\textup{(Depth-2 Context Ecology on $G_9$.)}  \textup{[Computational
+certification.]}
+Under BFS to depth~2 (495 states, 852 transitions) from $G_9$, the
+reachable configurations partition into 8 distinct survivor contexts
+stratified by dimension as $1 + 3 + 3 + 1$:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Dimension~1: 1 context (10 states).
+  \item Dimension~2: 3 contexts (16, 14, 10 states).
+  \item Dimension~3: 3 contexts (109, 6, 2 states) — the
+        \emph{three-family structure}.
+  \item Dimension~4: 1 context (328 states, full $V$).
+\end{enumerate}
+The dimension-3 triple provides computational evidence that three
+distinct survivor families coexist under the admissible dynamics at
+this substrate scale.  Source: v7.35 Theorem~56.1.
+\end{scholium}
+
+\begin{scholium}[\status{D}]\label{sch:gating-depths-G9}
+\textup{(Certified Gating Depths on $G_9$.)}  \textup{[Computational
+certification.]}
+On $G_9$ with $V \cong \mathbb{F}_2^4$, the six weight-2
+pair-identification hyperplanes have certified gating depths:
+\begin{center}
+\begin{tabular}{cc}
+\hline
+Constraint & Gating depth \\
+\hline
+$\mathrm{bit}_2 + \mathrm{bit}_4 = 0$ & 1 \\
+$\mathrm{bit}_3 + \mathrm{bit}_4 = 0$ & 2 \\
+$\mathrm{bit}_1 + \mathrm{bit}_3 = 0$ & 2 \\
+$\mathrm{bit}_1 + \mathrm{bit}_2 = 0$ & 2 \\
+\hline
+\end{tabular}
+\end{center}
+The depth-1 gate $(\mathrm{bit}_2 + \mathrm{bit}_4 = 0)$ is the
+canonical ledger axis identified in
+Scholium~\ref{sch:ledger-quotient-G9}.  Source: v7.35
+Proposition~57.3.
+\end{scholium}
+
+\begin{definition}[\status{D}]\label{def:stabilizer-class}
+A class $C_n \in \Sigma_n$ is a \emph{stabilizer class} if every
+survivor chain issuing from $C_n$ has zero defect from stage~$n$
+onward.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:stabilizer-after-stab}
+If the refinement chain stabilizes globally at stage $N$, then every
+class in $\Sigma_N$ is a stabilizer class.
+\end{proposition}
+
+\begin{proof}
+After stage $N$, the partitions do not change, so every class has
+exactly one descendant at every later stage: itself.  Hence every
+later one-step defect vanishes.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:defect-pre-transport}
+At the level of Book~I, the defect ledger is purely combinatorial
+bookkeeping.  The concepts of continuation, persistence across
+contexts, transport obstruction, and finite balance will not acquire
+their full force until Book~III.  The purpose of introducing the
+defect ledger here is to fix its arithmetic substrate cleanly at the
+primitive level, before any dynamical or comparative structure is
+available.  Later books may invoke these objects through their
+canonical names without returning to the primitive setup.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Governing Theorem of Book I}
+%% ---------------------------------------------------------------
+
+The content of Book~I can now be compressed into its governing theorem.
+
+\begin{theorem}[\status{U}]\label{thm:governing}
+\textup{(Observational Quotient Theorem.)}  Finite admissible-test
+quotients define a coherent observational state space, and every
+finite refinement chain stabilizes after finitely many steps.
+
+More precisely:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item\label{thm:gov-a} The observational quotient $\Sigma_n$ is
+        well-defined at every stage and canonical observational content
+        is determined by admissible test equivalence, not by raw token
+        identity.
+  \item\label{thm:gov-b} Every refinement chain on a finite
+        configuration space stabilizes: there exists $N$ such that
+        $\Sigma_n = \Sigma_N =: \Sigma_\infty$ for all $n \geq N$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part~\ref{thm:gov-a} is Corollary~\ref{cor:quotient-welldef}.
+Part~\ref{thm:gov-b} is Theorem~\ref{thm:stabilization}.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:no-presentation-surplus}
+No later canonical theorem in the spine may depend on
+presentation-level distinctions that are invisible to the stabilized
+observational quotient.
+\end{corollary}
+
+\begin{proof}
+By Theorem~\ref{thm:governing}\ref{thm:gov-a}, the only distinctions
+with canonical force are those detectable by admissible tests.
+Presentation-level distinctions collapsed by $\sim_\infty$ carry no
+admissible witness, and therefore no canonical force.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:defect-welldef}
+The defect ledger is a well-defined combinatorial invariant of survivor
+chains, additive along concatenation, and vanishes on every survivor
+chain after the global stabilization stage.
+\end{corollary}
+
+\begin{proof}
+Propositions~\ref{prop:defect-nonneg}, \ref{prop:ledger-additivity},
+and~\ref{prop:stabilizer-after-stab}.
+\end{proof}
+
+\begin{scholium}[\status{R}]\label{sch:book-i-boundary}
+Book~I establishes only the primitive theorem-bearing kernel: admissible
+tests, observational quotient, finite stabilization, and defect
+bookkeeping.  It does not prove local stability of observable outcomes,
+boundary determinacy, source universality, branch legitimacy, or
+continuum correspondence.  Every one of those claims belongs to a
+later book and may not be silently imported here.
+\end{scholium}
+
+%% ---------------------------------------------------------------
+\section{Boundary of Book I}
+%% ---------------------------------------------------------------
+
+The following is an explicit statement of what Book~I has and has not
+proved.
+
+\textbf{What Book~I proves.}
+\begin{enumerate}
+  \item Every finite configuration space admits a coherent
+        observational quotient induced by any licensed test family.
+  \item Observational equivalence is an equivalence relation; the
+        quotient map is many-to-one precisely where distinct
+        configurations are observationally indistinguishable, forcing
+        singular projection interfaces.
+  \item Every finite refinement chain stabilizes after finitely many
+        steps.  The stabilized quotient $\Sigma_\infty$ is well-defined.
+  \item The defect ledger is a well-defined additive combinatorial
+        invariant of survivor chains; it vanishes after global
+        stabilization.
+  \item The six collapse gates (CG-1 through CG-6) are the
+        pre-conditions for any persistent admissible object.
+  \item Behavioral congruence $\sim_n$ is the canonical finest
+        admissibility-consistent equivalence; the maximal admissible
+        class $E_{\max}$ is unique (Thm~\ref{thm:emax-unique}).
+  \item The collar alphabet size $K_0$ is prime
+        (Thm~\ref{thm:K0-prime}).
+  \item Structural entropy $S(\Omega) = \log|\Sigma_\infty|$ is
+        well-defined and monotone non-increasing for right-stable
+        extensions (Thm~\ref{thm:entropy-monotone}).
+  \item The defect ledger defines an irreversible preorder on
+        continuation histories (Scholium~\ref{sch:temporal-preorder}).
+\end{enumerate}
+
+\textbf{What Book~I does not prove, and may not be assumed here.}
+\begin{enumerate}
+  \item \emph{Locality.}  No claim is made that observable outcomes
+        in a region are controlled by boundary data.  That requires
+        the LS-2 package of Book~II.
+  \item \emph{Boundary capacity.}  No counting bounds on outcome
+        multiplicity are derived here.
+  \item \emph{Source universality.}  The existence of a universal
+        source object is a theorem of Book~IV, not of Book~I.
+  \item \emph{Persistence and transport.}  The transport and
+        persistence machinery of Book~III does not exist here.  The
+        defect ledger is primitive bookkeeping, not a transport law.
+  \item \emph{Continuum structure.}  No continuum, differential,
+        integral, or smooth language is licensed at this stage.
+  \item \emph{Physical interpretation.}  No identification with
+        spacetime, gauge fields, matter, or any physical theory is
+        claimed or implied.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Handoff to Book II}
+%% ---------------------------------------------------------------
+
+Book~II begins when the stabilized observational structure established
+here is localized.  The natural next question — once one has a
+stabilized observational quotient $\Sigma_\infty$ — is whether the
+observable outcome on a finite subregion is determined by what happens
+at its boundary.  That question requires introducing regions, collars,
+and stabilized collar types: all direct descendants of the objects
+defined in this book.
+
+The transition from Book~I to Book~II is:
+\begin{gather*}
+\text{adm.~process class}
+\to\text{obs.~quotient}
+\to\text{finite stabilization}\\
+\to\text{stabilized local types and boundary law.}
+\end{gather*}
+Book~I supplies the first three terms of this chain.
+Book~II supplies the fourth.
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+The following table records the load-bearing items of Book~I, their
+status, and their export destinations.
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{3.6cm}p{0.8cm}p{3.8cm}p{4.8cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on} & \textbf{Exports to} \\
+\hline
+\ref{lem:obs-equiv-equiv}\ Obs.\ equiv.\ rel.
+  & [U] & Def.~\ref{def:obs-equiv}
+  & Defs.~\ref{def:obs-quotient}, \ref{thm:governing} \\
+
+\ref{prop:singular}\ Singular interfaces
+  & [U] & \ref{lem:obs-equiv-equiv}, \ref{def:singular-interface}
+  & Rmk.~\ref{rmk:singular-force}; Book~V \\
+
+\ref{cor:quotient-welldef}\ Quotient well-def.
+  & [U] & \ref{lem:obs-equiv-equiv}
+  & \ref{thm:governing}; Books~II--VII \\
+
+\ref{prop:monotone}\ Monotonicity
+  & [U] & \ref{def:refinement-chain}
+  & \ref{thm:stabilization} \\
+
+\ref{thm:stabilization}\ Finite Stabilization
+  & [U] & \ref{prop:monotone}, fin.\ of $\Omega$
+  & \ref{thm:governing}; Books~II--VII \\
+
+\ref{cor:stabilized-welldef}\ $\Sigma_\infty$ well-def.
+  & [U] & \ref{thm:stabilization}
+  & Books~II--VII \\
+
+\ref{prop:defect-nonneg}\ $\delta(C_n)\geq 0$
+  & [U] & \ref{def:one-step-defect}
+  & \ref{prop:ledger-additivity}, \ref{thm:governing} \\
+
+\ref{prop:ledger-additivity}\ Ledger additivity
+  & [U] & \ref{def:defect-ledger}
+  & \ref{cor:defect-welldef}; Book~III \\
+
+\ref{prop:stabilizer-after-stab}\ Stabilizer classes
+  & [U] & \ref{thm:stabilization}, \ref{def:stabilizer-class}
+  & \ref{cor:defect-welldef}; Book~III \\
+
+\ref{thm:entropy-monotone}\ Entropy Monotonicity
+  & [U] & \ref{def:structural-entropy}, \ref{prop:ledger-additivity}
+  & \ref{sch:temporal-preorder}; Book~III \\
+
+\ref{sch:temporal-preorder}\ Irrev.\ preorder
+  & [U] & \ref{prop:defect-nonneg}, \ref{prop:ledger-additivity}
+  & Book~II Scholium (Phase-A arm); Book~III \\
+
+\ref{cor:holographic-sparsity}\ Holographic Sparsity
+  & [C] & \ref{sr:alphabet-prime}; Book~II IC-1
+  & Book~I boundary; GR Branch Book \\
+
+\ref{thm:governing}\ Obs.\ Quotient Theorem
+  & [U] & \ref{cor:quotient-welldef}, \ref{thm:stabilization}
+  & Books~II--VII; all branch books \\
+
+\ref{cor:no-presentation-surplus}\ No pres.\ surplus
+  & [U] & \ref{thm:governing}
+  & Books~II--VII; Book~VII \\
+
+\ref{cor:defect-welldef}\ Defect ledger
+  & [U] & \ref{prop:defect-nonneg}--\ref{prop:stabilizer-after-stab}
+  & Book~III transport machinery \\
+
+\ref{lem:behavioral-canonical}\ Behav.\ Congruence Canon.
+  & [U] & \ref{cor:quotient-welldef}; A1--A4
+  & \ref{thm:emax-unique}; Books~II--VII \\
+
+\ref{thm:emax-unique}\ Admiss.-Class Canon.
+  & [U] & \ref{lem:behavioral-canonical}; A1--A4
+  & Books~II--VII; Book~IV \\
+
+\ref{thm:K0-prime}\ $K_0$ primality
+  & [U] & A2; \ref{sr:alphabet-prime}
+  & Book~II collar machinery; YM Branch Book \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{remark}[\status{R}]
+Every unconditional result in this ledger depends only on the
+standing definitions and the finiteness of $\Omega$.  No hypothesis
+beyond the finite relational framework is invoked.  The one
+conditional result, Corollary~\ref{cor:holographic-sparsity}
+(Holographic Sparsity), imports LS-2 from Book~II; it is recorded here
+for architectural completeness only.  This unconditionality is the
+source of Book~I's load-bearing character: everything downstream in
+the spine rests on a foundation that requires no further assumptions
+to stand.
+\end{remark}
+
+\end{document}

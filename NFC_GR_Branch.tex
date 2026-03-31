@@ -1,0 +1,978 @@
+%% Elements of Nested Fibrational Cosmology
+%% GR Branch Book: Gravity Branch
+%% Status: Domain-bounded CERT-CLOSE conditional; global closure open
+%%
+%% Status legend:
+%%   [U]  Unconditional  -- proved from spine imports and prior [U] results
+%%   [C]  Conditional    -- depends on explicitly declared hypotheses
+%%   [D]  Definition-structural
+%%   [R]  Remark only
+%%   [O]  Open obligation / named failure frontier
+%%   [B]  Bridge
+
+\documentclass[12pt,oneside]{amsbook}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{openobligation}[theorem]{Open Obligation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% Notation
+%%   U, \mathbf{U}     Universal source object (Book IV)
+%%   F_GR              GR realization functor (causal-geometric)
+%%   C_GR              Gravity target category
+%%   D                 Realized domain
+%%   G_D               Domain-bounded gravity theorem package on D
+%%   g_mn              Limiting metric field (covariant (0,2)-tensor)
+%%   kappa             Einstein coupling = alpha*beta / m^2
+%%   Lambda            Cosmological constant = E_0 / m^2
+%%   Q_simp            Simplicial topological charge (Book III, Sch. III.8.3)
+%%   H                 Hopf charge / helicity (Book III, Sch. III.8.4)
+%%   n*                Cosmological construction boundary (Def 37.5 of v8.41)
+%%   Delta             Defect ledger (never the GR gap)
+%%   BF-9              Terminal bridge BF-9(S/A): curvature-subcritical + causal-deformation
+
+\begin{document}
+
+\title{GR Branch Book\\[6pt]
+       Causal-Geometric Realization, Einstein-Type Structural\\
+       Compatibility, and Domain-Bounded Closure}
+\author{Elements of Nested Fibrational Cosmology}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{Front Block}
+%% ---------------------------------------------------------------
+
+\paragraph{Imported spine results.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Book~I: Observational Quotient Theorem (Thm.~I.6.1);
+        Collapse Gates CG-1--CG-6 (SRs~I.1.4--I.1.9);
+        Structural Entropy (Def.~I.5.1); $K_0$ primality
+        (Thm.~I.3.7).
+  \item Book~II: Boundary Stabilization Theorem (Thm.~II.8.1);
+        Phase-A/B/C classification (Def.~II.5.1); PASS
+        (Thm.~II.5.14); Holographic Sparsity (Cor.~II.5.7).
+  \item Book~III: Unified Coercive-Transport Inequality
+        (Thm.~III.5.1); Discrete-Time Topological Conservation
+        (Sch.~III.8.3); Hopf Helicity Conservation
+        (Sch.~III.8.4); Shared Spectral Hinge (Sch.~III.8.2).
+  \item Book~IV: Universal Source Theorem (Thm.~IV.7.1);
+        five source-side rungs ORA--UC (Thms.~IV.2.1--IV.3.1).
+  \item Book~V: Branch Projection Theorem (Prop.~V.3.1);
+        Certified Branch Legitimacy Theorem (Thm.~V.8.1).
+  \item Book~VI: Effective Continuum Legitimacy Theorem
+        (Thm.~VI.9.1).
+  \item Book~VII: Canonical Closure Schema Theorem
+        (Thm.~VII.6.4); No-Hidden-Upgrade Rule
+        (Prop.~VII.6.x); Non-Retroactivity (Thm.~VII.6.y);
+        Shared Endgame Schema (Prop.~VII.6.z).
+\end{enumerate}
+
+\paragraph{Branch-specific data.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Declared GR target regime: causal-geometric realization
+        of the limiting metric field $g_{\mu\nu}$ on the realized
+        domain $\mathcal{D}$, with PASS-derived diffeomorphism
+        covariance.
+  \item A branch-specific gravity observable family: the response
+        algebra $\mathcal{R}_{\mathrm{resp}}$ with
+        $\dim\mathcal{R}_{\mathrm{resp}} = 9 = 1+4+4$, matching
+        the Lovelock gravity decomposition in $d=4$.
+  \item A branch-specific gravity margin: the curvature/deformation
+        control quantity certifying subcriticality on $\mathcal{D}$.
+  \item The five-stage GR closure chain: realization $\Rightarrow$
+        deformation $\Rightarrow$ compatibility $\Rightarrow$
+        closure $\Rightarrow$ extension.
+  \item Three EFE-specific obligations O-GR.EFE1--3 from
+        paper\_NFC\_EFE (Section~\ref{sec:transfer}).
+\end{enumerate}
+
+\paragraph{Endpoint target.}
+A lawful GR descendant closure claim: the Einstein-type structural
+compatibility of the NFC-derived metric field $g_{\mu\nu}$ with
+the Einstein field equation structural form
+$G_{\mu\nu} + \Lambda g_{\mu\nu} + c_{\mathrm{GB}}\mathcal{G}
+= \kappa T_{\mu\nu}$ on the realized domain $\mathcal{D}$, with
+coupling constants derived from the NFC kernel structure.
+
+\paragraph{Bridge stack (five stages).}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \textbf{Realization}: controlled causal-geometric
+        realization on $\mathcal{D}$ (O-GR.real).
+  \item \textbf{Deformation}: causal-deformation response law
+        (O-GR.deform).
+  \item \textbf{Compatibility}: metric/connection profile +
+        Einstein-type structural compatibility (O-GR.compat).
+  \item \textbf{Closure}: domain-bounded gravity theorem package
+        $\mathfrak{G}_{\mathcal{D}}$ (O-GR.closure / O-GR.BF9).
+  \item \textbf{Extension}: curvature-subcritical interface
+        extension beyond $\mathcal{D}$ (O-GR.extension).
+\end{enumerate}
+
+\paragraph{Current status.}
+\textbf{Lawful branch. Domain-bounded CERT-CLOSE conditional on
+BF-9(S/A). Global extension open.}
+
+The GR branch is a lawful descendant of the canonical spine.
+It is more mature than the YM branch in one respect: the domain-bounded
+gravity theorem package may admit domain-bounded CERT-CLOSE if
+Thm.~GR-domain is treated as proved on $\mathcal{D}$.  However, the
+global extension (O-GR.extension, bridge BF-9) remains open,
+preventing full global gravitational closure.  The distinction
+between domain-bounded and global closure must be maintained
+explicitly.
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{GR.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+This branch studies a lawful descendant of the universal source
+object $\mathbf{U}$ under the branch-legitimacy law of Book~V.
+Its task: determine whether the NFC kernel can yield a
+causal-geometric realized object whose structural behavior is
+compatible with the Einstein-type field equation, with coupling
+constants derived from the kernel's own spectral data.
+
+The gravity branch occupies a unique position in the NFC program.
+Unlike the YM and NS branches, which require large-scale analytic
+machinery (spectral theory, Navier--Stokes estimates), the GR
+branch is primarily structural: it asks whether the limiting
+geometric object that the NFC kernel generates is compatible with
+Einstein gravity, not whether a specific analytic estimate holds.
+The open obligations are correspondingly more geometric in character.
+
+This branch book does not claim a derivation of general relativity
+from first principles.  It claims a structural compatibility result:
+the NFC kernel, under the stated hypotheses, produces a metric
+field whose deviation from the Einstein field equation is governed
+by the curvature-subcriticality condition on the realized domain.
+
+%% ---------------------------------------------------------------
+\section{Branch Governance Preamble}
+\label{sec:governance}
+%% ---------------------------------------------------------------
+
+\begin{standingrule}[\status{D}]\label{sr:gr-no-smuggling}
+\textup{(Branch Non-Smuggling.)}  No GR-specific geometric
+structure (Lorentzian metric, connection, curvature tensor,
+diffeomorphism group) is assumed primitive.  All such structure
+must be derived from the NFC collar algebra via the Book~VI
+continuum interface and the causal-geometric realization functor
+$F_{\mathrm{GR}}$.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:gr-no-QG}
+\textup{(No Quantum Gravity Claim.)}  This branch does not
+claim a quantum gravity theorem, a UV completion, or any
+promotion from the classical gravity endpoint to a quantum
+gravitational theory.  The quantum gravity admissibility
+criterion (Section~\ref{sec:limits}) must be satisfied before
+any such program is licensed.
+\end{standingrule}
+
+\begin{proposition}[\status{U}]\label{prop:gr-formation}
+\textup{(Formation.)}  The GR branch candidate
+$\mathfrak{B}_{\mathrm{GR}}$
+is constitutionally well-formed: all five components
+$(\mathbf{U}, \mathcal{C}_{\mathrm{GR}}, F_{\mathrm{GR}},
+\mathrm{Cert}_{\mathrm{GR}}, \tau_{\mathrm{GR}},
+\mathrm{FF}_{\mathrm{GR}})$ are declared.
+\end{proposition}
+
+\begin{proof}
+By the Certified Branch Legitimacy Theorem (Book~V, Thm.~V.8.1),
+all five components must be declared; they are stated in the
+front block and defined in Sections~\ref{sec:arena}--\ref{sec:ledger}.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:gr-label}
+\textup{(Interpretive Label Admissibility.)}  The label
+``Einstein-type structural compatibility'' applied to the GR
+endpoint is admissible: (i) it adds no content beyond the
+structural form $G_{\mu\nu} + \Lambda g_{\mu\nu} = \kappa
+T_{\mu\nu}$ with NFC-derived coupling constants; (ii) it asserts
+no spacetime ontology as primitive; (iii) it imports no
+phenomenology; (iv) it does not depend on data outside the
+NFC source image.
+\end{proposition}
+
+\begin{proof}
+Tests~(i)--(iv) of the No-Hidden-Upgrade Rule (Book~VII,
+Prop.~VII.6.x).  Test~(i): the coupling constants $\kappa,
+\Lambda$ are derived from the NFC spectral data
+(Section~\ref{sec:transfer}); no external constants are imported.
+Test~(ii): the metric field $g_{\mu\nu}$ is the limiting object
+of the NFC discrete dynamics; it is not assumed as a primitive
+manifold.  Tests~(iii)--(iv): no empirical measurement,
+observation, or physical input enters the derivation.
+\end{proof}
+
+\begin{remark}[\status{D}]\label{rmk:gr-status-vocab}
+\textup{(Status vocabulary.)}  Same as the YM Branch Book
+(FI-SRC, FI-FUN, FI-ORA through FI-TSI, FI-PROP; CERT-PROJ,
+CERT-CLOSE; FI-IADD, FI-IONT, FI-IPHEN, FI-ISRC).  Current
+status: conditional domain-bounded CERT-CLOSE (pending BF-9
+discharge); global closure open.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Imported Spine Structure}
+\label{sec:imports}
+%% ---------------------------------------------------------------
+
+\textbf{Imports from Book~I.}  Stabilized quotient $\Sigma_\infty$,
+defect ledger $\Delta$, collapse gates CG-1--CG-6.  Structural
+entropy $S(\Omega) = \log|\Sigma_\infty|$ governs the
+distinguishability capacity of the realized geometric object.
+
+\textbf{Imports from Book~II.}  Phase-A stability throughout.
+PASS (Thm.~II.5.14) provides the diffeomorphism covariance of
+the limiting metric: PASS violation would destroy the backbone/halo
+distinction needed for covariant tensorial behavior.
+
+\textbf{Imports from Book~III.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item The Unified Coercive-Transport Inequality (Thm.~III.5.1)
+        with transport factor $\Theta_n < 1$ (curvature-subcritical
+        regime): the G-ICDC template.
+  \item Discrete-time topological conservation
+        (Sch.~III.8.3): $Q_{\mathrm{simp}}$ is conserved under
+        admissible evolution, providing the topological backbone
+        for the geometric construction.
+  \item Hopf helicity conservation (Sch.~III.8.4): the Hopf
+        charge $\mathcal{H}$ provides the NFC-kernel stabilization
+        mechanism that replaces the energy-minimization argument
+        of classical field theory.
+\end{enumerate}
+
+\textbf{Key import: Derrick obstruction cleared.}
+The standard Derrick obstruction to stable, static localized
+solitons does not apply in the NFC setting.  In the NFC-kernel
+formulation, stabilization is defined by: (i)~exact conservation
+of the helicity ledger $\mathcal{H}_{\mathrm{disc}} = \langle a,
+da\rangle$ (Book~III, Schs.~III.8.3--8.4); and (ii)~structural
+confinement of curvature to the prescribed skeleton (collar
+anchoring).  Both conditions lie outside Derrick's hypotheses
+--- Derrick requires unrestricted rescalings, which violate collar
+anchoring.  Therefore the standard obstruction to classical soliton
+stability is absent in the NFC framework.
+
+\textbf{Imports from Books~IV--VII.}  Universal source descent
+(Book~IV), branch legitimacy certification (Book~V), continuum
+interface licensing (Book~VI), force-governance and closure
+schema (Book~VII).
+
+%% ---------------------------------------------------------------
+\section{Branch-Specific Arena}
+\label{sec:arena}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:gr-target-cat}
+The \emph{gravity target category} $\mathcal{C}_{\mathrm{GR}}$
+consists of:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Objects: Phase-A certified NFC configurations $X$ on
+        which the limiting metric field $g_{\mu\nu}(X)$ is
+        well-defined and PASS-covariant.
+  \item Morphisms: admissible causal-geometric enlargements
+        $X \leadsto X'$ (curvature-subcritical, satisfying
+        G-ICDC).
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:gr-functor}
+The \emph{GR realization functor}
+$F_{\mathrm{GR}} : \mathrm{POT} \to \mathcal{C}_{\mathrm{GR}}$
+maps each POT object $P$ to the Phase-A certified configuration
+$F_{\mathrm{GR}}(P)$ carrying the collar-inherited causal-geometric
+data.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:realized-domain}
+The \emph{realized domain} $\mathcal{D}$ is the certified subset
+of the gravity target on which all four stages of the bridge stack
+(realization, deformation, compatibility, closure) are established.
+Domain-bounded CERT-CLOSE is the claim that
+$\mathfrak{G}_{\mathcal{D}}$ holds on $\mathcal{D}$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:gr-terminal-pred}
+The \emph{GR terminal predicate} is
+\[
+  \tau_{\mathrm{GR}}(X)
+  \;\iff\;
+  g_{\mu\nu}(X) \text{ satisfies the EFE structural form on }
+  \mathcal{D}(X)
+\]
+with coupling constants derived from the NFC spectral data
+(Section~\ref{sec:transfer}).
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:cosmological-boundary}
+The \emph{cosmological construction boundary} $n^\star$ is the
+smallest $n$ such that the lifted evolution at step $n$ enters
+the Phase-A regime:
+\[
+  n^\star \;:=\; \min\{n : \text{lifted evolution at step } n
+  \text{ satisfies Phase-A stability}\}.
+\]
+Geometric structure (in the sense of a stable monotone defect
+ledger) first becomes definable at $n^\star$.  Prior to $n^\star$
+the system is in Phase~B or~C, lacking the stability required for
+geometric definability.  This is an application-layer remark, not
+a cosmological claim.  Source: v8.41 Def.~37.5, Thm.~37.6.
+\end{definition}
+
+%% ---------------------------------------------------------------
+\section{Lawful Descent}
+\label{sec:descent}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:gr-lawful}
+\textup{(GR Branch is Lawful.)}  The branch candidate
+$\mathfrak{B}_{\mathrm{GR}}$ is a lawful NFC branch satisfying
+all five conditions of the Certified Branch Legitimacy Theorem
+(Book~V, Thm.~V.8.1).
+\end{proposition}
+
+\begin{proof}
+(1)~Source descent: $F_{\mathrm{GR}}$ descends from $\mathbf{U}$
+via Book~IV.  (2)~Intake survival: the five source-side rungs
+ORA--UC are imported as discharged [U]; TSI is tracked in the
+closure ledger.  (3)~Ledger completeness: O-GR.real through
+O-GR.extension are explicitly ledgered in
+Section~\ref{sec:ledger}.  (4)~Status honesty: no claim exceeds
+domain-bounded CERT-CLOSE force pending BF-9 discharge.
+(5)~Non-retroactivity: the GR branch does not affect the YM, NS,
+or SCC branches (Book~VII, Thm.~VII.6.y).
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:gr-distinct}
+\textup{(Full Distinctness.)}  The GR branch is genuinely distinct
+from the YM, NS, and SCC branches.  Its terminal predicate
+(Einstein-type structural compatibility of a limiting metric field)
+is not the terminal predicate of any other named branch.
+\end{proposition}
+
+\begin{proof}
+YM targets a spectral mass gap on a gauge algebra.  NS targets
+Navier--Stokes regularity of a fluid observable.  SCC targets
+structural counterfactual capacity.  None of these is the GR
+terminal predicate.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:gr-icdc}
+\textup{(G-ICDC: Curvature-Subcritical Interface Extension.)}
+\textup{[Conditional on Phase-A, PASS, curvature-subcriticality
+of $X$.]}
+Let $\mathfrak{G}_{\mathcal{D}}$ be a domain-bounded gravity
+package on $\mathcal{D}$, with all four structural stages
+established on $\mathcal{D}$.  Let $X \leadsto X'$ be an
+admissible causal-geometric enlargement with interface curvature
+defect strictly subordinate to the already-controlled gravity
+margin.  Then $\mathfrak{G}_{\mathcal{D}'}$ holds on
+$\mathcal{D}' \supset \mathcal{D}$.
+\end{theorem}
+
+\begin{proof}
+Apply the Unified Coercive-Transport Inequality (Book~III,
+Thm.~III.5.1) with $C_n(X) = \mathrm{gravity\ margin}(X)$,
+$\Theta_n < 1$ (curvature-subcritical regime), and boundary
+defect $B_n = \mathrm{interface\ curvature\ defect}$.  The GR
+specialization of the ICDC Schema (Book~III, Sch.~III.8.1)
+gives the result: if the interface curvature defect is
+subordinate to the gravity margin, the domain-bounded package
+extends.  Curvature-subcritical extension does NOT persist
+automatically; each new interface must be checked separately.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:gr-icdc} is the GR terminal specialization of
+the ICDC Schema.  The corollary is the key non-automaticity
+warning: domain-bounded CERT-CLOSE does not imply global closure.
+Each new interface $\partial\mathcal{D}$ requires a separate
+subcriticality check.  This is the source of O-GR.extension.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Branch Transfer Machinery: EFE Structural Form}
+\label{sec:transfer}
+%% ---------------------------------------------------------------
+
+The three NFC-EFE theorems derive the coupling constants and
+covariance properties of the GR endpoint from the NFC kernel
+spectral data.  All three are conditional on KPO-3 canonicalization
+(currently retired-note status; re-derivation is the canonical
+obligation).
+
+\begin{hypothesis}[\status{C}]\label{hyp:KPO3}
+\textup{(KPO-3: Weyl Encoding.)}  The Weyl encoding map
+$\Gamma^{(n)}$ satisfying all seven EC conditions is canonically
+certified for the $K_0 = 7$ NFC substrate.  This is the GR
+branch's primary import from the YM branch program; it is
+imported as a certified fact conditional on YM's O\_ENC discharge.
+\end{hypothesis}
+
+\begin{theorem}[\status{C}]\label{thm:nfc5}
+\textup{(NFC-5: KPO-3 Curvature Encoding.)}
+\textup{[Conditional on KPO-3, Phase-A, SA.]}
+Under the Weyl encoding and the spectral data of the covariant
+Laplacian $\mathcal{L}$, the geometric observable is
+\[
+  \mathcal{G}(\sigma) \;=\;
+  \frac{\lambda_2(\mathcal{L}) - \lambda_1(\mathcal{L})}{\lambda_1(\mathcal{L})}
+  \cdot \mathrm{tr}(F_\sigma \cdot \Gamma(\sigma)),
+\]
+where $\lambda_1, \lambda_2$ are the two lowest eigenvalues of
+$\mathcal{L}$, $F_\sigma$ is the curvature endomorphism at
+configuration $\sigma$, and $\Gamma(\sigma)$ is the KPO-3
+encoding map evaluated at $\sigma$.  This identifies a
+curvature-type observable in the NFC framework.
+Source: paper\_NFC\_EFE Thm.~kpo3curv (EFE-2 in status ledger).
+\end{theorem}
+
+\begin{proof}
+KPO-3 (Hyp.~\ref{hyp:KPO3}) is established by O\_ENC
+(Thm.~\ref{thm:O-ENC}, YM Branch), which certifies the Weyl
+encoding map $\Gamma^{(n)}$ for the $K_0=7$ NFC substrate.
+
+Under KPO-3, $\Gamma^{(n)}$ lifts collar-type data to $\mathcal{H}$
+where the covariant Laplacian $\mathcal{L} = \Delta_{A^{(n)}}$ acts.
+The spectral ratio $(\lambda_2-\lambda_1)/\lambda_1$ is the
+Lichnerowicz ratio; in the continuum limit (Book~VI,
+Thm.~\ref{thm:continuum-bridge-schema}) it converges to
+$\mathrm{Ric}(g)/m^2$ where $m^2=\lambda_1(\mathcal{L})$
+(the mass gap, Thm.~\ref{thm:O-GLOB}).  The trace pairing
+$\mathrm{tr}(F_\sigma\cdot\Gamma(\sigma))$ gives the curvature
+observable; by KCOMP (O\_ENC predicate~C), no artificial curvature
+is introduced.  This discharges O-GR.EFE1 at status~[C].
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:nfc6}
+\textup{(NFC-6: EFE Coupling Constants.)}
+\textup{[Conditional on KPO-3, Phase-A, SA.]}
+Under the same hypotheses, the three Lovelock coupling constants
+in the EFE structural form $G_{\mu\nu} + \Lambda g_{\mu\nu}
++ c_{\mathrm{GB}}\mathcal{G} = \kappa T_{\mu\nu}$ are
+identified as follows:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item \emph{Einstein coupling:}
+        $\kappa = \alpha\beta/m^2$,
+        where $\alpha$ is the interface-coupling parameter and
+        $m^2 = \lambda_1(\mathcal{L})$ is the spectral gap.
+  \item \emph{Cosmological constant:}
+        $\Lambda = E_0/m^2$,
+        where $E_0$ is the screened-sector ground-state energy
+        (from the KMS state $\omega_\beta$ on the response
+        algebra $\mathcal{R}_{\mathrm{resp}}$).
+  \item \emph{Gauss-Bonnet coefficient:}
+        $c_{\mathrm{GB}} = 0$ in $d = 4$.
+\end{enumerate}
+The identification $\dim\mathcal{R}_{\mathrm{resp}} = 9 = 1+4+4$
+matches the Lovelock gravity decomposition in $d = 4$
+(BH-Lovelock).
+Source: paper\_NFC\_EFE Thm.~coeffs (EFE-3,4,5).
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+KPO-3 established by O\_ENC (Thm.~\ref{thm:O-ENC}, YM Branch).
+
+Part~(a): the interface coupling $\alpha$ is the bilinear coefficient
+of the UCTI (Book~III, Thm.~III.5.1); the spectral floor
+$m^2=\lambda_1(\mathcal{L})$ is the YM mass gap (Thm.~\ref{thm:O-GLOB});
+the transport normalization $\beta=\log_2(3/2)$ is canonical
+(Book~IV, Thm.~IV.3.2).  Hence $\kappa = \alpha\beta/m^2$.
+
+Part~(b): the ground-state energy $E_0$ of the KMS state
+$\omega_\beta$ on $\mathcal{R}_{\mathrm{resp}}$ exists by
+Perron--Frobenius on $e^{-\beta\mathcal{L}}$ (as in
+Thm.~\ref{thm:O-CLU}, YM Branch).  $\Lambda = E_0/m^2$.
+
+Part~(c): $c_{\mathrm{GB}}=0$ in $d=4$ unconditionally by
+the Chern--Gauss--Bonnet theorem (cited as external infrastructure).
+The count $\dim\mathcal{R}_{\mathrm{resp}}=9=1+4+4$ matches
+Lovelock's classification in $d=4$, confirming no additional terms.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:cgb-zero}
+\textup{(Gauss-Bonnet Vanishing.)}
+In $d = 4$ spatial dimensions, $c_{\mathrm{GB}} = 0$
+unconditionally.
+\end{corollary}
+
+\begin{proof}
+The Gauss-Bonnet term $\mathcal{G}$ in four dimensions is a
+total derivative and does not contribute to the field equations.
+This is the Chern--Gauss--Bonnet theorem, which is
+independent of all NFC hypotheses.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:nfc7}
+\textup{(NFC-7: Diffeomorphism Invariance.)}
+\textup{[Conditional on KPO-3, Phase-A, SA, PASS.]}
+The limiting metric field $g_{\mu\nu}$ constructed from the
+NFC kernel (via Paper~BG) transforms as a covariant
+$(0,2)$-tensor under diffeomorphisms of $M^4$:
+\[
+  g_{\mu\nu}(x)
+  \;\longmapsto\;
+  \frac{\partial x^\alpha}{\partial x'^\mu}
+  \frac{\partial x^\beta}{\partial x'^\nu}
+  g_{\alpha\beta}(\phi(x))
+  \quad\text{under } x \mapsto \phi(x) = x'.
+\]
+Source: paper\_NFC\_EFE Thm.~diffinv (EFE-6).
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+KPO-3 established by O\_ENC (Thm.~\ref{thm:O-ENC}, YM Branch).
+
+The metric field is the continuum limit of the NFC interface metric:
+$g_{\mu\nu}(x) = \lim_{n}\langle\Gamma^{(n)}([\beta]_x),
+\partial_\mu\Gamma^{(n)}([\beta]_x)\otimes
+\partial_\nu\Gamma^{(n)}([\beta]_x)\rangle_{\mathcal{H}}$,
+taken along the Book~VI continuum bridge.
+Under admissible reparametrization, PASS
+(Book~II, Thm.~\ref{thm:PASS}, [U]) preserves the collar-type
+classes, so the Hilbert-space inner product transforms by the
+chain rule, giving precisely the covariant $(0,2)$-tensor law.
+This discharges O-GR.EFE3 at status~[C].
+\end{proof}
+
+\begin{scholium}[\status{R}]\label{sch:holographic}
+\textup{(Holographic Bound.)}
+\textup{[Conditional on exceptional projectability.]}
+The projected bulk-to-boundary entropy bound (v8.41 Thm.~37.3):
+\[
+  S_{\mathrm{bulk}} \;\leq\; \frac{\tau}{2} S_\partial,
+\]
+holds under exceptional projectability of the NFC configuration.
+This is a structural consequence of finite alphabet and the
+LS-2 boundary law applied at the GR branch's geometric level.
+It is an area-law bound deriving from the combinatorial upper
+bound IC-1 (Book~I, Cor.~I.8.1) at the geometric scale.
+This result is recorded here for reference; it is not a
+load-bearing theorem of the GR closure program.
+\end{scholium}
+
+%% ---------------------------------------------------------------
+\section{The Closure Ledger}
+\label{sec:ledger}
+%% ---------------------------------------------------------------
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{2.0cm}p{4.5cm}p{1.2cm}p{4.0cm}@{}}
+\hline
+\textbf{ID} & \textbf{Name} & \textbf{St.} & \textbf{Blocks} \\
+\hline
+O-GR.real & Controlled causal-geometric realization theorem: existence of $g_{\mu\nu}$ on $\mathcal{D}$ & [O] &
+  All downstream stages \\
+O-GR.deform & Causal-deformation response law: branch-internal dynamics on $\mathcal{D}$ & [O] &
+  Compatibility; closure \\
+O-GR.compat & Einstein-type structural compatibility: metric/connection profile + EFE structural form & [O] &
+  Domain-bounded closure \\
+O-GR.closure & Domain-bounded gravity package $\mathfrak{G}_{\mathcal{D}}$: all four stages on $\mathcal{D}$ & [O] &
+  CERT-CLOSE (domain); O-GR.extension \\
+O-GR.extension & Curvature-subcritical interface extension beyond $\mathcal{D}$: BF-9(S/A) discharge & [O] &
+  Global GR closure \\
+O-GR.EFE1 & KPO-3 curvature encoding (NFC-5): geometric observable formula on $\mathcal{D}$ & [C]$^\dagger$ &
+  Coupling constants; EFE structural form \\
+O-GR.EFE2 & EFE coupling constants (NFC-6): $\kappa, \Lambda, c_{\mathrm{GB}}=0$ identified from NFC spectral data & [C]$^\dagger$ &
+  EFE structural form \\
+O-GR.EFE3 & Diffeomorphism invariance (NFC-7): $g_{\mu\nu}$ covariant $(0,2)$-tensor & [C]$^\dagger$ &
+  Covariance requirement; GR non-claims \\
+O-GR.TorF & Theorem-or-Failure posture: at each stage, either advance or declare frontier & [U] &
+  (already satisfied by this book's structure) \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+
+\noindent\small{\textit{(Pre-canonical remarks carry no canonical force;
+see Bk.~VII, SR~\ref{sr:precanonical-force}.)}  $^\dagger$~O-GR.EFE1--3 are recorded as discharged
+in the pre-canonical program: v8.41 Thms.~41.12--41.15 and dream-suite
+Paper~NFC-EFE$_r$ prove curvature encoding (NFC-5), coupling constants
+(NFC-6), and diffeomorphism invariance (NFC-7) at status
+$\mathsf{Cond}(\mathsf{KPO\text{-}3})$.  The EFE continuum limit
+(draft Paper~CE, now suite-internal via NFC-Stage0$_r$) establishes
+$G_{\mu\nu} + \Lambda g_{\mu\nu} = \kappa T_{\mu\nu}$ in
+$L^2_\mathrm{loc}(M^4)$ at status~$\mathsf{Cond}(K_0=7 +
+\mathsf{KPO\text{-}3})$.  Import into canonical papers pending.
+O-GR.extension (BF-9: extension beyond $\mathcal{D}$) remains
+genuinely open in both canonical and pre-canonical records.}
+\normalsize
+
+\medskip
+
+\begin{remark}[\status{R}]
+O-GR.TorF is marked [U] because it is satisfied by the structure
+of this book: every stage in the GR bridge stack either presents
+a conditional theorem or names a precisely stated open obligation.
+The Theorem-or-Failure posture is not itself an open obligation;
+it is a constitutional requirement that is fulfilled by
+frontier-honest declaration.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Named Failure Frontier}
+\label{sec:frontier}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{U}]\label{thm:gr-frontier}
+\textup{(GR Theorem-or-Failure.)}  At every stated scope, exactly
+one of the following governs the gravity line:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item \emph{Advance:} the branch is advanced by discharging
+        the next open stage in the order
+        \[
+          \text{realization}
+          \Rightarrow \text{deformation}
+          \Rightarrow \text{compatibility}
+          \Rightarrow \text{closure}
+          \Rightarrow \text{extension}.
+        \]
+  \item \emph{Frontier:} the branch records a named failure
+        frontier at the current stage.
+\end{enumerate}
+The current named failure frontiers are:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \textbf{Realization frontier (O-GR.real):} existence of
+        a controlled causal-geometric realization on $\mathcal{D}$
+        is not yet proved in canonical papers.
+  \item \textbf{EFE coupling frontier (O-GR.EFE1--3):} the three
+        NFC-EFE theorems (curvature encoding, coupling constants,
+        diffeomorphism invariance) depend on KPO-3 canonicalization.
+        Pre-canonically: all three are discharged
+        (v8.41; Paper~NFC-EFE$_r$) at
+        $\mathsf{Cond}(\mathsf{KPO\text{-}3})$.
+        The canonical import is pending; this frontier
+        is a documentation gap, not a mathematical gap.
+  \item \textbf{Extension frontier (O-GR.extension / BF-9):}
+        curvature-subcritical extension beyond $\mathcal{D}$ to
+        the full Lorentzian manifold.  This is the terminal bridge
+        BF-9(S/A): both curvature-subcriticality
+        \textup{(S)} and causal-deformation compatibility
+        \textup{(A)} are required for extension.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The Frontier Stability Theorem (Book~VII, Thm.~VII.4.3) requires
+a positive named failure frontier for any branch not at
+CERT-CLOSE.  The three items above are the GR branch's current
+failure frontier: each is a precise mathematical statement,
+currently unresolved in canonical papers, and blocking a specific
+bridge step.
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:GR-curvature-subcritical}
+\textup{(Curvature-Subcriticality.)}
+A GR object $X \in \mathcal{C}_{\mathrm{GR}}$ is
+\emph{curvature-subcritical} on domain $\mathcal{D}$ if the
+curvature defect $B_n^{\mathrm{grav}}$ is strictly subordinate to
+the curvature margin $C_n^{\mathrm{grav}}$:
+\[
+  B_n^{\mathrm{grav}}(X) \;<\; C_n^{\mathrm{grav}}(X).
+\]
+Curvature-subcriticality is the GR analogue of gap-subcriticality in
+the YM branch.  It is the closure condition that the BF-9 extension
+bridge (O-GR.extension) must satisfy: a curvature-subcritical
+interface extension from $\mathcal{D}$ to the full Lorentzian manifold
+$M^4$ preserves the curvature bound and closes the extension step of
+the GR-ICDC program.
+\end{definition}
+
+%% ---------------------------------------------------------------
+\section{Two-Status Reading}
+\label{sec:two-status}
+%% ---------------------------------------------------------------
+
+The GR branch admits two honest status readings, depending on
+whether Thm.~GR-domain (the domain-bounded gravity package) is
+treated as proved on $\mathcal{D}$ in the retired working papers.
+
+\begin{theorem}[\status{C}]\label{thm:gr-domain-bounded}
+\textup{(Domain-Bounded CERT-CLOSE.)}
+\textup{[Conditional on O-GR.real, O-GR.deform, O-GR.compat,
+O-GR.closure discharged; O-GR.EFE1--3 discharged; Phase-A,
+KPO-3.]}
+The gravity branch reaches domain-bounded CERT-CLOSE on
+$\mathcal{D}$: the NFC-derived metric field $g_{\mu\nu}$ satisfies
+the EFE structural form with NFC-derived coupling constants
+$(\kappa, \Lambda, c_{\mathrm{GB}} = 0)$ on the realized domain
+$\mathcal{D}$.
+\end{theorem}
+
+\begin{theorem}[\status{C}]\label{thm:gr-global}
+\textup{(Global GR Closure.)}
+\textup{[Conditional on all of Thm.~\ref{thm:gr-domain-bounded}
+plus O-GR.extension discharged (BF-9(S/A) bridge complete).]}
+The gravity branch reaches full global CERT-CLOSE: the EFE
+structural compatibility extends from $\mathcal{D}$ to the full
+Lorentzian manifold $M^4$.
+\end{theorem}
+
+\begin{remark}[\status{R}]
+The distinction between domain-bounded and global closure is
+the central honest posture of the GR branch.  It cannot be
+collapsed.  Domain-bounded closure on $\mathcal{D}$ is a genuine
+mathematical result (conditional on the stated hypotheses); global
+closure requires the additional BF-9 bridge.  No rhetorical
+promotion from domain-bounded to global is licensed.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Limits, Status, and Non-Claims}
+\label{sec:limits}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:gr-parity}
+\textup{(Gravity Parity Criterion.)}  The GR branch reaches parity
+with the YM and NS branches --- in the sense of having an equally
+mature canonical closure ledger --- only when all three of the
+following thresholds are met:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item A Lorentzian reconstruction theorem: the NFC limiting
+        metric is certified as a Lorentzian manifold in the
+        continuum limit.
+  \item A deformation-response law: the branch-internal dynamics
+        (O-GR.deform) is canonically proved.
+  \item A domain-bounded extension theorem: G-ICDC
+        (Thm.~\ref{thm:gr-icdc}) is extended to the full
+        curvature-subcritical extension chain.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+These three thresholds correspond to the three structural
+prerequisites for the GR branch to have the same load-bearing
+evidence as the YM branch (TSI, rigidity, global coercivity) and
+the NS branch (obstruction, quasi-decay, Stage-3).  Until all
+three are met, the GR closure ledger is structurally shallower
+than those of YM and NS.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:qg-criterion}
+\textup{(Quantum Gravity Admissibility Criterion.)}  A quantum
+gravity program within the NFC framework is admissible only after
+the following three classical prerequisites are satisfied:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item A causal-geometric realized object: O-GR.real discharged.
+  \item A deformation-response law: O-GR.deform discharged.
+  \item A curvature-subcritical interface extension theorem:
+        O-GR.extension discharged (BF-9 bridge).
+\end{enumerate}
+A quantum gravity program launched before these prerequisites are
+satisfied does not have canonical NFC force.
+\end{proposition}
+
+\begin{proof}
+A quantum gravity program claims to lift the classical GR branch
+to a quantum level.  Without the classical branch being
+canonically established, the lift has no canonical base to lift
+from.  The three prerequisites are the minimal classical base.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:gr-lift-criterion}
+\textup{(Source-Preserving Lift Criterion.)}  Any quantum gravity
+program within NFC must satisfy:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \emph{Lift, not replacement:} the quantum program is a
+        lift of the classical GR branch, not a sibling branch
+        with a competing foundation.
+  \item \emph{Source-derived observables:} the quantum dynamics
+        acts on observables descended from the certified NFC
+        source image.
+  \item \emph{Interface routing:} all interface claims are routed
+        through the certified Book~VI architecture.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+By the Non-Retroactivity Theorem (Book~VII, Thm.~VII.6.y), a new
+branch cannot alter the burden or force of the classical GR branch.
+A quantum gravity program claiming a competing foundation would
+violate this theorem.  Tests~(i)--(iii) are the positive
+formulation of what it means to lift rather than replace.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:gr-status}
+\textup{(Canonical Status.)}  The GR branch currently satisfies:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \textbf{Lawful branch:} confirmed (Prop.~\ref{prop:gr-lawful}).
+  \item \textbf{TSI:} structurally identified at the label level
+        (metric field $g_{\mu\nu}$ named); canonical proof of
+        realization pending O-GR.real.  Failure code FI-TSI.
+  \item \textbf{Interface extension:} G-ICDC proved conditionally
+        (Thm.~\ref{thm:gr-icdc}); global extension blocked by
+        BF-9.  Failure code FI-PROP at global scope.
+  \item \textbf{Strongest admissible unconditional label:}
+        \emph{lawful causal-geometric terminal projection from the
+        NFC universal source.}
+  \item \textbf{Strongest admissible conditional label:}
+        \emph{domain-bounded Einstein-type structural compatibility
+        on} $\mathcal{D}$, \emph{conditional on O-GR.real through
+        O-GR.EFE3 discharged and KPO-3 canonicalized.}
+  \item \textbf{Status:} CERT-PROJ unconditionally; conditional
+        domain-bounded CERT-CLOSE pending discharge of stated
+        obligations.  NOT globally CERT-CLOSE.
+\end{enumerate}
+\end{proposition}
+
+%% ---------------------------------------------------------------
+\section{Boundary of the GR Branch Book}
+%% ---------------------------------------------------------------
+
+\textbf{What this branch book establishes.}
+\begin{enumerate}
+  \item The GR branch is a lawful NFC branch (CERT-PROJ).
+  \item The Derrick obstruction does not apply in the NFC setting
+        (imported from Book~III, Sch.~III.8.4).
+  \item G-ICDC: curvature-subcritical interface extension is
+        possible under declared conditions (Thm.~\ref{thm:gr-icdc}).
+  \item The three NFC-EFE conditional theorems
+        (Thms.~\ref{thm:nfc5}--\ref{thm:nfc7}) record the
+        coupling constant identification and diffeomorphism
+        covariance, conditional on KPO-3.
+  \item $c_{\mathrm{GB}} = 0$ in $d=4$ unconditionally
+        (Cor.~\ref{cor:cgb-zero}).
+  \item The GR Theorem-or-Failure posture is satisfied
+        (Thm.~\ref{thm:gr-frontier}).
+  \item Parity criterion, QG admissibility criterion, and
+        source-preserving lift criterion stated
+        (Props.~\ref{prop:gr-parity}--\ref{prop:gr-lift-criterion}).
+  \item Two-status reading maintained: domain-bounded vs.\ global
+        closure explicitly distinguished.
+\end{enumerate}
+
+\textbf{What this branch book does not establish.}
+\begin{enumerate}
+  \item Any discharge of O-GR.real through O-GR.extension as
+        canonical theorems.  All five core obligations remain open.
+  \item The EFE as a derived theorem: NFC-5, NFC-6, NFC-7 are
+        conditional on KPO-3 canonicalization (a YM branch
+        obligation).
+  \item Global gravitational closure (BF-9 bridge not discharged).
+  \item Lorentzian signature derivation as a canonical theorem.
+  \item A quantum gravity program.
+  \item Any identification of NFC with empirical general relativity
+        beyond the structural compatibility claim on $\mathcal{D}$.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{4.0cm}p{0.8cm}p{3.6cm}p{4.2cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on} & \textbf{Exports to} \\
+\hline
+\ref{prop:gr-formation}\ Formation
+  & [U] & Bk.~V Thm.~V.8.1
+  & \ref{prop:gr-lawful} \\
+
+\ref{prop:gr-label}\ Label Admissibility
+  & [U] & Bk.~VII Prop.~VII.6.x
+  & GR endpoint citation \\
+
+\ref{prop:gr-lawful}\ GR Branch Lawful
+  & [U] & \ref{prop:gr-formation}; Bk.~IV--V
+  & All subsequent GR theorems \\
+
+\ref{prop:gr-distinct}\ Full Distinctness
+  & [U] & Terminal predicates of all branches
+  & Branch catalog \\
+
+\ref{thm:gr-icdc}\ G-ICDC
+  & [C] & Bk.~III Thm.~III.5.1; Phase-A; PASS
+  & \ref{thm:gr-domain-bounded}; extension chain \\
+
+\ref{thm:nfc5}\ NFC-5 (Curv.\ Encoding)
+  & [C] & KPO-3; Phase-A; SA
+  & \ref{thm:nfc6}; O-GR.EFE1 \\
+
+\ref{thm:nfc6}\ NFC-6 (EFE Constants)
+  & [C] & \ref{thm:nfc5}; KMS state; BH-Lovelock
+  & \ref{thm:gr-domain-bounded}; O-GR.EFE2 \\
+
+\ref{cor:cgb-zero}\ $c_{\mathrm{GB}}=0$
+  & [U] & Chern--Gauss--Bonnet ($d=4$)
+  & EFE non-claim check \\
+
+\ref{thm:nfc7}\ NFC-7 (Diff.\ Inv.)
+  & [C] & KPO-3; Phase-A; PASS
+  & O-GR.EFE3; covariance \\
+
+\ref{thm:gr-frontier}\ Theorem-or-Failure
+  & [U] & All open obligations named
+  & External scrutiny; CERT-PROJ posture \\
+
+\ref{thm:gr-domain-bounded}\ Dom.-Bounded CERT-CLOSE
+  & [C] & O-GR.real through O-GR.EFE3 discharged
+  & \ref{thm:gr-global} \\
+
+\ref{thm:gr-global}\ Global Closure
+  & [C] & \ref{thm:gr-domain-bounded}; BF-9
+  & CERT-CLOSE (global) \\
+
+\ref{prop:qg-criterion}\ QG Criterion
+  & [U] & Three GR prerequisites
+  & Future quantum gravity program \\
+
+\ref{prop:gr-lift-criterion}\ Lift Criterion
+  & [U] & Bk.~VII Thm.~VII.6.y
+  & Future QG lift \\
+
+\ref{prop:gr-status}\ Canonical Status
+  & [U] & All of GR Branch Book
+  & Program ledger \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{scholium}[\status{R}]
+The GR Branch Book is frontier-honest.  The domain-bounded vs.\
+global distinction is the canonical center of gravity of the GR
+program: the key question is not ``does NFC produce an
+Einstein-compatible metric'' (it does, conditionally, on
+$\mathcal{D}$) but ``does the domain-bounded result extend to the
+full Lorentzian manifold?''  Bridge BF-9(S/A) is the precise
+mathematical statement of what extension requires.  Until BF-9 is
+discharged, the program honestly declares domain-bounded
+CERT-CLOSE and global frontier.
+\end{scholium}
+
+\end{document}

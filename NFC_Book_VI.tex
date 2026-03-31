@@ -1,0 +1,788 @@
+%% Elements of Nested Fibrational Cosmology
+%% Book VI: Effective Continuum and Calculus Legitimacy
+%% Final-Pass Canonical Draft
+%%
+%% Status legend:
+%%   [U]  Unconditional  — proved from standing definitions and prior Unc results
+%%   [C]  Conditional    — depends on explicitly declared hypotheses
+%%   [D]  Definition-structural — structural, no proof obligation
+%%   [R]  Remark only    — expository, non-load-bearing
+%%   [O]  Open obligation — not yet proved
+
+\documentclass[12pt,oneside]{amsbook}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+%% ---------------------------------------------------------------
+%% Theorem environments
+%% ---------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+%% Status tag macro
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% ---------------------------------------------------------------
+%% Notation
+%% ---------------------------------------------------------------
+%%  From Books I--V (all freely used):
+%%    \Sigma_\infty, O(U), C_{\rho^*}(U), C_n, \mathbf{U}, K^*, T^*
+%%    \mathcal{C} (target category), F (realization functor), E (endpoint)
+%%
+%%  New in Book VI:
+%%    \mathcal{F} = \{f_R\}   certified observable family
+%%    h_n(U)                  scale-normalized increment at stage n on U
+%%    d_n(U)                  discrete gradient datum
+%%    J_n(U)                  discrete flux datum
+%%    A_n(U)                  discrete accumulator
+%%    \phi(U)                 effective smooth representative
+%%    \mathcal{I}             continuum interface regime
+
+\begin{document}
+
+\title{Book VI\\[6pt]Effective Continuum and Calculus Legitimacy}
+\author{Elements of Nested Fibrational Cosmology}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{VI.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+Book~VI is the interface legitimacy book of the canonical spine.
+
+Books~I--V have established: the observational quotient (Book~I),
+local boundary law (Book~II), transport structure (Book~III), the
+universal source $\mathbf{U}$ (Book~IV), and the law of lawful descent
+to branches (Book~V).  None of these books licenses continuum,
+differential, or integral language.  That language must be earned; it
+cannot be smuggled in.
+
+The central question Book~VI answers is: \emph{when} is it legitimate
+for a branch book to write differential equations, action functionals,
+integral operators, smooth fields, or geometric structures?  The
+answer is: only when the relevant certified observable families are
+asymptotically coherent in the sense made precise here, only on the
+certified observable class, and only within a declared continuum
+interface regime.
+
+Book~VI establishes this legitimacy through a three-stage progression.
+First, it defines certified observable families and the scale-normalized
+increments that are their discrete analogues of derivatives.  Second,
+it proves that asymptotically coherent observable families admit
+effective smooth representatives.  Third, it establishes when
+differential and integral notation are legitimate as shorthand for
+the asymptotic behavior of the underlying discrete structure.
+
+The governing theorem of the book is the Effective Continuum
+Legitimacy Theorem: differential and integral notation are lawful if
+and only if they faithfully encode the asymptotic behavior of
+scale-normalized increments and accumulators within a declared
+continuum interface regime.
+
+Book~VI is a tool-legitimacy book.  It does not prove closure of any
+specific endpoint program.  It does not identify which observable
+families satisfy the interface hypotheses --- that burden remains
+partly branch-dependent.  It licenses the tools; the branches must
+verify eligibility.
+
+%% ---------------------------------------------------------------
+\section{Imports and Standing Rules}
+%% ---------------------------------------------------------------
+
+\textbf{Imports.}  All certified results of Books~I--V.  In
+particular: the observational quotient and defect bookkeeping
+(Book~I), the boundary law and capacity structure (Book~II), the
+Unified Coercive-Transport Inequality and observational-transfer
+objects (Book~III), the POT category and universal source $\mathbf{U}$
+(Book~IV), and the branch legitimacy law (Book~V).
+
+\begin{standingrule}[\status{D}]\label{sr:continuum-earned}
+Continuum language is licensed only as an effective encoding of
+certified discrete structure.  It is not primitive.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:no-derivative-without-increment}
+Differential notation may not appear in a canonical branch text unless
+the relevant scale-normalized increment structure has been certified
+in the declared interface regime.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:no-integral-without-accumulation}
+Integral notation may not appear unless the relevant certified
+accumulation or transport structure has been established.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:interface-locality}
+Continuum language is valid only on the certified observable class and
+only within the declared continuum interface regime.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:no-asymptotic-promotion}
+Refinement suggestiveness is not enough; asymptotic coherence or
+effective convergence must be proved at the required level before
+continuum language acquires canonical force.
+\end{standingrule}
+
+%% ---------------------------------------------------------------
+\section{Certified Observable Families and Discrete Structure}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:cert-obs-family}
+A \emph{certified observable family} $\mathcal{F} = \{f_R\}_{R \in
+\mathrm{Reg}}$ is a collection of observables, one for each admissible
+regime $R$, such that: each $f_R \in O_R$ is a realized stabilized
+local observable outcome; and the family is transfer-compatible in the
+sense of Book~III, Definition~III.2.6.
+\end{definition}
+
+\begin{lemma}[\status{U}]\label{lem:cert-fam-quotient-inv}
+Certified observable families are invariant under replacement by
+quotient-equivalent and branch-equivalent representatives.
+\end{lemma}
+
+\begin{proof}
+Each $f_R$ is a stabilized local observable outcome, hence a function
+on the stabilized quotient $\Sigma_\infty$ (Book~I, Theorem~I.6.1).
+Quotient-equivalent representatives are in the same class; therefore
+$f_R$ assigns them the same value.  Branch-equivalence is preserved by
+the transfer compatibility condition of the family.
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:scale-norm-increment}
+A \emph{scale-normalized increment} of a certified observable family
+$\mathcal{F}$ at stage $n$ on a region $U$ is
+\[
+  h_n(U) \;:=\; \frac{f_{R_{n+1}}(U) - f_{R_n}(U)}{\ell_n},
+\]
+where $\ell_n > 0$ is the declared comparison length at stage $n$.
+The scale-normalized increment measures the change in the observable
+per unit comparison length under one admissible enlargement step.
+\end{definition}
+
+\begin{lemma}[\status{U}]\label{lem:increment-welldef}
+Scale-normalized increments, when defined, depend only on certified
+comparison data.
+\end{lemma}
+
+\begin{proof}
+The numerator $f_{R_{n+1}}(U) - f_{R_n}(U)$ involves only realized
+stabilized local outcomes, which are quotient-visible by
+Lemma~\ref{lem:cert-fam-quotient-inv}.  The denominator $\ell_n$ is
+a declared comparison length, hence part of the certified data of the
+interface regime.  The quotient depends only on these certified
+quantities.
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:discrete-gradient}
+The \emph{discrete gradient datum} $d_n(U)$ of a certified observable
+family on a region $U$ at stage $n$ is the vector of scale-normalized
+increments in all declared comparison directions.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:discrete-flux}
+The \emph{discrete flux datum} $J_n(U)$ on a region $U$ at stage $n$
+is the certified flow of observable content across the collar
+$\partial_{\rho^*} U$, determined by the LS-2 boundary-law structure
+of Book~II.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:discrete-accumulator}
+A \emph{discrete accumulator} $A_n(U)$ on a region $U$ is the finite
+sum
+\[
+  A_n(U) \;:=\; \sum_{k=0}^{n} J_k(U) \cdot \ell_k,
+\]
+formed by accumulating flux data with declared comparison lengths.
+It is the discrete analogue of a line or volume integral.
+\end{definition}
+
+\begin{lemma}[\status{U}]\label{lem:flux-pres-ind}
+Discrete gradient data and discrete flux data are
+presentation-independent once defined on a certified observable
+family.
+\end{lemma}
+
+\begin{proof}
+Both are defined in terms of stabilized local observable outcomes and
+the LS-2 boundary law, all of which are quotient-visible.  Therefore
+they are independent of the particular presentation representative
+chosen within each equivalence class.
+\end{proof}
+
+\begin{lemma}[\status{U}]\label{lem:accumulator-inv}
+Discrete accumulators formed from certified flux data are invariant
+under lawful decomposition refinement.
+\end{lemma}
+
+\begin{proof}
+Decomposition refinement is an admissible enlargement.  Under lawful
+admissible enlargement, the LS-2 boundary law (Book~II,
+Theorem~II.4.1) and the defect-ledger additivity (Book~I,
+Proposition~I.5.4) together ensure that the flux data and accumulated
+totals are preserved: summing over a refined decomposition gives the
+same total as summing over the coarser one.
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:refinement-consistent}
+A certified observable family is \emph{refinement-consistent} if the
+scale-normalized increments $h_n(U)$ stabilize under admissible
+refinement: there exists a stage $N$ beyond which $h_n(U)$ changes by
+less than any declared tolerance $\varepsilon > 0$ at each further
+admissible refinement step.
+\end{definition}
+
+\begin{lemma}[\status{U}]\label{lem:refinement-consistent-stable}
+Refinement consistency of a certified observable family is preserved
+under lawful source-descended comparison maps.
+\end{lemma}
+
+\begin{proof}
+Under a lawful source-descended comparison map (a transfer map in the
+sense of Book~III), the certified observable content is preserved up to
+the declared transfer structure.  Therefore if the increments stabilize
+in the source regime, the transferred increments stabilize in the target
+regime by the transfer-compatibility conditions of Book~III,
+Definition~III.2.6.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Asymptotic Coherence and Effective Smooth Representatives}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:asymptotic-coherence}
+A certified observable family $\mathcal{F}$ is
+\emph{asymptotically coherent} if the scale-normalized increments
+$h_n(U)$ form a Cauchy sequence in the declared comparison norm as $n
+\to \infty$: for every declared tolerance $\varepsilon > 0$, there
+exists $N$ such that $|h_m(U) - h_n(U)| < \varepsilon$ for all $m, n
+\geq N$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:effective-smooth}
+An \emph{effective smooth representative} of an asymptotically
+coherent certified observable family $\mathcal{F}$ is a smooth
+function $\phi: \mathcal{R} \to \mathbb{R}$ defined on a declared
+interface regime $\mathcal{R}$ such that:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item the values $\phi(x)$ approximate the certified observable
+        data $f_{R_n}$ within the declared tolerance at each stage
+        $n$; and
+  \item the differential expressions of $\phi$ approximate the
+        scale-normalized increments $h_n$ in the declared comparison
+        norm.
+\end{enumerate}
+The effective smooth representative encodes the observable data; it
+does not replace or displace it.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:continuum-interface-regime}
+A \emph{continuum interface regime} is a declared pair
+$(\mathcal{R}, \mathcal{F})$ consisting of a smooth domain
+$\mathcal{R}$ and a certified observable family $\mathcal{F}$ such
+that:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $\mathcal{F}$ is asymptotically coherent on $\mathcal{R}$;
+  \item the scale-normalized increments converge to the relevant
+        differential expressions of the effective smooth representative
+        on $\mathcal{R}$; and
+  \item the discrete accumulators converge to the corresponding
+        integral expressions on $\mathcal{R}$.
+\end{enumerate}
+\end{definition}
+
+\begin{lemma}[\status{U}]\label{lem:incoherence-blocks}
+If asymptotic coherence fails, then no effective smooth representative
+is canonically licensed.
+\end{lemma}
+
+\begin{proof}
+An effective smooth representative requires (Definition~\ref{def:effective-smooth})
+that differential expressions approximate scale-normalized increments.
+If asymptotic coherence fails, the scale-normalized increments do not
+converge; therefore no smooth function's derivatives can approximate
+them, and no effective smooth representative exists in the declared
+regime.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:refinement-coherence}
+\textup{(Refinement Coherence Theorem.)}  A certified observable
+family satisfying the declared normalization and persistence
+conditions is asymptotically coherent under admissible refinement.
+\end{theorem}
+
+\begin{proof}
+By Definition~\ref{def:asymptotic-coherence}, asymptotic coherence
+requires the scale-normalized increments to form a Cauchy sequence.
+Under the declared normalization conditions (specifically, that $\ell_n
+\to 0$ at a controlled rate relative to the refinement steps) and the
+persistence conditions (that the transfer-compatibility of
+Lemma~\ref{lem:refinement-consistent-stable} holds), the increments
+$h_n(U)$ form a bounded sequence that changes by less than $\varepsilon$
+per step once sufficiently refined.  This Cauchy property follows from
+the Finite Stabilization Theorem (Book~I, Theorem~I.6.1) applied to the
+quotient of increment values: the quotient stabilizes, so the increments
+eventually lie in a common equivalence class, forcing convergence.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:effective-rep-existence}
+\textup{(Effective Representative Existence Theorem.)}  If a certified
+observable family is asymptotically coherent and satisfies the declared
+compactness or stabilization conditions on the continuum interface
+regime, then it admits an effective smooth representative.
+\end{theorem}
+
+\begin{proof}
+By asymptotic coherence (Definition~\ref{def:asymptotic-coherence}),
+the scale-normalized increments converge in the declared norm.  The
+declared compactness or stabilization conditions ensure that this
+convergence is uniform on the interface regime.  By a standard
+completion argument in the relevant function space, the limiting object
+is a smooth function $\phi$ satisfying the approximation conditions of
+Definition~\ref{def:effective-smooth}.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:effective-rep-uniqueness}
+\textup{(Effective Representative Uniqueness Theorem.)}  Any two
+effective smooth representatives of the same certified observable
+family are equivalent with respect to the preserved asymptotic
+content.
+\end{theorem}
+
+\begin{proof}
+Suppose $\phi$ and $\phi'$ are two effective smooth representatives of
+the same certified observable family on the same interface regime.  By
+Definition~\ref{def:effective-smooth}, both $\phi$ and $\phi'$ have
+their differential expressions converging to the same scale-normalized
+increments $h_n(U)$.  Therefore $\phi$ and $\phi'$ have equal
+derivatives in the limit, and since both are smooth on a connected
+domain, they agree up to a constant.  The constant is fixed by the
+constraint that both approximate the same certified observable values
+$f_{R_n}$.  Hence $\phi = \phi'$.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Differential and Integral Legitimacy}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{C}]\label{prop:differential-shorthand}
+Whenever an effective smooth representative $\phi$ exists, its
+admissible differential expressions must be interpretable as shorthand
+for certified scale-normalized increment behavior.
+\end{proposition}
+
+\begin{proof}
+By Definition~\ref{def:effective-smooth}\textup{(2)}, the differential
+expressions of $\phi$ approximate the scale-normalized increments $h_n$.
+Therefore any differential expression of $\phi$ is, to within the
+declared tolerance, a re-encoding of $h_n$.  It cannot carry more
+observational content than the underlying scale-normalized increment.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:differential-legitimacy}
+\textup{(Effective Differential Legitimacy Theorem.)}  For a certified
+observable family in a lawful continuum interface regime, differential
+notation is legitimate if and only if it faithfully encodes the
+asymptotic behavior of scale-normalized increments.
+\end{theorem}
+
+\begin{proof}
+\emph{Sufficiency:} If differential notation faithfully encodes the
+asymptotic behavior of scale-normalized increments, then by
+Theorem~\ref{thm:effective-rep-existence} an effective smooth
+representative exists, and its differential expressions are the
+legitimate continuum encoding of the discrete increment data.
+
+\emph{Necessity:} If differential notation does not faithfully encode
+the asymptotic behavior of scale-normalized increments, then the
+smooth function whose derivatives are that notation is not an effective
+smooth representative (it fails condition~(2) of
+Definition~\ref{def:effective-smooth}).  Therefore the differential
+notation lacks the asymptotic foundation required for legitimacy.
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:no-derivative-outside-regime}
+No derivative claim has canonical force outside the certified
+observable class and declared interface regime.
+\end{corollary}
+
+\begin{corollary}[\status{C}]\label{cor:PDE-backed-by-increments}
+Any downstream PDE expression has theorem-level canonical force only
+to the extent that its differential terms are backed by certified
+normalized increment structure.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:PDE-citation}
+Corollary~\ref{cor:PDE-backed-by-increments} is the standard citation
+for branch papers that use PDE language.  When a branch book writes a
+partial differential equation --- whether Navier--Stokes, Yang--Mills,
+Einstein field equations, or any other --- it must cite the continuum
+interface regime in which that equation's differential terms are backed
+by certified discrete increment structure.  Without such a citation,
+the PDE notation has no canonical force within the NFC program.
+\end{remark}
+
+\begin{proposition}[\status{C}]\label{prop:integral-shorthand}
+Whenever an effective smooth representative $\phi$ exists, its
+admissible integral expressions must be interpretable as shorthand for
+certified discrete accumulation or transport structure.
+\end{proposition}
+
+\begin{proof}
+By Definition~\ref{def:effective-smooth}\textup{(1)}, the values of
+$\phi$ approximate the certified observable data at each stage.
+By Lemma~\ref{lem:accumulator-inv}, discrete accumulators $A_n(U)$
+are refinement-invariant.  Integral expressions of $\phi$ therefore
+approximate $A_n(U)$ and re-encode discrete accumulation data
+without carrying more observational content than the underlying
+discrete structure.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:integral-legitimacy}
+\textup{(Effective Integral Legitimacy Theorem.)}  For a certified
+observable family in a lawful continuum interface regime, integral
+notation is legitimate if and only if it faithfully encodes certified
+accumulation or transport data.
+\end{theorem}
+
+\begin{proof}
+Parallel to the proof of Theorem~\ref{thm:differential-legitimacy},
+replacing scale-normalized increments with discrete accumulators and
+derivatives with integrals throughout.
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:no-integral-outside-regime}
+No integral identity has canonical force outside the certified
+observable class and declared interface regime.
+\end{corollary}
+
+\begin{corollary}[\status{C}]\label{cor:variational-from-accumulation}
+Variational or conservation-style integral statements are lawful only
+insofar as they descend from certified discrete accumulation structure.
+This governs all action principles and balance laws in branch books.
+\end{corollary}
+
+%% ---------------------------------------------------------------
+\section{The Continuum Bridge Schema}
+%% ---------------------------------------------------------------
+
+The previous sections establish when continuum notation is legitimate
+for a single certified observable family.  Branch books typically need
+to \emph{promote} a result from the certified discrete regime to a
+continuum statement.  This promotion requires an explicit bridge
+schema.
+
+\begin{definition}[\status{D}]\label{def:scoped-certificate}
+A \emph{scoped certificate} for continuum promotion is a certified
+result whose force is limited to the explicit regime named in its
+statement: the specific certified observable family, the specific
+interface regime, and the specific tolerance bounds declared at the
+time of the result.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:continuum-bridge}
+A \emph{continuum bridge} is a separately proved theorem carrying a
+scoped certificate from a declared discrete or pre-continuum regime
+into a target continuum regime, with explicit specification of:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item the source-side certified discrete burden,
+  \item the target continuum criterion being promoted to, and
+  \item the scope of the promoted claim.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:continuum-bridge-schema}
+\textup{(Continuum Bridge Schema Theorem.)}  A branch may promote a
+certified discrete result to continuum force only when:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item a scoped certificate establishes the result on the source
+        discrete regime, and
+  \item a separately proved continuum bridge carries that certified
+        content to the declared continuum target.
+\end{enumerate}
+Neither ingredient alone suffices.  A scoped certificate alone
+establishes only the discrete claim; a continuum bridge alone has no
+certified source content to carry.
+\end{theorem}
+
+\begin{proof}
+A scoped certificate proves only the claim on its declared discrete
+regime; it carries no automatic asymptotic or continuum extension
+(Standing Rule~\ref{sr:no-asymptotic-promotion}).  A continuum bridge,
+by Definition~\ref{def:continuum-bridge}, must be ``separately proved''
+--- it cannot be the same proof as the scoped certificate.  Therefore
+both are needed.  The combination provides the source certification and
+the bridge, jointly licensing the promoted claim.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:finite-no-self-promote}
+Finite certification does not self-promote to continuum force.
+\end{corollary}
+
+\begin{corollary}[\status{U}]\label{cor:discrete-source-no-endpoint}
+Source-side canonical structure does not self-promote to physical
+endpoint identification.
+\end{corollary}
+
+\begin{corollary}[\status{U}]\label{cor:conditional-no-unconditional}
+Branch-conditional bridge success does not self-promote to
+unconditional continuum closure.
+\end{corollary}
+
+\begin{theorem}[\status{U}]\label{thm:no-smuggling}
+\textup{(Continuum No-Smuggling Corollary.)}  Any use of differential,
+integral, field, manifold, or variational language beyond the scope of
+a certified continuum interface regime is non-canonical and has no
+theorem-level force in the NFC program.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:differential-legitimacy}, differential notation is
+legitimate only within a certified interface regime.  By
+Theorem~\ref{thm:integral-legitimacy}, integral notation is legitimate
+only within a certified interface regime.  By
+Theorem~\ref{thm:continuum-bridge-schema}, promotion from discrete to
+continuum requires both a scoped certificate and a continuum bridge.
+Any use of such notation outside these conditions lacks the legitimacy
+foundation and therefore has no theorem-level force.
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:heuristic-marking}
+A downstream branch may use suggestive continuum language before full
+interface certification, but such language must be explicitly marked as
+heuristic.  Heuristic use does not constitute a canonical claim.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:no-smuggling} prohibits canonical use of continuum
+language outside certified regimes.  However, it does not prohibit
+exploratory or motivational language, provided such language is
+explicitly labeled as heuristic and not cited as having theorem-level
+force.  The marking requirement follows from Book~VII's status
+discipline, which prohibits silent status inflation.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Governing Theorem of Book VI}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{C}]\label{thm:governing}
+\textup{(Effective Continuum Legitimacy Theorem.)}  For certified
+stabilized observables in a lawful continuum interface regime,
+differential and integral notation are lawful if and only if they
+faithfully encode the asymptotic behavior of scale-normalized
+increments and certified accumulators, respectively, within that
+declared regime.
+\end{theorem}
+
+\begin{proof}
+The differential direction is Theorem~\ref{thm:differential-legitimacy}.
+The integral direction is Theorem~\ref{thm:integral-legitimacy}.
+Together they give the full biconditional over both differential and
+integral language.
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:joint-legitimacy}
+For a certified observable family in a lawful continuum interface
+regime, the full calculus of differential and integral operators is
+jointly legitimate as asymptotic encoding of the certified discrete
+dynamics.
+\end{corollary}
+
+\begin{remark}[\status{R}]
+\textup{(E-CONT bridge obligations and discrete Sobolev surrogate.)}
+\textit{(Pre-canonical remarks have no canonical force;
+see Book~VII, Standing Rule~\ref{sr:precanonical-force}.)}  
+The pre-canonical program provides two confirmations that
+Book~VI's Continuum Bridge Schema (Theorem~\ref{thm:continuum-bridge-schema})
+correctly gates the YM and gravity continuum programs:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \textbf{E-CONT bridge obligations} (v7.35 \S\S11051, 11067):
+    the encoding-map bridge ($\Gamma:\mathcal{K}(G_n)\to M$) and
+    curvature-proxy bridge (E3-proxy) that appear in the YM continuum
+    program (R3.6) and the gravity continuum program (R1.1--R1.2)
+    are both instances of the Continuum Bridge Schema.  Book~VI's
+    \texttt{thm:continuum-bridge-schema} is therefore the canonical
+    formulation that both programs must cite.
+  \item \textbf{NS-4B Sobolev embedding surrogate} (v7.35 \S9333):
+    The inequality $\|f\|_\infty \leq C_S(s)\|f\|_{H^s}$ with
+    table-computable constant $C_S(s) = F_S(s, d_{\mathrm{eff}},
+    C_{\mathrm{HK}})$ is derived from the ACA Route~B
+    $\to$ Hypercontractivity $\to$ Nash chain from finite NF$_2$
+    data alone.  It is the discrete-native surrogate for the
+    Sobolev embedding used in the NS and YM continuum arguments,
+    and belongs under Book~VI's licensed continuum bridge
+    infrastructure.
+\end{enumerate}
+Both items are confirmed instances of existing Book~VI machinery;
+they require no new canonical material.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Boundary of Book VI}
+%% ---------------------------------------------------------------
+
+\textbf{What Book~VI proves.}
+\begin{enumerate}
+  \item Scale-normalized increments and discrete accumulators
+        are well-defined, POT-native, and presentation-independent.
+  \item Asymptotically coherent certified observable families
+        admit effective smooth representatives, unique up to
+        preservation of asymptotic content.
+  \item Differential notation is legitimate iff it faithfully
+        encodes scale-normalized increment asymptotics within a
+        declared interface regime.
+  \item Integral notation is legitimate iff it faithfully
+        encodes certified accumulator asymptotics within a
+        declared interface regime.
+  \item The Continuum Bridge Schema governs all promotion from
+        discrete to continuum force.
+  \item No continuum language is canonical outside a declared
+        and certified interface regime.
+\end{enumerate}
+
+\textbf{What Book~VI does not prove, and may not be assumed here.}
+\begin{enumerate}
+  \item \emph{Which observable families satisfy the interface
+        hypotheses.}  The burden of verifying asymptotic coherence
+        and the compactness or stabilization conditions is branch-specific.
+        Branch books must establish these conditions for their own
+        observable families before citing the Effective Continuum
+        Legitimacy Theorem.
+  \item \emph{Branch closures.}  Licensing continuum language does
+        not constitute closing any specific branch endpoint program.
+        Yang--Mills, Navier--Stokes, and gravity closure still require
+        branch-specific bridge theorems.
+  \item \emph{Primitive ontology.}  The existence of an effective
+        smooth representative is never proof that the continuum is
+        ontologically primitive.  The continuum is an effective
+        encoding, not a foundation.
+  \item \emph{Action principles, gauge theories, or field equations
+        by default.}  No specific PDE, Lagrangian, or field equation
+        is licensed by this book.  Each requires its own declared
+        interface regime and its own bridge theorem.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Handoff to Book VII}
+%% ---------------------------------------------------------------
+
+Book~VI establishes when continuum tools are licensed.  Book~VII
+establishes how results using those tools may be cited, scoped, and
+combined.  The critical connection is that Book~VII's promotion law
+governs the same promotion steps that Book~VI's Continuum Bridge Schema
+describes structurally: Book~VI tells you when the bridge is possible;
+Book~VII tells you how to state and cite the result once it has been
+built.
+
+Every branch book that uses results from Book~VI must also conform to
+Book~VII's closure schema.  The two books work in tandem: interface
+legitimacy and closure discipline are complementary, not alternative,
+requirements.
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{4.2cm}p{0.8cm}p{3.4cm}p{4.6cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on} & \textbf{Exports to} \\
+\hline
+\ref{lem:cert-fam-quotient-inv}\ Cert.\ fam.\ quotient-inv.
+  & [U] & Bk.~I Thm., Bk.~III Def.
+  & \ref{lem:increment-welldef}, \ref{thm:governing} \\
+
+\ref{lem:increment-welldef}\ Increments cert.-data
+  & [U] & \ref{lem:cert-fam-quotient-inv}, Def.~\ref{def:scale-norm-increment}
+  & \ref{thm:differential-legitimacy}, \ref{thm:governing} \\
+
+\ref{lem:flux-pres-ind}\ Flux pres.-indep.
+  & [U] & Bk.~II LS-2, Bk.~I quotient
+  & \ref{lem:accumulator-inv}, \ref{thm:integral-legitimacy} \\
+
+\ref{lem:accumulator-inv}\ Accumulator inv.
+  & [U] & \ref{lem:flux-pres-ind}, Bk.~I ledger add.
+  & \ref{thm:integral-legitimacy}, \ref{thm:governing} \\
+
+\ref{lem:incoherence-blocks}\ Incoherence blocks smooth rep.
+  & [U] & Defs.~\ref{def:asymptotic-coherence}, \ref{def:effective-smooth}
+  & \ref{thm:effective-rep-existence} \\
+
+\ref{thm:refinement-coherence}\ Refinement Coherence Thm.
+  & [C] & Defs.~\ref{def:cert-obs-family}--\ref{def:asymptotic-coherence}
+  & \ref{thm:effective-rep-existence}, \ref{thm:governing} \\
+
+\ref{thm:effective-rep-existence}\ Eff.\ Rep.\ Existence Thm.
+  & [C] & \ref{thm:refinement-coherence}, compactness
+  & \ref{thm:effective-rep-uniqueness}, \ref{thm:differential-legitimacy},
+    \ref{thm:integral-legitimacy} \\
+
+\ref{thm:effective-rep-uniqueness}\ Eff.\ Rep.\ Uniqueness Thm.
+  & [C] & \ref{thm:effective-rep-existence}
+  & \ref{thm:governing} \\
+
+\ref{thm:differential-legitimacy}\ Diff.\ Legitimacy Thm.
+  & [C] & \ref{thm:effective-rep-existence}, SR~\ref{sr:no-derivative-without-increment}
+  & \ref{cor:PDE-backed-by-increments}, \ref{thm:governing} \\
+
+\ref{thm:integral-legitimacy}\ Int.\ Legitimacy Thm.
+  & [C] & \ref{lem:accumulator-inv}, \ref{thm:effective-rep-existence}
+  & \ref{cor:variational-from-accumulation}, \ref{thm:governing} \\
+
+\ref{thm:continuum-bridge-schema}\ Continuum Bridge Schema Thm.
+  & [U] & Def.~\ref{def:continuum-bridge}, SR~\ref{sr:no-asymptotic-promotion}
+  & \ref{thm:no-smuggling}, \ref{cor:finite-no-self-promote}; Bk.~VII;
+    all branch books \\
+
+\ref{thm:no-smuggling}\ Continuum No-Smuggling Corollary
+  & [U] & \ref{thm:differential-legitimacy}, \ref{thm:integral-legitimacy},
+    \ref{thm:continuum-bridge-schema}
+  & Constitutional rule for all branch books \\
+
+\ref{thm:governing}\ Effective Continuum Legitimacy Thm.
+  & [C] & \ref{thm:differential-legitimacy}, \ref{thm:integral-legitimacy}
+  & Book~VII; all branch books using calc./PDE language \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{scholium}[\status{R}]\label{sch:book-vi-honest-posture}
+Book~VI is the thinnest book in the spine from a source-content
+perspective.  Its theorems are mostly biconditionals: differential
+notation is legitimate iff it encodes the right thing; integral
+notation is legitimate iff it encodes the right thing.  The conceptual
+weight lies in the definitions --- what ``encoding'' means, what a
+certified observable family is, what an effective smooth representative
+is.  Once those definitions are set correctly, the theorems follow
+directly.  This thinness is not a weakness; it reflects that the
+book's job is tool-licensing, not physics.  The physics begins in the
+branch books, which must come to Book~VI with their observable families
+in hand and earn the license.
+\end{scholium}
+
+\end{document}

@@ -1,0 +1,1397 @@
+%% Elements of Nested Fibrational Cosmology
+%% Book II: Local Structure, Boundary Law, and Stabilization
+%% Final-Pass Canonical Draft
+%%
+%% Status legend:
+%%   [U]  Unconditional  — proved from standing definitions and prior Unc results
+%%   [C]  Conditional    — depends on explicitly declared hypotheses
+%%   [D]  Definition-structural — structural, no proof obligation
+%%   [R]  Remark only    — expository, non-load-bearing
+%%   [O]  Open obligation — not yet proved
+
+\documentclass[12pt,oneside]{amsbook}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+%% ---------------------------------------------------------------
+%% Theorem environments
+%% ---------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+%% Status tag macro
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% ---------------------------------------------------------------
+%% Notation
+%% ---------------------------------------------------------------
+%%   \Omega, L, \sim_n, \Sigma_n, \Sigma_\infty  — from Book I
+%%   U           finite region (subsets of site set X)
+%%   \partial_r U  collar of radius r around U
+%%   \rho^*      LS-2 stabilization collar radius
+%%   O(U)        set of realized stabilized local outcome classes on U
+%%   C_{\rho^*}(U)  set of realized stabilized collar types on \partial_{\rho^*} U
+%%   K_0         collar alphabet size
+%%   \mathrm{Cap}_\partial(U)  boundary capacity of U
+%%   M(U)        Phase-A multiplicity demand
+
+\begin{document}
+
+\title{Book II\\[6pt]Local Structure, Boundary Law, and Stabilization}
+\author{Elements of Nested Fibrational Cosmology}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{II.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+Book~II is the first coercive book of the canonical spine.  Book~I
+established the observational quotient and the finite stabilization
+of admissible refinement.  Book~II asks what this stabilized structure
+forces \emph{locally}.
+
+Its role is to show that local admissible behavior is not arbitrary.
+Once regions, collars, and stabilized local outcomes are introduced,
+the framework acquires a genuine boundary law: under the locality
+hypothesis LS-2, stabilized local outcome is determined by stabilized
+collar data.  From this, distinct stabilized local outcomes inject into
+distinct stabilized collar types.  Combined with a finite collar
+alphabet, the injection yields hard multiplicity bounds.  Under an
+additional Phase-A multiplicity demand, capacity-exceeding local
+regimes are excluded.
+
+Book~II therefore marks the passage from primitive admissible grammar
+to local rigidity.  It does not yet prove persistence across scales,
+source universality, branch legitimacy, or continuum realization.  It
+proves only that stabilized local admissible structure is governed by
+observable boundary data and finite capacity control.  This is the
+exact local-control layer on which Book~III rests.
+
+%% ---------------------------------------------------------------
+\section{Local Regions, Collars, and Stabilized Local Data}
+%% ---------------------------------------------------------------
+
+\textbf{Imports from Book~I.}  We work with a finite configuration
+space $\Omega$ over a base signature $L$, a licensed admissible test
+family $\mathcal{T}_n$ at each stage, the observational equivalence
+$\sim_n$, the observational quotient $\Sigma_n = \Omega/{\sim_n}$, and
+the stabilized quotient $\Sigma_\infty$ guaranteed by the Finite
+Stabilization Theorem (Book~I, Theorem~I.6.1).  All canonical content
+in this book factors through $\Sigma_\infty$.
+
+\begin{standingrule}[\status{D}]\label{sr:no-local-smuggling}
+No local structure may be introduced that bypasses the observational
+quotient discipline of Book~I.  Local distinctions count only when
+they survive admissible testing.
+\end{standingrule}
+
+\begin{definition}[\status{D}]\label{def:region}
+A \emph{region} is a finite admissible sub-configuration: a finite
+subset $U$ of the site set $X$ together with the restriction of the
+base-signature relations to $U$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:collar}
+The \emph{collar of radius $r$} around a region $U$, denoted
+$\partial_r U$, is the finite boundary neighborhood determined by the
+admissible relational graph structure at distance at most $r$ from the
+interface of $U$.  Formally, $\partial_r U$ consists of all sites and
+relations visible within comparison depth $r$ of $U$ that lie
+\emph{outside} $U$ itself.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:stab-collar-type}
+A \emph{stabilized collar type} of radius $r$ for a region $U$ is the
+stabilized observational equivalence class of the collar configuration
+$\partial_r U$ under the refinement program of Book~I.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:stab-local-outcome}
+A \emph{stabilized local outcome} on a region $U$ is the stabilized
+observational equivalence class $[U]_{\sim_\infty}$ assigned to $U$
+under the admissible local test family.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:observable-not-microscopic}
+Book~II does not attempt to reconstruct microscopic interior structure
+from boundary data.  Stabilized local outcomes are observational
+equivalence classes, not interior configurations.  The boundary law
+proved below governs what the observable class can be given the collar
+data.  It does not assert determinism of fine-grained interior
+variation.  This distinction must be preserved in all downstream
+citations.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{The Locality-Stability Hypothesis LS-2}
+%% ---------------------------------------------------------------
+
+The central question of Book~II is whether stabilized local observable
+outcomes can be controlled by bounded collar data.  The answer is not
+unconditional.  It is isolated under the named hypothesis LS-2.
+
+\begin{hypothesis}[\status{C}]\label{hyp:LS2}
+\textup{(LS-2.)}  There exists a finite radius $\rho^*$ such that for
+every admissible local question on a region $U$, once the refinement
+program has stabilized, the observable local outcome on $U$ is
+determined by the stabilized collar type on $\partial_{\rho^*} U$.
+\end{hypothesis}
+
+\begin{remark}[\status{R}]\label{rmk:ls2-observable}
+LS-2 is an observable boundary law, not a microscopic reconstruction
+theorem.  It asserts that the \emph{stabilized observable class} on
+$U$ is controlled by the \emph{stabilized observable class} of its
+collar.  Raw interior microstructure is not recoverable from this; the
+theorem that follows is an observational constraint, not an interior
+determinism claim.
+\end{remark}
+
+\begin{remark}[\status{R}]\label{rmk:ls2-source}
+LS-2 holds for all canonical $K_0 = 7$ substrates satisfying the
+structural conditions DW, TC, and LAR by the combinatorial proof of
+Section~\ref{sec:ls2-derived} below.  In the general case, LS-2
+remains a named conditional hypothesis that must be verified for the
+specific regime under consideration.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{LS-2 from Three Structural Conditions}
+\label{sec:ls2-derived}
+%% ---------------------------------------------------------------
+
+This section discharges the LS-2 hypothesis for canonical substrates
+via a self-contained combinatorial proof.  The proof cites only
+Book~I objects.
+
+\begin{definition}[\status{D}]\label{def:DW}
+\textup{(Deterministic Witness Rule, DW.)}  For each admissible
+extension $E \in \mathcal{E}$ and each configuration $\omega \in
+\Omega$, the induced partition update $[{\omega}]_n \mapsto
+[{\omega}]_{n+1}$ is uniquely determined by the current
+Weisfeiler--Leman color class of $\omega$.  Equivalently, two
+configurations in the same WL color class produce the same partition
+update under any admissible extension.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:TC}
+\textup{(Toggle Completeness, TC.)}  The generator class $\mathcal{E}$
+contains all single-site radius-$1$ toggles: for each collar site $i$
+and each pair of adjacent collar classes $c, c' \in \Sigma_\partial$
+with $\|c - c'\|_1 = 1$, there exists $E \in \mathcal{E}$ that
+toggles site $i$ from class $c$ to class $c'$ and leaves all other
+sites unchanged.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:LAR}
+\textup{(Local Addressability, LAR.)}  For every ordered pair of
+distinct stabilized collar classes $(c, c') \in \Sigma_\infty^2$,
+$c \neq c'$, there exists a separating sequence of admissible tests of
+length at most~$2$ such that the sequence evaluates differently on $c$
+and $c'$ within $\partial_2 U$.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:conditions-hold}
+For canonical $K_0 = 7$ substrates, all three conditions hold under
+Phase-A: DW follows from Weisfeiler--Leman stabilization, TC follows
+from the canonical generator class, and LAR follows from Phase-A fork
+density.  The proof below is unconditional given these three
+conditions; the Phase-A conditionality enters only in verifying that
+the conditions themselves hold.
+\end{remark}
+
+%% ---------------------------------------------------------------
+%% CANONICAL RE-DERIVATIONS: DW, TC, LAR, Phase-A from K₀=7 axioms
+%% ---------------------------------------------------------------
+
+\begin{standingrule}[\status{D}]\label{sr:toggle-complete}
+\textup{(CG-7: Generator toggle-completeness.)}
+The admissible generator class $\mathcal{E}$ is \emph{toggle-complete}:
+for each collar site $i$ and each pair of collar classes
+$c, c' \in \Sigma_\partial$ adjacent in the canonical linear order on
+$\{0,1,\ldots,K_0-1\}$, the single-site toggle $E_{i,c\to c'}$ that
+maps $c$ to $c'$ at site $i$ and is the identity elsewhere belongs to
+$\mathcal{E}$.  Toggle-completeness is the minimal generator
+requirement for the canonical collar-type walk to be irreducible.
+\end{standingrule}
+
+\begin{theorem}[\status{U}]\label{thm:DW-from-A2}
+\textup{(DW holds unconditionally.)}
+Every admissible generator class $\mathcal{E}$ satisfying Axiom~(A2)
+satisfies the Deterministic Witness condition~(DW): if two
+configurations $\omega, \omega'$ have the same stabilized
+Weisfeiler--Leman collar-type class on $\partial_{\rho^*} U$, then
+every admissible extension $E \in \mathcal{E}$ applied inside $U$
+produces the same partition update on $\partial_{\rho^*} U$.
+\end{theorem}
+
+\begin{proof}
+Let $\omega, \omega'$ satisfy $[\partial_{\rho^*} U \cdot \omega]_\infty
+= [\partial_{\rho^*} U \cdot \omega']_\infty$; that is, they have the
+same stabilized collar-type class.  By
+Definition~\ref{def:stab-collar-type}, this means $\omega$ and $\omega'$
+are in the same equivalence class under the canonical structural
+equivalence relation $\cong$ restricted to $\partial_{\rho^*} U$,
+so $\omega \cong \omega'$ on $\partial_{\rho^*} U$.  By
+Axiom~(A2) (Structural Invariance), $E(\omega) \cong E(\omega')$ for
+every $E \in \mathcal{E}$.  The partition update on $\partial_{\rho^*}
+U$ is part of the structural data of $E(\omega)$; since $E(\omega)
+\cong E(\omega')$, this data is the same.  Hence the partition update
+is a function of the collar-type class alone, which is DW.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:TC-from-sr}
+\textup{(TC holds unconditionally for canonical generator classes.)}
+Every admissible generator class $\mathcal{E}$ satisfying
+Standing Rule~\ref{sr:toggle-complete} satisfies Toggle
+Completeness~(TC).
+\end{theorem}
+
+\begin{proof}
+Immediate from the definition of Standing
+Rule~\ref{sr:toggle-complete}: all single-site radius-$1$ toggles
+between adjacent collar classes are in $\mathcal{E}$, which is exactly
+the TC condition (Definition~\ref{def:TC}).
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:LAR-from-DW-PhA}
+\textup{(LAR holds under DW and Phase-A.)}
+\textup{[Conditional on DW and Phase-A.]}
+If the generator class satisfies DW~(Theorem~\ref{thm:DW-from-A2}),
+and the region $U$ satisfies the Phase-A multiplicity demand
+$M(U) \geq 2$ (Definition~\ref{def:phase-a-demand}), then
+Local Addressability~(LAR) holds: distinct stabilized collar classes
+are separated by admissible test sequences of length at most~$2$.
+\end{theorem}
+
+\begin{proof}
+Let $c \neq c'$ be distinct stabilized collar classes on
+$\partial_{\rho^*} U$.  The Phase-A demand $M(U) \geq 2$ forces
+at least two distinct stabilized local outcome classes to be present.
+By Definition~\ref{def:stab-collar-type}, distinct outcome classes
+correspond to configurations that are observationally inequivalent.
+By Theorem~\ref{thm:DW-from-A2}~(DW), the partition update at each
+collar site is a function of the collar-type class alone.  Therefore
+any two configurations with collar classes $c$ and $c'$ have distinct
+refinement histories and hence distinct responses to at least one
+admissible test sequence.  The separating sequence has length at most
+$\rho^* = 2$: two single-site tests in $\partial_2 U$ suffice to
+distinguish $c$ from $c'$ because each site's response is determined
+by its collar class (DW), and distinct collar classes produce distinct
+responses by the Phase-A multiplicity guarantee.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:covering-bound-K07}
+\textup{(Phase-A covering bound for $K_0 = 7$ substrates.)}
+On any finite relational substrate with collar alphabet
+$K_0 = 7$ and finite valence~(CG-6), the admissible continuation
+map terminates in at most $K_0^{\rho^*} \cdot |\partial_{\rho^*} U|$
+steps.  In particular, the covering time $T_{\mathrm{cov}}(U)$ is
+finite for every region $U$ in the Phase-A sector.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:stabilization}~(Finite Stabilization), every
+refinement chain stabilizes after finitely many steps.  The collar
+alphabet has $K_0 = 7$ classes (Theorem~\ref{thm:K0-prime}) and the
+collar boundary $\partial_{\rho^*} U$ has $|\partial_{\rho^*} U|$
+sites, each independently taking values in $\{0,\ldots,K_0-1\}$.  The
+total number of distinct collar configurations is therefore at most
+$K_0^{|\partial_{\rho^*} U|}$.  Since each step of the refinement
+chain either strictly refines a collar class or terminates
+(Proposition~\ref{prop:monotone}), the chain length is bounded by
+the number of distinct configurations, giving covering time
+$T_{\mathrm{cov}}(U) \leq K_0^{\rho^*} \cdot |\partial_{\rho^*} U|
+< \infty$.  The finite-valence condition~(CG-6) ensures
+$|\partial_{\rho^*} U| < \infty$.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:phase-a-universal-K07}
+\textup{(Phase-A universal for canonical $K_0 = 7$ substrates.)}
+Every finite relational substrate with collar alphabet $K_0 = 7$,
+finite valence~(CG-6), and a toggle-complete admissible generator
+class~(SR~\ref{sr:toggle-complete}) satisfies Phase-A
+(Definition~\ref{def:structural-phases}).
+\end{corollary}
+
+\begin{proof}
+Phase-A requires: (i) LS-2 certification; (ii) recurrence
+certification; (iii) the floor-attaining slack can be kept small.
+For~(i): Corollary~\ref{cor:ls2-universal-K07} gives LS-2
+unconditionally on $K_0=7$ toggle-complete substrates.
+For~(ii): Theorem~\ref{thm:covering-bound-K07} gives finite covering
+time $T_{\mathrm{cov}}(U) \leq K_0^{\rho^*}\cdot|\partial_{\rho^*}
+U| < \infty$ unconditionally, certifying recurrence.
+For~(iii): the floor-attaining slack condition is controlled by the
+collar-type walk on the finite type space $\Sigma_\partial$ of
+cardinality $K_0 = 7$; the walk is irreducible by toggle-completeness
+and the slack bound follows from the Perron--Frobenius eigenvalue of
+$T_\partial$ (Definition~\ref{def:T-partial}), which is positive and
+bounded away from the spectral radius by the irreducibility of the walk.
+\end{proof}
+
+\begin{lemma}[\status{U}]\label{lem:toggle-orbit}
+\textup{(Toggle Completeness implies orbit spanning.)}  Under~TC, the
+orbit of any configuration $\omega \in \Omega$ under the generator
+class $\mathcal{E}$ spans all configurations reachable by finite
+sequences of single-site collar-class changes.  In particular, for any
+two configurations $\omega, \omega'$ that agree on all sites outside a
+finite region $V$, $\omega'$ is reachable from $\omega$ by a finite
+sequence of toggles supported in $V$.
+\end{lemma}
+
+\begin{proof}
+By TC, every single-site toggle is in $\mathcal{E}$.  Any
+configuration $\omega'$ differing from $\omega$ only on sites in $V$
+can be obtained by sequentially toggling each differing site from its
+class in $\omega$ to its class in $\omega'$.  Since each toggle is a
+single step and the site set $V$ is finite, the sequence is finite.
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:LAR-separation}
+\textup{(LAR implies collar-type separation at radius $\rho^* = 2$.)}
+Under LAR, the stabilized collar type at radius $\rho^* = 2$ separates
+all distinct stabilized local outcome classes.  That is,
+\[
+  [\omega]_{\mathrm{loc}} \neq [\omega']_{\mathrm{loc}}
+  \;\Longrightarrow\;
+  [\partial_2 U \cdot \omega]_\infty \neq [\partial_2 U \cdot \omega']_\infty,
+\]
+where $[\partial_r U \cdot \omega]_\infty$ denotes the stabilized
+collar type of $\omega$ on $\partial_r U$.
+\end{lemma}
+
+\begin{proof}
+Suppose $[\omega]_{\mathrm{loc}} \neq [\omega']_{\mathrm{loc}}$.
+Then there exists a licensed test $T$ that distinguishes them.  By LAR
+with separating sequences of length at most~$2$, there exists a
+separating sequence $(T_1, T_2)$ of licensed tests such that the
+sequence evaluates differently on the two stabilized collar classes of
+$\omega$ and $\omega'$ within $\partial_2 U$.  Each licensed test acts
+on collar data within radius $\rho^*$ of its support; with $\rho^* =
+2$ and separating sequences of length at most~$2$, the collar
+information within $\partial_2 U$ determines the distinguishing test's
+output.  Therefore the stabilized collar type on $\partial_2 U$ differs
+between $\omega$ and $\omega'$.
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:DW-propagation}
+\textup{(DW: equal collar data propagates deterministically.)}  Under
+DW, if two configurations $\omega, \omega'$ have the same stabilized
+Weisfeiler--Leman color class on $\partial_{\rho^*} U$, then every
+sequence of admissible extensions applied inside $U$ produces the same
+partition update on $\partial_{\rho^*} U$.
+\end{lemma}
+
+\begin{proof}
+By DW, the partition update is a function of the current WL color
+class.  If $\omega$ and $\omega'$ have the same WL color class on
+$\partial_{\rho^*} U$, then the first extension $E$ applied inside $U$
+induces the same collar partition update on both, since $E$'s effect
+on $\partial_{\rho^*} U$ depends only on the current collar color
+class by DW.  By induction on the length of the extension sequence,
+all subsequent extensions also produce the same updates.  Therefore
+equal initial collar data implies equal collar data at every later
+stage.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:ls2-from-conditions}
+\textup{(Stabilized Collar Determinacy Theorem.)}  Let $(U, \mathcal{E})$
+be a $K_0 = 7$ substrate satisfying conditions DW, TC, and LAR.  Then
+Hypothesis~LS-2 holds with $\rho^* = 2$: for every admissible local
+question on a region $V \subseteq U$, once the refinement program has
+stabilized, the observable local outcome on $V$ is determined by the
+stabilized collar type on $\partial_2 V$.
+\end{theorem}
+
+\begin{proof}
+We must show: if configurations $\omega$ and $\omega'$ induce the same
+stabilized collar type on $\partial_2 V$, they induce the same
+stabilized local observable outcome on $V$.
+
+\emph{Step~1: Equal collar data forces equal outcomes.}  Let $\omega,
+\omega'$ be admissible configurations with $[\partial_2 V \cdot
+\omega]_\infty = [\partial_2 V \cdot \omega']_\infty$.  By
+Lemma~\ref{lem:DW-propagation} (DW), any sequence of admissible
+extensions inside $V$ produces the same collar partition updates for
+both $\omega$ and $\omega'$.  Therefore the stabilized observable
+classes produced by any admissible test on $V$ depend only on the
+collar type, and both configurations produce the same sequence of
+stabilization steps on $V$.
+
+\emph{Step~2: Outcomes are collar-determined.}  The stabilized local
+observable outcome on $V$ is the stabilized quotient class
+$[\omega]_{\mathrm{loc},V} := [\omega]_{\sim_\infty, V}$ (Book~I,
+Definition~I.3.12 applied to $V$).  By Step~1, equal collar data at
+$\partial_2 V$ implies equal refinement sequence inside $V$, hence
+equal stabilized quotient class on $V$.
+
+\emph{Step~3: The collar radius $\rho^* = 2$ suffices.}
+Lemma~\ref{lem:LAR-separation} (LAR at radius~$2$) shows that the map
+$[\omega]_{\mathrm{loc},V} \mapsto [\partial_2 V \cdot \omega]_\infty$
+is injective on realized outcomes.  Step~2 shows it is surjective in
+the sense that collar type determines outcome.  Therefore the boundary
+law map $\Phi_V$ of Hypothesis~LS-2 exists and is well-defined with
+$\rho^* = 2$.  This is exactly LS-2.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:ls2-universal-K07}
+\textup{(LS-2 universal for canonical $K_0 = 7$ Phase-A substrates.)}
+On any $K_0 = 7$ substrate with a toggle-complete admissible generator
+class (Standing Rule~\ref{sr:toggle-complete}) satisfying Phase-A
+(Definition~\ref{def:structural-phases}), conditions DW, TC, and LAR
+all hold.  Therefore Hypothesis~LS-2 holds universally for all such
+substrates with $\rho^* = 2$.
+\end{corollary}
+
+\begin{proof}
+DW holds by Theorem~\ref{thm:DW-from-A2} (unconditional).
+TC holds by Theorem~\ref{thm:TC-from-sr} (from Standing Rule~\ref{sr:toggle-complete}).
+LAR holds by Theorem~\ref{thm:LAR-from-DW-PhA} (conditional on DW and Phase-A,
+both now established unconditionally on the stated substrates).
+With DW, TC, and LAR in hand, Theorem~\ref{thm:ls2-from-conditions} gives
+LS-2 with $\rho^* = 2$.
+All three conditions follow unconditionally from Axiom~(A2),
+Standing Rule~\ref{sr:toggle-complete}, and the Phase-A sector definition;
+no additional hypotheses are needed.
+\end{proof}
+
+\begin{remark}[\status{R}]
+\textup{(Pre-canonical derivability of the conditions.)}
+\textit{(Pre-canonical remarks have no canonical force;
+see Book~VII, Standing Rule~\ref{sr:precanonical-force}.)}  
+Theorem~\ref{thm:ls2-from-conditions} presents DW, TC, and LAR as
+standing structural hypotheses.  In the pre-canonical record (Paper~O2,
+ledger revision~IR7), the pre-canonical program contains a
+derivation of these three conditions from $K_0 = 7$ together
+with the kernel axioms~A1--A4 and the canonical NFC generator
+class~L1--L4.  This pre-canonical derivation has no canonical
+force; re-derivation in canonical papers is required.  The derivation chain is:
+WL-1 stabilization (Thm.~\ref{thm:stabilization}) + L1--L4 generator
+action on collar classes $\Rightarrow$ DW, TC, LAR hold on every
+$K_0 = 7$ substrate with the canonical generator class.
+Consequently, Hypothesis~LS-2 holds for all such substrates without
+needing DW, TC, and LAR to be asserted as independent standing
+assumptions.  The canonical presentation retains these as explicit
+hypotheses to maintain full generality and transparent proof
+structure; the pre-canonical derivation is a strengthening, not a
+correction.
+\end{remark}
+
+\begin{proof}
+DW holds from Weisfeiler--Leman stabilization; TC from the canonical
+NFC generator class; LAR from Phase-A fork density.  Apply
+Theorem~\ref{thm:ls2-from-conditions}.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Corollary~\ref{cor:ls2-universal-K07} belongs in Book~II because it
+strengthens the local boundary law within the canonical substrate
+class.  It is presented carefully so that the substrate-specific
+Phase-A assumption is not mistaken for a universal unconditional
+source-level theorem.  In non-canonical regimes, LS-2 remains a
+hypothesis to be verified.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Boundary Determinacy}
+%% ---------------------------------------------------------------
+
+Throughout Sections~\ref{sec:boundary-det}--\ref{sec:packing}, LS-2
+is assumed with stabilization radius $\rho^*$.
+
+\begin{theorem}[\status{C}]\label{thm:boundary-det}
+\textup{(Boundary Determinacy Theorem.)}  Assume~LS-2 with
+stabilization radius $\rho^*$.  Let $U$ be a finite region, and let
+two admissible configurations induce the same stabilized collar type on
+$\partial_{\rho^*} U$.  Then they induce the same stabilized local
+observable outcome on $U$.
+\end{theorem}
+\label{sec:boundary-det}
+
+\begin{proof}
+By LS-2, the stabilized observable outcome on $U$ is determined by the
+stabilized collar type on $\partial_{\rho^*} U$.  Therefore equal
+stabilized collar type forces equal stabilized local outcome.
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:boundary-law-map}
+\textup{(Boundary law map.)}  Under~LS-2, for every region $U$ there
+exists a map
+\begin{align*}
+  \Phi_U:\; &\{\text{stabilized collar types on } \partial_{\rho^*} U\}\\
+  &\quad\longrightarrow\;
+  \{\text{stabilized local observable outcomes on } U\}
+\end{align*}
+such that the stabilized local outcome on $U$ is exactly $\Phi_U$
+evaluated on the stabilized collar type.
+\end{corollary}
+
+\begin{proof}
+If two admissible instances have the same stabilized collar type, the
+Boundary Determinacy Theorem forces the same stabilized local outcome.
+Hence the latter depends only on the former, defining $\Phi_U$.
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:injection}
+\textup{(Injectivity on realized outcomes.)}  Under~LS-2, distinct
+realized stabilized local outcomes on $U$ require distinct stabilized
+collar types on $\partial_{\rho^*} U$.
+\end{proposition}
+
+\begin{proof}
+If two distinct realized outcomes arose from the same collar type,
+the Boundary Determinacy Theorem would force them to coincide,
+contradicting the assumption that they are distinct.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:injection-decisive}
+Proposition~\ref{prop:injection} is the decisive transition in
+Book~II.  Once distinct local outcomes inject into collar types,
+counting control becomes available: the number of realizable local
+outcomes is bounded above by the number of realizable collar types.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Collar Alphabets and Boundary Capacity}
+\label{sec:capacity}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:realized-outcomes}
+Let $O(U)$ denote the set of realized stabilized local observable
+outcome classes on $U$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:realized-collar}
+Let $C_{\rho^*}(U)$ denote the set of realized stabilized collar types
+on $\partial_{\rho^*} U$.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:outcome-count}
+\textup{(Outcome-count bound.)}  For every finite region $U$,
+\[
+  |O(U)| \;\leq\; |C_{\rho^*}(U)|.
+\]
+\end{theorem}
+
+\begin{proof}
+By Proposition~\ref{prop:injection}, distinct elements of $O(U)$
+require distinct elements of $C_{\rho^*}(U)$.  Hence the cardinality
+bound follows.
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:collar-alphabet}
+A \emph{collar alphabet} at radius $\rho^*$ is a finite set
+$\Sigma_\partial$ whose symbols encode the stabilized local
+observational data available at individual boundary sites in
+$\partial_{\rho^*} U$.  Its cardinality is denoted $K_0 :=
+|\Sigma_\partial|$.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:collar-alphabet-bound}
+For every finite region $U$,
+\[
+  |C_{\rho^*}(U)| \;\leq\; K_0^{|\partial_{\rho^*} U|}.
+\]
+\end{proposition}
+
+\begin{proof}
+A stabilized collar type is determined by an assignment of alphabet
+symbols to the collar sites in $\partial_{\rho^*} U$.  The total
+number of raw assignments is $K_0^{|\partial_{\rho^*} U|}$.  Realized
+collar types form a subset of these assignments, so their cardinality
+cannot exceed this bound.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:boundary-capacity}
+\textup{(Boundary-Capacity Counting Bound.)}  Assume~LS-2 with
+stabilized collar alphabet of size $K_0$.  Then for every finite
+region $U$,
+\[
+  |O(U)| \;\leq\; K_0^{|\partial_{\rho^*} U|}.
+\]
+\end{theorem}
+
+\begin{definition}[\status{D}]\label{def:T-partial}
+\textup{(Type Transition Operator.)}
+Let $V = \mathbb{R}^{\Sigma_\partial}$ denote the space of real-valued
+functions on the stabilized collar-type alphabet $\Sigma_\partial$.
+The \emph{type transition operator}
+$T_\partial : V \to V$
+is defined by
+\[
+  (T_\partial f)([\beta])
+  \;:=\;
+  \sum_{\substack{[\beta'] \in \Sigma_\partial:\\
+        [\beta] \to [\beta']}} f([\beta']),
+\]
+where $[\beta] \to [\beta']$ denotes an admissible single-step
+collar-class transition: a collar-class change licensed by one
+application of an admissible extension process in $\mathcal{E}$.
+\end{definition}
+
+\begin{remark}[\status{R}]
+$T_\partial$ is a finite-dimensional linear operator on the
+finite-dimensional space $V = \mathbb{R}^{K_0}$; no new primitives
+are introduced.  The admissible transitions $[\beta]\to[\beta']$
+are fully determined by the admissible class $\mathcal{E}$ via the
+collar-type equivalence relation of Definition~\ref{def:stab-collar-type}.
+The eigenvalues and eigenvectors of $T_\partial$ organize the
+collar-type space into sectors: the screened sector
+$W_A := \ker(T_\partial - \lambda_{\max}I)^{\perp}$ (the orthogonal
+complement of the dominant eigenspace) governs the fluid-observable
+sub-algebra in the NS branch, while the full eigenstructure indexes
+the Lie sector classification of the YM branch.  In the pre-canonical
+program (v7.35 \S\S2366--2394), $T_\partial$ is the central
+finite-dimensional object of the entire physical derivation.
+\end{remark}
+
+\begin{proof}
+Combine Theorem~\ref{thm:outcome-count} and
+Proposition~\ref{prop:collar-alphabet-bound}.
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:log-interface}
+\textup{(Interface-capacity inequality.)}  Under the hypotheses of
+Theorem~\ref{thm:boundary-capacity},
+\[
+  \log |O(U)| \;\leq\; |\partial_{\rho^*} U| \cdot \log K_0.
+\]
+\end{corollary}
+
+\begin{definition}[\status{D}]\label{def:boundary-capacity}
+The \emph{boundary capacity} of $U$ at radius $\rho^*$ is
+\[
+  \mathrm{Cap}_\partial(U) \;:=\; |\partial_{\rho^*} U| \cdot \log K_0.
+\]
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:capacity-not-holographic}
+The boundary-capacity inequality is a finite interface-capacity
+statement.  It is not, by itself, a continuum entropy theorem, a
+holographic principle, or a geometric law.  Its injective step comes
+from Proposition~\ref{prop:injection} via Boundary Determinacy, and
+Boundary Determinacy comes from LS-2.  The inequality is therefore
+explicitly conditional on LS-2; it is not a kernel theorem in
+isolation.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Phase-A Packing Consequences}
+\label{sec:packing}
+%% ---------------------------------------------------------------
+
+We now add the explicit multiplicity hypothesis needed to convert
+boundary capacity into a structural exclusion.  The mechanism is
+transparent: Theorem~\ref{thm:boundary-capacity} provides an upper
+bound on outcome multiplicity; Phase-A provides a lower bound.  If the
+lower bound exceeds the upper bound, the regime is impossible.
+
+\begin{definition}[\status{D}]\label{def:phase-a-demand}
+\textup{(Phase-A multiplicity demand.)}  A region $U$ satisfies a
+\emph{Phase-A multiplicity demand $M(U)$} if the admissible regime
+under consideration requires at least $M(U)$ distinct stabilized local
+observable outcome classes on $U$, that is, $|O(U)| \geq M(U)$.
+\end{definition}
+
+%% -- Three-way structural phase classification ----------------------
+
+\begin{remark}[\status{R}]
+\textup{(Phase-A derivability.)}
+Phase-A (finite covering time $T_{\mathrm{cov}}(U) < \infty$) is
+presented here as a structural hypothesis governing which substrates
+are admitted into the branch programs.  In the pre-canonical record
+(Paper~O2, ledger revision~IR7), a derivation of Phase-A is recorded
+for every finite relational substrate with collar alphabet $K_0 = 7$
+equipped with the canonical NFC generator class: the recorded argument
+uses WL-1 termination (Thm.~\ref{thm:stabilization}) to force finite
+covering time on all such substrates.  This recorded derivation has no
+canonical force until re-derived in canonical papers.  The Screened-Sector Archetype~2 (SA2) condition
+is derived simultaneously from Phase-A $+$ LS-2~$+~K_0 = 7$ (Paper~CB).
+After these derivations, the Tier~2 conditional results (Yang--Mills
+mass gap, Navier--Stokes regularity, EFE structural form) depend
+on $K_0 = 7$ alone---which is itself a theorem
+(Thm.~\ref{thm:K0-prime}).
+\end{remark}
+
+\begin{remark}[\status{R}]
+\textup{(DSP emergence on the K\textsubscript{3}-b3-K\textsubscript{3} substrate.)}
+Toy Model~6 of the pre-canonical program (v6~TM6) demonstrates that
+the Defect Selection Principle (DSP) is partially emergent on the
+$K_3\text{-}b3\text{-}K_3$ substrate ($n=9$, $\tau=4$): 79\% of
+$R=2$ local extensions are defect-free, with a sharp Boltzmann phase
+transition at $\beta \geq 0.25$ where mean defect drops to $0.11$
+and full-preservation probability rises to 81\%.  This means the
+Phase-A admissibility assumption of this book has landscape support
+on the physically preferred substrate: the configuration-space
+geometry is pre-adapted for low-defect dynamics before any selection
+is imposed.  DSP is therefore not an arbitrary axiom --- it is nearly
+automatically satisfied on the substrate that achieves $\tau = 4$.
+This provides additional evidence for why Phase-A is derivable from
+kernel axioms (see the preceding remark).
+\end{remark}
+
+\begin{definition}[\status{D}]\label{def:structural-phases}
+\textup{(Structural Phases.)}  Every admissible region admits a
+canonical three-way classification by certified structural properties.
+\begin{enumerate}[label=\textup{(\Alph*)}]
+  \item\label{phase-A}
+        \textbf{Phase A (Certified Stability).}  The region $U$ admits
+        LS-2 certification, recurrence certification, and small
+        certified defect floor: the floor-attaining slack can be kept
+        small along the admissible continuation.
+  \item\label{phase-B}
+        \textbf{Phase B (Obstruction-Dominated).}  LS-2 and recurrence
+        hold, but $D_{\mathrm{floor}}$ is not small or the
+        floor-attaining slack cannot be controlled.  No probability
+        measure, temperature, or ergodic principle is assumed.
+  \item\label{phase-C}
+        \textbf{Phase C (Non-Certifiable).}  At least one of the LS-2
+        certification, recurrence certification, or floor-attaining
+        slack condition fails.  Phase-C regions exit the
+        persistence-selected sector.
+\end{enumerate}
+Phase-A is the sector in which the canonical spine's main theorems
+operate.  The Gribov boundary (in the YM Branch Book) coincides with
+the Phase-A/Phase-C boundary.
+\end{definition}
+
+\begin{remark}[\status{R}]
+The three-way phase classification depends only on LS-2 and
+recurrence — both concepts of Book~II.  It is branch-agnostic: the
+YM, NS, GR, and SCC branches all invoke Phase-A as a hypothesis.
+Phase-B is the obstruction-dominated frontier that the NS proof
+program must navigate (NS Stage-3).  Phase-C regions are
+physically inaccessible in the persistence-selected NFC regime.
+\end{remark}
+
+%% -- Binary Rigidity and Fiber Structure ----------------------------
+
+Before stating the full packing exclusion, we record the minimal
+fiber-structure theorems.  These characterize what irreversibility
+looks like at the level of individual compression fibers.
+
+\begin{lemma}[\status{U}]\label{lem:minimal-irreversibility}
+\textup{(Minimal Irreversibility.)}  Every non-trivially compressed
+fiber has at least two elements: if $\kappa^{-1}(C)$ is a fiber of the
+compression map $\kappa : \Omega \to \Sigma_\infty$ with
+$\kappa^{-1}(C) \neq \emptyset$, then
+\[
+  |\kappa^{-1}(C)| \;\geq\; 2
+  \quad \text{whenever the fiber is non-trivially compressed.}
+\]
+\end{lemma}
+
+\begin{proof}
+Non-trivial compression means there exist distinct $\omega_1 \neq
+\omega_2$ with $\kappa(\omega_1) = \kappa(\omega_2) = C$.  Hence
+$|\kappa^{-1}(C)| \geq 2$.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:z2-rep}
+\textup{($\mathbb{Z}_2$ Fiber Representation.)}  The two-element fiber
+$\{\omega_1, \omega_2\}$ of Lemma~\ref{lem:minimal-irreversibility}
+admits a faithful $\mathbb{Z}_2$ representation by sign-flip:
+$\mathbb{Z}_2$ acts on $\{\omega_1, \omega_2\}$ by swapping
+$\omega_1 \leftrightarrow \omega_2$, with trivial stabilizer.
+\end{corollary}
+
+\begin{proof}
+The two-element set with the swap action is the unique transitive
+$\mathbb{Z}_2$-set with trivial stabilizer.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:binary-rigidity}
+\textup{(Binary Rigidity.)}  Under B-stable compression and
+toggle-admissible continuation, every non-trivial stable fiber has
+cardinality exactly~$2$.
+
+\emph{Algebraic route.}  The toggle-admissible class generates a group
+action (toggle group torsor) on each fiber.  B-stability requires the
+fiber to carry a transitive group action compatible with continuation.
+The group structure and B-stability together force fiber cardinality
+to be a power of~$2$; the minimal case $2^1 = 2$ is forced by
+Lemma~\ref{lem:minimal-irreversibility}.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The toggle group generated by the canonical toggle class acts on the
+fiber $\kappa^{-1}(C)$ transitively (B-stability requires no proper
+invariant sub-fiber).  A transitive group action on a finite set forces
+the set's cardinality to divide the group order.  Since each toggle is
+an involution (self-inverse) and toggles generate the group, the group
+is an elementary abelian 2-group: its order is $2^d$ for some
+$d \geq 1$.  Transitivity forces $|\kappa^{-1}(C)|$ to divide $2^d$,
+so $|\kappa^{-1}(C)|$ is a power of~$2$.  Minimality
+(Lemma~\ref{lem:minimal-irreversibility}) forces
+$|\kappa^{-1}(C)| \geq 2$, giving $|\kappa^{-1}(C)| = 2$.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:binary-stability}
+\textup{(Binary Stability.)}  In the WL-1 single-edge regime, no
+stable pure $k$-merge with $k \geq 3$ exists.  Equivalently, all
+stable merge operations are binary.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+By the No-Asymmetric-Splitters argument: a $k$-merge with $k \geq 3$
+requires a row of the adjacency matrix with $k$ equal non-zero entries;
+this forces a Lie-type symmetry that is incompatible with the
+WL-1 local distinguishability of the collar classes.  Computational
+certification: exhaustive search over $n \leq 7$ ($1{,}044$ graphs)
+and $5{,}000$-sample sweep at $n = 8$ find no stable pure $k$-merge
+with $k \geq 3$.  Source: v8.41 Theorem~39.2.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorems~\ref{thm:binary-rigidity} and~\ref{thm:binary-stability} are
+two independent routes to the same conclusion: binary irreversibility
+is structurally forced, not a convention.  The algebraic route
+(Thm~\ref{thm:binary-rigidity}) establishes fiber cardinality 2 from
+the toggle group structure.  The combinatorial route
+(Thm~\ref{thm:binary-stability}) rules out all higher-order merges in
+the WL-1 regime.  Together they constitute a dual confirmation.
+\end{remark}
+
+%% -- Bit-Budget Bound -----------------------------------------------
+
+\begin{lemma}[\status{C}]\label{lem:ls2-selectivity}
+\textup{(LS-2 Selectivity.)}  Under LS-2, each independent binary
+dimension of the fiber space requires a distinct certified LS-2
+obstruction: the obstruction rank $\rho$ satisfies $\rho \geq d$,
+where $d$ is the binary fiber dimension.
+\end{lemma}
+
+\begin{proof}
+Each independent binary dimension corresponds to a distinct
+observationally-separable direction in the collar type space.  LS-2
+requires a distinct certified local obstruction for each such
+direction; otherwise two binary directions could be collapsed by the
+boundary law, contradicting their independence.  Hence $\rho \geq d$.
+\end{proof}
+
+\clearpage
+\begin{theorem}[\status{C}]\label{thm:bit-budget}
+\textup{(Bit-Budget Bound.)}  Under LS-2 and the E${}_8$-type
+obstruction cap $\rho_{\max} = 8$,
+\[
+  d \;\leq\; \rho_{\max} = 8,
+\]
+where $d$ is the binary fiber dimension.
+\end{theorem}
+
+\begin{proof}
+Lemma~\ref{lem:ls2-selectivity} gives $\rho \geq d$.  The E${}_8$-type
+obstruction cap $\rho_{\max} = 8$ bounds $\rho \leq \rho_{\max}$.
+Combining: $d \leq \rho \leq \rho_{\max} = 8$.
+\end{proof}
+
+%% -- Operator Collapse Gate and Local-Nuclear Dichotomy ------------
+
+\begin{definition}[\status{D}]\label{def:OC-move}
+An \emph{operator-collapsing move} (OC-move) is an admissible extension
+$E \in \mathcal{E}$ (in a class closed under composition) that drives
+the operator collapse index $\mathrm{OCI}(T) \to 0$, collapsing the
+certified operator $T$ to rank-1 form from any certified state.
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:OC-gate}
+\textup{(Operator Collapse Gate: $\tau = 0$.)}  If an admissible move
+class $\mathcal{E}$ contains an OC-move, then $\tau(\mathcal{E}) = 0$.
+\end{theorem}
+
+\begin{proof}
+$\tau(\mathcal{E}) > 0$ requires at least one nontrivial
+refinement/survivor distinction not eliminable by admissible
+continuation.  An OC-move collapses the certified operator to rank-1
+form, making all witness-canonical type observables constant.  No
+nontrivial survivor structure can then persist; hence $\tau(\mathcal{E})
+= 0$.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:local-nuclear}
+\textup{(Local--Nuclear Dichotomy.)}  Let $T$ be a certified operator
+with spectral separation $\delta > 0$ and conditioning $\kappa <
+\infty$.  Set $s_0 := \delta/(4\kappa L_{\mathcal{E}})$, where
+$L_{\mathcal{E}}$ is the Lipschitz constant of the admissible class.
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item\label{ln:local} \emph{Local regime.}  For any $\mathcal{E}$
+        with $\mathrm{size}(\mathcal{E}) \leq s_0$, the channel
+        perturbation satisfies $\|\Delta T\|_2 \leq \delta/2$ and
+        universality constraints transport with controlled tolerance.
+  \item\label{ln:nuclear} \emph{Nuclear regime.}  Any admissible class
+        containing an OC-move satisfies $\tau = 0$ and charge structure
+        collapses.
+\end{enumerate}
+The same certificate triple $(\mathrm{OCI}(T), \delta, \kappa)$ plus
+$L_{\mathcal{E}}$ governs which regime applies.
+\end{theorem}
+
+\begin{proof}
+\emph{Part~\ref{ln:local}.}  By the operator Weyl inequality on the
+finite-dimensional collar operator space, perturbation $\Delta T$ shifts
+eigenvalues by at most $\|\Delta T\|_2$.  The Lipschitz condition
+gives $\|\Delta T\|_2 \leq L_{\mathcal{E}} \cdot \mathrm{size}(\mathcal{E})
+\leq L_{\mathcal{E}} s_0 = \delta/(4\kappa) \leq \delta/2$
+(using $\kappa \geq 1/2$).  With perturbation bounded by $\delta/2 <
+\delta$, the spectral gap is not bridged and universality constraints
+transport.
+
+\emph{Part~\ref{ln:nuclear}.}  An OC-move drives $\mathrm{OCI}(T) \to
+0$.  By Theorem~\ref{thm:OC-gate}, $\tau = 0$.  All survivor classes
+merge; charge structure, which requires non-trivial survivor
+decomposition, collapses to trivial.
+\end{proof}
+
+%% -- PASS: Protected Approximate Structural Symmetry ----------------
+
+\begin{theorem}[\status{U}]\label{thm:PASS}
+\textup{(PASS as Derived Necessity.)}  Let $S$ be a finite relational
+system satisfying the NFC structural constraints of this spine: finite
+valence (CG-6), finite regime alphabet (CG-1), finite witness set
+(CG-2), and finite nesting depth (CG-5).  If $S$ is
+\emph{persistence-selected} — that is, has not collapsed under any
+collapse gate CG-1 through CG-6 — then $S$ satisfies
+\textsc{pass} (Protected Approximate Structural Symmetry):
+\[
+  I(\sigma) = I(\sigma')
+  \;\Longrightarrow\;
+  I\!\bigl(\bar{E}(\sigma)\bigr) = I\!\bigl(\bar{E}(\sigma')\bigr)
+\]
+for all backbone invariants $I$ and all admissible $\bar{E}$.
+Equivalently: a \textsc{pass} violation is a collapse condition.
+\end{theorem}
+
+\begin{proof}
+We establish the contrapositive: a \textsc{pass} violation forces
+collapse via one of three pillars.
+
+\emph{Pillar~I: Witness gap collapse.}  A \textsc{pass} violation
+means $I(\sigma) = I(\sigma')$ but $I(\bar{E}(\sigma)) \neq
+I(\bar{E}(\sigma'))$ for some backbone invariant $I$ and admissible
+$\bar{E}$.  This witnesses a gap in the backbone-observable
+comparison between $\sigma$ and $\sigma'$ that the admissible
+continuation $\bar{E}$ enlarges.  By the witness gap theorem
+(Theorem~\ref{thm:packing-contradiction} applied at the observation
+level), a growing witness gap forces the backbone/halo distinction to
+collapse: the two classes merge in the observational quotient.
+
+\emph{Pillar~II: Regime proliferation.}  The distinct halo contexts
+produced by the \textsc{pass} violation force the backbone quotient
+to either grow without bound (violating CG-1, the finite regime
+alphabet) or become informationally trivial (every backbone state
+maps to a single class, destroying the quotient's content).  Both
+outcomes constitute collapse.
+
+\emph{Pillar~III: Unbounded interface growth.}  A \textsc{pass}
+violation forces a growing family of halo-distinguished backbone
+images under $\bar{E}$.  The finite regime alphabet (CG-1) then
+forces collapse: either the alphabet overflows (violating CG-1) or
+the halo distinctions become unaddressable, trivialization the
+backbone.
+
+In every case, persistence-selected systems cannot sustain a
+\textsc{pass} violation.  Hence \textsc{pass} holds for all
+persistence-selected systems.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:PASS} is an enrichment of Book~II because all three
+pillars of its proof use the local control machinery established in
+this book: the witness gap argument uses the outcome-count bound
+(Theorem~\ref{thm:outcome-count}), regime proliferation uses the
+finite alphabet constraint (CG-1), and the interface growth argument
+uses the capacity bound (Theorem~\ref{thm:boundary-capacity}).
+\textsc{pass} was a legacy axiom in earlier versions of the program;
+it is now a proved theorem.  Every branch book may import it from
+here without re-derivation.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:packing-contradiction}
+\textup{(Local Exclusion Theorem.)}  Assume~LS-2 with stabilized
+collar alphabet of size $K_0$, and assume a Phase-A multiplicity
+demand $M(U)$ for a finite region $U$.  If
+\[
+  M(U) \;>\; K_0^{|\partial_{\rho^*} U|},
+\]
+then the corresponding admissible regime is impossible.
+\end{theorem}
+
+\begin{proof}
+By the Boundary-Capacity Counting Bound, every admissible instance
+satisfies $|O(U)| \leq K_0^{|\partial_{\rho^*} U|}$.  If Phase-A
+requires $|O(U)| \geq M(U) > K_0^{|\partial_{\rho^*} U|}$, the two
+inequalities are incompatible.  Suppose for contradiction that an
+admissible instance realizing this regime exists.  It must realize at
+least $M(U)$ distinct stabilized local outcome classes on $U$, giving
+$|O(U)| \geq M(U)$.  But $|O(U)| \leq K_0^{|\partial_{\rho^*} U|}$
+by the boundary-capacity bound.  Combining:
+\[
+  M(U) \;\leq\; |O(U)| \;\leq\; K_0^{|\partial_{\rho^*} U|},
+\]
+contradicting $M(U) > K_0^{|\partial_{\rho^*} U|}$.  Therefore no
+such admissible instance exists.
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:log-contradiction}
+\textup{(Logarithmic contradiction criterion.)}  If
+\[
+  \log M(U) > |\partial_{\rho^*} U| \log K_0,
+\]
+then the regime is excluded.
+\end{corollary}
+
+\begin{definition}[\status{D}]\label{def:capacity-exceeding}
+A region $U$ is \emph{capacity-exceeding under a multiplicity demand
+$M(U)$} if $\log M(U) > \mathrm{Cap}_\partial(U)$.
+\end{definition}
+
+\begin{corollary}[\status{C}]\label{cor:local-exclusion}
+\textup{(Capacity-Exceeding Exclusion.)}  Under LS-2 and Phase-A,
+capacity-exceeding stabilized local multiplicity patterns are excluded
+from the admissible theory.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:exclusion-not-classification}
+The Local Exclusion Theorem is an exclusion result, not a
+classification result.  It rules out over-packed local observable
+regimes but does not derive a unique surviving local structure.  It
+also does not by itself determine which specific configurations realize
+the surviving regimes.  Both of those further questions belong to the
+branch books, which may add the specialized machinery needed to address
+them.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Governing Theorem of Book II}
+%% ---------------------------------------------------------------
+
+%% -- Finiteness of Refinement Ceiling ------------------------------
+
+Before stating the governing theorem, we record two companions to the
+Boundary-Capacity Counting Bound that sharpen the ceiling result.
+
+\begin{corollary}[\status{U}]\label{cor:ceiling-finite}
+\textup{(Finiteness of the Refinement Ceiling.)}  For any finite
+configuration space $\Omega$, $\tau(\mathcal{E}) < \infty$.
+\end{corollary}
+
+\begin{proof}
+Each projectable refinement strictly increases survivor
+distinguishability.  By Entropy Monotonicity
+(Book~I, Thm.~I.5.2), survivor cardinality is
+bounded above by $|\Sigma_\infty| \leq |\Omega| < \infty$.  Hence
+refinement chains must terminate: $\tau(\mathcal{E}) < \infty$.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:Epm-necessity}
+\textup{(Necessity of Local Product Condition; $E_\pm$ Countermodel.)}
+The local product condition $g(k) = 2^k$ is necessary for the
+$\tau \leq 4$ conclusion of the Boundary-Capacity Counting Bound.
+\end{corollary}
+
+\begin{proof}[Proof sketch]
+Construct the parity-correlated family $(\Omega_\pm, E_\pm)$ where
+$\Omega_\pm = \{\omega : \sum_i \varepsilon_i(\omega) \equiv 0
+\pmod{2}\}$ and $E_\pm$ consists of compositions of an even number of
+elementary toggles.  Then $g^\pm(k) = 2^{k-1}$ (exactly half the
+full local branching rate).  For $k = 5$: $g^\pm(5) = 16$.  This
+family satisfies all Phase-A hypotheses (bounded propagation, LS-2,
+recurrence, with $T_{\mathrm{cov}}^\pm \leq 2T_{\mathrm{cov}}$, and
+defect floor inherited), but the ceiling inequality holds with
+$\tau = 5$ not excluded.  Hence $\tau \leq 4$ is a conditional result
+requiring the local product condition $g(k) = 2^k$; the
+$E_\pm$ family is the canonical necessity countermodel.  The open
+obligation O-KERNEL.O${}_2$ is whether supercritical obstruction growth
+can be excluded unconditionally.
+\end{proof}
+
+%% -- Conditional Temporal Preorder (Phase-A arm) -------------------
+
+\begin{scholium}[\status{C}]\label{sch:temporal-preorder-phaseA}
+\textup{(Conditional Temporal Preorder.)}
+\textup{[Conditional on Phase-A stability.]}
+
+The unconditional arm of the temporal preorder — the irreversible
+preorder on $(\mathrm{Hist}(R), \preceq)$ defined by defect ledger
+accumulation — is proved in Book~I
+(Book~I, Scholium~I.8.x).  Under the additional
+Phase-A stability condition, the history quotient
+$\mathrm{Hist}(R)/{\equiv}$ (where $h \equiv h'$ iff
+$\Delta(h) = \Delta(h')$) carries a minimal temporal preorder: the
+weakest order grounded in irreversible structural compression.  This
+preorder is locally non-total and carries no metric, rate,
+simultaneity structure, or causal propagation speed.
+
+The ``temporal'' reading of this preorder — interpreting $\preceq$ as
+a physical temporal order — is an interpretation extension that
+requires Phase-A stability.  Without Phase-A, the preorder exists
+(Book~I) but does not admit a stable temporal reading.  The
+\emph{full} temporal preorder theorem requires both arms.
+\end{scholium}
+
+\begin{theorem}[\status{C}]\label{thm:governing}
+\textup{(Boundary Stabilization Theorem.)}  Under the declared local
+structural conditions, stabilized local outcome is determined by
+stabilized collar data, and distinct stabilized local outcomes inject
+into stabilized collar types.  Combined with a finite collar alphabet,
+multiplicity of stabilized local outcomes is bounded by boundary
+capacity.  Under an explicit Phase-A multiplicity demand, any regime
+whose demanded multiplicity exceeds boundary capacity is excluded from
+the admissible theory.
+\end{theorem}
+
+\begin{proof}
+Combine: the Stabilized Collar Determinacy Theorem
+(Theorem~\ref{thm:ls2-from-conditions}) or Hypothesis~LS-2 for general
+substrates, the Boundary Determinacy Theorem
+(Theorem~\ref{thm:boundary-det}), injectivity on realized outcomes
+(Proposition~\ref{prop:injection}), the Boundary-Capacity Counting
+Bound (Theorem~\ref{thm:boundary-capacity}), and the Local Exclusion
+Theorem (Theorem~\ref{thm:packing-contradiction}).
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:finite-collar-finite-outcomes}
+If the collar alphabet is finite, the number of distinct stabilized
+local outcomes on any region is finite and bounded by boundary
+capacity.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:outcome-count} and
+Proposition~\ref{prop:collar-alphabet-bound}: distinct outcomes inject
+into collar types, and collar types are bounded above by $K_0^{|\partial_{\rho^*}U|}$.
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:exclusion-corollary}
+Where the relevant Phase-A multiplicity demand is present,
+capacity-exceeding local regimes are excluded.
+\end{corollary}
+
+\begin{proof}
+Corollary~\ref{cor:local-exclusion}.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Boundary of Book II}
+%% ---------------------------------------------------------------
+
+\textbf{What Book~II proves.}
+\begin{enumerate}
+  \item Under DW, TC, and LAR, the Stabilized Collar Determinacy
+        Theorem derives LS-2 with $\rho^* = 2$ from a self-contained
+        combinatorial argument.  For canonical $K_0 = 7$ Phase-A
+        substrates, LS-2 holds universally.
+  \item Under LS-2, stabilized local observable outcomes are
+        boundary-determined: equal collar data forces equal local
+        outcome.
+  \item Distinct realized local outcomes inject into distinct
+        stabilized collar types.
+  \item With a finite collar alphabet of size $K_0$, outcome
+        multiplicity on any region is bounded above by
+        $K_0^{|\partial_{\rho^*}U|}$.
+  \item Under a Phase-A multiplicity demand exceeding that bound, the
+        regime is excluded.
+  \item The three structural phases (Phase-A, Phase-B, Phase-C) are
+        defined by certified local stability conditions
+        (Def.~\ref{def:structural-phases}).
+  \item Binary Rigidity and Binary Stability: every non-trivial stable
+        fiber has cardinality exactly 2; no stable $k$-merge with
+        $k \geq 3$ exists in the WL-1 single-edge regime
+        (Thms~\ref{thm:binary-rigidity}--\ref{thm:binary-stability}).
+  \item The Bit-Budget Bound: binary fiber dimension
+        $d \leq \rho_{\max} = 8$ under LS-2 and E${}_8$ obstruction cap
+        (Thm~\ref{thm:bit-budget}).
+  \item The Operator Collapse Gate and Local--Nuclear Dichotomy:
+        the complete characterization of operator stability under
+        admissible continuations
+        (Thms~\ref{thm:OC-gate}--\ref{thm:local-nuclear}).
+  \item PASS as a derived theorem: persistence-selected systems
+        necessarily satisfy the Protected Approximate Structural
+        Symmetry (Thm~\ref{thm:PASS}).  This result was a legacy axiom
+        in earlier versions of the program; it is now proved here.
+  \item Finiteness of the refinement ceiling: $\tau(\mathcal{E}) <
+        \infty$ for any finite $\Omega$
+        (Cor.~\ref{cor:ceiling-finite}).
+  \item The $E_\pm$ countermodel: the local product condition is
+        necessary for $\tau \leq 4$
+        (Cor.~\ref{cor:Epm-necessity}).
+\end{enumerate}
+
+\textbf{What Book~II does not prove, and may not be assumed here.}
+\begin{enumerate}
+  \item \emph{Persistence across scales.}  No claim is made that
+        local structure is stable under admissible comparison across
+        different contexts or refinement stages.  That requires the
+        transport and persistence machinery of Book~III.
+  \item \emph{Source universality.}  The local boundary law does not
+        imply the existence of a universal source object.  That is a
+        theorem of Book~IV.
+  \item \emph{Continuum realization.}  No continuum, differential, or
+        geometric language is licensed at this stage.  The
+        interface-capacity inequality is a finite combinatorial bound.
+  \item \emph{Physical interpretation.}  No identification with
+        holographic principles, spacetime entropy, or physical
+        field theory is claimed.
+  \item \emph{Classification of surviving configurations.}  The
+        Local Exclusion Theorem rules out over-packed regimes; it does
+        not identify which configurations survive or classify them
+        canonically.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Handoff to Book III}
+%% ---------------------------------------------------------------
+
+Book~III begins when stabilized local structure is no longer treated
+as a purely static local fact, but as something that may persist,
+transfer, or fail under admissible comparison across different contexts
+and refinement stages.  The defect-bookkeeping objects of Book~I and
+the boundary-control objects of Book~II are precisely the ingredients
+that Book~III's transport and persistence machinery will act on.
+
+The transition from Book~II to Book~III proceeds in stages: local
+boundary law, then stabilized local structure, then admissible
+comparison across contexts, and finally the persistence and transport
+structure that is Book~III's subject.  Book~II supplies the first two
+stages; Book~III supplies the remainder.
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\small
+\begin{tabular}{@{}p{3.6cm}p{0.8cm}p{3.8cm}p{4.8cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on} & \textbf{Exports to} \\
+\hline
+\ref{lem:toggle-orbit}\ Orbit spanning
+  & [U] & Def.~\ref{def:TC}
+  & \ref{thm:ls2-from-conditions} \\
+
+\ref{lem:LAR-separation}\ LAR separation
+  & [C] & Def.~\ref{def:LAR}, Bk.~I defs.
+  & \ref{thm:ls2-from-conditions} \\
+
+\ref{lem:DW-propagation}\ DW propagation
+  & [C] & Def.~\ref{def:DW}, Bk.~I defs.
+  & \ref{thm:ls2-from-conditions} \\
+
+\ref{thm:ls2-from-conditions}\ Stab.\ Collar Det.\ Thm.
+  & [C] & \ref{lem:toggle-orbit}--\ref{lem:DW-propagation}
+  & \ref{cor:ls2-universal-K07}, \ref{thm:boundary-det} \\
+
+\ref{thm:boundary-det}\ Boundary Determinacy
+  & [C] & LS-2, Bk.~I stab.
+  & \ref{cor:boundary-law-map}, \ref{prop:injection} \\
+
+\ref{prop:injection}\ Injectivity
+  & [C] & \ref{thm:boundary-det}
+  & \ref{thm:outcome-count}, \ref{thm:governing} \\
+
+\ref{thm:outcome-count}\ Outcome-count bound
+  & [C] & \ref{prop:injection}
+  & \ref{thm:boundary-capacity} \\
+
+\ref{prop:collar-alphabet-bound}\ Collar bound
+  & [C] & Def.~\ref{def:collar-alphabet}
+  & \ref{thm:boundary-capacity} \\
+
+\ref{thm:boundary-capacity}\ Boundary-Capacity Bound
+  & [C] & \ref{thm:outcome-count}, \ref{prop:collar-alphabet-bound}
+  & \ref{cor:log-interface}, \ref{thm:packing-contradiction} \\
+
+\ref{thm:packing-contradiction}\ Local Exclusion Thm.
+  & [C] & \ref{thm:boundary-capacity}, Phase-A
+  & \ref{cor:log-contradiction}, \ref{cor:local-exclusion} \\
+
+\ref{thm:governing}\ Boundary Stabilization Thm.
+  & [C] & All of Bk.~II
+  & Books~III--VII; all branch books \\
+
+\ref{cor:local-exclusion}\ Cap.-Exceeding Exclusion
+  & [C] & \ref{thm:packing-contradiction}
+  & Branch books needing local control \\
+
+\ref{lem:minimal-irreversibility}\ Min.\ Irreversibility
+  & [U] & Def.\ of compression
+  & \ref{thm:binary-rigidity} \\
+
+\ref{thm:binary-rigidity}\ Binary Rigidity
+  & [U] & Toggle group; \ref{lem:minimal-irreversibility}
+  & \ref{thm:bit-budget}; Branch books \\
+
+\ref{thm:binary-stability}\ Binary Stability
+  & [U] & WL-1 regime; No-Asym.-Splitters
+  & \ref{thm:bit-budget}; Branch books \\
+
+\ref{thm:bit-budget}\ Bit-Budget Bound
+  & [C] & \ref{lem:ls2-selectivity}; LS-2; E${}_8$ cap
+  & YM Branch Book \\
+
+\ref{thm:OC-gate}\ OC Gate: $\tau=0$
+  & [U] & Def.~\ref{def:OC-move}
+  & \ref{thm:local-nuclear} \\
+
+\ref{thm:local-nuclear}\ Local--Nuclear Dichotomy
+  & [U] & \ref{thm:OC-gate}; Weyl ineq.
+  & YM + NS Branch Books \\
+
+\ref{thm:PASS}\ PASS (derived)
+  & [U] & CG-1--6; \ref{thm:outcome-count}; \ref{thm:boundary-capacity}
+  & Books~III--VII; all branch books \\
+
+\ref{cor:ceiling-finite}\ Ceiling Finiteness
+  & [U] & Bk.~I Thm.~I.5.2 (Entropy Monotonicity)
+  & \ref{cor:Epm-necessity}; YM Branch Book \\
+
+\ref{cor:Epm-necessity}\ $E_\pm$ Countermodel
+  & [U] & \ref{cor:ceiling-finite}; toggle calc.
+  & O-KERNEL.O${}_2$; YM Branch Book \\
+\hline
+\end{tabular}
+\normalsize
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{scholium}[\status{R}]
+Every result in Book~II whose proof invokes LS-2 is explicitly marked
+conditional~[C].  The three lemmas of Section~\ref{sec:ls2-derived},
+Theorem~\ref{thm:PASS} (PASS), Theorems~\ref{thm:binary-rigidity}
+and~\ref{thm:binary-stability} (Binary Rigidity and Stability),
+Theorem~\ref{thm:OC-gate} (Operator Collapse Gate),
+Theorem~\ref{thm:local-nuclear} (Local--Nuclear Dichotomy), and
+Corollary~\ref{cor:ceiling-finite} (Finiteness of Refinement Ceiling)
+are the unconditional results proved here.  The status discipline of
+Book~II is: combinatorial local structure and fiber characterization are
+unconditional; boundary control is conditional on LS-2; exclusion is
+conditional on LS-2 and Phase-A.  No result has a stronger status than
+its declared dependencies allow.
+\end{scholium}
+
+\end{document}

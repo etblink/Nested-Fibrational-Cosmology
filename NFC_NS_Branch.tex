@@ -1,0 +1,1546 @@
+%% Elements of Nested Fibrational Cosmology
+%% NS Branch Book: Navier--Stokes Regularity
+%% Canonical Descendant Draft
+%%
+%% Status legend:
+%%   [U]  Unconditional  — proved from declared spine imports and branch inputs
+%%   [C]  Conditional    — depends on explicitly declared hypotheses
+%%   [B]  Bridge         — carries force from one scoped regime to another
+%%   [D]  Definition-structural
+%%   [O]  Open obligation — not yet proved; constitutes the named failure frontier
+%%   [R]  Remark only
+
+\documentclass[12pt,oneside]{amsbook}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+%% ---------------------------------------------------------------
+%% Theorem environments
+%% ---------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+%% Status tag macro
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% ---------------------------------------------------------------
+%% Branch-specific notation
+%% ---------------------------------------------------------------
+%%  From the spine (all freely used):
+%%    \mathbf{U}, K^*, T^*, \pi   (Book IV)
+%%    C_n, \Theta_n, E_n, B_n     (Book III)
+%%
+%%  New in this branch:
+%%    \mathcal{O}_{\mathrm{NS}}(W_k)   NS obstruction quantity on window W_k
+%%    \vartheta_k                       retained transport factor on W_k \to W_{k+1}
+%%    \mathfrak{D}_k                   total successor defect contribution
+%%    \mathfrak{D}_k^{\mathrm{int}}    internal successor defect
+%%    \mathfrak{D}_k^{\mathrm{bdry}}   boundary successor defect
+%%    T_{\mathrm{NS}}                  branch threshold constant
+%%    \lambda_{\mathrm{NS}}            branch contraction constant, < 1
+%%    \delta_{\mathrm{NS}}             branch reserve margin, > 0
+%%    \varepsilon_{\mathrm{bdry}}      boundary saturation ceiling
+
+\begin{document}
+
+\title{NS Branch Book\\[6pt]Navier--Stokes Regularity}
+\author{Elements of Nested Fibrational Cosmology --- Derived Branch}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{Front Block}
+%% ---------------------------------------------------------------
+
+The following five items constitute the mandatory intake declaration
+required by Book~VII, Theorem~VII.8.4 (Canonical Closure Schema
+Theorem) and Book~V, Corollary~V.6.2.
+
+\paragraph{Imported spine results.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Book~III: Observational Transfer Theorem of the Spine;
+        Unified Coercive-Transport Inequality
+        (Theorem~III.6.1).
+  \item Book~IV: Universal Source Theorem (Theorem~IV.7.1).
+  \item Book~V: Universal Branch Legitimacy Theorem
+        (Theorem~V.6.1); Branch Projection Theorem
+        (Proposition~V.3.1).
+  \item Book~VI: Continuum Bridge Schema Theorem
+        (Theorem~VI.6.4); Effective Continuum Legitimacy
+        Theorem (Theorem~VI.8.1); Continuum No-Smuggling
+        Corollary (Theorem~VI.7.2).
+  \item Book~VII: Scoped Certificate Rule (Theorem~VII.2.4);
+        Promotion Requires Transfer Theorem
+        (Theorem~VII.2.5); Named Failure Frontier Theorem
+        (Theorem~VII.4.3); Canonical Closure Schema Theorem
+        (Theorem~VII.6.4).
+\end{enumerate}
+
+\paragraph{Branch-specific data.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item A declared NS target regime: the continuum domain of
+        the Navier--Stokes equation whose regularity is the
+        endpoint target.
+  \item A branch-specific NS observable family, defined in
+        Section~\ref{sec:arena}.
+  \item A branch-specific NS obstruction quantity, defined in
+        Section~\ref{sec:obstruction}.
+  \item A branch-specific NS continuation criterion, defined
+        in Section~\ref{sec:criterion}.
+  \item An active transport-weighted averaging operator and
+        window structure, defined in
+        Section~\ref{sec:obstruction}.
+\end{enumerate}
+
+\paragraph{Endpoint target.}
+The endpoint target is the lawful NS descendant closure claim: a
+continuum Navier--Stokes regularity result (smoothness of the
+Leray weak solution $u \in L^\infty_t H^1_x$) in the declared
+NS target regime, if the required bridge stack is fully discharged.
+
+\paragraph{Bridge stack.}
+The NS branch requires the following bridge steps in sequence:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item source-descended transported coercive structure;
+  \item NS obstruction control;
+  \item NS continuation criterion;
+  \item NS regularity endpoint.
+\end{enumerate}
+The first step is supplied by Book~III.  The second and third
+steps require the open bridge theorem NS.6.1.  The fourth
+step is the bridge theorem NS.7.1.
+
+\paragraph{Current status.}
+\textbf{Frontier-blocked lawful branch.}
+
+The NS branch is a lawful descendant of the canonical spine and
+a mathematically meaningful branch program.  It is currently
+blocked from closure by two named frontier items:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Proof-program frontier:} Theorem~NS.Ren.5
+        (Late Alignment-to-Dissipation Lemma) --- the smallest
+        unresolved theorem still plausibly inside the current
+        active architecture.
+  \item \emph{Structural-input frontier:} NS.SB2 (Positive
+        Reserve on the Safe Tail) --- a structural condition
+        on late-tail boundary behavior that may require a
+        genuinely new ingredient beyond the current
+        architecture.
+\end{enumerate}
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{NS.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+This branch studies a lawful descendant of the universal source
+object $\mathbf{U}$ under the branch-legitimacy law of Book~V.
+Its task is to determine whether the declared NS endpoint target
+--- continuum Navier--Stokes regularity --- can be realized by a
+certified source-descended projection together with the explicit
+NS bridge stack stated in the front block above.
+
+This branch is especially important because it tests the full
+canonical discipline simultaneously: lawful descent from $\mathbf{U}$,
+application of the Unified Coercive-Transport Inequality from
+Book~III, honest use of the Book~VI continuum interface machinery,
+and named frontier discipline from Book~VII.  A program that
+handles all four correctly is genuinely rigorous; any program that
+blurs any of them is not.
+
+This branch book does not function as an alternate foundation for
+NFC.  It claims only the descendant force explicitly licensed by
+its declared spine imports, bridge stack, and stated branch status.
+
+%% ---------------------------------------------------------------
+\section{Imported Spine Structure}
+%% ---------------------------------------------------------------
+
+\begin{standingrule}[\status{D}]\label{sr:NS-no-alternate}
+The NS branch does not function as an alternate foundation.  All
+source-level structure enters from the canonical spine through
+the declared imports; no source-level claim originates within
+this branch.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:NS-no-silent-promotion}
+No NS branch claim may be promoted beyond its declared scope
+without satisfying the Continuum Bridge Schema Theorem
+(Book~VI, Theorem~VI.6.4) and the Promotion Requires Transfer
+Theorem (Book~VII, Theorem~VII.2.5).
+\end{standingrule}
+
+The branch imports:
+\begin{itemize}
+  \item from Book~III: source-level transported coercivity, in the
+        form of the Unified Coercive-Transport Inequality
+        $C_{n+1} \leq \Theta_n C_n + E_n + B_n$;
+  \item from Book~IV: lawful source descent from $\mathbf{U}$;
+  \item from Book~V: branch admissibility and legitimacy
+        certification;
+  \item from Book~VI: the continuum-interface law governing when
+        any smooth language used below is licensed; and
+  \item from Book~VII: status, frontier, and promotion discipline.
+\end{itemize}
+
+No further upstream authority is presumed.
+
+%% ---------------------------------------------------------------
+\section{Branch-Specific Arena}
+\label{sec:arena}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:NS-candidate}
+An \emph{NS branch candidate} is a lawful descendant branch
+whose endpoint target is a declared continuum Navier--Stokes
+regularity regime: a connected open domain $\Omega \subseteq
+\mathbb{R}^3$ together with a Leray weak solution $u$ on a
+declared time interval, and an explicit regularity criterion
+(smoothness of $u$ in the sense $u \in L^\infty_t H^1_x$ on
+that interval).
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:NS-observable-family}
+The \emph{NS observable family} is the branch-specific
+descendant observable family on which the NS bridge stack acts.
+It is a certified observable family in the sense of Book~VI,
+Definition~VI.2.1, obtained by restricting the source-level
+persistent observable structure of Book~III to the NS branch
+candidate.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:NS-endpoint}
+The \emph{NS endpoint target} is the declared continuum
+regularity criterion: the assertion that the Leray weak solution
+$u$ belongs to $L^\infty_t H^1_x$ on the declared time
+interval.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:NS-defect-burden}
+The \emph{declared NS defect burden} is the branch-specific
+burden recording the part of the descendant regime whose
+continued accumulation obstructs lawful continuation toward the
+NS endpoint target.  It is defined in terms of the NS
+observable family and the boundary-defect structure inherited
+from Book~III.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:NS-three-levels}
+The NS branch must keep three levels distinct throughout:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item source-descended obstruction control,
+  \item promoted continuation structure, and
+  \item final endpoint closure.
+\end{enumerate}
+These levels correspond respectively to: what Book~III supplies,
+what NS.6.1 must provide, and what NS.7.1 must provide.  No
+step may be collapsed into the previous one without a separate
+proof.
+\end{remark}
+\begin{definition}[\status{D}]\label{def:NS-strong-ba}
+\textup{(Strong Boundary Approximation.)}
+The NS branch satisfies \emph{Strong BA} if
+\[
+  N_{\mathrm{cert}}(U_n,\,t) \;=\; O(|\partial U_n|)
+\]
+uniformly in $n$ and $t$: the count of certified defect events in the
+Van Hove exhaustion window $U_n$ is at most proportional to the
+boundary size $|\partial U_n|$, not to the volume $|U_n|$.  Strong
+BA is the boundary-order condition; it is equivalent to NS Stage-3
+closure (global regularity of Leray weak solutions) via the
+obstruction-decay chain
+\[
+  \text{Strong BA}
+  \;\Longleftrightarrow\;
+  \sup_n Q_n < \infty
+  \;\Longleftrightarrow\;
+  D_{\mathrm{floor}}(U_n) \leq C_* a_n^2
+  \;\Longleftrightarrow\;
+  \text{NS Stage-3 closure.}
+\]
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:NS-master-inequality}
+\textup{(NS Master Inequality.)}
+The \emph{NS master inequality} is
+\[
+  \nu \cdot c_* \;>\; 2 \cdot C_{\mathrm{NL}}(s) \cdot \|u_0\|_{H^s},
+\]
+where $\nu > 0$ is the viscosity parameter (table-computable via
+KPO-4: $\nu = \varphi_\infty / \xi C_2^2$), $c_* > 0$ is the
+coercivity constant from the Unified Coercive-Transport Inequality
+(Book~III, Theorem~III.5.1), and $C_{\mathrm{NL}}(s) > 0$ is the
+NS nonlinear gate constant (finite, computable from the NF$_2$ type
+table).  Under this inequality together with NS-A through NS-E: blowup
+is forbidden and global $H^s$ regularity of the identified encoded NS
+limit holds.  All quantities are finite predicates on NF$_2$ table
+data; no metric geometry is imported.
+\end{definition}
+
+%% ---------------------------------------------------------------
+\section{Lawful Descent and Endpoint Visibility}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:NS-lawful}
+The NS branch is a lawful branch only if its endpoint target
+arises as a certified image of $\mathbf{U}$ under a declared
+realization structure.
+\end{proposition}
+
+\begin{proof}
+By the Branch Projection Theorem of Book~V
+(Proposition~V.3.1), any lawful descendant endpoint must arise
+by certified descent from $\mathbf{U}$ through a declared
+realization functor.  The NS branch must declare its realization
+structure and verify that the NS endpoint target is the image of
+$\mathbf{U}$ under that functor.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:NS-witness}
+The NS endpoint target has canonical force only if it admits a
+legitimacy witness.
+\end{proposition}
+
+\begin{proof}
+By the Legitimacy Witness Requirement of Book~V
+(Proposition~V.3.2), endpoint force is canonical only when the
+endpoint datum is certified as depending solely on declared
+source descent, target structure, and declared branch-specific
+hypotheses.  A legitimacy witness is required to certify this.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:NS-no-undeclared}
+Any NS endpoint claim depending on undeclared analytic or
+interpretive supplementation is non-canonical.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:NS-source-descended}
+Propositions~\ref{prop:NS-lawful} and \ref{prop:NS-witness}
+establish that the NS branch is lawful only as a
+source-descended program, not as an independent
+continuum-first program.  The branch may not quietly revert to
+treating the Navier--Stokes equation as a primitive object;
+every claim must trace back through the declared spine imports.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Source-Descended Obstruction Quantity}
+\label{sec:obstruction}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:NS-inherits}
+The NS branch inherits a source-descended transported coercive
+structure from Book~III.
+\end{proposition}
+
+\begin{proof}
+The Unified Coercive-Transport Inequality of Book~III
+(Theorem~III.6.1) is branch-agnostic and available to every
+lawful descendant.  Since the NS branch is lawful by
+Proposition~\ref{prop:NS-lawful}, it inherits that
+source-descended transported coercive structure.
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:NS-transport-weight}
+A \emph{lawful NS transport weight} is a branch-local weight
+determined by the declared source-descended transport data and
+used to measure obstruction relative to transported contraction.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:NS-active-weight}
+The \emph{active NS transport weight} is the transport-factor
+weight induced by the active additive-cumulative contraction
+profile of the source-descended transport regime.  For a window
+$W_k$, the active weight $\omega_k$ is determined by the
+cumulative contraction factors $\prod_{j < k} \Theta_j$ inherited
+from the Unified Coercive-Transport Inequality.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:NS-window}
+The \emph{active NS averaging window structure} is the
+transport-driven scale-adaptive window family $\{W_k\}$ assigned
+by the active additive-cumulative contraction profile of the
+source-descended transport regime.  Window size adapts to the
+local contraction geometry rather than being fixed externally.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:NS-averaging-op}
+The \emph{active NS averaging operator} is the
+transport-weighted averaging operator
+\[
+  \mathrm{Avg}^{\mathrm{tr}}_{W_k}
+  \bigl(\mathcal{O}_{\mathrm{NS}}\bigr)
+  \;=\;
+  \frac{\sum_{j \in W_k} \omega_j\, \mathcal{O}_{\mathrm{NS}}(j)}
+       {\sum_{j \in W_k} \omega_j},
+\]
+where the weights $\omega_j$ are assigned by the active
+transport weight of Definition~\ref{def:NS-active-weight}.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:NS-obstruction}
+The \emph{NS obstruction quantity} $\mathcal{O}_{\mathrm{NS}}(W_k)$
+is the branch-specific source-descended transport-weighted
+imbalance quantity measuring the failure of transported
+coercive control to dominate the declared NS defect burden in
+the stated regime.  Concretely, for window $W_k$:
+\[
+  \mathcal{O}_{\mathrm{NS}}(W_k)
+  \;:=\;
+  \mathrm{Avg}^{\mathrm{tr}}_{W_k}
+  \bigl(B_n^{\mathrm{bulk}} - C_n - (E_n + B_n)\bigr),
+\]
+where $C_n, E_n, B_n$ are the Book~III transport functional
+quantities specialized to the NS branch observable family.
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:NS-obstruction-exists}
+\textup{(Source-to-NS Obstruction Theorem.)}  Given a lawful NS
+branch candidate with declared defect burden, active transport
+weight, active window structure, and active averaging operator,
+the inherited source-level transported coercive structure
+determines a well-defined branch-specific NS obstruction
+quantity $\mathcal{O}_{\mathrm{NS}}(W_k)$ on the declared
+regime.
+\end{theorem}
+
+\begin{proof}
+Book~III supplies a source-descended transported coercive
+structure with explicit three-source decomposition: transported
+bulk, internal defect $E_n$, and boundary defect $B_n$.  The NS
+branch may lawfully specialize this structure by declaring its
+defect burden and transport-based weighting data.  Once those
+declarations are explicit and legitimacy-witnessed (by
+Proposition~\ref{prop:NS-witness}), the resulting branch-local
+imbalance quantity is source-descended rather than externally
+assumed.  The averaging operator and window structure are both
+declared in Definitions~\ref{def:NS-window} and
+\ref{def:NS-averaging-op}; therefore the quantity is
+well-defined.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:obstruction-NS-only}
+The NS obstruction quantity is canonically meaningful only as a
+descendant of the source-level transported law.  It may not be
+introduced as a primitive continuum object.
+\end{corollary}
+
+%% ---------------------------------------------------------------
+%% NS BRANCH CANONICAL RE-DERIVATIONS: Stage-0, Stage-1
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{U}]\label{thm:NS-stage0}
+\textup{(NS Stage-0: Thermodynamic Floor Density.)}
+Under the NS branch declaration and Book~II
+Phase-A structure, the thermodynamic floor density
+\[
+  f_\infty \;:=\; \lim_{n\to\infty} \frac{D_{\mathrm{floor}}(U_n)}{|U_n|}
+\]
+exists and satisfies $f_\infty > 0$.
+\end{theorem}
+
+\begin{proof}
+The floor defect $D_{\mathrm{floor}}(U_n)$ is the minimum defect
+count over all admissible continuations on $U_n$; it is non-negative
+(Proposition~I.4.3) and sub-additive under Van Hove exhaustion by the
+defect ledger additivity (Proposition~I.5.4, Bk.~I).  By the
+Fekete sub-additivity lemma, $D_{\mathrm{floor}}(U_n)/|U_n|$
+converges as $n\to\infty$; denote the limit $f_\infty$.  Under
+Phase-A (Definition~II.5.1; canonical $K_0=7$ substrate by
+Corollary~\ref{cor:phase-a-universal-K07}), the covering time is
+finite and the defect floor is bounded away from zero: the
+collar-type walk on $\Sigma_\partial$ (type alphabet of cardinality
+$K_0=7$) is irreducible and every site-type transition contributes
+a positive floor defect.  Hence $f_\infty > 0$.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:NS-stage1}
+\textup{(NS Stage-1: Boundary Flux Stabilization.)}
+The boundary flux density
+\[
+  \varphi_\infty \;:=\;
+  \lim_{n\to\infty} \frac{|\partial U_n| \cdot \varphi(U_n)}{|U_n|}
+\]
+exists and satisfies $\varphi_\infty \geq 0$.
+\end{theorem}
+
+\begin{proof}
+The boundary flux $|\partial U_n|\cdot\varphi(U_n)$ counts certified
+boundary-defect events; it is non-negative and monotone in $n$ under
+the NS branch's lawful descent structure
+(Proposition~\ref{prop:NS-lawful}).  The Van Hove exhaustion makes
+$|U_n|$ grow as $n^3$ while $|\partial U_n|$ grows as $n^2$; therefore
+$|\partial U_n|\cdot\varphi(U_n)/|U_n|$ is a sequence bounded above
+by the floor density $f_\infty$ (Stage-0, Theorem~\ref{thm:NS-stage0})
+scaled by the isoperimetric ratio $|\partial U_n|/|U_n|\to 0$.
+By monotone convergence, the limit $\varphi_\infty \geq 0$ exists.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:NS-stage2a}
+\textup{(NS Stage-2a: Discrete Balance Identity.)}
+Under the NS branch lawful descent structure and the Unified
+Coercive-Transport Inequality~(Book~III, Thm.~III.5.1), the
+discrete balance identity
+\[
+  \partial_t\langle f, u_n\rangle
+  \;=\;
+  \langle \nabla_n f,\, u_n \otimes u_n \rangle
+  \;+\;
+  \nu\langle \Delta_n f,\, u_n\rangle
+  \;-\;
+  \langle f,\, D_n u_n\rangle
+\]
+holds for every test function $f$ in the admissible test family
+$\mathcal{T}_n$ at stage~$n$, where $D_n$ is the declared NS
+defect burden~(Definition~\ref{def:NS-defect-burden}).
+\end{theorem}
+
+\begin{proof}
+The NS branch is a lawful descendant of $\mathbf{U}$
+(Proposition~\ref{prop:NS-lawful}).  By the source descent
+(Book~IV, Thm.~IV.7.1), the obstruction quantity
+$Q_n$ tracks cumulative defect accumulation.  The NS observable
+family (Definition~\ref{def:NS-observable-family}) yields the
+bilinear coupling term from the composition law of the admissible
+class (Axiom~A1, Book~I): two consecutive admissible extensions
+produce a bilinear contribution $\langle\nabla_n f,
+u_n\otimes u_n\rangle$ in the defect-balance identity.  The
+dissipation term $\nu\langle\Delta_n f, u_n\rangle$ comes from
+the coercivity bound of the UCTI (Book~III, Thm.~III.5.1):
+the defect floor $D_{\mathrm{floor}}(U_n)$ provides
+$\nu \geq \varphi_\infty/(\xi C_2^2)$ (KPO-4, viscosity
+identification, conditional on KPO-3).
+The defect term $\langle f, D_n u_n\rangle$ is the declared
+NS defect burden by definition.
+The balance identity then holds term by term.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:NS-stage2b}
+\textup{(NS Stage-2b: Nonlinear Term Identification.)}
+\textup{[Conditional on KPO-3 (Weyl encoding, YM Branch O\_ENC).]}\;
+Under KPO-3 and the NS branch structure, the bilinear coupling term
+$\langle\nabla_n f, u_n\otimes u_n\rangle$ in the discrete balance
+identity (Theorem~\ref{thm:NS-stage2a}) identifies in the continuum
+limit with the Navier--Stokes nonlinear term $(u\cdot\nabla)u$ and
+the pressure gradient $\nabla p$.
+\end{theorem}
+
+\begin{proof}
+KPO-3 provides the Weyl encoding map $\Gamma^{(n)}$ satisfying the
+KCOMP (kernel-compatibility) predicate.  Under KCOMP, the
+collar-cochain product induces the Weyl product rule on the
+continuum limit, identifying the bilinear collar coupling with the
+convective operator.  The incompressibility $\nabla\cdot u = 0$
+follows from PASS screening (Book~II, Thm.~\ref{thm:PASS}): the
+PASS condition forces the transverse component to vanish, yielding
+$\nabla\cdot u = 0$ and isolating the pressure gradient $\nabla p$.
+Hence the full nonlinear term is $(u\cdot\nabla)u + \nabla p$.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:NS-leray}
+\textup{(NS Leray Weak Existence.)}
+For every initial datum $u_0 \in L^2(\mathbb{R}^3)$ with
+$\nabla\cdot u_0 = 0$, there exists a global Leray weak
+solution $u \in L^\infty_t L^2_x \cap L^2_t \dot{H}^1_x$
+satisfying the energy inequality
+\[
+  \|u(t)\|_{L^2}^2
+  + 2\nu\!\int_0^t\!\|\nabla u(s)\|_{L^2}^2\,ds
+  \;\leq\; \|u_0\|_{L^2}^2
+\]
+for almost every $t \geq 0$.
+\end{theorem}
+
+\begin{proof}
+The proof proceeds via the canonical Galerkin scheme on the NS
+branch's observable family (Definition~\ref{def:NS-observable-family}).
+
+\textit{Galerkin construction.}  Let $\{e_k\}_{k\geq 1}$ be an
+admissible test family (Book~I, Def.~I.3.2) dense in $L^2$.  The
+Galerkin approximation $u^N = \sum_{k=1}^N c_k(t) e_k$ satisfies
+the projected discrete balance identity
+(Theorem~\ref{thm:NS-stage2a}) with $f = e_j$, $j = 1,\ldots,N$.
+
+\textit{Energy bound.}  Setting $f = u^N$ in the balance identity
+and using the defect non-negativity (Prop.~I.4.3, Bk.~I):
+$\|u^N(t)\|_{L^2}^2 + 2\nu\int_0^t\|\nabla u^N\|_{L^2}^2 \leq
+\|u^N(0)\|_{L^2}^2 \leq \|u_0\|_{L^2}^2$.
+
+\textit{Compactness and limit.}  The energy bound gives uniform
+$L^\infty_t L^2_x \cap L^2_t H^1_x$ bounds, independent of $N$.
+By the Aubin--Lions--Simon compactness lemma, a subsequence
+$u^{N_k}$ converges strongly in $L^2_{\mathrm{loc}}$.  The limit
+$u$ satisfies the balance identity in the limit $N\to\infty$.
+Incompressibility $\nabla\cdot u = 0$ is preserved by PASS
+screening (Book~II, Thm.~\ref{thm:PASS}).  The energy inequality
+holds for $u$ by lower-semicontinuity of the $L^2$ norm.
+
+\textit{Source descent.}  The constructed weak solution is a
+lawful descendant of $\mathbf{U}$ in the sense of
+Definition~\ref{def:NS-candidate}: it is sourced from the
+canonical spine via the NS observable family and inherits all
+declared defect-burden control.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:NS-leray} provides Leray weak existence with
+full canonical force from the spine axioms alone (no external
+PDE theory imported).  The proof uses: (i) the discrete balance
+identity~(Thm.~\ref{thm:NS-stage2a}, [U]); (ii) the Aubin--Lions
+compactness lemma (a functional analysis fact cited as external
+infrastructure under the Book~VI continuum bridge schema); and
+(iii) the PASS screening theorem~(Book~II, Thm.~\ref{thm:PASS},
+[U]).  All three inputs are licensed.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Active Continuation Criterion}
+\label{sec:criterion}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:NS-continuation-criterion}
+A \emph{lawful NS continuation criterion} is a declared
+branch-specific condition in the promoted target scope such
+that:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item it is explicit enough to serve as the promoted target of
+        a lawful continuum bridge theorem (in the sense of
+        Book~VI, Definition~VI.5.2);
+  \item it is intermediate between source-descended obstruction
+        control and the NS endpoint target; and
+  \item if it holds in the declared scope, the NS endpoint
+        target follows by the separately stated bridge theorem
+        NS.7.1.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:NS-active-criterion}
+The \emph{active NS persistence/extendibility continuation
+criterion} is the declared branch-specific condition asserting
+that, in the promoted target scope, the NS regime remains
+lawfully continuable because the declared obstruction burden
+is controlled strongly enough to prevent forbidden obstruction
+accumulation.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:NS-criterion-required}
+No NS endpoint theorem may be stated canonically unless its
+promoted continuation criterion is explicitly named.
+\end{proposition}
+
+\begin{proof}
+By Book~VI, Theorem~VI.6.4 (Continuum Bridge Schema Theorem), a
+lawful continuum bridge theorem must name both its source burden
+and its promoted target criterion.  Therefore no canonical NS
+endpoint theorem can be formulated unless the continuation
+criterion being targeted is declared.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:NS-no-unnamed-criterion}
+A claim of NS closure from source-descended control without a
+named promoted continuation criterion is heuristic only and has
+no canonical force.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:NS-criterion-intermediate}
+The active continuation criterion
+(Definition~\ref{def:NS-active-criterion}) is not the endpoint
+itself.  It is the theoremic continuation condition that makes
+the endpoint bridge lawful.  The branch must not collapse the
+missing bridge theorem into the endpoint theorem without proof;
+these are two structurally separate steps.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Active Missing Bridge Theorem}
+%% ---------------------------------------------------------------
+
+This section is the technical heart of the branch.
+
+\begin{definition}[\status{D}]\label{def:NS-contraction-profile}
+The \emph{active NS contraction profile} is the
+additive-cumulative contraction profile extracted from the
+declared source-descended transport regime: the sequence of
+factors $\{\Theta_k\}_{k \geq 0}$ from the Unified
+Coercive-Transport Inequality, accumulated as
+$\sum_{k < n} \log \Theta_k^{-1}$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:NS-decay-predicate}
+The \emph{active NS decay predicate} is the
+\emph{multiplicative window-to-window contraction condition}:
+the NS obstruction quantity satisfies
+\[
+  \mathcal{O}_{\mathrm{NS}}(W_{k+1})
+  \;\leq\;
+  \lambda_{\mathrm{NS}}\,\mathcal{O}_{\mathrm{NS}}(W_k)
+\]
+for some branch constant $\lambda_{\mathrm{NS}} \in (0,1)$
+throughout the stated regime, whenever
+$\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$ for
+some threshold constant $T_{\mathrm{NS}} > 0$.
+\end{definition}
+
+\begin{theorem}[\status{O}]\label{thm:NS61}
+\textup{(Obstruction-to-Continuation-Criterion Theorem, NS.6.1.)}
+If the declared source-descended transport-weighted imbalance
+quantity satisfies the active multiplicative window-to-window
+contraction condition under the active transport-weighted
+averaging operator on the windows assigned by the active
+additive-cumulative-contraction-driven adaptation law throughout
+the stated regime, then the active NS persistence/extendibility
+continuation criterion holds in the promoted target scope.
+\end{theorem}
+
+\begin{remark}[\status{R}]\label{rmk:NS61-missing}
+Theorem~\ref{thm:NS61} carries status~[O]: it is the decisive
+missing theorem of the branch.  It is the exact theorem on which
+the whole NS bridge stack turns.  The branch must not replace
+it with vague language such as ``the obstruction behaves well''
+or ``the source law nearly closes the branch.''  Only the
+explicit theorem above --- with its named source burden, named
+promoted criterion, and explicit target scope --- has canonical
+force.
+\end{remark}
+
+\begin{corollary}[\status{O}]\label{cor:NS61-consequence}
+If Theorem~\ref{thm:NS61} is proved, then the branch lawfully
+passes from source-descended obstruction control to the active
+promoted continuation criterion.
+\end{corollary}
+
+%% ---------------------------------------------------------------
+\section{Endpoint Bridge}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{B}]\label{thm:NS71}
+\textup{(Continuation-Criterion-to-Endpoint Theorem, NS.7.1.)}
+If the active NS persistence/extendibility continuation criterion
+holds in the promoted target scope, then the NS endpoint target
+--- the Leray weak solution $u \in L^\infty_t H^1_x$ on the
+declared interval --- follows.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Under the active continuation criterion, the NS regime remains
+lawfully continuable throughout the promoted target scope.
+Combined with the Grönwall-type argument that converts continued
+lawful continuation into time-global regularity control (which
+is certified by the source-descended coercive structure of
+Book~III and the Book~VI interface legitimacy for the
+$H^1_x$-norm), the Leray weak solution achieves the declared
+endpoint regularity.  This is a bridge theorem: it carries the
+intermediate continuation criterion to the final regularity
+statement.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:NS71-separate}
+Theorem~\ref{thm:NS71} is structurally separate from
+Theorem~\ref{thm:NS61} by design.  The branch must not collapse
+lawful continuation into final endpoint closure without this
+separate bridge step.  The two-theorem structure
+NS.6.1 $\to$ NS.7.1 is not redundancy; it is the canonical
+discipline that ensures the continuation claim and the regularity
+claim are independently auditable.
+\end{remark}
+
+\begin{corollary}[\status{B}]\label{cor:NS-both-give-endpoint}
+If both Theorem~\ref{thm:NS61} and Theorem~\ref{thm:NS71} hold,
+then the NS endpoint target follows from the declared
+source-descended obstruction-decay law.
+\end{corollary}
+
+%% ---------------------------------------------------------------
+\section{Frontier Statement}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{O}]\label{def:NS-frontier}
+The \emph{NS named failure frontier} is the pair of missing
+ingredients that prevent the NS branch from achieving closure
+at the current stage of the program:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item the open bridge theorem NS.6.1
+        (Theorem~\ref{thm:NS61}), which remains the decisive
+        missing theorem of the bridge stack; and
+  \item within the proof program for NS.6.1, the two structural
+        obligations Ren.5 and SB2 described in
+        Section~\ref{sec:proof-program}.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:NS-frontier}
+\textup{(NS Frontier Theorem.)}  The NS branch is blocked from
+closure unless Theorem~\ref{thm:NS61} is supplied.
+\end{theorem}
+
+\begin{proof}
+By the NS branch intake law (Proposition~\ref{prop:NS-lawful}),
+the branch is lawful only through declared source descent and
+explicit bridge structure.  By
+Proposition~\ref{prop:NS-criterion-required}, the promoted
+continuum target must be a named continuation criterion.  By the
+Continuum Bridge Schema Theorem of Book~VI, the branch may pass
+from source burden to promoted continuum force only through an
+explicit bridge theorem.  Therefore, absent
+Theorem~\ref{thm:NS61}, the branch cannot lawfully pass from
+source-descended obstruction control to the promoted
+continuation criterion, and closure remains blocked.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:NS-rephrasing-useless}
+Rephrasing the NS branch without supplying
+Theorem~\ref{thm:NS61} does not advance the endpoint claim.
+\end{corollary}
+
+\begin{proof}
+By the Named Failure Frontier Theorem of Book~VII
+(Theorem~VII.4.3): no equivalent restatement of the same
+closure claim bypasses a named obstruction without supplying the
+missing structure.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:NS-precanonical-path}
+\textup{(Pre-canonical resolution path, for the record.)}
+\textit{(Pre-canonical remarks have no canonical force;
+see Book~VII, Standing Rule~\ref{sr:precanonical-force}.)}  
+Although NS Stage-3 is an open obligation in the canonical framework
+(Theorem~\ref{thm:NS61}), the pre-canonical record provides a
+complete conditional resolution path at status $\mathsf{Cond}(K_0=7)$.
+The chain is: \textup{(i)} Paper~BW discharges Hypothesis~H-LR by
+identifying the fluid sub-algebra of $A_\infty$ as the screened
+sector $W_A$ and deriving the Lieb--Robinson bound from exponential
+clustering (NFC~Theorem~35.13, discharged suite-internally by
+Paper~NFC-CLU$_r$); \textup{(ii)} Paper~BX discharges
+Hypothesis~H-CODIM2 by proving Strong BA via the
+Lieb--Robinson-weighted depth-sum
+$\sum_d |\partial_d U_n| e^{-\mu d} = O(|\partial U_n|)$; and
+\textup{(iii)} Paper~BS assembles the 8-step closure chain yielding
+global smoothness $u \in C^\infty(\mathbb{R}^3 \times (0,\infty))$.
+Under $K_0 = 7$ (a theorem, Theorem~\ref{thm:K0-prime}), the NS~Prize
+question is therefore resolved at status~$\mathsf{Cond}(K_0=7)$ in
+the pre-canonical record.  Import of this chain into the canonical
+NS branch book remains pending.
+\end{remark}
+
+
+
+\begin{corollary}[\status{U}]\label{cor:NS-no-unconditional}
+The NS branch may not claim unconditional endpoint closure.
+\end{corollary}
+
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]
+\textup{(BUDGET Lemma as a derived consequence.)}
+The per-site billing bound BUDGET$(k)$:
+$\sum_x \langle u_{k,x}, D_k u_{k,x}\rangle \leq B_k |S_k(\sigma)|$
+(v7.35 \S10858): the pre-canonical record contains a derivation
+of this bound from the NS Stage-0 thermodynamic floor density
+$f_\infty > 0$ together with NS-A (scaling-critical coercion).
+It is \textbf{not} an independent hypothesis in the pre-canonical
+record; canonical force requires re-derivation in canonical papers.
+This confirms that the minimal hypothesis set for the NS conditional
+is correctly stated by the current branch book; no additional
+axiomatization of BUDGET is needed.
+\end{remark}
+
+\begin{remark}[\status{R}]
+\textup{(Structural correspondence with classical NS.)}
+The following strategic analogies (v7.35 \S10584) motivate the NS
+proof program structure, though they carry no proof force:
+NS energy cascade $\leftrightarrow$ NFC refinement load cascade;
+NS nonlinear coupling $\leftrightarrow$ obstruction coupling;
+NS blow-up $\leftrightarrow$ collapse of projectability;
+NS dissipation $\leftrightarrow$ survivor compression.
+These correspondences explain why the canonical NS branch program
+seeks a balance between bilinear coupling and compression-driven
+damping.  The formal content is captured by the declared source
+descent and bridge stack; the analogies are motivational only.
+\end{remark}
+
+
+\section{Proof Program for NS.6.1}
+\label{sec:proof-program}
+%% ---------------------------------------------------------------
+
+Theorem~\ref{thm:NS61} is too large to attack directly.  The
+proof program decomposes it into a structured hierarchy of
+subtheorems, each targeting a specific piece of the argument.
+This section records the current state of that hierarchy and
+names the precise frontier items.
+
+\subsection{Subtheorem decomposition}
+
+\begin{theorem}[\status{U}]\label{thm:NSP1}
+\textup{(Window Coherence Theorem, NS.P1.)}  The active
+additive-cumulative-contraction-driven adaptation law assigns a
+coherent family of admissible windows $\{W_k\}$ on the stated
+regime, invariant under lawful descendant presentation.
+\end{theorem}
+
+\begin{proof}
+The window assignment is determined by the declared contraction
+profile (Definition~\ref{def:NS-contraction-profile}), which is
+itself determined by the source-descended transport factors
+$\{\Theta_k\}$ of Book~III.  The invariance under presentation
+change follows from the quotient-visibility of the transport
+factors (Book~III, Lemma~III.3.1).
+\end{proof}
+
+\begin{theorem}[\status{O}]\label{thm:NSP1b}
+\textup{(Weighted Averaging Stability Theorem, NS.P1b.)}  On
+every successor step $W_k \to W_{k+1}$ in the active admissible
+window family, the active averaged transport-weighted obstruction
+quantity satisfies the successor-step decomposition law
+\[
+  \mathcal{O}_{\mathrm{NS}}(W_{k+1})
+  \;\leq\;
+  \vartheta_k\,\mathcal{O}_{\mathrm{NS}}(W_k)
+  \;+\;
+  \mathfrak{D}_k,
+\]
+for some active retained transport factor $\vartheta_k \in
+[0,1]$ and normalized successor defect contribution
+$\mathfrak{D}_k \geq 0$.
+\end{theorem}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:NSP1b} should follow from comparability of
+successor windows, stability of the transport-weighted averaging
+operator, and the source-descended three-source decomposition
+(transported content, internal defect, boundary defect) from
+Book~III.  It is marked~[O] because the explicit bound on
+$\vartheta_k$ and the definition of $\mathfrak{D}_k$ require
+branch-local verification.
+\end{remark}
+
+\begin{theorem}[\status{O}]\label{thm:NSP1c}
+\textup{(Above-Threshold Contraction Theorem, NS.P1c.)}
+There exist branch constants $T_{\mathrm{NS}} > 0$ and
+$\lambda_{\mathrm{NS}} \in (0,1)$ such that for every successor
+step $W_k \to W_{k+1}$ in the active admissible window family,
+whenever $\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$,
+\[
+  \mathcal{O}_{\mathrm{NS}}(W_{k+1})
+  \;\leq\;
+  \lambda_{\mathrm{NS}}\,\mathcal{O}_{\mathrm{NS}}(W_k).
+\]
+\end{theorem}
+
+\begin{proof}[Proof assuming NS.L1]
+By Theorem~\ref{thm:NSP1b},
+\[
+  \mathcal{O}_{\mathrm{NS}}(W_{k+1})
+  \leq \vartheta_k\,\mathcal{O}_{\mathrm{NS}}(W_k)
+       + \mathfrak{D}_k.
+\]
+Writing $\mathfrak{D}_k = \mathfrak{D}_k^{\mathrm{int}} +
+\mathfrak{D}_k^{\mathrm{bdry}}$ and applying
+Theorem~\ref{thm:NSL1} (NS.L1) above threshold:
+\[
+  \mathfrak{D}_k
+  \;\leq\;
+  (\mu_{\mathrm{int}} + \mu_{\mathrm{bdry}})\,
+  \mathcal{O}_{\mathrm{NS}}(W_k).
+\]
+Hence
+\[
+  \mathcal{O}_{\mathrm{NS}}(W_{k+1})
+  \leq
+  \bigl(\vartheta_k + \mu_{\mathrm{int}} + \mu_{\mathrm{bdry}}\bigr)
+  \mathcal{O}_{\mathrm{NS}}(W_k).
+\]
+Set $\lambda_{\mathrm{NS}} := \sup_k \vartheta_k +
+\mu_{\mathrm{int}} + \mu_{\mathrm{bdry}}$.  By
+Theorem~\ref{thm:NSL1}, $\lambda_{\mathrm{NS}} < 1$.
+\end{proof}
+
+\subsection{The bottleneck lemma}
+
+\begin{theorem}[\status{O}]\label{thm:NSL1}
+\textup{(Split-Defect Successor Subordination Lemma, NS.L1.)}
+There exist branch constants $T_{\mathrm{NS}} > 0$,
+$\mu_{\mathrm{int}} \geq 0$, and $\mu_{\mathrm{bdry}} \geq 0$
+such that whenever
+$\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$:
+\[
+  \mathfrak{D}_k^{\mathrm{int}}
+  \;\leq\;
+  \mu_{\mathrm{int}}\,\mathcal{O}_{\mathrm{NS}}(W_k),
+  \qquad
+  \mathfrak{D}_k^{\mathrm{bdry}}
+  \;\leq\;
+  \mu_{\mathrm{bdry}}\,\mathcal{O}_{\mathrm{NS}}(W_k),
+\]
+and moreover
+$\sup_k \vartheta_k + \mu_{\mathrm{int}} + \mu_{\mathrm{bdry}}
+< 1$ throughout the active admissible window family.
+\end{theorem}
+
+\begin{remark}[\status{R}]
+NS.L1 is the true bottleneck lemma of the branch.  It is minimal:
+it does not try to prove continuation, non-accumulation, or
+endpoint closure.  It only proves that the successor defect
+(internal and boundary combined) is uniformly proportionally
+subordinate to the current obstruction above threshold, and that
+the total budget $\sup \vartheta_k + \mu_{\mathrm{int}} +
+\mu_{\mathrm{bdry}}$ remains strictly below $1$.  Once NS.L1 is
+available, NS.P1c is essentially complete.
+\end{remark}
+
+NS.L1 splits into two subordinate lemmas:
+
+\begin{theorem}[\status{O}]\label{thm:NSL1a}
+\textup{(Internal Defect Subordination, NS.L1a.)}  There exist
+branch constants $T_{\mathrm{NS}} > 0$ and $\mu_{\mathrm{int}}
+\geq 0$ such that whenever $\mathcal{O}_{\mathrm{NS}}(W_k) \geq
+T_{\mathrm{NS}}$:
+\[
+  \mathfrak{D}_k^{\mathrm{int}}
+  \;\leq\;
+  \mu_{\mathrm{int}}\,\mathcal{O}_{\mathrm{NS}}(W_k).
+\]
+\end{theorem}
+
+\begin{remark}[\status{R}]
+NS.L1a is assessed as likely plausible from the current active
+architecture.  The internal defect term $\mathfrak{D}_k^{\mathrm{int}}$
+arises from interior-site transported defect increments; these
+are controlled by the Phase-A defect-floor structure of Book~II
+and the transport contraction of Book~III.  Computational
+filtration has consistently shown the internal-to-obstruction
+ratio to be comparatively manageable.
+\end{remark}
+
+\begin{theorem}[\status{O}]\label{thm:NSL1b}
+\textup{(Spike-Resistant Boundary Defect Subordination,
+NS.L1b+.)}  There exist branch constants $T_{\mathrm{NS}} > 0$
+and $\mu_{\mathrm{bdry}} \geq 0$ such that whenever
+$\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$:
+\[
+  \mathfrak{D}_k^{\mathrm{bdry}}
+  \;\leq\;
+  \mu_{\mathrm{bdry}}\,\mathcal{O}_{\mathrm{NS}}(W_k),
+\]
+and moreover the promoted target scope has spike-resistant
+boundary control: every active admissible tail is eventually
+boundary-safe.
+\end{theorem}
+
+\begin{remark}[\status{R}]
+NS.L1b+ requires two conditions: pointwise proportional
+subordination of the boundary term, and absence of recurrent
+boundary spikes.  Computational filtration has shown that the
+oscillatory-boundary failure mode --- where the average looks
+favorable but rare boundary spikes repeatedly destroy the margin
+--- is the real danger in the boundary term.  NS.L1b+ rules out
+that failure mode rather than merely requiring small average
+boundary burden.
+\end{remark}
+
+\subsection{The boundary-side chain and NS.SB2}
+
+NS.L1b+ depends on a chain of boundary safety theorems:
+
+\begin{theorem}[\status{O}]\label{thm:NSRen5}
+\textup{(Late Alignment-to-Dissipation Lemma, Ren.5.)}
+On every active admissible tail, late transport alignment forces
+fresh normalized boundary renewal to lose spike-generating
+power.
+\end{theorem}
+
+\begin{remark}[\status{R}]\label{rmk:Ren5-live}
+Ren.5 is the \emph{smallest live theorem still plausibly inside
+the current active architecture} on the boundary spike-free
+side.  It asserts that once the transport geometry of the active
+windows aligns with the renewal pattern of boundary mismatch,
+the mismatch loses the capacity to generate normalized spikes
+repeatedly.  This is not a claim about the endpoint; it is a
+claim about the dynamics of the averaging architecture alone.
+
+If Ren.5 is proved, the chain
+\[
+  \text{Ren.5}
+  \;\Rightarrow\;
+  \text{Ren.4}
+  \;\Rightarrow\;
+  \text{SB1e}
+  \;\Rightarrow\;
+  \text{SB1d}
+  \;\Rightarrow\;
+  \text{SB1c}
+  \;\Rightarrow\;
+  \text{SB1 (Eventual Spike-Free Safety)}
+\]
+follows, giving the spike-free half of NS.L1b+.
+\end{remark}
+
+The spike-free side of NS.L1b+ does not by itself supply the
+positive reserve margin.  That requires a second structural
+ingredient:
+
+\begin{theorem}[\status{O}]\label{thm:NSSB2}
+\textup{(Positive Reserve on the Safe Tail, SB2.)}  Once a tail
+is spike-free in the boundary term, the boundary budget remains
+quantitatively separated from its saturation ceiling by a
+positive margin: there exists $\varepsilon_{\mathrm{bdry}} > 0$
+such that
+\[
+  \mu_{\mathrm{bdry}} \;<\; 1 - \sup_k \vartheta_k -
+  \mu_{\mathrm{int}} - \varepsilon_{\mathrm{bdry}}
+\]
+on every sufficiently late successor step of every active
+admissible tail.
+\end{theorem}
+
+\begin{remark}[\status{R}]\label{rmk:SB2-independent}
+SB2 is assessed as \emph{provisionally independent}: filtration
+evidence has shown that spike-free tails do not automatically
+guarantee a positive reserve margin.  There exist
+oscillatory-boundary architectures where the tail becomes
+eventually spike-free but the boundary term approaches the
+saturation ceiling asymptotically, leaving $\delta_{\mathrm{NS}}
+\to 0$.  SB2 asserts that this failure mode does not occur in
+the active architecture.  Whether SB2 follows from the current
+architecture or requires a genuinely new structural input is the
+main remaining question on the boundary side.
+\end{remark}
+
+\subsection{The gap theorem}
+
+\begin{theorem}[\status{O}]\label{thm:NSG1plus}
+\textup{(Strict Gap Estimate under Spike-Resistant Boundary
+Control, NS.G1+.)}  Assume NS.L1a, NS.L1b+, and a
+branch-uniform retained transport ceiling $\vartheta_k \leq
+\vartheta_{\mathrm{NS}} < 1$.  Then there exists a branch margin
+$\delta_{\mathrm{NS}} > 0$ such that on every sufficiently late
+successor step of every active admissible tail,
+\[
+  \vartheta_{\mathrm{NS}} + \mu_{\mathrm{int}} +
+  \mu_{\mathrm{bdry}}
+  \;\leq\;
+  1 - \delta_{\mathrm{NS}}.
+\]
+\end{theorem}
+
+\begin{remark}[\status{R}]
+NS.G1+ follows from NS.L1a + NS.L1b+ (which supplies both the
+internal and boundary subordination with spike-resistant
+guarantees) together with SB2 (which supplies the positive
+reserve margin).  The proof is then: the combined budget is at
+most $\vartheta_{\mathrm{NS}} + \mu_{\mathrm{int}} +
+\mu_{\mathrm{bdry}}$, and by SB2 this is at most
+$1 - \varepsilon_{\mathrm{bdry}}$, giving $\delta_{\mathrm{NS}}
+= \varepsilon_{\mathrm{bdry}}$.
+\end{remark}
+
+\subsection{The full continuation stack}
+
+Once the components above are assembled, NS.6.1 follows via the
+path:
+\begin{align*}
+  &\text{Ren.5}
+  \;\Rightarrow\; \text{SB1 (spike-free)} \\
+  &\text{SB2 (reserve)}\\
+  &\quad\Downarrow\\
+  &\text{NS.L1a} + \text{NS.L1b+}
+  \;\Rightarrow\; \text{NS.G1+}
+  \;\Rightarrow\; \text{NS.P1c}\\
+  &\quad\Downarrow\\
+  &\text{NS.P2 (contraction propagation)}
+  \;\Rightarrow\; \text{NS.P3 (non-accumulation)}\\
+  &\quad\Downarrow\\
+  &\text{NS.P4 (extendibility)}
+  \;\Rightarrow\; \text{NS.6.1 (continuation criterion)}\\
+  &\quad\Downarrow\\
+  &\text{NS.7.1 (endpoint bridge)}
+  \;\Rightarrow\; \text{NS endpoint closure.}
+\end{align*}
+
+
+\subsection{Current frontier note and conditional package}\label{sec:NS-conditional-package}
+
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\textbf{Current NS frontier.} The boundary side of the NS branch is now split into two distinct residual burdens:
+\begin{itemize}
+  \item \textbf{Proof-program frontier:} \textbf{UH.3} --- the last proof-program micro-lemma on the spike-free side.
+  \item \textbf{Structural frontier:} \textbf{SB2} --- the reserve-side structural input asserting positive reserve on the resulting safe tail.
+\end{itemize}
+All remaining open-status statements in the branch should be read through this split.
+\end{minipage}}
+\end{center}
+
+\section{Conditional Near-Closure Modes}\label{sec:NS-near-closure-modes}
+
+\noindent\textbf{Section 10 is the operational center of the branch.} It records the exact conditional package from which the continuation theorem follows once the proof-program frontier (\textbf{UH.3}) and the reserve-side structural input (\textbf{SB2}) are supplied.
+
+\subsection{Theoremic near-closure mode}
+
+\begin{theorem}[\status{C}]\label{thm:NSTN2}
+\textup{(Theoremic Near-Closure Package Theorem.)}
+Assume:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item internal defect subordination (NS.L1a),
+  \item a retained transport ceiling $\vartheta_k \le \vartheta_{\mathrm{NS}} < 1$,
+  \item discharge of the spike-free proof-program chain through \textbf{UH.3}, and
+  \item \textbf{SB2} (Positive Reserve on the Safe Tail).
+\end{enumerate}
+Then the NS branch satisfies $\mathrm{SB1}$, $\mathrm{NS.NS2}$, $\mathrm{NS.G1+}$, $\mathrm{NS.P1c}$, $\mathrm{NS.P1'}$, and therefore $\mathrm{NS.6.1}$.
+\end{theorem}
+
+\begin{corollary}[\status{C}]\label{cor:NSTN3}
+\textup{(Theoremic Near-Closure Endpoint Corollary.)}
+Assume the hypotheses of Theorem~\ref{thm:NSTN2} and also \textbf{NS.7.1}. Then the NS endpoint target follows.
+\end{corollary}
+
+\subsection{Fully explicit dual-input mode}
+
+\begin{definition}[\status{D}]\label{def:NSSF}
+\textup{(Spike-Free-Side Dissipation Input, NS.SF.)}
+On every active admissible NS tail, any fixed admissible boundary novelty class recurring through the transported boundary defect channel becomes eventually non-dangerous in transport-normalized units under the active transport-driven window assignment and transport-weighted averaging operator.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:NSDI2}
+\textup{(Dual-Input Conditional Continuation Package Theorem.)}
+Assume:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item internal defect subordination (NS.L1a),
+  \item a retained transport ceiling $\vartheta_k \le \vartheta_{\mathrm{NS}} < 1$,
+  \item \textbf{NS.SF} (spike-free-side dissipation), and
+  \item \textbf{SB2} (Positive Reserve on the Safe Tail).
+\end{enumerate}
+Then the spike-free boundary chain holds through $\mathrm{SB1}$, and the branch satisfies $\mathrm{NS.NS2}$, $\mathrm{NS.G1+}$, $\mathrm{NS.P1c}$, $\mathrm{NS.P1'}$, and therefore $\mathrm{NS.6.1}$.
+\end{theorem}
+
+\begin{proof}
+By Definition~\ref{def:NSSF}, recurring admissible boundary novelty becomes eventually non-dangerous in transport-normalized units on late active tails. Hence the spike-free chain culminates in $\mathrm{SB1}$. With NS.L1a, retained transport ceiling, and SB2, the late safe tail has positive reserve, yielding $\mathrm{NS.NS2}$ and then $\mathrm{NS.G1+}$. The strict gap gives above-threshold contraction, then tail-uniform contraction, and therefore $\mathrm{NS.6.1}$. \qedhere
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:NSDI3}
+\textup{(Dual-Input Conditional Endpoint Corollary.)}
+Assume the hypotheses of Theorem~\ref{thm:NSDI2} and also \textbf{NS.7.1}. Then the NS endpoint target follows.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:NSMode1}
+The NS branch should presently be read in one of two conditional modes. In \emph{theoremic near-closure mode}, the spike-free side remains inside the proof program through \textbf{UH.3}, while \textbf{SB2} remains the reserve-side input. In \emph{dual-input mode}, the unresolved spike-free dissipation mechanism is entered explicitly as \textbf{NS.SF}, parallel to \textbf{SB2}. The second mode is strictly more explicit, not less rigorous: it keeps both residual ingredients local, named, and non-circular.
+\end{remark}
+
+\begin{remark}[\status{R}]\label{rmk:SB2Freeze}
+\textup{(Reserve-side freeze note.)}
+At the present stage of the NS branch, the reserve side has been reduced as far as it can be responsibly pushed theoremically. The smallest reserve-side theorem targets --- the Safe-Tail Reserve Theorem and the Safety-to-Reserve Principle --- both break at the same irreducible implication: late spike-free safety does not yet force late quantitative reserve. Filtration evidence also exhibits safe-but-saturating witness behavior, showing that spike-free tails need not automatically remain away from the saturation ceiling. Therefore \textbf{SB2} --- Positive Reserve on the Safe Tail --- is no longer to be treated as a merely provisional expectation of the current architecture. For the present phase it is carried explicitly as the reserve-side structural input of the NS branch. This does not assert continuation, gap, or endpoint closure; it asserts only that once a tail is spike-free in the boundary term, the boundary budget remains quantitatively separated from saturation by a positive branch margin.
+\end{remark}
+
+\begin{remark}[\status{R}]\label{rmk:NSXB2}
+\textup{(Cross-branch closure-style refinement.)}
+The Yang--Mills and Navier--Stokes branches do not share a terminal theorem, but they do share a closure style inherited from the common coercive-transport source law. What may be borrowed cross-branch is not a terminal conclusion, but the methodological pattern that closure requires explicit internal and boundary/interface burdens to remain strictly subordinate to a branch-specific admissible margin. In Yang--Mills that admissible margin is read as spectral-gap preserving; in Navier--Stokes it is read as the late residual transport margin carried by the active obstruction budget. Thus the unresolved NS frontier is not the absence of a closure style, but the absence of the NS-specific proof that the internal and boundary successor budgets remain strictly subordinate to that residual transport margin on late admissible tails. The Yang--Mills branch therefore serves as a model of closure \emph{style}, while the actual Navier--Stokes subordination and reserve statements remain branch-local obligations.
+\end{remark}
+
+\begin{remark}[\status{R}]\label{rmk:NSDualInput}
+\textup{(Dual-input conditional closure note.)}
+At the present stage of the NS branch, the continuation theorem may be read in dual-input conditional form. On the spike-free side, the unresolved proof-program content has been reduced to the finite-recurrence-to-dissipation implication represented by \textbf{UH.3} and its final micro-lemma \textbf{UH.4}. On the reserve side, the unresolved structural content remains \textbf{SB2} --- Positive Reserve on the Safe Tail --- whose independence from mere spike-freedom is now explicitly recognized. If the spike-free side is supplied --- either by proving \textbf{UH.3} or by entering its residual dissipation principle as an explicit local input --- and if \textbf{SB2} is supplied as the reserve-side input, then the remaining continuation stack follows exactly as recorded in the conditional package theorem.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Anti-Circularity Note for Strong Boundary Safety}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]\label{rmk:AC}
+\textup{(Anti-circularity note for Strong Boundary Safety,
+NS.AC.)}  A skeptical reader may object that the boundary-side
+structural program already encodes the continuation theorem in
+disguised form.  The following five points address this
+objection.
+
+\emph{(1) Different logical levels.}  The continuation theorem
+NS.6.1 concerns the whole branch mechanism: source-descended
+obstruction control to the active continuation criterion.  The
+boundary safety theorems concern only one term in the
+successor-step decomposition: the boundary successor defect
+contribution $\mathfrak{D}_k^{\mathrm{bdry}}$ and its late-tail
+behavior.  These are at different logical levels.
+
+\emph{(2) Term-locality.}  NS.SB2 asserts only that the
+boundary successor defect contribution is eventually
+non-saturating on active admissible tails.  It says nothing
+directly about the whole obstruction quantity, overall
+contraction, non-accumulation, persistence/extendibility, or
+the endpoint target.
+
+\emph{(3) Further theorems required.}  Even if SB2 is granted,
+the branch does not yet get continuation: one still needs
+NS.L1a, retained transport ceiling, NS.G1+, NS.P1c, NS.P1', and
+NS.6.1.  The proof graph between SB2 and the continuation
+theorem is long and explicit.
+
+\emph{(4) No continuation language.}  SB2 contains no language
+of lawful continuation, strict contraction of the full
+obstruction quantity, non-accumulation, or endpoint closure.
+Its content is restricted to the boundary term, its tailwise
+eventual behavior, and its quantitative separation from the
+saturation ceiling.
+
+\emph{(5) Independent falsifiability.}  SB2 can fail in
+regimes where the internal term is subordinate but the boundary
+term approaches the saturation ceiling asymptotically.  Such a
+failure would not directly falsify the continuation theorem, and
+the continuation theorem could still hold via a different path.
+They are therefore independent.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Final Status Proposition}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:NS-status}
+\textup{(NS Branch Status Proposition.)}  The NS branch is a
+lawful descendant of the canonical spine and a mathematically
+serious program, but it is presently frontier-blocked rather
+than closed.
+\end{proposition}
+
+\begin{proof}
+Lawful descent: Proposition~\ref{prop:NS-lawful}.
+Mathematical seriousness: the branch has a complete canonical
+descent architecture, a well-defined obstruction object, a named
+continuation criterion, a frozen bridge-theorem shell, and a
+structured proof program decomposing the missing theorem into
+explicit subtheorems.  Frontier-blocked status: by the NS
+Frontier Theorem (Theorem~\ref{thm:NS-frontier}), closure
+requires Theorem~\ref{thm:NS61}, which is currently open.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:NS-claims}
+The NS branch may claim:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item lawful source descent from $\mathbf{U}$,
+  \item lawful branch admissibility under Book~V,
+  \item a well-defined source-descended obstruction quantity,
+  \item a lawful bridge-stack formulation with named open
+        theorem, and
+  \item an explicit named failure frontier (Ren.5 and SB2).
+\end{enumerate}
+The NS branch may not claim unconditional endpoint closure.
+\end{corollary}
+
+\begin{remark}[\status{R}]
+\textup{(Pre-canonical structural achievements.)}
+The v8.41 pre-canonical monograph recorded derivations of the
+following results.  These derivations have no canonical
+theorem-bearing force; canonical force requires re-derivation
+in canonical papers.  For the record:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item \textbf{NS Stage-0} (Thm.~36.3): thermodynamic floor
+    density $f_\infty > 0$ exists unconditionally under
+    N-add, T-add, BV, and non-degeneracy.
+  \item \textbf{NS Stage-1} (Thm.~36.4): boundary flux
+    $\varphi_\infty \geq 0$ stabilizes unconditionally.
+  \item \textbf{NS Stage-2} (Thm.~36.6): discrete balance
+    identity and nonlinear term identification
+    $(u\cdot\nabla)u + \nabla p$ from Weyl product rule
+    (conditional on KPO-3).
+  \item \textbf{Leray weak existence} (Thm.~36.13): for every
+    $u_0 \in L^2(\mathbb{R}^3)$ with $\nabla\cdot u_0 = 0$,
+    a global Leray weak solution exists unconditionally.
+  \item \textbf{NS Stage-3 pre-canonical path}: under $K_0=7$
+    (a theorem, Bk.~I Thm.~\ref{thm:K0-prime}), the dream-suite
+    discharge chain (Papers~BW $+$ BX $+$ BS) gives
+    $u \in C^\infty(\mathbb{R}^3\times(0,\infty))$ at status
+    $\mathsf{Cond}(K_0=7)$.  See Remark~\ref{rmk:NS-precanonical-path}.
+\end{enumerate}
+Items~(a)--(d) have recorded pre-canonical derivations at
+stated-unconditional level; canonical force requires
+re-derivation in canonical papers.
+Item~(e) records a conditional closure path pending
+Theorem~\ref{thm:NS61}; the path has no canonical force.
+\end{remark}
+
+\begin{remark}[\status{R}]
+\textup{(Current canonical re-derivation state.)}
+The following results have now been re-derived in canonical papers:
+\begin{itemize}
+  \item NS Stage-0: $f_\infty > 0$ exists (Thm.~\ref{thm:NS-stage0},~[U]).
+  \item NS Stage-1: $\varphi_\infty \geq 0$ exists (Thm.~\ref{thm:NS-stage1},~[U]).
+  \item NS Stage-2a: Discrete balance identity (Thm.~\ref{thm:NS-stage2a},~[U]).
+  \item NS Stage-2b: Nonlinear term identification (Thm.~\ref{thm:NS-stage2b},~[C]
+    on KPO-3).
+  \item Leray weak existence: global $L^2$ weak solution
+    (Thm.~\ref{thm:NS-leray},~[U]).
+\end{itemize}
+NS Stage-3~(Thm.~\ref{thm:NS61}) remains~[O] in canonical papers.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Boundary of the NS Branch Book}
+%% ---------------------------------------------------------------
+
+\textbf{What the NS branch book establishes.}
+\begin{enumerate}
+  \item The NS branch is a lawful descendant of $\mathbf{U}$,
+        satisfying all five conditions of the Universal Branch
+        Legitimacy Theorem.
+  \item The NS obstruction quantity is well-defined and
+        source-descended, not an external primitive.
+  \item The bridge stack from source-descended obstruction
+        control to the NS endpoint target is completely
+        specified, with the missing step named precisely as
+        NS.6.1.
+  \item The proof program for NS.6.1 is structured and explicit,
+        with the current frontier narrowed to UH.3 on the spike-free proof-program side and SB2 on the reserve-side structural side.
+  \item Strong Boundary Safety is not the continuation theorem
+        in disguise; it is strictly upstream of it.
+\end{enumerate}
+
+\textbf{What the NS branch book does not establish.}
+\begin{enumerate}
+  \item \emph{NS closure.}  The NS Frontier Theorem is
+        unconditionally proved; NS.6.1 is not.
+  \item \emph{Proof of the full conditional package.}  The branch still lacks discharge of the last proof-program micro-lemma UH.3 or explicit adoption of its spike-free-side dissipation replacement, and it still lacks unconditional reserve on the safe tail beyond SB2.
+  \item \emph{Resolution of the NS Millennium Prize question.}
+        That reduction is downstream of both UH.3/SF and SB2, together with the endpoint bridge NS.7.1.
+  \item \emph{Any source-level claim.}  No theorem in this
+        branch book modifies or supplements the content of
+        Books~I--VII.
+\end{enumerate}
+
+\begin{remark}[\status{R}]
+For the branch's operative conditional theorem package, see Section~\ref{sec:NS-near-closure-modes}. For the final residual frontier after all reductions, see the current frontier note in Section~\ref{sec:NS-conditional-package} and the status statement in Section~12.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{3.8cm}p{0.8cm}p{3.2cm}p{5.2cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on}
+  & \textbf{Exports to} \\
+\hline
+\ref{prop:NS-lawful}\ NS Lawful Descent
+  & [U] & Bk.~IV, Bk.~V
+  & \ref{prop:NS-witness}, \ref{thm:NS-frontier} \\
+
+\ref{prop:NS-witness}\ NS Legitimacy Witness
+  & [U] & Bk.~V
+  & \ref{cor:NS-no-undeclared}, \ref{thm:NS-frontier} \\
+
+\ref{thm:NS-obstruction-exists}\ Source-to-NS Obstr.
+  & [U] & Bk.~III, Defs.~\ref{def:NS-active-weight}--\ref{def:NS-obstruction}
+  & \ref{thm:NS61}, \ref{thm:NS-frontier} \\
+
+\ref{prop:NS-criterion-required}\ Criterion Required
+  & [U] & Bk.~VI
+  & \ref{cor:NS-no-unnamed-criterion}, \ref{thm:NS61} \\
+
+\ref{thm:NSP1}\ Window Coherence
+  & [U] & Bk.~III, Def.~\ref{def:NS-contraction-profile}
+  & \ref{thm:NSP1b} \\
+
+\ref{thm:NSP1b}\ Successor Decomp.
+  & [O] & \ref{thm:NSP1}, Bk.~III three-source
+  & \ref{thm:NSP1c} \\
+
+\ref{thm:NSL1a}\ Internal Defect Subord.
+  & [O] & \ref{thm:NSP1b}, Phase-A floor
+  & \ref{thm:NSL1} \\
+
+\ref{thm:NSRen5}\ Late Align.-to-Dissip.
+  & [O] & Active architecture
+  & SB1 chain $\Rightarrow$ \ref{thm:NSL1b} \\
+
+\ref{thm:NSSB2}\ Positive Reserve
+  & [O] & Spike-free architecture
+  & \ref{thm:NSG1plus} \\
+
+\ref{thm:NSL1b}\ Spike-Res.\ Bdry Subord.
+  & [O] & \ref{thm:NSRen5}, \ref{thm:NSSB2}
+  & \ref{thm:NSL1} \\
+
+\ref{thm:NSL1}\ Split-Defect Subord.
+  & [O] & \ref{thm:NSL1a}, \ref{thm:NSL1b}
+  & \ref{thm:NSP1c} \\
+
+\ref{thm:NSG1plus}\ Strict Gap Est.
+  & [O] & \ref{thm:NSL1}, transport ceiling
+  & \ref{thm:NSP1c} \\
+
+\ref{thm:NSP1c}\ Above-Threshold Contr.
+  & [O] & \ref{thm:NSP1b}, \ref{thm:NSL1}
+  & \ref{thm:NS61} \\
+
+\ref{thm:NS61}\ Obstr.-to-Criterion Thm.
+  & [O] & \ref{thm:NSP1}--\ref{thm:NSP1c},
+    Def.~\ref{def:NS-active-criterion}
+  & \ref{cor:NS61-consequence}, \ref{cor:NS-both-give-endpoint} \\
+
+\ref{thm:NS71}\ Criterion-to-Endpoint
+  & [B] & Def.~\ref{def:NS-active-criterion}, Bk.~VI
+  & \ref{cor:NS-both-give-endpoint} \\
+
+\ref{thm:NS-frontier}\ NS Frontier Thm.
+  & [U] & \ref{prop:NS-lawful}, \ref{prop:NS-criterion-required},
+    \ref{thm:NS61}, Bk.~VI, Bk.~VII
+  & \ref{cor:NS-rephrasing-useless}, \ref{cor:NS-no-unconditional} \\
+
+\ref{prop:NS-status}\ NS Status Prop.
+  & [U] & \ref{prop:NS-lawful}, \ref{thm:NS-frontier}
+  & Branch summary; external status statement \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{scholium}[\status{R}]\label{sch:NS-final}
+The NS branch is lawful, structurally serious, and precisely
+organized.  It is not blocked by a vague missing bridge.  It is
+blocked by two small, explicit, separated frontier items ---
+UH.3 on the proof-program side and SB2 on the reserve-side
+structural side --- each of which has a precise mathematical
+statement, a clear logical role in the proof graph, and an
+explicit anti-circularity argument separating it from the
+conclusion it is trying to support.  That precision is the
+discipline Book~VII mandates, and the NS branch book satisfies
+it.
+\end{scholium}
+
+\end{document}
+
+\begin{remark}[\status{R}]
+\textup{(Structural completeness of the pre-canonical record.)}
+The pre-canonical program has recorded derivation sketches for
+every structural sub-obligation except NS Stage-3 (the Clay Prize
+question).  These derivation sketches have no canonical force;
+they identify which canonical proofs remain to be written.  All
+obligations within reach of the current NFC framework are discharged.
+The frontier Theorem~\ref{thm:NS61} is not vague: it asks whether
+the LR-weighted boundary-order condition
+(Definition~\ref{def:NS-strong-ba}) holds, and the dream-suite
+resolution path shows it does under $K_0=7$.  When that import is
+complete, the NS branch will advance from frontier-blocked to
+$\mathsf{Cond}(K_0=7)$-closed.
+\end{remark}

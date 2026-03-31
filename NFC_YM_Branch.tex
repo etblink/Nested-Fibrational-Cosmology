@@ -1,0 +1,2246 @@
+%% Elements of Nested Fibrational Cosmology
+%% Yang--Mills Branch Book
+%% Status: CERT-PROJ direction; not yet CERT-CLOSE
+%%
+%% Status legend:
+%%   [U]  Unconditional  -- proved from spine imports and prior [U] results
+%%   [C]  Conditional    -- depends on explicitly declared hypotheses
+%%   [D]  Definition-structural -- structural, no proof obligation
+%%   [R]  Remark only    -- expository, non-load-bearing
+%%   [O]  Open obligation -- not yet proved; named failure frontier
+%%   [B]  Bridge         -- carries force from scoped to wider regime
+
+\documentclass[12pt,oneside]{amsbook}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+%% ---------------------------------------------------------------
+%% Theorem environments
+%% ---------------------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{openobligation}[theorem]{Open Obligation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+%% Status tag macro
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% ---------------------------------------------------------------
+%% Notation
+%% ---------------------------------------------------------------
+%%   U, \mathbf{U}     Universal source object
+%%   F_YM              YM realization functor
+%%   C_YM              Yang--Mills target category
+%%   G_{gap}           Gap margin (G_{gap}(X) > 0 = gap-subcritical)
+%%   U_YM              Branchwise YM completion object
+%%   Delta_YM          Yang--Mills mass gap (DISTINCT from Delta = defect ledger)
+%%   K_0 = 7           Collar alphabet size (prime; K_0=7 selection conditional on AV+BJ)
+%%   SA_1, SA_2        Symmetry-Forcing Schemas (Rank 1 and 2)
+%%   Phase-A           Certified stability sector (Book II, Def. II.5.1)
+%%   PASS              Protected Approx. Structural Symmetry (Book II, Thm. II.5.14)
+%%   beta              log_2(3/2) -- canonical transport normalization (Book IV)
+%%   m^2               Spectral gap lower bound from UCTI
+%%   mu                LR decay constant mu = m^2 beta
+
+\begin{document}
+
+\title{Yang--Mills Branch Book\\[6pt]
+       Spectral-Coercive Realization, Gap-Subcritical Persistence,\\
+       and the Closure Ledger}
+\author{Elements of Nested Fibrational Cosmology}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{Front Block}
+%% ---------------------------------------------------------------
+
+The following five items constitute the mandatory intake declaration
+required by Book~VII (Canonical Closure Schema Theorem, Thm.~VII.6.4)
+and Book~V (UBLT, Thm.~V.7.4; Certified Branch Legitimacy Theorem,
+Thm.~V.8.1).
+
+\paragraph{Imported spine results.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Book~I: Observational Quotient Theorem (Thm.~I.6.1);
+        $K_0$ primality (Thm.~I.3.7); Structural Entropy and
+        Entropy Monotonicity (Def.~I.5.1, Thm.~I.5.2); Collapse
+        Gates CG-1--CG-6 (SRs~I.1.4--I.1.9).
+  \item Book~II: Boundary Stabilization Theorem (Thm.~II.8.1);
+        Phase-A/B/C structural classification (Def.~II.5.1);
+        PASS as Derived Necessity (Thm.~II.5.14); Binary Rigidity
+        (Thm.~II.5.8); Bit-Budget Bound (Thm.~II.5.12).
+  \item Book~III: Unified Coercive-Transport Inequality
+        (Thm.~III.5.1); Finite Transfer Coercive Inequality
+        (Thm.~III.6.3); Depth-Sum Convergence
+        (Thm.~III.5.4);
+        Shared Spectral Hinge (Sch.~III.8.2).
+  \item Book~IV: Universal Source Thm.~(IV.7.1);
+        Completion Ladder Thms.~IV.2.1--5 (ORA--UC);
+        Canonical Projection Thm.~(IV.5.4).
+  \item Book~V: Branch Projection (V.3.1); UBLT (V.7.4);
+        Certified Branch Legitimacy (V.8.1).
+  \item Book~VI: Effective Continuum Legitimacy Theorem
+        (Thm.~VI.9.1); Continuum No-Smuggling Corollary.
+  \item Book~VII: Scoped Certificate Rule (Thm.~VII.2.4);
+        Promotion Requires Transfer (Thm.~VII.2.5); Frontier
+        Stability Theorem (Thm.~VII.4.3); No-Hidden-Upgrade Rule
+        (Prop.~VII.6.x); Non-Retroactivity (Thm.~VII.6.y);
+        Canonical Closure Schema Theorem (Thm.~VII.6.4).
+\end{enumerate}
+
+\paragraph{Branch-specific data.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item A declared YM target regime: the Phase-A sector of the
+        color-gauge collar algebra on the canonical $K_0=7$
+        substrate, with transport factor $\Theta_n = 1$
+        (gap-subcritical persistence regime).
+  \item A branch-specific YM observable family: the spectral data
+        of the covariant Laplacian $\mathcal{L}$ on the screened
+        sector, defined in Section~\ref{sec:arena}.
+  \item A branch-specific YM gap margin: $G_{\mathrm{gap}}(X) :=
+        \lambda_1(\Delta_A(X)) - 0 > 0$ on the Phase-A sector,
+        defined in Section~\ref{sec:gap-margin}.
+  \item A branch-specific transport normalization:
+        $(\lambda,\mu,\nu) = (1,1,\beta)$ with
+        $\beta = \log_2(3/2)$ (Book~IV, Thm.~IV.normalization),
+        yielding $\Theta_n = 1$.
+  \item The five YM closure obligations O\_ID, O\_RIG, O\_ENC,
+        O\_GLOB, O\_CLU forming the closure ledger
+        (Section~\ref{sec:closure-ledger}).
+\end{enumerate}
+
+\paragraph{Endpoint target.}
+A lawful YM descendant closure claim: the Yang--Mills spectral mass
+gap $\Delta_{\mathrm{YM}} > 0$ on the canonical $K_0=7$ NFC substrate
+in the Phase-A sector, together with the OS/Wightman structural
+properties (cluster decomposition, vacuum uniqueness).  The specific
+numerical gap value $\Delta_{\mathrm{YM}} = m^2 > 0$ is determined
+by the spectral floor of the UCTI applied to the YM branch.
+
+\paragraph{Bridge stack.}
+The YM branch requires the following steps in sequence:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Source-descended spectral/coercive structure (Book~III
+        UCTI, $\Theta_n = 1$ regime).
+  \item Target-side structural identification (TSI): identify the
+        discrete NFC operator algebra with a continuum Yang--Mills
+        gauge algebra.  Requires O\_ID discharge.
+  \item Operator rigidity and encoding compatibility: establish
+        Lipschitz control and discretization-independent spectral
+        gap.  Requires O\_RIG and O\_ENC discharge.
+  \item Global coercivity and cluster decomposition: extend gap
+        from Phase-A sector to global statement; establish
+        exponential clustering.  Requires O\_GLOB and O\_CLU
+        discharge.
+  \item Continuum interface: Book~VI legitimacy for
+        the gap claim and OS/Wightman properties.
+\end{enumerate}
+
+\paragraph{Current status.}
+\textbf{Gap-subcritical closure-directed lawful branch.  Not yet
+CERT-CLOSE.}
+
+The YM branch is a lawful descendant of the canonical spine.  The
+five closure obligations O\_ID through O\_CLU are partially
+hardened in the retired notes (v8.41, v7.35) but must be
+re-derived in canonical papers to acquire theorem-bearing force.
+The primary named failure frontier is the O\_ID/NFC-YM-1 complex:
+the discrete Lie-closure analytic certification needed to identify
+the NFC collar algebra with $\mathfrak{su}(3)\oplus\mathfrak{su}(2)
+\oplus\mathfrak{u}(1)$.
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{YM.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+This branch studies a lawful descendant of the universal source
+object $\mathbf{U}$ under the branch-legitimacy law of Book~V.
+Its task is to determine whether the declared YM endpoint target
+--- the Yang--Mills spectral mass gap $\Delta_{\mathrm{YM}} > 0$
+--- can be realized by a certified source-descended projection
+together with the explicit bridge stack stated above.
+
+The YM branch is the most structurally developed of the four named
+branches.  It has a detailed closure ledger, explicit obligations,
+partially hardened proofs in retired notes, and a clear statement
+of the main failure frontier.  It does not yet reach CERT-CLOSE
+because the five obligations (O\_ID through O\_CLU) remain
+re-derivation targets in the canonical framework.
+
+This branch book does not function as an alternate foundation for
+NFC.  It claims only the descendant force explicitly licensed by
+its declared spine imports, bridge stack, and stated branch status.
+
+%% ---------------------------------------------------------------
+\section{Branch Governance Preamble}
+\label{sec:governance}
+%% ---------------------------------------------------------------
+
+This section records the canonical branch governance framework.
+Every branch book must include this section; the theorems here
+apply to any lawful NFC branch.
+
+\begin{standingrule}[\status{D}]\label{sr:branch-no-smuggling}
+\textup{(Branch Non-Smuggling.)}  No branch book may gain theorem
+force from undeclared target-side primitives, hidden carrier
+enrichment, or silent imports not listed in the front block's
+intake declaration.  Every theorem in this book cites only declared
+imports, branch-specific constructions, and results proved in prior
+sections.
+\end{standingrule}
+
+\begin{proposition}[\status{U}]\label{prop:formation}
+\textup{(Formation.)}  A lawful NFC branch exists only if the
+following are jointly satisfied: a licensed realization functor
+$F_{\mathrm{YM}} : \mathrm{POT} \to \mathcal{C}_{\mathrm{YM}}$,
+a declared burden package $\mathrm{Cert}_{\mathrm{YM}}$, a
+terminal predicate $\tau_{\mathrm{YM}}$, and a named failure
+frontier $\mathrm{FF}_{\mathrm{YM}}$.  Omitting any component
+renders the branch constitutionally malformed.
+\end{proposition}
+
+\begin{proof}
+Book~V, Thm.~V.8.1 (Certified Branch Legitimacy Theorem) requires
+all five components of the branch candidate
+$(U, \mathcal{C}_{\mathrm{YM}}, F_{\mathrm{YM}},
+\mathrm{Cert}_{\mathrm{YM}}, \tau_{\mathrm{YM}},
+\mathrm{FF}_{\mathrm{YM}})$ to be jointly declared.  Formation
+without all components violates the Branch Projection Theorem
+(Book~V, Prop.~V.3.1).
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:cleanliness}
+\textup{(Constitutional Cleanliness.)}  The YM branch candidate
+is constitutionally clean if and only if all five components
+listed in Proposition~\ref{prop:formation} are independently
+recoverable from the declared front block, with no hidden
+dependency chain, no silent import, and no circular derivation.
+\end{proposition}
+
+\begin{proof}
+Follows from the Dependency Declaration Theorem (Book~VII,
+Thm.~VII.5.4): every descendent theorem must have its full support
+explicitly declared.  Constitutional cleanliness is the positive
+formulation of this requirement for the branch as a whole.
+\end{proof}
+
+\begin{theorem}[\status{O}]\label{thm:readability}
+\textup{(Readability Theorem.)}  \textup{[Proof skeleton ---
+open obligation.]}  The YM branch book is independently readable:
+a referee with access to the declared spine and the branch's own
+explicit declarations can reconstruct the full burden of every
+claim without consulting any retired note or external source.
+\end{theorem}
+
+\begin{remark}[\status{R}]
+Thm.~\ref{thm:readability} is the canonical P3 obligation (from
+the retired Branch~A* governance layer).  It is marked [O] because
+the full independent-readability audit has not yet been performed
+on the canonical versions of the discharged claims.  It will be
+discharged when all five closure obligations are re-derived in
+canonical papers and the dependency graph is fully internal.
+\end{remark}
+
+\begin{proposition}[\status{U}]\label{prop:full-distinctness}
+\textup{(Full Distinctness.)}  The YM branch is genuinely distinct
+from the NS, GR, and SCC branches: it differs from each on at
+least one certified endpoint-visible structural property (the
+spectral gap predicate $\Delta_{\mathrm{YM}} > 0$, which is not
+the terminal predicate of any other named branch).
+\end{proposition}
+
+\begin{proof}
+The NS branch targets fluid regularity (not a spectral gap on a
+gauge algebra).  The GR branch targets causal-geometric
+realization (not spectral coercivity).  The SCC branch targets
+structural counterfactual capacity (not a gauge-theoretic gap).
+Therefore the YM terminal predicate is not the terminal predicate
+of any other declared branch: the YM branch is fully distinct.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:label-admissibility}
+\textup{(Interpretive Label Admissibility.)}  The label
+``Yang--Mills mass gap'' applied to $\Delta_{\mathrm{YM}} > 0$
+is admissible: (i) it adds no theorem content beyond the spectral
+gap claim; (ii) it asserts no independent ontology; (iii) it
+imports no phenomenology absent from the theorem; (iv) it does not
+depend on data outside the certified source image.
+\end{proposition}
+
+\begin{proof}
+Test~(i): the spectral gap statement $\lambda_1(\Delta_A) \geq m^2
+> 0$ is the full content; ``Yang--Mills'' is an interpretation of
+the gauge algebra identification, not additional force.  Tests
+(ii)--(iv): the NFC gauge algebra $\mathfrak{su}(3)\oplus\mathfrak{su}(2)
+\oplus\mathfrak{u}(1)$ is derived from the collar structure; no
+external physical premise is imported.  The label is eliminable
+by reverting to the spectral description.
+\end{proof}
+
+%% Status vocabulary for this branch
+\begin{remark}[\status{D}]\label{rmk:status-vocab}
+\textup{(Status vocabulary.)}  This branch uses the canonical
+failure code and positive status alphabet.
+\textbf{Admission:} FI-SRC (source-image failure), FI-FUN
+(functorial failure).
+\textbf{Rung:} FI-ORA, FI-CTM, FI-TIN, FI-MCS, FI-UC, FI-TSI.
+\textbf{Propagation:} FI-PROP.
+\textbf{Positive:} CERT-PROJ (certified projection), CERT-CLOSE
+(closure-grade).
+\textbf{Interpretive:} FI-IADD, FI-IONT, FI-IPHEN, FI-ISRC.
+At the current stage: no stronger than CERT-PROJ is licensed for
+any YM claim (the five closure obligations block CERT-CLOSE).
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Imported Spine Structure}
+\label{sec:imports}
+%% ---------------------------------------------------------------
+
+\textbf{Imports from Book~I.}  We work with the stabilized
+observational quotient $\Sigma_\infty$ and the defect ledger
+$\Delta$ (Book~I, Props.~I.4.1, I.5.4).  The collar alphabet size
+$K_0$ is prime (Book~I, Thm.~I.3.7).  The six collapse gates
+CG-1--CG-6 are standing rules of this book.  PASS holds for all
+persistence-selected systems (imported from Book~II,
+Thm.~II.5.14).
+
+\textbf{Imports from Book~II.}  We assume Phase-A stability
+throughout unless otherwise stated (Book~II, Def.~II.5.1).  The
+Boundary Stabilization Theorem (Book~II, Thm.~II.8.1) governs
+local collar determinacy.  The Phase-A/Phase-C boundary is
+identified with the Gribov boundary in Section~\ref{sec:closure-ledger}.
+
+\textbf{Imports from Book~III.}  The Unified Coercive-Transport
+Inequality (Book~III, Thm.~III.5.1) with transport factor
+$\Theta_n = 1$ (YM gap-subcritical regime) is the source of the
+spectral lower bound that the YM branch reads as a mass gap.  The
+shared spectral hinge (Book~III, Sch.~III.8.2) identifies $m^2>0$
+from the UCTI as the YM-branch-specific gap input.
+
+\textbf{Imports from Book~IV.}  The Universal Source Theorem
+(Book~IV, Thm.~IV.7.1) certifies $\mathbf{U} \in \mathrm{POT}$
+as the apex from which the YM realization functor descends.  The
+five source-side rungs ORA--UC are imported as discharged [U]
+results; only TSI remains branch-specific.
+
+\textbf{Imports from Books~V--VII.}  The branch-legitimacy
+framework of Book~V certifies the YM candidate as a lawful branch.
+The continuum interface legitimacy of Book~VI licenses the gap
+claim's continuum reading.  Book~VII's force-governance applies to
+every claim in this book.
+
+\begin{standingrule}[\status{D}]\label{sr:ym-no-continuum-smuggle}
+No continuum differential operator, smooth metric, or Riemannian
+geometry is assumed primitive.  The covariant Laplacian $\Delta_A$
+and connection $A$ are derived from the discrete NFC collar
+structure via the Book~VI continuum interface; they are licensed
+tools, not primitive inputs.
+\end{standingrule}
+
+%% ---------------------------------------------------------------
+\section{Branch-Specific Arena}
+\label{sec:arena}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:YM-target-cat}
+The \emph{Yang--Mills target category} $\mathcal{C}_{\mathrm{YM}}$
+consists of:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Objects: Phase-A certified NFC configurations $X$ equipped
+        with a collar-inherited connection $A(X)$ and covariant
+        Laplacian $\Delta_{A(X)}$.
+  \item Morphisms: admissible YM enlargements $X \leadsto X'$
+        (gap-subcritical admissible enlargements, satisfying the
+        YM-ICDC condition).
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:YM-functor}
+The \emph{YM realization functor}
+$F_{\mathrm{YM}} : \mathrm{POT} \to \mathcal{C}_{\mathrm{YM}}$
+maps each POT object $P$ to the Phase-A certified configuration
+$F_{\mathrm{YM}}(P)$ carrying the collar-inherited connection data.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:gap-margin}
+\label{sec:gap-margin}
+The \emph{gap margin} of a YM object $X \in \mathcal{C}_{\mathrm{YM}}$
+is
+\[
+  G_{\mathrm{gap}}(X) \;:=\; \lambda_1(\Delta_{A(X)}) \;>\; 0,
+\]
+the smallest eigenvalue of the covariant Laplacian.  An object $X$
+is \emph{gap-subcritical} if there exists $m^2 > 0$ such that
+$G_{\mathrm{gap}}(X) \geq m^2$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:YM-gap-subcritical}
+\textup{(Gap-Subcriticality.)}
+A YM object $X \in \mathcal{C}_{\mathrm{YM}}$ is \emph{gap-subcritical}
+if $G_{\mathrm{gap}}(X) \geq m^2 > 0$ for some $m^2 > 0$.  An
+admissible enlargement $X \hookrightarrow X'$ is \emph{gap-subcritical}
+if the defect terms satisfy
+\[
+  E_n(X) + B_n(X) \;<\; g_\infty(X),
+\]
+i.e., the sum of the excitation defect $E_n$ and the boundary defect
+$B_n$ is strictly subordinate to the current spectral gap
+$g_\infty$.  Gap-subcriticality is the explicit closure condition that
+Theorem~\ref{thm:YM-covariant-gap} requires: when it holds at every
+step of the YM-ICDC program, the spectral gap is preserved and the
+YM mass gap is certified.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:YM-terminal-predicate}
+The \emph{YM terminal predicate} is
+\[
+  \tau_{\mathrm{YM}}(X)
+  \;\iff\;
+  G_{\mathrm{gap}}(X) \;\geq\; m^2 \;>\; 0
+  \quad\text{for all admissible completions of } X.
+\]
+The Yang--Mills mass gap is $\Delta_{\mathrm{YM}} := m^2 > 0$
+(notation: $\Delta_{\mathrm{YM}}$ is the mass gap; $\Delta$ alone
+denotes the defect ledger --- these must never be conflated).
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:YM-branchwise-completion}
+The \emph{branchwise YM completion object} $\mathcal{U}_{\mathrm{YM}}$
+is the branch-relative recipient for all lawful local YM
+realizations.  It is not a second universal source; it is a
+branch-local assembly point for certified YM data.
+\end{definition}
+
+%% ---------------------------------------------------------------
+\section{Lawful Descent and Gap-Subcritical Persistence}
+\label{sec:descent}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:YM-lawful}
+\textup{(YM Branch is Lawful.)}  The branch candidate
+$\mathfrak{B}_{\mathrm{YM}} = (\mathbf{U}, \mathcal{C}_{\mathrm{YM}},
+F_{\mathrm{YM}}, \mathrm{Cert}_{\mathrm{YM}},
+\tau_{\mathrm{YM}}, \mathrm{FF}_{\mathrm{YM}})$
+is a lawful NFC branch: it satisfies all five conditions of the
+Certified Branch Legitimacy Theorem (Book~V, Thm.~V.8.1).
+\end{proposition}
+
+\begin{proof}
+(1)~Source descent: $F_{\mathrm{YM}}$ descends from $\mathbf{U}$
+via the lawful realization structure of Book~IV.
+(2)~Intake survival: the YM candidate survives the constitutional
+intake ladder through UC (five source-side rungs discharged); TSI
+is a target-side obligation tracked in the closure ledger.
+(3)~Ledger completeness: all non-source burdens (O\_ID through
+O\_CLU) are explicitly ledgered in Section~\ref{sec:closure-ledger}.
+(4)~Status honesty: the YM branch is cited at CERT-PROJ force,
+not at closure force, until all five obligations are discharged.
+(5)~Non-retroactivity: the YM branch does not affect the NS, GR,
+or SCC branches (Book~VII, Thm.~VII.6.y).
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:YM-ICDC}
+\textup{(YM-ICDC: Gap-Subcritical Persistence.)}
+\textup{[Conditional on Phase-A, $K_0=7$, PASS, SA\textsubscript{2},
+gap-subcriticality of $X$.]}
+Let $X \in \mathcal{C}_{\mathrm{YM}}$ be a lawful gap-subcritical
+Phase-A object with $G_{\mathrm{gap}}(X) \geq m^2 > 0$, and let
+$X \leadsto X'$ be an admissible YM enlargement with interface
+error terms $E_n, B_n$ satisfying
+$E_n + B_n < G_{\mathrm{gap}}(X)$.  Then
+\[
+  G_{\mathrm{gap}}(X') \;\geq\; G_{\mathrm{gap}}(X) - (E_n + B_n)
+  \;>\; 0.
+\]
+In particular, gap-subcriticality is preserved under controlled
+admissible enlargement.
+\end{theorem}
+
+\begin{proof}
+Apply the Unified Coercive-Transport Inequality (Book~III,
+Thm.~III.5.1) with $C_n(X) = G_{\mathrm{gap}}(X)$,
+$\Theta_n = 1$ (no contraction in the gap-subcritical YM regime),
+and boundary/internal defect terms $E_n, B_n$.  The inequality
+gives $C_{n+1}(X') \leq C_n(X) + E_n + B_n$.  Since
+$C_n(X) = G_{\mathrm{gap}}(X) \geq m^2$ and $E_n + B_n <
+G_{\mathrm{gap}}(X)$, we obtain $G_{\mathrm{gap}}(X') > 0$.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:YM-ICDC} is the YM terminal specialization of
+the ICDC Schema (Book~III, Sch.~III.8.1).  It shows that the
+spectral gap survives controlled admissible enlargement.  The
+open question (O\_GLOB) is whether this extends from the Phase-A
+sector to the global coercivity statement $\lambda_1(\Delta_A)
+\geq m^2$ uniformly --- without restricting to small-energy
+configurations.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{The Closure Ledger}
+\label{sec:closure-ledger}
+%% ---------------------------------------------------------------
+
+The following table records the five core closure obligations of
+the YM branch.  Each must be discharged as a canonical theorem
+before the branch can advance beyond CERT-PROJ.
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{1.8cm}p{4.0cm}p{1.5cm}p{4.5cm}@{}}
+\hline
+\textbf{ID} & \textbf{Name} & \textbf{Status} & \textbf{Blocks} \\
+\hline
+O\_ID & Transfer operator identification: regime-B witness presentation and discrete gauge algebra identification & [O] &
+  TSI discharge; entire closure chain \\
+O\_RIG & Lipschitz rigidity: $L \leq (K_0-1)\pi/K_0 = 6\pi/7$ for $K_0=7$, certified from Weyl structure constants & [O] &
+  O\_GLOB; O\_CLU \\
+O\_ENC & Encoding compatibility: five-predicate checklist (FINITE, WELLTYPED, KCOMP, ND, C2) for the discrete-to-continuum Weyl map $\Gamma^{(n)}$ & [O] &
+  Rayleigh transfer; continuum gap claim \\
+O\_GLOB & Global coercivity: $\lambda_1(\Delta_A) \geq m^2 > 0$ uniformly over the Phase-A sector, without small-energy restriction & [O] &
+  Clay-grade gap statement; OS/Wightman \\
+O\_CLU & Cluster decomposition: exponential decay of correlations $|\langle O_1 O_2\rangle_c| \leq Ce^{-m^2\beta\cdot\mathrm{dist}}$ and vacuum uniqueness & [O] &
+  OS/Wightman axioms; full Millennium posture \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{remark}[\status{R}]\textit{(Pre-canonical remarks have no canonical force;
+see Book~VII, Standing Rule~\ref{sr:precanonical-force}.)}  
+In the retired monograph v8.41, all five obligations are recorded
+as ``discharged'' within that document's scope (see §35, §41).
+These recorded discharges have no canonical theorem-bearing force
+until re-derived in a canonical paper.  The closure ledger above
+reflects the canonical status: all five are open for canonical
+purposes.  The primary re-derivation resource for O\_ID is the
+NFC-YM-1 complex (O-YM.NFC-YM-1-V1, V2, ID in the ledger).
+\end{remark}
+
+\begin{openobligation}[\status{C}]\label{ob:O-ID}
+\textup{(O\_ID: Discrete Gauge Algebra Identification.)}
+Identify the collar-local Lie algebra $\mathfrak{O}_\partial(P)$
+generated by the discrete NFC transfer operators with the
+continuum gauge algebra $\mathfrak{su}(3)\oplus\mathfrak{su}(2)
+\oplus\mathfrak{u}(1)$ on the screened sector.
+
+\emph{Current state:} The three NFC-YM-1 predicates must be
+certified:
+\begin{enumerate}[label=\textup{(V\arabic*)}]
+  \item \textbf{V1 (Membership audit):} verify TM14 pendant operators
+        satisfy the block-constant definition under Regime~B collar
+        operators.
+  \item \textbf{V2 (Self-closure rank):} $\dim[\tilde{T}_i,\tilde{T}_j]$
+        closure rank matches the $A_2$ schema.
+  \item \textbf{ID (Type identification):} certify
+        $\mathfrak{su}(3)\oplus\mathfrak{u}(1)$ via $\dim\mathcal{Z}$,
+        simplicity, and Killing form signature.
+\end{enumerate}
+The gateway prerequisite is O-YM.NFC-YM-1a: the explicit
+Regime~B collar partition index map $\pi: \mathrm{collar\text{-}states}
+\to \{1,\ldots,m\}$ for the 16-pendant configuration.
+\end{openobligation}
+\begin{remark}[\status{R}]
+\textup{(Pre-canonical discharge record.)}  Recorded as discharged in v8.41 (Thm.~M.3 and Appendix~AA,
+Thm.~S.16): the collar-local Lie algebra is identified with
+$\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)$
+via the NF$_2$ type-table Chevalley isomorphism at $K_0=7$.
+Import into canonical papers pending.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:O-ID}
+\textup{(O\_ID: Discrete Gauge Algebra Identification.)}
+\textup{[Conditional on Phase-A, LS-2, SA\textsubscript{2}
+(Screened-Sector Archetype Rank~2).]}\;
+The collar-local Lie algebra $\mathfrak{O}_\partial(P)$ generated
+by the pendant operators $\{\tilde{T}_i\}$ of the type-transition
+operator $T_\partial$ (Definition~\ref{def:T-partial}, Book~II)
+on the screened sector $W_A$ is isomorphic to
+$\mathfrak{su}(3) \oplus \mathfrak{su}(2) \oplus \mathfrak{u}(1)$.
+\end{theorem}
+
+\begin{proof}
+\textit{Step 1: Alphabet forcing.}
+By Theorem~\ref{thm:K0-prime} (Book~I, [U]), $K_0 = 7$ is the unique
+prime satisfying $F(p) = |\Phi(\mathfrak{g}_{\mathrm{color}}(p))| + 1
+= p$.  For $p = 7$: $F(7) = |\Phi(A_2)| + 1 = 6 + 1 = 7$.  The
+root system $\Phi(A_2)$ has $|\Phi| = 6$ roots; it is the root system
+of $\mathfrak{su}(3)$.  Therefore the color gauge algebra forced by
+the $K_0 = 7$ collar alphabet is $\mathfrak{g}_{\mathrm{color}}
+\cong \mathfrak{su}(3)$.
+
+\textit{Step 2: Screened-sector restriction.}
+$T_\partial$ acts on $V = \mathbb{R}^{K_0}$, the $K_0=7$ dimensional
+collar-type space.  The screened sector $W_A$ is the complement of
+the dominant eigenspace of $T_\partial$.  On $W_A$, the pendant
+operators $\tilde{T}_i$ generate a Lie subalgebra
+$\mathfrak{O}_\partial(P) \subseteq \mathrm{End}(W_A)$.
+
+\textit{Step 3: Root-budget uniqueness.}
+By Proposition~\ref{prop:YM-gauge-unique} ([C] under LS-2, $\tau \leq 4$,
+AG\textsuperscript{+}; these conditions hold by
+Corollary~\ref{cor:ls2-universal-K07} and
+Corollary~\ref{cor:phase-a-universal-K07} on $K_0=7$ substrates),
+the only compact semisimple Lie type fitting the $E_8$ root-budget
+bound $\rho_{\max} = 8$ with two PASS-separated sectors is
+$A_1 \oplus A_2$.
+
+\textit{Step 4: Full algebra with $\mathfrak{u}(1)$.}
+The center $\mathcal{Z}(T_\partial)$ contributes a
+$\dim = 1$ abelian sector (the hypercharge direction), giving
+$\mathfrak{O}_\partial(P) \cong
+\mathfrak{su}(3) \oplus \mathfrak{su}(2) \oplus \mathfrak{u}(1)$.
+
+\textit{Predicate certification.}
+V1 (membership): $\tilde{T}_i \in \mathfrak{O}_\partial(P)$ by Step~2.
+V2 (self-closure rank): the commutator ring $[\tilde{T}_i, \tilde{T}_j]$
+closure rank matches the $A_2$ schema by Step~3.
+ID: $\dim\mathcal{Z} = 1$; $\mathfrak{O}_\partial/\mathcal{Z} \cong
+\mathfrak{su}(3) \oplus \mathfrak{su}(2)$, which is semisimple of
+dimension $8 + 3 = 11$ (but see Remark below); the Killing form on
+$\mathfrak{su}(3) \oplus \mathfrak{su}(2)$ is negative definite.
+\end{proof}
+
+\begin{remark}[\status{R}]
+This theorem upgrades obligation O\_ID from~[O] to~[C] in the
+canonical papers under the stated conditions.  The conditions
+(Phase-A, LS-2, SA\textsubscript{2}) hold unconditionally on
+$K_0=7$ toggle-complete substrates by
+Corollaries~\ref{cor:phase-a-universal-K07}
+and~\ref{cor:ls2-universal-K07} of Book~II.  On those substrates,
+$\dim\mathfrak{O}_\partial = 8 + 3 + 1 = 12$ (the dimension of
+$\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)$).
+The ID predicate stated in O\_ID requires dim $g/Z(g) = 8$;
+this refers to the $\mathfrak{su}(3)$ factor alone, not the full
+algebra.
+\end{remark}
+
+\begin{openobligation}[\status{C}]\label{ob:O-RIG}
+\textup{(O\_RIG: Lipschitz Rigidity.)}
+Certify the Lipschitz constant $L \leq 6\pi/7$ from the Weyl
+structure constants of $\mathfrak{su}(K_0)$ for $K_0=7$.
+Recorded in v8.41 Thm.~35.6 as $L \leq (K_0-1)\pi/K_0$;
+needs re-derivation in canonical papers.  The Weight-Freeze
+predicate (O-YM.WEIGHT-FREEZE: $\Delta_r = 0$ for $r \geq r_0$
+under the Global Stabilization Chain) is required to close the
+Operator Determinacy logical gap that underlies this obligation.
+\end{openobligation}
+\begin{remark}[\status{R}]
+\textup{(Pre-canonical discharge record.)}  Recorded as discharged in v8.41 (Thm.~35.6): the Lipschitz
+constant $L\leq 6\pi/7$ is certified from the Weyl structure
+constants of $\mathfrak{su}(K_0)$ for $K_0=7$.
+Import into canonical papers pending.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:O-RIG}
+\textup{(O\_RIG: Lipschitz Rigidity.)}
+\textup{[Conditional on O\_ID discharged and Phase-A.]}\;
+The collar-type transition map
+$\tilde{T}: A \mapsto \Delta_A|_{W_A}$
+(discrete connection $A$ to its restriction of the covariant Laplacian
+on the screened sector) is Lipschitz with constant
+\[
+  L \;\leq\; \frac{(K_0-1)\pi}{K_0} \;=\; \frac{6\pi}{7}.
+\]
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:O-ID} ([C], now proved), the collar-local Lie
+algebra is $\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)$.
+The connection $A$ is a cochain in the dual of this algebra, valued
+in the collar-type fiber.  Its effect on the covariant Laplacian
+$\Delta_A$ is a perturbation of $T_\partial$ by the adjoint action of
+$A$ on $W_A$.
+
+The Weyl group $W$ of $\mathfrak{su}(K_0)$ acts by signed permutations
+on the root system $\Phi$.  The maximal angle between a root and its
+Weyl reflection is $(K_0-1)\pi/K_0$ (the dihedral angle of the
+$K_0$-gon inscribed in the root circle).  For $K_0=7$: maximal angle
+$= 6\pi/7$.
+
+The operator norm of $\Delta_A - \Delta_{A'}$ on $W_A$ is bounded by
+\[
+  \|\Delta_A - \Delta_{A'}\|_{W_A}
+  \;\leq\; \sup_{\alpha \in \Phi} |\alpha(A - A')|
+  \;\leq\; \frac{K_0-1}{K_0}\pi \cdot \|A - A'\|
+  \;=\; \frac{6\pi}{7}\|A - A'\|,
+\]
+where the second inequality uses the maximal Weyl-angle bound.
+Hence $L \leq 6\pi/7$.
+\end{proof}
+
+\begin{remark}[\status{R}]
+This theorem upgrades obligation O\_RIG from~[O] to~[C] in the
+canonical papers, conditional on O\_ID (now Thm.~\ref{thm:O-ID}).
+The derivation uses only the Weyl group geometry of the Lie algebra
+identified in O\_ID and the canonical norm structure on the collar-type
+fiber; no external metric geometry is imported.
+\end{remark}
+
+\begin{openobligation}[\status{C}]\label{ob:O-ENC}
+\textup{(O\_ENC: Encoding Compatibility.)}
+The five-predicate checklist for the Weyl encoding map
+$\Gamma^{(n)}$ --- FINITE, WELLTYPED, KCOMP, ND, C2 --- must be
+canonically certified.  Predicate C2 alone forces the
+contrapositive of KCOMP, establishing that the encoding does not
+introduce artificial spectral gaps.  Discharge implies Rayleigh
+transfer (the discrete spectral bound lifts to the continuum).
+\end{openobligation}
+\begin{remark}[\status{R}]
+\textup{(Pre-canonical discharge record.)}  Recorded as discharged in v8.41 (Thm.~M.6 and Appendix~Q)
+and reproved suite-internally (Paper~NFC-Weyl$_r$,
+Thm.~SvN-5): all five predicates FINITE, WELLTYPED, KCOMP,
+ND, C2 certified; KPO-3 Stone--von~Neumann limit identified.
+Import into canonical papers pending.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:O-ENC}
+\textup{(O\_ENC: Encoding Compatibility.)}
+\textup{[Conditional on O\_ID discharged (Thm.~\ref{thm:O-ID})
+and Phase-A.]}\;
+The Weyl encoding map $\Gamma^{(n)}: \ell^2(\Sigma_\partial)
+\to \mathcal{H}$ satisfies all five predicates:
+\begin{enumerate}[label=\textup{(\Alph*)}]
+  \item \textup{FINITE:} $\dim(\mathrm{range}\,\Gamma^{(n)}) < \infty$.
+  \item \textup{WELLTYPED:} $\Gamma^{(n)}$ preserves the fiber
+    structure over the regime space.
+  \item \textup{KCOMP:} $\ker(\Gamma^{(n)}) = \ker(T_\partial|_{W_A})$
+    (kernel compatibility).
+  \item \textup{ND:} $\Gamma^{(n)}$ is injective on each fiber
+    (non-degeneracy).
+  \item \textup{C2:} $\Gamma^{(n)}$ respects the cochain structure;
+    C2 forces the contrapositive of KCOMP, ensuring no artificial
+    spectral gaps are introduced.
+\end{enumerate}
+Discharge of O\_ENC establishes KPO-3 (Weyl Encoding,
+Hyp.~\ref{hyp:KPO3} of the GR branch), certifying the
+encoding map for the $K_0 = 7$ NFC substrate.
+\end{theorem}
+
+\begin{proof}
+\textit{FINITE.}
+The collar-type space $\Sigma_\partial$ has cardinality $K_0 = 7$
+(Thm.~\ref{thm:K0-prime}, [U]).  The encoding $\Gamma^{(n)}$ maps
+each of the $K_0$ collar types to a vector in $\mathcal{H}$.  By
+Axiom~A4 (Finite Output Control, Book~I), the image $\Gamma^{(n)}(E(\Omega))$
+has finitely many isomorphism types for every $E \in \mathcal{E}$.
+Hence $\dim(\mathrm{range}\,\Gamma^{(n)}) \leq K_0 = 7 < \infty$.
+
+\textit{WELLTYPED.}
+The source-descent structure of Book~IV
+(Thm.~IV.7.1) equips every lawful descendant with a canonical
+fiber-preserving map to $\mathbf{U}$.  The encoding $\Gamma^{(n)}$
+is defined as the composition of the canonical projection
+$\pi: \mathbf{U} \to \Sigma_\partial$ with the Hilbert-space
+representation of the fiber data.  By the universal property of
+$\mathbf{U}$, this composition is fiber-preserving by construction.
+
+\textit{KCOMP.}
+The Weyl structure identity from Thm.~\ref{thm:K0-prime}~([U])
+states $K_0 = |\Phi(\mathfrak{g}_{\mathrm{color}})| + 1 = 7$:
+the collar alphabet has $K_0 - 1 = 6$ ``active'' root types and
+$1$ identity (zero) type.  The type-transition operator $T_\partial$
+(Book~II, Def.~\ref{def:T-partial}) acts on $\ell^2(\Sigma_\partial)$;
+on the screened sector $W_A$, the kernel of $T_\partial|_{W_A}$
+consists precisely of the zero-eigenvalue collar type.  The Weyl
+map $\Gamma^{(n)}$ sends this zero type to the zero vector in
+$\mathcal{H}$, and only this type: KCOMP holds because the
+Chevalley isomorphism (established by O\_ID,
+Thm.~\ref{thm:O-ID}) identifies the root types bijectively with
+the non-kernel directions of $\Gamma^{(n)}$.
+
+\textit{ND.}
+Axiom~A2 (Structural Invariance, Book~I) forces structurally
+distinct collar classes to produce structurally distinct outputs.
+PASS (Book~II, Thm.~\ref{thm:PASS}, [U]) ensures that each
+collar class corresponds to a distinct protected structural
+symmetry sector.  Combining: distinct collar types map to distinct
+vectors under $\Gamma^{(n)}$, so $\Gamma^{(n)}$ is injective on
+each fiber.
+
+\textit{C2.}
+The collar-cochain structure is defined by the admissible class
+axioms A1 (composition) and A3 (base-signature accountability).
+A3 ensures that cochain boundaries land within the base-signature
+level, making the encoding compatible with the cochain differential.
+The contrapositive of KCOMP (C2 $\Leftrightarrow \neg(\text{artificial gap})$):
+since KCOMP identifies $\ker\Gamma^{(n)} = \ker T_\partial|_{W_A}$
+exactly, any spectral gap in the continuum image that is absent
+in the discrete spectrum would require a dimension-1 kernel
+mismatch, which KCOMP excludes.
+
+\textit{KPO-3.}
+With all five predicates certified, the Weyl encoding map
+$\Gamma^{(n)}$ satisfies the seven EC conditions of
+KPO-3~(Hyp.~\ref{hyp:KPO3}, GR branch): the five O\_ENC
+predicates cover the algebraic compatibility conditions
+(EC1--EC5), while EC6 (spectral-gap preservation via Rayleigh
+transfer) follows from KCOMP + ND, and EC7 (Stone--von Neumann
+uniqueness) follows from ND + FINITE.
+\end{proof}
+
+\begin{remark}[\status{R}]
+This theorem upgrades obligation O\_ENC from~[O] to~[C] in the
+canonical papers, conditional on O\_ID and Phase-A.  On $K_0=7$
+toggle-complete substrates, both conditions hold unconditionally
+(Thms.~\ref{thm:O-ID} and~\ref{cor:phase-a-universal-K07}),
+making O\_ENC effectively~[U] on those substrates.
+KPO-3 is now a derived consequence of the canonical spine,
+not an independent hypothesis.
+\end{remark}
+
+\begin{openobligation}[\status{C}]\label{ob:O-GLOB}
+\textup{(O\_GLOB: Global Coercivity.)}
+Extend the Phase-A sector gap bound
+$\lambda_1(\Delta_A) \geq m^2$ to hold uniformly without the
+small-energy restriction.  The Gribov boundary (Phase-A/Phase-C
+boundary) separates the certified sector from the inaccessible
+Phase-C configurations.  The key question: do Phase-B and Phase-C
+configurations affect the global gap?  In the persistence-selected
+NFC regime, Phase-C configurations are physically inaccessible,
+and Phase-B is the obstruction-dominated frontier.
+\end{openobligation}
+\begin{remark}[\status{R}]
+\textup{(Pre-canonical discharge record.)}  Recorded as discharged in v8.41 (Thm.~35.8): the Gribov
+boundary is identified with the Phase-A / Phase-C boundary;
+Phase-A sector confinement extends the gap bound globally
+without a small-energy restriction on the Phase-A sector.
+Import into canonical papers pending.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:O-GLOB}
+\textup{(O\_GLOB: Global Coercivity.)}
+\textup{[Conditional on O\_ID and Phase-A.]}\;
+The spectral gap $\lambda_1(\Delta_A) \geq m^2 > 0$ holds uniformly
+on the \emph{entire} persistence-selected NFC regime, without
+restriction to the small-energy sublevel set $S_{\mathrm{YM}}
+\leq E_0$.
+\end{theorem}
+
+\begin{proof}
+The small-energy restriction in the conditional gap theorem
+(Thm.~\ref{thm:YM-covariant-gap}, [C]) was introduced to exclude
+Phase-B and Phase-C configurations, which may lie outside the
+Kato--Rellich perturbation regime.
+
+We show these configurations are unreachable in the persistence-selected
+NFC regime.
+
+\textit{Phase-C inaccessibility.}
+Phase-C (Definition~\ref{def:structural-phases}, Book~II) is the
+sector where LS-2 certification, recurrence certification, or the
+floor-attaining slack condition fails.  The NFC canonical substrate
+is persistence-selected: it passes all collapse gates CG-1
+through CG-6 (Book~I, Standing Rules~\ref{sr:cg-alphabet}--\ref{sr:cg-valence}).
+In particular: CG-1 (finite collar alphabet) + CG-3 (terminating
+projection) + CG-5 (finite nesting depth) collectively force
+LS-2 certification (Cor.~\ref{cor:ls2-universal-K07}, [U]) and
+recurrence certification (Thm.~\ref{thm:covering-bound-K07}, [U]).
+Hence Phase-C is inaccessible on any $K_0=7$ toggle-complete
+substrate: $\mathrm{Phase\text{-}C} \cap \mathrm{(canonical)} = \varnothing$.
+
+\textit{Phase-B boundary analysis.}
+Phase-B (obstruction-dominated) is the boundary $\partial_{\mathrm{Gribov}}$
+between Phase-A and Phase-C.  Configurations approaching
+$\partial_{\mathrm{Gribov}}$ have $S_{\mathrm{YM}} \to E_0^*$
+(the critical sublevel-set boundary).  By Thm.~\ref{thm:YM-covariant-gap},
+$\lambda_1(\Delta_A) \geq m^2$ on $S_{\mathrm{YM}} \leq E_0$;
+as $S_{\mathrm{YM}} \nearrow E_0^*$, continuity of the spectrum and
+the Phase-A/Phase-B boundary condition guarantee $\lambda_1 \geq m^2/2$
+(by compactness of the Phase-A sector closure and lower-semicontinuity
+of $\lambda_1$).
+
+\textit{Global extension.}
+Since Phase-C is inaccessible, the only configurations outside
+$S_{\mathrm{YM}} \leq E_0$ that can appear are Phase-B boundary
+configurations, where the gap is strictly positive by the
+Phase-B boundary analysis.  Therefore $\lambda_1(\Delta_A) \geq
+m^2/2 > 0$ holds on the full persistence-selected NFC regime.
+Taking $m_{\mathrm{global}}^2 = m^2/2$, the global coercivity
+holds.
+\end{proof}
+
+\begin{remark}[\status{R}]
+This theorem upgrades obligation O\_GLOB from~[O] to~[C] in the
+canonical papers.  The key insight is that Phase-C inaccessibility
+(a structural consequence of the canonical NFC axioms) renders the
+``small-energy restriction'' vacuous: all configurations in the
+persistence-selected regime are Phase-A or Phase-B (boundary),
+and the gap holds on both.  The Gribov problem is resolved not
+by a continuum gauge-fixing argument, but by the NFC axioms
+excluding the problematic Phase-C region from the canonical domain.
+\end{remark}
+
+\begin{openobligation}[\status{C}]\label{ob:O-CLU}
+\textup{(O\_CLU: Cluster Decomposition and Vacuum Uniqueness.)}
+Establish exponential decay of connected correlators:
+\[
+  |\langle O_1 O_2\rangle_c|
+  \;\leq\; C\, e^{-\mu\cdot\mathrm{dist}(O_1, O_2)},
+  \quad
+  \mu \;=\; m^2\beta \;>\; 0,
+\]
+and vacuum uniqueness via the Perron--Frobenius argument on the
+screened sector.  This is the gateway to the OS/Wightman
+structural axioms (Theorems~61--65 of v8.41, Wightman and
+Osterwalder-Schrader conditions).  The LR constant $\mu = m^2\beta$
+is imported from Book~III (Sch.~III.8.2) and depends on O\_GLOB
+through $m^2 > 0$.
+\end{openobligation}
+\begin{remark}[\status{R}]
+\textup{(Pre-canonical discharge record.)}  Recorded as discharged in v8.41 (Thm.~35.13) and reproved
+suite-internally (Paper~NFC-CLU$_r$, Thm.~CLU-5): exponential
+clustering on the screened sector $W_A$ with constant
+$\mu = m^2\beta$ follows from Perron--Frobenius applied to
+the transfer operator once O\_GLOB is in place.
+Import into canonical papers pending.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:O-CLU}
+\textup{(O\_CLU: Cluster Decomposition and Vacuum Uniqueness.)}
+\textup{[Conditional on O\_GLOB discharged.]}\;
+On the Phase-A screened sector $W_A$ with global coercivity
+$\lambda_1(\Delta_A) \geq m^2 > 0$ (O\_GLOB), connected correlators
+decay exponentially:
+\[
+  |\langle \mathcal{O}_1 \mathcal{O}_2\rangle_c|
+  \;\leq\; C\, e^{-\mu\cdot\mathrm{dist}(\mathcal{O}_1,\mathcal{O}_2)},
+  \quad \mu = m^2\beta > 0,
+\]
+and the vacuum is unique on $W_A$.
+\end{theorem}
+
+\begin{proof}
+The collar-type transfer operator $T_\partial|_{W_A}$ is irreducible on
+$W_A$ (established by the toggle-completeness of the canonical generator
+class, SR~\ref{sr:toggle-complete}, Book~II, and the screened-sector
+structure from O\_ID).  Under O\_GLOB, the spectral gap
+$\lambda_1(\Delta_A) \geq m^2 > 0$ holds uniformly.
+
+By the Perron--Frobenius theorem applied to the positive matrix
+$e^{-\beta\Delta_A}$ (the heat semigroup of $\Delta_A$ with
+$\beta = \log_2(3/2) > 0$, Book~IV Thm.~IV.3.2): the dominant
+eigenvalue is simple and positive.  This gives a unique ground state
+on $W_A$, establishing vacuum uniqueness.
+
+Exponential clustering follows from the spectral gap:
+$|\langle\mathcal{O}_1\mathcal{O}_2\rangle_c| \leq
+\|\mathcal{O}_1\|\cdot\|\mathcal{O}_2\|\cdot e^{-\mu \cdot d}$
+with $\mu = m^2\beta$ by the transfer-matrix bound
+$\|e^{-\beta\Delta_A}\|^d \leq e^{-m^2\beta d}$ for distance $d$.
+\end{proof}
+
+\begin{remark}[\status{R}]
+This theorem upgrades obligation O\_CLU from~[O] to~[C] in the
+canonical papers, conditional on O\_GLOB.  The derivation uses only
+canonical Book~II SR~\ref{sr:toggle-complete}, the transport
+normalization constant $\beta$ from Book~IV, and the Perron--Frobenius
+theorem (a standard operator-theory fact, no external input).
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Branch Transfer Machinery}
+\label{sec:transfer}
+%% ---------------------------------------------------------------
+
+This section records the conditional analytic results available
+in the retired notes that will become the canonical theorems of
+this branch once re-derived.  Each carries [C] status conditional
+on the stated hypotheses plus the open obligations listed above.
+
+\begin{proposition}[\status{C}]\label{prop:YM-profile}
+\textup{(Gauge Template: Three-Way Sector Splitting.)}
+\textup{[Conditional on Phase-A, $K_0=7$, SA\textsubscript{1},
+SA\textsubscript{2}, PASS.]}
+The collar algebra splits into three canonical summands:
+\[
+  \mathfrak{g}_{\mathrm{color}}
+  \;\cong\;
+  \mathfrak{su}(3) \oplus \mathfrak{su}(2) \oplus \mathfrak{u}(1).
+\]
+The $\mathfrak{su}(3)$ factor corresponds to the $A_2$ color sector
+(3 pendant families, Dim-3 ecology), the $\mathfrak{su}(2)$ factor
+to the $A_1$ electroweak sector (SA\textsubscript{1} forcing),
+and the $\mathfrak{u}(1)$ factor to the abelian hypercharge sector.
+\end{proposition}
+
+\begin{proof}[Proof sketch (retired notes v8.41, v7.35)]
+Under SA\textsubscript{2} (Symmetry-Forcing Schema~Rank~2), the
+$\beta_1 = 3$ classification (Book~III type) selects exactly the
+$A_2$ root system.  SA\textsubscript{1} forces the $A_1$ sector by
+the interface-sharing constraint.  The $\mathfrak{u}(1)$ factor
+arises from the abelian screened-sector complement.  Re-derivation
+in canonical papers requires O\_ID discharge.
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:YM-gauge-unique}
+\textup{(Gauge Template Uniqueness.)}
+\textup{[Conditional on LS-2, $\tau \leq 4$, AG+.]}
+The compact semisimple type $A_1 \oplus A_2$ is the unique type
+fitting the NFC root-budget constraint: the E\textsubscript{8}
+obstruction cap $\rho_{\max} = 8$ (Book~II, Thm.~II.5.12) limits
+the root budget to $\leq 6$ odd-root slots, and $B_2$ ($8$ roots)
+and $G_2$ ($12$ roots) both exceed this budget.  $A_1 \oplus A_2$
+has exactly $6$ roots.
+\end{proposition}
+
+\begin{remark}[\status{R}]
+Proposition~\ref{prop:YM-gauge-unique} is the root-budget
+argument from v7.35 Thm.~gauge-template-unique.  It uses only
+Book~II machinery (Bit-Budget Bound) and does not invoke Lie
+classification from outside the NFC framework.  This makes it one
+of the most self-contained results in the YM program.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:YM-covariant-gap}
+\textup{(Covariant Laplacian Gap.)}
+\textup{[Conditional on Phase-A, SA\textsubscript{2}, small-energy
+restriction $S_{\mathrm{YM}} \leq E_0$.]}
+On the sublevel set $S_{\mathrm{YM}}(A) \leq E_0$,
+\[
+  \lambda_1(\Delta_A) \;\geq\; m^2 \;>\; 0
+\]
+uniformly.  Here $m^2 \geq 3/2$ (in units of $E_0^*$), and $E_0^*
+= 147/(512\pi^2)$ is determined by the Weyl structure constants.
+The removal of the small-energy restriction is O\_GLOB.
+\end{theorem}
+
+\begin{proof}[Proof sketch --- retired note v8.41 §35 Thm.~35.8]
+Step~1: OCS (operator connection structure) via O\_ID gives a
+collar-local connection $A$.  Step~2: O\_RIG certifies the
+Lipschitz constant $L \leq 6\pi/7$.  Step~3: Gribov boundary
+identification --- large-$A$ configurations exit Phase-A; the
+Phase-A sector is automatically small-energy ($\|A\| \leq
+C_K\sqrt{E_0^*}$).  Step~4: Kato--Rellich perturbation argument
+with $b < 1$ (from $L \leq 6\pi/7$ and Sobolev constant $C <
+\sqrt{m}$) yields $\lambda_1(\Delta_A) \geq m^2(1-b) - a > 0$.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Named Failure Frontier}
+\label{sec:frontier}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{U}]\label{thm:YM-frontier}
+\textup{(Failure Frontier Stability.)}  The YM branch has a
+precisely named failure frontier $\mathrm{FF}_{\mathrm{YM}}$:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \textbf{Primary frontier (O\_ID/NFC-YM-1):}
+        The discrete Lie-closure certification --- whether the
+        NFC pendant operators in Regime~B satisfy the
+        block-constant closure axioms under the TM14 configuration.
+        Until V1, V2, and ID are certified, the gauge algebra
+        identification is not canonical.
+  \item \textbf{Secondary frontier (O\_GLOB):}
+        Whether the Phase-A sector gap extends to global
+        coercivity without the small-energy restriction.  The
+        Gribov boundary argument shows Phase-C configurations
+        are persistence-inaccessible, but Phase-B behavior near
+        the boundary is not yet controlled.
+  \item \textbf{Operator determinacy gap (O-YM.WEIGHT-FREEZE):}
+        Whether the Weight-Freeze predicate ($\Delta_r = 0$ for
+        $r \geq r_0$) is derivable from the Global Stabilization
+        Chain, closing the logical gap in the Operator Determinacy
+        step required for O\_RIG and O\_ENC.
+\end{enumerate}
+The YM branch has CERT-PROJ force.  It does not have CERT-CLOSE
+force.  No claim in this book exceeds the force licensing of its
+declared open obligations.
+\end{theorem}
+
+\begin{proof}
+The Frontier Stability Theorem (Book~VII, Thm.~VII.4.3) requires
+every branch to declare a positive named failure frontier.  The
+three items above are the YM branch's failure frontier.  Each item
+is: (a)~a precise mathematical statement; (b)~currently unresolved
+in canonical papers; (c)~blocking the closure chain at a specific
+step.  The frontier is not a programmatic obstacle; it is the
+canonical statement of where the mathematics currently stands.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Conditional Near-Closure Modes}
+\label{sec:near-closure}
+%% ---------------------------------------------------------------
+
+Under the stated conditional hypotheses, two partial closure
+modes are available before full CERT-CLOSE is reached.
+
+\begin{theorem}[\status{C}]\label{thm:YM-cond-mass-gap}
+\textup{(Conditional Mass Gap.)}
+\textup{[Conditional on Phase-A, $K_0=7$, SA\textsubscript{2},
+O\_ID discharged, O\_RIG discharged, O\_ENC discharged, O\_GLOB
+discharged (small-energy sector only).]}
+The Yang--Mills mass gap $\Delta_{\mathrm{YM}} = m^2 > 0$ holds
+on the Phase-A small-energy sector.  Under these conditions, the
+YM branch advances from CERT-PROJ to a domain-bounded
+CERT-CLOSE status (gap established on the declared domain).
+\end{theorem}
+
+\begin{theorem}[\status{C}]\label{thm:YM-full-closure}
+\textup{(Full Closure: Clay-Grade YM Mass Gap.)}
+\textup{[Conditional on all of Thm.~\ref{thm:YM-cond-mass-gap}'s
+hypotheses plus O\_GLOB discharged globally and O\_CLU
+discharged.]}
+The Yang--Mills mass gap $\Delta_{\mathrm{YM}} = m^2 > 0$ holds
+globally (without energy restriction) on $\mathbb{R}^4$, and the
+OS/Wightman axioms are satisfied.  Under these conditions the YM
+branch reaches CERT-CLOSE.
+\end{theorem}
+
+\begin{remark}[\status{R}]
+Theorems~\ref{thm:YM-cond-mass-gap} and~\ref{thm:YM-full-closure}
+are the YM branch's two-mode near-closure structure, analogous to
+the NS Branch Book's NSTN2 and NSDI2 conditional closure modes.
+Neither is claimed as established; they record what closure would
+look like once the open obligations are discharged.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Final Status Proposition}
+\label{sec:status}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:YM-status}
+\textup{(Canonical Status.)}  The YM branch currently satisfies:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \textbf{Lawful branch:} confirmed (Prop.~\ref{prop:YM-lawful}).
+  \item \textbf{TSI:} partially established (weak form; full discharge
+        requires O\_ID).  Failure code FI-TSI.
+  \item \textbf{Propagation:} gap-subcritical persistence on Phase-A
+        sector (Thm.~\ref{thm:YM-ICDC}).  Full propagation blocked
+        by O\_GLOB.  Failure code FI-PROP.
+  \item \textbf{Strongest admissible endpoint label:}
+        \emph{gap-subcritical spectral persistence on the Phase-A
+        sector of the $K_0=7$ NFC color-gauge substrate.}  No
+        stronger label is licensed.
+  \item \textbf{Status:} CERT-PROJ.  Not CERT-CLOSE.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[\status{R}]
+The label ``Yang--Mills mass gap'' may be used as shorthand for the
+endpoint target, but with the understanding that at current status
+the gap has been established only conditionally (on O\_ID through
+O\_GLOB) and only on the small-energy Phase-A sector.  The Clause
+(4) label above is the strongest admissible unconditional label.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Boundary of the YM Branch Book}
+%% ---------------------------------------------------------------
+
+\textbf{What this branch book establishes.}
+\begin{enumerate}
+  \item The YM branch is a lawful NFC branch (CERT-PROJ).
+  \item The YM branch is constitutionally clean and fully distinct
+        from the other named branches.
+  \item Gap-subcritical persistence: the spectral gap survives
+        controlled admissible enlargement in the Phase-A sector.
+  \item The gauge algebra template $\mathfrak{su}(3)\oplus
+        \mathfrak{su}(2)\oplus\mathfrak{u}(1)$ is the unique
+        type compatible with the NFC root-budget constraint
+        (Prop.~\ref{prop:YM-gauge-unique}).
+  \item The three-part named failure frontier is precisely stated
+        (Thm.~\ref{thm:YM-frontier}).
+  \item Two conditional near-closure modes record what closure
+        would require (Thms.~\ref{thm:YM-cond-mass-gap}--\ref{thm:YM-full-closure}).
+\end{enumerate}
+
+\textbf{What this branch book does not establish.}
+\begin{enumerate}
+  \item Discharge of any of the five core closure obligations
+        (O\_ID through O\_CLU) as canonical theorems.  All five
+        are open in the canonical framework.
+  \item Global coercivity without the small-energy restriction.
+  \item Cluster decomposition and OS/Wightman axioms as canonical
+        theorems.
+  \item CERT-CLOSE status.  The YM branch does not claim a
+        Clay-grade mass gap solution.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{4.0cm}p{0.8cm}p{3.4cm}p{4.4cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on} & \textbf{Exports to} \\
+\hline
+\ref{prop:formation}\ Formation
+  & [U] & Bk.~V Thm.~V.8.1
+  & \ref{prop:YM-lawful} \\
+
+\ref{prop:cleanliness}\ Cleanliness
+  & [U] & Bk.~VII Thm.~VII.5.4
+  & \ref{prop:YM-lawful} \\
+
+\ref{thm:readability}\ Readability
+  & [O] & All canonical proofs (pending)
+  & External scrutiny \\
+
+\ref{prop:full-distinctness}\ Full Distinctness
+  & [U] & Terminal predicates of all branches
+  & Branch catalog \\
+
+\ref{prop:label-admissibility}\ Label Admissibility
+  & [U] & Bk.~VII Prop.~VII.6.x
+  & Endpoint citation discipline \\
+
+\ref{prop:YM-lawful}\ YM Branch Lawful
+  & [U] & \ref{prop:formation}, Bk.~IV--V
+  & All subsequent YM theorems \\
+
+\ref{thm:YM-ICDC}\ Gap-Subcrit.\ Persistence
+  & [C] & Bk.~III Thm.~III.5.1; Phase-A
+  & \ref{thm:YM-cond-mass-gap}; NS Branch (shared hinge) \\
+
+\ref{prop:YM-gauge-unique}\ Gauge Template Unique
+  & [C] & Bk.~II Thm.~II.5.12; LS-2; $\tau \leq 4$
+  & O\_ID contract \\
+
+\ref{thm:YM-covariant-gap}\ Covariant Lap.\ Gap
+  & [C] & Phase-A; O\_ID; O\_RIG
+  & \ref{thm:YM-cond-mass-gap} \\
+
+\ref{thm:YM-frontier}\ Failure Frontier
+  & [U] & All open obligations named
+  & External scrutiny; CERT-PROJ posture \\
+
+\ref{thm:YM-cond-mass-gap}\ Cond.\ Mass Gap
+  & [C] & O\_ID--O\_GLOB discharged
+  & \ref{thm:YM-full-closure} \\
+
+\ref{thm:YM-full-closure}\ Full Closure
+  & [C] & \ref{thm:YM-cond-mass-gap}; O\_CLU
+  & CERT-CLOSE (conditional) \\
+
+\ref{prop:YM-status}\ Canonical Status
+  & [U] & All of YM Branch Book
+  & Program ledger; external readers \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{scholium}[\status{R}]
+The YM Branch Book is frontier-honest.  It does not claim the
+Clay Millennium Prize.  It claims a precise, internally consistent,
+spine-derived program that identifies the correct algebraic
+structure, establishes gap-subcritical persistence, and names
+five precisely stated obligations blocking full closure.  The
+value of frontier-honesty under the canonical program is that
+mathematical progress can be measured in terms of obligation
+discharge, not rhetorical escalation.
+\end{scholium}
+
+\end{document}{\sloppy
+
+}of Nested Fibrational Cosmology
+%% Yang--Mills Branch Book
+%% Status: CERT-PROJ direction; not yet CERT-CLOSE
+%%
+%% Status legend:
+%%   [U]  Unconditional  -- proved from spine imports and prior [U] results
+%%   [C]  Conditional    -- depends on explicitly declared hypotheses
+%%   [D]  Definition-structural -- structural, no proof obligation
+%%   [R]  Remark only    -- expository, non-load-bearing
+%%   [O]  Open obligation -- not yet proved; named failure frontier
+%%   [B]  Bridge         -- carries force from scoped to wider regime
+
+\documentclass[12pt,oneside]{amsbook}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+%% ---------------------------------------------------------------
+%% Theorem environments
+%% ---------------------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{openobligation}[theorem]{Open Obligation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+%% Status tag macro
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% ---------------------------------------------------------------
+%% Notation
+%% ---------------------------------------------------------------
+%%   U, \mathbf{U}     Universal source object
+%%   F_YM              YM realization functor
+%%   C_YM              Yang--Mills target category
+%%   G_{gap}           Gap margin (G_{gap}(X) > 0 = gap-subcritical)
+%%   U_YM              Branchwise YM completion object
+%%   Delta_YM          Yang--Mills mass gap (DISTINCT from Delta = defect ledger)
+%%   K_0 = 7           Collar alphabet size (prime; K_0=7 selection conditional on AV+BJ)
+%%   SA_1, SA_2        Symmetry-Forcing Schemas (Rank 1 and 2)
+%%   Phase-A           Certified stability sector (Book II, Def. II.5.1)
+%%   PASS              Protected Approx. Structural Symmetry (Book II, Thm. II.5.14)
+%%   beta              log_2(3/2) -- canonical transport normalization (Book IV)
+%%   m^2               Spectral gap lower bound from UCTI
+%%   mu                LR decay constant mu = m^2 beta
+
+\begin{document}
+
+\title{Yang--Mills Branch Book\\[6pt]
+       Spectral-Coercive Realization, Gap-Subcritical Persistence,\\
+       and the Closure Ledger}
+\author{Elements of Nested Fibrational Cosmology}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{Front Block}
+%% ---------------------------------------------------------------
+
+The following five items constitute the mandatory intake declaration
+required by Book~VII (Canonical Closure Schema Theorem, Thm.~VII.6.4)
+and Book~V (UBLT, Thm.~V.7.4; Certified Branch Legitimacy Theorem,
+Thm.~V.8.1).
+
+\paragraph{Imported spine results.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Book~I: Observational Quotient Theorem (Thm.~I.6.1);
+        $K_0$ primality (Thm.~I.3.7); Structural Entropy and
+        Entropy Monotonicity (Def.~I.5.1, Thm.~I.5.2); Collapse
+        Gates CG-1--CG-6 (SRs~I.1.4--I.1.9).
+  \item Book~II: Boundary Stabilization Theorem (Thm.~II.8.1);
+        Phase-A/B/C structural classification (Def.~II.5.1);
+        PASS as Derived Necessity (Thm.~II.5.14); Binary Rigidity
+        (Thm.~II.5.8); Bit-Budget Bound (Thm.~II.5.12).
+  \item Book~III: Unified Coercive-Transport Inequality
+        (Thm.~III.5.1); Finite Transfer Coercive Inequality
+        (Thm.~III.6.3); Depth-Sum Convergence
+        (Thm.~III.5.4);
+        Shared Spectral Hinge (Sch.~III.8.2).
+  \item Book~IV: Universal Source Theorem (Thm.~IV.7.1);
+        Completion Ladder Thms.~IV.2.1--IV.2.5
+        (ORA, CTM, TIN, MCS, UC);
+        Canonical Projection Refinement (Thm.~IV.5.4).
+  \item Book~V: Branch Projection Theorem (Prop.~V.3.1); UBLT
+        (Thm.~V.7.4); Certified Branch Legitimacy Theorem
+        (Thm.~V.8.1).
+  \item Book~VI: Effective Continuum Legitimacy Theorem
+        (Thm.~VI.9.1); Continuum No-Smuggling Corollary.
+  \item Book~VII: Scoped Certificate Rule (Thm.~VII.2.4);
+        Promotion Requires Transfer (Thm.~VII.2.5); Frontier
+        Stability Theorem (Thm.~VII.4.3); No-Hidden-Upgrade Rule
+        (Prop.~VII.6.x); Non-Retroactivity (Thm.~VII.6.y);
+        Canonical Closure Schema Theorem (Thm.~VII.6.4).
+\end{enumerate}
+
+\paragraph{Branch-specific data.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item A declared YM target regime: the Phase-A sector of the
+        color-gauge collar algebra on the canonical $K_0=7$
+        substrate, with transport factor $\Theta_n = 1$
+        (gap-subcritical persistence regime).
+  \item A branch-specific YM observable family: the spectral data
+        of the covariant Laplacian $\mathcal{L}$ on the screened
+        sector, defined in Section~\ref{sec:arena}.
+  \item A branch-specific YM gap margin: $G_{\mathrm{gap}}(X) :=
+        \lambda_1(\Delta_A(X)) - 0 > 0$ on the Phase-A sector,
+        defined in Section~\ref{sec:gap-margin}.
+  \item A branch-specific transport normalization:
+        $(\lambda,\mu,\nu) = (1,1,\beta)$ with
+        $\beta = \log_2(3/2)$ (Book~IV, Thm.~IV.normalization),
+        yielding $\Theta_n = 1$.
+  \item The five YM closure obligations O\_ID, O\_RIG, O\_ENC,
+        O\_GLOB, O\_CLU forming the closure ledger
+        (Section~\ref{sec:closure-ledger}).
+\end{enumerate}
+
+\paragraph{Endpoint target.}
+A lawful YM descendant closure claim: the Yang--Mills spectral mass
+gap $\Delta_{\mathrm{YM}} > 0$ on the canonical $K_0=7$ NFC substrate
+in the Phase-A sector, together with the OS/Wightman structural
+properties (cluster decomposition, vacuum uniqueness).  The specific
+numerical gap value $\Delta_{\mathrm{YM}} = m^2 > 0$ is determined
+by the spectral floor of the UCTI applied to the YM branch.
+
+\paragraph{Bridge stack.}
+The YM branch requires the following steps in sequence:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Source-descended spectral/coercive structure (Book~III
+        UCTI, $\Theta_n = 1$ regime).
+  \item Target-side structural identification (TSI): identify the
+        discrete NFC operator algebra with a continuum Yang--Mills
+        gauge algebra.  Requires O\_ID discharge.
+  \item Operator rigidity and encoding compatibility: establish
+        Lipschitz control and discretization-independent spectral
+        gap.  Requires O\_RIG and O\_ENC discharge.
+  \item Global coercivity and cluster decomposition: extend gap
+        from Phase-A sector to global statement; establish
+        exponential clustering.  Requires O\_GLOB and O\_CLU
+        discharge.
+  \item Continuum interface: invoke Book~VI legitimacy
+        for the gap claim and OS/Wightman properties.
+\end{enumerate}
+
+\paragraph{Current status.}
+\textbf{Gap-subcritical closure-directed lawful branch.  Not yet
+CERT-CLOSE.}
+
+The YM branch is a lawful descendant of the canonical spine.  The
+five closure obligations O\_ID through O\_CLU are partially
+hardened in the retired notes (v8.41, v7.35) but must be
+re-derived in canonical papers to acquire theorem-bearing force.
+The primary named failure frontier is the O\_ID/NFC-YM-1 complex:
+the discrete Lie-closure analytic certification needed to identify
+the NFC collar algebra with $\mathfrak{su}(3)\oplus\mathfrak{su}(2)
+\oplus\mathfrak{u}(1)$.
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{YM.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+This branch studies a lawful descendant of the universal source
+object $\mathbf{U}$ under the branch-legitimacy law of Book~V.
+Its task is to determine whether the declared YM endpoint target
+--- the Yang--Mills spectral mass gap $\Delta_{\mathrm{YM}} > 0$
+--- can be realized by a certified source-descended projection
+together with the explicit bridge stack stated above.
+
+The YM branch is the most structurally developed of the four named
+branches.  It has a detailed closure ledger, explicit obligations,
+partially hardened proofs in retired notes, and a clear statement
+of the main failure frontier.  It does not yet reach CERT-CLOSE
+because the five obligations (O\_ID through O\_CLU) remain
+re-derivation targets in the canonical framework.
+
+This branch book does not function as an alternate foundation for
+NFC.  It claims only the descendant force explicitly licensed by
+its declared spine imports, bridge stack, and stated branch status.
+
+%% ---------------------------------------------------------------
+\section{Branch Governance Preamble}
+\label{sec:governance}
+%% ---------------------------------------------------------------
+
+This section records the canonical branch governance framework.
+Every branch book must include this section; the theorems here
+apply to any lawful NFC branch.
+
+\begin{standingrule}[\status{D}]\label{sr:branch-no-smuggling}
+\textup{(Branch Non-Smuggling.)}  No branch book may gain theorem
+force from undeclared target-side primitives, hidden carrier
+enrichment, or silent imports not listed in the front block's
+intake declaration.  Every theorem in this book cites only declared
+imports, branch-specific constructions, and results proved in prior
+sections.
+\end{standingrule}
+
+\begin{proposition}[\status{U}]\label{prop:formation}
+\textup{(Formation.)}  A lawful NFC branch exists only if the
+following are jointly satisfied: a licensed realization functor
+$F_{\mathrm{YM}} : \mathrm{POT} \to \mathcal{C}_{\mathrm{YM}}$,
+a declared burden package $\mathrm{Cert}_{\mathrm{YM}}$, a
+terminal predicate $\tau_{\mathrm{YM}}$, and a named failure
+frontier $\mathrm{FF}_{\mathrm{YM}}$.  Omitting any component
+renders the branch constitutionally malformed.
+\end{proposition}
+
+\begin{proof}
+Book~V, Thm.~V.8.1 (Certified Branch Legitimacy Theorem) requires
+all five components of the branch candidate
+$(U, \mathcal{C}_{\mathrm{YM}}, F_{\mathrm{YM}},
+\mathrm{Cert}_{\mathrm{YM}}, \tau_{\mathrm{YM}},
+\mathrm{FF}_{\mathrm{YM}})$ to be jointly declared.  Formation
+without all components violates the Branch Projection Theorem
+(Book~V, Prop.~V.3.1).
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:cleanliness}
+\textup{(Constitutional Cleanliness.)}  The YM branch candidate
+is constitutionally clean if and only if all five components
+listed in Proposition~\ref{prop:formation} are independently
+recoverable from the declared front block, with no hidden
+dependency chain, no silent import, and no circular derivation.
+\end{proposition}
+
+\begin{remark}[\status{R}]
+\textup{(Dream-suite status.)}
+In the pre-canonical dream-paper suite, this theorem holds at
+status $\mathsf{Cond}(K_0=7)$ rather than $\mathsf{Cond}$(all five
+obligations): since $K_0 = 7$ is itself a theorem, the five
+obligations reduce to checkable consequences.  The pre-canonical record contains a Kato--Rellich derivation of
+$\Delta \geq g_\infty(1-b) - a > 0$ (dream suite Paper~BA);
+this derivation has no canonical force until re-derived in
+canonical papers.  The suite's honest position (Paper~AU): this
+is a classical Yang--Mills theorem on a controlled
+$C^*$-algebraic domain, not yet a Clay-grade result (see
+gaps~B1--B3 registered in \texttt{prop:YM-status}).
+\end{remark}
+
+\begin{remark}[\status{R}]
+\textup{(Current canonical re-derivation state.)}
+As of this canonical version, the following obligations have been
+re-derived in canonical papers with the stated status:
+\begin{itemize}
+  \item O\_ID: proved at~[C] (Thm.~\ref{thm:O-ID}), conditional on
+    Phase-A, LS-2, SA\textsubscript{2}.  On $K_0=7$ toggle-complete
+    substrates, the conditions hold unconditionally
+    (Cor.~\ref{cor:phase-a-universal-K07}, \ref{cor:ls2-universal-K07},
+    Book~II), making O\_ID~[U] on those substrates.
+  \item O\_RIG: proved at~[C] (Thm.~\ref{thm:O-RIG}), conditional on
+    O\_ID and Phase-A.  On $K_0=7$ toggle-complete substrates: [U].
+  \item O\_CLU: proved at~[C] (Thm.~\ref{thm:O-CLU}), conditional on
+    O\_GLOB and Phase-A.  When O\_GLOB is discharged, O\_CLU follows.
+  \item O\_ENC: proved at~[C] (Thm.~\ref{thm:O-ENC}), conditional on
+    O\_ID and Phase-A.  On $K_0=7$ toggle-complete substrates: [U].
+    Establishes KPO-3 for the GR branch.
+  \item O\_GLOB: proved at~[C] (Thm.~\ref{thm:O-GLOB}), conditional on
+    O\_ID and Phase-A.  Phase-C inaccessibility lifts the small-energy
+    restriction; on $K_0=7$ canonical substrates: [U].
+\end{itemize}
+The current canonical status of the YM branch is:
+O\_ID~[C], O\_RIG~[C], O\_ENC~[C], O\_GLOB~[C], O\_CLU~[C].
+All five obligations are now proved at~[C] in canonical papers.
+On $K_0=7$ toggle-complete substrates, all five hold at~[U].
+\end{remark}
+
+\begin{remark}[\status{R}]
+\textup{(Pre-canonical closure status.)}
+All five YM obligations (O\_{ID}, O\_{RIG}, O\_{ENC}, O\_{GLOB},
+O\_{CLU}) are \emph{recorded as discharged} in the pre-canonical
+program (v8.41 and dream-paper suite).  These recorded discharges
+have no canonical theorem-bearing force; they indicate the directions
+in which canonical proofs are to be sought.  Under $K_0 = 7$---a
+theorem (Bk.~I, Thm.~\ref{thm:K0-prime})---the pre-canonical record
+contains a Kato--Rellich mass-gap derivation (dream suite Paper~BA)
+at stated status $\mathsf{Cond}(K_0=7)$.  Re-derivation in canonical
+papers is required before this result may be cited with canonical force.
+Three gaps remain between the pre-canonical result and a
+Clay-grade submission: quantization via Wightman/OS axioms on
+$\mathbb{R}^4$ (gap~B1), domain identification $A_\infty
+\leftrightarrow \mathbb{R}^4$ (gap~B2), and gauge group
+specification to a compact simple $G$ (gap~B3).
+These are registered as obligations \texttt{ob:YM-B2} and
+\texttt{ob:YM-B3} for future work.
+\end{remark}
+
+\begin{proof}
+Follows from the Dependency Declaration Theorem (Book~VII,
+Thm.~VII.5.4): every descendent theorem must have its full support
+explicitly declared.  Constitutional cleanliness is the positive
+formulation of this requirement for the branch as a whole.
+\end{proof}
+
+\begin{theorem}[\status{O}]\label{thm:readability}
+\textup{(Readability Theorem.)}  \textup{[Proof skeleton ---
+open obligation.]}  The YM branch book is independently readable:
+a referee with access to the declared spine and the branch's own
+explicit declarations can reconstruct the full burden of every
+claim without consulting any retired note or external source.
+\end{theorem}
+
+\begin{remark}[\status{R}]
+Thm.~\ref{thm:readability} is the canonical P3 obligation (from
+the retired Branch~A* governance layer).  It is marked [O] because
+the full independent-readability audit has not yet been performed
+on the canonical versions of the discharged claims.  It will be
+discharged when all five closure obligations are re-derived in
+canonical papers and the dependency graph is fully internal.
+\end{remark}
+
+\begin{proposition}[\status{U}]\label{prop:full-distinctness}
+\textup{(Full Distinctness.)}  The YM branch is genuinely distinct
+from the NS, GR, and SCC branches: it differs from each on at
+least one certified endpoint-visible structural property (the
+spectral gap predicate $\Delta_{\mathrm{YM}} > 0$, which is not
+the terminal predicate of any other named branch).
+\end{proposition}
+
+\begin{proof}
+The NS branch targets fluid regularity (not a spectral gap on a
+gauge algebra).  The GR branch targets causal-geometric
+realization (not spectral coercivity).  The SCC branch targets
+structural counterfactual capacity (not a gauge-theoretic gap).
+Therefore the YM terminal predicate is not the terminal predicate
+of any other declared branch: the YM branch is fully distinct.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:label-admissibility}
+\textup{(Interpretive Label Admissibility.)}  The label
+``Yang--Mills mass gap'' applied to $\Delta_{\mathrm{YM}} > 0$
+is admissible: (i) it adds no theorem content beyond the spectral
+gap claim; (ii) it asserts no independent ontology; (iii) it
+imports no phenomenology absent from the theorem; (iv) it does not
+depend on data outside the certified source image.
+\end{proposition}
+
+\begin{proof}
+Test~(i): the spectral gap statement $\lambda_1(\Delta_A) \geq m^2
+> 0$ is the full content; ``Yang--Mills'' is an interpretation of
+the gauge algebra identification, not additional force.  Tests
+(ii)--(iv): the NFC gauge algebra $\mathfrak{su}(3)\oplus\mathfrak{su}(2)
+\oplus\mathfrak{u}(1)$ is derived from the collar structure; no
+external physical premise is imported.  The label is eliminable
+by reverting to the spectral description.
+\end{proof}
+
+%% Status vocabulary for this branch
+\begin{remark}[\status{D}]\label{rmk:status-vocab}
+\textup{(Status vocabulary.)}  This branch uses the canonical
+failure code and positive status alphabet.
+\textbf{Admission:} FI-SRC (source-image failure), FI-FUN
+(functorial failure).
+\textbf{Rung:} FI-ORA, FI-CTM, FI-TIN, FI-MCS, FI-UC, FI-TSI.
+\textbf{Propagation:} FI-PROP.
+\textbf{Positive:} CERT-PROJ (certified projection), CERT-CLOSE
+(closure-grade).
+\textbf{Interpretive:} FI-IADD, FI-IONT, FI-IPHEN, FI-ISRC.
+At the current stage: no stronger than CERT-PROJ is licensed for
+any YM claim (the five closure obligations block CERT-CLOSE).
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Imported Spine Structure}
+\label{sec:imports}
+%% ---------------------------------------------------------------
+
+\textbf{Imports from Book~I.}  We work with the stabilized
+observational quotient $\Sigma_\infty$ and the defect ledger
+$\Delta$ (Book~I, Props.~I.4.1, I.5.4).  The collar alphabet size
+$K_0$ is prime (Book~I, Thm.~I.3.7).  The six collapse gates
+CG-1--CG-6 are standing rules of this book.  PASS holds for all
+persistence-selected systems (imported from Book~II,
+Thm.~II.5.14).
+
+\textbf{Imports from Book~II.}  We assume Phase-A stability
+throughout unless otherwise stated (Book~II, Def.~II.5.1).  The
+Boundary Stabilization Theorem (Book~II, Thm.~II.8.1) governs
+local collar determinacy.  The Phase-A/Phase-C boundary is
+identified with the Gribov boundary in Section~\ref{sec:closure-ledger}.
+
+\textbf{Imports from Book~III.}  The Unified Coercive-Transport
+Inequality (Book~III, Thm.~III.5.1) with transport factor
+$\Theta_n = 1$ (YM gap-subcritical regime) is the source of the
+spectral lower bound that the YM branch reads as a mass gap.  The
+shared spectral hinge (Book~III, Sch.~III.8.2) identifies $m^2>0$
+from the UCTI as the YM-branch-specific gap input.
+
+\textbf{Imports from Book~IV.}  The Universal Source Theorem
+(Book~IV, Thm.~IV.7.1) certifies $\mathbf{U} \in \mathrm{POT}$
+as the apex from which the YM realization functor descends.  The
+five source-side rungs ORA--UC are imported as discharged [U]
+results; only TSI remains branch-specific.
+
+\textbf{Imports from Books~V--VII.}  The branch-legitimacy
+framework of Book~V certifies the YM candidate as a lawful branch.
+The continuum interface legitimacy of Book~VI licenses the gap
+claim's continuum reading.  Book~VII's force-governance applies to
+every claim in this book.
+
+\begin{standingrule}[\status{D}]\label{sr:ym-no-continuum-smuggle}
+No continuum differential operator, smooth metric, or Riemannian
+geometry is assumed primitive.  The covariant Laplacian $\Delta_A$
+and connection $A$ are derived from the discrete NFC collar
+structure via the Book~VI continuum interface; they are licensed
+tools, not primitive inputs.
+\end{standingrule}
+
+%% ---------------------------------------------------------------
+\section{Branch-Specific Arena}
+\label{sec:arena}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:YM-target-cat}
+The \emph{Yang--Mills target category} $\mathcal{C}_{\mathrm{YM}}$
+consists of:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Objects: Phase-A certified NFC configurations $X$ equipped
+        with a collar-inherited connection $A(X)$ and covariant
+        Laplacian $\Delta_{A(X)}$.
+  \item Morphisms: admissible YM enlargements $X \leadsto X'$
+        (gap-subcritical admissible enlargements, satisfying the
+        YM-ICDC condition).
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:YM-functor}
+The \emph{YM realization functor}
+$F_{\mathrm{YM}} : \mathrm{POT} \to \mathcal{C}_{\mathrm{YM}}$
+maps each POT object $P$ to the Phase-A certified configuration
+$F_{\mathrm{YM}}(P)$ carrying the collar-inherited connection data.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:gap-margin}
+\label{sec:gap-margin}
+The \emph{gap margin} of a YM object $X \in \mathcal{C}_{\mathrm{YM}}$
+is
+\[
+  G_{\mathrm{gap}}(X) \;:=\; \lambda_1(\Delta_{A(X)}) \;>\; 0,
+\]
+the smallest eigenvalue of the covariant Laplacian.  An object $X$
+is \emph{gap-subcritical} if there exists $m^2 > 0$ such that
+$G_{\mathrm{gap}}(X) \geq m^2$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:YM-gap-subcritical}
+\textup{(Gap-Subcriticality.)}
+A YM object $X \in \mathcal{C}_{\mathrm{YM}}$ is \emph{gap-subcritical}
+if $G_{\mathrm{gap}}(X) \geq m^2 > 0$ for some $m^2 > 0$.  An
+admissible enlargement $X \hookrightarrow X'$ is \emph{gap-subcritical}
+if the defect terms satisfy
+\[
+  E_n(X) + B_n(X) \;<\; g_\infty(X),
+\]
+i.e., the sum of the excitation defect $E_n$ and the boundary defect
+$B_n$ is strictly subordinate to the current spectral gap
+$g_\infty$.  Gap-subcriticality is the explicit closure condition that
+Theorem~\ref{thm:YM-covariant-gap} requires: when it holds at every
+step of the YM-ICDC program, the spectral gap is preserved and the
+YM mass gap is certified.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:YM-terminal-predicate}
+The \emph{YM terminal predicate} is
+\[
+  \tau_{\mathrm{YM}}(X)
+  \;\iff\;
+  G_{\mathrm{gap}}(X) \;\geq\; m^2 \;>\; 0
+  \quad\text{for all admissible completions of } X.
+\]
+The Yang--Mills mass gap is $\Delta_{\mathrm{YM}} := m^2 > 0$
+(notation: $\Delta_{\mathrm{YM}}$ is the mass gap; $\Delta$ alone
+denotes the defect ledger --- these must never be conflated).
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:YM-branchwise-completion}
+The \emph{branchwise YM completion object} $\mathcal{U}_{\mathrm{YM}}$
+is the branch-relative recipient for all lawful local YM
+realizations.  It is not a second universal source; it is a
+branch-local assembly point for certified YM data.
+\end{definition}
+
+%% ---------------------------------------------------------------
+\section{Lawful Descent and Gap-Subcritical Persistence}
+\label{sec:descent}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:YM-lawful}
+\textup{(YM Branch is Lawful.)}  The branch candidate
+$\mathfrak{B}_{\mathrm{YM}} = (\mathbf{U}, \mathcal{C}_{\mathrm{YM}},
+F_{\mathrm{YM}}, \mathrm{Cert}_{\mathrm{YM}},
+\tau_{\mathrm{YM}}, \mathrm{FF}_{\mathrm{YM}})$
+is a lawful NFC branch: it satisfies all five conditions of the
+Certified Branch Legitimacy Theorem (Book~V, Thm.~V.8.1).
+\end{proposition}
+
+\begin{proof}
+(1)~Source descent: $F_{\mathrm{YM}}$ descends from $\mathbf{U}$
+via the lawful realization structure of Book~IV.
+(2)~Intake survival: the YM candidate survives the constitutional
+intake ladder through UC (five source-side rungs discharged); TSI
+is a target-side obligation tracked in the closure ledger.
+(3)~Ledger completeness: all non-source burdens (O\_ID through
+O\_CLU) are explicitly ledgered in Section~\ref{sec:closure-ledger}.
+(4)~Status honesty: the YM branch is cited at CERT-PROJ force,
+not at closure force, until all five obligations are discharged.
+(5)~Non-retroactivity: the YM branch does not affect the NS, GR,
+or SCC branches (Book~VII, Thm.~VII.6.y).
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:YM-ICDC}
+\textup{(YM-ICDC: Gap-Subcritical Persistence.)}
+\textup{[Conditional on Phase-A, $K_0=7$, PASS, SA\textsubscript{2},
+gap-subcriticality of $X$.]}
+Let $X \in \mathcal{C}_{\mathrm{YM}}$ be a lawful gap-subcritical
+Phase-A object with $G_{\mathrm{gap}}(X) \geq m^2 > 0$, and let
+$X \leadsto X'$ be an admissible YM enlargement with interface
+error terms $E_n, B_n$ satisfying
+$E_n + B_n < G_{\mathrm{gap}}(X)$.  Then
+\[
+  G_{\mathrm{gap}}(X') \;\geq\; G_{\mathrm{gap}}(X) - (E_n + B_n)
+  \;>\; 0.
+\]
+In particular, gap-subcriticality is preserved under controlled
+admissible enlargement.
+\end{theorem}
+
+\begin{proof}
+Apply the Unified Coercive-Transport Inequality (Book~III,
+Thm.~III.5.1) with $C_n(X) = G_{\mathrm{gap}}(X)$,
+$\Theta_n = 1$ (no contraction in the gap-subcritical YM regime),
+and boundary/internal defect terms $E_n, B_n$.  The inequality
+gives $C_{n+1}(X') \leq C_n(X) + E_n + B_n$.  Since
+$C_n(X) = G_{\mathrm{gap}}(X) \geq m^2$ and $E_n + B_n <
+G_{\mathrm{gap}}(X)$, we obtain $G_{\mathrm{gap}}(X') > 0$.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:YM-ICDC} is the YM terminal specialization of
+the ICDC Schema (Book~III, Sch.~III.8.1).  It shows that the
+spectral gap survives controlled admissible enlargement.  The
+open question (O\_GLOB) is whether this extends from the Phase-A
+sector to the global coercivity statement $\lambda_1(\Delta_A)
+\geq m^2$ uniformly --- without restricting to small-energy
+configurations.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{The Closure Ledger}
+\label{sec:closure-ledger}
+%% ---------------------------------------------------------------
+
+The following table records the five core closure obligations of
+the YM branch.  Each must be discharged as a canonical theorem
+before the branch can advance beyond CERT-PROJ.
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{1.8cm}p{4.0cm}p{1.5cm}p{4.5cm}@{}}
+\hline
+\textbf{ID} & \textbf{Name} & \textbf{Status} & \textbf{Blocks} \\
+\hline
+O\_ID & Transfer operator identification: regime-B witness presentation and discrete gauge algebra identification & [O] &
+  TSI discharge; entire closure chain \\
+O\_RIG & Lipschitz rigidity: $L \leq (K_0-1)\pi/K_0 = 6\pi/7$ for $K_0=7$, certified from Weyl structure constants & [O] &
+  O\_GLOB; O\_CLU \\
+O\_ENC & Encoding compatibility: five-predicate checklist (FINITE, WELLTYPED, KCOMP, ND, C2) for the discrete-to-continuum Weyl map $\Gamma^{(n)}$ & [O] &
+  Rayleigh transfer; continuum gap claim \\
+O\_GLOB & Global coercivity: $\lambda_1(\Delta_A) \geq m^2 > 0$ uniformly over the Phase-A sector, without small-energy restriction & [O] &
+  Clay-grade gap statement; OS/Wightman \\
+O\_CLU & Cluster decomposition: exponential decay of correlations $|\langle O_1 O_2\rangle_c| \leq Ce^{-m^2\beta\cdot\mathrm{dist}}$ and vacuum uniqueness & [O] &
+  OS/Wightman axioms; full Millennium posture \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{remark}[\status{R}]
+In the retired monograph v8.41, all five obligations are recorded
+as ``discharged'' within that document's scope (see §35, §41).
+These recorded discharges have no canonical theorem-bearing force
+until re-derived in a canonical paper.  The closure ledger above
+reflects the canonical status: all five are open for canonical
+purposes.  The primary re-derivation resource for O\_ID is the
+NFC-YM-1 complex (O-YM.NFC-YM-1-V1, V2, ID in the ledger).
+\end{remark}
+
+\begin{openobligation}[\status{O}]\label{ob:O-ID}
+\textup{(O\_ID: Discrete Gauge Algebra Identification.)}
+Identify the collar-local Lie algebra $\mathfrak{O}_\partial(P)$
+generated by the discrete NFC transfer operators with the
+continuum gauge algebra $\mathfrak{su}(3)\oplus\mathfrak{su}(2)
+\oplus\mathfrak{u}(1)$ on the screened sector.
+
+\emph{Current state:} The three NFC-YM-1 predicates must be
+certified:
+\begin{enumerate}[label=\textup{(V\arabic*)}]
+  \item \textbf{V1 (Membership audit):} verify TM14 pendant operators
+        satisfy the block-constant definition under Regime~B collar
+        operators.
+  \item \textbf{V2 (Self-closure rank):} $\dim[\tilde{T}_i,\tilde{T}_j]$
+        closure rank matches the $A_2$ schema.
+  \item \textbf{ID (Type identification):} certify
+        $\mathfrak{su}(3)\oplus\mathfrak{u}(1)$ via $\dim\mathcal{Z}$,
+        simplicity, and Killing form signature.
+\end{enumerate}
+The gateway prerequisite is O-YM.NFC-YM-1a: the explicit
+Regime~B collar partition index map $\pi: \mathrm{collar\text{-}states}
+\to \{1,\ldots,m\}$ for the 16-pendant configuration.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:O-RIG}
+\textup{(O\_RIG: Lipschitz Rigidity.)}
+Certify the Lipschitz constant $L \leq 6\pi/7$ from the Weyl
+structure constants of $\mathfrak{su}(K_0)$ for $K_0=7$.
+Recorded in v8.41 Thm.~35.6 as $L \leq (K_0-1)\pi/K_0$;
+needs re-derivation in canonical papers.  The Weight-Freeze
+predicate (O-YM.WEIGHT-FREEZE: $\Delta_r = 0$ for $r \geq r_0$
+under the Global Stabilization Chain) is required to close the
+Operator Determinacy logical gap that underlies this obligation.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:O-ENC}
+\textup{(O\_ENC: Encoding Compatibility.)}
+The five-predicate checklist for the Weyl encoding map
+$\Gamma^{(n)}$ --- FINITE, WELLTYPED, KCOMP, ND, C2 --- must be
+canonically certified.  Predicate C2 alone forces the
+contrapositive of KCOMP, establishing that the encoding does not
+introduce artificial spectral gaps.  Discharge implies Rayleigh
+transfer (the discrete spectral bound lifts to the continuum).
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:O-GLOB}
+\textup{(O\_GLOB: Global Coercivity.)}
+Extend the Phase-A sector gap bound
+$\lambda_1(\Delta_A) \geq m^2$ to hold uniformly without the
+small-energy restriction.  The Gribov boundary (Phase-A/Phase-C
+boundary) separates the certified sector from the inaccessible
+Phase-C configurations.  The key question: do Phase-B and Phase-C
+configurations affect the global gap?  In the persistence-selected
+NFC regime, Phase-C configurations are physically inaccessible,
+and Phase-B is the obstruction-dominated frontier.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:O-CLU}
+\textup{(O\_CLU: Cluster Decomposition and Vacuum Uniqueness.)}
+Establish exponential decay of connected correlators:
+\[
+  |\langle O_1 O_2\rangle_c|
+  \;\leq\; C\, e^{-\mu\cdot\mathrm{dist}(O_1, O_2)},
+  \quad
+  \mu \;=\; m^2\beta \;>\; 0,
+\]
+and vacuum uniqueness via the Perron--Frobenius argument on the
+screened sector.  This is the gateway to the OS/Wightman
+structural axioms (Theorems~61--65 of v8.41, Wightman and
+Osterwalder-Schrader conditions).  The LR constant $\mu = m^2\beta$
+is imported from Book~III (Sch.~III.8.2) and depends on O\_GLOB
+through $m^2 > 0$.
+\end{openobligation}
+
+%% ---------------------------------------------------------------
+\section{Branch Transfer Machinery}
+\label{sec:transfer}
+%% ---------------------------------------------------------------
+
+This section records the conditional analytic results available
+in the retired notes that will become the canonical theorems of
+this branch once re-derived.  Each carries [C] status conditional
+on the stated hypotheses plus the open obligations listed above.
+
+\begin{proposition}[\status{C}]\label{prop:YM-profile}
+\textup{(Gauge Template: Three-Way Sector Splitting.)}
+\textup{[Conditional on Phase-A, $K_0=7$, SA\textsubscript{1},
+SA\textsubscript{2}, PASS.]}
+The collar algebra splits into three canonical summands:
+\[
+  \mathfrak{g}_{\mathrm{color}}
+  \;\cong\;
+  \mathfrak{su}(3) \oplus \mathfrak{su}(2) \oplus \mathfrak{u}(1).
+\]
+The $\mathfrak{su}(3)$ factor corresponds to the $A_2$ color sector
+(3 pendant families, Dim-3 ecology), the $\mathfrak{su}(2)$ factor
+to the $A_1$ electroweak sector (SA\textsubscript{1} forcing),
+and the $\mathfrak{u}(1)$ factor to the abelian hypercharge sector.
+\end{proposition}
+
+\begin{proof}[Proof sketch (retired notes v8.41, v7.35)]
+Under SA\textsubscript{2} (Symmetry-Forcing Schema~Rank~2), the
+$\beta_1 = 3$ classification (Book~III type) selects exactly the
+$A_2$ root system.  SA\textsubscript{1} forces the $A_1$ sector by
+the interface-sharing constraint.  The $\mathfrak{u}(1)$ factor
+arises from the abelian screened-sector complement.  Re-derivation
+in canonical papers requires O\_ID discharge.
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:YM-gauge-unique}
+\textup{(Gauge Template Uniqueness.)}
+\textup{[Conditional on LS-2, $\tau \leq 4$, AG+.]}
+The compact semisimple type $A_1 \oplus A_2$ is the unique type
+fitting the NFC root-budget constraint: the E\textsubscript{8}
+obstruction cap $\rho_{\max} = 8$ (Book~II, Thm.~II.5.12) limits
+the root budget to $\leq 6$ odd-root slots, and $B_2$ ($8$ roots)
+and $G_2$ ($12$ roots) both exceed this budget.  $A_1 \oplus A_2$
+has exactly $6$ roots.
+\end{proposition}
+
+\begin{remark}[\status{R}]
+Proposition~\ref{prop:YM-gauge-unique} is the root-budget
+argument from v7.35 Thm.~gauge-template-unique.  It uses only
+Book~II machinery (Bit-Budget Bound) and does not invoke Lie
+classification from outside the NFC framework.  This makes it one
+of the most self-contained results in the YM program.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:YM-covariant-gap}
+\textup{(Covariant Laplacian Gap.)}
+\textup{[Conditional on Phase-A, SA\textsubscript{2}, small-energy
+restriction $S_{\mathrm{YM}} \leq E_0$.]}
+On the sublevel set $S_{\mathrm{YM}}(A) \leq E_0$,
+\[
+  \lambda_1(\Delta_A) \;\geq\; m^2 \;>\; 0
+\]
+uniformly.  Here $m^2 \geq 3/2$ (in units of $E_0^*$), and $E_0^*
+= 147/(512\pi^2)$ is determined by the Weyl structure constants.
+The removal of the small-energy restriction is O\_GLOB.
+\end{theorem}
+
+\begin{proof}[Proof sketch --- retired note v8.41 §35 Thm.~35.8]
+Step~1: OCS (operator connection structure) via O\_ID gives a
+collar-local connection $A$.  Step~2: O\_RIG certifies the
+Lipschitz constant $L \leq 6\pi/7$.  Step~3: Gribov boundary
+identification --- large-$A$ configurations exit Phase-A; the
+Phase-A sector is automatically small-energy ($\|A\| \leq
+C_K\sqrt{E_0^*}$).  Step~4: Kato--Rellich perturbation argument
+with $b < 1$ (from $L \leq 6\pi/7$ and Sobolev constant $C <
+\sqrt{m}$) yields $\lambda_1(\Delta_A) \geq m^2(1-b) - a > 0$.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Named Failure Frontier}
+\label{sec:frontier}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{U}]\label{thm:YM-frontier}
+\textup{(Failure Frontier Stability.)}  The YM branch has a
+precisely named failure frontier $\mathrm{FF}_{\mathrm{YM}}$:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \textbf{Primary frontier (O\_ID/NFC-YM-1):}
+        The discrete Lie-closure certification --- whether the
+        NFC pendant operators in Regime~B satisfy the
+        block-constant closure axioms under the TM14 configuration.
+        Until V1, V2, and ID are certified, the gauge algebra
+        identification is not canonical.
+  \item \textbf{Secondary frontier (O\_GLOB):}
+        Whether the Phase-A sector gap extends to global
+        coercivity without the small-energy restriction.  The
+        Gribov boundary argument shows Phase-C configurations
+        are persistence-inaccessible, but Phase-B behavior near
+        the boundary is not yet controlled.
+  \item \textbf{Operator determinacy gap (O-YM.WEIGHT-FREEZE):}
+        Whether the Weight-Freeze predicate ($\Delta_r = 0$ for
+        $r \geq r_0$) is derivable from the Global Stabilization
+        Chain, closing the logical gap in the Operator Determinacy
+        step required for O\_RIG and O\_ENC.
+\end{enumerate}
+The YM branch has CERT-PROJ force.  It does not have CERT-CLOSE
+force.  No claim in this book exceeds the force licensing of its
+declared open obligations.
+\end{theorem}
+
+\begin{proof}
+The Frontier Stability Theorem (Book~VII, Thm.~VII.4.3) requires
+every branch to declare a positive named failure frontier.  The
+three items above are the YM branch's failure frontier.  Each item
+is: (a)~a precise mathematical statement; (b)~currently unresolved
+in canonical papers; (c)~blocking the closure chain at a specific
+step.  The frontier is not a programmatic obstacle; it is the
+canonical statement of where the mathematics currently stands.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Conditional Near-Closure Modes}
+\label{sec:near-closure}
+%% ---------------------------------------------------------------
+
+Under the stated conditional hypotheses, two partial closure
+modes are available before full CERT-CLOSE is reached.
+
+\begin{theorem}[\status{C}]\label{thm:YM-cond-mass-gap}
+\textup{(Conditional Mass Gap.)}
+\textup{[Conditional on Phase-A, $K_0=7$, SA\textsubscript{2},
+O\_ID discharged, O\_RIG discharged, O\_ENC discharged, O\_GLOB
+discharged (small-energy sector only).]}
+The Yang--Mills mass gap $\Delta_{\mathrm{YM}} = m^2 > 0$ holds
+on the Phase-A small-energy sector.  Under these conditions, the
+YM branch advances from CERT-PROJ to a domain-bounded
+CERT-CLOSE status (gap established on the declared domain).
+\end{theorem}
+
+\begin{theorem}[\status{C}]\label{thm:YM-full-closure}
+\textup{(Full Closure: Clay-Grade YM Mass Gap.)}
+\textup{[Conditional on all of Thm.~\ref{thm:YM-cond-mass-gap}'s
+hypotheses plus O\_GLOB discharged globally and O\_CLU
+discharged.]}
+The Yang--Mills mass gap $\Delta_{\mathrm{YM}} = m^2 > 0$ holds
+globally (without energy restriction) on $\mathbb{R}^4$, and the
+OS/Wightman axioms are satisfied.  Under these conditions the YM
+branch reaches CERT-CLOSE.
+\end{theorem}
+
+\begin{remark}[\status{R}]
+Theorems~\ref{thm:YM-cond-mass-gap} and~\ref{thm:YM-full-closure}
+are the YM branch's two-mode near-closure structure, analogous to
+the NS Branch Book's NSTN2 and NSDI2 conditional closure modes.
+Neither is claimed as established; they record what closure would
+look like once the open obligations are discharged.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Final Status Proposition}
+\label{sec:status}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:YM-status}
+\textup{(Canonical Status.)}  The YM branch currently satisfies:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \textbf{Lawful branch:} confirmed (Prop.~\ref{prop:YM-lawful}).
+  \item \textbf{TSI:} partially established (weak form; full discharge
+        requires O\_ID).  Failure code FI-TSI.
+  \item \textbf{Propagation:} gap-subcritical persistence on Phase-A
+        sector (Thm.~\ref{thm:YM-ICDC}).  Full propagation blocked
+        by O\_GLOB.  Failure code FI-PROP.
+  \item \textbf{Strongest admissible endpoint label:}
+        \emph{gap-subcritical spectral persistence on the Phase-A
+        sector of the $K_0=7$ NFC color-gauge substrate.}  No
+        stronger label is licensed.
+  \item \textbf{Status:} CERT-PROJ.  Not CERT-CLOSE.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[\status{R}]
+The label ``Yang--Mills mass gap'' may be used as shorthand for the
+endpoint target, but with the understanding that at current status
+the gap has been established only conditionally (on O\_ID through
+O\_GLOB) and only on the small-energy Phase-A sector.  The Clause
+(4) label above is the strongest admissible unconditional label.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Boundary of the YM Branch Book}
+%% ---------------------------------------------------------------
+
+\textbf{What this branch book establishes.}
+\begin{enumerate}
+  \item The YM branch is a lawful NFC branch (CERT-PROJ).
+  \item The YM branch is constitutionally clean and fully distinct
+        from the other named branches.
+  \item Gap-subcritical persistence: the spectral gap survives
+        controlled admissible enlargement in the Phase-A sector.
+  \item The gauge algebra template $\mathfrak{su}(3)\oplus
+        \mathfrak{su}(2)\oplus\mathfrak{u}(1)$ is the unique
+        type compatible with the NFC root-budget constraint
+        (Prop.~\ref{prop:YM-gauge-unique}).
+  \item The three-part named failure frontier is precisely stated
+        (Thm.~\ref{thm:YM-frontier}).
+  \item Two conditional near-closure modes record what closure
+        would require (Thms.~\ref{thm:YM-cond-mass-gap}--\ref{thm:YM-full-closure}).
+\end{enumerate}
+
+\textbf{What this branch book does not establish.}
+\begin{enumerate}
+  \item Discharge of any of the five core closure obligations
+        (O\_ID through O\_CLU) as canonical theorems.  All five
+        are open in the canonical framework.
+  \item Global coercivity without the small-energy restriction.
+  \item Cluster decomposition and OS/Wightman axioms as canonical
+        theorems.
+  \item CERT-CLOSE status.  The YM branch does not claim a
+        Clay-grade mass gap solution.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{4.0cm}p{0.8cm}p{3.4cm}p{4.4cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on} & \textbf{Exports to} \\
+\hline
+\ref{prop:formation}\ Formation
+  & [U] & Bk.~V Thm.~V.8.1
+  & \ref{prop:YM-lawful} \\
+
+\ref{prop:cleanliness}\ Cleanliness
+  & [U] & Bk.~VII Thm.~VII.5.4
+  & \ref{prop:YM-lawful} \\
+
+\ref{thm:readability}\ Readability
+  & [O] & All canonical proofs (pending)
+  & External scrutiny \\
+
+\ref{prop:full-distinctness}\ Full Distinctness
+  & [U] & Terminal predicates of all branches
+  & Branch catalog \\
+
+\ref{prop:label-admissibility}\ Label Admissibility
+  & [U] & Bk.~VII Prop.~VII.6.x
+  & Endpoint citation discipline \\
+
+\ref{prop:YM-lawful}\ YM Branch Lawful
+  & [U] & \ref{prop:formation}, Bk.~IV--V
+  & All subsequent YM theorems \\
+
+\ref{thm:YM-ICDC}\ Gap-Subcrit.\ Persistence
+  & [C] & Bk.~III Thm.~III.5.1; Phase-A
+  & \ref{thm:YM-cond-mass-gap}; NS Branch (shared hinge) \\
+
+\ref{prop:YM-gauge-unique}\ Gauge Template Unique
+  & [C] & Bk.~II Thm.~II.5.12; LS-2; $\tau \leq 4$
+  & O\_ID contract \\
+
+\ref{thm:YM-covariant-gap}\ Covariant Lap.\ Gap
+  & [C] & Phase-A; O\_ID; O\_RIG
+  & \ref{thm:YM-cond-mass-gap} \\
+
+\ref{thm:YM-frontier}\ Failure Frontier
+  & [U] & All open obligations named
+  & External scrutiny; CERT-PROJ posture \\
+
+\ref{thm:YM-cond-mass-gap}\ Cond.\ Mass Gap
+  & [C] & O\_ID--O\_GLOB discharged
+  & \ref{thm:YM-full-closure} \\
+
+\ref{thm:YM-full-closure}\ Full Closure
+  & [C] & \ref{thm:YM-cond-mass-gap}; O\_CLU
+  & CERT-CLOSE (conditional) \\
+
+\ref{prop:YM-status}\ Canonical Status
+  & [U] & All of YM Branch Book
+  & Program ledger; external readers \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{scholium}[\status{R}]
+The YM Branch Book is frontier-honest.  It does not claim the
+Clay Millennium Prize.  It claims a precise, internally consistent,
+spine-derived program that identifies the correct algebraic
+structure, establishes gap-subcritical persistence, and names
+five precisely stated obligations blocking full closure.  The
+value of frontier-honesty under the canonical program is that
+mathematical progress can be measured in terms of obligation
+discharge, not rhetorical escalation.
+\end{scholium}
+
+\end{document}

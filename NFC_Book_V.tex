@@ -1,0 +1,685 @@
+%% Elements of Nested Fibrational Cosmology
+%% Book V: Descents, Projections, and Certified Branch Legitimacy
+%% Final-Pass Canonical Draft
+%%
+%% Status legend:
+%%   [U]  Unconditional  — proved from standing definitions and prior Unc results
+%%   [C]  Conditional    — depends on explicitly declared hypotheses
+%%   [D]  Definition-structural — structural, no proof obligation
+%%   [R]  Remark only    — expository, non-load-bearing
+%%   [O]  Open obligation — not yet proved
+
+\documentclass[12pt,oneside]{amsbook}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+%% ---------------------------------------------------------------
+%% Theorem environments
+%% ---------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+%% Status tag macro
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% ---------------------------------------------------------------
+%% Notation
+%% ---------------------------------------------------------------
+%%  From Books I--IV (all freely used):
+%%    \Omega, \Sigma_\infty, \delta, \Delta, O(U), C_{\rho^*}(U)
+%%    \mathrm{Reg}, \mathrm{POT}, F_R, \tau_\iota, \mathbf{U}, K^*, T^*, \pi
+%%
+%%  New in Book V:
+%%    \mathcal{C}           target category of a branch
+%%    F: \mathrm{POT} \to \mathcal{C}   realization functor
+%%    p: \mathbf{U} \to E   branch projection
+%%    E                     endpoint datum
+%%    W                     legitimacy witness
+%%    \mathrm{Obs}^{\mathrm{stab}}  algebra of stabilized admissible observables
+
+\begin{document}
+
+\title{Book V\\[6pt]Descents, Projections, and Certified Branch Legitimacy}
+\author{Elements of Nested Fibrational Cosmology}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{V.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+Book~V is the descent and governance book of the canonical spine.
+
+Book~IV proved that the universal source object $\mathbf{U}$ exists,
+is bi-universal, and carries the canonical layered structure
+$T^* \hookrightarrow K^* \hookrightarrow \mathbf{U}$.  The program
+now faces a new question: given that there is one universal source,
+how can it lawfully determine multiple downstream branches without
+collapsing them into arbitrary reinterpretations or permitting hidden
+imports?
+
+Book~V answers this question by defining and characterizing
+\emph{lawful descent}.  Its central theorem --- the Universal Branch
+Legitimacy Theorem --- gives a necessary and sufficient condition for
+a proposed downstream branch to count as a lawful descendant of
+$\mathbf{U}$.  The five conditions are: explicit branch candidate
+intake, certified image of $\mathbf{U}$ as the endpoint datum,
+endpoint visibility, admission of a legitimacy witness, and exclusion
+of hidden-channel supplementation.
+
+Book~V is explicitly a \emph{law-of-branchhood} book.  It does not
+close any specific endpoint program.  It does not prove Yang--Mills,
+Navier--Stokes, gravity, or any other specific result.  Its purpose is
+to make the structure of lawful descent precise so that branch books
+cannot claim more than their declared descent machinery licenses.
+
+%% ---------------------------------------------------------------
+\section{Imports and Standing Rules}
+%% ---------------------------------------------------------------
+
+\textbf{Imports.}  All certified results of Books~I--IV.  In
+particular: the bi-universal property of $\mathbf{U}$
+(Book~IV, Corollary~IV.5.1), the canonical layered structure
+$T^* \hookrightarrow K^* \hookrightarrow \mathbf{U}$
+(Book~IV, Corollary~IV.6.1), and the result that every lawful
+downstream realization factors through $\mathbf{U}$
+(Book~IV, Corollary~IV.5.3).
+
+\begin{standingrule}[\status{D}]\label{sr:source-descent-only}
+A branch is legitimate only if its endpoint content is sourced through
+$\mathbf{U}$ and declared descent machinery.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:endpoint-visibility}
+No endpoint feature may be counted as branch structure unless it is
+branch-visible in certified terms.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:no-hidden-supplementation}
+A downstream claim may not import undeclared structure under the guise
+of interpretation, intuition, or endpoint convenience.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:legitimacy-before-closure}
+A branch must first be shown lawful before any branch-specific closure
+theorem has force.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:distinctness-by-endpoint}
+Two branches are distinct only to the extent that certified
+endpoint-visible structure distinguishes them.
+\end{standingrule}
+
+%% ---------------------------------------------------------------
+\section{Branch Candidates and Descent Structure}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:target-category}
+A \emph{licensed target category} $\mathcal{C}$ is a mathematical
+category to which a faithful realization functor from $\mathrm{POT}$
+may be directed, provided the functor is licensed by an explicit
+bridge theorem.  Examples include: finite algebraic sector categories,
+operator/semigroup categories, and continuum realization categories
+(the last requiring the interface legitimacy of Book~VI).
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:realization-functor}
+A \emph{realization functor} is a functor $F: \mathrm{POT} \to
+\mathcal{C}$ to a licensed target category that: preserves the
+POT-fibration structure; maps POT-morphisms to morphisms of
+$\mathcal{C}$; and is licensed by an explicit bridge theorem.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:branch-candidate}
+A \emph{licensed branch candidate} is a pair $(\mathcal{C}, F)$
+consisting of a licensed target category $\mathcal{C}$ and a
+proposed realization functor $F: \mathrm{POT} \to \mathcal{C}$,
+together with an explicit declaration of the bridge theorem licensing
+$F$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:endpoint-datum}
+The \emph{endpoint datum} of a licensed branch candidate
+$(\mathcal{C}, F)$ is the object
+\[
+  E \;:=\; F(\mathbf{U}) \;\in\; \mathcal{C},
+\]
+the image of the universal source object under the realization functor.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:branch-projection}
+A \emph{branch projection} is the canonical morphism
+\[
+  p_F: \mathbf{U} \to F^{-1}(E)
+\]
+expressing how $\mathbf{U}$ maps to the pre-image of the endpoint
+datum under $F$.  At the POT level, it is the inclusion map
+$\eta_R: F_R \to \mathbf{U}$ post-composed with the realization functor.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:branch-visible}
+A \emph{branch-visible observable} is any descendant observable
+$\varphi$ on $E \in \mathcal{C}$ whose definability and value are
+invariant under replacement by source-equivalent data: if $\mathbf{U}
+\cong \mathbf{U}'$ as POT objects, then $F(\mathbf{U}) \cong
+F(\mathbf{U}')$, and $\varphi$ assigns the same value to both.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:legitimacy-witness}
+A \emph{legitimacy witness} for a licensed branch candidate
+$(\mathcal{C}, F)$ is the certified evidence that:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item the endpoint datum $E = F(\mathbf{U})$ arises by certified
+        descent from $\mathbf{U}$ through the declared realization
+        functor $F$;
+  \item $E$ is branch-visible: its definition depends only on
+        $\mathbf{U}$ and the declared functor $F$; and
+  \item no undeclared supplementary structure beyond $\mathbf{U}$, $F$,
+        and the declared branch-specific hypotheses is needed to define
+        $E$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:hidden-channel}
+A \emph{hidden channel} is any undeclared dependence of an endpoint
+claim on structure not visible through the declared branch projection
+and certified realization functor.  Specifically, a hidden channel
+exists whenever:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item the endpoint $E$ requires structure beyond what $F(\mathbf{U})$
+        carries; or
+  \item the legitimacy of $E$ implicitly assumes a result not in the
+        declared import ledger.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:hidden-channel-examples}
+Hidden channels are the primary failure mode of ill-disciplined
+downstream programs.  Common instances include: silently assuming a
+continuum structure not licensed by Book~VI, implicitly importing a
+prior result not declared in the branch's import ledger, treating a
+conditional result as unconditional, and reading downstream physical
+interpretation back into source-level structure.  Standing
+Rule~\ref{sr:no-hidden-supplementation} prohibits all such imports
+regardless of how they are framed.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Branch Legitimacy}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:branch-projection}
+\textup{(Branch Projection Theorem.)}  For every licensed branch
+candidate $(\mathcal{C}, F)$, the endpoint datum $E = F(\mathbf{U})$
+is well-defined in $\mathcal{C}$, and the branch projection is
+canonical: it depends only on $\mathbf{U}$ and the declared
+realization functor $F$.
+\end{proposition}
+
+\begin{proof}
+$\mathbf{U}$ exists and is unique up to unique POT-isomorphism
+(Book~IV, Theorems~IV.4.1 and IV.5.1).  A realization functor
+$F: \mathrm{POT} \to \mathcal{C}$ maps POT-isomorphisms to isomorphisms
+in $\mathcal{C}$.  Therefore $E = F(\mathbf{U})$ is well-defined up to
+isomorphism in $\mathcal{C}$, and the branch projection is canonical.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:endpoint-visibility}
+Under a licensed realization functor $F$, the endpoint datum $E =
+F(\mathbf{U})$ is branch-visible: its observational content is
+invariant under replacement by source-equivalent data.
+\end{proposition}
+
+\begin{proof}
+If $\mathbf{U} \cong \mathbf{U}'$ as POT objects (i.e., they are
+source-equivalent), then $F(\mathbf{U}) \cong F(\mathbf{U}')$ in
+$\mathcal{C}$ since $F$ preserves isomorphisms.  Therefore the
+observational content of $E$ is invariant under source equivalence.
+Branch-visible observables on $E$ inherit this invariance.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:legitimacy-witness-required}
+\textup{(Legitimacy Witness Requirement.)}  A proposed downstream
+branch has canonical endpoint force only if it admits a legitimacy
+witness.
+\end{proposition}
+
+\begin{proof}
+By Standing Rule~\ref{sr:source-descent-only} and
+Definition~\ref{def:legitimacy-witness}: canonical endpoint force
+requires that the endpoint datum depend only on the declared source
+descent and declared branch-specific hypotheses.  Without a legitimacy
+witness certifying this dependency, the endpoint claim lacks the
+anti-smuggling guarantee required for canonical force.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:hidden-channel-exclusion}
+\textup{(Hidden Channel Exclusion.)}  Any proposed downstream branch
+depending on a hidden channel is non-canonical.  Specifically, if the
+endpoint datum $E$ requires undeclared structure beyond $F(\mathbf{U})$
+and the declared hypotheses, then no legitimacy witness exists.
+\end{proposition}
+
+\begin{proof}
+A legitimacy witness certifies (condition~(3) of
+Definition~\ref{def:legitimacy-witness}) that no undeclared
+supplementary structure is needed.  If a hidden channel exists
+(Definition~\ref{def:hidden-channel}), then condition~(3) fails:
+there is undeclared structure influencing the endpoint datum.
+Therefore the legitimacy witness condition cannot be satisfied, and
+the branch claim is non-canonical.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:hidden-channel-non-canonical}
+Any descendant relying on hidden-channel supplementation is
+non-canonical.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:hidden-channel-anti-smuggling}
+Proposition~\ref{prop:hidden-channel-exclusion} is the descendant-level
+anti-smuggling hinge of Book~V.  A branch becomes lawful not when it
+sounds plausible, but when its endpoint can be certified as
+source-descended without hidden supplementation.  The three conditions
+of the legitimacy witness --- certified descent, branch visibility,
+and no undeclared supplementation --- together constitute the canonical
+test for branchhood.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Distinctness and Collapse Discipline}
+%% ---------------------------------------------------------------
+
+Lawful descent does not by itself decide when two branches are
+genuinely distinct.  Book~V must distinguish route-difference from
+endpoint-difference.
+
+\begin{definition}[\status{D}]\label{def:path-equiv}
+Two branch projections $p_F$ and $p_{F'}$ are \emph{path-equivalent}
+if they arise from the same declared realization functor $F = F'$ via
+the same certified descent route from $\mathbf{U}$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:endpoint-equiv}
+Two branch projections $p_F$ and $p_{F'}$ are \emph{endpoint-equivalent}
+if their endpoint data agree up to the native equivalence of their
+target categories: $F(\mathbf{U}) \cong F'(\mathbf{U})$ in the
+relevant licensed category.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:collapse-case}
+A \emph{collapse case} occurs when two proposed descendants are both
+path-equivalent and endpoint-equivalent.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:confluent-case}
+A \emph{confluent distinctness case} occurs when two descendants are
+path-distinct but endpoint-equivalent: they arrive at the same
+certified endpoint structure via genuinely different certified routes.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:fully-distinct}
+A \emph{fully distinct case} occurs when two descendants differ both
+by path and by endpoint datum.
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:collapse}
+\textup{(Collapse Criterion.)}  If two proposed descendants of
+$\mathbf{U}$ are path-equivalent and endpoint-equivalent, then they do
+not constitute distinct lawful branches.
+\end{theorem}
+
+\begin{proof}
+If the descendants share the same certified descent route and terminate
+in equivalent endpoint data, they differ neither by source path nor by
+target content.  By Standing Rule~\ref{sr:distinctness-by-endpoint},
+two branches are distinct only to the extent that certified
+endpoint-visible structure distinguishes them.  Since no such
+distinction is present, the two proposed descendants are canonically
+the same branch.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:path-mult-no-branch}
+Path multiplicity without endpoint distinction does not by itself
+generate new canonical branches.
+\end{corollary}
+
+\begin{corollary}[\status{U}]\label{cor:redescription-no-branch}
+Endpoint redescription without source-distinct descent does not
+generate new canonical branches.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:collapse-inflection}
+Corollaries~\ref{cor:path-mult-no-branch} and
+\ref{cor:redescription-no-branch} block the two main failure modes of
+branch inflation: constructing a ``new branch'' by simply relabeling
+the same descent path, or repackaging the same endpoint datum with
+different notation.  Both are excluded by the Collapse Criterion.
+\end{remark}
+
+But collapse is not the only possibility.  Distinct lawful paths may
+converge at the same endpoint without becoming identical as routes.
+
+\begin{definition}[\status{D}]\label{def:diamond-confluence}
+A \emph{diamond confluence configuration} is a pair of lawful descent
+paths from $\mathbf{U}$ into the same licensed target category whose
+endpoint data agree up to the native equivalence of that category.
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:diamond}
+\textup{(Diamond Confluence Principle.)}  If two lawful descent paths
+from $\mathbf{U}$ into a declared target category are
+endpoint-equivalent, then they are canonically confluent at the
+endpoint, even when they remain path-distinct.
+\end{theorem}
+
+\begin{proof}
+Endpoint-equivalence identifies the terminal descendant structure up to
+the target category's native equivalence.  Path-distinctness records
+that the certified descent routes are different.  Both facts can hold
+simultaneously: the endpoint-equivalence does not force the routes
+themselves to coincide.  Therefore confluence at the endpoint does not
+require collapse of the routes.  Two route-distinct but
+endpoint-equivalent descendants remain canonically meaningful as
+distinct paths to the same endpoint.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:confluence-no-collapse}
+Confluence at the endpoint does not erase lawful path distinction.
+\end{corollary}
+
+\begin{corollary}[\status{U}]\label{cor:route-distinct-meaningful}
+Distinct descent paths may remain mathematically meaningful even when
+they terminate in the same certified endpoint structure.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:diamond-permits-multiplicity}
+Taken together, the Collapse Criterion and the Diamond Confluence
+Principle say: Book~V permits lawful multiplicity (distinct routes to
+a common endpoint) while forbidding arbitrary branch inflation (calling
+the same thing new merely by redescription).  This is the correct
+balance.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{The Universal Branch Legitimacy Theorem}
+%% ---------------------------------------------------------------
+
+The previous sections establish all five conditions needed for the
+governing theorem of this book.
+
+\begin{theorem}[\status{U}]\label{thm:UBLT}
+\textup{(Universal Branch Legitimacy Theorem.)}  A proposed downstream
+branch $(\mathcal{C}, F, E)$ is lawful if and only if all five of the
+following conditions hold:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item\label{cond:intake} \emph{Licensed intake}: $(\mathcal{C}, F)$
+        is a licensed branch candidate with explicitly declared
+        realization functor.
+  \item\label{cond:descent} \emph{Certified source descent}: the
+        endpoint datum $E = F(\mathbf{U})$ arises as the certified
+        image of the universal source object $\mathbf{U}$ under the
+        declared realization functor.
+  \item\label{cond:visibility} \emph{Endpoint visibility}: $E$ is
+        branch-visible --- its definition and value are invariant under
+        source equivalence.
+  \item\label{cond:witness} \emph{Legitimacy witness}: a legitimacy
+        witness for $(\mathcal{C}, F)$ exists, certifying that $E$
+        depends only on $\mathbf{U}$, the declared functor $F$, and
+        the declared branch-specific hypotheses.
+  \item\label{cond:no-channel} \emph{No hidden-channel supplementation}:
+        the endpoint claim requires no undeclared structure beyond what
+        conditions~\ref{cond:intake}--\ref{cond:witness} license.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\emph{Necessity.}  Each condition is necessary for canonical
+branchhood:
+\begin{itemize}
+  \item Condition~\ref{cond:intake} is necessary by
+        Definition~\ref{def:branch-candidate}: a branch must have a
+        declared and licensed descent mechanism.
+  \item Condition~\ref{cond:descent} is necessary by
+        Book~IV, Corollary~IV.5.3: every lawful downstream realization
+        factors through $\mathbf{U}$.
+  \item Condition~\ref{cond:visibility} is necessary by
+        Standing Rule~\ref{sr:endpoint-visibility}: a branch endpoint
+        must be branch-visible.
+  \item Condition~\ref{cond:witness} is necessary by
+        Proposition~\ref{prop:legitimacy-witness-required}: canonical
+        force requires a legitimacy witness.
+  \item Condition~\ref{cond:no-channel} is necessary by
+        Proposition~\ref{prop:hidden-channel-exclusion}: any hidden
+        channel invalidates the legitimacy witness.
+\end{itemize}
+
+\emph{Sufficiency.}  Conversely, conditions~\ref{cond:intake}--\ref{cond:no-channel}
+are jointly sufficient:
+\begin{itemize}
+  \item Condition~\ref{cond:intake} provides the declared descent
+        structure.
+  \item Condition~\ref{cond:descent} ensures the endpoint is sourced
+        from $\mathbf{U}$.
+  \item Condition~\ref{cond:visibility} ensures the endpoint is
+        canonically meaningful.
+  \item Condition~\ref{cond:witness} certifies the dependency structure
+        is free of smuggling.
+  \item Condition~\ref{cond:no-channel} confirms no undeclared
+        supplementation is present.
+\end{itemize}
+Once all five conditions are met, the descendant is fully
+source-certified, endpoint-visible, and free of hidden support.  No
+further conditions are needed for the branch to count as a lawful
+descendant.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:mandatory-declarations}
+Every derived branch book must begin by declaring:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item its licensed target category $\mathcal{C}$,
+  \item its realization functor $F: \mathrm{POT} \to \mathcal{C}$
+        and the bridge theorem licensing it,
+  \item its endpoint datum $E = F(\mathbf{U})$,
+  \item the native equivalence of $\mathcal{C}$ determining when two
+        endpoint data coincide, and
+  \item its legitimacy witness.
+\end{enumerate}
+A branch book that fails to supply these five items is not
+canonically admissible under Book~V.
+\end{corollary}
+
+\begin{proof}
+The five items correspond precisely to the five conditions of
+Theorem~\ref{thm:UBLT}.  Admissibility requires all five; omitting any
+one leaves the branch without canonical force.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:open-branch-still-canonical}
+A branch may be mathematically serious and canonically admissible even
+when its closure remains open, provided its target, descent law, and
+failure frontier are canonically declared.
+\end{corollary}
+
+\begin{proof}
+The Universal Branch Legitimacy Theorem certifies that a branch is
+\emph{lawful}, not that it is \emph{closed}.  Lawfulness is a
+structural condition about source descent and hidden-channel
+exclusion.  Closure is a further mathematical achievement requiring
+additional branch-specific theorems.  A lawful but unclosed branch
+with an explicitly declared failure frontier satisfies all conditions
+of Theorem~\ref{thm:UBLT} and retains full canonical standing.
+\end{proof}
+
+\begin{scholium}[\status{R}]\label{sch:UBLT-scope}
+Book~V defines lawful descendant structure.  It does not yet determine
+the exact force of descendant claims, nor does it license continuum
+language within them.  The force of a branch claim is governed by
+Book~VII.  The licensing of continuum and differential language within
+a branch is governed by Book~VI.  Both of those books are downstream
+of Book~V: they presuppose that a branch is lawful before governing
+how its claims should be stated.
+\end{scholium}
+
+%% ---------------------------------------------------------------
+\section{Boundary of Book V}
+%% ---------------------------------------------------------------
+
+\textbf{What Book~V proves.}
+\begin{enumerate}
+  \item Lawful descent from $\mathbf{U}$ is governed by a five-condition
+        biconditional: the Universal Branch Legitimacy Theorem.
+  \item Every lawful branch must have a licensed target category,
+        a declared realization functor, a certified endpoint datum, a
+        legitimacy witness, and no hidden-channel supplementation.
+  \item Path multiplicity without endpoint distinction does not
+        generate new branches (Collapse Criterion).
+  \item Distinct descent routes may converge at the same endpoint
+        without collapsing (Diamond Confluence Principle).
+  \item A branch is canonically admissible even when unclosed,
+        provided its failure frontier is explicitly declared.
+\end{enumerate}
+
+\textbf{What Book~V does not prove, and may not be assumed here.}
+\begin{enumerate}
+  \item \emph{Branch closures.}  Book~V certifies branchhood, not
+        closure.  Yang--Mills closure, Navier--Stokes regularity, and
+        gravity closure all belong in derived branch books.
+  \item \emph{Continuum interface.}  Book~V does not license the use
+        of differential, integral, geometric, or smooth language in
+        branch books.  That licensing belongs to Book~VI.
+  \item \emph{Force of branch claims.}  Book~V does not determine
+        whether a branch-level claim is unconditional, conditional, or
+        bridge-dependent.  That governance belongs to Book~VII.
+  \item \emph{Physical endpoint identification.}  The identification
+        of any specific endpoint datum with a physical theory (gauge
+        field, fluid, spacetime geometry) belongs in derived branch
+        books and requires specific bridge theorems not proved here.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Handoff to Book VI and Book VII}
+%% ---------------------------------------------------------------
+
+Book~V branches the canonical program in two directions.
+
+\emph{Toward Book~VI:} When a lawful branch seeks to use continuum,
+differential, integral, or geometric language as an encoding of its
+endpoint structure, it must invoke Book~VI's interface legitimacy
+machinery.  No smooth language is licensed in a branch book without
+first establishing the relevant continuum interface regime through
+Book~VI.
+
+\emph{Toward Book~VII:} When a lawful branch seeks to state the exact
+force, scope, import discipline, and failure frontier of its claims,
+it must invoke Book~VII's canonical closure schema.  The governance of
+how branch claims may be promoted, cited, and combined belongs
+constitutionally to Book~VII.
+
+The handoff from Book~V is therefore:
+\begin{quote}
+  $\mathbf{U}$
+  $\;\longrightarrow\;$
+  licensed branch candidate
+  $\;\longrightarrow\;$
+  lawful branch projection
+  $\;\longrightarrow\;$
+  $\begin{cases}
+    \text{Book~VI: interface legitimacy,}\\
+    \text{Book~VII: closure discipline.}
+  \end{cases}$
+\end{quote}
+Book~V supplies the first three stages.
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{4.2cm}p{0.8cm}p{3.4cm}p{4.6cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on} & \textbf{Exports to} \\
+\hline
+\ref{prop:branch-projection}\ Branch Projection Thm.
+  & [U] & Bk.~IV Thms.~IV.4.1, IV.5.1
+  & \ref{prop:endpoint-visibility}, \ref{thm:UBLT} \\
+
+\ref{prop:endpoint-visibility}\ Endpoint Visibility
+  & [U] & \ref{prop:branch-projection}
+  & \ref{thm:UBLT} \\
+
+\ref{prop:legitimacy-witness-required}\ Legitimacy Witness Req.
+  & [U] & SR~\ref{sr:source-descent-only},
+    Def.~\ref{def:legitimacy-witness}
+  & \ref{prop:hidden-channel-exclusion}, \ref{thm:UBLT} \\
+
+\ref{prop:hidden-channel-exclusion}\ Hidden Channel Exclusion
+  & [U] & Def.~\ref{def:hidden-channel},
+    \ref{prop:legitimacy-witness-required}
+  & \ref{cor:hidden-channel-non-canonical}, \ref{thm:UBLT} \\
+
+\ref{thm:collapse}\ Collapse Criterion
+  & [U] & Defs.~\ref{def:path-equiv}--\ref{def:collapse-case},
+    SR~\ref{sr:distinctness-by-endpoint}
+  & \ref{cor:path-mult-no-branch}, \ref{cor:redescription-no-branch} \\
+
+\ref{thm:diamond}\ Diamond Confluence Principle
+  & [U] & Defs.~\ref{def:confluent-case}, \ref{def:diamond-confluence}
+  & \ref{cor:confluence-no-collapse}, \ref{cor:route-distinct-meaningful} \\
+
+\ref{thm:UBLT}\ Universal Branch Legitimacy Thm.
+  & [U] & \ref{prop:branch-projection}--\ref{prop:hidden-channel-exclusion};
+    Bks.~I--IV
+  & Books~VI--VII; all branch books \\
+
+\ref{cor:mandatory-declarations}\ Mandatory Declarations
+  & [U] & \ref{thm:UBLT}
+  & Constitutional rule for all branch books \\
+
+\ref{cor:open-branch-still-canonical}\ Open branch canonical
+  & [U] & \ref{thm:UBLT}
+  & NS, YM, GR, SCC, A* branch books \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{scholium}[\status{R}]\label{sch:V-discipline}
+The Universal Branch Legitimacy Theorem is the constitutional entry
+point for every derived branch book.  No branch may begin its work
+without satisfying the five conditions of Theorem~\ref{thm:UBLT},
+declared explicitly at the opening of the branch manuscript.  This
+requirement is not bureaucratic: each condition rules out a specific
+form of mathematical dishonesty.  Condition~\ref{cond:intake} rules
+out unlicensed realization.  Condition~\ref{cond:descent} rules out
+branches that do not actually descend from $\mathbf{U}$.
+Condition~\ref{cond:visibility} rules out unobservable endpoints.
+Condition~\ref{cond:witness} rules out undeclared dependencies.
+Condition~\ref{cond:no-channel} rules out hidden imports.  A branch
+that satisfies all five conditions has genuinely earned its canonical
+status.
+\end{scholium}
+
+\end{document}

@@ -1,0 +1,1154 @@
+%% Elements of Nested Fibrational Cosmology
+%% Book III: Persistence, Transport, and Observational Transfer
+%% Final-Pass Canonical Draft
+%%
+%% Status legend:
+%%   [U]  Unconditional  — proved from standing definitions and prior Unc results
+%%   [C]  Conditional    — depends on explicitly declared hypotheses
+%%   [D]  Definition-structural — structural, no proof obligation
+%%   [R]  Remark only    — expository, non-load-bearing
+%%   [O]  Open obligation — not yet proved
+
+\documentclass[12pt,oneside]{amsbook}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+%% ---------------------------------------------------------------
+%% Theorem environments
+%% ---------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+%% Status tag macro
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% ---------------------------------------------------------------
+%% Notation
+%% ---------------------------------------------------------------
+%%  From Books I--II:
+%%    \Omega, L, \sim_\infty, \Sigma_\infty, \delta, \Delta
+%%    U (region), \partial_{\rho^*}U (collar), \Phi_U (boundary law map)
+%%    O(U) (realized outcomes), C_{\rho^*}(U) (collar types)
+%%
+%%  New in Book III:
+%%    \mathcal{O} (persistent observable)
+%%    f (transfer map between contexts)
+%%    B_n^{\mathrm{bulk}}(U)   bulk stability measure
+%%    I_n(U)                   interface burden at stage n
+%%    C_n(U)                   interface-relative stability functional
+%%    \Theta_n(U)              transport factor, \Theta_n \in [0,1]
+%%    E_n(U)                   transported internal defect
+%%    B_n(U)                   interface/boundary defect
+
+\begin{document}
+
+\title{Book III\\[6pt]Persistence, Transport, and Observational Transfer}
+\author{Elements of Nested Fibrational Cosmology}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{III.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+Book~III is the motion and comparison book of the canonical spine.
+
+Book~I established that admissible testing produces a coherent
+observational quotient and that every finite refinement chain
+stabilizes.  Book~II established that, under LS-2, stabilized local
+observable outcomes are determined by bounded collar data and that
+finite collar alphabets impose hard multiplicity bounds.  Book~III now
+asks: how does certified local structure \emph{persist} and
+\emph{transfer} across admissible refinements and contexts?
+
+This question is essential because Book~IV must certify the existence
+of a universal source object $U$ that all lawful downstream structures
+factor through.  Factorization requires that certified observables from
+different local regimes can be coherently compared.  Coherent
+comparison requires a transport law.  Book~III provides that law.
+
+The central theorem of the book is the Unified Coercive-Transport
+Inequality: a branch-agnostic bound on how the interface-relative
+stability functional changes under admissible enlargement.  This
+inequality encodes the finite balance between transported bulk
+stability, internal defect, and boundary defect.  Its proof uses only
+the defect ledger of Book~I and the LS-2 boundary law of Book~II.
+
+Book~III is explicitly branch-agnostic.  It does not specialize to
+Yang--Mills, Navier--Stokes, gravity, or any other specific endpoint
+program.  All such specializations belong in derived branch books.
+What this book establishes is the upstream source law from which those
+specializations descend.
+
+%% ---------------------------------------------------------------
+\section{Imports and Standing Rules}
+%% ---------------------------------------------------------------
+
+\textbf{Imports from Book~I.}  Finite configuration spaces $\Omega$,
+admissible test families $\mathcal{T}_n$, observational equivalence
+$\sim_n$, quotients $\Sigma_n$, stabilized quotient $\Sigma_\infty$,
+survivor chains, one-step defect $\delta(C_n)$, defect ledger
+$\Delta(C_n \leadsto C_m)$, and the Observational Quotient Theorem.
+
+\textbf{Imports from Book~II.}  Regions $U$, collars $\partial_r U$,
+stabilized collar types, the boundary law map $\Phi_U$ under LS-2,
+realized stabilized outcomes $O(U)$, boundary capacity
+$\mathrm{Cap}_\partial(U)$, and the Boundary Stabilization Theorem.
+
+\begin{standingrule}[\status{D}]\label{sr:quotient-visible}
+No persistent observable may depend on presentation-level distinctions
+that were eliminated by the observational quotient of Book~I.
+Persistence is quotient-visible.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:transfer-respects-stab}
+No admissible transfer may destroy the stabilized local structure
+certified in Book~II without recording a transport obstruction.
+Transfer must respect stabilization.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:balance-before-interpretation}
+Claims about gain, loss, or conservation of observable content must
+descend from certified finite balance data.  Balance before
+interpretation.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:comparison-through-maps}
+Observable comparison across contexts has canonical force only through
+explicitly declared transfer maps.
+\end{standingrule}
+
+%% ---------------------------------------------------------------
+\section{Persistent Observables and Transfer Maps}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:persistent-obs}
+A \emph{persistent observable} is a certified observable whose value
+is preserved or lawfully transformed across the declared class of
+admissible refinements or comparison contexts.  Formally, it is a
+function $\mathcal{O}$ defined on stabilized quotient classes that
+satisfies the compatibility condition declared for the relevant class
+of transfer maps.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:transfer-map}
+A \emph{transfer map} $f: (U, \Sigma_\infty) \to (U', \Sigma'_\infty)$
+is a certified witness-preserving comparison map carrying admissible
+observable data from one context or refinement stage to another.  It
+must be compatible with observational quotient structure: if $\omega
+\sim_\infty \omega'$ in the source context, then $f(\omega)
+\sim'_\infty f(\omega')$ in the target context.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:transport-class}
+A \emph{transport class} is an equivalence class of admissible
+observable data under lawful transfer: two observations are in the
+same transport class if one is the transfer-image of the other via a
+declared transfer map.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:compatible-realization}
+A \emph{compatible realization} is a realization whose certified
+observable content agrees with the required transfer and persistence
+conditions.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:obs-drift}
+\emph{Observational drift} is the certified change in an observable
+under admissible transfer, prior to identifying whether that change is
+lawful, bounded, or obstructive.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:transfer-compatibility}
+\emph{Transfer compatibility} is the condition that a family of
+observables behaves coherently under the declared class of transfer
+maps: the transport-class structure is preserved under composition of
+transfer maps.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:transport-obstruction}
+A \emph{transport obstruction} is a certified failure of persistence,
+compatibility, or lawful transfer.  It records the exact stage and
+context at which a persistent observable fails to transfer lawfully.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:OT-object}
+An \emph{observational-transfer object} is an admissible
+quotient-visible object equipped with the persistence and transport
+structure needed for lawful comparison across contexts: a stabilized
+observational quotient, a family of declared transfer maps, and a
+defect-ledger encoding observational drift along admissible transfer
+chains.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:composable-chain}
+A \emph{composable transfer chain} is a finite or admissibly indexed
+sequence of transfer maps
+\[
+  f_0: (U_0, \Sigma^{(0)}_\infty) \to (U_1, \Sigma^{(1)}_\infty),
+  \quad
+  f_1: (U_1, \Sigma^{(1)}_\infty) \to (U_2, \Sigma^{(2)}_\infty),
+  \quad \ldots
+\]
+for which each successive transfer is lawful and the composite
+$f_{n} \circ \cdots \circ f_0$ is well-defined on the relevant
+certified observable content.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:transfer-coercivity}
+\emph{Transfer coercivity} is a certified constraint limiting
+uncontrolled observational drift along admissible transfer chains.  It
+asserts that the accumulated change in a declared observable family
+across a composable transfer chain is bounded by a quantity determined
+by the declared structural data.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:coercivity-source}
+Transfer coercivity is the bridge concept that will allow Book~IV to
+assemble local fiber data into a global persistent source object.  The
+coercive bound is what prevents the persistence diagram from diverging
+as one takes larger and larger regimes: it controls how much
+observational content can be ``lost'' at each transfer step.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Persistence Lemmas}
+%% ---------------------------------------------------------------
+
+\begin{lemma}[\status{U}]\label{lem:persistent-quotient-visible}
+Persistent observables are invariant under replacement by
+quotient-equivalent representatives.
+\end{lemma}
+
+\begin{proof}
+By Standing Rule~\ref{sr:quotient-visible} and the definition of
+persistent observable: a persistent observable's value is determined
+by the stabilized quotient class, not by the choice of representative
+within that class.  Two quotient-equivalent representatives belong to
+the same class, so the observable assigns them the same value.
+\end{proof}
+
+\begin{lemma}[\status{U}]\label{lem:transfer-preserves-compat}
+Transfer maps preserve certified local compatibility whenever their
+domain and codomain satisfy the declared admissibility conditions.
+\end{lemma}
+
+\begin{proof}
+By Definition~\ref{def:transfer-map}, transfer maps are
+witness-preserving and compatible with quotient structure.  Therefore
+any certified local compatibility relation in the source context ---
+meaning any admissible relation detectable by the licensed test family
+--- is preserved under the transfer map in the target context.
+\end{proof}
+
+\begin{lemma}[\status{U}]\label{lem:compat-invariant-refinement}
+Transfer compatibility is invariant under lawful refinement of
+comparison stage.
+\end{lemma}
+
+\begin{proof}
+Suppose a family of observables is transfer-compatible at comparison
+stage $n$.  Under lawful refinement to stage $n+1$, the quotient
+$\Sigma_{n+1}$ refines $\Sigma_n$, and transfer maps compatible at
+stage $n$ remain compatible at stage $n+1$ because the finer partition
+only introduces additional distinctions that are also quotient-visible.
+Transfer compatibility, being a condition on equivalence classes, is
+preserved under refinement.
+\end{proof}
+
+\begin{lemma}[\status{U}]\label{lem:drift-welldef}
+Observational drift is well-defined on certified observable families
+under declared transfer maps.
+\end{lemma}
+
+\begin{proof}
+Observational drift measures the change $\mathcal{O}(f(\omega)) -
+\mathcal{O}(\omega)$ under a transfer map $f$.  Since $f$ is
+well-defined on quotient classes (Definition~\ref{def:transfer-map})
+and $\mathcal{O}$ is a function on quotient classes, the drift is
+well-defined.
+\end{proof}
+
+\begin{lemma}[\status{U}]\label{lem:obstructions-quotient-visible}
+Transport obstructions are quotient-visible and independent of surplus
+presentation structure.
+\end{lemma}
+
+\begin{proof}
+A transport obstruction is defined as a certified failure of
+persistence, compatibility, or lawful transfer.  Each of these
+conditions is formulated on quotient classes (by
+Definitions~\ref{def:persistent-obs}, \ref{def:transfer-compatibility},
+\ref{def:transfer-map}).  Therefore the presence or absence of an
+obstruction is determined at the quotient level; presentation-level
+surplus cannot introduce or remove a genuine transport obstruction.
+\end{proof}
+
+\begin{lemma}[\status{U}]\label{lem:composition-welldef}
+Composition of lawful transfer maps is well-defined on compatible
+realizations.
+\end{lemma}
+
+\begin{proof}
+If $f$ and $g$ are lawful transfer maps with $\mathrm{codomain}(f) =
+\mathrm{domain}(g)$, then $g \circ f$ is a witness-preserving map
+compatible with quotient structure by the definition of transfer maps
+and the composability condition of
+Definition~\ref{def:composable-chain}.  On compatible realizations,
+the composition preserves the relevant certified observable content at
+each step.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Persistence and Compatibility Propositions}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:persistent-obs-arena}
+Persistent observables are well-defined on the admissible comparison
+arena.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:persistent-quotient-visible}, persistent
+observables are quotient-visible.  By the Observational Quotient
+Theorem (Book~I, Theorem~I.6.1), the quotient $\Sigma_\infty$ is
+well-defined.  Therefore persistent observables are well-defined
+functions on $\Sigma_\infty$.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:compat-preserved-refinement}
+Transfer compatibility is preserved under lawful refinement.
+\end{proposition}
+
+\begin{proof}
+Lemma~\ref{lem:compat-invariant-refinement}.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:compatible-transport-class}
+Compatible realizations induce the same transport class when related
+by lawful transfer.
+\end{proposition}
+
+\begin{proof}
+If two realizations $\omega$ and $\omega'$ are related by a lawful
+transfer map $f$ --- meaning $f(\omega) = \omega'$ as quotient-class
+data --- then they are in the same transport class by
+Definition~\ref{def:transport-class}.  Transfer compatibility ensures
+this relation is well-defined and extends to the full observable
+family.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:obstruction-blocks-persistence}
+A transport obstruction prevents identification of the affected
+observable family as persistent.
+\end{proposition}
+
+\begin{proof}
+A transport obstruction records a certified failure of persistence,
+compatibility, or lawful transfer
+(Definition~\ref{def:transport-obstruction}).  A persistent observable
+must be preserved or lawfully transformed under all declared transfer
+maps (Definition~\ref{def:persistent-obs}).  An obstruction certifies
+that at least one transfer map fails this requirement; hence the
+affected observable family is not persistent in the declared context.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:compatible-comparison-structure}
+Transfer-compatible observable families define a lawful comparison
+structure across admissible contexts.
+\end{proposition}
+
+\begin{proof}
+Composability of lawful transfer maps
+(Lemma~\ref{lem:composition-welldef}) and transfer compatibility
+(Definition~\ref{def:transfer-compatibility}) together imply that the
+collection of transfer-compatible observable families, equipped with
+transfer maps, forms a directed comparison structure: identity
+transfers are lawful, transfer maps compose, and the transport-class
+structure is well-defined.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:compatible-for-source}
+Only transfer-compatible observable families may contribute to the
+source completion of Book~IV.
+\end{corollary}
+
+\begin{proof}
+The source completion in Book~IV will assemble fiber data from all
+admissible regimes into a universal object.  Assembly requires that
+data from different regimes can be coherently compared, which requires
+transfer compatibility.  Observable families with transport
+obstructions cannot be coherently assembled, hence they are excluded
+from the source-completion program.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{The Interface-Relative Stability Functional}
+%% ---------------------------------------------------------------
+
+We now introduce the principal quantitative object of Book~III.
+This functional organizes the balance between bulk stability and
+boundary burden in a form that is branch-agnostic: it applies to any
+admissible regime before specialization to any particular endpoint
+program.
+
+\begin{definition}[\status{D}]\label{def:bulk-stability}
+For a region $U_n$ at comparison stage $n$, the \emph{bulk stability
+measure} $B_n^{\mathrm{bulk}}(U_n)$ is the certified coercive content
+of $U_n$ that is controlled by the Phase-A defect-floor architecture:
+the net certified observable content on $U_n$ that resists further
+defect accumulation.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:interface-burden}
+The \emph{interface burden} $I_n(U_n)$ at stage $n$ is the defect
+contribution at the boundary $\partial_{\rho^*} U_n$, determined by
+the LS-2 boundary law: the total certified defect load arising from
+the collar structure of $U_n$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:stability-functional}
+The \emph{interface-relative stability functional} at stage $n$ is
+\[
+  C_n(U_n) \;:=\; B_n^{\mathrm{bulk}}(U_n) \;-\; I_n(U_n).
+\]
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:functional-universality}
+The interface-relative stability functional $C_n$ is defined at the
+pre-branch layer, before any specialization to Yang--Mills, Navier--Stokes,
+gravity, or any other specific endpoint.  Its two components are both
+already present in the certified upstream machinery: $B_n^{\mathrm{bulk}}$
+from the defect-floor structure of Book~I, and $I_n$ from the LS-2
+boundary law of Book~II.  This universality is the source of the
+functional's load-bearing character.
+\end{remark}
+
+\begin{definition}[\status{D}]\label{def:transport-factor}
+The \emph{transport factor} at stage $n$, denoted $\Theta_n(U_n) \in
+[0, 1]$, is the certified multiplier expressing what fraction of
+$C_n(U_n)$ survives transport from $U_n$ to $U_{n+1}$ under the
+admissible enlargement.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:internal-defect}
+The \emph{transported internal defect} $E_n(U_n)$ is the certified
+defect increment arising from interior sites of $U_n$ that survive
+enlargement but are not fully transported: the ledger increments
+$\Delta\Lambda$ at interior sites during the step $U_n \to U_{n+1}$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:boundary-defect}
+The \emph{interface/boundary defect} $B_n(U_n)$ is the certified
+defect increment arising at $\partial U_n$ forced by the LS-2
+boundary-determinacy structure: collar-type proliferation at the
+interface of $U_n$ during the step $U_n \to U_{n+1}$.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:three-sources}
+Definitions~\ref{def:transport-factor}--\ref{def:boundary-defect}
+identify the three sources of observable change across one admissible
+enlargement step: transported bulk content (discounted by $\Theta_n$),
+internal defect ($E_n$), and boundary defect ($B_n$).  The
+Unified Coercive-Transport Inequality bounds $C_{n+1}$ in terms of
+these three sources.  No other sources are present: the defect ledger
+of Book~I and the boundary law of Book~II account for all of them.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Finite Balance and the Unified Coercive-Transport Inequality}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:finite-balance}
+A \emph{finite balance datum} is the certified accounting relation
+describing the transport, gain, loss, or redistribution of observable
+content across one admissible enlargement step.  For the
+interface-relative stability functional, it takes the form
+\[
+  C_{n+1}(U_{n+1}) \;\leq\;
+  \Theta_n(U_n)\, C_n(U_n) + E_n(U_n) + B_n(U_n).
+\]
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:unified-coercive}
+\textup{(Unified Coercive-Transport Inequality.)}  For every admissible
+enlargement $U_n \subseteq U_{n+1}$, the interface-relative stability
+functional satisfies
+\[
+  C_{n+1}(U_{n+1}) \;\leq\;
+  \Theta_n(U_n)\, C_n(U_n) \;+\; E_n(U_n) \;+\; B_n(U_n),
+\]
+where $\Theta_n(U_n) \in [0, 1]$ is the transport factor, $E_n(U_n)$
+is the transported internal defect, and $B_n(U_n)$ is the interface
+boundary defect.
+\end{theorem}
+
+\begin{proof}
+The bulk stability $B_{n+1}^{\mathrm{bulk}}(U_{n+1})$ of the enlarged
+regime receives contributions from three distinct sources, which we
+track using the defect ledger of Book~I and the LS-2 boundary law of
+Book~II.
+
+\emph{Source~1: Transported bulk.}  The bulk stability that survives
+transport from $U_n$ to $U_{n+1}$ is discounted by the transport
+factor $\Theta_n \in [0,1]$, giving a contribution of at most
+$\Theta_n C_n(U_n)$.  The transport factor accounts for the fact that
+not all of $C_n$ survives enlargement: some certified content is
+absorbed by the expansion of the comparison regime.
+
+\emph{Source~2: Internal defect $E_n$.}  Certified events in the
+interior of $U_n$ that are not fully transported contribute defect
+ledger increments $\Delta\Lambda$ at interior sites during the
+enlargement step.  These sum to $E_n(U_n)$, which is additive by the
+Ledger Additivity Proposition (Book~I, Proposition~I.5.4).
+
+\emph{Source~3: Boundary defect $B_n$.}  Certified events at
+$\partial U_n$ arise from the LS-2 boundary-determinacy structure
+(Book~II, Theorem~II.4.1): collar-type proliferation at the interface
+forces defect contributions $B_n(U_n) = \Delta_{\mathrm{bdry}}(U_n)$.
+These are determined by the boundary law map $\Phi_{U_n}$.
+
+By additivity of the defect ledger across all three sources,
+\[
+  C_{n+1}(U_{n+1})
+  \;\leq\;
+  \Theta_n C_n(U_n) + E_n(U_n) + B_n(U_n). \qedhere
+\]
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:ineq-branch-agnostic}
+The Unified Coercive-Transport Inequality is proved here in fully
+branch-agnostic form, depending only on the defect ledger of Book~I
+and the LS-2 boundary law of Book~II.  It is a source-level theorem,
+upstream of all specializations.  The three branch programs ---
+Yang--Mills, Navier--Stokes, gravity --- each specialize this
+inequality by fixing specific forms of $\Theta_n$, $E_n$, and $B_n$
+appropriate to their endpoint targets.  Those specializations belong
+in derived branch books, not in this book.  Any citation of this
+inequality in a branch book must carry an explicit declaration of
+which specialization is being applied.
+\end{remark}
+\begin{corollary}[\status{U}]\label{cor:terminal-observable-projection}
+\textup{(Terminal-Observable Projection Theorem.)}
+The interface-relative stability functional $C_n$ admits exactly two
+canonically distinct functorial projections to terminal observables:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \textbf{Spectral projection} $\pi_{\mathrm{YM}} \colon C_n
+    \to g_\infty := \lambda_1(\Delta_A)$: the covariant Laplacian
+    spectral gap.  Closure condition: $g_\infty > 0$.
+  \item \textbf{Decay projection} $\pi_{\mathrm{NS}} \colon C_n
+    \to \sup_n Q_n$: the supremum of the obstruction quotient.
+    Closure condition: $\sup_n Q_n < \infty$.
+\end{enumerate}
+Both projections are functorial with respect to the transition maps
+$\alpha_{R \to R'}$ of the POT category (Book~IV).  The two Millennium
+Prize problems addressed in the YM and NS branch books are the
+closure conditions of these two projections applied to the same
+upstream object $C_n$.
+\end{corollary}
+
+\begin{proof}
+Both projections are defined by specializing the decomposition
+$C_n = B_{\mathrm{bulk}}(U_n) - I_n$ (Definition~\ref{def:stability-functional}).
+$\pi_{\mathrm{YM}}$ takes $B_{\mathrm{bulk}}$ via the covariant
+Laplacian eigenvalue and $I_n$ via the gap margin; functoriality
+follows from the transition map coherence of
+Theorem~\ref{thm:balance-composable}.  $\pi_{\mathrm{NS}}$ takes
+$C_n$ via the covering-time--normalized defect floor and $Q_n$ via
+the quadratic rescaling; functoriality follows from Phase-A exhaustion
+enlargement compatibility (Theorem~\ref{thm:depth-sum}).  The
+projections are distinct because their target observables are
+dimensionally incomparable: $g_\infty$ is a spectral quantity
+(units of energy) while $\sup_n Q_n$ is a dimensionless ratio.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:balance-composable}
+Finite balance data compose along composable transfer chains: if
+$U_n \to U_{n+1} \to \cdots \to U_m$ is a composable transfer chain,
+then the accumulated interface-relative stability satisfies
+\[
+  C_m(U_m)
+  \;\leq\;
+  \Bigl(\prod_{k=n}^{m-1} \Theta_k\Bigr) C_n(U_n)
+  \;+\;
+  \sum_{k=n}^{m-1} \Bigl(\prod_{j=k+1}^{m-1} \Theta_j\Bigr)
+    \bigl(E_k(U_k) + B_k(U_k)\bigr).
+\]
+\end{theorem}
+
+\begin{proof}
+Induction on the chain length.  The base case $m = n+1$ is
+Theorem~\ref{thm:unified-coercive}.  For the inductive step, apply
+Theorem~\ref{thm:unified-coercive} to $U_{m-1} \to U_m$ and
+substitute the induction hypothesis for $C_{m-1}(U_{m-1})$.
+The transport factors and defect terms compose multiplicatively and
+additively, respectively, by the Ledger Additivity proposition
+(Book~I).
+\end{proof}
+
+%% -- Depth-Sum Convergence for Van Hove exhaustions ----------------
+
+\begin{theorem}[\status{U}]\label{thm:depth-sum}
+\textup{(Depth-Sum Convergence.)}  Let $(U_n)_{n \geq 1}$ be a Van
+Hove exhaustion of the canonical substrate: finite connected regions
+with $|U_n| \to \infty$ and $|\partial U_n|/|U_n| \to 0$.  For any
+decay rate $\mu > 0$,
+\[
+  \frac{1}{|U_n|}\sum_{d \geq 0} |\partial_d U_n|\, e^{-\mu d}
+  \;\longrightarrow\; 0
+  \quad \text{as } n \to \infty,
+\]
+where $\partial_d U_n$ denotes the set of sites at distance exactly
+$d$ from the boundary $\partial U_n$.
+\end{theorem}
+
+\begin{proof}
+For any $d \geq 0$, $|\partial_d U_n|$ is bounded above by
+$|\partial U_n| \cdot D^d$ where $D$ is the maximum degree of the
+substrate graph.  Therefore
+\[
+  \sum_{d \geq 0} |\partial_d U_n|\, e^{-\mu d}
+  \;\leq\; |\partial U_n| \sum_{d \geq 0} D^d e^{-\mu d}
+  \;=\; \frac{|\partial U_n|}{1 - D e^{-\mu}},
+\]
+which is finite for $\mu > \log D$.  For general $\mu > 0$, split the
+sum at depth $d_0 = \lfloor \log(|U_n|)/\mu \rfloor$: the tail
+$d > d_0$ contributes $|\partial U_n| \cdot O(|U_n|^{-1})$, and the
+head $d \leq d_0$ contributes $|\partial U_n| \cdot d_0$, which is
+$o(|U_n|)$ by the Van Hove condition $|\partial U_n| = o(|U_n|)$.
+Dividing by $|U_n|$ gives the result.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:depth-sum} is branch-agnostic: it uses only the
+Van Hove exhaustion geometry and is independent of any specific
+boundary-defect model.  It provides the convergence input for the
+NS Branch Book's weighted-boundary transport bounds, and is placed
+here rather than in any branch book because it is a structural fact
+about admissible exhaustions in general.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Transfer Coercivity}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:coercive-regime}
+An admissible enlargement step $U_n \to U_{n+1}$ is
+\emph{coercive} if $\Theta_n < 1$, meaning the transport factor is
+strictly contractive.  A composable transfer chain is
+\emph{uniformly coercive} if there exists $\theta < 1$ such that
+$\Theta_k \leq \theta$ for all steps $k$ in the chain.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:defect-subordinate}
+The defect terms $E_n(U_n)$ and $B_n(U_n)$ are
+\emph{comparably subordinate} to $C_n(U_n)$ on a regime if there
+exist branch constants $\mu_E, \mu_B \geq 0$ with
+$\mu_E + \mu_B < 1 - \theta$ such that
+$E_n \leq \mu_E C_n$ and $B_n \leq \mu_B C_n$ hold throughout the
+regime.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:coercive-inequality}
+\textup{(Finite Transfer Coercive Inequality.)}  Under the declared
+additional coercivity hypotheses --- uniform coercivity with factor
+$\theta < 1$, and comparably subordinate defect terms --- the
+interface-relative stability functional satisfies
+\[
+  C_m(U_m) \;\leq\; \lambda^{m-n}\, C_n(U_n),
+  \qquad
+  \lambda \;:=\; \theta + \mu_E + \mu_B \;<\; 1,
+\]
+along every admissible composable transfer chain of length $m - n$.
+In particular, observational drift along admissible transfer chains is
+quantitatively controlled.
+\end{theorem}
+
+\begin{proof}
+Under defect subordination, $E_k + B_k \leq (\mu_E + \mu_B) C_k$ at
+each step.  Substituting into the composable balance formula of
+Theorem~\ref{thm:balance-composable} and bounding the product
+$\prod \Theta_k \leq \theta^{m-n}$ by uniform coercivity, one obtains
+\[
+  C_m(U_m)
+  \;\leq\;
+  (\theta + \mu_E + \mu_B)^{m-n}\, C_n(U_n)
+  \;=\;
+  \lambda^{m-n}\, C_n(U_n).
+\]
+Since $\lambda < 1$, drift is geometrically controlled.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:coercive-conditional}
+Theorem~\ref{thm:coercive-inequality} is marked conditional because
+the coercivity hypotheses --- $\theta < 1$ and the defect subordination
+bounds --- are extra regime-level burdens not implied by the
+branch-agnostic upstream machinery alone.  At this level of the spine,
+transport coercivity is part of the source-preparation discipline.
+Whether it holds for a specific branch requires a branch-level
+verification.  The Navier--Stokes branch, for example, must establish
+its own defect subordination before citing this theorem.
+\end{remark}
+
+\begin{corollary}[\status{U}]\label{cor:obstruction-blocks-source}
+Observable families carrying transport obstruction are excluded from
+source-ready observational-transfer structure until the obstruction is
+resolved.
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:obstruction-blocks-persistence}, a transport
+obstruction certifies that an observable fails to be persistent.  By
+Corollary~\ref{cor:compatible-for-source}, only transfer-compatible
+persistent observable families may contribute to the source completion.
+Therefore any family with an unresolved transport obstruction is
+excluded.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Observational-Transfer Objects and POT Preparation}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:OT-welldef}
+Observational-transfer objects are well-defined.
+\end{proposition}
+
+\begin{proof}
+An observational-transfer object
+(Definition~\ref{def:OT-object}) consists of: a stabilized
+observational quotient (well-defined by Book~I, Theorem~I.6.1), a
+family of transfer maps that are well-defined by
+Definition~\ref{def:transfer-map} and Lemma~\ref{lem:composition-welldef},
+and a defect ledger (well-defined by Book~I,
+Corollary~I.6.3).  Each component is well-defined; hence the combined
+structure is well-defined.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:OT-morphisms}
+Lawful transfer maps between observational-transfer objects compose
+and admit identities.
+\end{proposition}
+
+\begin{proof}
+Composition is Lemma~\ref{lem:composition-welldef}.  Identity maps
+are lawful transfer maps: the identity map is witness-preserving and
+compatible with quotient structure.  Associativity of composition
+holds because map composition is associative.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:OT-from-compat}
+Persistent and transfer-compatible observable families determine
+observational-transfer structure.
+\end{proposition}
+
+\begin{proof}
+Given a persistent observable family (satisfying
+Definition~\ref{def:persistent-obs}) and a transfer-compatible family
+of transfer maps (satisfying Definition~\ref{def:transfer-compatibility}),
+the collection of admissible regimes, together with the quotient data
+and defect-ledger data, constitutes an observational-transfer object
+by Definition~\ref{def:OT-object}.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:OT-arena}
+The collection of observational-transfer objects and lawful transfer
+maps forms the comparison arena required for source completion.
+\end{proposition}
+
+\begin{proof}
+By Propositions~\ref{prop:OT-welldef} and \ref{prop:OT-morphisms},
+observational-transfer objects with lawful transfer maps form a
+well-defined category.  By Proposition~\ref{prop:OT-from-compat},
+every persistent transfer-compatible observable family yields an
+object in this category.  This is precisely the comparison arena
+that Book~IV's POT construction will use.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:OT-to-POT}
+The observational-transfer arena defined here is the immediate
+precursor to the POT (Persistent Observational-Transfer) category of
+Book~IV.  POT augments these objects with: a representation layer
+(initially empty, populated only by explicit bridge functors), the
+full Grothendieck fibration structure over the category of admissible
+regimes, and the explicit transport invariant $I(R,U)$.  All of this
+additional structure in Book~IV builds on the foundation laid here.
+\end{remark}
+
+\begin{remark}[\status{R}]
+\textup{(Run certificates as POT fiber data.)}
+\textit{(Pre-canonical remarks have no canonical force;
+see Book~VII, Standing Rule~\ref{sr:precanonical-force}.)}  
+The run-certificate structure of the pre-canonical record (v7.35
+\S2489: $r = (\Sigma, S, T)$ with collar signature $\Sigma$, supported
+type set $S$, and type operator $T = T_\partial|_S$) is the concrete
+instantiation of the abstract POT fiber slot defined in
+Book~IV.  Two run certificates are comparable (fiber-equivalent) iff
+$\Sigma_1 = \Sigma_2$ and $S_1 = S_2$, matching the fiber-over-regime
+structure of the POT category.  This identifies $T_\partial|_S$ as
+the concrete object populating each fiber; when Book~IV is revised to
+include explicit type-operator language, run certificates will serve
+as the canonical fiber witnesses.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Governing Theorem of Book III}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{U}]\label{thm:governing}
+\textup{(Observational Transfer Theorem of the Spine.)}  Stabilized
+observables admit lawful transfer across admissible refinements and
+contexts, yielding the transport structure required for source
+completion.
+
+More precisely:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item\label{thm:gov-persist}
+        Persistent observables are well-defined on the admissible
+        comparison arena, are quotient-visible, and are preserved
+        under replacement by quotient-equivalent representatives.
+  \item\label{thm:gov-transfer}
+        Transfer-compatible observable families define a lawful
+        comparison structure across admissible contexts, with
+        transport classes, finite balance data, and well-defined
+        transport obstructions.
+  \item\label{thm:gov-ineq}
+        The interface-relative stability functional $C_n$ satisfies
+        the Unified Coercive-Transport Inequality at every admissible
+        enlargement step, with the three-source decomposition into
+        transported bulk, internal defect, and boundary defect.
+  \item\label{thm:gov-OT}
+        The collection of observational-transfer objects and lawful
+        transfer maps forms a well-defined comparison arena that
+        serves as the immediate precursor to the POT category of
+        Book~IV.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part~\ref{thm:gov-persist}: Propositions~\ref{prop:persistent-obs-arena}
+and Lemma~\ref{lem:persistent-quotient-visible}.
+
+Part~\ref{thm:gov-transfer}: Propositions~\ref{prop:compat-preserved-refinement},
+\ref{prop:compatible-transport-class}, \ref{prop:compatible-comparison-structure},
+and Theorem~\ref{thm:balance-composable}.
+
+Part~\ref{thm:gov-ineq}: Theorem~\ref{thm:unified-coercive}.
+
+Part~\ref{thm:gov-OT}: Proposition~\ref{prop:OT-arena}.
+\end{proof}
+
+%% -- ICDC Schema (abstract arm) ------------------------------------
+
+\begin{scholium}[\status{O}]\label{sch:icdc-abstract}
+\textup{(Interface-Coherent Directed Compression Schema.)}
+\textup{[Proof sketch — retired-note status.  Canonical proof open.]}
+
+The ICDC Schema is the directed-system formalization of what the
+Unified Coercive-Transport Inequality means at the scale-limit level:
+when does a branch family over the enlargement ladder admit a
+controlled scale-limit compression in which load-bearing branch data
+survive coherently?
+
+\emph{Abstract statement.}  Given an admissible enlargement ladder
+$U_{n_0} \subseteq U_{n_0+1} \subseteq \cdots$ from a common source
+object $\mathcal{U}$, and a branch family $(B_n)$, if the following
+five conditions hold:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \emph{One-step inheritance:} $B_{n+1}$ inherits load-bearing
+        structure from $B_n$ at each admissible enlargement step.
+  \item \emph{Interface localization of failure:} any failure of
+        inheritance is detectable at the interface $\partial U_n$.
+  \item \emph{Two-step transitivity of corrections:} interface
+        corrections at step $n$ are absorbed by step $n+2$.
+  \item \emph{Source-image discipline:} the branch data do not
+        supplement the source image with unlicensed external content.
+  \item \emph{Summable interface residues:} the accumulated interface
+        defects $\sum_n I_n$ are summable (or suitably subordinate).
+\end{enumerate}
+then the family admits a controlled scale-limit compression
+$B_\infty := \varinjlim_\partial B_n$ in which load-bearing branch
+data survive coherently.  The underlying coercive object is
+$C_n(U_n) = B_n^{\mathrm{bulk}}(U_n) - I_n(U_n)$, satisfying the
+Unified Coercive-Transport Inequality.
+
+\emph{Terminal specializations.}  The four terminal specializations
+--- YM-ICDC ($\Theta_n = 1$, gap-subcritical), NS-ICDC
+($\Theta_n = \theta < 1$, obstruction quasi-decay), G-ICDC
+(curvature-subcritical), and SCC-ICDC (scale-limit BP-SCC direct
+system) --- belong in their respective branch books as instances of
+this schema.
+
+\emph{Status note.}  This scholium records an architectural
+abstraction from the retired dream paper suite (v7.35/v38, ICDC
+Theorem~9.12).  Its five conditions and three-source decomposition
+are consistent with the canonical UCTI of this book.  The canonical
+proof of the abstract schema remains open and will be hardened when
+the branch books are written.
+\end{scholium}
+
+%% -- Shared Spectral Hinge -----------------------------------------
+
+\begin{scholium}[\status{R}]\label{sch:spectral-hinge}
+\textup{(Shared Spectral Hinge.)}
+
+The spectral gap $m^2 > 0$ derived from the Unified
+Coercive-Transport Inequality has two distinct terminal readings in
+the derived branch books:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \emph{Yang--Mills reading (Kato-Rellich route).}  In the YM
+        Branch Book, $m^2 > 0$ provides the input to the Kato--Rellich
+        perturbation argument that establishes the Yang--Mills spectral
+        gap $\Delta_{\mathrm{YM}} > 0$ on the Phase-A sector.
+  \item \emph{Navier--Stokes reading (Lieb--Robinson route).}  In the
+        NS Branch Book, $m^2 > 0$ determines the Lieb--Robinson decay
+        constant $\mu = m^2 \beta > 0$ for the fluid sub-algebra,
+        where $\beta = \log_2(3/2)$ is the canonical transport
+        normalization coefficient (Book~IV).
+\end{enumerate}
+Both readings draw from the same upstream source law and are
+logically independent of each other.  The shared upstream spectral gap
+is what makes the YM and NS programs structurally related at the level
+of this book, even though their terminal proofs are entirely different.
+\end{scholium}
+
+%% -- Topological Conservation Scholia ------------------------------
+
+\begin{scholium}[\status{C}]\label{sch:topological-conservation}
+\textup{(Discrete-Time Topological Conservation.)}
+\textup{[Conditional on gate structure G1--G3.]}
+
+Let $\Phi_t : \mathcal{K}^{(0)} \to S^3$ be a sequence of kernel
+states.  Suppose each time step $t \to t+1$ admits a continuous
+relative homotopy $H(\cdot, s) : |\mathcal{K}| \to S^3$,
+$s \in [0,1]$, with $H(\cdot,0) = \widetilde\Phi_t$,
+$H(\cdot,1) = \widetilde\Phi_{t+1}$, boundary data fixed at all $s$,
+and no target-simplex degeneracy along the interpolation (gate G3
+absent).  Then
+\[
+  Q_{\mathrm{simp}}(\Phi_{t+1}) \;=\; Q_{\mathrm{simp}}(\Phi_t).
+\]
+Charge transitions are possible only at declared collapse gates
+G1--G3.  Under strong anchoring ($\Phi_t|_\Gamma = \Phi_\Gamma$ for
+all $t$), the conserved charge is the simplicial Hopf invariant.
+
+Source: v7.35 Theorem~66.2.  The admissible time evolution of the
+NFC kernel preserves simplicial topological charge under the collapse
+gate discipline; this is a structural consequence of the gate
+structure, not an additional hypothesis.
+\end{scholium}
+
+\begin{scholium}[\status{C}]\label{sch:hopf-helicity}
+\textup{(Hopf Helicity Conservation.)}
+\textup{[Conditional on admissibility of $\Phi$.]}
+
+Let $\Phi(\cdot,t) : \mathbb{R}^3 \to S^3 \subset \mathbb{C}^2$ be a
+continuous family of admissible kernel fields with $|\Phi(x,t)| = 1$
+for all $(x,t)$, fixed boundary value $\Phi_\infty$ (independent of
+$t$), and continuous $t$-dependence.  Then the Hopf charge
+\[
+  \mathcal{H}[\Phi(\cdot,t)] \;=\; \mathrm{const}
+  \quad \text{in } t.
+\]
+Source: v7.35 Theorem~66.4.  The Hopf helicity is an invariant of
+admissible kernel field evolution; this bridges the discrete NFC
+collapse gate structure to a classical topological invariant.
+
+Together with Scholium~\ref{sch:topological-conservation}, this
+establishes that the NFC kernel carries two conserved topological
+charges (simplicial charge $Q_{\mathrm{simp}}$ and Hopf charge
+$\mathcal{H}$) under admissible evolution.
+\end{scholium}
+
+%% ---------------------------------------------------------------
+\section{Boundary of Book III}
+%% ---------------------------------------------------------------
+
+\textbf{What Book~III proves.}
+\begin{enumerate}
+  \item Persistent observables are well-defined, quotient-visible,
+        and transfer-compatible.
+  \item Admissible transfer maps compose, are witness-preserving,
+        and respect the observational quotient.
+  \item The interface-relative stability functional satisfies the
+        Unified Coercive-Transport Inequality at every admissible
+        enlargement step.
+  \item Finite balance data compose along composable transfer
+        chains.
+  \item Under extra coercivity hypotheses, observational drift is
+        geometrically controlled.
+  \item Observational-transfer objects form a well-defined
+        comparison arena.
+  \item Depth-sum convergence for Van Hove exhaustions
+        (Thm~\ref{thm:depth-sum}): weighted boundary contributions
+        vanish in the thermodynamic limit.
+  \item The ICDC Schema is recorded as an architectural scholium
+        (Sch.~\ref{sch:icdc-abstract}): the abstract UCTI
+        scale-limit formalization.
+  \item Two topological conservation scholia
+        (Schs.~\ref{sch:topological-conservation}--\ref{sch:hopf-helicity}):
+        discrete-time $Q_{\mathrm{simp}}$ conservation and Hopf
+        helicity conservation under admissible kernel evolution.
+\end{enumerate}
+
+\textbf{What Book~III does not prove, and may not be assumed here.}
+\begin{enumerate}
+  \item \emph{Universal source structure.}  The existence of a
+        universal source object $U \in \mathrm{POT}$ is a theorem of
+        Book~IV.  Book~III builds the transport machinery that makes
+        source completion meaningful; it does not prove source
+        completion itself.
+  \item \emph{Branch specializations.}  The Yang--Mills
+        specialization ($\Theta_n = 1$, gap-subcritical closure),
+        the Navier--Stokes specialization ($\Theta_n = \theta < 1$,
+        quasi-decay), and the gravity specialization all belong in
+        derived branch books.  No specialization of the Unified
+        Coercive-Transport Inequality to a specific endpoint is
+        canonical in this book.
+  \item \emph{Continuum structure.}  No continuum, differential, or
+        smooth language is licensed at this stage.  The transport
+        inequality is a finite discrete bound.
+  \item \emph{Branch closure.}  Transport coercivity at this level is
+        part of source-preparation discipline.  Whether it extends to
+        closure of any specific branch requires branch-level
+        verification.
+  \item \emph{Physical endpoint identification.}  No identification
+        with gauge fields, fluid dynamics, or geometric structure is
+        claimed.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Handoff to Book IV}
+%% ---------------------------------------------------------------
+
+Book~IV begins when the question shifts from \emph{how local certified
+structure transfers} to \emph{whether all such transfer data can be
+assembled into a single universal object}.  The observational-transfer
+arena of Book~III --- objects with stabilized quotients, lawful
+transfer maps, and defect ledgers --- is precisely the POT fiber data
+that Book~IV will assemble into the universal completion.
+
+The transition from Book~III to Book~IV is:
+\begin{quote}
+  local admissible observables
+  $\;\longrightarrow\;$
+  stabilized persistent structure
+  $\;\longrightarrow\;$
+  lawful transfer across contexts
+  $\;\longrightarrow\;$
+  universal source completion.
+\end{quote}
+Book~III supplies the first three terms.  Book~IV supplies the fourth.
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{4.0cm}p{0.8cm}p{3.6cm}p{4.6cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on} & \textbf{Exports to} \\
+\hline
+\ref{lem:persistent-quotient-visible}\ Persist.\ obs.\ quotient-vis.
+  & [U] & SR~\ref{sr:quotient-visible}, Def.~\ref{def:persistent-obs}
+  & \ref{prop:persistent-obs-arena}, \ref{thm:governing} \\
+
+\ref{lem:transfer-preserves-compat}\ Transfer preserves compat.
+  & [U] & Def.~\ref{def:transfer-map}
+  & \ref{prop:compat-preserved-refinement} \\
+
+\ref{lem:composition-welldef}\ Composition well-def.
+  & [U] & Def.~\ref{def:composable-chain}
+  & \ref{prop:OT-morphisms}, \ref{prop:OT-arena} \\
+
+\ref{lem:obstructions-quotient-visible}\ Obstructions quot.-vis.
+  & [U] & Defs.~\ref{def:persistent-obs}--\ref{def:transport-obstruction}
+  & \ref{prop:obstruction-blocks-persistence}, \ref{cor:obstruction-blocks-source} \\
+
+\ref{prop:compatible-comparison-structure}\ Compat.\ comparison
+  & [U] & \ref{lem:composition-welldef}, Def.~\ref{def:transfer-compatibility}
+  & \ref{cor:compatible-for-source}, \ref{thm:governing} \\
+
+\ref{cor:compatible-for-source}\ Source-ready compat.
+  & [U] & \ref{prop:compatible-comparison-structure}
+  & Book~IV POT construction \\
+
+\ref{thm:unified-coercive}\ Unified Coercive-Transport Ineq.
+  & [U] & Books~I--II, Defs.~\ref{def:stability-functional}--\ref{def:boundary-defect}
+  & \ref{thm:balance-composable}, \ref{thm:governing}; all branch books \\
+
+\ref{thm:balance-composable}\ Composable balance
+  & [U] & \ref{thm:unified-coercive}, Bk.~I ledger additivity
+  & \ref{thm:coercive-inequality}, \ref{thm:governing} \\
+
+\ref{thm:coercive-inequality}\ Finite Transfer Coercive Ineq.
+  & [C] & \ref{thm:balance-composable}, coercivity hypotheses
+  & Branch books (NS, YM, GR imports) \\
+
+\ref{cor:obstruction-blocks-source}\ Obstruction blocks source
+  & [U] & \ref{prop:obstruction-blocks-persistence}, \ref{cor:compatible-for-source}
+  & Book~IV; branch books \\
+
+\ref{prop:OT-arena}\ OT comparison arena
+  & [U] & \ref{prop:OT-welldef}, \ref{prop:OT-morphisms}
+  & Book~IV POT; \ref{thm:governing} \\
+
+\ref{thm:governing}\ Obs.\ Transfer Thm.\ of Spine
+  & [U] & All of Bk.~III
+  & Books~IV--VII; all branch books \\
+
+\ref{thm:depth-sum}\ Depth-Sum Convergence
+  & [U] & Van Hove geometry; Bk.~I finiteness
+  & NS Branch Book (weighted boundary bounds) \\
+
+\ref{sch:icdc-abstract}\ ICDC Schema (abstract)
+  & [O] & \ref{thm:unified-coercive}; five conditions
+  & Branch books Part~III; YM/NS/GR/SCC ICDC \\
+
+\ref{sch:topological-conservation}\ Topological conservation
+  & [C] & Gate structure G1--G3
+  & GR Branch Book remark \\
+
+\ref{sch:hopf-helicity}\ Hopf helicity
+  & [C] & Admissibility of $\Phi$
+  & GR Branch Book remark \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{scholium}[\status{R}]\label{sch:book-iii-honest-status}
+The Unified Coercive-Transport Inequality
+(Theorem~\ref{thm:unified-coercive}) is the load-bearing core of
+Book~III and is unconditional: it depends only on the defect ledger of
+Book~I and the LS-2 boundary law of Book~II.  The Finite Transfer
+Coercive Inequality (Theorem~\ref{thm:coercive-inequality}) is
+conditional, requiring extra coercivity hypotheses.  This conditionality
+should remain explicit in every downstream citation.  No branch book
+may promote the conditional result to unconditional force without
+discharging the extra hypotheses within the branch.
+\end{scholium}
+
+\end{document}

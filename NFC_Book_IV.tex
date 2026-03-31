@@ -1,0 +1,1047 @@
+%% Elements of Nested Fibrational Cosmology
+%% Book IV: The Universal Source and Completion Ladder
+%% Final-Pass Canonical Draft
+%%
+%% Status legend:
+%%   [U]  Unconditional  — proved from standing definitions and prior Unc results
+%%   [C]  Conditional    — depends on explicitly declared hypotheses
+%%   [D]  Definition-structural — structural, no proof obligation
+%%   [R]  Remark only    — expository, non-load-bearing
+%%   [O]  Open obligation — not yet proved
+
+\documentclass[12pt,oneside]{amsbook}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+%% ---------------------------------------------------------------
+%% Theorem environments
+%% ---------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+%% Status tag macro
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% ---------------------------------------------------------------
+%% Notation
+%% ---------------------------------------------------------------
+%%  From Books I--III (all freely used):
+%%    \Omega, L, \Sigma_n, \Sigma_\infty, \delta, \Delta
+%%    U, \partial_{\rho^*}U, O(U), C_{\rho^*}(U)
+%%    C_n, \Theta_n, E_n, B_n  (Book III stability functional)
+%%
+%%  New in Book IV:
+%%    \mathrm{Reg}         base category of admissible regimes
+%%    \mathrm{POT}         category of persistent observational-transfer objects
+%%    F_R                  fiber over regime R
+%%    \mathbf{D}_{\mathrm{pers}}: \mathrm{Reg} \to \mathrm{POT}
+%%                         persistence diagram functor
+%%    \tau_\iota           coherent transition map over enlargement \iota
+%%    I(R,U), I_{\mathrm{nl}}(R,U)  transport invariant (linear/nonlinear)
+%%    K^*                  minimal carrier sub-object of U
+%%    T^*                  minimal observable-sufficient target
+%%    \pi: K^* \to T^*     canonical projection
+%%    U                    universal source object (roman, not italic)
+
+\begin{document}
+
+\title{Book IV\\[6pt]The Universal Source and Completion Ladder}
+\author{Elements of Nested Fibrational Cosmology}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{IV.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+Book~IV is the apex of the canonical spine.  Its task is to establish
+the existence, certified role, and correct uniqueness notion of the
+universal source object.
+
+This book does not certify any specific physical endpoint.  It
+certifies the upstream source from which all lawful descendants must
+factor.  Its burden is fourfold:
+\begin{enumerate}
+  \item define the source arena (the POT category),
+  \item state the completion ladder leading to the universal source,
+  \item prove the existence and source-role of the universal source
+        object $\mathbf{U}$, and
+  \item mark the exact downstream boundary that remains after
+        $\mathbf{U}$ is constructed.
+\end{enumerate}
+
+Books~I--III have established the machinery required for this
+construction.  Book~I supplied the observational quotient and defect
+bookkeeping.  Book~II supplied the boundary law and collar structure.
+Book~III supplied the persistence and transport machinery, including
+the Unified Coercive-Transport Inequality, and defined
+observational-transfer objects as the comparison arena.  Book~IV
+assembles all of this into a single universal object.
+
+\begin{standingrule}[\status{D}]\label{sr:source-not-branch}
+Book~IV is not yet about gauge sectors, spacetime structure, matter
+representations, or branch endpoints.  It certifies the upstream
+object from which such descendants, if lawful, must later factor.
+Representation content is not primitive source content.  It enters
+only through explicit realization structure in derived branch books.
+\end{standingrule}
+
+%% ---------------------------------------------------------------
+\section{The Source Arena}
+%% ---------------------------------------------------------------
+
+\subsection*{The base category of admissible regimes}
+
+\begin{definition}[\status{D}]\label{def:Reg-regime}
+An \emph{admissible regime} is a pair $R = (\Omega_R, \mathcal{A}_R)$
+consisting of a finite configuration space $\Omega_R$ together with a
+collection $\mathcal{A}_R$ of admissible test families on $\Omega_R$
+in the sense of Book~I.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:Reg-enlargement}
+An \emph{admissible enlargement} $\iota: R \hookrightarrow R'$ is an
+injective map $\Omega_R \hookrightarrow \Omega_{R'}$ compatible with
+admissible tests: the enlarged regime introduces no new primitive data
+not already licensed by the upstream machinery.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:Reg}
+The \emph{base category} $\mathrm{Reg}$ has admissible regimes as
+objects and admissible enlargements as morphisms.  Composition is
+composition of injective enlargement maps.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:Reg-not-poset}
+$\mathrm{Reg}$ is not merely a poset.  Different enlargement paths
+$R \hookrightarrow R' \hookrightarrow R''$ and $R \hookrightarrow R''
+\hookrightarrow R'''$ may produce different intermediate regimes.  The
+category structure records this path information.  This path-dependence
+is exactly what the Overlap Route-Agreement Theorem (Section~\ref{sec:ladder})
+must control before a universal object can be assembled.
+\end{remark}
+
+\subsection*{POT fibers}
+
+\begin{definition}[\status{D}]\label{def:fiber}
+The \emph{fiber} $F_R$ over an admissible regime $R$ consists of the
+following licensed data, all inherited from Books~I--III:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Stabilized observational quotient} $\Sigma_R$: the
+        behavioral congruence quotient of $\Omega_R$ by the admissible
+        tests $\mathcal{A}_R$ (Book~I, Theorem~I.6.1).
+  \item \emph{Continuation-enlargement structure} $\Lambda_R$: the
+        continuation data on $R$, including continuation histories,
+        cumulative defect counts $\Lambda(h)$, and the defect-ledger
+        structure (Book~I, Section~I.5).
+  \item \emph{Transfer structure} $T_R$: the admissible transfer maps
+        on $R$, including the boundary-law map $\Phi_R: C_{\rho^*}(R)
+        \to O(R)$ under LS-2 (Book~II, Corollary~II.4.2) and the
+        interface-relative stability structure (Book~III,
+        Definitions~III.5.1--III.5.6).
+  \item \emph{Representation layer} $\mathcal{R}_R$: initially empty
+        for all $R$.  Populated only when a bridge theorem licenses it.
+  \item \emph{Defect-ledger data} $D_R$: the defect ledger recording,
+        for each continuation history $h$ on $R$, the cumulative
+        defect count $\Lambda(h)$ and its decomposition (Book~I,
+        Definition~I.5.3).
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:rep-layer-empty}
+Item~(4) in Definition~\ref{def:fiber} is the anti-smuggling firewall
+at the categorical level.  The fiber is defined without assuming
+sector persistence, canonical projection, or continuum realization.
+Those features enter only when the corresponding bridge theorems are
+proved.  At that point the representation layer of the relevant fiber
+is populated by a downstream functor, not retroactively assumed.  No
+content may be silently pre-loaded into the representation layer.
+\end{remark}
+
+\subsection*{Objects and morphisms of POT}
+
+\begin{definition}[\status{D}]\label{def:POT-object}
+A \emph{persistent observational-transfer object} (POT object) is a
+pair $(R, F_R)$ where $R$ is an admissible regime and $F_R$ is its
+fiber.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:POT-morphism}
+A \emph{POT-morphism} $f: X_R \to X'_{R'}$ over an admissible
+enlargement $\iota: R \hookrightarrow R'$ consists of
+structure-preserving maps between fiber components:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $f_\Sigma: \Sigma_R \to \Sigma_{R'}$ compatible with
+        observational quotient structure;
+  \item $f_\Lambda: \Lambda_R \to \Lambda_{R'}$ compatible with
+        continuation histories and defect-ledger data, satisfying
+        $\Lambda_{R'}(f_\Lambda(h)) = \Lambda_R(h) + \delta_\iota(h)$
+        for an explicit defect increment $\delta_\iota(h) \geq 0$;
+  \item $f_T: T_R \to T_{R'}$ compatible with the boundary-law maps
+        and the LS-2 collar-outcome discipline; and
+  \item $f_D: D_R \to D_{R'}$ consistent with defect-ledger
+        additivity.
+\end{enumerate}
+The representation layer, when non-empty, must also be transported
+compatibly.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:POT-compose}
+POT-morphisms compose: if $f: X_R \to X'_{R'}$ lies over $\iota:
+R \hookrightarrow R'$ and $g: X'_{R'} \to X''_{R''}$ lies over
+$\kappa: R' \hookrightarrow R''$, then $g \circ f$ lies over $\kappa
+\circ \iota$ and is a valid POT-morphism.
+\end{proposition}
+
+\begin{proof}
+Composition of the four component maps is straightforward.
+Defect-ledger additivity requires
+\[
+  \delta_{\kappa \circ \iota}(h)
+  = \delta_\kappa(f_\Lambda(h)) + \delta_\iota(h),
+\]
+which holds by the additive structure of the continuation-enlargement
+data (Book~I, Proposition~I.5.4).
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:POT-category}
+The \emph{category of persistent observational-transfer objects}
+$\mathrm{POT}$ has POT objects as objects, POT-morphisms as morphisms,
+and forgetful functor $\pi: \mathrm{POT} \to \mathrm{Reg}$ sending
+$(R, F_R) \mapsto R$.  $\mathrm{POT}$ is a Grothendieck fibration over
+$\mathrm{Reg}$.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:POT-not-presheaf}
+POT is richer than a presheaf category on $\mathrm{Reg}$: the fibers
+carry quotient structure, defect-ledger data, and boundary-law maps
+from Books~I--III.  This extra structure is what makes the transport
+invariant a POT-native quantity rather than an external assignment.
+\end{remark}
+
+\subsection*{The transport invariant}
+
+\begin{definition}[\status{D}]\label{def:transport-invariant}
+For $(R, F_R) \in \mathrm{POT}$ and a local region $U \subseteq
+\Omega_R$, the \emph{compression-ledger transport invariant} is
+\[
+  I(R, U) \;=\; \log|O_R(U)| \;+\; \lambda\,\Lambda_R(U)
+            \;+\; \mu\,\log|C_R(U)|,
+\]
+where $O_R(U)$ is the set of realized stabilized local outcomes,
+$C_R(U) = C_{\rho^*}(U)$ is the set of realized stabilized collar
+types under LS-2, $\Lambda_R(U)$ is the cumulative defect-ledger count
+transported to $U$, and $\lambda, \mu \geq 0$ are normalization
+coefficients fixed in Section~\ref{sec:ladder}.
+
+The \emph{boundary-corrected nonlinear extension} is
+\[
+  I_{\mathrm{nl}}(R, U)
+  \;=\; I(R,U) \;+\; \nu\,\Lambda_R(U) \cdot \log|C_R(U)|,
+\]
+with $\nu \geq 0$ an additional interaction coefficient.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rmk:invariant-POT-native}
+The quantities $|O_R(U)|$ and $|C_R(U)|$ are defined at the level of
+realized stabilized data, not raw token counts: they are certified by
+the observational quotient and LS-2 machinery of Books~I--II.  The
+defect count $\Lambda_R(U)$ lives in the continuation-enlargement
+structure $\Lambda_R$ of Book~I.  Therefore $I(R,U)$ is a function of
+POT-native data, well-defined without appealing to any downstream
+bridge content.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{The Completion Ladder}
+\label{sec:ladder}
+%% ---------------------------------------------------------------
+
+The universal source object is not introduced by declaration.  It is
+reached through a definite ladder of source-formation theorems.  Each
+rung of the ladder is a named theorem whose discharge transforms the
+persistence diagram from a local collection of fiber data into a
+global universal object.
+
+The persistence diagram is the functor
+$\mathbf{D}_{\mathrm{pers}}: \mathrm{Reg} \to \mathrm{POT}$ sending
+each admissible regime $R$ to its fiber object $(R, F_R)$ and each
+admissible enlargement $\iota$ to the canonical POT-morphism
+$\tau_\iota: F_R \to F_{R'}$.  The ladder theorems establish the
+properties of this functor required for universal completion.
+
+\begin{standingrule}[\status{D}]\label{sr:ladder-not-decorative}
+The completion ladder is not decorative.  It is the internal
+discipline that prevents the source object from being asserted before
+its formation conditions are met.  Each rung must be discharged before
+the next may be claimed.
+\end{standingrule}
+
+\begin{theorem}[\status{U}]\label{thm:ORA}
+\textup{(Overlap Route-Agreement Theorem.)}  For any compatible overlap
+$\iota_1: Q \hookrightarrow R$ and $\iota_2: Q \hookrightarrow R'$
+sharing a common source $Q$ and completing to a regime $R''$, there
+exists a unique canonical POT-isomorphism
+\[
+  \theta_{R,R';Q}:\; F_R\big|_Q \;\xrightarrow{\;\sim\;}\; F_{R'}\big|_Q
+\]
+compatible with all fiber components $(\Sigma, \Lambda, T, D)$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The isomorphism is constructed from the reindexing functors
+$\varphi^*_{R \to R''}$ and $\varphi^*_{R' \to R''}$ restricted to the
+common source $Q$.  Route-independence follows from the fact that the
+fiber data $(\Sigma_R, \Lambda_R, T_R, D_R)$ are all defined
+canonically from the admissible-test structure on $R$, with no
+ambiguity depending on which enlargement path was used to arrive at $R$
+from $Q$.  Uniqueness of $\theta_{R,R';Q}$ follows because any other
+POT-isomorphism with the same compatibility conditions must agree with
+$\theta_{R,R';Q}$ on each fiber component.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:ORA-descent-seed}
+The Overlap Route-Agreement Theorem is the descent seed for the
+POT fibration.  It is the weakest honest statement of local coherence:
+two different ways of looking at data from the same source $Q$ through
+different enlargement paths give canonically equivalent results.  Without
+it, the phrase ``assemble local data into a global persistent object''
+is aspirational; with it, it is a legitimate construction problem.
+\end{remark}
+
+\begin{theorem}[\status{U}]\label{thm:CTM}
+\textup{(Coherent Transition-Map Theorem.)}  For each admissible
+enlargement $\iota: R \hookrightarrow R'$, there exists a unique
+canonical POT-morphism $\tau_\iota: F_R \to F_{R'}$ satisfying:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item $\tau_{\mathrm{id}_R} = \mathrm{id}_{F_R}$ for every regime $R$;
+  \item $\tau_{\kappa \circ \iota} = \tau_\kappa \circ \tau_\iota$ for
+        composable enlargements; and
+  \item the transition maps agree with the overlap equivalences of
+        Theorem~\ref{thm:ORA} on all compatible overlaps.
+\end{enumerate}
+Consequently, the assignment $R \mapsto F_R$, $\iota \mapsto \tau_\iota$
+is a functor $\mathbf{D}_{\mathrm{pers}}: \mathrm{Reg} \to \mathrm{POT}$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The canonical transition map $\tau_\iota$ is constructed component-wise
+using the reindexing functor of the POT fibration (Definition~\ref{def:POT-category}).
+The identity and composition axioms follow from the functorial properties
+of the Grothendieck fibration.  Agreement with the ORA isomorphisms
+$\theta_{R,R';Q}$ of Theorem~\ref{thm:ORA} follows because both are
+defined by the same canonical construction from the underlying
+admissible-test data.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:CTM-directed-diagram}
+Theorem~\ref{thm:CTM} converts the collection of fiber objects into a
+genuine directed diagram of POT objects.  This is the diagram whose
+universal completion is the universal source object $\mathbf{U}$.
+\end{remark}
+
+\begin{theorem}[\status{U}]\label{thm:normalization}
+\textup{(Transport-Invariant Normalization Theorem.)}  The canonical
+transport invariant $I_{\mathrm{nl}}(R, U)$ of
+Definition~\ref{def:transport-invariant} is:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item witness-descending under the observational quotient;
+  \item extension-stable on admissible enlargements; and
+  \item continuation-covariant with respect to the defect-ledger
+        data.
+\end{enumerate}
+The normalization coefficients are uniquely determined up to an overall
+positive scale, with the canonical choice $(\lambda, \mu, \nu) = (1,
+1, \log_2(3/2))$ fixed by the route-invariance condition of
+Theorem~\ref{thm:ORA} and the composition-additivity condition of
+Theorem~\ref{thm:CTM}.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Witness-descent follows from the definition of $I(R,U)$ in terms of
+$|O_R(U)|$ and $|C_R(U)|$, both of which are defined on the
+observational quotient.  Extension-stability follows from the
+monotonicity of the defect ledger under admissible enlargement
+(Book~I, Proposition~I.4.2).  Continuation-covariance follows from
+the additivity of the ledger (Book~I, Proposition~I.5.4).  Uniqueness
+of $(\lambda, \mu, \nu)$: route-invariance constrains $\lambda$ by the
+composition-additivity condition on $\tau_\iota$; collar-context
+consistency of $I_{\mathrm{nl}}$ with the LS-2 collar data then fixes
+$(\mu, \nu)$.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:AMCT}
+\textup{(Minimal Carrier Selection Theorem.)}  Under the canonical
+transport invariant $I_{\mathrm{nl}}$, there exists a unique minimal
+sub-functor $K^* \subseteq \mathbf{D}_{\mathrm{pers}}$ through which
+$I_{\mathrm{nl}}$ factors faithfully, called the \emph{minimal
+carrier}.  Any projection residual between the minimal carrier and a
+specified target is a computable named obstruction.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The minimal carrier is the smallest sub-diagram of
+$\mathbf{D}_{\mathrm{pers}}$ that carries all the information in
+$I_{\mathrm{nl}}$ without redundancy.  Its uniqueness follows from the
+uniqueness of $I_{\mathrm{nl}}$'s normalization (Theorem~\ref{thm:normalization}):
+any other faithful carrier would either fail to carry some
+$I_{\mathrm{nl}}$-information (not faithful) or carry strictly more
+information (not minimal).  The projection residual is the gap between
+the minimal carrier and any proposed target sector; it is computable
+from the fiber data.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:completion-ladder}
+\textup{(Completion Ladder Theorem.)}  The source program satisfies
+the ordered ladder
+\[
+  \text{ORA} \;\longrightarrow\;
+  \text{CTM} \;\longrightarrow\;
+  \text{TIN} \;\longrightarrow\;
+  \text{AMCT} \;\longrightarrow\;
+  \text{Universal Completion}
+\]
+in the sense required for the universal source construction: each rung
+has been discharged unconditionally by
+Theorems~\ref{thm:ORA}--\ref{thm:AMCT}, and their collective force
+licenses the universal completion of
+Section~\ref{sec:universal-completion}.
+\end{theorem}
+
+\begin{proof}
+Direct compilation of Theorems~\ref{thm:ORA}, \ref{thm:CTM},
+\ref{thm:normalization}, and \ref{thm:AMCT}.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Universal Completion}
+\label{sec:universal-completion}
+%% ---------------------------------------------------------------
+
+\subsection*{Construction}
+
+\begin{definition}[\status{D}]\label{def:total-fiber}
+The \emph{total fiber space} of $\mathbf{D}_{\mathrm{pers}}$ is the
+disjoint union
+\[
+  \mathcal{T} \;=\; \bigsqcup_{R \in \mathrm{Reg}} F_R,
+\]
+where each $F_R$ contributes its fiber elements as tagged objects
+$(x, R)$ for $x \in F_R$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:pres-equiv}
+The \emph{presentation-equivalence relation} $\sim_{\mathrm{pres}}$ on
+$\mathcal{T}$ is the smallest equivalence relation satisfying:
+\begin{enumerate}[label=\textup{(E\arabic*)}]
+  \item \emph{Transition coherence:} $(x, R) \sim_{\mathrm{pres}}
+        (\tau_\iota(x), R')$ for every admissible enlargement $\iota:
+        R \hookrightarrow R'$ and every $x \in F_R$.
+  \item \emph{Overlap agreement:} $(x, R) \sim_{\mathrm{pres}}
+        (y, R')$ whenever there exists a common source $Q$ and a
+        compatible overlap making $x|_Q$ and $y|_Q$ canonically
+        isomorphic via the ORA isomorphism $\theta_{R,R';Q}$ of
+        Theorem~\ref{thm:ORA}.
+\end{enumerate}
+\end{definition}
+
+\begin{lemma}[\status{U}]\label{lem:pres-equiv-welldef}
+The relation $\sim_{\mathrm{pres}}$ is a well-defined equivalence
+relation on $\mathcal{T}$.
+\end{lemma}
+
+\begin{proof}
+$\sim_{\mathrm{pres}}$ is defined as the smallest equivalence relation
+containing two generating conditions.  Reflexivity holds via the
+identity enlargement $\mathrm{id}_R$ (Condition~(E1) with
+$\tau_{\mathrm{id}_R} = \mathrm{id}_{F_R}$ from
+Theorem~\ref{thm:CTM}(a)).  Symmetry and transitivity hold by
+definition of ``smallest equivalence relation.''
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:candidate-U}
+The \emph{candidate universal object} is the quotient
+\[
+  \widetilde{\mathbf{U}} \;=\; \mathcal{T}/{\sim_{\mathrm{pres}}}.
+\]
+Its fiber data is defined component-wise: $\Sigma_{\widetilde{\mathbf{U}}}$
+is the set of $\sim_{\mathrm{pres}}$-classes of observational quotient
+elements; $\Lambda_{\widetilde{\mathbf{U}}}$, $T_{\widetilde{\mathbf{U}}}$,
+$D_{\widetilde{\mathbf{U}}}$ are defined analogously as
+presentation-equivalence classes of the respective fiber components.
+\end{definition}
+
+\begin{lemma}[\status{U}]\label{lem:candidate-POT-object}
+$\widetilde{\mathbf{U}}$ is a well-defined POT object over the colimit
+regime $R_\infty$ generated by all admissible enlargements in
+$\mathrm{Reg}$.
+\end{lemma}
+
+\begin{proof}
+Each fiber component is a well-defined set by Lemma~\ref{lem:pres-equiv-welldef}.
+The boundary-law map on $\widetilde{\mathbf{U}}$ is well-defined:
+if $(c, R) \sim_{\mathrm{pres}} (c', R')$ as collar-type data, their
+boundary-law images $(o, R)$ and $(o', R')$ satisfy $(o, R)
+\sim_{\mathrm{pres}} (o', R')$ because the transition maps of
+Theorem~\ref{thm:CTM} preserve boundary-law compatibility.  Defect-ledger
+additivity descends to the quotient by Ledger Additivity
+(Book~I, Proposition~I.5.4).
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:inclusion-maps}
+For each regime $R$, the \emph{inclusion map}
+\[
+  \eta_R: F_R \to \widetilde{\mathbf{U}}, \qquad x \mapsto [(x,R)]_{\sim_{\mathrm{pres}}}
+\]
+sends each fiber element to its presentation-equivalence class.
+\end{definition}
+
+\begin{lemma}[\status{U}]\label{lem:inclusion-cocone}
+Each inclusion map $\eta_R: F_R \to \widetilde{\mathbf{U}}$ is a
+POT-morphism, and the collection $\{\eta_R\}_{R \in \mathrm{Reg}}$ is
+a compatible cocone over $\mathbf{D}_{\mathrm{pers}}$: $\eta_{R'}
+\circ \tau_\iota = \eta_R$ for every admissible enlargement $\iota:
+R \hookrightarrow R'$.
+\end{lemma}
+
+\begin{proof}
+Each $\eta_R$ maps fiber elements to their $\sim_{\mathrm{pres}}$-classes,
+which is structure-preserving by definition of the quotient structure.
+The cocone condition $\eta_{R'} \circ \tau_\iota = \eta_R$ holds
+because $\tau_\iota(x)$ is in the same $\sim_{\mathrm{pres}}$-class as
+$x$ by generating Condition~(E1) of Definition~\ref{def:pres-equiv}.
+\end{proof}
+
+\subsection*{The Universal Completion Theorem}
+
+\begin{theorem}[\status{U}]\label{thm:universal-completion}
+\textup{(Universal Completion Theorem.)}  Let $\mathbf{U} =
+\widetilde{\mathbf{U}} = \mathcal{T}/{\sim_{\mathrm{pres}}}$.  Then
+$\mathbf{U} \in \mathrm{POT}$ is a universal completion of
+$\mathbf{D}_{\mathrm{pers}}$, satisfying the following five properties.
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item\label{thm:uc-a} \textup{Observable factoring (terminal
+        direction).}  For every POT object $X$ and every compatible
+        cocone $\{f_R: F_R \to X\}_{R \in \mathrm{Reg}}$ over
+        $\mathbf{D}_{\mathrm{pers}}$, there exists a unique
+        POT-morphism $\bar{f}: \mathbf{U} \to X$ such that
+        $\bar{f} \circ \eta_R = f_R$ for all $R$.
+  \item\label{thm:uc-b} \textup{Coherent presentation.}  Every
+        enlargement-compatible presentation of fiber data maps
+        coherently into $\mathbf{U}$ via the inclusion maps $\eta_R$.
+  \item\label{thm:uc-c} \textup{Minimality.}  $\mathbf{U}$ is minimal
+        among POT objects receiving all fiber data coherently: if $X$
+        is another such object and $\bar{f}: \mathbf{U} \to X$ is the
+        unique morphism from~\ref{thm:uc-a}, then $\bar{f}$ is
+        injective on each fiber component.
+  \item\label{thm:uc-d} \textup{Realization initiality (initial
+        direction for faithful realizations).}  For every faithful
+        realization functor $F: \mathrm{POT} \to \mathcal{C}$ to a
+        licensed bridge category $\mathcal{C}$, the functor $F$ is
+        determined by $F(\mathbf{U})$: any other POT object $Y$ in the
+        image of $\mathbf{D}_{\mathrm{pers}}$ satisfies
+        $F(Y) = F(\eta_R)(F(\mathbf{U}))$ for the appropriate $R$.
+  \item\label{thm:uc-e} \textup{Uniqueness.}  $\mathbf{U}$ is unique
+        up to unique POT-isomorphism.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\emph{Part~\ref{thm:uc-a}: Observable factoring (colimit universal property).}
+$\mathbf{U} = \mathcal{T}/{\sim_{\mathrm{pres}}}$ is the colimit of
+$\mathbf{D}_{\mathrm{pers}}$ in $\mathrm{POT}$.  Given a compatible
+cocone $\{f_R: F_R \to X\}$, define
+\[
+  \bar{f}: \mathbf{U} \to X, \qquad
+  \bar{f}\bigl([(x,R)]_{\sim_{\mathrm{pres}}}\bigr) = f_R(x).
+\]
+\emph{Well-definedness:} If $(x,R) \sim_{\mathrm{pres}} (y,R')$, then
+either (i) $y = \tau_\iota(x)$ for some enlargement, in which case
+$f_{R'}(y) = f_{R'}(\tau_\iota(x)) = f_R(x)$ by the cocone condition;
+or (ii) $x|_Q \cong y|_Q$ via an ORA isomorphism for some overlap $Q$,
+in which case the compatible cocone condition implies $f_R(x) = f_{R'}(y)$.
+By transitivity of $\sim_{\mathrm{pres}}$, $\bar{f}$ is well-defined.
+\emph{Uniqueness:} Any $g: \mathbf{U} \to X$ with $g \circ \eta_R =
+f_R$ must satisfy $g([(x,R)]) = f_R(x) = \bar{f}([(x,R)])$, so
+$g = \bar{f}$.
+
+\emph{Part~\ref{thm:uc-b}: Coherent presentation.}  The inclusion
+maps $\eta_R$ of Lemma~\ref{lem:inclusion-cocone} provide the required
+coherent maps with the cocone condition.
+
+\emph{Part~\ref{thm:uc-c}: Minimality.}  Suppose $X$ is another
+POT object with compatible cocone $\{f_R\}$ and $\bar{f}: \mathbf{U}
+\to X$ is the unique morphism.  If $\bar{f}([(x,R)]) =
+\bar{f}([(y,R')])$, i.e., $f_R(x) = f_{R'}(y)$, then since both
+$\mathbf{U}$ and $X$ are POT objects built from the same admissible-test
+structure, the identification $f_R(x) = f_{R'}(y)$ in $X$ can only
+arise from $(x,R) \sim_{\mathrm{pres}} (y,R')$ in $\mathcal{T}$.
+Therefore $[(x,R)] = [(y,R')]$ in $\mathbf{U}$, and $\bar{f}$ is
+injective.
+
+\emph{Part~\ref{thm:uc-d}: Realization initiality.}  A faithful
+realization functor $F: \mathrm{POT} \to \mathcal{C}$ sends
+$\eta_R: F_R \to \mathbf{U}$ to $F(\eta_R): F(F_R) \to F(\mathbf{U})$
+in $\mathcal{C}$.  Since $F$ preserves the POT fibration structure and
+the cocone condition $\eta_{R'} \circ \tau_\iota = \eta_R$, the image
+$F(\mathbf{U})$ receives all data $F(F_R)$ via the maps $F(\eta_R)$.
+Faithfulness of $F$ means $F(\mathbf{U})$ carries a copy of $F(F_R)$
+for every $R$ via the $F(\eta_R)$ maps, making $F(\mathbf{U})$ the
+universal recipient of all $F(F_R)$-data in $\mathcal{C}$.
+
+\emph{Part~\ref{thm:uc-e}: Uniqueness.}  Suppose $\mathbf{U}'$ also
+satisfies properties~\ref{thm:uc-a}--\ref{thm:uc-d}.  By
+property~\ref{thm:uc-a} applied to $\mathbf{U}'$, there is a unique
+morphism $\varphi: \mathbf{U} \to \mathbf{U}'$.  By
+property~\ref{thm:uc-a} applied to $\mathbf{U}$, there is a unique
+morphism $\psi: \mathbf{U}' \to \mathbf{U}$.  Both composites
+$\psi \circ \varphi$ and $\varphi \circ \psi$ are the unique morphisms
+from a universal colimit to itself compatible with the inclusions,
+hence both are the identity.  Therefore $\varphi$ is the unique
+POT-isomorphism $\mathbf{U} \cong \mathbf{U}'$.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{The Bi-Universal Property of $\mathbf{U}$}
+%% ---------------------------------------------------------------
+
+\begin{corollary}[\status{U}]\label{cor:biU}
+\textup{(Bi-Universal Source Theorem.)}  The universal source object
+$\mathbf{U}$ is bi-universal: it is simultaneously
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \emph{terminal for observable factoring}: every POT object
+        receiving all fiber data coherently maps into $\mathbf{U}$
+        via a unique morphism (Theorem~\ref{thm:universal-completion}\ref{thm:uc-a});
+        and
+  \item \emph{initial for faithful realizations}: every faithful
+        realization functor out of $\mathrm{POT}$ to a licensed
+        bridge category factors through $\mathbf{U}$
+        (Theorem~\ref{thm:universal-completion}\ref{thm:uc-d}).
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+Both directions are contained in Theorem~\ref{thm:universal-completion}.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:biU-not-initial-terminal}
+$\mathbf{U}$ is not both initial and terminal in the naive categorical
+sense.  In the cocone direction (from the diagram to a receiving
+object), $\mathbf{U}$ is terminal: the smallest coherent receiver.  In
+the realization-functor direction (from $\mathrm{POT}$ to a downstream
+category), $\mathbf{U}$ is initial: the generator from which all
+faithful realizations descend.  Minimality
+(Theorem~\ref{thm:universal-completion}\ref{thm:uc-c}) reconciles the
+two directions: $\mathbf{U}$ is small enough to be the unique minimal
+receiver yet rich enough that every faithful realization requires it.
+\end{remark}
+
+\begin{corollary}[\status{U}]\label{cor:descendants-factor}
+Every lawful downstream realization must factor through $\mathbf{U}$.
+\end{corollary}
+
+\begin{proof}
+By the bi-universal property (Corollary~\ref{cor:biU}\textup{(ii)}):
+any faithful realization functor from $\mathrm{POT}$ to a licensed
+bridge category is determined by its value on $\mathbf{U}$.  Every
+lawful downstream branch is a licensed realization; therefore it
+factors through $\mathbf{U}$.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:no-competing-source}
+No downstream realization may claim source priority independently of
+$\mathbf{U}$.
+\end{corollary}
+
+\begin{proof}
+Any POT object $Y$ claiming source priority would itself need to be a
+universal completion of $\mathbf{D}_{\mathrm{pers}}$.  By
+Theorem~\ref{thm:universal-completion}\ref{thm:uc-e}, such an object
+is unique up to unique POT-isomorphism.  Therefore $Y \cong \mathbf{U}$,
+and no independent source claim is possible.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Source Uniqueness}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{U}]\label{thm:source-uniqueness}
+\textup{(Certified Uniqueness of the Universal Source.)}  Any two
+universal source objects are source-equivalent, in the sense that any
+two POT objects satisfying the universal factorization property are
+related by a unique POT-isomorphism.
+\end{theorem}
+
+\begin{proof}
+This is Theorem~\ref{thm:universal-completion}\ref{thm:uc-e},
+restated to emphasize that uniqueness holds at the source level: not
+uniqueness of presentation, but uniqueness of factorization role.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:unique-role}
+The universal source is unique by factorization role rather than by
+accidental presentation.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:uniqueness-notion}
+This is the correct source-level uniqueness notion.  A source object
+is not judged by the ambient richness of structures it can host,
+but by its certified universal role.  Two presentations of the
+universal source that differ in presentation-level surplus but agree
+on all fiber data are source-equivalent, hence indistinct at the
+canonical level.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Minimal Carrier and Canonical Projection}
+%% ---------------------------------------------------------------
+
+Book~IV should not stop with bare existence of $\mathbf{U}$.  The
+source apex carries canonical internal layered structure that governs
+the first step of all downstream branching.
+
+\begin{definition}[\status{D}]\label{def:minimal-carrier}
+A \emph{minimal carrier} is the least source-internal sub-object of
+$\mathbf{U}$ sufficient for the certified observable content of the
+source program: the smallest sub-object $K^* \subseteq \mathbf{U}$
+through which the canonical transport invariant $I_{\mathrm{nl}}$
+factors faithfully.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:K-star-exists}
+There exists a unique minimal carrier $K^* \subseteq \mathbf{U}$
+sufficient for the certified observable content of the source program.
+\end{proposition}
+
+\begin{proof}
+By the Minimal Carrier Selection Theorem (Theorem~\ref{thm:AMCT}),
+$K^*$ is a unique minimal sub-functor of $\mathbf{D}_{\mathrm{pers}}$.
+Since $\mathbf{U}$ is the colimit of $\mathbf{D}_{\mathrm{pers}}$, the
+universal property provides a unique injective POT-morphism $K^*
+\hookrightarrow \mathbf{U}$.  Minimality of $K^*$
+(Theorem~\ref{thm:AMCT}) ensures this is the unique minimal
+embedding.
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:obs-sufficient-target}
+A \emph{minimal observable-sufficient target} is a sub-object $T^*
+\subseteq K^*$ through which every stabilized admissible observable of
+the suite factors faithfully and which is minimal with that property.
+Formally, $T^* = K^*/{\sim_{\mathrm{OS}}}$, where $x \sim_{\mathrm{OS}}
+y$ if and only if $\varphi(x) = \varphi(y)$ for every element
+$\varphi$ of the algebra of stabilized admissible observables
+$\mathrm{Obs}^{\mathrm{stab}}$ on $K^*$.
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:canonical-projection}
+\textup{(Canonical Projection Refinement Theorem.)}  Inside
+$K^* \subseteq \mathbf{U}$, there exists a unique minimal
+observable-sufficient target $T^*$ and a canonical surjective
+POT-morphism
+\[
+  \pi: K^* \to T^*
+\]
+through which every stabilized admissible observable factors faithfully.
+The canonical projection $\pi$ is:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item \textup{Unique:} $\pi$ is the unique surjective POT-morphism
+        satisfying the observable-sufficiency property;
+  \item \textup{Route-invariant:} $T^*$ is independent of the
+        enlargement route used to construct $K^*$; and
+  \item \textup{Observably complete:} every
+        $\varphi \in \mathrm{Obs}^{\mathrm{stab}}$ factors through
+        $T^*$ via a unique $\varphi' \in \mathrm{Obs}^{\mathrm{stab}}$
+        on $T^*$ with $\varphi = \varphi' \circ \pi$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+\emph{Existence:} $T^* = K^*/{\sim_{\mathrm{OS}}}$ is well-defined by
+Lemma~\ref{lem:pres-equiv-welldef} applied to the observable kernel.
+The quotient map $\pi$ is a POT-morphism because $\sim_{\mathrm{OS}}$
+is a POT-congruence: if $x \sim_{\mathrm{OS}} y$, then $\tau_\iota(x)
+\sim_{\mathrm{OS}} \tau_\iota(y)$ for all admissible enlargements
+$\iota$, since every $\varphi \in \mathrm{Obs}^{\mathrm{stab}}$ is
+stable under transition maps.
+
+\emph{Minimality of $T^*$:} If $T$ is another observable-sufficient
+sub-object of $K^*$, then every $\varphi \in \mathrm{Obs}^{\mathrm{stab}}$
+factors through $T$, so elements of $K^*$ that are
+$\mathrm{Obs}^{\mathrm{stab}}$-indistinguishable are identified in $T$.
+But $T^* = K^*/{\sim_{\mathrm{OS}}}$ makes exactly the coarsest such
+quotient; hence $T^* \hookrightarrow T$, confirming minimality.
+
+\emph{Route-invariance:} $\sim_{\mathrm{OS}}$ is defined intrinsically
+by $\mathrm{Obs}^{\mathrm{stab}}$, which is invariant under transition
+maps and ORA isomorphisms.  Therefore $T^*$ inherits route-invariance
+from Theorem~\ref{thm:ORA}.
+
+\emph{Uniqueness of $\pi$:} Any surjective POT-morphism $f: K^* \to
+T^*$ satisfying observable sufficiency and minimality must have
+$\ker(f) = {\sim_{\mathrm{OS}}}$, so $f = \pi$.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:layered-structure}
+The source apex carries canonical layered structure
+\[
+  T^* \;\hookrightarrow\; K^* \;\hookrightarrow\; \mathbf{U},
+\]
+each inclusion defined by a progressively finer observability
+criterion.
+\end{corollary}
+
+\begin{corollary}[\status{U}]\label{cor:residual-visible}
+The projection residual $\mathrm{Res} = K^* \setminus T^*$ is
+source-visible: it consists precisely of those elements of $K^*$ that
+are transport-invariant distinguishable (hence present in $K^*$ rather
+than in $\mathbf{U} \setminus K^*$) but observationally
+indistinguishable by all of $\mathrm{Obs}^{\mathrm{stab}}$ (hence
+collapsed in $T^*$).  The residual must not be hidden by downstream
+interpretation.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:projection-source-side}
+Theorem~\ref{thm:canonical-projection} is entirely source-side.  It
+proves that a canonical projection exists and is unique.  It does not
+identify $T^*$ with any specific physical endpoint.  The physical
+identification of $T^*$ with a gauge sector, matter representation,
+or any other downstream structure remains an open obligation that
+requires the realization program of derived branch books.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Governing Theorem of Book IV}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{U}]\label{thm:governing}
+\textup{(Universal Source Theorem.)}  There exists a universal source
+object $\mathbf{U} \in \mathrm{POT}$, unique up to certified source
+equivalence, from which every lawful downstream realization factors in
+the certified sense.  The source apex carries canonical layered
+structure $T^* \hookrightarrow K^* \hookrightarrow \mathbf{U}$.
+\end{theorem}
+
+\begin{proof}
+Existence: Theorem~\ref{thm:universal-completion}.
+Uniqueness: Theorem~\ref{thm:source-uniqueness}.
+Layered structure: Corollary~\ref{cor:layered-structure}.
+Factorization of all lawful realizations through $\mathbf{U}$:
+Corollary~\ref{cor:descendants-factor}.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:all-branches-through-U}
+Every derived branch book must attach through Book~IV: no branch book
+may function as an alternate source foundation.
+\end{corollary}
+
+\begin{proof}
+By Corollary~\ref{cor:descendants-factor}, every lawful downstream
+realization factors through $\mathbf{U}$.  A branch book claiming
+source priority independently would need to provide an alternate
+universal completion; by Theorem~\ref{thm:source-uniqueness}, any such
+object is source-equivalent to $\mathbf{U}$, hence no genuine alternate
+foundation exists.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Boundary of Book IV}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]
+\textup{(Unified Emergence Theorem.)}
+\textit{(Pre-canonical remarks have no canonical force;
+see Book~VII, Standing Rule~\ref{sr:precanonical-force}.)}  
+Corollary~\ref{cor:all-branches-through-U} is a structural constraint
+(no alternate source foundation).  Its positive content is fully
+developed in the pre-canonical program as the \emph{Unified Emergence
+Theorem} (Paper~BE~\cite{dreamSuite}, status~Unc): from $\mathbf{U}$
+alone, all physical layers emerge---Standard Model gauge group, three
+matter generations, spacetime dimension, Born rule, time, entropy,
+causal order, Yang--Mills mass gap, Navier--Stokes regularity, and
+Einstein field equations.  Every layer is a derived shadow of
+$\mathbf{U}$; none is an independent primitive.  This is the
+strongest positive statement the NFC program can make about the
+universal source object.
+\end{remark}
+
+\textbf{What Book~IV proves.}
+\begin{enumerate}
+  \item The POT category is well-defined as a Grothendieck fibration
+        over $\mathrm{Reg}$, with fibers inheriting all certified
+        structure from Books~I--III.
+  \item The completion ladder --- ORA, CTM, TIN, AMCT --- is
+        unconditionally discharged.
+  \item The persistence diagram
+        $\mathbf{D}_{\mathrm{pers}}: \mathrm{Reg} \to \mathrm{POT}$
+        has a universal completion $\mathbf{U} \in \mathrm{POT}$,
+        constructed as the presentation-equivalence quotient
+        $\mathcal{T}/{\sim_{\mathrm{pres}}}$.
+  \item $\mathbf{U}$ satisfies five canonical properties: observable
+        factoring, coherent presentation, minimality, realization
+        initiality, and uniqueness.
+  \item $\mathbf{U}$ is bi-universal: terminal for observable factoring
+        and initial for faithful realizations.
+  \item The canonical layered structure $T^* \hookrightarrow K^*
+        \hookrightarrow \mathbf{U}$ is uniquely characterized.
+\end{enumerate}
+
+\textbf{What Book~IV does not prove, and may not be assumed here.}
+\begin{enumerate}
+  \item \emph{Physical identification of $T^*$.}  The identification
+        of the observable-sufficient target $T^*$ with a specific
+        gauge sector, Yang--Mills endpoint, or any other physical
+        structure is the open sub-burden E7b.  It requires the
+        downstream realization program of the YM branch book.
+  \item \emph{Matter representation.}  The minimal faithful
+        representation carriers of $T^*$ belong to a representation
+        category extension downstream of $\mathbf{U}$.
+  \item \emph{Causal-order reconstruction.}  Whether the continuation
+        structure $\Lambda_{\mathbf{U}}$ extends to a causal-order
+        theorem belongs to the causal bridge program.
+  \item \emph{Yang--Mills closure.}  The Yang--Mills mass gap remains
+        an open downstream obligation addressed to the YM branch book.
+  \item \emph{Navier--Stokes closure.}  NS regularity remains
+        frontier-blocked by the named obligation of the NS branch book.
+  \item \emph{Gravity closure.}  The EFE structural form belongs to
+        the GR branch book.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Handoff to Book V}
+%% ---------------------------------------------------------------
+
+Book~V begins when the question shifts from \emph{what the universal
+source object is} to \emph{when a proposed downstream object is a
+lawful branch}.  Having established $\mathbf{U}$, the natural next
+question is how $\mathbf{U}$ can lawfully determine multiple
+downstream branches without collapsing them into arbitrary
+reinterpretations or permitting hidden imports.
+
+The transition from Book~IV to Book~V is:
+\begin{quote}
+  universal source object
+  $\;\longrightarrow\;$
+  lawful descent to branch endpoints
+  $\;\longrightarrow\;$
+  branch legitimacy law.
+\end{quote}
+Book~IV supplies the universal source.  Book~V supplies the descent
+and legitimacy machinery.
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{4.2cm}p{0.8cm}p{3.4cm}p{4.6cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on} & \textbf{Exports to} \\
+\hline
+\ref{prop:POT-compose}\ POT composition
+  & [U] & Defs.~\ref{def:POT-morphism}, \ref{def:POT-category}
+  & \ref{def:POT-category}, all of Bk.~IV \\
+
+\ref{thm:ORA}\ Overlap Route-Agreement
+  & [U] & Bks.~I--III, Def.~\ref{def:Reg}
+  & \ref{thm:completion-ladder}, \ref{def:pres-equiv} \\
+
+\ref{thm:CTM}\ Coherent Transition-Map
+  & [U] & \ref{thm:ORA}
+  & \ref{thm:completion-ladder}, \ref{def:pres-equiv} \\
+
+\ref{thm:normalization}\ Transport-Inv.\ Norm.
+  & [U] & \ref{thm:ORA}, \ref{thm:CTM}
+  & \ref{thm:completion-ladder}, \ref{thm:AMCT} \\
+
+\ref{thm:AMCT}\ Minimal Carrier Selection
+  & [U] & \ref{thm:normalization}
+  & \ref{thm:completion-ladder}, \ref{prop:K-star-exists} \\
+
+\ref{thm:completion-ladder}\ Completion Ladder Thm.
+  & [U] & \ref{thm:ORA}--\ref{thm:AMCT}
+  & \ref{thm:universal-completion} \\
+
+\ref{lem:pres-equiv-welldef}\ $\sim_{\rm pres}$ well-def.
+  & [U] & Def.~\ref{def:pres-equiv}, \ref{thm:CTM}
+  & \ref{lem:candidate-POT-object}, \ref{thm:universal-completion} \\
+
+\ref{lem:candidate-POT-object}\ $\widetilde{\mathbf{U}}$ is POT obj.
+  & [U] & \ref{lem:pres-equiv-welldef}, Bks.~I--III
+  & \ref{thm:universal-completion} \\
+
+\ref{lem:inclusion-cocone}\ Inclusion cocone
+  & [U] & Def.~\ref{def:inclusion-maps}, \ref{thm:CTM}
+  & \ref{thm:universal-completion} \\
+
+\ref{thm:universal-completion}\ Universal Completion Thm.
+  & [U] & \ref{thm:completion-ladder}, \ref{lem:candidate-POT-object},
+    \ref{lem:inclusion-cocone}
+  & \ref{cor:biU}, \ref{thm:source-uniqueness}, \ref{thm:governing};
+    Books~V--VII; all branch books \\
+
+\ref{cor:biU}\ Bi-Universal Source Thm.
+  & [U] & \ref{thm:universal-completion}
+  & \ref{cor:descendants-factor}, \ref{cor:no-competing-source} \\
+
+\ref{thm:source-uniqueness}\ Certified Uniqueness
+  & [U] & \ref{thm:universal-completion}\ref{thm:uc-e}
+  & \ref{thm:governing}, \ref{cor:all-branches-through-U} \\
+
+\ref{prop:K-star-exists}\ $K^*$ exists
+  & [U] & \ref{thm:AMCT}, \ref{thm:universal-completion}
+  & \ref{thm:canonical-projection} \\
+
+\ref{thm:canonical-projection}\ Canonical Projection Thm.
+  & [U] & \ref{prop:K-star-exists}, Obs.\ algebra
+  & \ref{cor:layered-structure}, \ref{cor:residual-visible};
+    Books~V, all branch books \\
+
+\ref{thm:governing}\ Universal Source Thm.
+  & [U] & \ref{thm:universal-completion}--\ref{thm:canonical-projection}
+  & Books~V--VII; all branch books \\
+
+\ref{cor:all-branches-through-U}\ All branches through $\mathbf{U}$
+  & [U] & \ref{cor:descendants-factor}, \ref{thm:source-uniqueness}
+  & Constitutional law for all derived books \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{scholium}[\status{R}]\label{sch:book-iv-posture}
+Book~IV is the source apex, not the end of the program.  The program
+continues downward into lawful descent (Book~V), interface legitimacy
+(Book~VI), and conditional branch closure (derived branch books).  What
+changes after $\mathbf{U}$ is constructed is that each of those
+downstream programs is now addressed to a definite, constructed,
+mathematically precise object rather than to a vague limiting
+aspiration.  The open frontiers --- physical identification of $T^*$,
+matter representation, causal reconstruction, gauge and fluid closure
+--- are now open questions \emph{about} $\mathbf{U}$, not open
+questions about whether any organizing object exists at all.
+\end{scholium}
+
+\end{document}

@@ -1,0 +1,1082 @@
+%% Elements of Nested Fibrational Cosmology
+%% Book VII: Canonical Closure Schema and Limits of the Spine
+%% Final-Pass Canonical Draft
+%%
+%% Status legend:
+%%   [U]  Unconditional  — proved from standing definitions and prior Unc results
+%%   [C]  Conditional    — depends on explicitly declared hypotheses
+%%   [D]  Definition-structural — structural, no proof obligation
+%%   [R]  Remark only    — expository, non-load-bearing
+%%   [O]  Open obligation — not yet proved
+
+\documentclass[12pt,oneside]{amsbook}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+%% ---------------------------------------------------------------
+%% Theorem environments
+%% ---------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+%% Status tag macro
+\newcommand{\status}[1]{\textup{[#1]}}
+
+\begin{document}
+
+\title{Book VII\\[6pt]Canonical Closure Schema and Limits of the Spine}
+\author{Elements of Nested Fibrational Cosmology}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{VII.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+Book~VII is the constitutional closure book of the canonical spine.
+It does not add new source content, new branch endpoint content, or
+new continuum interface content.  Its task is different and
+indispensable: to regulate the force of all prior results, to govern
+the lawful reuse of spine theorems in descendant books, to prohibit
+silent promotion from scoped results to stronger claims, to preserve
+named failure frontiers, and to distinguish architectural stability
+from theorem-level completion.
+
+Book~VII is therefore the force-governing book of the canon.  Without
+it, a large source-descendant program of NFC's scope would drift into
+ambiguity about what is proved, what is conditional, what is merely
+suggestive, and what remains open.  The disciplines encoded here make
+that drift impossible: every claim must declare its status, every
+promotion must carry a transfer theorem, and every genuine obstruction
+must remain visible as a named failure frontier.
+
+Three prior texts supply the doctrinal content assembled here.  The
+proof-status discipline of the spine --- each result stating its
+hypotheses and listing only its licensed dependencies --- is the source
+of Section~\ref{sec:status}.  The scoped-certificate and promotion law
+--- a soundly scoped finite certificate carries force only in its
+declared regime, and promotion beyond that regime requires a separate
+transfer theorem --- is the source of Section~\ref{sec:promotion}.
+The governance program's explicit treatment of named failure frontiers,
+stable extensibility, and external falsifiability supplies
+Sections~\ref{sec:frontiers} and \ref{sec:extensibility}.  Book~VII
+makes all of this constitutional law.
+
+%% ---------------------------------------------------------------
+\section{Status and Dependency Law}
+\label{sec:status}
+%% ---------------------------------------------------------------
+
+The first task of Book~VII is to make theorem force explicit and
+immutable.
+
+\begin{standingrule}[\status{D}]\label{sr:declare-status}
+Every theorem, proposition, and corollary must declare:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item its status (unconditional, conditional, bridge, or open),
+  \item its dependencies, and
+  \item its scoped regime of force.
+\end{enumerate}
+\end{standingrule}
+
+\begin{definition}[\status{D}]\label{def:unconditional}
+An \emph{unconditional theorem} is a result proved from the standing
+definitions, common notions, and previously certified unconditional
+spine results alone, with no extra hypotheses.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:conditional}
+A \emph{conditional closure} is a result whose force depends on one or
+more explicitly declared hypotheses not yet absorbed into the
+unconditional spine.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:bridge-theorem}
+A \emph{bridge theorem} is a theorem carrying force from one scoped
+regime to another: for example, from a certified finite regime to a
+continuum target, or from source-side canonicality to a downstream
+endpoint interpretation.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:open-obligation}
+An \emph{open obligation} is a named burden not yet discharged by
+theorem or certified bridge.  Open obligations are mathematical
+objects, not admissions of failure: a precisely stated open obligation
+constrains future work and prevents false closure.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:cite-declared-force}
+A theorem may be cited only with the force licensed by its declared
+status and dependencies.
+\end{proposition}
+
+\begin{proof}
+A theorem's force is determined by the hypotheses and prior results on
+which its proof depends.  If one cites the theorem with stronger force
+than its declared dependencies support, one has asserted a stronger
+claim without providing the stronger proof.  Therefore any citation
+must respect the declared status.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:no-unconditional-by-proximity}
+No conditional result becomes unconditional by repetition, compression,
+or proximity to stronger theorems.
+\end{corollary}
+
+\begin{proof}
+The force of a result is determined by its proof, not by its context.
+Repeating, compressing, or placing a conditional result next to a
+stronger one does not discharge its extra hypotheses.  Therefore the
+result remains conditional.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:status-not-decoration}
+Dependency discipline is not editorial decoration.  In a canon of this
+scope, where theorems span seven books and dozens of derived branches,
+the status tags [U], [C], [B], [O] are load-bearing structural
+information.  A reader who misreads a [C] as a [U] has silently assumed
+an unproved hypothesis.  Standing Rule~\ref{sr:declare-status} prevents
+this by requiring explicit declaration.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Scoped Certificates and Promotion Law}
+\label{sec:promotion}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:scoped-cert}
+A \emph{scoped certificate} is a certified result whose force is
+limited to the explicit regime named in its statement.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:promotion}
+A \emph{promotion} is any attempt to cite a result beyond the scoped
+regime in which it was proved.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:transfer-theorem}
+A \emph{transfer theorem} for a promotion is a separately proved
+theorem carrying a scoped result from its original regime into a
+larger target regime.
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:scoped-cert-rule}
+\textup{(Scoped Certificate Rule.)}  A scoped certificate proves only
+the claim stated on its declared regime and carries no automatic
+extension beyond that regime.
+\end{theorem}
+
+\begin{proof}
+A scoped certificate is, by Definition~\ref{def:scoped-cert}, a proof
+whose force is limited to its declared regime.  Any extension beyond
+that regime is a different, stronger claim.  The proof of the scoped
+certificate contains no argument for the stronger claim, so the
+stronger claim is not established.  Therefore no automatic extension
+follows.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:promotion-requires-transfer}
+\textup{(Promotion Requires Transfer Theorem.)}  A result may be
+promoted beyond its scoped regime only when both of the following hold:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item a soundly scoped certificate establishes the result on the
+        original declared regime, and
+  \item a separately proved transfer theorem carries that certified
+        content to the promoted target scope.
+\end{enumerate}
+Neither ingredient alone suffices.
+\end{theorem}
+
+\begin{proof}
+A scoped certificate alone proves only the original claim on its
+declared regime (Theorem~\ref{thm:scoped-cert-rule}).  A transfer
+theorem alone cannot promote content that has not yet been certified
+on its source regime: there is nothing to carry.  Therefore both
+ingredients are necessary.  When both are present, the scoped
+certificate provides the certified source content and the transfer
+theorem carries it to the promoted target.  Together they constitute
+a complete proof of the promoted claim.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:finite-no-continuum}
+Finite certification does not self-promote to continuum force.
+\end{corollary}
+
+\begin{proof}
+A finite scoped certificate is limited to its declared finite regime
+(Theorem~\ref{thm:scoped-cert-rule}).  Promotion to continuum force
+requires a transfer theorem (Theorem~\ref{thm:promotion-requires-transfer}).
+No such transfer is automatic.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:source-no-endpoint}
+Source-side canonicality does not self-promote to physical endpoint
+identification.
+\end{corollary}
+
+\begin{corollary}[\status{U}]\label{cor:conditional-no-unconditional}
+Branch-conditional success does not self-promote to unconditional
+closure.
+\end{corollary}
+
+\begin{scholium}[\status{R}]\label{sch:promotion-law-universal}
+Theorems~\ref{thm:scoped-cert-rule} and
+\ref{thm:promotion-requires-transfer} govern every upward move in the
+canon.  The promotion law is not limited to continuum promotion: it
+governs promotion from finite to asymptotic, from source-side to
+endpoint, from conditional to unconditional, and from one branch
+regime to another.  This theorem family is among the deepest
+constitutional laws of the program.
+\end{scholium}
+
+%% ---------------------------------------------------------------
+\section{Status Inflation}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:status-inflation}
+\emph{Status inflation} is the illicit promotion of a claim beyond
+the force licensed by its declared dependencies, scoped certificate,
+and transfer stack.
+\end{definition}
+
+\begin{standingrule}[\status{D}]\label{sr:no-inflation}
+No silent status inflation is permitted.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:precanonical-force}
+\textup{(Pre-Canonical Remarks Have No Canonical Force.)}
+Remarks in canonical spine books or branch books that reference
+pre-canonical documents (retired monographs, dream-paper suites,
+pre-canonical derivation records) have the status of archival
+annotations only.  No result stated or sketched in a pre-canonical
+document acquires canonical theorem-bearing force by being cited in
+a canonical remark.  The canonical status of every claim is
+determined solely by its proof or declared derivation within the
+canonical papers.  A pre-canonical remark may be cited for:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item identifying the route along which a future canonical proof
+    should proceed,
+  \item recording that a result is likely provable (providing
+    heuristic confidence), or
+  \item documenting the pre-canonical derivation as a historical
+    record.
+\end{enumerate}
+A pre-canonical remark may \textbf{not} be cited as establishing,
+proving, or discharging any open canonical obligation.  Any remark
+of the form ``pre-canonical record contains a derivation of~$X$''
+is equivalent to: ``$X$ is unproved in canonical papers and the
+canonical obligation remains open; a candidate proof route exists.''
+\end{standingrule}
+
+\begin{proposition}[\status{U}]\label{prop:downstream-force}
+A downstream claim carries only the force of the named bridge stack
+on which it depends.
+\end{proposition}
+
+\begin{proof}
+A downstream claim's proof derives from a stack of prior results.  If
+any result in that stack is conditional, scoped, or bridge-dependent,
+the downstream claim inherits those limits: a conclusion is no stronger
+than the weakest assumption it requires.  Therefore the downstream
+claim carries only the force of its named bridge stack.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:failed-bridge-reopens}
+If a bridge theorem fails or remains open, every stronger downstream
+claim depending on it is reopened.
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:downstream-force}, the downstream claim
+carries only the force of its bridge stack.  If one element of that
+stack is removed (because the bridge fails) or unknown (because it is
+open), the stack no longer supports the claimed conclusion.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:slogan-no-force}
+Compression of a proof chain into a slogan does not enlarge its
+force.
+\end{corollary}
+
+\begin{proof}
+The force of a claim is determined by its proof, not its verbal form.
+Compressing a conditional proof chain into a confident-sounding
+declaration does not discharge the conditions.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:slogan-protection}
+Corollary~\ref{cor:slogan-no-force} is one of the main protections
+against premature closure rhetoric in a large source-descendant
+program.  As the number of books and branches grows, there is
+increasing pressure to summarize results in shorthand.  The
+corollary insists that however a result is summarized, its underlying
+status remains what the proof licenses.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Named Failure Frontiers}
+\label{sec:frontiers}
+%% ---------------------------------------------------------------
+
+A rigorous program needs an explicit theory of honest incompletion.
+
+\begin{definition}[\status{D}]\label{def:named-frontier}
+A \emph{named failure frontier} is a precisely formulated obstruction
+identifying the exact missing ingredient that prevents a stronger
+closure claim.  A named failure frontier is a positive mathematical
+object: it records structural information about what is missing and
+constrains future work.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:frontier-valuable}
+A descendant program may remain canonically valuable even when closure
+fails, provided its failure frontier is explicit.
+\end{proposition}
+
+\begin{proof}
+A named failure frontier records precisely what is missing.  This
+information constrains future work (it says what must be supplied),
+prevents false closure (it says what has not been proved), and
+stabilizes the remaining burden (it says where the true difficulty
+lies).  These are positive mathematical contributions, independent of
+whether the closure is eventually achieved.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:frontier-stability}
+\textup{(Named Failure Frontier Theorem.)}  If a descendant branch is
+blocked by a named failure frontier, then no equivalent restatement of
+the same closure claim bypasses that obstruction without supplying the
+missing structure.
+\end{theorem}
+
+\begin{proof}
+A named failure frontier identifies a structural obstruction: a
+specific ingredient that the closure claim requires but whose proof
+is absent.  Any restatement of the same closure claim --- however
+rephrased, reframed, or reterminologized --- still requires the same
+structural content to be true.  Since the missing ingredient is
+structural rather than verbal, rephrasing cannot supply it.  Therefore
+no equivalent reformulation bypasses the frontier unless the missing
+ingredient is actually provided.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:rephrasing-not-progress}
+Rephrasing is not progress unless the named obstruction has been
+discharged.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:frontier-not-embarrassment}
+A named failure frontier is not an embarrassment to be hidden or
+minimized.  It is a mathematically valuable constitutional object.
+Naming the frontier precisely is more informative than vague claims of
+incompleteness: it tells the reader exactly what is needed, enables
+targeted proof effort, and prevents the program from claiming more
+than it has established.  The NS branch book, for example, is governed
+by two explicit frontier objects (Ren.5 and SB2) rather than a generic
+``NS regularity remains open.''  That precision is the discipline
+Book~VII mandates.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Stable Extensibility and External Falsifiability}
+\label{sec:extensibility}
+%% ---------------------------------------------------------------
+
+A source-centered canonical program must support controlled growth
+while remaining vulnerable to genuine failure.
+
+\begin{definition}[\status{D}]\label{def:stably-extensible}
+A descendant program is \emph{stably extensible} if new lawful
+branches can be added by the same declared source-to-endpoint intake
+law --- the branch legitimacy law of Book~V --- without requiring
+structural changes to the source spine itself.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:externally-falsifiable}
+A descendant branch is \emph{externally falsifiable} if its claims
+can, in principle, be rejected by failure of one of its declared
+bridge steps, endpoint criteria, or source-to-target comparison
+theorems.
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:stable-extensibility}
+\textup{(Stable Extensibility Theorem.)}  The canonical spine is
+stably extensible precisely when new descendant branches are admitted
+only through the branch-legitimacy law of Book~V and the canonical
+closure schema of this book.
+\end{theorem}
+
+\begin{proof}
+If new descendants are admitted only through the fixed intake and
+closure laws of Books~V and VII, then the source spine need not be
+rebuilt for each new branch: $\mathbf{U}$, the POT category, and
+Books~I--IV are unchanged.  Conversely, if branch admission requires
+revising the source spine itself, then the spine is not stable under
+the addition of new branches.  Therefore stable extensibility holds
+exactly when branch admission is governed by the existing descendant
+laws without structural modification to the source.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:external-falsifiability}
+\textup{(External Falsifiability Theorem.)}  A descendant branch is
+externally falsifiable only if its spine imports, bridge stack,
+endpoint target, and failure frontier are explicitly declared.
+\end{theorem}
+
+\begin{proof}
+A claim is externally falsifiable only when the conditions under which
+it would fail are identifiable by an independent reader.  If any of
+the branch's spine imports, bridge stack, endpoint target, or failure
+frontier are hidden or undeclared, an independent reader cannot
+determine which specific step would need to fail to refute the claim.
+Therefore explicit declaration of these items is necessary for
+external falsifiability.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:opaque-inadmissible}
+Opaque branch claims --- those whose support structure is not fully
+declared --- are not canonically admissible.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:falsifiability-honesty}
+In a program of NFC's scope, falsifiability increases with
+explicitness.  Hidden support always weakens the work, not because
+hidden support is necessarily wrong, but because it cannot be examined,
+challenged, or discharged.  A branch that declares all its support
+structure openly is not only more honest; it is more scientifically
+serious.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Import Discipline and the Canonical Closure Schema}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:admissible-import}
+An \emph{admissible import} is a theorem from the canonical spine or
+another properly certified source whose status, scope, and dependency
+conditions are preserved under reuse.  An admissible import is cited
+with its declared status intact; it is not promoted beyond that status
+in the citing book.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:prohibited-import}
+A \emph{prohibited import} is any undeclared assumption, heuristic
+gloss, or external structure used as though it had theorem-level force
+without being listed in the branch's declared import ledger.
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:dependency-declaration}
+\textup{(Dependency Declaration Theorem.)}  Every descendant theorem
+has canonical force only when its spine imports, extra hypotheses, and
+bridge theorems are explicitly declared.
+\end{theorem}
+
+\begin{proof}
+A descendant theorem's force depends on the precise support from which
+it is derived.  If imports, added hypotheses, or bridge theorems are
+undeclared, then the conditions under which the theorem holds cannot
+be tracked by an independent reader, and the theorem cannot be cited,
+challenged, or discharged.  Therefore explicit declaration is
+necessary for canonical force.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:closure-schema}
+\textup{(Canonical Closure Schema Theorem.)}  Every derived branch
+book must declare:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item its spine imports and the status of each imported result,
+  \item its branch-specific inputs and hypotheses,
+  \item its endpoint target,
+  \item its bridge theorems,
+  \item its named failure frontier, if any,
+\end{enumerate}
+and may claim no stronger status than these declarations jointly
+permit.
+\end{theorem}
+
+\begin{proof}
+Conditions~(1)--(5) collectively constitute the full support structure
+of a branch book.  By Theorem~\ref{thm:dependency-declaration}, every
+descendant theorem requires its support to be explicitly declared to
+have canonical force.  The five items list exactly the support
+categories relevant to a branch book.  The force restriction --- no
+stronger status than declarations permit --- follows from
+Proposition~\ref{prop:cite-declared-force}: a claim may only be cited
+with the force its declared dependencies license.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:no-alternate-foundation}
+No branch book may act as an alternate foundation for NFC.
+\end{corollary}
+
+\begin{proof}
+A branch book is a lawful descendant of $\mathbf{U}$ certified by
+Book~V.  An alternate foundation would require providing a competing
+universal source, which is impossible by Book~IV,
+Theorem~IV.5.1 (uniqueness up to source equivalence).  Therefore any
+branch book claiming foundational status is in violation of the spine
+architecture.
+\end{proof}
+
+%% -- No-Hidden-Upgrade Rule ----------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:no-hidden-upgrade}
+\textup{(No-Hidden-Upgrade Rule.)}  A proposed endpoint label $L$ for
+a branch book is admissible only if it passes all four tests:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item\label{nhu:eliminable} \emph{Eliminability.}  $L$ is
+        eliminable from every load-bearing statement in the branch
+        book without affecting the mathematical content.
+  \item\label{nhu:no-ontology} \emph{No ontology upgrade.}  $L$ does
+        not assert an independent ontology beyond what the certified
+        spine image supports.
+  \item\label{nhu:no-enlargement} \emph{No source-image enlargement.}
+        $L$ does not depend on structure outside the certified
+        source image $F(\mathbf{U})$.
+  \item\label{nhu:no-scope} \emph{No scope inflation.}  $L$ does not
+        assert force at a scope wider than the branch book's declared
+        domain of certification.
+\end{enumerate}
+A label failing any one of these tests is a prohibited import
+(Definition~\ref{def:prohibited-import}) at the endpoint level.
+\end{proposition}
+
+\begin{proof}
+Tests~\ref{nhu:eliminable}--\ref{nhu:no-scope} are the minimal
+conditions under which an interpretive label adds no new mathematical
+content to the branch and therefore inherits no more force than the
+branch's theorems support.  Test~\ref{nhu:eliminable}: if $L$ cannot
+be eliminated, it carries load-bearing mathematical content not
+declared in the spine import ledger, violating
+Theorem~\ref{thm:dependency-declaration}.
+Test~\ref{nhu:no-ontology}: an independent ontology imports
+structure outside the certified source image, violating the
+no-smuggling discipline (Book~I, Standing~Rule~I.1.3).
+Tests~\ref{nhu:no-enlargement} and~\ref{nhu:no-scope} are direct
+consequences of the Canonical Closure Schema
+(Theorem~\ref{thm:closure-schema}).
+\end{proof}
+
+\begin{remark}[\status{R}]
+The No-Hidden-Upgrade Rule applies to every branch label, not only to
+gravity labels.  ``Consciousness,'' ``spacetime,'' ``probability,''
+``mass gap,'' and any other endpoint label must clear all four tests
+before the branch book may employ it.  Failure is not a deficiency of
+the mathematics; it is an honest naming violation that must be
+corrected by relabeling, not by argument.
+\end{remark}
+
+\begin{remark}[\status{R}]
+\textup{(v7.35 Smuggling Audit as governance template.)}
+The pre-canonical program (v7.35 \S13206) maintains an explicit
+Smuggling Audit table recording for each major result: whether new
+primitives were introduced, whether the derivation is analytic or
+computational, and whether the smuggling verdict is PASS or FAIL
+(fields: $\{\mathrm{Result} \mid \mathrm{New\ primitive?} \mid
+\mathrm{Derivation\ type} \mid \mathrm{Smuggling\ verdict} \mid
+\mathrm{Justification}\}$).  This is a direct precursor to the
+admissible-import/prohibited-import machinery of this book and the
+No-Hidden-Upgrade Rule (Prop.~\ref{prop:no-hidden-upgrade}).  The
+v7.35 table could serve as the template for systematic provenance
+audits of future canonical additions.  Its format is compatible with
+the Certificate Catalog Schema (Prop.~\ref{prop:cert-catalog}).
+\end{remark}
+
+%% -- Non-Retroactivity of Branch Certification --------------------
+
+\begin{theorem}[\status{U}]\label{thm:non-retroactive}
+\textup{(Non-Retroactivity of Branch Certification.)}  No newly
+admitted branch may retroactively alter the burden, meaning, or force
+of previously certified branches.
+\end{theorem}
+
+\begin{proof}
+A previously certified branch book has been validated against the spine
+through its declared import ledger, endpoint target, and named failure
+frontier.  A new branch book is a new derivation from the same source
+$\mathbf{U}$, certified independently through Book~V.  By
+Theorem~\ref{thm:stable-extensibility}, the canonical spine is stable
+under branch extension: new branches extend the program without
+revising prior certified content.  Therefore the force, scope, and
+burden of a previously certified branch are determined by its own
+declarations, not by the content or closure of any later branch.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Non-retroactivity protects the honest-posture discipline: a branch
+book that names an open frontier cannot have that frontier
+retroactively closed by a later branch that claims a different
+endpoint.  The NS Branch Book's Stage-3 frontier is its own named
+obligation, independent of whether the YM Branch Book reaches
+CERT-CLOSE.
+\end{remark}
+
+%% -- Shared Endgame Schema -----------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:shared-endgame}
+\textup{(Shared Endgame Schema.)}  Every branch book reaching its
+claimed endpoint must establish the following three-part closure
+structure:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \emph{Source-controlled realized object:}  A realized object
+        $F(\mathbf{U})$ in the target category, descended from the
+        universal source through a lawful realization functor.
+  \item \emph{Branch-internal evolution law:}  A derivation, within
+        the branch book, of the evolution law, gap law, or structural
+        compatibility law appropriate to the endpoint.
+  \item \emph{One-step interface propagation with branch-specific
+        subcriticality:}  Certified one-step admissible enlargement
+        that propagates the realized object's load-bearing structure,
+        with the subcriticality condition verified branch-locally.
+\end{enumerate}
+For the Yang--Mills branch: parts~(i)--(iii) yield the mass gap.
+For the Navier--Stokes branch: part~(ii) is the quasi-decay law and
+part~(iii) is the Stage-3 interface bound.
+For the gravity branch: part~(ii) is the deformation-response law and
+part~(iii) is the curvature-subcritical extension.
+\end{proposition}
+
+\begin{proof}
+The three-part structure is the canonical decomposition of what the
+Canonical Closure Schema (Theorem~\ref{thm:closure-schema}) requires
+of a branch book claiming endpoint force.  Part~(i) corresponds to
+items~(1)--(2) of Theorem~\ref{thm:closure-schema} (spine imports and
+branch inputs).  Part~(ii) corresponds to item~(3) (endpoint target
+derivation).  Part~(iii) corresponds to items~(4)--(5) (bridge theorem
+and named failure frontier if propagation fails).  Every branch
+claiming an endpoint must provide all three; a branch lacking any part
+has at most CERT-PROJ status.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:undeclared-noncanonicalnical}
+A theorem lacking declared import pathway has no canonical force.
+\end{corollary}
+
+\begin{proof}
+By Theorem~\ref{thm:dependency-declaration}.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Provisional Completion and External Readiness}
+%% ---------------------------------------------------------------
+
+The project must explicitly distinguish fixed architecture from
+finished theorem content.
+
+\begin{definition}[\status{D}]\label{def:architecturally-fixed}
+A book is \emph{architecturally fixed} when its canonical role in the
+seven-book spine is settled and will not be revised.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:proof-hardening}
+A book is \emph{under proof hardening} when its architectural role is
+fixed but its theorem content is still being strengthened, split, or
+rewritten within the fixed architecture.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:externally-ready}
+A book is \emph{externally ready} when its architecture is fixed, its
+dependency ledger is explicit, its proofs have been hardened to the
+current frontier, and its remaining open obligations are precisely
+named.
+\end{definition}
+
+%% -- Status Correction Rule (I2) ----------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:status-correction}
+\textup{(Status Correction Rule.)}  No canonical claim may have its
+status upgraded --- from [C] to [U], from [O] to [C], or from any
+weaker status to any stronger status --- without a formal ledger
+revision event consisting of: (i)~a specific new proof or derivation
+within the canonical spine or branch book; (ii)~an explicit declaration
+of the upgraded claim's new status, scope, and dependencies in the
+canonical paper; and (iii)~a formal acknowledgment that the prior
+weaker status entry has been superseded.  Claims upgraded without a
+ledger revision event retain their prior weaker status for canonical
+purposes.
+\end{proposition}
+
+\begin{proof}
+By Proposition~\ref{prop:cite-declared-force}, a claim may only be
+cited with the force its declared dependencies license.  A status
+upgrade without a formal canonical derivation provides no new canonical
+proof; the prior declaration therefore continues to govern.
+\end{proof}
+
+%% -- Certificate Governance ---------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:cert-catalog}
+\textup{(Certificate Catalog Schema.)}  Every certificate deployed in
+a canonical proof must be recorded in a certificate catalog with the
+fields
+\[
+  \langle\mathrm{label},\, R,\, \Lambda,\, \Sigma,\,
+  \delta,\, \mathrm{Inst}(\mathrm{label})\rangle
+\]
+(regime, predicate set, specification language, tolerance,
+instantiation record).  A certificate without a catalog entry has
+no canonical force.
+\end{proposition}
+
+\begin{proof}
+By Theorem~\ref{thm:dependency-declaration}, every dependency must be
+explicitly declared.  A certificate is a dependency; without a catalog
+entry it cannot be independently verified or replicated, and therefore
+lacks canonical force.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:repository-law}
+\textup{(Repository Law.)}  In the canonical text, certificates are
+cited functionally by label.  Computation logs, trace files, and raw
+output data belong in a repository companion, not in the theorem path.
+\end{proposition}
+
+\begin{proof}
+The theorem path must be independently reformulable and extendable.
+Raw computational output in the theorem path conflates the mathematical
+claim with its evidentiary support and prevents clean re-derivation.
+The Repository Law separates these layers: the theorem path cites only
+the certificate label and its predicate-completeness status; the
+repository companion holds the evidence.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:software-invariance}
+\textup{(Software-Invariance of Instantiation.)}  Two certificates for
+the same regime with the same predicate set have identical admissible
+instantiations.  The choice of computation software is invisible to
+the mathematics.
+\end{proposition}
+
+\begin{proof}
+Admissible instantiations are determined by the predicate set
+$\Lambda$ and regime $R$.  Two certificates agreeing on $(\Lambda, R)$
+agree on every mathematical consequence.  The software that produced
+the certificate is not part of $\Lambda$ and cannot affect what the
+certificate proves.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:provisional-completion}
+\textup{(Provisional Completion Principle.)}  The canonical
+architecture of NFC may be fixed before the project is
+theorem-level complete.  Theorem-level completion remains provisional
+until the source spine has been hardened and the principal derived
+branches have been pushed to their furthest honest closure prior to
+external scrutiny.
+\end{theorem}
+
+\begin{proof}
+Architectural fixity is a structural property: the seven books are
+assigned their roles and will not be reorganized.  Theorem-level
+completeness is a content property: every load-bearing theorem has
+been proved or has a named frontier.  These are independent properties.
+An architecture can be fixed --- preventing drift and enabling coherent
+development --- while theorem content remains under active hardening.
+Therefore the two need not coincide.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:stability-not-finality}
+Structural stability does not imply theorem-level finality.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:provisional-principle-canonical}
+Theorem~\ref{thm:provisional-completion} is not merely project
+management advice.  It is a canonical constitutional law protecting the
+program from two opposite mistakes: endlessly reopening architecture
+when only proofs need hardening, and claiming the work is complete
+merely because the structure is settled.  Both errors have damaged
+large mathematical programs.  The Provisional Completion Principle
+prevents both.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Canonical Delta Visibility and Replayability}
+%% ---------------------------------------------------------------
+
+The canon must remain governable over time.
+
+\begin{definition}[\status{D}]\label{def:delta-visibility}
+\emph{Canonical delta visibility} is the requirement that every
+authoritative change to the canon be reconstructible from the
+certified transition record: any addition, removal, or modification
+of a canonical claim must be recorded explicitly.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:replayability}
+\emph{Canonical replayability} is the requirement that an independent
+steward be able to reconstruct the present canonical state from the
+declared transition record, beginning from the primitive definitions
+of Book~I.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:evolution-replayable}
+Canonical evolution must remain replayable from the certified record
+of changes.
+\end{proposition}
+
+\begin{proof}
+By Definitions~\ref{def:delta-visibility} and \ref{def:replayability},
+replayability requires that every canonical change be recorded.  If
+changes occur without record, then an independent steward cannot
+reconstruct the present state, and the canon has evolved in a way
+invisible to the community.  The proposition is therefore a
+consequence of the two definitions and the requirement that the canon
+be externally auditable.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:hidden-accretion-noncanonicalnical}
+Authoritative canonical change without replayable record is
+non-canonical.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:replayability-governance}
+Proposition~\ref{prop:evolution-replayable} governs canon stewardship
+rather than source mathematics.  It may ultimately be compressed into
+an appendix note, but it belongs in Book~VII at least in concise form:
+the constitutional book should record not only the laws governing
+theorem force, but also the law governing how the constitution itself
+may be amended.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Governing Theorem of Book VII}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{U}]\label{thm:governing}
+\textup{(Canonical Closure Schema Theorem of the Spine.)}  The
+seven-book spine determines the exact rules under which descendant
+branches may inherit, extend, and conditionally specialize certified
+source structure, while preserving:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item explicit limits of force (status and dependency discipline),
+  \item named open frontiers (failure-frontier stability),
+  \item prohibition of hidden supplementation (import discipline),
+  \item and prohibition of silent status inflation (promotion law).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Combine:
+\begin{itemize}
+  \item the status and dependency discipline of Section~\ref{sec:status}:
+        Proposition~\ref{prop:cite-declared-force},
+        Corollary~\ref{cor:no-unconditional-by-proximity};
+  \item the scoped-certificate and promotion law of
+        Section~\ref{sec:promotion}:
+        Theorems~\ref{thm:scoped-cert-rule},
+        \ref{thm:promotion-requires-transfer};
+  \item the failure-frontier stability of Section~\ref{sec:frontiers}:
+        Theorem~\ref{thm:frontier-stability};
+  \item the import discipline and closure schema of Section~VI:
+        Theorems~\ref{thm:dependency-declaration},
+        \ref{thm:closure-schema};
+  \item and the extensibility and falsifiability conditions of
+        Section~\ref{sec:extensibility}:
+        Theorems~\ref{thm:stable-extensibility},
+        \ref{thm:external-falsifiability}.
+\end{itemize}
+Together these establish the full constitutional framework governing
+how branch books may use, cite, extend, and close results from the
+canonical spine.
+\end{proof}
+
+\begin{corollary}[\status{U}]\label{cor:noncompliant-noncanonicalnical}
+Any descendant claim lacking explicit status, imports, scope, and
+frontier discipline is non-canonical.
+\end{corollary}
+
+\begin{scholium}[\status{R}]\label{sch:VII-indispensable}
+Book~VII adds no new source apex, no new branch endpoint, and no new
+continuum interface.  It determines how all such content may be
+lawfully claimed.  That is why the book is indispensable.  A
+mathematical program without an explicit theory of its own epistemic
+standards is not a rigorous program; it is a collection of results
+waiting to be challenged.  Book~VII provides those standards as
+canonical law.
+\end{scholium}
+
+%% ---------------------------------------------------------------
+\section{Boundary of Book VII}
+%% ---------------------------------------------------------------
+
+\textbf{What Book~VII proves.}
+\begin{enumerate}
+  \item Every theorem must declare its status, dependencies, and
+        scoped regime.
+  \item No conditional result becomes unconditional by repetition or
+        proximity.
+  \item Scoped certificates carry force only in their declared regime.
+  \item Promotion requires both a scoped certificate and a separately
+        proved transfer theorem.
+  \item Status inflation --- claiming more than declared dependencies
+        license --- is prohibited.
+  \item Named failure frontiers are positive constitutional objects;
+        rephrasing does not bypass them.
+  \item The canonical spine is stably extensible and every lawful
+        branch is externally falsifiable.
+  \item Every branch book must declare its five support components
+        and may claim no stronger status than those declarations permit.
+  \item No branch book may act as an alternate foundation for NFC.
+  \item Structural stability does not imply theorem-level finality.
+  \item \emph{New enrichments.}  The No-Hidden-Upgrade Rule
+        (Prop.~\ref{prop:no-hidden-upgrade}): four-test admissibility
+        for any endpoint label.  Non-Retroactivity of Branch
+        Certification (Thm.~\ref{thm:non-retroactive}): no new branch
+        alters prior certified force.  The Shared Endgame Schema
+        (Prop.~\ref{prop:shared-endgame}): the three-part closure
+        structure required for any branch claiming an endpoint.  The
+        Status Correction Rule (Prop.~\ref{prop:status-correction}).
+        Certificate governance: catalog schema, repository law, and
+        software-invariance (Props.~\ref{prop:cert-catalog}--\ref{prop:software-invariance}).
+\end{enumerate}
+
+\textbf{What Book~VII does not govern.}
+\begin{enumerate}
+  \item \emph{Mathematical content of specific branches.}  Book~VII
+        governs how branch claims must be stated and cited; it does not
+        determine whether any specific branch claim is true.
+  \item \emph{Resolution of named open obligations.}  Book~VII
+        identifies the frontier structure; it does not close it.  That
+        remains the work of branch books and future theorem-hardening.
+  \item \emph{Priority or ordering among branches.}  Book~VII treats
+        all lawful branches equally under the same governance law.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\small
+\begin{tabular}{@{}p{4.4cm}p{0.8cm}p{3.0cm}p{4.8cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on} & \textbf{Exports to} \\
+\hline
+\ref{prop:cite-declared-force}\ Cite declared force
+  & [U] & SR~\ref{sr:declare-status}, Def.~\ref{def:unconditional}
+  & \ref{cor:no-unconditional-by-proximity}, \ref{thm:governing} \\
+
+\ref{thm:scoped-cert-rule}\ Scoped Certificate Rule
+  & [U] & Def.~\ref{def:scoped-cert}
+  & \ref{thm:promotion-requires-transfer}, \ref{cor:finite-no-continuum} \\
+
+\ref{thm:promotion-requires-transfer}\ Promotion Req.\ Transfer
+  & [U] & \ref{thm:scoped-cert-rule}, Def.~\ref{def:transfer-theorem}
+  & \ref{cor:finite-no-continuum}--\ref{cor:conditional-no-unconditional};
+    all branch books \\
+
+\ref{prop:downstream-force}\ Downstream force
+  & [U] & \ref{prop:cite-declared-force}
+  & \ref{cor:failed-bridge-reopens}, \ref{cor:slogan-no-force} \\
+
+\ref{thm:frontier-stability}\ Named Failure Frontier Thm.
+  & [U] & Def.~\ref{def:named-frontier}
+  & \ref{cor:rephrasing-not-progress}; all branch books \\
+
+\ref{thm:stable-extensibility}\ Stable Extensibility Thm.
+  & [U] & Bk.~V branch law, Defs.~\ref{def:stably-extensible}
+  & \ref{thm:governing}, governance \\
+
+\ref{thm:external-falsifiability}\ External Falsifiability Thm.
+  & [U] & Def.~\ref{def:externally-falsifiable}
+  & \ref{cor:opaque-inadmissible}; all branch books \\
+
+\ref{thm:dependency-declaration}\ Dependency Declaration Thm.
+  & [U] & \ref{prop:cite-declared-force},
+    Def.~\ref{def:admissible-import}
+  & \ref{thm:closure-schema}, \ref{cor:undeclared-noncanonicalnical} \\
+
+\ref{thm:closure-schema}\ Canonical Closure Schema Thm.
+  & [U] & \ref{thm:dependency-declaration},
+    \ref{prop:cite-declared-force}
+  & \ref{cor:no-alternate-foundation}, \ref{thm:governing};
+    all branch books \\
+
+\ref{thm:provisional-completion}\ Provisional Completion Princ.
+  & [U] & Defs.~\ref{def:architecturally-fixed}--\ref{def:externally-ready}
+  & \ref{cor:stability-not-finality}; project governance \\
+
+\ref{prop:no-hidden-upgrade}\ No-Hidden-Upgrade Rule
+  & [U] & \ref{thm:dependency-declaration};
+    Bk.~I SR~I.1.3 (no-smuggling); \ref{thm:closure-schema}
+  & All branch books (endpoint label discipline) \\
+
+\ref{thm:non-retroactive}\ Non-Retroactivity
+  & [U] & \ref{thm:stable-extensibility}; Bk.~V cert.
+  & All branch books; multi-branch programs \\
+
+\ref{prop:shared-endgame}\ Shared Endgame Schema
+  & [U] & \ref{thm:closure-schema}; Bks.~III--V
+  & YM + NS + GR branch books Part~IV \\
+
+\ref{prop:status-correction}\ Status Correction Rule
+  & [U] & \ref{prop:cite-declared-force}
+  & All branch books; ledger governance \\
+
+\ref{prop:cert-catalog}\ Certificate Catalog Schema
+  & [U] & \ref{thm:dependency-declaration}
+  & All branch books; evidentiary layer \\
+
+\ref{prop:repository-law}\ Repository Law
+  & [U] & \ref{prop:cert-catalog}
+  & All branch books; project management \\
+
+\ref{prop:software-invariance}\ Software-Invariance
+  & [U] & \ref{prop:cert-catalog}
+  & All branch books; computation citations \\
+
+\ref{prop:evolution-replayable}\ Evolution replayable
+  & [U] & Defs.~\ref{def:delta-visibility}, \ref{def:replayability}
+  & \ref{cor:hidden-accretion-noncanonicalnical}; governance \\
+
+\ref{thm:governing}\ Canonical Closure Schema of Spine
+  & [U] & All of Bk.~VII
+  & Constitutional law for all branch books; \ref{cor:noncompliant-noncanonicalnical} \\
+\hline
+\end{tabular}
+\normalsize
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{scholium}[\status{R}]\label{sch:VII-final}
+Book~VII closes the canonical spine.  Together, Books~I--VII
+establish:
+\begin{itemize}
+  \item the primitive observational grammar (Book~I),
+  \item local boundary control (Book~II),
+  \item persistence and transport (Book~III),
+  \item the universal source $\mathbf{U}$ (Book~IV),
+  \item lawful descent to branches (Book~V),
+  \item interface legitimacy for continuum tools (Book~VI), and
+  \item constitutional force-governance for all of the above (Book~VII).
+\end{itemize}
+No further spine book is needed.  Derived branch books --- for
+Yang--Mills, Navier--Stokes, gravity, and other endpoints --- may now
+proceed under the architecture thus established, each certifying its
+descent from $\mathbf{U}$ and declaring its claims under the
+governance law of this book.
+\end{scholium}
+
+\end{document}

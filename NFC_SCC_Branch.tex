@@ -1,0 +1,776 @@
+%% Elements of Nested Fibrational Cosmology
+%% SCC Branch Book: Structural Counterfactual Capacity
+%% Status: CERT-PROJ at most; MCS is the main frontier
+%%
+%% Status legend:
+%%   [U]  Unconditional
+%%   [C]  Conditional
+%%   [D]  Definition-structural
+%%   [R]  Remark only
+%%   [O]  Open obligation / named failure frontier
+
+\documentclass[12pt,oneside]{amsbook}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{openobligation}[theorem]{Open Obligation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+\newcommand{\status}[1]{\textup{[#1]}}
+\newcommand{\spath}{\sim_{\mathrm{path}}}
+\newcommand{\scap}{\sim_{\mathrm{cap}}}
+
+%% Notation
+%%   U, \mathbf{U}    Universal source object (Book IV)
+%%   F_SCC            SCC realization functor
+%%   C_SCC            SCC target category (weak structural witness category)
+%%   tau_SCC          SCC terminal structural predicate
+%%   U_SCC            Branchwise SCC completion (conditional; NOT a second U)
+%%   A_X              Support skeleton of SCC object X
+%%   W_X              Witness family of SCC object X
+%%   T_X              Transported invariant of SCC object X
+%%   D_X              Defect/interface ledger of SCC object X
+%%   CapRec           Recursively stable maximal carrier (branch identity)
+%%   spath            Stabilized path-equivalence (branch identity)
+%%   scap             Cap-equivalence (branch confluence)
+%%   SCC              Structural Counterfactual Capacity (the endpoint)
+%%   MCS              Minimal Structural Carrier Selection (main open burden)
+
+\begin{document}
+
+\title{SCC Branch Book\\[6pt]
+       Structural Counterfactual Capacity,\\
+       Minimal Carrier, and Endpoint Admissibility}
+\author{Elements of Nested Fibrational Cosmology}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{Front Block}
+%% ---------------------------------------------------------------
+
+\paragraph{Imported spine results.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Book~I: Observational Quotient Theorem (Thm.~I.6.1);
+        Collapse Gates CG-1--CG-6 (SRs~I.1.4--I.1.9);
+        Admissible-Class Canonicity (Thm.~I.3.6);
+        Behavioral Congruence Canonicity (Lem.~I.3.5).
+  \item Book~II: Boundary Stabilization Theorem (Thm.~II.8.1);
+        Phase-A/B/C classification (Def.~II.5.1);
+        PASS as Derived Necessity (Thm.~II.5.14);
+        Binary Rigidity (Thm.~II.5.8).
+  \item Book~III: Unified Coercive-Transport Inequality
+        (Thm.~III.5.1); Depth-Sum Convergence (Thm.~III.5.4).
+  \item Book~IV: Universal Source Theorem (Thm.~IV.7.1);
+        five source-side rungs ORA--UC (Thms.~IV.2.1--IV.3.1).
+  \item Book~V: Branch Projection Theorem (Prop.~V.3.1);
+        UBLT (Thm.~V.7.4); Certified Branch Legitimacy Theorem
+        (Thm.~V.8.1).
+  \item Book~VII: Canonical Closure Schema Theorem
+        (Thm.~VII.6.4); No-Hidden-Upgrade Rule
+        (Prop.~VII.6.x); Non-Retroactivity (Thm.~VII.6.y).
+\end{enumerate}
+
+\paragraph{Branch-specific data.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Declared SCC target category: the weak structural
+        witness category $\mathcal{C}_{\mathrm{SCC}}$, whose
+        objects are SCC quadruples $(A_X, W_X, T_X, D_X)$
+        (support skeleton, witness family, transported invariant,
+        defect ledger).
+  \item The SCC terminal predicate $\tau_{\mathrm{SCC}}$: the
+        structural counterfactual capacity condition on an SCC
+        object.
+  \item The SCC dependency spine: ORA $\Rightarrow$ CTM
+        $\Rightarrow$ TIN $\Rightarrow$ MCS $\Rightarrow$
+        WeakGlue $\Rightarrow$ UC $\Rightarrow$ TSI.
+  \item Four open obligations: O-SCC.MCS (main frontier),
+        O-SCC.WeakGlue (prerequisite to MCS), O-SCC.UC, O-SCC.TSI.
+\end{enumerate}
+
+\paragraph{Endpoint target.}
+Persistence-selected structural counterfactual capacity: the
+certified structural property of an NFC-source-descended object
+that supports lawful counterfactual reasoning about its own
+observer-relative distinguished states, under the constraints of
+the canonical source image.  No phenomenological, conscious, or
+experiential content is asserted.
+
+\paragraph{Bridge stack.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Licensed source-descended realization via
+        $F_{\mathrm{SCC}}$ (ORA--UC rungs from Book~IV).
+  \item SCC Minimal Structural Carrier Selection (O-SCC.MCS):
+        the main open burden.
+  \item SCC Branch-Local Pairwise Amalgamation (O-SCC.WeakGlue):
+        prerequisite to MCS discharge.
+  \item Branchwise SCC completion $\mathcal{U}_{\mathrm{SCC}}$
+        (O-SCC.UC).
+  \item SCC Target/Structural Identification (O-SCC.TSI): full
+        endpoint admissibility beyond structural-label form.
+\end{enumerate}
+
+\paragraph{Current status.}
+\textbf{CERT-PROJ at most.  Main frontier: O-SCC.MCS.}
+
+The SCC branch is a lawful NFC descendant.  All four core
+obligations (MCS, WeakGlue, UC, TSI) are open in canonical
+papers.  The branch is at CERT-PROJ --- licensed projection at
+stated structural scope --- and cannot advance to CERT-CLOSE
+until the MCS theorem is canonically proved.
+
+\bigskip
+
+%% ---------------------------------------------------------------
+\section*{SCC.0\quad Purpose}
+%% ---------------------------------------------------------------
+
+This branch studies the structural counterfactual capacity of
+NFC-source-descended objects.  Its task: determine whether the
+canonical spine produces a certified object that supports lawful
+counterfactual reasoning about its own observer-relative
+distinguished states, under the no-smuggling discipline.
+
+The SCC branch occupies a unique position in the NFC program.
+Its endpoint is the furthest from direct physical measurement
+and the most philosophically sensitive.  The program's response
+to this is not to retreat from the endpoint but to impose the
+strictest possible labeling discipline: the endpoint label
+``structural counterfactual capacity'' is the strongest
+admissible label consistent with the spine's theorems, and no
+phenomenological or ontological upgrade is licensed.
+
+The canonical discipline has one specific consequence: the word
+``consciousness'' and its cognates are not licensed at any stage
+in the canonical theorem flow.  This is not a philosophical
+stance on whether consciousness is real; it is a status-honesty
+claim that the current canonical framework has not proved a
+consciousness theorem and does not use consciousness as a premise.
+
+%% ---------------------------------------------------------------
+\section{Branch Governance Preamble}
+\label{sec:governance}
+%% ---------------------------------------------------------------
+
+\begin{standingrule}[\status{D}]\label{sr:scc-no-smuggling}
+\textup{(SCC Anti-Smuggling.)}  No target-side label for the
+SCC branch may introduce content beyond the certified source
+image.  In particular: no phenomenology, no independent
+ontology, no private experiential primitive, no consciousness
+claim, and no import from empirical cognitive science may enter
+the canonical theorem flow without explicit declaration and
+separate canonical proof.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:scc-no-consciousness}
+\textup{(Consciousness Non-Claim.)}  No theorem in this book
+licenses the label ``consciousness,'' ``subjective experience,''
+``qualia,'' ``phenomenal states,'' or any equivalent label.
+The strongest admissible endpoint label is \emph{persistence-selected
+structural counterfactual capacity}.  Any stronger label requires
+a separate canonical proof not present in this book.
+\end{standingrule}
+
+\begin{proposition}[\status{U}]\label{prop:scc-formation}
+\textup{(Formation.)}  The SCC branch candidate
+$\mathfrak{B}_{\mathrm{SCC}}$
+is constitutionally well-formed: all five components
+$(\mathbf{U},\,\mathcal{C}_{\mathrm{SCC}},\,F_{\mathrm{SCC}},
+\mathrm{Cert}_{\mathrm{SCC}},\,\tau_{\mathrm{SCC}},
+\mathrm{FF}_{\mathrm{SCC}})$ are declared.
+\end{proposition}
+
+\begin{proof}
+All five components are declared in the front block and defined
+in Sections~\ref{sec:arena}--\ref{sec:ledger}.  By the Certified
+Branch Legitimacy Theorem (Book~V, Thm.~V.8.1), the branch is
+constitutionally formed.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:scc-label}
+\textup{(Interpretive Label Admissibility.)}  The label
+``persistence-selected structural counterfactual capacity''
+passes all four tests of the No-Hidden-Upgrade Rule (Book~VII,
+Prop.~VII.6.x): (i)~it is eliminable (reduces to the structural
+predicate $\tau_{\mathrm{SCC}}$); (ii)~it asserts no independent
+ontology; (iii)~it imports no phenomenology; (iv)~it does not
+depend on data outside the certified source image.
+\end{proposition}
+
+\begin{proof}
+Test~(i): the label is eliminable in favor of the structural
+predicate on the SCC quadruple $(A_X, W_X, T_X, D_X)$.
+Test~(ii): SCC is a structural property of NFC configurations;
+no independent mental ontology is asserted.
+Test~(iii): no experiential or phenomenal content enters the
+definition of $\tau_{\mathrm{SCC}}$.
+Test~(iv): the predicate is computed entirely from the certified
+source image $F_{\mathrm{SCC}}(\mathbf{U})$.
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:scc-tsifirewall}
+\textup{(SCC TSI Firewall.)}  A proposed endpoint label $L$ is
+admissible for the SCC branch if and only if none of the four
+interpretive failures occur:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item FI-IADD: $L$ adds theorem content not in the certified
+        spine image.
+  \item FI-IONT: $L$ asserts an independent ontology.
+  \item FI-IPHEN: $L$ imports phenomenology absent from the
+        theorem content.
+  \item FI-ISRC: $L$ depends on data outside the certified
+        source image.
+\end{enumerate}
+The label ``persistence-selected structural counterfactual
+capacity'' passes all four tests.  ``Consciousness'' and its
+cognates fail FI-IONT and FI-IPHEN at the current canonical stage.
+\end{theorem}
+
+\begin{proof}
+The SCC TSI firewall is the No-Hidden-Upgrade Rule
+(Book~VII, Prop.~VII.6.x) applied to the SCC endpoint.
+Tests~(i)--(iv) are the exact four tests of that rule.
+For the admissible label: Proposition~\ref{prop:scc-label}.
+For consciousness: at the current stage, no theorem in the
+canonical spine or this branch book identifies the SCC structural
+predicate with phenomenal consciousness; importing that
+identification would constitute FI-IONT (independent mental
+ontology) and FI-IPHEN (phenomenology not in theorem content).
+\end{proof}
+
+\begin{remark}[\status{D}]\label{rmk:scc-status-vocab}
+\textup{(Status vocabulary.)}  Standard FI-code and positive
+status alphabet applies.  Current status: CERT-PROJ at most.
+No claim in this book exceeds CERT-PROJ.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Imported Spine Structure}
+\label{sec:imports}
+%% ---------------------------------------------------------------
+
+\textbf{Imports from Book~I.}  The observational quotient
+$\Sigma_\infty$ and defect ledger $\Delta$ are the primitive
+inputs to the SCC carrier reduction program.  Admissible-Class
+Canonicity (Thm.~I.3.6) ensures $E_{\max}$ is uniquely defined:
+the SCC minimal carrier is a carrier within this maximal class.
+
+\textbf{Imports from Book~II.}  PASS (Thm.~II.5.14) governs
+the SCC branch: a persistence-selected object satisfying PASS is
+the precise domain of the SCC terminal predicate.  Binary Rigidity
+(Thm.~II.5.8) provides the fiber structure that the SCC carrier
+reduction operates on: each non-trivial stable fiber has
+cardinality exactly~2, so the SCC carrier space is stratified
+into binary layers.
+
+\textbf{Imports from Book~III.}  The Unified
+Coercive-Transport Inequality (Thm.~III.5.1) and Depth-Sum
+Convergence (Thm.~III.5.4) provide the transport control for
+SCC data across admissible enlargements.  The SCC branch uses
+$\Theta_n$ in the full range $[0,1]$, depending on the
+coercivity regime of the specific SCC realization.
+
+\textbf{Imports from Books~IV--VII.}  Universal source descent
+(Book~IV), branch legitimacy (Book~V), force-governance and
+No-Hidden-Upgrade Rule (Book~VII).
+
+%% ---------------------------------------------------------------
+\section{Branch-Specific Arena}
+\label{sec:arena}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:scc-object}
+An \emph{SCC object} is a quadruple
+$X = (\mathcal{A}_X, \mathcal{W}_X, \mathcal{T}_X, \mathcal{D}_X)$
+where:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $\mathcal{A}_X$ is the \emph{support skeleton}: the
+        persistence-selected admissible sub-configuration
+        descended from the NFC source.
+  \item $\mathcal{W}_X$ is the \emph{witness family}: the
+        finite collection of admissible local tests that
+        certify the SCC structural property.
+  \item $\mathcal{T}_X$ is the \emph{transported invariant}:
+        the structural quantity preserved under admissible
+        enlargement.
+  \item $\mathcal{D}_X$ is the \emph{defect/interface ledger}:
+        the cumulative defect record of the SCC object's
+        continuation history.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:scc-target-cat}
+The \emph{SCC target category} $\mathcal{C}_{\mathrm{SCC}}$
+is the weak structural witness category whose objects are SCC
+objects (Definition~\ref{def:scc-object}) and whose morphisms
+are admissible SCC enlargements (transport-compatible admissible
+extensions preserving $\mathcal{T}_X$).
+\end{definition}
+
+\begin{remark}[\status{R}]
+$\mathcal{C}_{\mathrm{SCC}}$ is a \emph{structural} category.
+Its objects are not minds, agents, or experiential subjects.
+They are NFC-source-descended configurations equipped with a
+certified structural predicate.  The ``counterfactual capacity''
+in the endpoint label refers to the configuration's structural
+ability to support counterfactual relational distinctions under
+the admissible test family --- not to any capacity for reasoning
+or experience.
+\end{remark}
+
+\begin{definition}[\status{D}]\label{def:scc-terminal}
+The \emph{SCC terminal predicate} $\tau_{\mathrm{SCC}}(X)$ holds
+of an SCC object $X$ if:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $X$ is persistence-selected: it has survived all six
+        collapse gates (Book~I, SRs~I.1.4--I.1.9) and satisfies
+        PASS (Book~II, Thm.~II.5.14).
+  \item $X$ admits a minimal structural carrier (MCS): a minimal
+        faithful support family for the transported invariant
+        $\mathcal{T}_X$ (O-SCC.MCS, when discharged).
+  \item $\mathcal{T}_X$ is counterfactually distinguishing: the
+        transported invariant separates distinct admissible
+        histories at the structural level.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:scc-functor}
+The \emph{SCC realization functor}
+$F_{\mathrm{SCC}} : \mathrm{POT} \to \mathcal{C}_{\mathrm{SCC}}$
+maps each POT object $P$ to the SCC object
+$F_{\mathrm{SCC}}(P) = (\mathcal{A}_P, \mathcal{W}_P,
+\mathcal{T}_P, \mathcal{D}_P)$ carrying the collar-inherited
+SCC structural data.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:caprec}
+The \emph{recursively stable maximal carrier}
+$\mathrm{CapRec}(X) = \mathfrak{C}^{\mathrm{rec}}_{\max}(X)$
+is the carrier-equivalence class of $X$ stable under all
+admissible continuation that do not introduce new defect events.
+It defines the branch-identity class of the SCC object under
+the equivalence relation $\scap$ (cap-equivalence).
+\end{definition}
+
+%% ---------------------------------------------------------------
+\section{Lawful Descent and Branch Identity}
+\label{sec:descent}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:scc-lawful}
+\textup{(SCC Branch is Lawful.)}  The branch candidate
+$\mathfrak{B}_{\mathrm{SCC}}$ is a lawful NFC branch satisfying
+all five conditions of the Certified Branch Legitimacy Theorem
+(Book~V, Thm.~V.8.1).
+\end{proposition}
+
+\begin{proof}
+(1)~Source descent: $F_{\mathrm{SCC}}$ descends from $\mathbf{U}$
+via Book~IV, with ORA--UC rungs imported as discharged [U] results.
+(2)~Intake survival: the ORA--CTM--TIN rungs are proposed/partial;
+MCS is the main open burden.  The branch survives through TIN
+at its current scope.
+(3)~Ledger completeness: O-SCC.MCS through O-SCC.TSI are
+explicitly ledgered in Section~\ref{sec:ledger}.
+(4)~Status honesty: no claim exceeds CERT-PROJ.
+(5)~Non-retroactivity: the SCC branch does not affect YM, NS,
+or GR (Book~VII, Thm.~VII.6.y).
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:scc-distinct}
+\textup{(Full Distinctness.)}  The SCC branch is genuinely
+distinct from the YM, NS, and GR branches.  Its terminal
+predicate (persistence-selected structural counterfactual
+capacity of the transported invariant) is not the terminal
+predicate of any other named branch.
+\end{proposition}
+
+\begin{proof}
+YM targets a spectral mass gap; NS targets fluid regularity;
+GR targets Einstein-type structural compatibility of a metric
+field.  None is the SCC terminal predicate.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:scc-trichotomy}
+\textup{(Branch Trichotomy.)}  Every recursively stabilized
+pair $(X, Y)$ of SCC objects falls into exactly one of:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \emph{Collapse:} $X \spath Y$ (path-equivalent under
+        recursive stabilization; same branch identity class).
+  \item \emph{Confluent distinctness:} $X \not\spath Y$ but
+        $X \scap Y$ (cap-confluent; distinct histories, same
+        structural carrier class).
+  \item \emph{Genuine branch distinctness:} $X \not\spath Y$
+        and $X \not\scap Y$ (genuinely distinct SCC objects).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The trichotomy follows from the definitions of $\spath$ and $\scap$
+as equivalence relations on the set of recursively stabilized
+SCC objects.  Any two objects are either (i)~path-equivalent,
+(ii)~cap-confluent but not path-equivalent, or (iii)~neither.
+These cases are mutually exclusive and exhaustive.
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:scc-antismuggle}
+\textup{(SCC Anti-Smuggling.)}  No target-side label for the
+SCC branch may introduce content beyond the certified source
+image.  Formally: for any proposed SCC datum $d$, if $d$
+requires data outside $F_{\mathrm{SCC}}(\mathbf{U})$, then $d$
+is prohibited as a carrier element.
+\end{proposition}
+
+\begin{proof}
+By Book~I, Standing~Rule~I.1.3 (no-smuggling at the primitive
+level) and the branch-level extension of this rule
+(SR~\ref{sr:scc-no-smuggling}): any datum outside the certified
+source image is a silent import and violates the intake law
+(Book~V, UBLT Thm.~V.7.4, condition~(4)).  It is therefore
+excluded from the SCC carrier by the anti-smuggling gate.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{The Closure Ledger}
+\label{sec:ledger}
+%% ---------------------------------------------------------------
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{2.2cm}p{5.0cm}p{1.0cm}p{3.5cm}@{}}
+\hline
+\textbf{ID} & \textbf{Name} & \textbf{St.} & \textbf{Blocks} \\
+\hline
+O-SCC.WeakGlue & SCC Branch-Local Pairwise Amalgamation:
+  pairwise amalgamation for SCC carrier data (branch-specific;
+  distinct from source-side O-WeakGluing) & [O] &
+  O-SCC.MCS (prerequisite) \\
+O-SCC.MCS & SCC Minimal Structural Carrier Theorem:
+  existence and uniqueness of the minimal faithful support
+  family for $\mathcal{T}_X$ & [O] &
+  O-SCC.UC; CERT-PROJ upgrade \\
+O-SCC.UC & Branchwise SCC Universal Completion:
+  local SCC realizations factor through a single
+  $\mathcal{U}_{\mathrm{SCC}}$ & [O] &
+  O-SCC.TSI \\
+O-SCC.TSI & SCC Target/Structural Identification:
+  full endpoint admissibility beyond structural-label form;
+  counterfactual capacity certified at full TSI scope & [O] &
+  CERT-CLOSE \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{remark}[\status{R}]
+The dependency chain is:
+$\mathrm{WeakGlue} \Rightarrow \mathrm{MCS} \Rightarrow
+\mathrm{UC} \Rightarrow \mathrm{TSI} \Rightarrow \mathrm{CERT\text{-}CLOSE}$.
+O-SCC.MCS is the primary failure frontier: it is the smallest
+theorem that would unlock the rest of the chain.  The WeakGlue
+obligation is a prerequisite that must be discharged before MCS
+can be addressed.
+\end{remark}
+
+\begin{openobligation}[\status{O}]\label{ob:scc-weakglue}
+\textup{(O-SCC.WeakGlue: Pairwise Amalgamation.)}
+For any two SCC carrier data $c_1, c_2 \in \mathcal{W}_X$ with
+overlapping support, the pairwise amalgamation $c_1 \wedge c_2$
+exists and is unique in the carrier order.  This is the
+branch-specific analogue of the source-side pairwise amalgamation
+(Book~IV, Thm.~IV.ORA); the SCC-branch version requires the
+carrier data to be amalgamated, not just the source observables.
+
+\emph{Status:} Proof skeleton exists in retired SCC Branch Paper
+(\texttt{lem:weakglue}).  The key difficulty is that SCC carrier
+data may have non-trivial overlap structure that requires a
+separate amalgamation argument from the source-side version.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:scc-mcs}
+\textup{(O-SCC.MCS: Minimal Structural Carrier Theorem.)}
+For every SCC object $X$ with transported invariant
+$\mathcal{T}_X$, there exists a minimal faithful support family
+$\mathcal{M}_X \subseteq \mathcal{W}_X$ such that:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $\mathcal{M}_X$ is a support family for $\mathcal{T}_X$:
+        $\mathcal{T}_X$ is recoverable from $\mathcal{M}_X$-level
+        data alone.
+  \item $\mathcal{M}_X$ is minimal: no proper sub-family of
+        $\mathcal{M}_X$ supports $\mathcal{T}_X$.
+  \item $\mathcal{M}_X$ is unique up to canonical carrier
+        equivalence.
+\end{enumerate}
+This blocks silent carrier inflation: no larger carrier than
+$\mathcal{M}_X$ is needed to certify the SCC structural property.
+
+\emph{Status:} Main open burden of the SCC branch.  Structural
+form established; existence and uniqueness proof is the open
+question.  Until MCS is discharged, the branch cannot advance
+beyond CERT-PROJ.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:scc-uc}
+\textup{(O-SCC.UC: Branchwise SCC Completion.)}
+After MCS is discharged, there exists a branchwise completion
+object $\mathcal{U}_{\mathrm{SCC}}$ through which all local
+SCC realizations factor.  This is the SCC analogue of the
+Universal Completion Theorem (Book~IV, Thm.~IV.3.1) at the
+branch level.
+
+$\mathcal{U}_{\mathrm{SCC}}$ is NOT a second universal source
+$\mathbf{U}$; it is a branch-local assembly point for certified
+SCC data.  Its existence depends on O-SCC.MCS.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:scc-tsi}
+\textup{(O-SCC.TSI: Target/Structural Identification.)}
+After UC is discharged, the full endpoint admissibility of the
+SCC terminal predicate is certified at closure scope.  The
+structural label ``persistence-selected structural counterfactual
+capacity'' is promoted to full TSI force.
+
+\emph{Status:} Structural label form only (weak form) at
+current stage.  Full TSI requires MCS and UC discharge.
+\end{openobligation}
+
+%% ---------------------------------------------------------------
+\section{Named Failure Frontier}
+\label{sec:frontier}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{U}]\label{thm:scc-frontier}
+\textup{(SCC Failure Frontier.)}  The SCC branch has a precisely
+named failure frontier:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \textbf{Primary frontier (O-SCC.MCS):} the Minimal
+        Structural Carrier Theorem.  Until this is proved
+        canonically, the SCC branch cannot advance beyond
+        CERT-PROJ.  Silent carrier inflation remains a structural
+        risk.
+  \item \textbf{Prerequisite frontier (O-SCC.WeakGlue):}
+        the SCC branch-local pairwise amalgamation lemma.  Must
+        be discharged before MCS can be addressed.
+  \item \textbf{Completion frontier (O-SCC.UC):} branchwise
+        SCC universal completion.  Blocked by MCS.
+  \item \textbf{Identification frontier (O-SCC.TSI):} full
+        endpoint TSI certification.  Blocked by UC.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The Frontier Stability Theorem (Book~VII, Thm.~VII.4.3) requires
+a positive named failure frontier.  The four items above are the
+SCC branch's frontier: each is a precise mathematical statement,
+currently unresolved in canonical papers, blocking a specific
+step in the closure chain.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{SCC ICDC: Scale-Limit Direct System}
+\label{sec:icdc}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{C}]\label{thm:scc-icdc}
+\textup{(SCC-ICDC: Scale-Limit BP-SCC Direct System.)}
+\textup{[Conditional on O-SCC.MCS and O-SCC.WeakGlue discharged,
+PASS, Phase-A.]}
+Let $(X_n)_{n \geq n_0}$ be a Van Hove exhaustion of SCC objects
+with transported invariants $(\mathcal{T}_{X_n})$ satisfying the
+five ICDC conditions of Book~III, Scholium~III.8.1.  Then the
+scale-limit SCC object
+$X_\infty := \varinjlim_\partial X_n$
+exists and carries a coherent transported invariant
+$\mathcal{T}_{X_\infty}$, with the SCC structural property
+inherited from the finite stages.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Apply the ICDC Schema (Book~III, Sch.~III.8.1) with the SCC
+specialization $\Theta_n \in [0,1]$ (regime-dependent).  The
+five ICDC conditions (one-step inheritance, interface localization,
+two-step transitivity, source-image discipline, summable residues)
+are verified for the SCC transported invariant using O-SCC.MCS
+(minimal carrier ensures faithful support survives the limit) and
+O-SCC.WeakGlue (pairwise amalgamation ensures the direct limit
+is well-defined).
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{R1: SCC Branch-Projection}
+\label{sec:r1}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{O}]\label{thm:scc-r1}
+\textup{(R1: SCC Branch-Projection, Weak Form.)}
+\textup{[Reserved --- no present theorem force.]}
+
+The SCC Branch-Projection Theorem in its weak form: there exists
+a canonical projection from the persistence-selected SCC sector
+to the space of structural counterfactual capacity labels,
+analogous to the Branch Projection Theorem (Book~V, Prop.~V.3.1)
+at the SCC endpoint level.
+
+\emph{Status:} Reserved.  This is the R1 obligation from the
+retired Branch~A* governance layer.  It cannot be cited as a
+discharged theorem.  It is recorded here to make the SCC
+program's full obligation structure visible.  Discharge requires
+MCS, UC, and TSI to be first established.
+\end{theorem}
+
+%% ---------------------------------------------------------------
+\section{Final Status Proposition}
+\label{sec:status}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:scc-status}
+\textup{(Canonical Status.)}  The SCC branch currently satisfies:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \textbf{Lawful branch:} confirmed (Prop.~\ref{prop:scc-lawful}).
+  \item \textbf{Anti-smuggling:} enforced at the primitive level
+        (SR~\ref{sr:scc-no-smuggling}) and at the endpoint level
+        (Thm.~\ref{thm:scc-tsifirewall}).
+  \item \textbf{TSI:} structural-label form only (weak form).
+        Full TSI blocked by O-SCC.MCS.  Failure code FI-TSI.
+  \item \textbf{Strongest admissible endpoint label:}
+        \emph{persistence-selected structural counterfactual
+        capacity.}
+  \item \textbf{What is NOT licensed:}
+        consciousness, phenomenal experience, subjective states,
+        qualia, or any stronger label.  These fail the SCC TSI
+        firewall (FI-IONT, FI-IPHEN).
+  \item \textbf{Status:} CERT-PROJ at most.  NOT CERT-CLOSE.
+\end{enumerate}
+\end{proposition}
+
+%% ---------------------------------------------------------------
+\section{Boundary of the SCC Branch Book}
+%% ---------------------------------------------------------------
+
+\textbf{What this branch book establishes.}
+\begin{enumerate}
+  \item The SCC branch is a lawful NFC branch (CERT-PROJ).
+  \item The SCC TSI firewall (Thm.~\ref{thm:scc-tsifirewall}):
+        a formal theorem governing endpoint label admissibility.
+  \item The SCC anti-smuggling proposition
+        (Prop.~\ref{prop:scc-antismuggle}).
+  \item Branch trichotomy (Prop.~\ref{prop:scc-trichotomy}):
+        the three-way classification of SCC object pairs.
+  \item The four precisely named open obligations
+        (Thm.~\ref{thm:scc-frontier}).
+  \item The SCC-ICDC conditional theorem
+        (Thm.~\ref{thm:scc-icdc}).
+  \item The R1 SCC Branch-Projection theorem recorded as
+        a Reserved obligation (Thm.~\ref{thm:scc-r1}).
+\end{enumerate}
+
+\textbf{What this branch book does not establish.}
+\begin{enumerate}
+  \item Discharge of any core obligation (WeakGlue, MCS, UC, TSI)
+        as a canonical theorem.
+  \item CERT-CLOSE status.
+  \item Consciousness, phenomenal experience, or any stronger
+        label than ``persistence-selected structural counterfactual
+        capacity.''
+  \item A quantum theory of consciousness or any AI-specific claim.
+  \item Any empirical cognitive science import.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}
+%% ---------------------------------------------------------------
+
+\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{@{}p{4.0cm}p{0.8cm}p{3.6cm}p{4.2cm}@{}}
+\hline
+\textbf{Theorem} & \textbf{St.} & \textbf{Depends on} & \textbf{Exports to} \\
+\hline
+\ref{prop:scc-formation}\ Formation
+  & [U] & Bk.~V Thm.~V.8.1
+  & \ref{prop:scc-lawful} \\
+
+\ref{prop:scc-label}\ Label Admissibility
+  & [U] & Bk.~VII Prop.~VII.6.x
+  & \ref{thm:scc-tsifirewall} \\
+
+\ref{thm:scc-tsifirewall}\ TSI Firewall
+  & [U] & \ref{prop:scc-label}; FI codes
+  & Endpoint label discipline \\
+
+\ref{prop:scc-lawful}\ SCC Branch Lawful
+  & [U] & \ref{prop:scc-formation}; Bk.~IV--V
+  & All subsequent SCC theorems \\
+
+\ref{prop:scc-distinct}\ Full Distinctness
+  & [U] & Terminal predicates
+  & Branch catalog \\
+
+\ref{prop:scc-trichotomy}\ Branch Trichotomy
+  & [U] & $\spath$, $\scap$ definitions
+  & Branch identity logic \\
+
+\ref{prop:scc-antismuggle}\ Anti-Smuggling
+  & [U] & Bk.~I SR~I.1.3; \ref{sr:scc-no-smuggling}
+  & Carrier reduction; O-SCC.MCS \\
+
+\ref{thm:scc-frontier}\ Failure Frontier
+  & [U] & All obligations named
+  & External scrutiny; CERT-PROJ posture \\
+
+\ref{thm:scc-icdc}\ SCC-ICDC
+  & [C] & O-SCC.MCS + WeakGlue; Bk.~III Sch.~III.8.1
+  & O-SCC.UC; scale-limit SCC \\
+
+\ref{thm:scc-r1}\ R1 (Reserved)
+  & [O] & O-SCC.MCS + UC + TSI
+  & Future SCC closure program \\
+
+\ref{prop:scc-status}\ Canonical Status
+  & [U] & All of SCC Branch Book
+  & Program ledger \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\medskip
+
+\begin{scholium}[\status{R}]
+The SCC Branch Book is frontier-honest.  The canonical program
+makes no claim about consciousness and does not use consciousness
+as a premise.  What it does claim is precisely delineated by the
+SCC TSI firewall: persistence-selected structural counterfactual
+capacity.  This is a mathematically tractable structural property
+that emerges from the NFC source-descended carrier structure.
+Whether this structural property bears any relation to phenomenal
+consciousness is a question this book explicitly does not address,
+because addressing it would require theorem content not present
+in the canonical spine.  The firewall is not a philosophical
+evasion; it is the canonical program's honest statement of where
+its theorem-bearing force currently ends.
+\end{scholium}
+
+\end{document}
