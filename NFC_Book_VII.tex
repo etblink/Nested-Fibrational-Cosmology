@@ -289,6 +289,67 @@ is equivalent to: ``$X$ is unproved in canonical papers and the
 canonical obligation remains open; a candidate proof route exists.''
 \end{standingrule}
 
+\begin{standingrule}[\status{D}]\label{sr:proof-grade}
+\textup{(Proof-Grade Classification.)}
+Every theorem, lemma, or proof package in the canonical program should
+be assigned a maturity level from the following scale, supplementing
+the status tags $[\mathrm{U}]$/$[\mathrm{C}]$/$[\mathrm{O}]$/$[\mathrm{D}]$
+with a finer internal-rigor assessment:
+\begin{itemize}
+  \item \textbf{P0}~--- Vision or heuristic only; no formal definitions,
+    no proof.
+  \item \textbf{P1}~--- Formal definitions exist; proof incomplete.
+  \item \textbf{P2}~--- Proof scaffold exists; some lemmas structural
+    rather than fully analytic.
+  \item \textbf{P3}~--- Theorem package internally complete at
+    CMP-like standard.
+  \item \textbf{P4}~--- Externally paper-ready; referee-survivable.
+\end{itemize}
+Intermediate grades (e.g.\ P2.5, P2.7) may record partial progress.
+A result may be $[\mathrm{C}]$ at~P3 (conditional but rigorously proved
+under its hypotheses) or $[\mathrm{U}]$ at~P2 (claimed unconditional,
+proof not yet fully assembled).  The proof-grade is recorded in the
+Canon Ledger and governs priority for proof-hardening work.
+
+Each result also carries a scope tag: \emph{source-level},
+\emph{post-source/branch-neutral}, \emph{branch-specific},
+\emph{continuum-interface}, or \emph{endpoint-specific}.  Scope tags
+prevent contamination of branch-neutral results by branch-specific
+assumptions.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:cmp-standard}
+\textup{(Program-Wide Proof-Discipline Requirements.)}
+Every layer of the canonical program is written to the following six
+requirements:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \textbf{Every object has a precise ambient home.}  Maps must
+    have domain and codomain; norms, topologies, and equivalence
+    relations must be stated.
+  \item \textbf{Every theorem has a sharp status.}  Status tags are
+    enforced together with exact hypotheses, exact dependencies,
+    scoped regime, and a named failure frontier when the result is not
+    unconditional.
+  \item \textbf{Every selection principle must be formalized.}
+    Phrases such as ``washed out under transport'' or ``absorbed under
+    quotient'' are inadmissible unless converted into a definition,
+    lemma, or theorem.
+  \item \textbf{Branch-neutral results are separated from
+    branch-specific interpretation.}  Every result carries a scope
+    tag as defined in Standing Rule~\ref{sr:proof-grade}.
+  \item \textbf{Heuristic ladders are split.}  Each development is
+    explicitly partitioned into: proved core, formal conjectural
+    extension, and roadmap material.
+  \item \textbf{Every major theorem package declares its referee
+    attack surface:} weakest assumptions, possible objections, where
+    the proof burden lives, and what would falsify or downgrade the
+    claim.
+\end{enumerate}
+Standing Rules~\ref{sr:declare-status}, \ref{sr:no-inflation}, and
+\ref{sr:precanonical-force} are particular instances of requirements
+(2) and (5).
+\end{standingrule}
+
 \begin{proposition}[\status{U}]\label{prop:downstream-force}
 A downstream claim carries only the force of the named bridge stack
 on which it depends.

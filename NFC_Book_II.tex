@@ -1262,6 +1262,155 @@ Corollary~\ref{cor:local-exclusion}.
 \end{enumerate}
 
 %% ---------------------------------------------------------------
+\section{Transport Structure and Persistence-Simple Observables}
+\label{sec:transport-observable-defs}
+%% ---------------------------------------------------------------
+
+This section provides the formal definitions of the transport-invariant
+observable class and persistence-simple selection criterion.  These
+definitions formalize notions used informally throughout Books~II--III
+and are the foundation on which the branch-neutral selection results
+(E${}_8$ algebra, continuum bridge in Book~VI) depend.  The
+definitions use no primitives beyond the collar-alphabet and
+boundary-stabilization machinery already established in this book.
+
+\begin{definition}[\status{D}]\label{def:observable-space}
+\textup{(Observable Space.)}
+Let $\mathcal{V}$ be a finite-dimensional real vector space of
+observable representatives, and let $\mathcal{N} \subset \mathcal{V}$
+be a fixed subspace of \emph{null-observable directions} (pairs of
+representatives that no admissible test can distinguish).  The
+\emph{observable class space} is the quotient
+\[
+  \mathcal{O} := \mathcal{V} / \mathcal{N}.
+\]
+Elements of $\mathcal{O}$ are \emph{observable classes}.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:transfer-system}
+\textup{(Admissible Transfer System.)}
+Let $\{\mathcal{V}_i\}_{i \in I}$ be a directed system of
+finite-dimensional real vector spaces indexed by a directed set~$I$.
+For each $i \leq j$, let
+\[
+  T_{ij} : \mathcal{V}_i \to \mathcal{V}_j
+\]
+be a linear map satisfying $T_{ii} = \mathrm{id}$ and
+$T_{jk} \circ T_{ij} = T_{ik}$ for all $i \leq j \leq k$.
+Each $\mathcal{V}_i$ carries a null subspace $\mathcal{N}_i$ with
+$T_{ij}(\mathcal{N}_i) \subseteq \mathcal{N}_j$, so that $T_{ij}$
+descends to quotient maps
+$\widetilde{T}_{ij} : \mathcal{O}_i \to \mathcal{O}_j$.
+This is the \emph{admissible transfer system}; the quotient maps are
+\emph{observable transport maps}.
+
+Two representatives $v \in \mathcal{V}_i$ and $w \in \mathcal{V}_j$
+are \emph{transport-equivalent} if there exists $k \geq i,j$ such that
+$T_{ik}(v) \sim T_{jk}(w)$ in $\mathcal{O}_k$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:transport-invariant}
+\textup{(Transport-Invariant Observable Class.)}
+An observable class $[v] \in \mathcal{O}_i$ is
+\emph{transport-invariant} if for all $j \geq i$,
+\[
+  \widetilde{T}_{ij}([v]) = [T_{ij}(v)]
+\]
+remains in the same equivalence class under transport equivalence.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:persistence-simple}
+\textup{(Persistence-Simple Element.)}
+An element $v \in \mathcal{V}_i$ is \emph{persistence-simple} if:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item $[v] \neq 0$ in $\mathcal{O}_i$ (nontrivial observable),
+  \item $[v]$ is transport-invariant
+    (Definition~\ref{def:transport-invariant}), and
+  \item for any decomposition $v = v_1 + v_2$ with both $v_1, v_2$
+    transport-invariant, one of $v_1, v_2$ lies in $\mathcal{N}_i$.
+\end{enumerate}
+Persistence-simple elements are the minimal non-decomposable
+transport-stable observable directions.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:balanced-residual}
+\textup{(Balanced Residual Mode.)}
+An element $r \in \mathcal{V}_i$ is a \emph{balanced residual mode}
+if $[r] \neq 0$ and there exists a decomposition
+$r = \sum_{k=1}^m a_k v_k$ with each $v_k$ transport-invariant and
+coefficients $a_k \in \mathbb{R}$, such that under arbitrarily small
+perturbations of the coefficients:
+\[
+  \sum_{k=1}^m (a_k + \delta_k) v_k \in \mathcal{N}_i.
+\]
+That is, $r$ depends on fine coefficient cancellation to remain
+observable.
+\end{definition}
+
+\begin{lemma}[\status{C}]\label{lem:residual-instability}
+\textup{(Residual Instability.)}
+Let $r \in \mathcal{V}_i$ be a balanced residual mode.  Then $r$ is
+not transport-invariant.
+\end{lemma}
+
+\begin{proof}
+By definition of balanced residual, $r$ admits a decomposition
+$r = \sum a_k v_k$ whose cancellation condition is unstable under
+perturbation: for any $\varepsilon > 0$ there exist $|\delta_k| <
+\varepsilon$ such that $\sum (a_k + \delta_k) v_k \notin \mathcal{N}_i$.
+Because the transfer maps $T_{ij}$ are linear, the perturbed
+coefficients propagate under transport and are not corrected by the
+quotient unless cancelled exactly.  Therefore for sufficiently large
+$j$, $T_{ij}(r) \not\sim r$ in $\mathcal{O}_j$; the residual mode
+drifts out of its equivalence class.  Hence $r$ is not transport-invariant.
+\end{proof}
+
+\begin{remark}[\status{R}]
+The proof above is conditional on the informal step ``for sufficiently
+large $j$, transport amplifies imbalance.''  This is structurally
+sound but requires a precise norm estimate on the collar system for a
+full P3-grade proof; see the Canon Ledger for the outstanding
+collar-geometry lemma.
+\end{remark}
+
+\begin{lemma}[\status{C}]\label{lem:persistence-simple-separation}
+\textup{(Persistence-Simple Separation.)}
+In the reduced V/C/S family-sector of the collar system, the branch
+mode $v_{\mathrm{branch}} = E_V - E_C$ is persistence-simple, while
+the internal mode $v_{\mathrm{internal}} = E_V + E_C - 2E_S$ is a
+balanced residual mode and is therefore not transport-invariant.
+\end{lemma}
+
+\begin{proof}
+That $v_{\mathrm{branch}}$ satisfies conditions (i)--(iii) of
+Definition~\ref{def:persistence-simple} is a direct check against the
+collar transfer system: $v_{\mathrm{branch}}$ is nontrivial, transports
+stably, and admits no nontrivial invariant splitting.  That
+$v_{\mathrm{internal}}$ is a balanced residual follows from the
+coefficient identity $E_V + E_C - 2E_S \to 0$ under the admissible
+coefficient perturbation $E_V,E_C \to E_V + \delta, E_C - \delta$; by
+Lemma~\ref{lem:residual-instability}, it is not transport-invariant.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:book-v-5a-precanon}
+The formal definition framework of this section
+(Definitions~\ref{def:observable-space}--\ref{def:balanced-residual}
+and Lemmas~\ref{lem:residual-instability}--\ref{lem:persistence-simple-separation})
+is the canonical home of what earlier pre-canonical documents called
+``Book~V Section~5A material.''  The graph-reduction lemma, the
+equal-length root lemma, and the Cartan realization package all depend
+on these definitions; their canonical addresses are in the YM branch
+(see the YM branch \S\S on E${}_8$ selection).
+Standing Rule~\ref{sr:precanonical-force} applies: the pre-canonical
+derivations in the CMP-Standard and E${}_8$-certification documents
+are recorded here for route guidance only; canonical force requires
+the proofs in those branch sections.
+
+This remark is governed by
+Standing Rule~\ref{sr:precanonical-force}.
+\end{remark}
+
+%% ---------------------------------------------------------------
 \section{Handoff to Book III}
 %% ---------------------------------------------------------------
 

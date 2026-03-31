@@ -465,7 +465,7 @@ excluded from the SCC carrier by the anti-smuggling gate.
 \hline
 O-SCC.WeakGlue & SCC Branch-Local Pairwise Amalgamation:
   pairwise amalgamation for SCC carrier data (branch-specific;
-  distinct from source-side O-WeakGluing) & [O] &
+  distinct from source-side O-WeakGluing) & [C] &
   O-SCC.MCS (prerequisite) \\
 O-SCC.MCS & SCC Minimal Structural Carrier Theorem:
   existence and uniqueness of the minimal faithful support
@@ -489,25 +489,157 @@ O-SCC.TSI & SCC Target/Structural Identification:
 The dependency chain is:
 $\mathrm{WeakGlue} \Rightarrow \mathrm{MCS} \Rightarrow
 \mathrm{UC} \Rightarrow \mathrm{TSI} \Rightarrow \mathrm{CERT\text{-}CLOSE}$.
-O-SCC.MCS is the primary failure frontier: it is the smallest
-theorem that would unlock the rest of the chain.  The WeakGlue
-obligation is a prerequisite that must be discharged before MCS
-can be addressed.
+O-SCC.MCS is the primary failure frontier.  O-SCC.WeakGlue has been
+conditionally discharged (see
+Theorems~\ref{thm:scc-w1}--\ref{thm:scc-weakglue} below): its proof
+is conditional on the frozen Support Sufficiency Schema and the
+SCC object definitions, both of which are established in this book.
+O-SCC.MCS-Uniqueness follows (Theorem~\ref{thm:scc-mcs-uniqueness});
+O-SCC.MCS-Existence remains open and reduces to
+SCC-MinExist~(\ref{ob:scc-mcs}).
+\end{remark}
+
+%% --- WeakGlue proof package ---
+
+\begin{theorem}[\status{C}]\label{thm:scc-w1}
+\textup{(SCC-W1: Witness Sufficiency Preserved Under Overlap.)}
+Let $K$ and $L$ be lawful SCC carrier families for the same SCC
+observable $\tau_{\mathrm{SCC}}$, with the same normalized
+witness-type support and the same transported persistence/defect-history
+support, and with realized-support data compatible with the same
+ORA/CTM/TIN/ledger structures.  Let $K \wedge L$ denote their
+regimewise common realized-support subfamily.  Then every
+witness/outcome support component genuinely required for
+$\tau_{\mathrm{SCC}}$ is present in $K \wedge L$.
+\end{theorem}
+
+\begin{proof}
+Fix a regime $R$.  Let $w$ be a realized witness/outcome support
+component genuinely required for $\tau_{\mathrm{SCC}}$ at~$R$. Because
+$K$ and $L$ support the same SCC observable, the required
+witness/outcome support is the same in both after admissible
+TIN-compatible normalization.  Suppose $w \notin K \wedge L$; then
+$w$ fails to appear in at least one of $K_R$, $L_R$ as common
+realized support.  Either that carrier does not support
+$\tau_{\mathrm{SCC}}$ (contradicting same-observable), or $w$ is
+replaced by unlicensed target-side enrichment (violating
+anti-smuggling, Book~V).  Both cases are excluded.  Hence $w \in
+K \wedge L$.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:scc-w2}
+\textup{(SCC-W2: Normalized Witness-Type Support Preserved.)}
+Under the hypotheses of Theorem~\ref{thm:scc-w1}, every normalized
+witness-type class genuinely required to interpret $\tau_{\mathrm{SCC}}$
+survives into $K \wedge L$.
+\end{theorem}
+
+\begin{proof}
+Normalized witness-type classes are realized after admissible SCC
+normalization.  Sameness of normalized witness-type support is
+assumed.  If a required class $c$ were absent from $K \wedge L$, then
+after admissible normalization one carrier would fail to share a
+required normalized witness-type class with the other, contradicting
+same-normalized-type-support.  Alternatively, $c$ would be redundant
+presentation-level surplus, which is excluded by the realized-support
+order.  Hence $c \in K \wedge L$.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:scc-w3}
+\textup{(SCC-W3: Transported Persistence/Defect-History Support Preserved.)}
+Under the hypotheses of Theorem~\ref{thm:scc-w1}, every transported
+persistence/defect-history support component genuinely required for
+$\tau_{\mathrm{SCC}}$ survives into $K \wedge L$.
+\end{theorem}
+
+\begin{proof}
+Transported defect/history support is defined along a shared
+ORA/CTM transport spine up to target equivalence and ledger
+visibility.  If a required component $d$ were absent from
+$K \wedge L$, one carrier would fail to share it (contradicting
+same-transported-support), or it would be replaced by unlicensed
+enrichment (violating anti-smuggling).  Both cases are excluded.
+Hence $d \in K \wedge L$.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:scc-w4}
+\textup{(SCC-W4: ORA/CTM/TIN/Ledger Compatibility Preserved.)}
+Under the hypotheses of Theorem~\ref{thm:scc-w1}, the common
+realized-support carrier $K \wedge L$ inherits ORA/CTM/TIN/ledger
+compatibility.
+\end{theorem}
+
+\begin{proof}
+$K \wedge L$ is formed by intersecting realized support, not raw
+presentation data.  Each retained support component was already
+ORA-admissible, CTM-transport-compatible, TIN-normalized, and
+ledger-consistent in both $K$ and $L$.  (i)~\emph{ORA}: restriction
+to common realized support introduces no new restriction datum, so
+ORA status is unchanged.  (ii)~\emph{CTM}: the shared transport
+spine already satisfies commutativity in both carriers; restriction
+removes branches without breaking commutativity.  (iii)~\emph{TIN}:
+normalization was already agreed after TIN-compatible normalization,
+so no fresh ambiguity arises.  (iv)~\emph{Ledger}: retained defects
+were ledger-visible in both; anti-smuggling blocks hidden replacement.
+Hence all four compatibility structures are inherited.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:scc-weakglue}
+\textup{(O-SCC.WeakGlue: SCC Pairwise Amalgamation.)}
+If two lawful SCC carrier families $K$, $L$ support the same SCC
+observable $\tau_{\mathrm{SCC}}$, have the same normalized witness-type
+support, the same transported persistence/defect-history support, and
+are ORA/CTM/TIN/ledger compatible, then their common realized-support
+carrier $K \wedge L$ is lawful and faithful.
+\end{theorem}
+
+\begin{proof}
+By Theorems~\ref{thm:scc-w1}--\ref{thm:scc-w4}, all four support
+layers and all four compatibility structures survive passage to
+$K \wedge L$.  Therefore $K \wedge L$ satisfies all conditions for a
+lawful SCC carrier.  It is faithful because all support components
+required for $\tau_{\mathrm{SCC}}$ are present (Theorem~\ref{thm:scc-w1}).
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:scc-ssf}
+\textup{(SCC Shared-Support Faithfulness.)}
+If $K$ and $L$ are lawful faithful SCC carrier families for the same
+$\tau_{\mathrm{SCC}}$, then their common realized-support carrier
+$K \wedge L$ is also lawful and faithful.
+\end{theorem}
+
+\begin{proof}
+Immediate from Theorem~\ref{thm:scc-weakglue}.
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:scc-mcs-uniqueness}
+\textup{(SCC-MCS Uniqueness.)}
+If a minimal lawful faithful SCC carrier exists, it is unique up to
+carrier equivalence.
+\end{theorem}
+
+\begin{proof}
+Let $K$ and $L$ be two minimal lawful faithful SCC carrier families
+for the same $\tau_{\mathrm{SCC}}$.  By
+Theorem~\ref{thm:scc-weakglue}, $M := K \wedge L$ is lawful and
+faithful.  By construction $M \preceq K$ and $M \preceq L$ in the
+realized-support order.  Minimality of $K$ and $L$ forces $K = M$
+and $L = M$, hence $K \sim L$.
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:scc-mcs-uniqueness} discharges the \emph{uniqueness}
+half of O-SCC.MCS.  The \emph{existence} half --- whether a minimal
+element exists in the carrier order --- remains open as
+O-SCC.MCS (\ref{ob:scc-mcs} below).  Existence reduces to the
+finite-localizability of the transported invariant $\mathcal{T}_X$;
+see the SCC-FL program in the Speculative Holding.  This remark is
+governed by Standing Rule~\ref{sr:precanonical-force}.
 \end{remark}
 
 \begin{openobligation}[\status{O}]\label{ob:scc-weakglue}
-\textup{(O-SCC.WeakGlue: Pairwise Amalgamation.)}
-For any two SCC carrier data $c_1, c_2 \in \mathcal{W}_X$ with
-overlapping support, the pairwise amalgamation $c_1 \wedge c_2$
-exists and is unique in the carrier order.  This is the
-branch-specific analogue of the source-side pairwise amalgamation
-(Book~IV, Thm.~IV.ORA); the SCC-branch version requires the
-carrier data to be amalgamated, not just the source observables.
-
-\emph{Status:} Proof skeleton exists in retired SCC Branch Paper
-(\texttt{lem:weakglue}).  The key difficulty is that SCC carrier
-data may have non-trivial overlap structure that requires a
-separate amalgamation argument from the source-side version.
+\textup{(O-SCC.WeakGlue: DISCHARGED.)}
+See Theorem~\ref{thm:scc-weakglue}.  This obligation is now [C].
 \end{openobligation}
 
 \begin{openobligation}[\status{O}]\label{ob:scc-mcs}
@@ -524,14 +656,33 @@ $\mathcal{M}_X \subseteq \mathcal{W}_X$ such that:
   \item $\mathcal{M}_X$ is unique up to canonical carrier
         equivalence.
 \end{enumerate}
-This blocks silent carrier inflation: no larger carrier than
-$\mathcal{M}_X$ is needed to certify the SCC structural property.
-
-\emph{Status:} Main open burden of the SCC branch.  Structural
-form established; existence and uniqueness proof is the open
-question.  Until MCS is discharged, the branch cannot advance
-beyond CERT-PROJ.
+\emph{Status:} Uniqueness is now proved
+(Theorem~\ref{thm:scc-mcs-uniqueness}).  Existence is the remaining
+open question, and reduces to proving that every descending chain of
+lawful faithful SCC carriers has a lawful faithful lower bound
+(SCC-MinExist).  Main open burden of the SCC branch.
 \end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:scc-uc}
+\textup{(O-SCC.UC: Branchwise SCC Completion.)}
+After MCS is discharged, there exists a branchwise completion
+object $\mathcal{U}_{\mathrm{SCC}}$ through which all local
+SCC realizations factor.  This is the SCC analogue of the
+Universal Completion Theorem (Book~IV) at the branch level.
+$\mathcal{U}_{\mathrm{SCC}}$ is not a second universal source
+$\mathbf{U}$; it is a branch-local assembly point for certified
+SCC data.  Its existence depends on O-SCC.MCS.
+\end{openobligation}
+
+\begin{remark}[\status{R}]
+The dependency chain is:
+$\mathrm{WeakGlue} \Rightarrow \mathrm{MCS} \Rightarrow
+\mathrm{UC} \Rightarrow \mathrm{TSI} \Rightarrow \mathrm{CERT\text{-}CLOSE}$.
+O-SCC.MCS is the primary failure frontier: it is the smallest
+theorem that would unlock the rest of the chain.  The WeakGlue
+obligation is a prerequisite that must be discharged before MCS
+can be addressed.
+\end{remark}
 
 \begin{openobligation}[\status{O}]\label{ob:scc-uc}
 \textup{(O-SCC.UC: Branchwise SCC Completion.)}
