@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "Nested Fibrational Cosmology"
+authors:
+  - family-names: "Kotler"
+    given-names: "Evan Thomas"
+repository-code: "https://github.com/etblink/Nested-Fibrational-Cosmology"
+url: "https://github.com/etblink/Nested-Fibrational-Cosmology"
+license: "CC-BY-4.0"
+doi: "10.5281/zenodo.19154706"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19154706"
+abstract: >-
+  Repository containing the PDF and TeX source files for the Nested Fibrational
+  Cosmology canonical seven-book spine and derived branch books.
+keywords:
+  - "Nested Fibrational Cosmology"
+  - "mathematical physics"
+  - "theoretical physics"
+  - "TeX"
+  - "PDF"
+  - "canonical spine"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Kotler"
+      given-names: "Evan Thomas"
+  title: "Nested Fibrational Cosmology"
+  doi: "10.5281/zenodo.19154706"
+  url: "https://doi.org/10.5281/zenodo.19154706"
+  license: "CC-BY-4.0"
