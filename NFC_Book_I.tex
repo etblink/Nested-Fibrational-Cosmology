@@ -463,22 +463,34 @@ $F(p) = p$, where $F(p) := |\Phi(\mathfrak{g}_{\mathrm{color}}(p))| + 1$.
 \end{theorem}
 
 \begin{proof}
-\textit{Primality.}  If $K_0 = n$ is composite then
-$|\mathrm{Aut}(\mathbb{Z}_n)| = \varphi(n) < n-1$, so proper
-non-trivial orbits exist; Axiom~(A2) forces their identification,
-collapsing the alphabet below~$n$.  For prime $p$ all $p$ classes
-are mutually distinguishable.  Hence $K_0$ is prime.
+\textit{Primality.}  By Axiom~(A2) (structural invariance), the
+WL-1 refinement assigns the same color to any two collar symbols
+in the same $\mathrm{Aut}(\mathbb{Z}_n)$-orbit.  For composite $n$,
+proper non-trivial orbits exist, so the number of WL-1 colors is
+at most $n+1-\varphi(n) \leq n-1 < n$; hence $K_0 < n$ for
+composite $n$.  For prime $p$, the generator
+$\mathtt{swap}_u \in \mathcal{E}_0$ acts as $+1\pmod{p}$; since
+$\mathbb{Z}_p$ has no proper subgroups, the WL-1 walk visits all
+$p$ symbols, giving $K_0 = p$.
 
-\textit{Uniqueness at $K_0 = 7$.}  Exhaustion over odd primes via the
-pendant-algebra Chevalley isomorphism:
-$p=3$: $F(3)=3=p$ but $\tau=3$, non-viable;
-$p=5$: $F(5)=7\neq 5$;
-$p=7$: $F(7)=7=p$, gauge algebra
+\textit{Uniqueness at $K_0 = 7$.}
+The interface coupling constraint selects for each odd prime $p$
+a canonical partition $p = a_1 + a_2 + \cdots$; the resulting
+gauge algebra $\mathfrak{g}_{\mathrm{color}}(p)$ satisfies the
+Weyl structure identity $p = |\hat\Phi(\mathfrak{g}_{\mathrm{color}}(p))|$.
+Three compatibility conditions (F1)--(F3) must all hold:
+(F1) $r(p)=\tau(p)$; (F2) $\mathfrak{su}(3)$ present; (F3) $\mathfrak{u}(1)$ present.
+At $p=3$: $r(3)=2,\tau(3)=3$; (F1) fails.
+At $p=5$: $F(5)=11\neq 5$; (F3) fails.
+At $p=7$: partition $7=3+2+1+1$ gives
 $\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)$,
-$r=4=\tau$, all conditions satisfied;
-$p\geq 11$: $r(p)>\tau(p)$.
-(Discharged unconditionally in ledger revision~IR8, March~2026.)
+$r(7)=4=\tau(7)$, $F(7)=7=p$; all conditions satisfied.
+At $p\geq 11$: avoidance-cycle exclusion gives $\tau(p)\leq 5$
+but $r(p)=p-2\geq 9$; (F1) fails.
+Hence $K_0=7$ is the unique prime fixed point of $F$.
+(Unconditional; source: dream\_paper\_v38.pdf \S\S6.1--6.3.)
 \end{proof}
+
 
 \begin{remark}[\status{R}]
 The primality clause follows from Axiom~(A2) alone.  The uniqueness

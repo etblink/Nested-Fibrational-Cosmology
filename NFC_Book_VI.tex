@@ -272,12 +272,24 @@ Definition~III.2.6.
 %% ---------------------------------------------------------------
 
 \begin{definition}[\status{D}]\label{def:asymptotic-coherence}
-A certified observable family $\mathcal{F}$ is
-\emph{asymptotically coherent} if the scale-normalized increments
-$h_n(U)$ form a Cauchy sequence in the declared comparison norm as $n
-\to \infty$: for every declared tolerance $\varepsilon > 0$, there
-exists $N$ such that $|h_m(U) - h_n(U)| < \varepsilon$ for all $m, n
-\geq N$.
+\textup{(Normed Asymptotic Coherence.)}
+Let $\mathcal{F}$ be a certified observable family and let
+$\|\cdot\|$ be a declared transport-compatible comparison norm on
+the increment space (as in the governing interface regime
+$\mathfrak{R}$).  The family $\mathcal{F}$ is \emph{asymptotically
+coherent with respect to $\|\cdot\|$} if the scale-normalized
+increments $h_n(U)$ form a Cauchy sequence in $\|\cdot\|$ as
+$n \to \infty$: for every declared tolerance $\varepsilon > 0$,
+there exists $N$ such that
+\[
+  \|h_m(U) - h_n(U)\| < \varepsilon
+  \quad\text{for all } m, n \geq N.
+\]
+When the norm is understood from context, we say $\mathcal{F}$
+is simply \emph{asymptotically coherent}.  The norm $\|\cdot\|$
+must always be declared in the governing branch or book document;
+bare asymptotic coherence without a declared norm is not canonical
+content.
 \end{definition}
 
 \begin{definition}[\status{D}]\label{def:effective-smooth}
@@ -298,19 +310,56 @@ does not replace or displace it.
 \end{definition}
 
 \begin{definition}[\status{D}]\label{def:continuum-interface-regime}
-A \emph{continuum interface regime} is a declared pair
-$(\mathcal{R}, \mathcal{F})$ consisting of a smooth domain
-$\mathcal{R}$ and a certified observable family $\mathcal{F}$ such
-that:
+\textup{(Hardened Continuum Interface Regime.)}
+A \emph{continuum interface regime} is a declared quadruple
+$\mathfrak{R} = (\mathcal{R},\, \mathcal{F},\, \|\cdot\|,\, \mathcal{S})$
+consisting of:
 \begin{enumerate}[label=\textup{(\arabic*)}]
-  \item $\mathcal{F}$ is asymptotically coherent on $\mathcal{R}$;
-  \item the scale-normalized increments converge to the relevant
-        differential expressions of the effective smooth representative
-        on $\mathcal{R}$; and
-  \item the discrete accumulators converge to the corresponding
-        integral expressions on $\mathcal{R}$.
+  \item \emph{Effective domain} $\mathcal{R}$: a smooth connected
+    domain equipped with a certified geometric/topological structure
+    derived from the observable carrier (not assumed as a primitive
+    manifold);
+  \item \emph{Certified observable family} $\mathcal{F}$: a
+    directed system of certified observables whose scale-normalized
+    increments generate the differential structure on $\mathcal{R}$;
+  \item \emph{Declared comparison norm} $\|\cdot\|$: an
+    explicit norm on the increment space, transport-compatible
+    (in the sense of Book~II Definition~\ref{def:transport-compatible-norm})
+    and governing all Cauchy-sequence convergence assertions; and
+  \item \emph{Declared scope} $\mathcal{S}$: the explicit
+    statement of what differential and integral language is
+    licensed within $\mathfrak{R}$, and what is not --- no
+    continuum claim has force outside this declared scope.
 \end{enumerate}
+The quadruple $\mathfrak{R}$ is \emph{lawful} if:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item $\mathcal{F}$ is asymptotically coherent on $\mathcal{R}$
+    with respect to $\|\cdot\|$;
+  \item the scale-normalized increments converge in $\|\cdot\|$
+    to the relevant differential expressions of the effective smooth
+    representative on $\mathcal{R}$; and
+  \item the discrete accumulators converge in $\|\cdot\|$ to the
+    corresponding integral expressions within the declared scope
+    $\mathcal{S}$.
+\end{enumerate}
+When context is clear the quadruple $\mathfrak{R}$ is abbreviated
+$(\mathcal{R}, \mathcal{F})$ as before; the norm and scope are
+then understood to be whatever was declared in the governing branch
+or book document.
 \end{definition}
+
+\begin{remark}[\status{R}]\label{rem:quadruple-regime-significance}
+The four-component declaration makes explicit three things that the
+two-component version left implicit: (a) the norm governing
+convergence is \emph{declared}, not assumed; (b) the scope of
+licensed continuum language is \emph{explicit}, not inferred; and
+(c) the domain $\mathcal{R}$ is itself \emph{derived from the
+observable carrier}, not smuggled in as a primitive geometric space.
+This is the canonical response to the hostile referee question
+``What topology are you using?''\ and ``In what space?''  The
+quadruple $\mathfrak{R}$ answers both questions explicitly, by
+reference to declared branch data.
+\end{remark}
 
 \begin{lemma}[\status{U}]\label{lem:incoherence-blocks}
 If asymptotic coherence fails, then no effective smooth representative

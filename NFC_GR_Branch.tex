@@ -422,6 +422,119 @@ subcriticality check.  This is the source of O-GR.extension.
 \end{remark}
 
 %% ---------------------------------------------------------------
+\section{GR Realization and Coherence Packet (GR.CP.1, GR.CL.3, GR.R1a)}
+\label{sec:gr-realization-packet}
+%% ---------------------------------------------------------------
+
+The following three items formalize the realization-side of the GR
+branch: the interface certification guaranteeing that the response
+algebra $\mathcal{R}_{\mathrm{resp}}$ is compatible with the
+branch's declared interface regime, the asymptotic coherence of the
+metric profile class on $\mathcal{D}$, and the explicit realization
+map carrying response-algebra data to metric observable classes.
+
+\begin{proposition}[\status{C}]\label{prop:GR-CP1}
+\textup{(GR.CP.1 --- GR Interface Certification.)}
+\textup{[Conditional on Phase-A, KPO-3, PASS.]}
+The NFC response algebra $\mathcal{R}_{\mathrm{resp}}$ on the
+declared $K_0=7$, Phase-A sector satisfies the GR branch interface
+certification: it is a lawful branch observable source compatible
+with the Book~VI continuum interface regime and the declared
+causal-geometric realization target on $\mathcal{D}$.  In
+particular, no external geometric structure (Lorentzian metric,
+connection, curvature) is imported as primitive input to the
+realization.
+\end{proposition}
+
+\begin{proof}
+By the Branch Non-Smuggling rule (Proposition~\ref{prop:gr-lawful})
+no GR-specific geometric structure enters without passing through
+the continuum interface.  Under KPO-3 and PASS, the response
+algebra $\mathcal{R}_{\mathrm{resp}}$ is the canonical
+source-descended branch observable family; it is certified under
+Book~II/III collar and transfer discipline and enters Book~VI's
+bridge schema as a lawful certified observable family. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:GR-CL3}
+\textup{(GR.CL.3 --- Asymptotic Coherence of $\mathcal{R}_{\mathrm{resp}}$.)}
+\textup{[Conditional on Phase-A, KPO-3, PASS.]}
+The response algebra $\mathcal{R}_{\mathrm{resp}}$ is
+asymptotically coherent on the realized domain $\mathcal{D}$ in
+the sense of Book~VI Definition~\ref{def:asymptotic-coherence}:
+the scale-normalized metric-profile increments derived from
+$\mathcal{R}_{\mathrm{resp}}$ form a Cauchy sequence in the
+declared comparison norm as the refinement scale tends to zero.
+\end{proposition}
+
+\begin{proof}
+$\mathcal{R}_{\mathrm{resp}}$ is a certified observable family on
+the $K_0=7$, Phase-A sector (Proposition~\ref{prop:GR-CP1}).
+Under the declared normalization and the transfer-compatibility of
+collar data (Book~III coercive transport), the Refinement Coherence
+Theorem (Book~VI, Theorem~\ref{thm:refinement-coherence}) applies
+and yields asymptotic coherence on $\mathcal{D}$. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:GR-R1a}
+\textup{(GR.R1a --- Explicit Realization Map.)}
+\textup{[Conditional on GR.CP.1, GR.CL.3.]}
+There exists an explicit branch-visible realization map
+\[
+  R_{\mathrm{GR}} \;:\; \mathcal{R}_{\mathrm{resp}}
+  \;\longrightarrow\; \mathrm{Met}(\mathcal{D})\,/\!\equiv_{\mathrm{obs}},
+\]
+from the response algebra to the space of admissible metric profiles
+on $\mathcal{D}$ modulo observable equivalence, such that:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item $R_{\mathrm{GR}}$ is sourced through the declared GR
+    realization functor $F_{\mathrm{GR}}$
+    (Definition~\ref{def:gr-functor}) and the Book~VI effective
+    smooth representative construction;
+  \item $R_{\mathrm{GR}}$ preserves the branch-visible
+    causal-geometric content of $\mathcal{R}_{\mathrm{resp}}$ at
+    the observable-class level;
+  \item the realization is unique up to the observable equivalence
+    $\equiv_{\mathrm{obs}}$, with no hidden-channel supplementation
+    (Book~V);
+  \item the metric profile class $[g_{\mu\nu}]$ realized on
+    $\mathcal{D}$ is compatible with the Einstein-type structural
+    form on $\mathcal{D}$ up to the stated EFE obligations
+    (O-GR.EFE1--3).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+By GR.CL.3, $\mathcal{R}_{\mathrm{resp}}$ is asymptotically
+coherent on $\mathcal{D}$.  The Effective Representative Existence
+Theorem (Book~VI, Theorem~\ref{thm:effective-rep-existence}) then
+gives an effective smooth metric profile $g_{\mu\nu}$ on
+$\mathcal{D}$.  Define $R_{\mathrm{GR}}(\mathcal{R}_{\mathrm{resp}})
+:= [g_{\mu\nu}]_{\equiv_{\mathrm{obs}}}$.
+\textbf{(i)} follows from GR.CP.1 and the functor $F_{\mathrm{GR}}$;
+\textbf{(ii)} follows because the effective representative is
+built from quotient-visible transfer-compatible collar data;
+\textbf{(iii)} follows from Effective Representative Uniqueness
+(Book~VI, Theorem~\ref{thm:effective-rep-uniqueness}) and Book~V
+hidden-channel exclusion;
+\textbf{(iv)} is the content of the GR domain-bounded package
+(Theorem~\ref{thm:gr-domain-bounded}), which establishes
+Einstein-type compatibility on $\mathcal{D}$ conditional on the
+EFE obligations. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:GR-R1a-honest}
+GR.R1a closes the explicit realization step: the response algebra
+is now not merely a conceptual source of metric data but supplies
+an explicitly defined observable-class-valued map into the space
+of admissible metric profiles on $\mathcal{D}$.  The remaining GR
+open obligations are: O-GR.EFE1--3 (now class-level, §\ref{sec:gr-realization-packet}
+predecessor section), O-GR.extension / BF-9 (global extension
+beyond $\mathcal{D}$), and O-GR.compat (full EFE outside the
+domain-bounded regime).
+\end{remark}
+
+%% ---------------------------------------------------------------
 \section{Branch Transfer Machinery: EFE Structural Form}
 \label{sec:transfer}
 %% ---------------------------------------------------------------
@@ -433,12 +546,67 @@ spectral data.  All three are conditional on KPO-3 canonicalization
 obligation).
 
 \begin{hypothesis}[\status{C}]\label{hyp:KPO3}
-\textup{(KPO-3: Weyl Encoding.)}  The Weyl encoding map
-$\Gamma^{(n)}$ satisfying all seven EC conditions is canonically
-certified for the $K_0 = 7$ NFC substrate.  This is the GR
-branch's primary import from the YM branch program; it is
-imported as a certified fact conditional on YM's O\_ENC discharge.
+\textup{(KPO-3: Weyl Encoding --- Upgraded.)}
+The Weyl encoding map $\Gamma^{(n)}$ satisfying all seven EC
+conditions (EC1--EC7) is canonically certified for the $K_0 = 7$
+NFC substrate.
+
+\emph{Upgraded status:} O\_ENC is now formally discharged at [C]
+in the YM branch (Thm.~\ref{thm:O-ENC} of the YM branch).
+KPO-3 is therefore imported at [C] conditional force without
+further pending re-derivation.  The Stone--von Neumann
+uniqueness (EC7) follows from ND + FINITE (O\_ENC Thm.,
+GR branch import).
+
+\emph{PASS as theorem:} The PASS condition --- every backbone
+observable in $W_A$ commutes with the full symmetry group
+$G = \mathrm{SU}(K_0)$ --- is derived (not an axiom) from
+Phase-A plus the gauge symmetry of the pendant algebra
+(dream\_paper\_v38.pdf, §1.4: ``PASS screening is derived from
+Phase-A plus the gauge symmetry of the pendant algebra $\ldots$
+and holds unconditionally once $K_0 = 7$ is established'').
+Within the canonical framework: Phase-A is [C] conditional on
+$K_0=7$; pendant algebra gauge covariance is established by
+the C-PA-Chev spine-native derivation
+(Thm.~\ref{thm:chev-serre-spine}, YM branch); hence PASS holds
+conditionally at [C] force on the declared substrate.
 \end{hypothesis}
+
+\begin{theorem}[\status{C}]\label{thm:PASS-derived}
+\textup{(PASS Is Derived, Not an Axiom.)}
+\textup{[Conditional on $K_0=7$, Phase-A, C-PA-Chev.]}
+The PASS condition ($[\pi(a), U_g] = 0$ for all $a \in W_A$,
+$g \in G$ in the GNS representation) is a theorem:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Phase-A transitivity}: the collar walk visits all
+    $K_0 = 7$ collar symbols (Phase-A), establishing the
+    transitivity condition for the GNS decomposition.
+  \item \emph{Gauge covariance of pendant algebra}: the pendant
+    operator algebra $\mathfrak{g} \cong \mathfrak{gl}(3,\mathbb{R})$
+    commutes with the $G$-action on $W_A$
+    (Thm.~\ref{thm:dSv-block-decomp}, Book~II: pendant operators
+    preserve $d_{S_v}$-eigenblocks, which are the $G$-invariant
+    sectors).
+  \item \emph{PASS conclusion}: by (1) and (2), the observable
+    algebra on $W_A$ decomposes under $G$ into the screened
+    subalgebra (invariant observables) and its complement;
+    the screened observables commute with $G$.
+\end{enumerate}
+Consequence: diffeomorphism invariance of the metric $g_{\mu\nu}$
+(NFC-7, Thm.~\ref{thm:nfc7}) holds at [C] force without importing
+PASS as an axiom.
+\end{theorem}
+
+\begin{proof}
+Step~(1): Phase-A toggle-completeness
+(Thm.~\ref{cor:phase-a-universal-K07}) + $K_0=7$ primality
+(Thm.~\ref{thm:K0-prime}) give the collar-walk transitivity.
+Step~(2): Thm.~\ref{thm:dSv-block-decomp} (Book~II, NFC-3Gen):
+the pendant operator $\sigma_j$ maps $C_k \mapsto C_{k'}$ with
+$d_{S_v}(C_{k'}) = d_{S_v}(C_k)$, so $\sigma_j$ preserves the
+$G$-eigenspaces.  Step~(3): standard GNS decomposition argument.
+\qed
+\end{proof}
 
 \begin{theorem}[\status{C}]\label{thm:nfc5}
 \textup{(NFC-5: KPO-3 Curvature Encoding.)}
@@ -565,6 +733,111 @@ classes, so the Hilbert-space inner product transforms by the
 chain rule, giving precisely the covariant $(0,2)$-tensor law.
 This discharges O-GR.EFE3 at status~[C].
 \end{proof}
+
+%% ---------------------------------------------------------------
+%% CLASS-LEVEL EFE UPGRADES (GR.EFE1.3 / GR.EFE2.3 / GR.EFE3.3)
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]\label{rem:class-level-EFE-overview}
+Theorems~\ref{thm:nfc5}--\ref{thm:nfc7} establish the three EFE
+burdens at the level of a particular realized representative of the
+observable profile class on $\mathcal{D}$.  The following three
+upgrade propositions strengthen each burden to a \emph{class-level}
+property: the curvature encoding, constant identification, and
+diffeomorphism covariance are properties of the realized
+observable-profile class on $\mathcal{D}$, not of any privileged
+representative within that class.  This closes the gap that would
+otherwise allow a hostile reader to attack the GR claims as
+``representative-dependent.''
+\end{remark}
+
+\begin{proposition}[\status{C}]\label{prop:EFE1-class-level}
+\textup{(GR.EFE1.3 --- Curvature Encoding Is Class-Level.)}
+\textup{[Conditional on KPO-3, Phase-A, SA.]}
+The curvature encoding established by NFC-5
+(Theorem~\ref{thm:nfc5}) is a branch-internal certified property of
+the realized observable-profile class on $\mathcal{D}$, not of any
+privileged representative.  Concretely: if $\sigma$ and $\sigma'$ are
+admissible representatives in the same realized class on $\mathcal{D}$,
+then $\mathcal{G}(\sigma) = \mathcal{G}(\sigma')$ in
+$\mathcal{O}_{\mathcal{D}}$, and in particular the curvature-type
+identification is stable under admissible representative change.
+\end{proposition}
+
+\begin{proof}
+By Book~V hidden-channel exclusion, no property of a realized branch
+class may depend on the choice of representative within that class
+unless a recorded transport obstruction distinguishes them.  NFC-5
+derives the curvature encoding entirely from the spectral data of the
+covariant Laplacian $\mathcal{L}$ and the KPO-3 encoding map
+$\Gamma(\sigma)$, both of which are quotient-visible (Book~I) and
+transfer-compatible (Book~III) along the declared interface regime
+(Book~VI).  Two admissible representatives in the same class on
+$\mathcal{D}$ agree on all such quotient-visible spectral data;
+hence $\mathcal{G}(\sigma) = \mathcal{G}(\sigma')$.  \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:EFE2-class-level}
+\textup{(GR.EFE2.3 --- Constant Identification Is Class-Level.)}
+\textup{[Conditional on NFC-5, KMS state, BH-Lovelock for
+$\kappa,\Lambda$; unconditional for $c_{\mathrm{GB}}=0$ in $d=4$.]}
+The coupling-constant identification established by NFC-6
+(Theorem~\ref{thm:nfc6}) is a class-level branch-internal certified
+property.  In particular:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item $c_{\mathrm{GB}} = 0$ in $d=4$: unconditional and class-level
+    (Corollary~\ref{cor:cgb-zero}).
+  \item $\kappa = \alpha\beta/m^2$ and $\Lambda = E_0/m^2$: conditional
+    on the stated hypotheses, but class-level within the declared
+    observable-profile class on $\mathcal{D}$; admissible
+    representative change does not alter these identifications.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For $c_{\mathrm{GB}}$: the Chern--Gauss--Bonnet theorem is independent
+of all NFC and representative choices; class-level status is trivial.
+For $\kappa$ and $\Lambda$: the interface-coupling parameter $\alpha$,
+the spectral floor $m^2$, and the ground-state energy $E_0$ are all
+derived from quotient-visible transfer-compatible data (the UCTI
+bilinear, the spectral gap, and the KMS state on
+$\mathcal{R}_{\mathrm{resp}}$), each of which is a class-level
+property under Book~I and Book~III discipline.  Two admissible
+representatives in the same class on $\mathcal{D}$ agree on all three,
+hence agree on $\kappa$ and $\Lambda$.  \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:EFE3-class-level}
+\textup{(GR.EFE3.3 --- Diffeomorphism Covariance Is Class-Level.)}
+\textup{[Conditional on KPO-3, Phase-A, PASS.]}
+The diffeomorphism covariance established by NFC-7
+(Theorem~\ref{thm:nfc7}) is a class-level branch-internal certified
+property: the covariant $(0,2)$-tensor law for $g_{\mu\nu}$ is a
+property of the realized observable-profile class on $\mathcal{D}$,
+not of any privileged representative within that class.
+\end{proposition}
+
+\begin{proof}
+PASS (Theorem~\ref{thm:PASS}, Book~II) preserves collar-type classes
+under admissible reparametrisation.  The diffeomorphism covariance
+derives from the chain-rule transformation of the Hilbert-space inner
+product under PASS-preserved collar-type classes; it is therefore
+well-defined at the class level.  Two admissible representatives in
+the same class give the same transformation law, so the property is
+class-level.  \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:class-level-EFE-summary}
+With GR.EFE1.3--3.3 in hand, all three EFE-side obligations
+(O-GR.EFE1, O-GR.EFE2, O-GR.EFE3) are now certified as class-level
+properties of the realized observable-profile class on $\mathcal{D}$.
+The GR flagship package (GR.DOM, domain-bounded gravity theorem) is
+correspondingly strengthened: the Einstein-type structural
+compatibility is not merely a property of a privileged representative
+but of the class it represents.  The remaining open obligations are
+the global-extension frontier (O-GR.extension / BF-9) and the full
+EFE derivation outside the domain $\mathcal{D}$.
+\end{remark}
 
 \begin{scholium}[\status{R}]\label{sch:holographic}
 \textup{(Holographic Bound.)}

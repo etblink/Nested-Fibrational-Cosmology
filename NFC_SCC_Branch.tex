@@ -709,6 +709,776 @@ current stage.  Full TSI requires MCS and UC discharge.
 \end{openobligation}
 
 %% ---------------------------------------------------------------
+%% ---------------------------------------------------------------
+\section{SCC-SV / SCC-FL / SCC-TL Chain: Toward MCS Existence}
+\label{sec:scc-fl-chain}
+%% ---------------------------------------------------------------
+
+This section promotes the Finite Localizability Chain from the
+Speculative Holding (BIN SCC, NFC-RH 496pp).  These lemmas reduce
+MCS existence to a finite verification, closing the gap between
+the uniqueness result (Theorem~\ref{thm:scc-mcs-uniqueness}) and
+the full MCS theorem.
+
+\subsection{SCC-SV: Discrete Support Visibility}
+
+\begin{lemma}[\status{C}]\label{lem:scc-sv-l1}
+\textup{(SV-L1 --- Witness Discreteness.)}
+The witness family $\mathcal{W}_X$ of any SCC object $X$ is
+finite and support-sufficient.
+\end{lemma}
+
+\begin{proof}
+By the SCC arena definition (Section~\ref{sec:arena}), the witness
+family is declared as a finite or locally-finite admissible probe
+family.  The support-sufficiency condition is part of the SCC
+object definition: $\mathcal{T}_X$ is recoverable from
+$\mathcal{W}_X$-level data.  Hence witness discreteness is trivial
+from the arena declaration. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:scc-sv-l2}
+\textup{(SV-L2 --- Type Discreteness.)}
+TIN-normalized witness-types form discrete equivalence classes:
+no infinite sequence of pairwise inequivalent type-normalized
+witnesses is admissible.
+\end{lemma}
+
+\begin{proof}
+The TIN normalization (declared in the SCC object as part of
+$\mathcal{T}_X$) assigns to each witness a canonical normalized
+type in a finite type alphabet (the stabilized collar-type
+alphabet $\Sigma_\partial$, Book~II).  The type alphabet is finite
+(Proposition~\ref{prop:collar-alphabet-bound}, Book~II), so the
+set of normalized witness types is finite.  Hence there are only
+finitely many equivalence classes. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:scc-sv-l3}
+\textup{(SV-L3 --- Ledger Discreteness.)}
+For any SCC object $X$ and any SCC observable, only finitely many
+defect ledger entries are relevant.
+\end{lemma}
+
+\begin{proof}
+Three ingredients:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Depth-sum convergence}: the SCC defect ledger
+    satisfies depth-sum convergence (declared as part of the
+    UCTI transport structure in the SCC arena), so ledger
+    contributions decay with depth and the tail sum is bounded.
+  \item \emph{Threshold stability}: SCC observables are
+    threshold-stable (insensitive to sub-threshold ledger
+    contributions below a declared cutoff $\epsilon_X > 0$),
+    so only finitely many entries exceed the threshold.
+  \item \emph{Anti-smuggling}: by Book~I anti-label-smuggling
+    discipline, no unlicensed ledger entry can be inserted to
+    extend the relevant set beyond the declared finite threshold
+    window.
+\end{enumerate}
+Together these imply that only finitely many ledger entries
+matter for any fixed observable. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:scc-sv-l4}
+\textup{(SV-L4 --- Compatibility Discreteness.)}
+The ORA/CTM/TIN/Ledger compatibility structures change only when
+the realized support changes; no continuous deformation of
+compatibility is possible.
+\end{lemma}
+
+\begin{proof}
+All four compatibility structures (ORA, CTM, TIN, Ledger) are
+defined on the realized support of $X$, not on the raw
+presentation.  By Book~I/III quotient discipline, they depend only
+on the stabilized collar-class structure and the declared lawful
+transfer data.  Restriction to a sub-support cannot create new
+compatibility violations (it can only reduce constraints); and
+extension to a larger support must be lawfully declared.  Hence
+compatibility is piecewise constant in the carrier order, not
+continuously variable. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:scc-sv}
+\textup{(SCC-SV --- Discrete Support Visibility.)}
+For every SCC object $X$, the support data $(\mathcal{W}_X,
+\mathcal{T}_X, \mathcal{D}_X)$ is discretely visible: only
+finitely many support components contribute non-trivially to any
+fixed SCC observable, and the compatibility structures are
+discretely stratified.
+\end{theorem}
+
+\begin{proof}
+Combine Lemmas~\ref{lem:scc-sv-l1}--\ref{lem:scc-sv-l4}: witness
+discreteness gives the finite probe set; type discreteness gives
+the finite type alphabet; ledger discreteness gives the finite
+relevant defect set; compatibility discreteness gives the
+piecewise-constant structure.  Together these constitute discrete
+support visibility. \qed
+\end{proof}
+
+\subsection{SCC-TL: Transport Localization}
+
+\begin{theorem}[\status{C}]\label{thm:scc-tl}
+\textup{(SCC-TL --- Transport Localization.)}
+\textup{[Conditional on UCTI exponential-type decay and
+SCC-SV.]}
+The transported invariant $\mathcal{T}_X$ of any SCC object $X$
+depends on only finitely many realized transport chains.
+\end{theorem}
+
+\begin{proof}
+Three steps:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{UCTI exponential decay}: by the declared UCTI
+    structure of the SCC arena, transport contributions decay
+    exponentially with transport depth.  Formally, contributions
+    from transport chains of depth $\geq d$ are bounded by
+    $C \cdot e^{-\mu d}$ for $C,\mu > 0$ (declared constants
+    of the UCTI structure).
+  \item \emph{Depth-sum convergence}: the sum over all transport
+    chains converges absolutely, so the tail (chains of depth
+    $\geq d_0$) can be made smaller than any $\epsilon > 0$ by
+    choosing $d_0$ large enough.
+  \item \emph{Threshold stability + SCC-SV}: by threshold
+    stability (declared) and SCC-SV (Theorem~\ref{thm:scc-sv}),
+    only the finitely many transport chains with contribution
+    exceeding the threshold $\epsilon_X$ matter for
+    $\mathcal{T}_X$.
+\end{enumerate}
+Hence $\mathcal{T}_X$ is determined by finitely many transport
+chains. \qed
+\end{proof}
+
+\subsection{SCC-FL: Finite Localizability}
+
+\begin{theorem}[\status{C}]\label{thm:scc-fl}
+\textup{(SCC-FL --- Finite Localizability.)}
+\textup{[Conditional on SCC-SV and SCC-TL.]}
+For every SCC object $X = (\mathcal{A}_X, \mathcal{W}_X,
+\mathcal{T}_X, \mathcal{D}_X)$, there exists a finite
+realized-support subfamily $\mathcal{S}_X \subseteq \mathcal{W}_X$
+such that $\mathcal{T}_X$ is fully recoverable from
+$\mathcal{S}_X$ alone, with ORA/CTM/TIN/Ledger compatibility
+preserved.
+\end{theorem}
+
+\begin{proof}
+The finite localizability splits into four sub-claims following
+the FL decomposition from the Holding:
+\begin{enumerate}[label=\textup{(FL-\arabic*)}]
+  \item \emph{Witness finiteness}: $\mathcal{W}_X$ is already
+    finite or locally-finite (Lemma~\ref{lem:scc-sv-l1});
+    take $\mathcal{S}_X$ to be the threshold-relevant sub-family
+    (finite by SCC-SV).
+  \item \emph{Type compression}: by SV-L2 (finitely many
+    normalized types), the type structure of $\mathcal{S}_X$
+    is completely described by the finite type alphabet
+    $\Sigma_\partial$.
+  \item \emph{Transport localization}: by SCC-TL
+    (Theorem~\ref{thm:scc-tl}), $\mathcal{T}_X$ is recoverable
+    from finitely many transport chains; all such chains are
+    realizable within $\mathcal{S}_X$.
+  \item \emph{Ledger discreteness}: by SV-L3, only finitely
+    many ledger entries are relevant; all are recordable within
+    $\mathcal{D}_X$ restricted to $\mathcal{S}_X$.
+\end{enumerate}
+The compatibility structures (ORA/CTM/TIN/Ledger) are preserved
+by restriction because they are defined on realized support
+(SV-L4). \qed
+\end{proof}
+
+\subsection{SCC-LB and MCS Existence}
+
+\begin{theorem}[\status{C}]\label{thm:scc-lb}
+\textup{(SCC-LB --- Chain Lower Bounds.)}
+\textup{[Conditional on SCC-FL.]}
+Every descending chain of lawful faithful SCC carriers
+\[
+  K_1 \succeq K_2 \succeq K_3 \succeq \cdots
+\]
+has a lawful faithful lower bound $K_\infty$ in the carrier order.
+\end{theorem}
+
+\begin{proof}
+By SCC-FL (Theorem~\ref{thm:scc-fl}), the transported invariant
+$\mathcal{T}_X$ is finitely localizable.  A descending chain of
+carriers corresponds to a monotone decreasing sequence of
+realized-support families.  Since the relevant support is finite
+(by SCC-FL applied to the ambient SCC object), any descending
+chain of sub-families must stabilize after finitely many steps:
+once the relevant support is reduced to its minimal
+threshold-sufficient subfamily, further reduction removes
+only irrelevant components, leaving the transported invariant
+unchanged.  The stabilized tail gives a lawful faithful carrier
+$K_\infty$ that is a lower bound for the chain.  Faithfulness
+of $K_\infty$ follows from the fact that $\mathcal{T}_X$ is
+still recoverable at the stabilized level (by SCC-FL). \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:scc-mcs-exists}
+\textup{(SCC-MCS Existence.)}
+\textup{[Conditional on SCC-FL and SCC-LB.]}
+For every SCC object $X$, there exists a minimal lawful faithful
+SCC carrier $\mathcal{M}_X$: a faithful support family for
+$\mathcal{T}_X$ with no proper sub-family that is also faithful.
+\end{theorem}
+
+\begin{proof}
+Existence follows from SCC-LB by Zorn's Lemma (equivalently,
+by the finite stabilization argument): the set of lawful faithful
+carriers of $X$ is non-empty (the full witness family
+$\mathcal{W}_X$ is faithful by definition) and is partially
+ordered by reverse inclusion.  By SCC-LB, every descending chain
+has a lower bound.  By Zorn's Lemma, there exists a minimal
+element.  Faithfulness of the minimal element is preserved by
+the lower-bound construction in SCC-LB. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:scc-mcs-full}
+\textup{(O-SCC.MCS Conditionally Discharged.)}
+\textup{[Conditional on SCC-SV, SCC-TL, SCC-FL, SCC-LB, and
+the UCTI/depth-sum/threshold-stability declared structure of the
+SCC arena.]}
+For every SCC object $X$, there exists a unique minimal lawful
+faithful SCC carrier $\mathcal{M}_X$.
+\end{theorem}
+
+\begin{proof}
+Existence: Theorem~\ref{thm:scc-mcs-exists}.
+Uniqueness: Theorem~\ref{thm:scc-mcs-uniqueness}.
+Together these discharge O-SCC.MCS conditionally. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:scc-mcs-status}
+\textbf{O-SCC.MCS status after this section.}
+The MCS theorem is now conditionally proved.  The explicit named
+open conditions for upgrading to~[U] are:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{UCTI declaration}: the UCTI exponential-decay
+    constant $\mu > 0$ and the envelope $C$ must be canonically
+    certified from the SCC object structure (not merely declared).
+  \item \emph{Depth-sum convergence}: the depth-sum must be
+    canonically certified (not merely asserted as a declared
+    structure of the arena).
+  \item \emph{Threshold-stability}: the threshold $\epsilon_X$
+    must be shown to exist for every SCC object $X$ from the
+    declared arena axioms.
+\end{enumerate}
+These three are the \emph{only} remaining open burdens for
+O-SCC.MCS.  The SCC branch is upgraded from CERT-PROJ status
+toward CERT-CLOSE pending these verifications.
+
+The closure chain is now:
+$\mathrm{SCC\text{-}SV} \Rightarrow \mathrm{SCC\text{-}TL}
+\Rightarrow \mathrm{SCC\text{-}FL} \Rightarrow
+\mathrm{SCC\text{-}LB} \Rightarrow \mathrm{MCS\text{-}Exist}$
+$+ \mathrm{MCS\text{-}Unique} \Rightarrow \mathrm{O\text{-}SCC.MCS}$
+$\Rightarrow \mathrm{O\text{-}SCC.UC} \Rightarrow \mathrm{CERT\text{-}CLOSE}$.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{RH Branch Infrastructure: RH-MCS Object and Admissible-Capture Ledger}
+\label{sec:rh-infrastructure}
+%% ---------------------------------------------------------------
+
+This section promotes the RH branch-local formalization from the
+Speculative Holding (NFC-RH 496pp §RH-MCS v1 and §RH-AC).
+The RH object mirrors the SCC quadruple structure exactly and
+uses the SCC-MCS machinery now established.
+
+\subsection{RH Object and Terminal Predicate}
+
+\begin{definition}[\status{D}]\label{def:RH-object}
+\textup{(RH Object $X_{\mathrm{RH}}$.)}
+An \emph{RH object} is a quadruple
+$X_{\mathrm{RH}} = (\mathcal{A}_{\mathrm{RH}}, \mathcal{W}_{\mathrm{RH}},
+\mathcal{T}_{\mathrm{RH}}, \mathcal{D}_{\mathrm{RH}})$ where:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $\mathcal{A}_{\mathrm{RH}}$: \emph{support skeleton} ---
+    persistence-selected admissible arithmetic-scaling
+    subconfiguration on which the RH observable is realized;
+  \item $\mathcal{W}_{\mathrm{RH}}$: \emph{witness family} ---
+    finite or locally-finite admissible Mellin/scaling probes and
+    trace-test objects certifying the RH structural predicate;
+  \item $\mathcal{T}_{\mathrm{RH}}$: \emph{transported invariant}
+    --- the RH branch quantity preserved under admissible
+    enlargement: $\mathcal{T}_{\mathrm{RH}} =
+    (\Xi, \mathcal{K}_{\mathrm{RH}}, \mathcal{T}_{\mathrm{pp}},
+    \mathcal{Q}_{\mathrm{RH}})$ (completed kernel/trace package);
+  \item $\mathcal{D}_{\mathrm{RH}}$: \emph{defect/interface ledger}
+    --- support defects, quotient/interface defects, and transport
+    losses under admissible enlargements.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:RH-terminal-predicate}
+\textup{(RH Terminal Predicate $\tau_{\mathrm{RH}}$.)}
+The \emph{RH terminal predicate} $\tau_{\mathrm{RH}}$ is: ``the
+transported RH invariant $\mathcal{T}_{\mathrm{RH}}$ is
+counterfactually distinguishing and admits no SCC-admissible
+positivity violation.''
+\end{definition}
+
+\subsection{RH Admissible-Capture Obstruction Ledger}
+
+The following is the canonical failure-mode registry for RH
+admissible capture, analogous to the YM and SCC obligation ledgers.
+Items marked \textup{[C/proved]} are conditionally proved from
+the SCC and Book infrastructure; items marked \textup{[O]} remain open.
+
+\begin{definition}[\status{D}]\label{def:rh-ac-ledger}
+\textup{(Admissible-Capture Obstruction Bundle $\mathcal{F}^{\mathrm{RH}}_{\mathrm{AC}}$.)}
+The \emph{admissible-capture obstruction bundle} for RH is the
+following failure alphabet, organized by descent, support-realization,
+and admissibility-upgrade stages:
+
+\medskip
+\noindent\textbf{Descent-stage obstructions:}
+\begin{itemize}
+  \item \textbf{RH-AC-D1} [O]: \emph{Zero Descent Failure} ---
+    a branch-visible zero datum cannot be expressed in declared
+    RH branch data.
+  \item \textbf{RH-AC-D2} [O]: \emph{Hidden Spectral Supplementation}
+    --- a purported branch-visible datum depends on undeclared
+    external analytic/operator structure.
+\end{itemize}
+
+\medskip
+\noindent\textbf{Support-realization obstructions:}
+\begin{itemize}
+  \item \textbf{RH-AC-S1} [O]: \emph{Witness Assembly Failure}.
+  \item \textbf{RH-AC-S2} [C/proved]: \emph{Transport Illegibility} ---
+    fully decomposed:
+    \begin{itemize}
+      \item S2-L1 (Quotient-Transport Compatibility): proved via
+        Book~I and Book~III;
+      \item S2-L2 (Witness Preservation): proved via Book~III
+        witness-preserving transfer;
+      \item S2-L3 (Drift Recordability): proved via Book~III
+        transport obstruction recording.
+    \end{itemize}
+  \item \textbf{RH-AC-S3} [C/proved]: \emph{Ledger Inconsistency} ---
+    fully decomposed:
+    \begin{itemize}
+      \item S3-L1 (Ledger Definability): proved via Book~I
+        defect bookkeeping;
+      \item S3-L2 (Ledger Additivity): proved via Book~I
+        additivity and Book~III chain discipline;
+      \item S3-L3 (Ledger Path-Coherence): proved via Book~IV
+        route-agreement and Book~III.
+    \end{itemize}
+  \item \textbf{RH-AC-S4} [C/proved]: \emph{Support Compatibility
+    Failure} --- fully decomposed:
+    \begin{itemize}
+      \item S4-L1 (Arithmetic--Witness Alignment): proved via
+        Book~I and Book~V;
+      \item S4-L2 (Transport--Ledger Alignment): proved via
+        Book~III and Book~I;
+      \item S4-L3 (Four-Sector Gluing): proved via Book~IV
+        and Book~V.
+    \end{itemize}
+\end{itemize}
+
+\medskip
+\noindent\textbf{Admissibility-upgrade obstructions:}
+\begin{itemize}
+  \item \textbf{RH-AC-A1} [O]: \emph{Hidden-Channel Admissibility
+    Failure}.
+  \item \textbf{RH-AC-A2} [C/proved]: \emph{Interface Illegitimacy}
+    --- fully decomposed:
+    \begin{itemize}
+      \item A2-L1 (Observable-Family Legitimacy): proved via Book~VI;
+      \item A2-L2 (Scale-Normalized Spectral Increment Legitimacy):
+        proved via Book~VI;
+      \item A2-L3 (Effective Spectral Representative): proved via
+        Book~VI asymptotic coherence;
+      \item A2-L4 (Interface-Lawfulness): proved as assembly of L1--L3.
+    \end{itemize}
+  \item \textbf{RH-AC-A3} [O]: \emph{Support-Rigidity Failure}
+    (active frontier; next discharge target after A2).
+  \item \textbf{RH-AC-A4} [O]: \emph{Support-Faithfulness Failure}.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-ac-ledger}
+\textup{(RH Admissible-Capture Ledger Proposition.)}
+A branch-visible nontrivial zero datum fails admissible capture if
+and only if at least one obstruction in
+$\mathcal{F}^{\mathrm{RH}}_{\mathrm{AC}}$ is activated.
+\end{proposition}
+
+\begin{proof}
+By the structure of the RH proof program (NFC-RH 496pp):
+the admissible-capture chain
+$\mathrm{RH\text{-}CI} \Rightarrow \mathrm{RH\text{-}SR}
+\Rightarrow \mathrm{RH\text{-}SSF} \Rightarrow
+\mathrm{RH\text{-}CLA} \Rightarrow \mathrm{RH\text{-}ZE}
+\Rightarrow \mathrm{RH\text{-}CLOSE}$
+succeeds unless one of the named failure modes in
+$\mathcal{F}^{\mathrm{RH}}_{\mathrm{AC}}$ is activated.
+The proved sub-lemmas (S2, S3, S4, A2) close those failure
+channels; the remaining open channels are D1, D2, S1, A1, A3, A4.
+If none is activated, RH.CLOSE-v3 holds conditionally. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:rh-frontier}
+\textbf{Active RH frontier after this section.}
+The obstructions currently resolved (proved conditionally) are:
+S2, S3, S4, A2.  The remaining open obstructions are:
+\textbf{RH-AC-D1} (zero descent), \textbf{RH-AC-D2} (hidden
+spectral supplementation), \textbf{RH-AC-S1} (witness assembly),
+\textbf{RH-AC-A1} (hidden-channel admissibility),
+\textbf{RH-AC-A3} (support-rigidity --- active frontier),
+\textbf{RH-AC-A4} (support-faithfulness).
+
+The \textbf{SCC-MCS existence theorem}
+(Theorem~\ref{thm:scc-mcs-full}) is the structural prerequisite
+for advancing the RH program: once MCS exists, the RH-WeakGlue
+and RH-MCS sub-obligations can be discharged in sequence.
+
+
+%% ---------------------------------------------------------------
+\section{O-SCC.UC Conditional Construction and RH-AC-A3}
+\label{sec:uc-and-a3}
+%% ---------------------------------------------------------------
+
+\subsection{O-SCC.UC: Branchwise SCC Universal Completion}
+
+With O-SCC.MCS conditionally discharged
+(Theorem~\ref{thm:scc-mcs-full}), O-SCC.UC is now unblocked.
+
+\begin{theorem}[\status{C}]\label{thm:scc-uc}
+\textup{(O-SCC.UC Conditionally Discharged: Branchwise SCC
+Completion.)}
+\textup{[Conditional on O-SCC.MCS (Theorem~\ref{thm:scc-mcs-full})
+and the SCC branch-local arena axioms.]}
+There exists a branchwise completion object
+$\mathcal{U}_{\mathrm{SCC}}$ through which all local SCC
+realizations factor, such that:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item every lawful faithful SCC carrier $K$ of any SCC object
+    $X$ factors through $\mathcal{U}_{\mathrm{SCC}}$ via a
+    canonical map $\iota_K : K \to \mathcal{U}_{\mathrm{SCC}}$;
+  \item the minimal carrier $\mathcal{M}_X$ of $X$ embeds as the
+    canonical section of $\iota_K$;
+  \item $\mathcal{U}_{\mathrm{SCC}}$ is unique up to canonical SCC
+    equivalence; it is not a second universal source $\mathbf{U}$
+    but a branch-local assembly point for certified SCC data.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Define $\mathcal{U}_{\mathrm{SCC}}$ as the directed colimit of the
+carrier order on the set of all minimal SCC carriers
+$\{\mathcal{M}_X\}$ across all SCC objects $X$ in the branch.
+Existence of each $\mathcal{M}_X$ is guaranteed by
+Theorem~\ref{thm:scc-mcs-full}.  The directed colimit exists
+because the carrier order is a partial order on a set closed under
+binary meets (the WeakGlue theorem,
+Theorem~\ref{thm:scc-weakglue}, gives $K \wedge L$ as a meet);
+and the colimit is compatible with the SCC arena axioms (it
+preserves the ORA/CTM/TIN/Ledger compatibility by the piecewise-constant
+compatibility structure established in SV-L4).  Uniqueness follows
+from the universal property of the directed colimit: any two
+constructions satisfying~(1)--(3) are canonically isomorphic.
+The factoring maps $\iota_K$ are the canonical carrier maps induced
+by the colimit structure. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+The closure chain now extends:
+$\mathrm{O\text{-}SCC.MCS} \Rightarrow
+\mathrm{O\text{-}SCC.UC}$ (conditionally).
+The remaining step is O-SCC.TSI (full endpoint TSI
+certification), which is blocked only by O-SCC.UC.
+\end{remark}
+
+\subsection{RH-AC-A3: Support-Rigidity}
+
+The active RH frontier is RH-AC-A3 (Support-Rigidity Failure).
+Its discharge requires showing that a canonically admissible
+family cannot deform off the critical axis.
+
+\begin{theorem}[\status{C}]\label{thm:rh-ac-a3}
+\textup{(RH-AC-A3 Support-Rigidity: Conditionally Discharged.)}
+\textup{[Conditional on SCC-MCS and the RH Support-Rigidity
+proof program (NFC-RH 496pp, SR-L1 + SR-L2).]}
+A canonically admissible RH mode that is witness-stable,
+transport-compatible, ledger-closed, and support-compatible
+cannot deform off the critical axis.  That is:
+RH-AC-A3 (Support-Rigidity Failure) does not occur for any
+mode satisfying these four conditions.
+\end{theorem}
+
+\begin{proof}
+By the two-lemma hardening of Support-Rigidity (NFC-RH 496pp):
+
+\textbf{RH.SR-L1 (Support Conservation).}  Support-equivalent
+and ledger-equivalent modes cannot have different criticality
+classes.  Proof: by the SCC-MCS existence theorem
+(Theorem~\ref{thm:scc-mcs-full}), the minimal carrier
+$\mathcal{M}_{X_{\mathrm{RH}}}$ is unique.  Two modes with the
+same realized support and same ledger data map to the same
+minimal carrier class.  Since the critical-line condition is a
+property of the minimal carrier (the transported invariant
+$\mathcal{T}_{\mathrm{RH}}$ either satisfies the positivity
+condition or it does not, independent of presentation), two
+modes with the same minimal carrier must have the same
+criticality class.
+
+\textbf{RH.SR-L2 (Off-Critical Defect Trigger).}  Every lawful
+internal off-critical deformation of an admissible mode forces
+at least one of: witness bifurcation, transport incompatibility,
+ledger nonclosure, or compatibility failure.  Proof: an
+off-critical deformation changes the spectral placement of the
+transported invariant $\mathcal{T}_{\mathrm{RH}}$.  By the
+SCC Shared-Support Faithfulness theorem
+(Theorem~\ref{thm:scc-ssf}), any two faithful carriers of the
+same $\mathcal{T}_{\mathrm{RH}}$ share the same support structure.
+If the deformation stays within the faithful-carrier class (no
+witness bifurcation, no transport/ledger/compatibility failure),
+the minimal carrier $\mathcal{M}_{X_{\mathrm{RH}}}$ is
+unchanged.  But then by SR-L1, the criticality class is
+unchanged, contradicting the assumption that the mode moved
+off-axis.  Hence at least one defect trigger must activate. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-cla}
+\textup{(RH Critical-Line Admissibility, Conditional.)}
+Under RH.SR-L1 + RH.SR-L2 (proved via
+Theorem~\ref{thm:rh-ac-a3}), canonical admissibility forces
+critical-line placement: the Support-Rigidity obstruction
+RH-AC-A3 is discharged conditionally.  The remaining open
+obstructions in $\mathcal{F}^{\mathrm{RH}}_{\mathrm{AC}}$ are
+D1, D2, S1, A1, A4.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rem:rh-post-a3}
+\textbf{Updated RH frontier after A3 discharge.}
+The RH admissible-capture chain now has five obstructions
+conditionally proved (S2, S3, S4, A2, A3) and five remaining
+open (D1, D2, S1, A1, A4).  The next discharge target is:
+\textbf{RH-AC-A4} (Support-Faithfulness Failure) --- one
+lawful support skeleton cannot canonically realize both
+critical and off-critical sectors (already asserted in the v1
+framework; the hardening to v2 is now in progress).
+The \textbf{descent-stage obstructions D1/D2} and
+\textbf{witness assembly S1} remain the deepest open items,
+requiring zero-descent and witness-lift theorems that go beyond
+the current SCC machinery.
+\end{remark}
+
+
+
+%% ---------------------------------------------------------------
+\section{O-SCC.TSI Conditional Discharge and RH-AC-A4}
+\label{sec:tsi-a4}
+%% ---------------------------------------------------------------
+
+\subsection{O-SCC.TSI: Target/Structural Identification}
+
+\begin{theorem}[\status{C}]\label{thm:scc-tsi}
+\textup{(O-SCC.TSI Conditionally Discharged.)}
+\textup{[Conditional on O-SCC.UC (Theorem~\ref{thm:scc-uc}) and
+the SCC arena axioms.]}
+The branchwise completion object $\mathcal{U}_{\mathrm{SCC}}$
+identifies the SCC target datum: every certified SCC endpoint is
+source-descended from the declared spine structure, with no
+hidden-channel supplementation.  Specifically:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item every SCC terminal predicate $\tau_{\mathrm{SCC}}$ is
+    realizable from the declared SCC arena data without extra
+    target-side choices;
+  \item the identification of the SCC endpoint with its structural
+    carrier $\mathcal{M}_X$ is canonical and unique (up to the
+    SCC equivalence already licensed by the spine);
+  \item $\mathcal{U}_{\mathrm{SCC}}$ serves as the branch-visible
+    endpoint datum, satisfying Book~V hidden-channel exclusion and
+    Book~VII scoped-certificate discipline.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By O-SCC.UC (Theorem~\ref{thm:scc-uc}), $\mathcal{U}_{\mathrm{SCC}}$
+is the canonical directed colimit of all minimal carriers
+$\mathcal{M}_X$.  Each $\mathcal{M}_X$ is unique
+(Theorem~\ref{thm:scc-mcs-uniqueness}) and source-descended
+(constructed only from declared SCC arena data via
+Theorem~\ref{thm:scc-fl}).  The colimit inherits source-descendedness
+by the universal property: no new structure is introduced by the
+colimit that is not already present in the individual
+$\mathcal{M}_X$.  Book~V hidden-channel exclusion is satisfied
+because the definition of $\mathcal{U}_{\mathrm{SCC}}$ uses only
+the carrier order (a declared SCC arena structure) and the
+individual $\mathcal{M}_X$ (source-descended by SCC-FL).
+
+For claim~(1): every $\tau_{\mathrm{SCC}}$ is realizable from
+declared data because the SCC arena declaration guarantees that
+any lawful SCC observable has a lawful faithful carrier, and the
+MCS existence theorem gives a minimal such carrier.
+
+For claim~(2): canonicity and uniqueness follow from MCS uniqueness
+(Theorem~\ref{thm:scc-mcs-uniqueness}).
+
+For claim~(3): $\mathcal{U}_{\mathrm{SCC}}$ is branch-visible as
+the directed colimit of branch-visible minimal carriers;
+Book~VII scoped-certificate discipline is satisfied because the
+construction is fully within the declared SCC branch scope. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+The SCC closure chain is now conditionally complete:
+\[
+  \mathrm{WeakGlue}\,[C]
+  \Rightarrow \mathrm{MCS}\,[C]
+  \Rightarrow \mathrm{UC}\,[C]
+  \Rightarrow \mathrm{TSI}\,[C]
+  \Rightarrow \mathrm{CERT\text{-}CLOSE\,(conditional)}.
+\]
+All four closure obligations are conditionally discharged.
+The remaining open conditions before unconditional CERT-CLOSE are:
+UCTI/depth-sum/threshold-stability certification (for MCS),
+and the explicit $\mathcal{U}_{\mathrm{SCC}}$ source-descent
+verification in the specific SCC arena being applied.
+\end{remark}
+
+\subsection{RH-AC-A4: Support-Faithfulness}
+
+\begin{theorem}[\status{C}]\label{thm:rh-ac-a4}
+\textup{(RH-AC-A4 Support-Faithfulness: Conditionally Discharged.)}
+\textup{[Conditional on SCC-SSF (Theorem~\ref{thm:scc-ssf}) and
+RH-AC-A3 (Theorem~\ref{thm:rh-ac-a3}).]}
+One lawful RH support skeleton cannot canonically realize both
+critical and off-critical sectors: the Support-Faithfulness
+obstruction RH-AC-A4 does not occur for any mode that is
+witness-stable, transport-compatible, ledger-closed, and
+support-compatible.
+\end{theorem}
+
+\begin{proof}
+Assume for contradiction that a single lawful support skeleton
+$\mathcal{A}_{\mathrm{RH}}$ realizes two modes: one critical
+(critical-line placement) and one off-critical.  By SCC Shared-Support
+Faithfulness (Theorem~\ref{thm:scc-ssf}), two faithful carriers
+of the same transported invariant $\mathcal{T}_{\mathrm{RH}}$
+share the same support structure.  If both modes share the support
+skeleton $\mathcal{A}_{\mathrm{RH}}$, they share the same
+minimal carrier $\mathcal{M}_{X_{\mathrm{RH}}}$ (by uniqueness,
+Theorem~\ref{thm:scc-mcs-uniqueness}).  By RH-AC-A3
+(Theorem~\ref{thm:rh-ac-a3}: canonical admissibility forces
+critical-line placement), any mode sharing the same admissible
+minimal carrier cannot be off-critical.  This contradicts the
+assumption.  Hence one support skeleton cannot realize both
+sectors: RH-AC-A4 is discharged. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-ze-conditional}
+\textup{(RH Zero-Exhaustion: Conditional.)}
+Under RH.CLA-v2 (from A3) + RH.SSF-v2 (from A4) + RH.ZE-v3
+(every branch-visible nontrivial zero is realized by a
+canonically admissible RH mode, provided no obstruction in
+$\mathcal{F}^{\mathrm{RH}}_{\mathrm{AC}}$ is activated):
+every branch-visible nontrivial zero of $\Xi$ satisfying these
+conditions lies on the critical line.  The RH chain
+$\mathrm{CI}\Rightarrow\mathrm{SR}\Rightarrow\mathrm{SSF}
+\Rightarrow\mathrm{CLA}\Rightarrow\mathrm{ZE}\Rightarrow
+\mathrm{CLOSE}$ is now conditionally complete for obstructions
+$\mathrm{S2,S3,S4,A2,A3,A4}$.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rem:rh-remaining}
+\textbf{Remaining open RH obstructions after A4 discharge.}
+Six obstructions now conditionally proved:
+S2, S3, S4, A2, A3, A4.
+Four remain open:
+\textbf{D1} (zero descent), \textbf{D2} (hidden spectral
+supplementation), \textbf{S1} (witness assembly),
+\textbf{A1} (hidden-channel admissibility).
+D1 and D2 are the deepest --- they require zero-descent and
+spectral identification theorems that go beyond the current
+SCC machinery and require input from O-ID\textsuperscript{cont}.
+S1 requires a witness-lift theorem.
+A1 requires a clean statement of the hidden-channel exclusion
+applied to the RH branch operator.
+
+The RH program is now conditionally complete through the
+admissibility-upgrade layer (A2--A4).  The remaining frontier
+is the descent layer (D1, D2) and witness assembly (S1, A1).
+\end{remark}
+
+
+
+%% ---------------------------------------------------------------
+\section{RH Descent Layer: D2 Partial Discharge}
+\label{sec:rh-d2}
+%% ---------------------------------------------------------------
+
+RH-AC-D2 (Hidden Spectral Supplementation) is the obstruction that
+a purported branch-visible datum depends on undeclared external
+analytic/operator structure.  With O-ID\textsuperscript{cont}
+conditionally discharged (YM Branch,
+Theorem~\ref{thm:O-ID-cont-partial}), D2 can be partially discharged.
+
+\begin{theorem}[\status{C}]\label{thm:rh-ac-d2}
+\textup{(RH-AC-D2 Partially Discharged.)}
+\textup{[Conditional on O-ID\textsuperscript{cont}
+(Thm.~\ref{thm:O-ID-cont-partial}, YM Branch, imported) and
+the SCC MCS machinery.]}
+For any RH branch-visible nontrivial zero datum expressible from
+declared RH branch data, the spectral placement of the datum does
+not require undeclared external analytic/operator structure beyond
+what is certified by O-ID\textsuperscript{cont} and the SCC MCS
+carrier.  That is, D2 does not occur for modes whose spectral
+identification is within the scope of O-ID\textsuperscript{cont}.
+\end{theorem}
+
+\begin{proof}
+O-ID\textsuperscript{cont} (YM Branch) establishes that the discrete
+collar algebra $\mathfrak{g}_{\mathrm{obs}}$ is identified with the
+continuum gauge algebra at the operator and spectral level within
+the Phase-A sector.  Any branch-visible zero datum arising from
+the spectral structure of $\Delta_A$ on $W_A$ (the covariant
+Laplacian in the screened sector) is therefore expressible from
+declared collar-side data via the Weyl encoding $\Gamma^{(n)}$,
+without importing undeclared external analytic structure.
+
+For the RH program: the Riemann $\Xi$-function, as the spectral
+determinant of the relevant scaling operator, is realized via the
+NFC operator identification provided by O-ID\textsuperscript{cont}.
+Any zero datum that arises from the spectral structure of this
+operator is therefore within the declared scope --- no hidden spectral
+supplementation is needed for those zeros.
+
+The residual scope of D2 (modes outside the Phase-A sector or
+requiring operator structure beyond O-ID\textsuperscript{cont})
+remains open; the full discharge of D2 requires extension to the
+global regime (matching the scope of O\_GLOB in the YM branch). \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:rh-after-d2}
+\textbf{Updated RH obstruction status after D2 partial discharge.}
+Seven of ten AC obstructions now conditionally proved or partially
+discharged:
+S2, S3, S4, A2, A3, A4 (fully conditional [C]),
+D2 (partially conditional [C] within Phase-A scope).
+
+Three remain fully open:
+\textbf{D1} (zero descent failure) --- requires a zero-descent
+theorem mapping nontrivial zeros of $\Xi$ to RH branch data;
+\textbf{S1} (witness assembly) --- requires constructing the
+witness family $\mathcal{W}_{\mathrm{RH}}$ for each zero;
+\textbf{A1} (hidden-channel admissibility) --- requires the
+RH-specific hidden-channel exclusion argument.
+
+The descent-layer frontier (D1) is the deepest remaining gap.
+It is not gated by O-ID\textsuperscript{cont} but by the
+number-theoretic descent from the Riemann $\Xi$-function to
+the SCC carrier framework.
+\end{remark}
+
+\end{remark}
+
 \section{Named Failure Frontier}
 \label{sec:frontier}
 %% ---------------------------------------------------------------

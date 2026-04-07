@@ -542,6 +542,113 @@ how its claims should be stated.
 \end{scholium}
 
 %% ---------------------------------------------------------------
+%% ---------------------------------------------------------------
+\section{Screened Sector as Canonical Endpoint Datum}
+\label{sec:screening-inevitability}
+%% ---------------------------------------------------------------
+
+This section records the Screening Inevitability Chain
+(Holding BIN CROSS, v7.35 §11791) and the canonical
+identification of the screened sector as a branch-visible
+endpoint datum satisfying Book~V discipline.
+
+\begin{proposition}[\status{C}]\label{prop:tau-channel-ceiling}
+\textup{($\tau$-Channel Ceiling Bound.)}
+\textup{[Conditional on $K_0=7$, LS-2, Phase-A.]}
+The number of independent boundary-channel parameters consistent
+with Phase-A stability is bounded above by $\tau(7) = 4$
+(three $d_{S_v}$-block directions plus one gauge-invariant
+direction).  Any observable family with more than $\tau(7)$
+independent boundary-channel parameters violates Phase-A stability.
+\end{proposition}
+
+\begin{proof}
+By the self-consistency fixed-point theorem (dream\_paper\_v38
+§6.3, Theorem~6.5): the number of independent boundary parameters
+consistent with Phase-A is $\tau(p) \leq 5$ for all primes (the
+Avoidance-Cycle Exclusion theorem caps $\tau$), and for $p=7$
+specifically $\tau(7) = 4$ (verified in §6.2).  Any observable
+family exceeding this bound cannot arise from Phase-A data. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:no-hidden-resonances}
+\textup{(PASS + LS-2 Forbid Hidden Decoupled Near-Resonances.)}
+\textup{[Conditional on PASS (Thm.~\ref{thm:PASS-derived},
+GR branch), LS-2 (Book~II).]}
+Under PASS and LS-2, no decoupled near-resonant boundary mode
+can persist in the observable family without being captured by
+the screened sector $W_A$: any mode that commutes with the
+full $G$-action and survives LS-2 stabilization is already
+in $W_A$.
+\end{lemma}
+
+\begin{proof}
+By PASS (Theorem~\ref{thm:PASS-derived}): every backbone
+observable in $W_A$ commutes with $G$.  Conversely, any
+$G$-commuting observable not already in $W_A$ would define an
+additional $G$-invariant sector not accounted for in the
+$d_{S_v}$-block decomposition.  By the $\tau$-channel ceiling
+(Proposition~\ref{prop:tau-channel-ceiling}), no such additional
+sector exists at $K_0=7$.  Under LS-2, stabilized local
+observables are determined by collar type; any near-resonant
+mode that is LS-2 stable and $G$-commuting is already captured
+by the $K_0 = 7$ collar type structure and hence in $W_A$. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:screened-sector-endpoint}
+\textup{(Screened Sector as Canonical Branch-Visible Endpoint Datum.)}
+\textup{[Conditional on PASS, LS-2, Phase-A, $K_0=7$.]}
+The screened sector $W_A = \ker(T_\partial - \lambda_{\max}I)^\perp$
+is a canonical branch-visible endpoint datum in the sense of
+Definition~\ref{def:endpoint-datum}:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Source-descended}: $W_A$ is determined by
+    $T_\partial$ and the canonical screening rule, both
+    source-descended (Lemma~T3.1a, YM Branch).
+  \item \emph{Branch-visible}: $W_A$ is the declared endpoint
+    of the YM, NS, and SM branches --- the screened observable
+    algebra acts on $W_A$ and no hidden channel contributes
+    (Lemma~\ref{lem:no-hidden-resonances}).
+  \item \emph{Sector-unique}: $W_A$ is the unique complement
+    of the dominant eigenspace of $T_\partial$; no alternative
+    screened sector exists at the same $\tau$-level
+    (Proposition~\ref{prop:tau-channel-ceiling}).
+  \item \emph{Book V compliant}: $W_A$ arises as the certified
+    image $F(\mathbf{U})|_{W_A}$ of the universal completion
+    $\mathbf{U}$ through the canonical screening functor,
+    satisfying the five UBLT conditions of
+    Definition~\ref{def:endpoint-datum}.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(1) Lemma~T3.1a (YM Branch: canonical screened-sector definability):
+$W_A$ is determined by $(\Sigma_\partial, T_\partial)$ alone,
+both source-descended.
+(2) By Lemma~\ref{lem:no-hidden-resonances}: all $G$-commuting
+LS-2-stable observables are in $W_A$; no hidden channel.
+(3) By Proposition~\ref{prop:tau-channel-ceiling}: $\tau(7)=4$
+caps the number of independent sectors; $W_A$ is the unique
+one matching the declared Phase-A architecture.
+(4) The screening functor $\Pi_A : \mathbf{U} \to W_A$
+(the canonical orthogonal projection) is a morphism of
+the POT category (Book~IV); $W_A = F(\mathbf{U})|_{W_A}$
+arises as the screened sub-object.  The five UBLT conditions
+follow from (1)--(3) and the lawfulness of $\Pi_A$
+(Lemma~T3.1c, YM Branch: bracket-compatible). \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:screened-sector-endpoint} closes the Holding
+entry ``Screening Inevitability Chain'' at the level of a
+conditional canonical theorem.  The one remaining open hinge
+--- Uniform Anti-Chasing (the analytic gap in the screening
+inevitability argument for non-abelian Gribov copies) ---
+is not needed for the endpoint-datum identification theorem;
+it would be required for a stronger theorem asserting that
+\emph{all} potential hidden channels are provably absent.
+\end{remark}
+
 \section{Boundary of Book V}
 %% ---------------------------------------------------------------
 

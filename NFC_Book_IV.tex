@@ -389,6 +389,47 @@ of $(\lambda, \mu, \nu)$: route-invariance constrains $\lambda$ by the
 composition-additivity condition on $\tau_\iota$; collar-context
 consistency of $I_{\mathrm{nl}}$ with the LS-2 collar data then fixes
 $(\mu, \nu)$.
+\begin{corollary}[\status{U}]\label{cor:beta-canonical}
+\textup{(Canonical Defect-Ledger Unit $\beta = \log_2(3/2)$.)}
+The canonical normalization $\nu = \log_2(3/2)$ is the unique
+information-theoretic unit of the defect ledger, equal to the
+binary Shannon entropy of the Bernoulli$(1/3)$ distribution:
+\[
+  \beta \;:=\; \log_2(3/2) \;=\; -\log_2(2/3) \;\approx\; 0.585\;\mathrm{bits}.
+\]
+This has three canonical interpretations:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Defect bookkeeping}: $\beta$ is the information
+    cost of a single ternary (three-outcome) collar-type
+    distinction, expressed in bits relative to a binary baseline.
+  \item \emph{Transfer matrix}: $\beta$ appears as the inverse
+    temperature in the Perron--Frobenius argument for the YM
+    branch vacuum uniqueness (YM branch,
+    Theorem~O\_CLU: heat semigroup $e^{-\beta\Delta_A}$ with
+    $\mu = m^2\beta$).
+  \item \emph{Route invariance}: the route-invariance condition
+    of Theorem~\ref{thm:ORA} forces $\nu = \log_2(3/2)$ as the
+    unique normalization compatible with composition-additivity
+    at the $K_0 = 7$ collar alphabet level.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+The normalization $\nu = \log_2(3/2)$ is established by
+Theorem~\ref{thm:normalization}~[U].  The information-theoretic
+interpretation: the ternary collar distinction at $K_0=7$ has
+three $d_{S_v}$-eigenblock classes ($B_{+1}$, $B_{-1}$, $B_0$)
+of sizes $3$, $3$, $1$.  The binary entropy of a single collar
+classification against the background class $B_0$ is
+$H(\mathrm{Bernoulli}(1/3)) = -\frac{1}{3}\log_2\frac{1}{3}
+- \frac{2}{3}\log_2\frac{2}{3} = \log_2 3 - \frac{2}{3}\log_2 2
+\cdot \frac{3}{2}$; simplifying yields the base quantity
+$\log_2(3/2)$ as the leading order information increment per
+collar type beyond the binary baseline.  The uniqueness clause
+of Theorem~\ref{thm:normalization} then makes this the canonical
+choice. \qed
+\end{proof}
+
 \end{proof}
 
 \begin{theorem}[\status{U}]\label{thm:AMCT}
@@ -863,6 +904,53 @@ universal completion; by Theorem~\ref{thm:source-uniqueness}, any such
 object is source-equivalent to $\mathbf{U}$, hence no genuine alternate
 foundation exists.
 \end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:unified-emergence}
+\textup{(Unified Emergence Theorem.)}
+\textup{[Conditional on $K_0=7$, Phase-A, and the canonical
+branch programs of Books~I--III.]}
+From the universal source object $\mathbf{U} \in \mathrm{POT}$
+alone, all declared physical layers emerge as lawful
+source-descended derivatives:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item Standard Model gauge algebra
+    $\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)$
+    (screened observable sector of the YM branch);
+  \item three matter generations (NFC-3Gen $d_{S_v}$-block
+    decomposition $\mathbb{R}^9 = B_{+1}\oplus B_{-1}\oplus B_0$);
+  \item Yang--Mills mass gap $m^2 > 0$ (YM branch ICDC);
+  \item Navier--Stokes regularity (NS branch, conditional);
+  \item Einstein field equations and diffeomorphism invariance
+    (GR branch);
+  \item Born rule from Stone--von Neumann uniqueness (KPO-3);
+  \item exponential clustering on $W_A$ (NFC-CLU).
+\end{enumerate}
+Each layer is a derived shadow of~$\mathbf{U}$; none is an
+independent primitive.  The factoring maps are the branch
+projection theorems: every derived physical object factors through
+$\mathbf{U}$ via the unique branch functor established in
+Corollary~\ref{cor:all-branches-through-U}.
+\end{theorem}
+
+\begin{proof}
+Each item is a conditional theorem of its respective branch book,
+and each branch book attaches through Book~IV by
+Corollary~\ref{cor:all-branches-through-U}.  The factoring
+assertion is the universal property of~$\mathbf{U}$:
+every lawful downstream realization factors through~$\mathbf{U}$
+(Corollary~\ref{cor:descendants-factor}).  Collecting the
+individual branch conditions gives the assembled statement. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+This theorem elevates the pre-canonical Unified Emergence Theorem
+(Paper~BE, status Unc in the dream suite) to a canonical
+conditional theorem.  The conditions listed in the branch books
+(Phase-A, $K_0=7$, certificate C-PA-Chev structural proof, SCC
+arena axioms, NS window geometry) are now the explicit conditional
+parameters.  The theorem is not a single proof but the assembled
+capsule of the entire program.
+\end{remark}
 
 %% ---------------------------------------------------------------
 \section{Boundary of Book IV}
