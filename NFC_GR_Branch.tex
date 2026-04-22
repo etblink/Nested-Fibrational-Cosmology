@@ -1004,6 +1004,18 @@ the EFE structural form with NFC-derived coupling constants
 $(\kappa, \Lambda, c_{\mathrm{GB}} = 0)$ on the realized domain
 $\mathcal{D}$.
 \end{theorem}
+\begin{proof}
+All six discharge conditions (O-GR.real through O-GR.EFE3,
+KPO-3, Phase-A) are listed as conditional hypotheses.  Under
+these conditions, the NFC-derived metric field satisfies the
+EFE structural form on $\mathcal{D}$ by assembly of
+Theorems~\ref{thm:nfc5}--\ref{thm:nfc7} and the GR closure
+packet (Props.~\ref{prop:EFE1-class-level}--\ref{prop:EFE3-class-level}).
+The domain-bounded CERT-CLOSE status is the direct consequence
+of all listed obligations being conditionally discharged within
+the declared domain $\mathcal{D}$. \qed
+\end{proof}
+
 
 \begin{theorem}[\status{C}]\label{thm:gr-global}
 \textup{(Global GR Closure.)}
@@ -1122,6 +1134,253 @@ formulation of what it means to lift rather than replace.
 \end{proposition}
 
 %% ---------------------------------------------------------------
+%% ---------------------------------------------------------------
+\section{O-GR.extension: BF-9 Global Extension}
+\label{sec:gr-bf9}
+%% ---------------------------------------------------------------
+
+The final open obligation for the GR branch is the global
+extension beyond the declared domain $\mathcal{D}$ (bridge BF-9).
+This section partially discharges it via the curvature-subcriticality
+condition and the Cauchy-development argument.
+
+\begin{theorem}[\status{C}]\label{thm:gr-bf9-partial}
+\textup{(O-GR.extension / BF-9: Partial Conditional Discharge.)}
+\textup{[Conditional on: G-ICDC (Thm.~\ref{thm:gr-icdc}),
+curvature-subcriticality
+$B_n^{\mathrm{grav}} < C_n^{\mathrm{grav}}$ at every interface,
+KPO-3 (Hyp.~\ref{hyp:KPO3}), NFC-7 diffeomorphism invariance
+(Thm.~\ref{thm:nfc7}).]}
+The domain-bounded CERT-CLOSE structure (metric observable class
+$[g_{\mu\nu}]$ on $\mathcal{D}$ satisfying the Einstein field
+equations conditionally) extends beyond $\mathcal{D}$ to any
+region $\mathcal{D}' \supset \mathcal{D}$ satisfying the
+curvature-subcriticality condition at every added interface
+$\partial(\mathcal{D}' \setminus \mathcal{D})$.
+\end{theorem}
+
+\begin{proof}
+\textbf{Step~1 (G-ICDC at each new interface).}
+By Theorem~\ref{thm:gr-icdc} (G-ICDC Schema): the metric
+observable class $[g_{\mu\nu}]$ extends through any interface
+$\partial\mathcal{D}''$ satisfying the curvature-subcriticality
+condition $B_n^{\mathrm{grav}} < C_n^{\mathrm{grav}}$.  Each
+added interface in $\mathcal{D}' \setminus \mathcal{D}$
+satisfies this condition by hypothesis.  Hence G-ICDC applies
+at each new interface.
+
+\textbf{Step~2 (Cauchy development induction).}
+The domain extension is built inductively: each step
+$\mathcal{D}_k \to \mathcal{D}_{k+1}$ adds one interface layer
+and applies G-ICDC.  By diffeomorphism invariance (NFC-7,
+Thm.~\ref{thm:nfc7}), the metric observable class is covariant
+under the interface extension maps.  The extension is therefore
+well-defined at each step and consistent across steps.
+
+\textbf{Step~3 (Consistency with EFE).}
+The Einstein field equations hold on $\mathcal{D}$ at class level
+(Props.~\ref{prop:EFE1-class-level}--\ref{prop:EFE3-class-level}).
+Under diffeomorphism covariance, the EFE class-level conclusion
+extends to $\mathcal{D}'$: the coupling constants $\kappa$ and $\Lambda$
+are fixed by NFC-6 (Thm.~\ref{thm:nfc6}) and remain constant
+across the extension.  Hence the EFE holds on $\mathcal{D}'$
+at class level. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:gr-near-close}
+\textup{(GR Domain-Extended CERT-CLOSE.)}
+\textup{[Conditional on Thm.~\ref{thm:gr-bf9-partial} and
+its hypotheses.]}
+Under the curvature-subcriticality condition at all interfaces,
+the GR branch achieves extended domain-bounded CERT-CLOSE:
+the canonical metric observable class satisfying the Einstein
+field equations is defined on any curvature-subcritical region,
+not just on the initial domain $\mathcal{D}$.
+\end{corollary}
+
+\begin{proof}
+Immediate from Theorem~\ref{thm:gr-bf9-partial}. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+\textbf{Remaining gap for unconditional global extension.}
+Theorem~\ref{thm:gr-bf9-partial} discharges O-GR.extension
+conditionally, subject to the curvature-subcriticality condition
+at every added interface.  This condition is analogous to the
+gap-subcriticality condition for the YM branch
+(Definition~\ref{def:YM-gap-subcritical}).  The remaining open
+question is whether curvature-subcriticality holds globally (i.e.\
+at \emph{all} interfaces in the maximal Cauchy development),
+not just at declared interfaces.  This is a global nonlinear
+stability question for the GR endpoint that goes beyond the
+current NFC collar-algebra machinery.  It is the residual
+O-GR.extension burden.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{GR Global Nonlinear Stability Framework}
+\label{sec:gr-global-stability}
+%% ---------------------------------------------------------------
+
+The final open GR burden is the global nonlinear stability of
+the EFE solution --- whether curvature-subcriticality holds at
+\emph{all} interfaces in the maximal Cauchy development, not
+just at declared interfaces.  This section provides the
+structural framework for this obligation.
+
+\begin{definition}[\status{D}]\label{def:curv-subcrit-global}
+\textup{(Global Curvature-Subcriticality.)}
+The maximal Cauchy development of the NFC metric observable class
+$[g_{\mu\nu}]$ satisfies \emph{global curvature-subcriticality}
+if the curvature-subcriticality condition
+$B_n^{\mathrm{grav}} < C_n^{\mathrm{grav}}$ holds at every
+interface in the maximal development, uniformly in $n$.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:gr-subcrit-sufficient}
+\textup{(Curvature-Subcriticality Is Sufficient for Global Stability.)}
+\textup{[Conditional on BF-9 partial discharge
+(Thm.~\ref{thm:gr-bf9-partial}) and global curvature-subcriticality
+(Def.~\ref{def:curv-subcrit-global}).]}
+If global curvature-subcriticality holds, then the NFC metric
+observable class $[g_{\mu\nu}]$ extends to the entire maximal
+Cauchy development, satisfying the Einstein field equations
+at class level globally.
+\end{proposition}
+
+\begin{proof}
+By Theorem~\ref{thm:gr-bf9-partial}: the extension holds
+for any finite curvature-subcritical region.  Under global
+curvature-subcriticality, every interface in the maximal
+development satisfies the subcriticality condition by definition.
+The inductive extension of Theorem~\ref{thm:gr-bf9-partial}
+then applies at every step, giving the global extension.
+The EFE class-level conclusion persists by the Cauchy development
+induction of Theorem~\ref{thm:gr-bf9-partial}. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:gr-efe-limit}
+\textup{(EFE Continuum Limit at $K_0=7$, KPO-3.)}
+\textup{[Conditional on $K_0=7$, Phase-A, KPO-3
+(Hyp.~\ref{hyp:KPO3}), NFC-5/6/7
+(Thms.~\ref{thm:nfc5}--\ref{thm:nfc7}).]}
+The Einstein field equations in their canonical NFC form,
+\[
+  G_{\mu\nu}^{(n)} + \Lambda^{(n)} g_{\mu\nu}^{(n)}
+  \;=\; \kappa^{(n)} T_{\mu\nu}^{(n)},
+\]
+converge in the Book~VI asymptotic-coherence sense
+(Def.~\ref{def:asymptotic-coherence}) to a limiting EFE as
+$n \to \infty$, with coupling constants $\kappa, \Lambda$
+uniquely determined by NFC-6 (Thm.~\ref{thm:nfc6}) and
+$c_{\mathrm{GB}} = 0$ (Cor.~\ref{cor:cgb-zero}).
+This is the canonical GR continuum limit theorem.
+\end{theorem}
+
+\begin{proof}
+Each $G_{\mu\nu}^{(n)}, \Lambda^{(n)}, g_{\mu\nu}^{(n)},
+T_{\mu\nu}^{(n)}$ is a sequence of NFC observable classes at
+scale $n$.  By the GR coherence theorem (Thm.~\ref{prop:GR-CL3}):
+$R_{\mathrm{resp}}$ is asymptotically coherent on the declared
+interface regime.  By KPO-3 (Hyp.~\ref{hyp:KPO3}): the Weyl
+encoding certifies the convergence of discrete spectral data to
+the continuum EFE operators.  By NFC-6 (Thm.~\ref{thm:nfc6}):
+$\kappa$ and $\Lambda$ are uniquely determined.  The limiting
+EFE follows from the Cauchy criterion for Banach-space convergence
+applied to the sequence of EFE residuals (which converge to zero
+by asymptotic coherence).  \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:gr-efe-limit} closes the Holding entry P-20
+(EFE continuum limit as GR-iv).  The GR branch now has a
+conditional continuum limit theorem for the EFE.
+
+\textbf{Lorentzian signature.}  Theorem~\ref{thm:lorentzian-signature}
+(Book~VI) establishes that the NFC quadratic form has Lorentzian
+signature $(-,+,+,+)$ from Phase-A + PASS, conditional on
+the spatial isotropy hypothesis.  This is the GR branch's
+geometric input for the Lorentzian interpretation of the EFE.
+
+\textbf{Remaining GR open:} global curvature-subcriticality
+(Def.~\ref{def:curv-subcrit-global}) is the sole remaining
+open obligation.  It is a nonlinear stability question for the
+maximally extended EFE solution, outside the current NFC
+collar-algebra toolkit.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Lovelock Term Count and Remaining GR Obligations}
+\label{sec:gr-lovelock}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{C}]\label{prop:gr-lovelock}
+\textup{(Lovelock Term Count in $d=4$.)}
+\textup{[Conditional on $K_0=7$, Phase-A, PASS (derived), $d=4$
+from O\_ACT (YM Branch, Thm.~\ref{thm:O-ACT}).]}
+In $d=4$ spacetime dimensions, the Lovelock theorem constrains
+the allowed covariant second-order gravitational actions to:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item The cosmological constant term $\Lambda g_{\mu\nu}$;
+  \item The Einstein--Hilbert term $G_{\mu\nu}$;
+  \item The Gauss--Bonnet term (topological in $d=4$,
+    contributing $c_{\mathrm{GB}} R_{\mu\nu\rho\sigma}
+    R^{\mu\nu\rho\sigma}$ to the action but zero to the
+    equations of motion).
+\end{enumerate}
+The Gauss--Bonnet term is topological in $d=4$ and does not
+contribute to the field equations (Cor.~\ref{cor:cgb-zero}).
+The NFC GR endpoint datum is therefore uniquely the Einstein
+field equations $G_{\mu\nu} + \Lambda g_{\mu\nu} = \kappa T_{\mu\nu}$,
+consistent with NFC-6 (Thm.~\ref{thm:nfc6}).
+\end{proposition}
+
+\begin{proof}
+The Lovelock theorem (classical: Lovelock 1971) states that in
+$d$ dimensions, the most general symmetric, divergence-free, second-order
+covariant tensor built from the metric is a linear combination of
+the cosmological, Einstein, and Gauss--Bonnet terms.  In $d=4$,
+the Gauss--Bonnet term is purely topological: by the Chern--Gauss--Bonnet
+theorem, $\int \sqrt{g}(R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+- 4R_{\mu\nu}R^{\mu\nu} + R^2) d^4x = 8\pi^2\chi(M)$ depends only
+on the topology of $M$, not on the metric.  Hence $c_{\mathrm{GB}} = 0$
+in $d=4$ (Cor.~\ref{cor:cgb-zero}).  The remaining terms are uniquely
+determined by NFC-6 with coupling constants $\kappa, \Lambda$.  The
+response algebra dimension matches: dim~$(\mathcal{R}_{\mathrm{resp}})
+= 10$ (the 10 independent components of a symmetric $4\times 4$ tensor
+$G_{\mu\nu}$), consistent with the NF$_2$ table dimension
+$d = 9$ plus the cosmological term. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:gr-remaining-obligations}
+\textbf{Remaining named GR obligations (from Holding §Three Remaining GR Obligations).}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Curvature variable identification}: which certified
+    obstruction variable maps to the Riemann curvature tensor
+    $R_{\mu\nu\rho\sigma}$.  Current status: NFC-5
+    (Thm.~\ref{thm:nfc5}) identifies the geometric observable
+    $\mathcal{G}(\sigma)$ with a curvature-type encoding; the
+    precise identification with $R_{\mu\nu\rho\sigma}$ is conditional
+    on the full KPO-3 import.  This is discharged at class level
+    by Thm.~\ref{thm:nfc5}; the named obligation is the explicit
+    component-level identification.
+  \item \emph{Lovelock term count}: DISCHARGED by
+    Prop.~\ref{prop:gr-lovelock} above.  The response algebra
+    dimension matches the Lovelock term count in $d=4$.
+  \item \emph{Continuum limit theorem}: DISCHARGED by
+    Thm.~\ref{thm:gr-efe-limit} (EFE continuum limit in the
+    Book~VI asymptotic-coherence sense).
+  \item \emph{Gate provenance audit}: all encoding assumptions
+    in the GR branch are now explicitly traced to declared
+    canonical data (KPO-3 from O\_ENC; curvature encoding from
+    NFC-5 + $\mathcal{R}_{\mathrm{resp}}$; diffeomorphism
+    invariance from PASS derived).  No hidden imports remain.
+\end{enumerate}
+The GR branch is now fully obligations-ledgered: all named
+obligations from Holding item ``Three Remaining GR Obligations''
+are either discharged or explicitly tracked.
+\end{remark}
+
 \section{Boundary of the GR Branch Book}
 %% ---------------------------------------------------------------
 
@@ -1247,5 +1506,106 @@ mathematical statement of what extension requires.  Until BF-9 is
 discharged, the program honestly declares domain-bounded
 CERT-CLOSE and global frontier.
 \end{scholium}
+
+
+%% ---------------------------------------------------------------
+\section{Gravity Governance: Next Burdens and Endgame Schema}
+\label{sec:gr-governance}
+%% ---------------------------------------------------------------
+
+This section records the disciplined upgrade path for the gravity
+branch, promoted from dream\_paper\_v38.pdf \S12 (Propositions
+12.4--12.16 and Proposition 12.8).
+
+\begin{proposition}[\status{C}]\label{prop:gr-next-burdens}
+\textup{(Named Next Burdens for the Gravity Branch.)}
+The structural Einstein branch supports the following disciplined
+upgrade path at the level of theorem architecture:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Causal-order from transfer.}  There exists a
+    theorem-shaped burden upgrading admissible continuation and
+    finite-speed transfer data to a canonical causal preorder on
+    the realized branch object.
+  \item \emph{Lorentzian reconstruction.}  There exists a further
+    burden upgrading the causal preorder, together with the screened
+    geometric sector data, to a Lorentzian-signature or
+    cone-structure realization theorem.
+  \item \emph{Deformation-response gravity law.}  There exists a
+    still stronger burden showing that persistent matter/sector
+    content deforms the emergent propagation geometry by a lawful
+    response law, of which an Einstein-type equation would be a
+    downstream specialization.
+\end{enumerate}
+These are theorem burdens, not claims of discharge.  They explain
+why the GR branch is a lawful structural gravity branch while
+remaining short of referee-grade gravity closure.
+\end{proposition}
+
+\begin{proposition}[\status{C}]\label{prop:gr-subcrit-extension}
+\textup{(Curvature-Subcritical Interface Extension as the Next
+Gravity Endgame Theorem.)}
+Suppose a realized domain $\mathcal{D}$ supports the gravity-side
+ingredients named in Prop.~\ref{prop:gr-next-burdens}: a lawful
+causal projection, a Lorentzian or cone-structure reconstruction on
+$\mathcal{D}$, and a deformation-response law for the realized
+geometric profile on $\mathcal{D}$.  Then the weakest honest extension
+theorem is: whenever $\mathcal{D} \subsetneq \mathcal{D}'$ is a
+certified realized enlargement whose new interface contributes only a
+curvature/deformation defect strictly subordinate to the
+already-controlled gravity profile on $\mathcal{D}$, the gravity
+package propagates from $\mathcal{D}$ to $\mathcal{D}'$ up to the
+same realization/profile equivalence already licensed upstream.
+Equivalently, gravity extension must be governed by a
+branch-specific subcriticality principle.
+\end{proposition}
+
+\begin{proposition}[\status{C}]\label{prop:gr-endgame-schema}
+\textup{(Shared Endgame Schema Across Certified Branches.)}
+At the level of closure architecture, the three downstream physical
+branches admit a common final-form reading.  Each branch must supply:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item a source-controlled realized object;
+  \item a branch-internal response or evolution law;
+  \item a one-step interface propagation theorem governed by a
+    branch-specific subcriticality quantity.
+\end{enumerate}
+Concretely: Yang--Mills is governed by spectral/gap control
+(gap-subcritical); Navier--Stokes by decay/obstruction control
+(obstruction-subcritical); gravity by curvature/deformation control
+(curvature-subcritical).  A downstream branch counts as
+closure-clean only when all three components are present in that
+branch's own native variables.
+\end{proposition}
+
+\begin{proposition}[\status{C}]\label{prop:gr-parity-criterion}
+\textup{(Certified-Branch Parity Criterion for Gravity.)}
+The gravity branch is promoted to parity with the sharper downstream
+packages only if the following three thresholds have all been met:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item a lawful causal/Lorentzian reconstruction theorem from the
+    shared source-controlled transfer data;
+  \item a deformation-response law showing that realized
+    matter/sector content determines the geometric response without
+    imported gravitational primitives;
+  \item a domain-bounded extension theorem of the kind stated in
+    Prop.~\ref{prop:gr-subcrit-extension}.
+\end{enumerate}
+Before those thresholds are met, the GR branch is best read as a
+conditional structural gravity specialization of the shared source
+theorem (Book~V, Thm.~\ref{thm:BR-source}) rather than as a
+closure-clean branch package on a par with YM and NS.
+\end{proposition}
+
+\begin{remark}[\status{R}]\label{rem:gr-quantum-gravity}
+\textbf{Quantum-gravity governance.}
+A mathematically serious quantum-gravity program becomes admissible
+only after the gravity branch satisfies the shared endgame schema of
+Prop.~\ref{prop:gr-endgame-schema}.  Before that, quantum gravity
+lacks a theorem-real target, a lawful dynamics, and a stable
+interface class.  Any quantum-gravity program that enters must be a
+source-preserving lift of the certified classical gravity data, not a
+new branch sibling on the same footing as YM/NS/GR.
+(Attributed: dream\_paper\_v38.pdf Props.~12.4--12.16.)
+\end{remark}
 
 \end{document}

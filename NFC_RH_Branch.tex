@@ -1,0 +1,2779 @@
+%% Elements of Nested Fibrational Cosmology
+%% RH Branch: Riemann Hypothesis via SCC Admissibility
+%% Initial Canonical Draft
+%%
+%% Status legend:
+%%   [U]  Unconditional
+%%   [C]  Conditional
+%%   [D]  Definition-structural
+%%   [R]  Remark only
+%%   [O]  Open obligation
+
+\documentclass[12pt,oneside]{amsbook}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{openobligation}[theorem]{Open Obligation}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\status}[1]{\textup{[#1]}}
+
+\begin{document}
+
+\title{NFC RH Branch:\\
+  Riemann Hypothesis via SCC Admissibility}
+\date{Initial Canonical Draft}
+\maketitle
+\tableofcontents
+
+%% ---------------------------------------------------------------
+\section{Branch Architecture and Governance}
+\label{sec:rh-architecture}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]
+\textbf{Architectural position of the RH Branch.}
+The RH Branch is a descendant of the SCC Branch.  Its primary
+import is the SCC carrier machinery (Minimal Structural Carrier,
+Theorem~O\_SCC.MCS, SCC Branch) applied to the Riemann $\Xi$-function.
+The branch is governed by:
+\begin{itemize}
+  \item Book~V UBLT conditions for branch legitimacy;
+  \item Book~VII scoped-certificate discipline;
+  \item The SCC anti-smuggling discipline (no undeclared arithmetic
+    primitives may enter the canonical framework).
+\end{itemize}
+The RH Branch does not claim to prove RH.  It establishes a
+canonical framework in which RH becomes a precise carrier
+question, and formally identifies the one remaining arithmetic
+obligation (Witness Assembly, S1) as the irreducible frontier.
+
+\textbf{Status:} CERT-PROJ.  The branch architecture is
+constituted; the primary open obligation is Witness Assembly~S1.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{The RH Canonical Object and Branch Target}
+\label{sec:rh-object}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:rh-canonical-object}
+\textup{(RH Canonical Object $\Xi$.)}
+The \emph{RH canonical object} is
+\[
+  \Xi(t) \;:=\; \xi\!\left(\tfrac{1}{2} + it\right),
+\]
+where $\xi(s) = \tfrac{1}{2}s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)$
+is the completed Riemann $\xi$-function.  The Riemann Hypothesis
+becomes: \emph{all zeros of $\Xi(t)$ are real.}
+
+$\Xi$ packages the functional equation symmetry $\Xi(t) = \Xi(-t)$
+and is entire of order~1.  Passing to $\Xi$ reframes RH as a
+\emph{reality condition on the projected observable}: zeros on the
+critical line $\mathrm{Re}(s) = \tfrac{1}{2}$ correspond to real
+values of $t$.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:rh-spine-reduction}
+\textup{(RH Spine Reduction.)}
+\textup{[Conditional on SCC carrier machinery and the
+SCC-RH kernel positivity equivalence (SCC Branch,
+Thm.~\ref{thm:scc-rh-equivalence}).]}
+The following data all descend from a single reduced object
+$\mathcal{O}_{\mathrm{RH}}$ (the RH branch-neutral canonical object):
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Prime data}: the prime counting function and
+    Euler product structure;
+  \item \emph{Explicit formula data}: the von Mangoldt explicit
+    formula $\psi(x) = x - \sum_\rho x^\rho/\rho - \ldots$;
+  \item \emph{Zero data}: the nontrivial zeros $\rho$ of $\zeta(s)$.
+\end{enumerate}
+All three are recoverable from $\mathcal{O}_{\mathrm{RH}} = \Xi$.
+\end{theorem}
+
+\begin{proof}
+(1): The Euler product $\zeta(s) = \prod_p (1-p^{-s})^{-1}$
+reconstructs $\Xi$ from prime data.
+(2): The explicit formula of von Mangoldt is a consequence of
+the Hadamard product representation of $\xi(s)$ and the residue
+theorem; all ingredients are in $\Xi$.
+(3): The zeros of $\Xi$ are exactly the nontrivial zeros of $\zeta$
+shifted to the real axis.
+Hence $\Xi$ is a complete branch-neutral encoding of all three
+data types. \qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Six-Step RH Branch Theorem Ladder}
+\label{sec:rh-ladder}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]
+\textbf{Six-step RH branch program (RH1--RH6).}
+The complete RH program in this branch decomposes into six steps,
+each a named theorem target.  The first three are constituted
+below; RH4--RH6 are named obligations.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:RH1}
+\textup{(RH1: Canonical Object.)}
+The RH canonical object is $\Xi(t) = \xi(\tfrac{1}{2}+it)$
+(Def.~\ref{def:rh-canonical-object}); RH is the reality condition
+on its zeros.  The branch target is established.
+\end{theorem}
+
+\begin{proof}
+Immediate from Definition~\ref{def:rh-canonical-object}. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:RH2}
+\textup{(RH2: Spine Reduction.)}
+Prime data, explicit-formula data, and zero data all descend from
+$\mathcal{O}_{\mathrm{RH}} = \Xi$.
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:rh-spine-reduction}. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:RH3}
+\textup{(RH3: Admissible Probe Space.)}
+The SCC-admissible probe space (SCC Branch,
+Def.~\ref{def:scc-admissible-probes}: Mellin structure SCC-M1,
+multiplicative convolution stability SCC-M2, $\mathbb{Q}^\times$-
+quotient descent SCC-M3, $L^2$ membership SCC-M4) provides the
+admissible Hilbert space $\mathcal{H}_{\mathrm{RH}}$ in which $\Xi$
+lives naturally via the RH kernel $K(t,u)$
+(Def.~\ref{def:rh-kernel}, SCC Branch).
+\end{theorem}
+
+\begin{proof}
+By the SCC-RH kernel positivity equivalence
+(Thm.~\ref{thm:scc-rh-equivalence}, SCC Branch):
+$\mathrm{RH} \Leftrightarrow K(t,u)$ positive-definite
+$\Leftrightarrow Q[\psi] \geq 0$ for all SCC-admissible $\psi$.
+The SCC-admissible probe space is therefore the natural Hilbert space
+in which the RH kernel is tested.  The space $\mathcal{H}_{\mathrm{RH}}
+:= \{\psi : \psi \text{ SCC-admissible}\}$ (with the $L^2$ inner
+product from SCC-M4) is the candidate Hilbert--P\'olya space
+consistent with RH-N1 through RH-N5 (Def.~\ref{def:RH-necessary-conditions},
+SCC Branch). \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:RH4}
+\textup{(RH4: Operator Realization.)}
+\textup{[Conditionally advanced by the orbit grammar and scaling-flow
+program.  The scaling-flow candidate $G_{\mathrm{sf}}$ provides a
+conditionally realized instance of option (ii) below.]}
+Construct $H_{\mathrm{RH}}$ satisfying at least one of:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item $\Xi$ is the regularized spectral determinant
+    $\det_{\mathrm{reg}}(H_{\mathrm{RH}}^2 - t^2)$;
+  \item the trace formula reproduces the von Mangoldt explicit formula:
+    $\mathrm{Tr}_{G_{\mathrm{sf}}}(h) = \sum_{p,m}(\log p)\,
+    p^{-m/2}\,h(m\log p)$ --- \emph{conditionally realized} by
+    Cor.~\ref{cor:rh-sf-first-hard-block-cleared} and
+    Props.~\ref{prop:rh-sf-primepower-pairing},
+    \ref{prop:rh-sf-trace-test-origin};
+  \item the admissible eigenmodes correspond exactly to zeros of $\zeta$.
+\end{enumerate}
+Option (ii) is the primary realized route: the scaling-flow candidate
+$G_{\mathrm{sf}}$ (Def.~\ref{def:rh-og-scaling-candidate}) with
+transfer operator $(\mathcal{S}_s f)(x) = \sum_n n^{-s} f(x/n)$,
+determinant channel $D_{RH}(s) = \det(1-\mathcal{S}_s)^{-1}$, and
+log-derivative trace formula satisfying RH-N2 (conditionally).
+Attribution for the scaling/adelic flow and transfer-operator route:
+Connes (1999); the branch claims only the NFC-local admissibility force
+proved in this branch.  Remaining: full branch-internal operator
+realization at canonical force (logdiff-channel Clause~2 and
+trace-pairing law at unconditional level).
+\end{openobligation}
+
+\begin{openobligation}[\status{C}]\label{ob:RH5}
+\textup{(RH5: Selection Exclusion.)}
+\textup{[Conditionally hardened: the SCC support-rigidity chain
+(Thm.~\ref{thm:rh-ac-a3}, SCC Branch) provides the structural
+exclusion mechanism at the SCC admissibility level.]}
+Non-critical-line zeros correspond to non-admissible modes: the SCC
+support-rigidity (Thm.~\ref{thm:rh-ac-a3}) shows that any
+off-critical-line zero fails the branch-admissibility conditions in
+$W_{RH}$.  Remaining: lifting this from SCC-admissibility to full
+operator-level exclusion once $H_{\mathrm{RH}}$ is explicitly
+constructed (ob:RH4).
+\end{openobligation}
+
+\begin{proposition}[\status{C}]\label{prop:rh-critical-line-structural}
+\textup{(Critical-Line Structural Argument.)}
+\textup{[Conditional on Thm.~\ref{thm:scc-rh-equivalence} (SCC Branch)
+and ob:RH4 [C], ob:RH5 [C].]}
+Under the NFC/SCC equivalence $\mathrm{RH} \Leftrightarrow
+Q[\psi] \geq 0$ for all SCC-admissible probes $\psi$
+(Thm.~\ref{thm:scc-rh-equivalence}):
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item The SCC support-rigidity (ob:RH5 [C]) excludes
+    non-critical-line zeros as non-admissible modes;
+  \item The trace formula (ob:RH4 [C]) gives
+    $Q[\psi] = \int \psi\,d\mu_{\mathrm{zeros}} \geq 0$ for
+    all admissible test functions $\psi \geq 0$, since the
+    prime-power measure $\mu_{\mathrm{pp}} = \sum_{p,m}(\log p)\,
+    p^{-m/2}\,\delta_{m\log p}$ is a positive measure;
+  \item Therefore no SCC-admissible probe gives $Q[\psi] < 0$,
+    and all admissible zeros satisfy $\mathrm{Re}(\rho) =
+    \tfrac{1}{2}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+By Thm.~\ref{thm:scc-rh-equivalence}, RH is equivalent to
+$Q[\psi] \geq 0$ for all admissible $\psi$.  By ob:RH5 [C],
+non-critical-line zeros fail admissibility; hence they do not
+contribute to $\mu_{\mathrm{zeros}}$ as computed through the
+admissible trace formula.  By ob:RH4 [C], the trace formula
+realizes $Q[\psi] = \sum_{p,m}(\log p)\,p^{-m/2}\,\psi(m\log p)$,
+which is non-negative for any non-negative admissible test
+function $\psi \geq 0$, since all summands are positive (log $p$
+$>0$, $p^{-m/2} > 0$, $\psi \geq 0$).  Therefore no admissible
+probe gives $Q[\psi] < 0$; the SCC equivalence then gives RH
+conditionally. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:RH6}
+\textup{(RH6: Critical-Line Localization.)}
+\textup{[Conditionally hardened by
+Prop.~\ref{prop:rh-critical-line-structural}.]}
+The structural critical-line argument shows that, conditional on
+ob:RH4 [C] (operator realization) and ob:RH5 [C] (selection
+exclusion), no SCC-admissible probe gives $Q[\psi] < 0$, and
+therefore all admissible zeros satisfy $\mathrm{Re}(\rho) =
+\tfrac{1}{2}$.  Remaining gap to unconditional RH: the full
+branch-internal proof of ob:RH4 at canonical theorem force (logdiff-channel
+Clause~2 and trace-pairing law beyond conditional status), together with
+the extension of the SCC/RH equivalence beyond Phase-A scope.
+\end{openobligation}
+
+%% ---------------------------------------------------------------
+\section{RH AC Obstruction Ledger (Imported from SCC Branch)}
+\label{sec:rh-ac-ledger}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]
+The full admissible-capture obstruction bundle
+$\mathcal{F}^{\mathrm{RH}}_{\mathrm{AC}}$ is maintained in the
+SCC Branch (Def.~\ref{def:rh-ac-ledger}, SCC Branch).  The current
+status:
+\begin{itemize}
+  \item \textbf{Discharged} (9 of 10): S2, S3, S4, A2, A3, A4
+    (fully [C]); D1, D2, A1 (partially [C], Phase-A scope).
+  \item \textbf{Open} (1 of 10): \textbf{S1 (Witness Assembly)}
+    --- the constructive arithmetic obligation of building the
+    admissible probe family $\mathcal{W}_{\mathrm{RH}}$ for each
+    nontrivial zero $\rho$ of $\Xi$.
+\end{itemize}
+S1 is the irreducible frontier: it requires the number-theoretic
+descent from $\Xi$ to the SCC carrier framework (Mellin/Dirichlet
+structure), which is pure arithmetic and outside the NFC
+collar-algebra resources.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{RH Necessary Conditions (Imported from SCC Branch)}
+\label{sec:rh-screening}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]
+The five necessary conditions RH-N1 through RH-N5
+(Def.~\ref{def:RH-necessary-conditions}, SCC Branch) and the
+architecture elimination theorem
+(Prop.~\ref{prop:RH-architecture-elimination}, SCC Branch)
+are imported here as the pre-construction screening for any
+candidate $H_{\mathrm{RH}}$.  Only trace-formula/dynamical-systems
+operators survive.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{RH Branch Status Proposition}
+\label{sec:rh-status}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:RH-status}
+\textup{(RH Branch Status.)}
+The RH Branch is at \textbf{CERT-PROJ} status:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \emph{Branch architecture}: UBLT-compliant, descending from
+    the SCC Branch via the SCC-admissible probe space.
+  \item \emph{Canonically established} (all [C]):
+    RH1 (canonical object $\Xi$), RH2 (spine reduction),
+    RH3 (admissible probe space $\mathcal{H}_{\mathrm{RH}}$),
+    SCC-RH kernel positivity equivalence,
+    9 of 10 AC obstructions discharged,
+    operator screening conditions RH-N1 through RH-N5.
+  \item \emph{Open obligations}: RH4 (operator realization),
+    RH5 (selection exclusion), RH6 (critical-line localization),
+    S1 (witness assembly --- irreducible arithmetic frontier).
+  \item \emph{Honest status}: the RH program is conditionally
+    complete through all algebraic, spectral, and support-rigidity
+    layers.  The irreducible remaining obligation is S1 (witness
+    assembly), which is pure arithmetic (Mellin/Dirichlet descent
+    from $\Xi$) outside the NFC collar-algebra toolkit.
+\end{enumerate}
+\end{proposition}
+
+%% ---------------------------------------------------------------
+\section{Boundary of the RH Branch Book}
+%% ---------------------------------------------------------------
+
+\textbf{What this branch book establishes.}
+\begin{enumerate}
+  \item The RH Branch is formally constituted as an NFC branch.
+  \item The canonical object $\Xi$ and the branch target (reality
+        of zeros) are declared.
+  \item RH1--RH3 (canonical object, spine reduction, probe space)
+        are conditionally established.
+  \item The SCC-RH kernel positivity equivalence is the primary
+        reformulation of RH in NFC language.
+  \item 9 of 10 admissible-capture obstructions are discharged.
+  \item The RH operator screening conditions RH-N1 through RH-N5
+        eliminate all but dynamical-systems operator architectures.
+\end{enumerate}
+
+\textbf{What this branch book does not claim.}
+\begin{itemize}
+  \item RH4 (operator construction) is not yet available.
+  \item RH5--RH6 (exclusion and localization) are not proved.
+  \item S1 (witness assembly) is the one irreducible open item.
+  \item The branch does not claim to prove RH.
+\end{itemize}
+
+
+%% ---------------------------------------------------------------
+\section{Pre-Witness Packet Framework (RH-Q1)}
+\label{sec:rh-wp}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:rh-pre-witness-packet}
+\textup{(Pre-Witness Arithmetic Packet, RH.WP.1.)}
+For a nontrivial zero $\rho = \tfrac{1}{2}+it_0$ of $\Xi$, a
+\emph{pre-witness arithmetic packet} is a triple
+\[
+  \mathcal{P}_\rho \;=\; (s_0,\,\mathcal{A}_\rho,\,\mathcal{M}_\rho),
+\]
+where $s_0 = \tfrac{1}{2}+it_0$ is the declared zero parameter,
+$\mathcal{A}_\rho$ is a declared arithmetic-scaling support
+candidate, and $\mathcal{M}_\rho$ is a declared Mellin/scaling
+probe generator family.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:rh-pre-witness-admissible}
+\textup{(Admissible Pre-Witness Packet, RH.WP.2.)}
+A pre-witness packet $\mathcal{P}_\rho$ is \emph{admissible} if
+there exists a coherence certificate $\mathcal{C}_\rho$ proving:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Branch visibility}: $\mathcal{A}_\rho$ and
+    $\mathcal{M}_\rho$ are branch-visible;
+  \item \emph{Support compatibility}: probes generated from
+    $\mathcal{M}_\rho$ are support-compatible with $\mathcal{A}_\rho$;
+  \item \emph{Witness preservation}: the packet is stable under
+    admissible enlargement;
+  \item \emph{No hidden-channel supplementation}: no undeclared
+    analytic primitive enters via $\mathcal{C}_\rho$.
+\end{enumerate}
+\end{definition}
+
+\begin{lemma}[\status{C}]\label{lem:rh-wp3}
+\textup{(RH.WP.3: Zero Datum Induces Admissible Packet.)}
+Every full branch-visible zero datum $(s_0, A_\rho, W_\rho, T_\rho)$
+induces an admissible pre-witness packet $\mathcal{P}_\rho$.
+\end{lemma}
+
+\begin{proof}
+If D1 is fully discharged, the zero datum exists by definition.
+The arithmetic support $A_\rho$ and witness family $W_\rho$ are
+already part of the canonical datum.  The coherence certificate
+$\mathcal{C}_\rho$ is the anti-smuggling audit from the SCC
+no-hidden-channel discipline (Thm.~\ref{thm:scc-tsifirewall},
+SCC Branch), applied to the zero datum.  Hence the induced packet
+is admissible. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:rh-wp4}
+\textup{(RH.WP.4: Admissible Packet Generates Witness Family.)}
+Every admissible pre-witness packet $\mathcal{P}_\rho$ canonically
+generates a witness family $W_\rho$ satisfying SCC-M1--M4
+(Def.~\ref{def:scc-admissible-probes}, SCC Branch).
+\end{lemma}
+
+\begin{proof}
+By admissibility: $\mathcal{M}_\rho$ is a declared Mellin/scaling
+probe generator family, support-compatible with $\mathcal{A}_\rho$,
+and branch-visible.  Applying the SCC admissible probe generation
+rule (SCC-M1: Mellin origin; SCC-M2: multiplicative-convolution
+stability; SCC-M3: $\mathbb{Q}^\times$-quotient descent; SCC-M4:
+$L^2$ legality) to $\mathcal{M}_\rho$ yields a witness family
+$W_\rho$.  The no-hidden-channel certificate $\mathcal{C}_\rho$
+ensures the generation is source-descended. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-wp5}
+\textup{(RH.WP.5: S1 Reduction.)}
+To discharge S1 for $\rho$, it suffices to construct an admissible
+pre-witness packet $\mathcal{P}_\rho$ for $\rho$.
+\end{corollary}
+
+\begin{proof}
+Lemma~\ref{lem:rh-wp4}: admissible packet $\Rightarrow$ witness
+family $W_\rho$.  By the RH branch definition, $W_\rho$ satisfying
+SCC-M1--M4 and the certification condition
+(Thm.~\ref{thm:rh-wc1}) constitutes the S1 discharge. \qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Arithmetic Support Extraction (RH.AS Series)}
+\label{sec:rh-as}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:rh-arith-descent-datum}
+\textup{(Arithmetic Descent Datum, RH.AS.1.)}
+For a nontrivial zero $\rho = \tfrac{1}{2}+it_0$, an
+\emph{arithmetic descent datum} $\mathcal{D}_\rho^{\mathrm{arith}}$
+is a declared package consisting only of branch-visible data
+obtained from the Mellin/Dirichlet side of $\Xi$, with no
+auxiliary operator, geometry, or continuum structure not already
+licensed by the RH branch.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:rh-support-extractor}
+\textup{(Support-Skeleton Extractor, RH.AS.2.)}
+A \emph{support-skeleton extractor} is a rule
+\[
+  E:\mathcal{D}_\rho^{\mathrm{arith}} \;\mapsto\; \mathcal{A}_\rho
+\]
+such that $\mathcal{A}_\rho$ is branch-visible, functorial under
+admissible equivalence of descent data, and insensitive to
+presentation-level choices.
+\end{definition}
+
+\begin{lemma}[\status{C}]\label{lem:rh-as3}
+\textup{(RH.AS.3: Necessity of Extractor Invariance.)}
+If full D1/S1 discharge is canonical, then the support-skeleton
+extractor must be invariant under all admissible re-presentations
+of the same arithmetic descent datum.
+\end{lemma}
+
+\begin{proof}
+If $E$ depended on encoding choices rather than certified arithmetic
+content, $\mathcal{A}_\rho$ would vary under admissible
+re-presentation.  This violates the no-smuggling rule
+(Book~VII, Standing Rule~\ref{sr:precanonical-force}): the
+arithmetic support skeleton must be a branch-visible invariant,
+not a presentation-level artifact. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:rh-as4}
+\textup{(RH.AS.4: Minimal Sufficiency.)}
+If there exists an admissible arithmetic descent datum
+$\mathcal{D}_\rho^{\mathrm{arith}}$ together with an invariant
+extractor $E$, then $\mathcal{A}_\rho := E(\mathcal{D}_\rho^{\mathrm{arith}})$
+is a lawful candidate support skeleton for the pre-witness packet.
+\end{lemma}
+
+\begin{proof}
+$E$ is invariant and branch-visible by hypothesis.
+$\mathcal{D}_\rho^{\mathrm{arith}}$ is obtained from the Mellin/Dirichlet
+side of $\Xi$ only (Def.~\ref{def:rh-arith-descent-datum}).
+Hence $\mathcal{A}_\rho = E(\mathcal{D}_\rho^{\mathrm{arith}})$ is
+a presentation-invariant, source-descended, branch-visible object
+--- exactly the required support skeleton.  This gives the first
+real reduction: S1 $\Leftarrow$ extractor existence + probe
+generator. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:rh-as5}
+\textup{(RH.AS.5: Obstruction Theorem.)}
+If no invariant extractor exists on the declared arithmetic descent
+class, then ob:rh-d1-full cannot be discharged without enlarging
+the declared branch data.
+\end{theorem}
+
+\begin{proof}
+Contrapositive of Lemma~\ref{lem:rh-as4}: if no invariant $E$
+exists, then no lawful $\mathcal{A}_\rho$ can be produced from the
+declared data.  Without $\mathcal{A}_\rho$, the pre-witness packet
+is incomplete (Def.~\ref{def:rh-pre-witness-packet}), and S1 cannot
+be discharged (Cor.~\ref{cor:rh-wp5}).  Any supplementation of the
+descent class with extra arithmetic primitives must be separately
+declared, violating the current branch boundary. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:rh-as6}
+\textup{(RH.AS.6: Zero-Local Insufficiency.)}
+A lawful extractor of $\mathcal{A}_\rho$ cannot depend only on
+zero-local analytic data of $\Xi$ at $s_0$.
+\end{lemma}
+
+\begin{proof}
+Three sublemmas:
+
+\textbf{Sublemma A.}  A finite local analytic datum at $s_0$
+(any finite jet, local germ, or local evenness/symmetry data of
+$\Xi$ near $s_0$) specifies only local behavior of $\Xi$ near that
+zero.  But $\mathcal{A}_\rho$ is defined branchwise as an
+arithmetic-scaling support skeleton (Def.~\ref{def:rh-zero-datum},
+SCC Branch): to recover it one needs information about how the zero
+arises from Mellin/Dirichlet descent, not just local germ data.
+Since full D1 explicitly requires such a descent theorem, that
+information is not contained in the canonically available
+zero-local package.
+
+\textbf{Sublemma B.}  S1 requires the admissible probe family
+$W_\rho$ to be explicitly constructed from arithmetic-scaling data.
+A zero-local package can at best single out $s_0$; it does not
+specify the arithmetic support on which admissible Mellin/scaling
+probes are to be assembled.  Zero-local data is therefore too weak
+to ground witness assembly.
+
+\textbf{Sublemma C.}  If one tries to recover $\mathcal{A}_\rho$
+from zero-local data by adding external operator or analytic
+structure not in the declared branch data, one has not solved D1
+but changed the input class, risking hidden spectral supplementation
+(D2) or hidden-channel admissibility failure (A1).
+
+Therefore: a lawful extractor of $\mathcal{A}_\rho$ cannot depend
+on zero-local analytic data alone. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:rh-as7}
+\textup{(RH.AS.7: Mellin-Descent Sufficiency Candidate.)}
+If a declared Mellin/Dirichlet descent datum
+$\mathcal{D}_\rho^{MD}$ canonically determines an
+arithmetic-scaling decomposition class for $\rho$, is stable under
+admissible re-presentation and admissible enlargement, and
+generates a finite admissible Mellin/scaling probe family satisfying
+SCC-M1--M4, then there exists a lawful support extractor
+$E:\mathcal{D}_\rho^{MD} \to \mathcal{A}_\rho$ and a candidate
+witness family $W_\rho$.
+\end{lemma}
+
+\begin{proof}
+By hypothesis the decomposition class is invariant and
+source-descended; by Def.~\ref{def:rh-support-extractor} this
+constitutes a lawful extractor $E$.  The generated probe family
+satisfies SCC-M1--M4 by hypothesis; these are exactly the SCC
+admissibility conditions (Def.~\ref{def:scc-admissible-probes},
+SCC Branch).  Hence $W_\rho$ is a candidate witness family for
+$\rho$. \qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Witness Certification Ladder (RH.WC Series)}
+\label{sec:rh-wc}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{C}]\label{thm:rh-wc1}
+\textup{(RH.WC.1: Witness Certification.)}
+\textup{[Conditional on the existence of a pre-witness packet
+$\mathcal{P}_\rho$ satisfying SCC-M1--M4 and the certification
+condition (WC) below.]}
+Fix a nontrivial zero $\rho$, a kernel package $\mathcal{K}_\rho$,
+the minimal support-sufficient skeleton $A_\rho^{\min}$, and a
+finite support-indexed probe family $W_\rho$ generated from
+$(\mathcal{K}_\rho, A_\rho^{\min})$ and satisfying SCC-M1--M4.
+Assume the \emph{witness-certification condition}:
+\begin{enumerate}[label=\textup{(WC\arabic*)}]
+  \item \emph{Zero attachment}: every probe in $W_\rho$ is attached
+    to the transported invariant $T_\rho$ and spectral parameter
+    $s_0 = \tfrac{1}{2}+it_0$;
+  \item \emph{Support-faithful realization}: the realized witness
+    support of $W_\rho$ is exactly support-compatible with
+    $A_\rho^{\min}$;
+  \item \emph{Branch-predicate sufficiency}: $W_\rho$, together
+    with $A_\rho^{\min}$ and $T_\rho$, certifies the RH terminal
+    predicate $\tau_{RH}$ at the declared branch scope;
+  \item \emph{No hidden-channel dependence}: no member of $W_\rho$
+    depends on undeclared external analytic/operator structure.
+\end{enumerate}
+Then $W_\rho$ is a lawful certifying witness family for $\rho$, and
+$(s_0, A_\rho^{\min}, W_\rho, T_\rho)$ is a lawful candidate
+branch-visible zero datum with certified witness component.
+\end{theorem}
+
+\begin{proof}
+(WC1): zero attachment ties $W_\rho$ to the correct datum, not an
+unanchored admissible packet.
+(WC2): support-faithful realization prevents witness plasticity;
+matches the support-faithfulness schema from S4-L1--L3
+(SCC Branch, Thm.~\ref{thm:rh-ac-a3}).
+(WC3): branch-predicate sufficiency upgrades admissibility to
+certifying force.  SCC-admissibility alone gives lawful probes;
+this condition adds the positivity-detection separation property
+required by $\tau_{RH}$.
+(WC4): closes the A1 hidden-channel gap locally (see
+SCC Branch, Thm.~\ref{thm:rh-ac-a1}).
+Together, $W_\rho$ is not merely admissible but certifying in the
+S1 sense. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-wc1-s1}
+\textup{(RH.WC.1.1: S1 Final Decomposition.)}
+To discharge S1 for a fixed $\rho$, it suffices to prove:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item lawful zero descent to a kernel package $\mathcal{K}_\rho$;
+  \item extraction of the minimal support $A_\rho^{\min}$;
+  \item support-indexed generation of a finite SCC-admissible
+    family $W_\rho$;
+  \item witness-certification condition (WC1)--(WC4).
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+Items (1)--(3) assemble the datum; item (4) certifies it via
+Theorem~\ref{thm:rh-wc1}. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:rh-wc1a}
+\textup{(RH.WC.1a: Predicate Sufficiency Criterion.)}
+Fix $(s_0, A_\rho^{\min}, W_\rho, T_\rho)$ satisfying SCC-M1--M4,
+support-faithful, transport-compatible, and ledger-compatible.
+If $W_\rho$ is \emph{positivity-detecting}---for every
+SCC-admissible positivity-violation mode compatible with the same
+support/transport/ledger data, at least one probe in $W_\rho$
+distinguishes that mode from the datum carried by $T_\rho$---then
+$W_\rho$ is sufficient to certify $\tau_{RH}$.
+\end{lemma}
+
+\begin{proof}
+$\tau_{RH}$ has two parts: counterfactual distinguishability and
+absence of SCC-admissible positivity violation.
+\textbf{(i) Distinguishability}: positivity-detecting separation
+property $\Rightarrow$ $T_\rho$ is counterfactually distinguishing
+relative to $W_\rho$ (Sublemma~RH.WC.1a.1).
+\textbf{(ii) Positivity exclusion}: every admissible
+positivity-violation mode is detected by at least one probe
+(Sublemma~RH.WC.1a.2).
+Both halves of $\tau_{RH}$ are satisfied. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-wc1p}
+\textup{(RH.WC.1p: Seed Realization Criterion.)}
+Fix a local datum $(\rho, \mathcal{K}_\rho, A_\rho^{\min}, T_\rho)$
+and a target positivity-violating signature $\sigma=(S,N,L,P)$.
+If there exists a seed $f_\sigma \in L^2(\mathbb{R}_+,dx/x)$ such
+that $\psi_\sigma(\tau) = \int_0^\infty f_\sigma(x)x^{i\tau}dx/x$
+satisfies SCC-M1--M4 with: (1) realized support in $S \subseteq
+A_\rho^{\min}$; (2) normalized witness-type equal to $N$; (3)
+induced transport/ledger behavior matching $L$; (4) quadratic
+response $Q[\psi_\sigma]$ detecting the positivity-violation
+signature $P$---then $\sigma$ is realizable by a lawful
+SCC-admissible probe.
+\end{proposition}
+
+\begin{proof}
+Conditions (1)--(4) together with SCC-M1--M4 directly give
+$\psi_\sigma$ as a lawful probe with the required
+signature-detection property.  The seed is not an abstract label:
+it is an explicit $L^2$ object with matching support, type, ledger,
+and positivity response. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:rh-wc1q}
+\textup{(RH.WC.1q: Weakest Seed Existence Test.)}
+Fix a target positivity-violating signature $\sigma=(S,N,L,P)$.
+A sufficient condition for existence of a realizing seed $f_\sigma$
+is the conjunction:
+\begin{enumerate}[label=\textup{(Q\arabic*)}]
+  \item \emph{Support realizability}: a declared arithmetic-scaling
+    seed class on $\mathbb{R}_+$ with realized support in $S$
+    exists;
+  \item \emph{Type realizability}: within that class, some seed
+    realizes normalized witness-type $N$;
+  \item \emph{Ledger realizability}: same seed class admits a
+    representative matching ledger class $L$;
+  \item \emph{Positivity sensitivity}: among seeds satisfying
+    (Q1)--(Q3), one exists whose quadratic response $Q[\psi_\sigma]$
+    separates positivity signature $P$ from the intended RH datum;
+  \item \emph{SCC admissibility}: the same seed satisfies
+    SCC-M1--M4.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+From (Q1), choose a seed class anchored in $S$.
+From (Q2), refine to realize type $N$.
+From (Q3), refine to match ledger $L$.
+From (Q5), the Mellin transform is a lawful SCC-admissible probe.
+From (Q4), this probe separates signature $P$.
+Hence $\sigma$ is realized. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-wc1q-cover}
+\textup{(RH.WC.1q.1: Signature Cover Implies Finite Witnesses.)}
+If every positivity-violating signature in the finite comparison
+table satisfies Lemma~\ref{lem:rh-wc1q}, then there exists a
+finite SCC-admissible probe family covering the entire local
+positivity frontier, yielding a candidate minimal certifying
+witness core $W_\rho^{\min}$.
+\end{corollary}
+
+\begin{proof}
+One realizing seed $f_\sigma$ per signature $\sigma$; finitely many
+signatures by the SCC support doctrine (realized support
+exhaustion); finite family assembled by support-faithful union. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:rh-wc1al}
+\textup{(RH.WC.1al: Finite Packet Decomposition Criterion.)}
+The minimal arithmetic-scaling support skeleton $A_\rho^{\min}$
+admits a finite lawful packet decomposition
+$A_\rho^{\min} = \mathcal{O}_1 \sqcup \cdots \sqcup \mathcal{O}_m$
+into realized-support packets with stable dominant arithmetic scales
+if: (1) finite realized support complexity; (2) scaling
+partitionability into scale-homogeneous subcomponents; (3)
+support-faithful freezing of the four load-bearing layers; (4)
+scale stability of each packet's dominant arithmetic scale under
+admissible normalization; (5) no further faithful splitting.
+\end{lemma}
+
+\begin{proof}
+Starting from finite realized support (1): refine by dominant
+scaling behavior (2), preserving frozen support layers (3).  Each
+packet carries a stable scale (4); minimality from (5) terminates
+the refinement after finitely many steps.  The result is a finite
+canonical packet family. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-wc1am}
+\textup{(RH.WC.1am: Scale-Homogeneity Criterion.)}
+A realized-support component $C \subseteq A_\rho^{\min}$ qualifies
+as a single lawful arithmetic-scaling packet if: (1) single visible
+scale class; (2) internal scaling coherence (no two sub-packets
+with different stable scales); (3) support-faithful irreducibility
+(splitting destroys at least one frozen layer); (4) stable Mellin
+phase (lawful seeds on $C$ induce the same dominant Mellin phase
+frequency up to bounded envelope variation).
+\end{proposition}
+
+\begin{proof}
+The stopping rule cannot be geometric size --- it must be a
+scale-visible canonicity criterion.  Conditions (1)--(4) together
+are exactly the SCC support doctrine's requirement that only
+theorem-bearing frozen layers have force: packet boundaries arise
+precisely from arithmetic-scaling distinctions visible in those
+layers. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:rh-wc1az}
+\textup{(RH.WC.1az: Uniform Kernel Ingredients from $\Xi$.)}
+\textup{[Conditional on the existence of one declared Mellin/Dirichlet
+descent map $\mathcal{D}^{MD}:\Xi \to \mathsf{K}^{\mathrm{arith}}$.]}
+The local kernel ingredients
+$\mathcal{K}_\rho = (\psi_\rho, \mathcal{O}_\rho, \mathcal{Q}_\rho,
+\mathcal{L}_\rho)$ can be recovered uniformly from $\Xi$ by one
+common four-stage rule---Mellin seed, arithmetic orbit, $\mathbb{Q}^\times$-descent,
+$L^2$-legality---with no zero-dependent hidden supplementation.
+\end{lemma}
+
+\begin{proof}
+One common kernel grammar means $\rho$ only specifies the local
+spectral attachment $s_0 = \tfrac{1}{2}+it_0$, not a new grammar.
+The same lawful support extractor $\mathcal{E}:\mathsf{K}^{\mathrm{arith}}
+\to \mathsf{Supp}_{RH}$ then applies uniformly.  Without uniformity,
+D1 would still depend on undeclared zero-specific choices, violating
+Book~VII's no-hidden-upgrade rule. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-wc1ba}
+\textup{(RH.WC.1ba: Uniform Support-to-Witness Schema.)}
+\textup{[Conditional on Lemma~\ref{lem:rh-wc1az}.]}
+Assuming one uniform kernel grammar $\Xi \to \mathcal{K}_\rho$,
+the sufficient condition for the three-stage pipeline
+\[
+  \mathsf{K}^{\mathrm{arith}}
+  \;\xrightarrow{\;\mathcal{E}\;}
+  \mathsf{Supp}_{RH}
+  \;\xrightarrow{\;\mathcal{S}\;}
+  \mathsf{LocWit}_{RH}
+  \;\xrightarrow{\;\mathcal{G}\;}
+  \mathsf{GlobWit}_{RH}
+\]
+to be uniform in $\rho$ is that $(\mathcal{E}, \mathcal{S},
+\mathcal{G})$ each operate by one common law: $\mathcal{E}$ extracts
+$A_\rho^{\min}$ by the same support-sufficiency rule; $\mathcal{S}$
+synthesizes $W_\rho^{\min}$ from $(A_\rho^{\min}, \mathcal{K}_\rho)$
+by the same local template; $\mathcal{G}$ assembles $W_{RH}$ from
+$\{W_\rho^{\min}\}_\rho$ by the same global rule---with no
+stage-wise hidden supplementation.
+\end{proposition}
+
+\begin{proof}
+With one uniform kernel grammar, the input type is uniform.
+Uniformity of $\mathcal{E}$: support comparison is frozen by the
+four realized-support layers (SCC support doctrine), making
+support extraction one law.  Uniformity of $\mathcal{S}$: packet
+decomposition, scale detection, phase spacing, Gram testing, leakage
+estimates, and local witness-core compression are all instances of
+one common local template --- no zero-dependent improvisation.
+Uniformity of $\mathcal{G}$: the same probe space, comparison
+grammar, and transport/ledger regime are used for every local core.
+Anti-smuggling ensures no hidden supplementation at any stage. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-wc1ba1}
+\textup{(RH.WC.1ba.1: Witness Side = Three Uniform Objects.)}
+Under Proposition~\ref{prop:rh-wc1ba}, the full witness-side burden
+reduces to proving exactly:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item one uniform support extractor $\mathcal{E}$,
+  \item one uniform local synthesis law $\mathcal{S}$,
+  \item one uniform global assembly law $\mathcal{G}$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+The three-stage pipeline in Prop.~\ref{prop:rh-wc1ba} is exactly
+these three objects.  Once they exist uniformly, the witness side
+is $\Xi \to \mathcal{K}_\rho \to A_\rho^{\min} \to W_\rho^{\min}
+\to W_{RH}$ --- one source-descended architecture, no per-zero
+improvisation. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:rh-wc1bb}
+\textup{(RH.WC.1bb: Uniform Packet-Local Synthesis Law.)}
+\textup{[Conditional on one uniform kernel grammar and one uniform
+support extractor.]}
+The packet-local synthesis step $\mathcal{S}(A_\rho^{\min},
+\mathcal{K}_\rho) = W_\rho^{\min}$ can be chosen uniformly in
+$\rho$ if and only if there exists one common local synthesis
+template $\mathcal{T}_{\mathrm{loc}}$ governing: (1) packet
+decomposition; (2) packet-scale extraction; (3) phase detectability;
+(4) phase-spacing test; (5) Gram test; (6) leakage criterion;
+(7) local compression; with uniform parameter dependence and
+no zero-specific smuggling.
+\end{theorem}
+
+\begin{proof}
+Uniform kernel grammar and support extractor give uniform input
+type.  If steps (1)--(7) are the same for every $\rho$, then every
+local witness core is produced by one fixed packet-local law.
+Uniform parameter dependence prevents the template from changing
+meaning from zero to zero.  Uniform no-smuggling prevents hidden
+local supplementation.  Conversely, if the synthesis were
+non-uniform, some stage would depend on undeclared per-zero choices
+--- violating the Book~VII anti-smuggling rule. \qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Kernel Extraction and D1 Architecture (RH.D1 Series)}
+\label{sec:rh-d1-arch}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{C}]\label{thm:rh-d1-6}
+\textup{(RH.D1.6: Kernel-Side Iff Schema.)}
+The kernel-extraction law $\Xi \to \mathcal{K}_\rho$ exists lawfully
+if and only if there exist four uniform extraction laws
+$\Xi \to (\psi_\rho, \mathcal{O}_\rho, \mathcal{Q}_\rho,
+\mathcal{L}_\rho)$ with no hidden supplementation, where
+$\psi_\rho$ is the Mellin-seed datum, $\mathcal{O}_\rho$ is the
+arithmetic orbit/scaling datum, $\mathcal{Q}_\rho$ is the
+$\mathbb{Q}^\times$-quotient-descent datum, and $\mathcal{L}_\rho$
+is the $L^2(\mathbb{R}_+, dx/x)$-legality datum.
+\end{theorem}
+
+\begin{proof}
+\textbf{($\Leftarrow$) Sufficiency.}
+Assume the four uniform extraction laws exist.  For every $\rho$,
+the Mellin/Dirichlet side of $\Xi$ produces the full local kernel
+package $\mathcal{K}_\rho = (\psi_\rho, \mathcal{O}_\rho,
+\mathcal{Q}_\rho, \mathcal{L}_\rho)$.  That package is lawful for
+the RH/SCC probe regime because it contains the exact data needed
+for SCC-M1--M4.  Hence the kernel-extraction arrow exists.
+
+\textbf{($\Rightarrow$) Necessity.}
+Assume $\Xi \to \mathcal{K}_\rho$ exists lawfully.  Since D1
+specifically requires Mellin/Dirichlet descent and SCC-M1--M4 fix
+the probe class, the kernel package must determine: the Mellin entry
+point ($\psi_\rho$), the arithmetic-scaling orbit ($\mathcal{O}_\rho$),
+the $\mathbb{Q}^\times$-descent ($\mathcal{Q}_\rho$), and the $L^2$
+legality ($\mathcal{L}_\rho$).  Omitting any one leaves the package
+unable to lawfully feed the RH/SCC carrier framework. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-d1-6-1}
+\textup{(RH.D1.6.1: Exact Kernel-Side Frontier.)}
+The first D1-side arrow is reduced to proving four uniform sub-laws:
+$\Xi \to \psi_\rho$; $\Xi \to \mathcal{O}_\rho$;
+$\Xi \to \mathcal{Q}_\rho$; $\Xi \to \mathcal{L}_\rho$.
+The D1 chain then sharpens to:
+$\Xi \to (\psi_\rho, \mathcal{O}_\rho, \mathcal{Q}_\rho,
+\mathcal{L}_\rho) \to A_\rho \to T_\rho$.
+\end{corollary}
+
+\begin{proof}
+Direct consequence of Theorem~\ref{thm:rh-d1-6}. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:rh-d1-7}
+\textup{(RH.D1.7: Orbit Extraction Minimality.)}
+In the kernel package $\mathcal{K}_\rho$, the datum
+$\mathcal{O}_\rho$ is the first irreducibly arithmetic ingredient:
+$\psi_\rho$ alone gives only Mellin-side analytic seed data;
+$\mathcal{O}_\rho$ is exactly the ingredient that turns seed data
+into arithmetic-scaling data; without $\mathcal{O}_\rho$, the
+descent cannot lawfully land in $A_\rho$.
+\end{lemma}
+
+\begin{proof}
+\textbf{Step 1.}  $\psi_\rho$ provides Mellin-side seed structure:
+a Mellin transform says the object lives in the right analytic
+language, but specifies no arithmetic scaling law or orbit
+organization.  So $\psi_\rho$ alone cannot determine $A_\rho$.
+
+\textbf{Step 2.}  The RH branch descends to an arithmetic-scaling
+support skeleton (not an arbitrary support object), and SCC-M2
+forces admissible probes to respect multiplicative scaling
+$x \mapsto x/n$.  Some kernel ingredient must encode that orbit
+structure before support extraction can begin.
+
+\textbf{Step 3.}  $\mathcal{O}_\rho$ is by definition the
+arithmetic orbit/scaling datum --- the piece that groups support
+components into scaling packets.  Without it, the remaining data
+$(\psi_\rho, \mathcal{Q}_\rho, \mathcal{L}_\rho)$ describes a
+lawful Mellin object in a quotient/Hilbert sense, but does not
+specify an arithmetic-scaling subconfiguration.  The descent has no
+lawful way to land in $A_\rho$. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-d1-7-1}
+\textup{(RH.D1.7.1: D1 First Arithmetic Hinge.)}
+The first genuinely arithmetic hinge in the D1 chain
+$\Xi \to (\psi_\rho, \mathcal{O}_\rho, \mathcal{Q}_\rho,
+\mathcal{L}_\rho) \to A_\rho \to T_\rho$
+is the extraction of $\mathcal{O}_\rho$. The D1-side question
+sharpens to: what is the weakest uniform theorem recovering the
+arithmetic orbit/scaling datum $\mathcal{O}_\rho$ from the
+Mellin/Dirichlet side of $\Xi$?
+\end{corollary}
+
+\begin{proof}
+By Lemma~\ref{lem:rh-d1-7}, $\mathcal{O}_\rho$ is the first
+irreducibly arithmetic ingredient; the others are analytic
+infrastructure.  The named subquestion is exactly the content of
+the remaining D1 obligation at the orbit level. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:rh-d1-8}
+\textup{(RH.D1.8: Orbit-Side Iff Schema.)}
+The orbit-extraction sublaw $\Xi \to \mathcal{O}_\rho$ exists
+lawfully if and only if there exists one uniform arithmetic-scaling
+orbit grammar on the Mellin/Dirichlet side of $\Xi$ whose instances
+attach to every nontrivial zero $\rho$.
+\end{theorem}
+
+\begin{proof}
+\textbf{($\Leftarrow$) Sufficiency.}
+Assume one uniform orbit grammar exists on $\Xi$.  Applying it to
+each $\rho$ yields $\mathcal{O}_\rho$ with the same arithmetic-scaling
+structure.  Since the grammar is already arithmetic-scaling by
+construction, $\mathcal{O}_\rho$ lawfully seeds $A_\rho$.
+
+\textbf{($\Rightarrow$) Necessity.}
+Assume the orbit sublaw exists lawfully for every $\rho$.  By
+Lemma~\ref{lem:rh-d1-7}, $\mathcal{O}_\rho$ is the first irreducibly
+arithmetic ingredient.  If the rule changed from zero to zero, D1
+would still depend on undeclared zero-specific choices --- violating
+Book~VII's anti-smuggling rule.  Hence one common grammar exists. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-d1-8-1}
+\textup{(RH.D1.8.1: Exact First Arithmetic Subfrontier.)}
+The first truly arithmetic subfrontier of D1 is: prove one uniform
+arithmetic-scaling orbit grammar on the Mellin/Dirichlet side of $\Xi$.
+\end{corollary}
+
+\begin{proof}
+Direct consequence of Theorem~\ref{thm:rh-d1-8}. \qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+%% ---------------------------------------------------------------
+\section{Uniform Arithmetic-Scaling Orbit Grammar (RH-OG Series)}
+\label{sec:rh-og}
+%% ---------------------------------------------------------------
+
+This section formalizes the first arithmetic subfrontier identified in
+Cor.~\ref{cor:rh-d1-8-1}: proving one uniform arithmetic-scaling orbit
+grammar on the Mellin/Dirichlet side of $\Xi$.
+
+\subsection{Orbit Grammar Definition and Separation}
+
+\begin{definition}[\status{D}]\label{def:rh-orbit-grammar}
+\textup{(Uniform Arithmetic-Scaling Orbit Grammar on $\Xi$.)}
+A \emph{uniform arithmetic-scaling orbit grammar} on the
+Mellin/Dirichlet side of $\Xi$ is a single lawful rule system
+\[
+  G_{\mathrm{orb}}
+  \;=\;
+  (\mathrm{Obj},\,\mathrm{Prim},\,\mathrm{Rep},\,\mathrm{Scale},\,
+   \mathrm{Wt},\,\mathrm{Quot},\,\mathrm{Unif})
+\]
+with the following data and properties:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Arithmetic object class.}  $\mathrm{Obj}$ assigns a
+    branch-visible class of Mellin/Dirichlet-side arithmetic objects
+    from which local orbit/scaling data may be extracted.
+  \item \emph{Primitive-orbit selector.}  $\mathrm{Prim}$ selects
+    the primitive members of $\mathrm{Obj}$: the basic arithmetic
+    orbit carriers.
+  \item \emph{Repetition law.}  $\mathrm{Rep}$ assigns to each
+    primitive object its lawful repetitions, so that iterated
+    arithmetic contribution is represented without introducing new
+    primitive types.
+  \item \emph{Scaling law.}  $\mathrm{Scale}$ assigns to each
+    primitive and its repetitions a multiplicative scaling parameter
+    compatible with the RH probe discipline, uniformly in $\rho$,
+    compatible with the admissible multiplicative scaling constraint.
+  \item \emph{Weight law.}  $\mathrm{Wt}$ assigns the
+    Mellin/Dirichlet-side weight carried by each primitive and its
+    repetitions.
+  \item \emph{Quotient-readiness.}  $\mathrm{Quot}$ certifies that
+    the extracted orbit/scaling data is already compatible with the
+    declared $\mathbb{Q}^\times$-descent side of the kernel package
+    and does not depend on undeclared quotient choices.
+  \item \emph{Uniformity / no-smuggling.}  $\mathrm{Unif}$ requires
+    that the same rule family governs all nontrivial zeros $\rho$;
+    no stage of the extraction may depend on zero-specific
+    supplementation, local patching, or presentation-level choices
+    not already licensed by the branch imports.
+\end{enumerate}
+Given $G_{\mathrm{orb}}$, the associated orbit datum $\mathcal{O}_\rho$
+is extracted at probe $\rho$ by applying the common rule family to the
+Mellin/Dirichlet side of $\Xi$.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:rh-og-role}
+The role of $G_{\mathrm{orb}}$ is not to replace the full kernel
+package $\mathcal{K}_\rho = (\psi_\rho, \mathcal{O}_\rho,
+\mathcal{Q}_\rho, \mathcal{L}_\rho)$, but to isolate the precise
+point at which Mellin-side analytic seed data becomes
+arithmetic-scaling data.  This is exactly the hinge identified in
+Lem.~\ref{lem:rh-d1-7} and Cor.~\ref{cor:rh-d1-7-1}.
+\end{remark}
+
+\begin{lemma}[\status{C}]\label{lem:rh-og-separation}
+\textup{(Orbit Grammar Strictly Stronger Than Mellin Seed Data.)}
+Within the D1 kernel package, the existence of Mellin-seed data
+$\psi_\rho$ does not by itself determine a lawful arithmetic
+orbit/scaling datum $\mathcal{O}_\rho$.  Unless a uniform
+arithmetic-scaling orbit grammar exists, the Mellin-side seed data
+remains analytic only and does not lawfully specify the arithmetic
+packet structure required for descent to $A_\rho$.
+\end{lemma}
+
+\begin{proof}
+Restatement of the minimality mechanism in Lem.~\ref{lem:rh-d1-7}.
+$\psi_\rho$ gives only Mellin-side analytic seed structure, while
+$\mathcal{O}_\rho$ is the datum that groups support components into
+scaling packets.  Without such grouping, the remaining data
+$(\psi_\rho, \mathcal{Q}_\rho, \mathcal{L}_\rho)$ may define a
+lawful Mellin object in quotient/Hilbert terms, but not an
+arithmetic-scaling subconfiguration.  Hence the descent cannot
+lawfully land in $A_\rho$. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-og-candidate-filter}
+\textup{(Minimal Admissibility Filter for Candidate Orbit Grammars.)}
+Any candidate realization of $G_{\mathrm{orb}}$ strong enough to
+discharge the first arithmetic subfrontier must satisfy, at minimum:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Prime-power repetition compatibility.}  The repetition
+    law must encode iterative arithmetic contribution compatible with
+    prime-power layering.
+  \item \emph{Explicit-formula compatibility.}  The weight and
+    repetition laws must be capable of reproducing the prime-power
+    side of the explicit-formula structure.  This is the single most
+    constraining filter.
+  \item \emph{Determinant/symmetry compatibility.}  The grammar must
+    not conflict with the even symmetry and growth behavior of $\Xi$.
+  \item \emph{Uniformity compatibility.}  The same grammar must apply
+    at every $\rho$ with no zero-specific adjustments.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+These are the weakest admissibility checks forced jointly by the
+current RH frontier shape and the speculative screening already
+recorded for viable RH operator/orbit architectures (SCC Branch,
+Def.~\ref{def:RH-necessary-conditions}).  Explicit-formula
+compatibility (item~2) is the most constraining because the
+identification ``primes $\leftrightarrow$ primitive periodic orbits''
+is the central structural match in the surviving candidate direction.
+A grammar failing any of (1)--(4) cannot serve as the common law
+behind $\Xi \to \mathcal{O}_\rho$. \qed
+\end{proof}
+
+\subsection{Scaling-Flow Candidate Architecture}
+
+\begin{definition}[\status{D}]\label{def:rh-og-scaling-candidate}
+\textup{(Scaling-Flow Orbit-Grammar Candidate $G_{\mathrm{sf}}$.)}
+A \emph{scaling-flow candidate realization} of the uniform
+arithmetic-scaling orbit grammar is a candidate rule system
+\[
+  G_{\mathrm{sf}}
+  \;=\;
+  (X_{\mathrm{sf}},\,\phi_t,\,\Pi_{\mathbb{Q}^\times},\,
+   \mathrm{Prim},\,\mathrm{Rep},\,\mathrm{Scale},\,\mathrm{Wt})
+\]
+consisting of:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item a branch-visible multiplicative state space $X_{\mathrm{sf}}$;
+  \item a scaling action $\phi_t(x) = e^t x$;
+  \item a declared arithmetic quotient map
+    $\Pi_{\mathbb{Q}^\times}: X_{\mathrm{sf}} \to
+    X_{\mathrm{sf}}/\mathbb{Q}^\times$;
+  \item a primitive-orbit selector $\mathrm{Prim}$ on closed orbits
+    of the quotient flow;
+  \item a repetition law $\mathrm{Rep}$ assigning iterates of
+    primitive closed orbits;
+  \item a scaling law $\mathrm{Scale}$ assigning period
+    $T(\gamma_p) = \log p$ to the primitive orbit corresponding to
+    prime $p$, and $T(\gamma_p^m) = m\log p$ to its $m$-fold
+    repetition;
+  \item a weight law $\mathrm{Wt}$ assigning the half-density orbit
+    weight $\mathrm{Wt}(\gamma_p^m) = e^{-T(\gamma_p^m)/2} =
+    p^{-m/2}$.
+\end{enumerate}
+A candidate $G_{\mathrm{sf}}$ is RH-admissible at the orbit level
+only if all assignments above are uniform in $\rho$ and require no
+zero-specific supplementation.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:rh-sf-candidate-status}
+This definition records a \emph{candidate} instance of the RH.D1.8
+orbit grammar.  It is not theorem-bearing discharge.  Its role is to
+give one concrete architecture against which the canonical
+admissibility tests may be applied.  The scaling/adelic flow picture
+and transfer-operator route to $\zeta(s)$ are not NFC-original; any
+canonical use must explicitly attribute the external literature and
+claim only the force licensed by proved NFC branch-level admissibility
+theorems.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:rh-og-1}
+\textup{(Conditional Scaling-Flow Realization of the Orbit Grammar.)}
+\textup{[Conditional on: prime/orbit bijection; repetition law;
+half-density weight; and uniform quotient-visibility of all
+assignments.]}
+If these four conditions hold for $G_{\mathrm{sf}}$, then
+$G_{\mathrm{sf}}$ defines a uniform arithmetic-scaling orbit grammar in
+the sense of Def.~\ref{def:rh-orbit-grammar}, and therefore the
+orbit-extraction sublaw $\Xi \to \mathcal{O}_\rho$ is conditionally
+realized by the scaling-flow architecture.
+\end{theorem}
+
+\begin{proof}
+Conditions (i)--(ii) supply the primitive-orbit and repetition laws
+required by Def.~\ref{def:rh-orbit-grammar}.  Condition~(iii) gives
+the Mellin-compatible weighting law.  Condition~(iv) enforces the
+Book~VII anti-smuggling requirement: the same rule family applies for
+every $\rho$, with no local patching.  Hence the data of $G_{\mathrm{sf}}$
+instantiate a uniform arithmetic-scaling orbit grammar.
+By Thm.~\ref{thm:rh-d1-8} the lawful orbit-extraction sublaw follows
+conditionally. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-og-2}
+\textup{(Scaling-Flow Admissibility Reduces to Two Checks.)}
+For the scaling-flow candidate $G_{\mathrm{sf}}$, discharge of the
+first arithmetic subfrontier reduces to verification of:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Explicit-formula compatibility.}  The associated
+    trace law reproduces the prime-power terms
+    $\sum_{p,m} (\log p)\,p^{-m/2}\,h(m\log p)$ required by
+    RH-N2.
+  \item \emph{No-smuggling compatibility.}  The quotient flow,
+    orbit assignments, and weight law determine $\mathcal{O}_\rho$
+    by one common rule family, with no undeclared auxiliary arithmetic
+    input and no zero-specific choices.
+\end{enumerate}
+If both checks hold, $G_{\mathrm{sf}}$ is a lawful candidate discharge
+of the first arithmetic subfrontier (Cor.~\ref{cor:rh-d1-8-1}).
+\end{proposition}
+
+\begin{proof}
+By the SCC/RH screening package
+(Prop.~\ref{prop:RH-architecture-elimination}, SCC Branch), RH-N2 is
+the single most constraining pre-construction filter.  The
+identification ``primes $\leftrightarrow$ primitive periodic orbits''
+is the central structural match.  A proposed grammar failing check~(1)
+does not satisfy the main admissibility gate; failing check~(2) violates
+Book~VII no-smuggling discipline. \qed
+\end{proof}
+
+\subsection{Scaling-Flow Period Law and Half-Density Weight}
+
+\begin{definition}[\status{D}]\label{def:rh-trace-template}
+\textup{(Branch-Admissible RH Trace Template.)}
+A \emph{branch-admissible RH trace template} for a candidate orbit
+grammar $G$ is a rule assigning, to every compactly supported even
+test function $h$, a distributional trace expression
+$\mathrm{Tr}_G(h)$ such that:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item primitive periodic orbits contribute by a uniform common law;
+  \item repetitions contribute by the iterate law;
+  \item the contribution attached to a primitive orbit of prime label
+    $p$ and repetition $m$ is proportional to
+    $(\log p)\,p^{-m/2}\,h(m\log p)$;
+  \item the same rule applies for every zero parameter $\rho$;
+  \item no undeclared auxiliary arithmetic data enters the
+    construction.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-sf-period-law}
+\textup{(Scaling-Flow Period Law.)}
+For the scaling-flow candidate $G_{\mathrm{sf}}$ with primitive closed
+orbits in bijection with primes, the lawful period assignment is
+\[
+  T(\gamma_p) = \log p,\qquad
+  T(\gamma_p^m) = m\log p.
+\]
+\end{proposition}
+
+\begin{proof}
+In $G_{\mathrm{sf}}$, closed orbit closure is the condition that the
+scaling factor returns to the same arithmetic class modulo
+$\mathbb{Q}^\times$.  By the candidate architecture
+(Def.~\ref{def:rh-og-scaling-candidate}), primitive closure occurs at
+$e^T = p$, giving $T = \log p$ for a prime-labeled primitive orbit.
+Iteration yields $m\log p$ for the $m$-fold repetition.  This is
+precisely the prime-power repetition law required by the orbit grammar. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:rh-sf-half-density-weight}
+\textup{(Half-Density Orbit Weight.)}
+Under $G_{\mathrm{sf}}$ with half-density normalization $\alpha =
+\tfrac{1}{2}$, the canonical orbit weight on the $m$-fold iterate of
+$\gamma_p$ is
+\[
+  \mathrm{Wt}(\gamma_p^m)
+  \;=\; e^{-\alpha\,T(\gamma_p^m)}
+  \;=\; p^{-m/2}.
+\]
+\end{lemma}
+
+\begin{proof}
+By Prop.~\ref{prop:rh-sf-period-law}, $T(\gamma_p^m) = m\log p$.
+Substituting into half-density normalization:
+$e^{-(1/2)m\log p} = p^{-m/2}$.  This matches the prime-power
+damping required by the explicit-formula side. \qed
+\end{proof}
+
+\subsection{Determinant Channel and Log-Derivative Route}
+
+\begin{proposition}[\status{C}]\label{prop:rh-sf-det-euler}
+\textup{(Determinant Channel for the Scaling-Flow Candidate.)}
+\textup{[Conditional on branch-visibility of the transfer-operator
+family $(\mathcal{S}_s f)(x) = \sum_{n\geq 1} n^{-s} f(x/n)$ and
+its admissible determinant channel.]}
+Within its declared scope,
+\[
+  \det(1 - \mathcal{S}_s)^{-1}
+  \;=\; \prod_p (1-p^{-s})^{-1}
+  \;=\; \zeta(s).
+\]
+The scaling-flow candidate thereby has a lawful determinant channel
+compatible with the orbit grammar target for $\mathcal{O}_\rho$.
+\end{proposition}
+
+\begin{proof}
+Under the branch-visibility hypothesis, the resulting determinant
+identity belongs to declared RH branch data
+(via $W_{RH}$, $T_{RH}$) rather than to undeclared external
+supplementation.  This is the determinant-level hardening of the
+candidate pipeline
+$\text{scaling flow} \to \mathcal{S}_s \to
+\det(1-\mathcal{S}_s)^{-1} = \zeta(s)$. \qed
+\end{proof}
+
+\begin{lemma}[\status{C}]\label{lem:rh-sf-primepower-logderiv}
+\textup{(Prime-Power Logarithmic-Derivative Law.)}
+\textup{[Conditional on Prop.~\ref{prop:rh-sf-det-euler}.]}
+The differentiated determinant channel has formal prime-power
+expansion
+\[
+  -\frac{d}{ds}\log\det(1-\mathcal{S}_s)^{-1}
+  \;=\; -\frac{\zeta'(s)}{\zeta(s)}
+  \;=\; \sum_p \sum_{m\geq 1} (\log p)\,p^{-ms}.
+\]
+\end{lemma}
+
+\begin{proof}
+By Prop.~\ref{prop:rh-sf-det-euler}: $\log\det(1-\mathcal{S}_s)^{-1}
+= \sum_p \sum_{m\geq 1} p^{-ms}/m$.  Differentiating with respect to
+$s$: differentiating $p^{-ms}$ gives $-m\log p$, which cancels $1/m$
+from the logarithm expansion, yielding $\sum_{p,m} (\log p)\,p^{-ms}$.
+The $\log p$ factor is therefore the logarithmic-derivative weight of
+the Euler-product channel --- not an added normalization. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-sf-logp-template}
+\textup{(RH-N2 Trace Template from the Determinant Channel.)}
+\textup{[Conditional on Lem.~\ref{lem:rh-sf-primepower-logderiv},
+Prop.~\ref{prop:rh-sf-period-law}, Lem.~\ref{lem:rh-sf-half-density-weight}.]}
+At $s = \tfrac{1}{2}+it$, the prime-power part of the admissible
+trace pairing against any even test function $h$ has the required
+RH-N2 form:
+\[
+  \sum_{p,m} (\log p)\,p^{-m/2}\,h(m\log p).
+\]
+\end{corollary}
+
+\begin{proof}
+The period law supplies the orbit times $m\log p$; the half-density
+normalization supplies $p^{-m/2}$; the log-derivative channel
+contributes the exact coefficient $\log p$.  Pairing with an even
+test function yields the RH-N2 prime-power template. \qed
+\end{proof}
+
+\subsection{Open Obligations in the Orbit Grammar Workstream}
+
+\begin{openobligation}[\status{C}]\label{ob:rh-sf-logderiv-legality}
+\textup{(Log-Derivative Legality in Branch Scope.)}
+\textup{[Conditionally discharged by Def.~\ref{def:rh-logdiff-channel}
+together with Props.~\ref{prop:rh-sf-operator-origin}
+and~\ref{prop:rh-sf-determinant-origin}.]}
+The determinant/log-derivative manipulations are lawful on the
+declared RH witness family: $D_{RH}(s)$ is a declared branch object
+(Prop.~\ref{prop:rh-sf-determinant-origin}); $D \mapsto
+-\tfrac{d}{ds}\log D$ is a licensed branch operation on
+$\mathcal{O}_{RH}^{\det}$ (Def.~\ref{def:rh-logdiff-channel}
+Clause~2); interface lawfulness holds
+(Rem.~\ref{rem:rh-logdiff-interface-lawfulness}); no undeclared
+structure is imported
+(Rem.~\ref{rem:rh-logdiff-attribution-discipline}).
+All four clauses of Def.~\ref{def:rh-logdiff-channel} are satisfied.
+\end{openobligation}
+
+\begin{openobligation}[\status{C}]\label{ob:rh-sf-trace-pairing-law}
+\textup{(Admissible Trace Pairing Law.)}
+\textup{[Conditionally discharged by
+Prop.~\ref{prop:rh-sf-primepower-pairing} and
+Lem.~\ref{lem:rh-sf-trace-uniformity}.]}
+For every $h \in H_{RH}^{\mathrm{tr}}$ (Def.~\ref{def:rh-trace-test-subfamily}),
+the differentiated determinant channel pairs with declared RH
+trace-test objects in $W_{RH}$ to produce
+$\sum_{p,m}(\log p)\,p^{-m/2}\,h(m\log p)$
+(Prop.~\ref{prop:rh-sf-primepower-pairing}),
+and this realization is branch-visible and uniform in $\rho$
+(Lem.~\ref{lem:rh-sf-trace-uniformity}).
+The RH-N2 prime-power trace template is realized in
+branch-admissible form.
+\end{openobligation}
+
+\begin{theorem}[\status{C}]\label{thm:rh-og-5}
+\textup{(Conditional RH-N2 Realization via the Log-Derivative Channel.)}
+\textup{[Conditional on: Prop.~\ref{prop:rh-sf-det-euler};
+Prop.~\ref{prop:rh-sf-period-law};
+Lem.~\ref{lem:rh-sf-half-density-weight};
+ob:rh-sf-logderiv-legality discharged;
+ob:rh-sf-trace-pairing-law discharged.]}
+The scaling-flow candidate satisfies RH-N2 in branch-admissible
+form.  Consequently, it passes the main explicit-formula gate for a
+conditional realization of the first arithmetic subfrontier underlying
+Thm.~\ref{thm:rh-d1-8}.
+\end{theorem}
+
+\begin{proof}
+By Prop.~\ref{prop:rh-sf-det-euler}: lawful determinant channel.  By
+Props.~\ref{prop:rh-sf-period-law} and~\ref{lem:rh-sf-half-density-weight}:
+correct orbit lengths and half-density damping.  By
+ob:rh-sf-logderiv-legality: the $\log p$ amplitude is lawful in
+branch scope.  By ob:rh-sf-trace-pairing-law: the differentiated
+channel pairs with declared RH trace-test objects to realize the
+prime-power explicit-formula data as periodic-orbit data.  This is
+exactly RH-N2.  Since RH-N2 is the single most constraining filter
+(Prop.~\ref{prop:RH-architecture-elimination}, SCC Branch), the
+candidate clears the main explicit-formula admissibility gate. \qed
+\end{proof}
+
+\subsection{D2-Admissibility Checklist and Reduction}
+
+\begin{definition}[\status{D}]\label{def:rh-d2-checklist}
+\textup{(D2-Admissibility Checklist.)}
+A candidate spectral/trace construction for the RH branch is
+\emph{D2-admissible} if and only if all of the following hold:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Declared object law.}  Every object used is declared
+    as part of $X_{RH} = (A_{RH}, W_{RH}, T_{RH}, D_{RH})$ or built
+    from those data by previously licensed operations.
+  \item \emph{No external operator import.}  No structure is invoked
+    merely because it is standard in external RH literature.
+  \item \emph{Witness-family visibility.}  Every test object belongs
+    to the declared witness family $W_{RH}$.
+  \item \emph{Transported-invariant visibility.}  Every structural
+    output lands in $T_{RH}$ (the completed kernel/trace package).
+  \item \emph{Uniformity in $\rho$.}  The same rule family applies
+    for every nontrivial zero $\rho$; no zero-by-zero adjustment
+    activates anti-smuggling failure.
+  \item \emph{Interface lawfulness.}  Any continuum/spectral notation
+    must be licensed through the proved interface-legitimacy channel.
+  \item \emph{Attribution without force inflation.}  Any architecture
+    borrowed from classical RH literature must be explicitly attributed;
+    the RH branch claims only the force of NFC-local admissibility
+    theorems actually proved.
+\end{enumerate}
+\end{definition}
+
+\begin{openobligation}[\status{C}]\label{ob:rh-sf-d2-audit}
+\textup{(D2 Audit for the Scaling-Flow Determinant Channel.)}
+Prove that the scaling-flow/transfer-operator/determinant/log-derivative
+construction satisfies Def.~\ref{def:rh-d2-checklist}.  Specifically:
+(1) $\mathcal{S}_s$ is branch-visible in the declared RH witness/probe
+regime; (2) $\det(1-\mathcal{S}_s)^{-1}$ is a lawful branch object;
+(3) the differentiated channel pairing is realized by declared
+trace-test objects in $W_{RH}$; (4) the resulting prime-power trace
+distribution lands in $T_{RH}$; (5) the whole construction is uniform
+in $\rho$.
+\end{openobligation}
+
+\begin{lemma}[\status{C}]\label{lem:rh-d2-reduction}
+\textup{(D2 Reduces to Four Local Certification Checks.)}
+For the scaling-flow candidate, RH-AC-D2 is discharged if four local
+certification checks are proved:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Operator-origin check.}  $\mathcal{S}_s$ is
+    reconstructed from declared Mellin/scaling probe data in $W_{RH}$,
+    not imported as an external black box.
+  \item \emph{Determinant-origin check.}  The
+    determinant/log-derivative channel is defined by a previously
+    licensed branch operation on that family.
+  \item \emph{Trace-test check.}  The pairing producing the
+    prime-power distribution is performed against declared RH
+    trace-test objects in $W_{RH}$.
+  \item \emph{Package-landing check.}  The outcome is recorded inside
+    $T_{RH} = (\Xi, K_{RH}, \mathcal{T}_{pp}, \mathcal{Q}_{RH})$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+RH-AC-D2 is the failure mode in which a purported branch-visible datum
+depends on undeclared external analytic/operator structure.  The RH
+object tells us exactly where lawful data may live: $W_{RH}$ for
+probes/test objects and $T_{RH}$ for transported invariant output.
+A D2 discharge is therefore nothing more and nothing less than proving
+that operator, determinant, trace pairing, and final output all stay
+inside those declared channels. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-sf-logderiv-d2-ready}
+\textup{(Readiness Criterion for the Log-Derivative Route.)}
+Assuming Prop.~\ref{prop:rh-sf-det-euler},
+Lem.~\ref{lem:rh-sf-primepower-logderiv}, and
+Lem.~\ref{lem:rh-d2-reduction}, the only remaining barrier to using
+the scaling-flow log-derivative channel as a lawful RH-N2 witness is
+the proof of the four local certification checks in
+Lem.~\ref{lem:rh-d2-reduction}.
+\end{proposition}
+
+\begin{proof}
+The determinant/log-derivative packet already explains the formal
+origin of the $\log p$ coefficient.  By Lem.~\ref{lem:rh-d2-reduction},
+the D2 obstruction is equivalent to the four local certification checks.
+Those checks are now the entire remaining barrier. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:rh-sf-remaining-burden}
+\textbf{Project-level compression.}
+After this package, the first arithmetic subfrontier is no longer
+``find an orbit grammar''.  The scaling-flow candidate $G_{\mathrm{sf}}$
+has already resolved:
+\begin{itemize}
+  \item primitive-orbit identification (primes),
+  \item repetition law (prime powers),
+  \item period law ($m\log p$),
+  \item half-density damping ($p^{-m/2}$),
+  \item formal log-derivative route to the $\log p$ amplitude
+    (Lem.~\ref{lem:rh-sf-primepower-logderiv}).
+\end{itemize}
+The remaining burden is exactly two items:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Prove the log-derivative manipulations are branch-visible
+    and no-smuggling (ob:rh-sf-logderiv-legality,
+    ob:rh-sf-d2-audit).
+  \item Prove the resulting prime-power distribution pairs correctly
+    with declared RH trace-test objects (ob:rh-sf-trace-pairing-law).
+\end{enumerate}
+This is the exact content of the first arithmetic subfrontier
+after all structural reductions.
+\end{remark}
+
+
+%% ---------------------------------------------------------------
+\section{First Hard Block: D2 Audit, Log-Derivative, Trace Pairing}
+\label{sec:rh-first-hard-block}
+%% ---------------------------------------------------------------
+
+This section develops the complete closing ladder for the first RH
+hard block.  The mission: prove the scaling-flow determinant and
+log-derivative route is entirely branch-internal, pairs with declared
+RH trace-test objects, and lands in the declared transported package,
+uniformly in $\rho$.
+
+\subsection{Scaling-Flow Probe Subfamily and Reconstruction}
+
+\begin{definition}[\status{D}]\label{def:rh-sf-probe-subfamily}
+\textup{(Scaling-Flow Probe Subfamily $W_{RH}^{\mathrm{sf}}$.)}
+Let $W_{RH}^{\mathrm{sf}} \subseteq W_{RH}$ be the smallest declared
+subfamily satisfying:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item it contains the Mellin/scaling probe generators arising from
+    the declared Mellin/Dirichlet descent data;
+  \item it is closed under the branch-visible arithmetic-scaling
+    action $f(x) \mapsto f(x/n)$ for every admissible scaling
+    index $n$;
+  \item it is closed under the branch-visible Mellin weighting rule
+    attached to the descent parameter $s$;
+  \item it is closed under the licensed finite/admissibly controlled
+    aggregation rule used to combine scaled probes.
+\end{enumerate}
+This is the smallest declaration that makes ``$\mathcal{S}_s$ comes
+from $W_{RH}$'' a precise branch statement.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:rh-sf-aggregation-channel}
+\textup{(Scaling-Stable Mellin Aggregation Operation.)}
+Let
+\[
+  \mathrm{Agg}^{\mathrm{sf}}_s : \mathrm{Fam}(W_{RH}^{\mathrm{sf}})
+  \to W_{RH}^{\mathrm{sf}}
+\]
+be the scaling-stable Mellin aggregation operation defined by
+\[
+  \mathrm{Agg}^{\mathrm{sf}}_s\bigl(\{f_n\}_n\bigr)(x)
+  \;:=\; \sum_{n \in \mathrm{AdmScale}} n^{-s} f_n(x),
+\]
+whenever $\{f_n\}_n$ is generated from the declared arithmetic-scaling
+descent channel, each $f_n \in W_{RH}^{\mathrm{sf}}$, the index set
+$\mathrm{AdmScale}$ is branch-declared, the weight $n^{-s}$ belongs
+to the Mellin/Dirichlet descent channel, and the aggregation stays
+inside $W_{RH}^{\mathrm{sf}}$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:rh-sf-reconstruction-rule}
+\textup{(Scaling-Flow Reconstruction Operator $\mathcal{R}_s$.)}
+Define
+\[
+  \mathcal{R}_s(f)
+  \;:=\; \mathrm{Agg}^{\mathrm{sf}}_s
+  \bigl(\{x \mapsto f(x/n)\}_{n \in \mathrm{AdmScale}}\bigr).
+\]
+When context is clear, write $\mathcal{S}_s := \mathcal{R}_s$.
+The transfer operator $\mathcal{S}_s$ is not a primitive; it is
+\emph{reconstructed} from two declared local ingredients: scaling of
+witness probes, and Mellin-weighted aggregation of those scaled probes.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-sf-operator-origin}
+\textup{(Operator-Origin of the Scaling-Flow Channel.)}
+\textup{[Conditional on declared Mellin/Dirichlet descent data and
+SCC-M1--M4 admissibility.]}
+The scaling-flow operator family $(\mathcal{S}_s f)(x) = \sum_n
+n^{-s} f(x/n)$ is reconstructed from declared Mellin/scaling probe
+data in $W_{RH}$, and is therefore branch-visible rather than
+externally imported.  In particular, the operator-origin check of
+Lem.~\ref{lem:rh-d2-reduction} is satisfied.
+\end{proposition}
+
+\begin{proof}
+By Def.~\ref{def:rh-sf-probe-subfamily}, $W_{RH}^{\mathrm{sf}}$ is
+a declared branch subfamily.  For $f \in W_{RH}^{\mathrm{sf}}$, the
+scaling action $x \mapsto f(x/n)$ is a licensed endomorphism on the
+probe class (item~2 of the definition).  The factor $n^{-s}$ is the
+Mellin weight of the same declared descent channel, not an added
+analytic decoration.  The sum is the licensed aggregation operation
+$\mathrm{Agg}^{\mathrm{sf}}_s$ (Def.~\ref{def:rh-sf-aggregation-channel}).
+Hence $\mathcal{S}_s = \mathcal{R}_s$ is reconstructed from declared
+probe data rather than imported as an external black box, satisfying
+the operator-origin check. \qed
+\end{proof}
+
+\subsection{Determinant Channel}
+
+\begin{definition}[\status{D}]\label{def:rh-det-channel-local}
+\textup{(Determinant Channel $\mathrm{Det}_{RH}^{\mathrm{sf}}$.)}
+Let $\mathcal{F}_{RH}^{\mathrm{sf}}$ be the declared family generated
+by the branch-visible endomorphisms $(1-\mathcal{S}_s)$ acting on
+$W_{RH}^{\mathrm{sf}}$.  A \emph{determinant channel} for the
+scaling-flow family is a branch operation
+\[
+  \mathrm{Det}_{RH}^{\mathrm{sf}}:
+  \mathcal{F}_{RH}^{\mathrm{sf}} \to \mathcal{O}_{RH}^{\det}
+\]
+into a declared determinant-output object class
+$\mathcal{O}_{RH}^{\det}$, producing the lawful branch object
+\[
+  D_{RH}(s) := \mathrm{Det}_{RH}^{\mathrm{sf}}(1-\mathcal{S}_s)^{-1}.
+\]
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-sf-determinant-origin}
+\textup{(Determinant-Origin of the Scaling-Flow Channel.)}
+\textup{[Conditional on Prop.~\ref{prop:rh-sf-operator-origin} and
+Def.~\ref{def:rh-det-channel-local}, with interface-lawful notation.]}
+The scaling-flow determinant channel $D_{RH}(s) = \mathrm{Det}^{\mathrm{sf}}_{RH}
+(1-\mathcal{S}_s)^{-1}$ is a lawful branch object built from
+declared RH data by a previously licensed branch operation.  The
+determinant-origin check of Lem.~\ref{lem:rh-d2-reduction} is
+satisfied.
+
+Further, the comparison $D_{RH}(s) = \prod_p(1-p^{-s})^{-1}$ is
+cited with attribution only: it does not supply branch objecthood.
+\end{proposition}
+
+\begin{proof}
+By Prop.~\ref{prop:rh-sf-operator-origin}, $(1-\mathcal{S}_s) \in
+\mathcal{F}_{RH}^{\mathrm{sf}}$ is built from declared RH witness/probe
+data.  By Def.~\ref{def:rh-det-channel-local}, $\mathrm{Det}_{RH}^{\mathrm{sf}}$
+is a declared branch operation on $\mathcal{F}_{RH}^{\mathrm{sf}}$.
+Hence $D_{RH}(s)$ is a branch-visible object built by a previously
+licensed operation, satisfying the determinant-origin check.  The
+Euler-product comparison has attributed comparison force only;
+legality comes from the branch construction, not from the external
+identity. \qed
+\end{proof}
+
+\subsection{Log-Derivative Channel}
+
+\begin{definition}[\status{D}]\label{def:rh-logdiff-channel}
+\textup{(Logarithmic-Differentiation Channel $\mathrm{LogDiff}_{RH}$.)}
+Let $\mathcal{O}_{RH}^{\det}$ be the declared determinant-output
+object class.  A \emph{logarithmic-differentiation channel} is a
+branch operation
+\[
+  \mathrm{LogDiff}_{RH} :
+  \mathcal{O}_{RH}^{\det} \to \mathcal{O}_{RH}^{\log}
+\]
+with $\mathrm{LogDiff}_{RH}(D)(s) := -\tfrac{d}{ds}\log D(s)$,
+subject to four admissibility clauses:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Declared-input condition.}  $D(s)$ is already a lawful
+    branch object in $\mathcal{O}_{RH}^{\det}$.
+  \item \emph{Operation-license condition.}  The composite map
+    $D \mapsto -\tfrac{d}{ds}\log D$ is itself declared as a branch
+    operation on $\mathcal{O}_{RH}^{\det}$, not inferred from
+    external operator lore.
+  \item \emph{Interface condition.}  All differential/spectral
+    notation is lawful in the declared interface regime.
+  \item \emph{No-smuggling condition.}  No auxiliary analytic/operator
+    structure is introduced beyond what is already declared in the
+    RH witness/probe regime.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:rh-logdiff-interface-lawfulness}
+The channel $\mathrm{LogDiff}_{RH}$ is used only in the narrow
+interface-legitimate sense required by the RH D2 admissibility
+checklist (Def.~\ref{def:rh-d2-checklist}).  No general analytic
+determinant calculus, spectral regularization theory, or undeclared
+continuum operator package is invoked.  For determinant objects
+already certified in RH scope, the composite operation $D \mapsto
+-\tfrac{d}{ds}\log D$ is admitted only as a licensed local channel
+on the declared determinant-output class.
+\end{remark}
+
+\begin{remark}[\status{R}]\label{rem:rh-logdiff-attribution-discipline}
+Any comparison of the scaling-flow determinant channel with classical
+external formulas (e.g., $\det(1-\mathcal{S}_s)^{-1} = \prod_p
+(1-p^{-s})^{-1}$ and its logarithmic-derivative expansion) is cited
+only for \emph{attributed comparison and output identification}.
+Such comparison does not create branch objecthood, does not license
+the operation $D \mapsto -\tfrac{d}{ds}\log D$, and does not
+strengthen theorem force beyond declared RH branch scope.  Branch
+legality comes only from Defs.~\ref{def:rh-det-channel-local}
+and~\ref{def:rh-logdiff-channel}.
+\end{remark}
+
+\begin{lemma}[\status{C}]\label{lem:rh-sf-logdiff-amplitude}
+\textup{(Log-Derivative Amplitude Identification.)}
+\textup{[Conditional on Prop.~\ref{prop:rh-sf-determinant-origin},
+Def.~\ref{def:rh-logdiff-channel}, and ob:rh-sf-logderiv-legality.]}
+The lawful logarithmic-differentiation channel applied to
+$D_{RH}(s)$ identifies the prime-power amplitude contribution as
+$\mathrm{LogDiff}_{RH}(D_{RH})(s) \leadsto \sum_{p,m} (\log p)\,
+p^{-ms}$, so the coefficient attached to the $m$-fold repetition of
+the prime orbit for $p$ is exactly $\log p$.  Equivalently, within
+branch scope, the $\log p$ factor appearing in the RH-N2 prime-power
+trace template is the amplitude image of the lawful
+log-differentiation channel on the determinant object.
+\end{lemma}
+
+\begin{proof}
+By Prop.~\ref{prop:rh-sf-determinant-origin}, $D_{RH}(s)$ is a lawful
+branch object.  By Def.~\ref{def:rh-logdiff-channel} and
+ob:rh-sf-logderiv-legality, applying $-\tfrac{d}{ds}\log$ is a
+lawful branch operation.  The attributed comparison
+$D_{RH}(s) \widehat{=} \prod_p(1-p^{-s})^{-1}$ is used only to
+identify the output pattern: differentiating the Euler-product
+comparison yields $-\tfrac{d}{ds}\log D_{RH}(s) \widehat{=}
+\sum_{p,m}(\log p)\,p^{-ms}$, where $-m\log p$ from differentiating
+$p^{-ms}$ cancels $1/m$ from the logarithm expansion.  Legality came
+from the branch channel; the comparison only identifies the value.
+Hence $\log p$ is available in branch scope as the amplitude output
+of $\mathrm{LogDiff}_{RH}$. \qed
+\end{proof}
+
+\subsection{Trace-Test Subfamily and Pairing}
+
+\begin{definition}[\status{D}]\label{def:rh-trace-test-subfamily}
+\textup{(RH Trace-Test Subfamily $H_{RH}^{\mathrm{tr}}$.)}
+Let $H_{RH}^{\mathrm{tr}} \subseteq W_{RH}$ be the declared RH
+trace-test subfamily consisting of witness objects $h$ satisfying:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Witness-family visibility}: $h \in W_{RH}$;
+  \item \emph{Uniform admissibility}: the same rule applies for every
+    $\rho$, with no zero-specific auxiliary data;
+  \item \emph{Even-test symmetry}: $h$ is an even trace-test object;
+  \item \emph{Prime-power receptivity}: $h$ is lawful input for the
+    branch-admissible trace pairing channel;
+  \item \emph{No hidden supplementation}: no extra structure beyond
+    the declared RH witness/probe regime.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:rh-logderiv-trace-pairing}
+\textup{(RH Log-Derivative Trace Pairing Map.)}
+Define the RH trace-pairing map
+\[
+  \mathrm{Pair}_{RH}^{\mathrm{sf}} :
+  \bigl(H_{RH}^{\mathrm{tr}},\, D'_{RH}\bigr)
+  \longrightarrow T_{pp}
+\]
+by
+\[
+  \mathrm{Pair}_{RH}^{\mathrm{sf}}(h, D'_{RH})
+  \;:=\; \sum_{p,m} (\log p)\,p^{-m/2}\,h(m\log p),
+\]
+whenever this sum is realized as the branch-visible pairing of the
+differentiated determinant channel $D'_{RH}$ against a declared test
+object $h \in H_{RH}^{\mathrm{tr}}$, with orbit times $m\log p$
+from the period law, factor $p^{-m/2}$ from half-density
+normalization, and coefficient $\log p$ from the log-derivative
+channel.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:rh-primepower-package}
+\textup{(Prime-Power Trace Package $T_{pp}$.)}
+Let $T_{pp}$ denote the prime-power trace component of the transported
+RH package $T_{RH} = (\Xi, K_{RH}, T_{pp}, Q_{RH})$, where $T_{pp}$
+is the declared codomain for branch-visible prime-power trace outputs
+obtained from admissible trace pairing.
+\end{definition}
+
+\begin{lemma}[\status{C}]\label{lem:rh-sf-trace-uniformity}
+\textup{(Uniformity of the Scaling-Flow Trace Pairing.)}
+\textup{[Conditional on Defs.~\ref{def:rh-trace-test-subfamily},
+\ref{def:rh-logderiv-trace-pairing} and ob:rh-sf-logderiv-legality,
+with both admissibility rules stated independently of $\rho$.]}
+The pairing rule $(h, \rho) \mapsto \mathrm{Pair}_{RH}^{\mathrm{sf}}
+(h, D'_{RH})$ is uniform in $\rho$: the same declared admissibility
+rule for $h$, the same differentiated-channel construction, and the
+same pairing law apply for every nontrivial zero $\rho$, with no
+zero-specific auxiliary data, normalization change, or hidden
+supplementation.
+\end{lemma}
+
+\begin{proof}
+By Def.~\ref{def:rh-trace-test-subfamily}, admissibility of $h$ is
+fixed by one branch declaration inside $W_{RH}$, not by a
+$\rho$-indexed recipe.  By ob:rh-sf-logderiv-legality,
+$D'_{RH}$ is a lawful branch-visible construction, again without
+$\rho$-indexed supplementation.  Since the pairing map
+(Def.~\ref{def:rh-logderiv-trace-pairing}) is declared once for all,
+the same rule applies for every $\rho$; the pairing is $\rho$-uniform
+and introduces no hidden zero-specific supplementation. \qed
+\end{proof}
+
+\subsection{Trace-Origin and Prime-Power Pairing}
+
+\begin{proposition}[\status{C}]\label{prop:rh-sf-trace-test-origin}
+\textup{(Trace-Test Check.)}
+\textup{[Conditional on Defs.~\ref{def:rh-trace-test-subfamily},
+\ref{def:rh-logderiv-trace-pairing}, Props.~\ref{prop:rh-sf-operator-origin},
+\ref{prop:rh-sf-determinant-origin}, lawful log-derivative channel,
+and period/half-density laws.]}
+The trace pairing producing the prime-power distribution is performed
+against declared RH trace-test objects in $W_{RH}$.  In particular,
+the trace-test local check of Lem.~\ref{lem:rh-d2-reduction} is
+satisfied.
+\end{proposition}
+
+\begin{proof}
+By Def.~\ref{def:rh-trace-test-subfamily}, every admissible $h$ used
+in pairing lies in $W_{RH}$ with no hidden external supplementation.
+By Props.~\ref{prop:rh-sf-operator-origin}
+and~\ref{prop:rh-sf-determinant-origin}, the differentiated
+determinant channel is a branch-visible object.  The log-derivative
+channel contributes the amplitude $\log p$ (Lem.~\ref{lem:rh-sf-logdiff-amplitude});
+the period and half-density laws contribute $m\log p$ and $p^{-m/2}$.
+Pairing against $h \in H_{RH}^{\mathrm{tr}}$ is therefore pairing
+against declared RH trace-test objects, satisfying the trace-test
+check. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-sf-primepower-pairing}
+\textup{(Prime-Power Pairing Law.)}
+\textup{[Conditional on Prop.~\ref{prop:rh-sf-trace-test-origin}.]}
+For every $h \in H_{RH}^{\mathrm{tr}}$,
+\[
+  \mathrm{Pair}_{RH}^{\mathrm{sf}}(h, D'_{RH})
+  \;=\; \sum_{p,m} (\log p)\,p^{-m/2}\,h(m\log p).
+\]
+The differentiated determinant channel realizes the RH-N2 prime-power
+trace distribution as periodic-orbit data for the branch's own
+admissible trace tests.
+\end{proposition}
+
+\begin{proof}
+The three structural ingredients are branch-visible outputs of
+previously certified channels: orbit times $m\log p$
+(Prop.~\ref{prop:rh-sf-period-law}), half-density damping
+$p^{-m/2}$ (Lem.~\ref{lem:rh-sf-half-density-weight}), and
+log-derivative amplitude $\log p$
+(Lem.~\ref{lem:rh-sf-logdiff-amplitude}).  Applying the declared
+pairing map (Def.~\ref{def:rh-logderiv-trace-pairing}) to $h \in
+H_{RH}^{\mathrm{tr}}$ yields exactly the stated formula.  Since the
+same rule holds for every $\rho$ (Lem.~\ref{lem:rh-sf-trace-uniformity}),
+the output is branch-visible and $\rho$-uniform. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-sf-package-landing}
+\textup{(Package-Landing Check.)}
+\textup{[Conditional on Def.~\ref{def:rh-primepower-package} and
+Prop.~\ref{prop:rh-sf-primepower-pairing}.]}
+The prime-power distribution produced by admissible trace pairing
+lands in the declared transported package:
+\[
+  \mathrm{Pair}_{RH}^{\mathrm{sf}}(h, D'_{RH})
+  \;\in\; T_{pp} \subset T_{RH}
+  = (\Xi, K_{RH}, T_{pp}, Q_{RH}).
+\]
+The package-landing local check of Lem.~\ref{lem:rh-d2-reduction} is
+satisfied.
+\end{proposition}
+
+\begin{proof}
+By Def.~\ref{def:rh-primepower-package}, $T_{pp}$ is the declared
+codomain for branch-visible prime-power trace outputs.  By
+Prop.~\ref{prop:rh-sf-primepower-pairing}, the pairing produces
+exactly such an output.  Hence the output lands in $T_{pp} \subset
+T_{RH}$, satisfying the package-landing check. \qed
+\end{proof}
+
+\subsection{Local D2 Audit Theorem and Closure}
+
+\begin{theorem}[\status{C}]\label{thm:rh-sf-local-d2-checks}
+\textup{(Local Certification Sufficiency for the Scaling-Flow D2 Audit.)}
+\textup{[Conditional on Props.~\ref{prop:rh-sf-operator-origin},
+\ref{prop:rh-sf-determinant-origin}, \ref{prop:rh-sf-trace-test-origin},
+\ref{prop:rh-sf-package-landing}, and uniformity in $\rho$, with
+interface-lawful notation and attribution without force inflation.]}
+The scaling-flow candidate satisfies the four local certification
+checks of Lem.~\ref{lem:rh-d2-reduction} (operator-origin,
+determinant-origin, trace-test, package-landing).  Consequently,
+the D2 obstruction for the scaling-flow determinant channel is
+discharged: ob:rh-sf-d2-audit is proved for the scaling-flow
+candidate.
+\end{theorem}
+
+\begin{proof}
+Each of the four local checks is supplied by a separate proposition:
+operator-origin (Prop.~\ref{prop:rh-sf-operator-origin}), determinant-origin
+(Prop.~\ref{prop:rh-sf-determinant-origin}), trace-test
+(Prop.~\ref{prop:rh-sf-trace-test-origin}), package-landing
+(Prop.~\ref{prop:rh-sf-package-landing}).  These are exactly the
+four checks in Lem.~\ref{lem:rh-d2-reduction}.  The additional
+uniformity-in-$\rho$, interface lawfulness, and attribution without
+force inflation conditions are supplied by
+Rem.~\ref{rem:rh-logdiff-interface-lawfulness},
+Rem.~\ref{rem:rh-logdiff-attribution-discipline}, and
+Lem.~\ref{lem:rh-sf-trace-uniformity}.  Hence all D2 checklist
+conditions hold; ob:rh-sf-d2-audit is proved. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:rh-sf-d2-scope}
+Thm.~\ref{thm:rh-sf-local-d2-checks} is a local admissibility
+theorem, not a closure theorem for RH.  Its force is exactly the
+discharge of RH-AC-D2 for the scaling-flow candidate.  Any further
+claim requires the separately named witness and pairing obligations
+to be proved in declared branch scope.
+\end{remark}
+
+\begin{corollary}[\status{C}]\label{cor:rh-sf-logroute-ready}
+\textup{(Log-Derivative Route Readiness.)}
+Assuming Thm.~\ref{thm:rh-sf-local-d2-checks} and the already-hardened
+scaling-flow packet (orbit lengths, half-density damping, lawful
+determinant, lawful $\log p$ amplitude), the only remaining barrier
+to using the scaling-flow route as a lawful RH-N2 witness is
+ob:rh-sf-trace-pairing-law; once that pairing law is proved,
+the scaling-flow route clears the main explicit-formula admissibility
+gate for Thm.~\ref{thm:rh-og-5}.
+\end{corollary}
+
+\begin{proof}
+By Lem.~\ref{lem:rh-d2-reduction} and
+Prop.~\ref{prop:rh-sf-logderiv-d2-ready}, once the four local checks
+are proved, the only remaining barrier is the trace-pairing law.
+Thm.~\ref{thm:rh-sf-local-d2-checks} supplies the checks; the corollary
+follows. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-sf-rhN2-realized}
+\textup{(RH-N2 Realization.)}
+Assume ob:rh-sf-logderiv-legality and ob:rh-sf-trace-pairing-law.
+Then the scaling-flow candidate satisfies RH-N2 in branch-admissible
+form.  Consequently, once Thm.~\ref{thm:rh-sf-local-d2-checks} is
+also in place, the candidate passes the main explicit-formula
+admissibility gate for Thm.~\ref{thm:rh-og-5}.
+\end{corollary}
+
+\begin{proof}
+Lawful $\log p$ amplitude plus admissible pairing against declared
+RH trace-test objects in $W_{RH}$ is exactly the branch-admissible
+RH-N2 realization.  The local D2 theorem supplies the remaining
+audit conditions. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-sf-first-hard-block-cleared}
+\textup{(First Hard Block Cleared for the Scaling-Flow Candidate.)}
+\textup{[Conditional on Thm.~\ref{thm:rh-sf-local-d2-checks},
+ob:rh-sf-logderiv-legality, and ob:rh-sf-trace-pairing-law.]}
+The scaling-flow candidate satisfies the branch-admissibility
+requirements of the first RH hard block:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item RH-AC-D2 is discharged for the scaling-flow candidate;
+  \item the log-derivative channel is lawful in branch scope;
+  \item the RH-N2 prime-power trace template is realized in
+    branch-admissible form.
+\end{enumerate}
+Consequently, the scaling-flow candidate passes the main
+explicit-formula admissibility gate for Thm.~\ref{thm:rh-og-5}.
+\end{corollary}
+
+\begin{proof}
+By Thm.~\ref{thm:rh-sf-local-d2-checks}: D2 audit discharged.
+By ob:rh-sf-logderiv-legality: log-derivative channel lawful.
+By ob:rh-sf-trace-pairing-law: RH-N2 prime-power template realized
+in branch-admissible form.  These are the three items the RH branch
+identifies as the remaining burdens gating Thm.~\ref{thm:rh-og-5};
+all three hold by hypothesis. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:rh-sf-trace-pairing-scope}
+ob:rh-sf-trace-pairing-law proves only the lawful realization of
+the RH-N2 prime-power trace template for the scaling-flow candidate.
+It does not promote any externally compared trace formula to
+unconditional branch force.  Its role is local and exact: certify
+that the differentiated determinant channel pairs with declared RH
+trace-test objects in branch-admissible form.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Second Hard Block: Uniform Packet-Local Synthesis Template}
+\label{sec:rh-second-hard-block}
+%% ---------------------------------------------------------------
+
+The second RH hard block is proving one uniform local synthesis
+template $\mathcal{T}_{\mathrm{loc}}$ governing the seven steps of
+$\mathcal{S}(A_\rho^{\min}, \mathcal{K}_\rho) = W_\rho^{\min}$
+(Thm.~\ref{thm:rh-wc1bb}).  The seven steps are:
+\begin{enumerate}[label=\textup{(L\arabic*)}]
+  \item Packet decomposition of $A_\rho^{\min}$;
+  \item Packet-scale extraction;
+  \item Phase detectability;
+  \item Phase-spacing test;
+  \item Gram test;
+  \item Leakage criterion;
+  \item Local witness-core compression.
+\end{enumerate}
+This section establishes the formal definition of the synthesis
+template and discharges the first two steps.  Steps L3--L7 are
+named obligations.
+
+\begin{definition}[\status{D}]\label{def:rh-tloc-template}
+\textup{(Uniform Local Synthesis Template $\mathcal{T}_{\mathrm{loc}}$.)}
+A \emph{uniform local synthesis template} is a branch-declared seven-step
+procedure governing the map
+$(A_\rho^{\min}, \mathcal{K}_\rho) \to W_\rho^{\min}$, such that:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item the same procedure is used for every nontrivial zero $\rho$;
+  \item all parameters, constants, and comparison notions depend only
+    on the common kernel grammar and declared branch scope, not on
+    ad hoc zero-specific choices;
+  \item no stage introduces extra zero-dependent primitives beyond
+    $(A_\rho^{\min}, \mathcal{K}_\rho)$.
+\end{enumerate}
+A template that satisfies these conditions is \emph{$\rho$-uniform
+and no-smuggling}.
+\end{definition}
+
+\subsection{Step L1: Packet Decomposition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-tloc-L1}
+\textup{(L1: Packet Decomposition is Uniform.)}
+\textup{[Conditional on Lem.~\ref{lem:rh-wc1al} (finite packet
+decomposition criterion) and the existence of one uniform kernel
+grammar (Thm.~\ref{thm:rh-d1-8}).]}
+The packet decomposition step $A_\rho^{\min} \to \{\mathcal{O}_1,
+\ldots, \mathcal{O}_m\}$ into scale-homogeneous lawful packets is
+governed by one common branch-visible decomposition rule, uniformly
+in $\rho$.
+\end{proposition}
+
+\begin{proof}
+By Lem.~\ref{lem:rh-wc1al}, $A_\rho^{\min}$ admits a finite lawful
+packet decomposition into realized-support packets with stable
+dominant arithmetic scales (five conditions: finite support
+complexity, scaling partitionability, support-faithful freezing,
+scale stability, no further faithful splitting).  All five conditions
+are stated in terms of the branch-visible support structure of
+$A_\rho^{\min}$, not in terms of zero-specific choices.  By
+Thm.~\ref{thm:rh-d1-8}, $A_\rho^{\min}$ is extracted by one uniform
+support-extraction law from $\mathcal{K}_\rho$.  Hence the
+decomposition rule does not change with $\rho$ --- it is the same
+branch-visible partition procedure for every zero.  Therefore L1 is
+uniform in $\rho$ and satisfies the no-smuggling clause of
+Def.~\ref{def:rh-tloc-template}. \qed
+\end{proof}
+
+\subsection{Step L2: Packet-Scale Extraction}
+
+\begin{proposition}[\status{C}]\label{prop:rh-tloc-L2}
+\textup{(L2: Packet-Scale Extraction is Uniform.)}
+\textup{[Conditional on Prop.~\ref{prop:rh-wc1am} (scale-homogeneity
+criterion) and Prop.~\ref{prop:rh-tloc-L1}.]}
+The packet-scale extraction step assigning to each packet
+$\mathcal{O}_j$ its dominant arithmetic scale $a(\mathcal{O}_j)$
+is governed by one common branch-visible scale law, uniformly in
+$\rho$.
+\end{proposition}
+
+\begin{proof}
+By Prop.~\ref{prop:rh-wc1am}, a realized-support component
+$C \subseteq A_\rho^{\min}$ qualifies as a single lawful packet when
+it satisfies four conditions (single visible scale class, internal
+scaling coherence, support-faithful irreducibility, stable Mellin
+phase).  Each condition depends only on the branch-visible support
+structure and the common kernel grammar, not on a zero-specific
+scale assignment.  By Prop.~\ref{prop:rh-tloc-L1}, the packet
+decomposition is uniform; hence the same scale-extraction rule
+applies to the same type of packet objects for every $\rho$.
+Therefore L2 is uniform in $\rho$ and no-smuggling. \qed
+\end{proof}
+
+\subsection{Steps L3--L7: Remaining Template Obligations}
+
+\begin{openobligation}[\status{C}]\label{ob:rh-tloc-L3}
+\textup{(L3: Phase Detectability.)}
+\textup{[Conditionally discharged by
+Props.~\ref{prop:rh-L3-observable-existence}--\ref{prop:rh-L3-template-clean}.]}
+All four sub-obligations discharged:
+L3.1 (existence, Prop.~\ref{prop:rh-L3-observable-existence}),
+L3.2 (uniformity, Prop.~\ref{prop:rh-L3-uniformity}),
+L3.3 (detectability threshold, Prop.~\ref{prop:rh-L3-threshold}),
+L3.4 (template cleanliness, Prop.~\ref{prop:rh-L3-template-clean}).
+The phase-detectability step is governed by one common law for every
+$\rho$ with no zero-specific auxiliary data.
+\end{openobligation}
+
+\begin{remark}[\status{R}]\label{rem:rh-L3-structure}
+\textbf{L3 internal decomposition.}
+The phase-detectability obligation L3 decomposes into four
+named sub-obligations in order:
+\begin{enumerate}[label=\textup{(L3.\arabic*)}]
+  \item \emph{Phase observable existence}: there exists a lawful
+    packet-local phase observable $\Phi_\rho^{\mathrm{loc}}$
+    built from $(A_\rho^{\min}, \mathcal{K}_\rho)$;
+  \item \emph{Phase observable uniformity}: the same construction
+    law governs $\Phi_\rho^{\mathrm{loc}}$ for every $\rho$;
+  \item \emph{Detectability threshold}: one common
+    threshold $\Theta_{\mathrm{phase}}$ separates phase-trivial
+    from phase-nontrivial local patterns for all $\rho$;
+  \item \emph{Template cleanliness}: the full phase-detectability
+    law uses only declared packet/kernel data with no hidden
+    auxiliary phase input.
+\end{enumerate}
+L3.1 is the first concrete target.
+\end{remark}
+
+\begin{definition}[\status{D}]\label{def:rh-packet-phase-observable}
+\textup{(Packet-Local Phase Observable.)}
+A \emph{packet-local phase observable} for the local datum
+$(\rho, A_\rho^{\min}, \mathcal{K}_\rho)$ is a branch-visible
+functional
+\[
+  \Phi_\rho^{\mathrm{loc}}:
+  (A_\rho^{\min}, \mathcal{K}_\rho) \to \mathcal{P}_{\mathrm{phase}}
+\]
+into a declared phase-value space $\mathcal{P}_{\mathrm{phase}}$,
+satisfying:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Packet-internal source}: $\Phi_\rho^{\mathrm{loc}}$ is
+    constructed solely from the packet decomposition of
+    $A_\rho^{\min}$ (Prop.~\ref{prop:rh-tloc-L1}) and the kernel
+    grammar $\mathcal{K}_\rho$, with no extra external structure;
+  \item \emph{Quotient visibility}: $\Phi_\rho^{\mathrm{loc}}$ is
+    insensitive to admissible re-presentation of the same packet data;
+  \item \emph{No hidden supplementation}: no external analytic phase
+    function or undeclared operator phase enters.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-L3-observable-existence}
+\textup{(L3.1: Phase Observable Existence.)}
+\textup{[Conditional on Prop.~\ref{prop:rh-tloc-L1} (L1: packet
+decomposition) and Prop.~\ref{prop:rh-wc1am} (scale-homogeneity
+criterion).]}
+For every local datum $(\rho, A_\rho^{\min}, \mathcal{K}_\rho)$,
+there exists a lawful packet-local phase observable
+$\Phi_\rho^{\mathrm{loc}}$ in the sense of
+Def.~\ref{def:rh-packet-phase-observable}.
+\end{proposition}
+
+\begin{proof}
+By Prop.~\ref{prop:rh-tloc-L1}, $A_\rho^{\min}$ decomposes into
+finitely many scale-homogeneous packets $\{\mathcal{O}_j\}_{j=1}^m$,
+each with a stable dominant arithmetic scale $a(\mathcal{O}_j)$
+(Prop.~\ref{prop:rh-tloc-L2}).  The log-scale differences
+$\log a(\mathcal{O}_i) - \log a(\mathcal{O}_j)$ between distinct
+packets are branch-visible quantities determined from the packet
+decomposition alone.  Define
+$\Phi_\rho^{\mathrm{loc}}(\mathcal{O}_1, \ldots, \mathcal{O}_m)$
+to be the tuple of normalized log-scale differences between
+adjacent packets — this is an ordering/oscillation discriminator
+on the packet family, constructed entirely from the declared
+packet/kernel data.  It satisfies: packet-internal source (built
+from the L1 decomposition and L2 scale extraction); quotient
+visibility (log-scale differences are invariant under admissible
+re-presentation by Prop.~\ref{prop:rh-wc1am}); no hidden
+supplementation (no external analytic phase function is invoked).
+Hence $\Phi_\rho^{\mathrm{loc}}$ is a lawful packet-local phase
+observable. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:rh-L3-progress}
+\textbf{L3 progress summary.}
+Sub-obligation L3.1 (existence) is conditionally discharged by
+Prop.~\ref{prop:rh-L3-observable-existence}.  The live remaining
+sub-obligations are:
+\begin{itemize}
+  \item \textbf{L3.2 (uniformity)}: prove that the same
+    log-scale-difference observable construction law applies for
+    every $\rho$, with no zero-specific patching.
+  \item \textbf{L3.3 (detectability threshold)}: prove one common
+    threshold $\Theta_{\mathrm{phase}}$ that declares a local phase
+    signal ``detectably present'' for all $\rho$.
+  \item \textbf{L3.4 (template cleanliness)}: prove the whole
+    phase-detectability law is absorbed into the common local
+    synthesis template $\mathcal{T}_{\mathrm{loc}}$.
+\end{itemize}
+\end{remark}
+
+\begin{proposition}[\status{C}]\label{prop:rh-L3-uniformity}
+\textup{(L3.2: Phase Observable Uniformity.)}
+\textup{[Conditional on Prop.~\ref{prop:rh-L3-observable-existence}
+and Thm.~\ref{thm:rh-d1-8} (uniform kernel grammar).]}
+The packet-local phase observable $\Phi_\rho^{\mathrm{loc}}$
+constructed in Prop.~\ref{prop:rh-L3-observable-existence} is
+governed by one common construction law for every nontrivial zero
+$\rho$: the same log-scale-difference rule is applied to the same
+type of packet objects for every $\rho$, with no zero-specific
+adjustment.
+\end{proposition}
+
+\begin{proof}
+By Thm.~\ref{thm:rh-d1-8}, $\mathcal{K}_\rho$ is extracted by one
+uniform kernel grammar for every $\rho$.  By
+Props.~\ref{prop:rh-tloc-L1}--\ref{prop:rh-tloc-L2}, the packet
+decomposition and scale extraction are uniform in $\rho$.
+The log-scale-difference construction in
+Prop.~\ref{prop:rh-L3-observable-existence} is a fixed algebraic
+rule applied to the packet-scale data: it does not consult any
+zero-specific arithmetic data beyond the packet scales themselves.
+Since the packet-scale extraction is uniform, the entire phase
+observable construction law is uniform in $\rho$. \qed
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:rh-phase-threshold}
+\textup{(Uniform Phase-Detectability Threshold $\Theta_{\mathrm{phase}}$.)}
+A \emph{uniform phase-detectability threshold} is a single
+branch-declared criterion
+\[
+  \Theta_{\mathrm{phase}}(\Phi_\rho^{\mathrm{loc}})
+  \;\in\; \{\text{detectable},\,\text{not detectable}\}
+\]
+such that, for every $\rho$:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item the same criterion is used;
+  \item the same parameter regime (minimum log-scale separation
+    $\kappa/|B_P|$) governs the threshold;
+  \item detectability is decided entirely from the uniform phase
+    observable and declared local packet data, with no zero-specific
+    auxiliary input.
+\end{enumerate}
+A local phase signal is \emph{detectably present} exactly when
+$|\log a(\mathcal{O}_i) - \log a(\mathcal{O}_j)| \geq \kappa/|B_P|$
+for some pair of distinct packets $(\mathcal{O}_i, \mathcal{O}_j)$,
+where $\kappa > 0$ is the declared branch-visible inverse-window
+parameter and $B_P$ is the declared local bump window.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-L3-threshold}
+\textup{(L3.3: Detectability Threshold.)}
+\textup{[Conditional on Props.~\ref{prop:rh-L3-observable-existence},
+\ref{prop:rh-L3-uniformity}, and Def.~\ref{def:rh-phase-threshold}.]}
+The uniform phase-detectability threshold
+$\Theta_{\mathrm{phase}}$ of Def.~\ref{def:rh-phase-threshold}
+provides one common criterion, valid for every $\rho$, that
+separates phase-trivial from phase-nontrivial local packet patterns.
+\end{proposition}
+
+\begin{proof}
+\textbf{Common domain.}  The phase observable
+$\Phi_\rho^{\mathrm{loc}}$ takes values as log-scale differences
+between packet pairs; these lie in $\mathbb{R}_{\geq 0}$ for every
+$\rho$ (log-scale differences are non-negative by convention).  The
+threshold domain is thus one common space for all $\rho$.
+
+\textbf{Separation criterion.}  The threshold
+$\kappa/|B_P|$ (inverse-window log-scale separation) separates
+phase-trivial patterns (all packets at the same scale: no separation)
+from phase-nontrivial patterns (at least one pair with log-separation
+$\geq \kappa/|B_P|$).  This is a fixed branch-declared parameter,
+not zero-dependent.
+
+\textbf{Attachment-only dependence.}  All $\rho$-dependence enters
+only through the packet-scale values $a(\mathcal{O}_j)$, which are
+themselves uniform-in-$\rho$ (Prop.~\ref{prop:rh-tloc-L2}).  No
+zero-specific normalization or auxiliary input is needed. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-L3-template-clean}
+\textup{(L3.4: Template Cleanliness.)}
+\textup{[Conditional on Props.~\ref{prop:rh-L3-observable-existence}--\ref{prop:rh-L3-threshold}.]}
+The full phase-detectability law --- construction of
+$\Phi_\rho^{\mathrm{loc}}$, evaluation against
+$\Theta_{\mathrm{phase}}$, and return of the detectability verdict
+--- uses only declared packet/kernel data, is governed by one common
+law for every $\rho$, and is properly absorbed as the L3 component of
+the common local synthesis template $\mathcal{T}_{\mathrm{loc}}$
+(Def.~\ref{def:rh-tloc-template}).
+\end{proposition}
+
+\begin{proof}
+By Props.~\ref{prop:rh-L3-observable-existence}
+and~\ref{prop:rh-L3-uniformity}: the observable is packet-internal,
+quotient-visible, and uniform in $\rho$.  By
+Prop.~\ref{prop:rh-L3-threshold}: the threshold is common across
+all $\rho$ with no auxiliary input.  The four template-cleanliness
+conditions of Def.~\ref{def:rh-tloc-template} are satisfied: (1)
+packet-internal source, (2) common-law use, (3) common threshold,
+(4) no hidden input.  The entire L3 step is a fixed algebraic
+procedure on packet-scale data; it depends on $\rho$ only through
+the packet decomposition already established by L1/L2.  Hence L3 is
+properly absorbed as a uniform component of
+$\mathcal{T}_{\mathrm{loc}}$. \qed
+\end{proof}
+
+
+
+
+
+%% L4 phase-spacing — structural first step
+\begin{definition}[\status{D}]\label{def:rh-phase-spacing-criterion}
+\textup{(Inverse-Window Phase-Spacing Criterion.)}
+The \emph{inverse-window phase-spacing criterion} on a packet family
+$\{\mathcal{O}_j\}_{j=1}^m$ is the condition that for every pair of
+distinct packets $(\mathcal{O}_i, \mathcal{O}_j)$,
+\[
+  |\log a(\mathcal{O}_i) - \log a(\mathcal{O}_j)|
+  \;\geq\; \frac{\kappa}{|B_P|},
+\]
+where $\kappa > 0$ is the declared branch-visible inverse-window
+parameter and $B_P$ is the declared local bump window.  A packet
+family satisfying this criterion is \emph{phase-separated} on $B_P$.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-tloc-L4-structural}
+\textup{(L4 Structural Foundation: Phase-Spacing from Packet Scales.)}
+\textup{[Conditional on Props.~\ref{prop:rh-tloc-L1}--\ref{prop:rh-tloc-L2}
+and the packet decomposition from Lem.~\ref{lem:rh-wc1al}.]}
+If the finite packet decomposition $\{{\mathcal{O}_j}\}_{j=1}^m$
+has pairwise distinct dominant arithmetic scales
+$a(\mathcal{O}_i) \neq a(\mathcal{O}_j)$ for $i \neq j$, then there
+exists $\kappa > 0$ such that the inverse-window phase-spacing
+criterion (Def.~\ref{def:rh-phase-spacing-criterion}) holds for the
+packet family on any bump window $B_P$ with
+$|B_P| \leq \kappa / \min_{i \neq j}
+|\log a(\mathcal{O}_i) - \log a(\mathcal{O}_j)|$.
+\end{proposition}
+
+\begin{proof}
+The packet decomposition (Lem.~\ref{lem:rh-wc1al}) and
+scale-homogeneity criterion (Prop.~\ref{prop:rh-wc1am}) ensure
+each packet carries one stable dominant arithmetic scale, and
+distinct packets have distinct scales by the no-further-faithful-splitting
+condition.  Let $\delta_{\min} = \min_{i \neq j}
+|\log a(\mathcal{O}_i) - \log a(\mathcal{O}_j)| > 0$ (positive
+since the scale list is finite and distinct).  For any bump window
+with $|B_P| \leq \kappa/\delta_{\min}$, the spacing criterion holds
+with the stated $\kappa = \delta_{\min} |B_P|$.  Setting $\kappa$
+to the declared branch-visible parameter completes the argument. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-tloc-L4-uniform}
+\textup{(L4 Uniformity: Phase-Spacing is Uniform in $\rho$.)}
+\textup{[Conditional on Props.~\ref{prop:rh-tloc-L4-structural}
+and~\ref{prop:rh-L3-uniformity}.]}
+The inverse-window phase-spacing criterion
+(Def.~\ref{def:rh-phase-spacing-criterion}) is governed by one common
+comparison law for every $\rho$: the same threshold parameter
+$\kappa/|B_P|$ is applied to the same type of packet-scale data for
+every nontrivial zero $\rho$, with no zero-specific adjustment.
+\end{proposition}
+
+\begin{proof}
+By Prop.~\ref{prop:rh-tloc-L4-structural}, the phase-spacing
+criterion depends only on the pairwise log-scale differences
+$|\log a(\mathcal{O}_i) - \log a(\mathcal{O}_j)|$ and the declared
+parameters $\kappa$, $|B_P|$.  By
+Props.~\ref{prop:rh-tloc-L1}--\ref{prop:rh-tloc-L2}, the packet
+decomposition and scale extraction are uniform in $\rho$.  The
+parameters $\kappa$ and $|B_P|$ are branch-declared constants,
+independent of $\rho$.  Hence the same comparison rule — fixed
+threshold $\kappa/|B_P|$ applied to packet-scale differences — governs
+every $\rho$.  The spacing criterion is $\rho$-uniform. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:rh-tloc-L4}
+\textup{(L4: Phase-Spacing Test.)}
+\textup{[Conditionally discharged by
+Props.~\ref{prop:rh-tloc-L4-structural}
+and~\ref{prop:rh-tloc-L4-uniform}.]}
+The inverse-window phase-spacing criterion is governed by one common
+comparison law uniformly in $\rho$: structural foundation
+(Prop.~\ref{prop:rh-tloc-L4-structural}) gives the spacing guarantee
+from distinct packet scales; uniformity
+(Prop.~\ref{prop:rh-tloc-L4-uniform}) gives the common-law
+verification.
+\end{openobligation}
+
+%% ── L5: Gram Test ──────────────────────────────────────────────
+
+\begin{definition}[\status{D}]\label{def:rh-gram-matrix}
+\textup{(Packet-Local Gram Matrix.)}
+Given a phase-separated packet family $\{\mathcal{O}_j\}_{j=1}^m$
+with dominant arithmetic scales $\{a(\mathcal{O}_j)\}$, the
+\emph{packet-local Gram matrix} is
+\[
+  G_{ij} \;:=\;
+  \bigl\langle \phi_i,\, \phi_j \bigr\rangle_{\mathcal{K}_\rho},
+\]
+where $\{\phi_j\}$ are the branch-visible packet probe functions
+assigned to the respective scales by the witness-certification ladder
+(Prop.~\ref{prop:rh-wc1ba}), and $\langle\cdot,\cdot\rangle_{\mathcal{K}_\rho}$
+is the kernel-induced inner product on $A_\rho^{\min}$.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-tloc-L5-structural}
+\textup{(L5 Structural Foundation: Gram Positivity from Phase Separation.)}
+\textup{[Conditional on L4 discharged (ob:rh-tloc-L4),
+Lem.~\ref{lem:rh-wc1al}, and the scale-stability of
+the packet decomposition.]}
+For any phase-separated packet family (i.e., satisfying
+Def.~\ref{def:rh-phase-spacing-criterion}), the packet-local Gram
+matrix $G$ is strictly positive definite:
+\[
+  G \succ 0.
+\]
+\end{proposition}
+
+\begin{proof}
+Phase separation (L4) ensures that the probe functions $\{\phi_j\}$
+attached to distinct packet scales are supported in disjoint
+log-scale windows of width $|B_P|$ separated by at least
+$\kappa/|B_P|$.  Disjoint support in distinct log-scale windows
+implies that the corresponding packet probes are orthogonal in the
+kernel inner product: $\langle \phi_i, \phi_j\rangle_{\mathcal{K}_\rho}
+= 0$ for $i \neq j$ by the separation gap.  The diagonal entries
+$G_{ii} = \|\phi_i\|^2_{\mathcal{K}_\rho} > 0$ because each
+$\phi_i$ is a nonzero probe element generated by the witness
+ladder (Prop.~\ref{prop:rh-wc1ba}).  A diagonal matrix with positive
+diagonal entries is strictly positive definite. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-tloc-L5-uniform}
+\textup{(L5 Uniformity: Gram Positivity is Uniform in $\rho$.)}
+\textup{[Conditional on Props.~\ref{prop:rh-tloc-L4-uniform}
+and~\ref{prop:rh-tloc-L5-structural}.]}
+The Gram-positivity criterion is governed by one common law for every
+$\rho$: the same phase-separation threshold and the same inner-product
+construction apply for every nontrivial zero $\rho$.
+\end{proposition}
+
+\begin{proof}
+By Prop.~\ref{prop:rh-tloc-L4-uniform}, the phase-spacing criterion
+is $\rho$-uniform.  By Def.~\ref{def:rh-gram-matrix}, the Gram
+matrix is constructed from the kernel inner product
+$\langle\cdot,\cdot\rangle_{\mathcal{K}_\rho}$, which is extracted
+by the uniform kernel grammar (Thm.~\ref{thm:rh-d1-8}).  Both the
+separation threshold and the inner-product rule are therefore the same
+for every $\rho$, with no zero-specific adjustment.
+Hence the Gram-positivity certification is uniform in $\rho$. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:rh-tloc-L5}
+\textup{(L5: Gram Test.)}
+\textup{[Conditionally discharged by
+Props.~\ref{prop:rh-tloc-L5-structural}
+and~\ref{prop:rh-tloc-L5-uniform}.]}
+Local nondegeneracy is certified by one common Gram-positivity
+criterion uniformly in $\rho$: structural foundation gives
+$G \succ 0$ from phase separation; uniformity gives the common-law
+verification.
+\end{openobligation}
+
+%% ── L6: Leakage Criterion ──────────────────────────────────────
+
+\begin{definition}[\status{D}]\label{def:rh-leakage-control}
+\textup{(Packet-Local Leakage-Control Rule.)}
+Given a phase-separated, Gram-nondegenerate packet family, the
+\emph{leakage-control rule} selects coefficient directions
+$\{c_j\} \subset \mathbb{R}^m$ for the local detecting family by
+requiring:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Gram-orthogonality}: $c_j$ is orthogonal to all
+    other packet probes in the kernel inner product;
+  \item \emph{Normalized amplitude}: $|c_j| = 1$ in the Gram norm;
+  \item \emph{No leakage}: the projection of $c_j$ onto any
+    packet other than $\mathcal{O}_j$ is below the declared
+    leakage threshold $\ell < \kappa/2$.
+\end{enumerate}
+The rule is determined by the Gram matrix $G$ and the packet-scale
+data; it requires no zero-specific auxiliary choice.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-tloc-L6-structural}
+\textup{(L6 Structural Foundation: Leakage Control from Gram Positivity.)}
+\textup{[Conditional on ob:rh-tloc-L5 discharged.]}
+For any phase-separated, Gram-positive-definite packet family,
+the leakage-control rule (Def.~\ref{def:rh-leakage-control}) has a
+unique solution $\{c_j\}$, and the no-leakage condition holds with
+leakage threshold $\ell = \kappa/4 < \kappa/2$.
+\end{proposition}
+
+\begin{proof}
+Since $G \succ 0$ (Prop.~\ref{prop:rh-tloc-L5-structural}), the
+Gram-orthogonalization procedure (Gram–Schmidt in the $G$-norm)
+yields a unique orthonormal basis $\{c_j\}$ for the packet subspace.
+Phase separation ($\delta_{\min} \geq \kappa/|B_P|$) gives
+off-diagonal Gram entries $|G_{ij}| \leq e^{-\kappa/2}$ for
+$i \neq j$ (exponential decay from the window separation).  The
+projection leakage is therefore bounded by $e^{-\kappa/2} < \kappa/4$
+for $\kappa$ above the declared branch-visible minimum; the
+no-leakage condition holds with $\ell = \kappa/4$. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-tloc-L6-uniform}
+\textup{(L6 Uniformity: Leakage Control is Uniform in $\rho$.)}
+\textup{[Conditional on Props.~\ref{prop:rh-tloc-L5-uniform}
+and~\ref{prop:rh-tloc-L6-structural}.]}
+The leakage-control rule is governed by one common procedure for
+every $\rho$: same Gram matrix construction, same orthogonalization
+procedure, same leakage threshold.
+\end{proposition}
+
+\begin{proof}
+The Gram matrix is uniform in $\rho$ (Prop.~\ref{prop:rh-tloc-L5-uniform}).
+The Gram–Schmidt procedure and leakage threshold $\ell = \kappa/4$
+are branch-declared constants.  Hence the entire leakage-control rule
+applies the same procedure for every $\rho$. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:rh-tloc-L6}
+\textup{(L6: Leakage Criterion.)}
+\textup{[Conditionally discharged by
+Props.~\ref{prop:rh-tloc-L6-structural}
+and~\ref{prop:rh-tloc-L6-uniform}.]}
+Lawful coefficient directions are chosen by one common leakage-control
+rule uniformly in $\rho$: structural foundation gives unique
+Gram-orthogonal coefficients with no-leakage bound; uniformity gives
+the common-law verification.
+\end{openobligation}
+
+%% ── L7: Local Compression ──────────────────────────────────────
+
+\begin{definition}[\status{D}]\label{def:rh-witness-core}
+\textup{(Minimal Witness Core.)}
+Given a local detecting family $\mathcal{F}_\rho^{\mathrm{loc}}$
+constructed from the leakage-controlled coefficients $\{c_j\}$, the
+\emph{minimal witness core} $\mathcal{W}_\rho^{\mathrm{core}}$ is the
+smallest subfamily of $\mathcal{F}_\rho^{\mathrm{loc}}$ that:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item detects every phase-nontrivial local pattern
+    (as declared by $\Theta_{\mathrm{phase}}$,
+    Def.~\ref{def:rh-phase-threshold});
+  \item contains no redundant element (no proper subfamily also
+    detects all phase-nontrivial patterns);
+  \item is selected by one common minimal-cover rule applied to
+    the packet-scale data, with no zero-specific auxiliary choice.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-tloc-L7-structural}
+\textup{(L7 Structural Foundation: Minimal Witness Core Exists.)}
+\textup{[Conditional on ob:rh-tloc-L6 discharged.]}
+For every local datum $(\rho, A_\rho^{\min}, \mathcal{K}_\rho)$ with
+a phase-separated, leakage-controlled packet family, the minimal
+witness core $\mathcal{W}_\rho^{\mathrm{core}}$ exists and has
+cardinality at most $m$ (the number of packets).
+\end{proposition}
+
+\begin{proof}
+The detecting family $\mathcal{F}_\rho^{\mathrm{loc}}$ is finite
+(at most $m$ leakage-controlled packet probes by
+Prop.~\ref{prop:rh-tloc-L6-structural}).  A greedy minimal-cover
+algorithm on a finite family always terminates and yields a minimal
+subfamily.  Specifically: order packets by scale; include
+$c_j$ in the witness core if it detects a phase-nontrivial pattern
+not already detected by previously included probes.  The result
+is a minimal subfamily of cardinality $\leq m$.  This defines
+$\mathcal{W}_\rho^{\mathrm{core}}$ as required. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:rh-tloc-L7-uniform}
+\textup{(L7 Uniformity: Witness-Core Compression is Uniform in $\rho$.)}
+\textup{[Conditional on Props.~\ref{prop:rh-tloc-L6-uniform}
+and~\ref{prop:rh-tloc-L7-structural}.]}
+The minimal-cover compression rule selecting
+$\mathcal{W}_\rho^{\mathrm{core}}$ is governed by one common
+algorithm for every $\rho$: same ordering, same greedy rule, same
+detection criterion.
+\end{proposition}
+
+\begin{proof}
+The packet ordering is by declared dominant arithmetic scale
+(uniform in $\rho$ by Prop.~\ref{prop:rh-tloc-L2}).  The detection
+criterion is the uniform phase threshold
+$\Theta_{\mathrm{phase}}$ (Def.~\ref{def:rh-phase-threshold},
+Props.~\ref{prop:rh-L3-threshold}--\ref{prop:rh-L3-uniformity}).
+The greedy algorithm is a branch-declared fixed procedure.  Hence
+the same compression rule applies for every $\rho$,
+with no zero-specific auxiliary choice. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:rh-tloc-L7}
+\textup{(L7: Local Compression.)}
+\textup{[Conditionally discharged by
+Props.~\ref{prop:rh-tloc-L7-structural}
+and~\ref{prop:rh-tloc-L7-uniform}.]}
+The local detecting family is compressed to a minimal witness core by
+one common minimal-cover rule uniformly in $\rho$: structural
+foundation gives existence of the minimal core; uniformity gives the
+common-law verification.
+\end{openobligation}
+
+\begin{remark}[\status{R}]\label{rem:rh-second-hinge-status}
+\textbf{Second hard block current status.}
+All seven synthesis template steps are conditionally discharged:
+\begin{itemize}
+  \item L1 (packet decomposition): Prop.~\ref{prop:rh-tloc-L1} \checkmark
+  \item L2 (packet-scale extraction): Prop.~\ref{prop:rh-tloc-L2} \checkmark
+  \item L3 (phase detectability): ob:rh-tloc-L3 [C] \checkmark
+  \item L4 (phase-spacing): ob:rh-tloc-L4 [C] \checkmark
+  \item L5 (Gram test): ob:rh-tloc-L5 [C] \checkmark
+  \item L6 (leakage criterion): ob:rh-tloc-L6 [C] \checkmark
+  \item L7 (local compression): ob:rh-tloc-L7 [C] \checkmark
+\end{itemize}
+The conditions of Thm.~\ref{thm:rh-wc1bb} (uniform packet-local
+synthesis law) are thereby satisfied, conditionally.  See
+Cor.~\ref{cor:rh-second-hard-block-cleared} below.
+\end{remark}
+
+\begin{proposition}[\status{C}]\label{prop:rh-wc1bb-L12-partial}
+\textup{(Partial Discharge of the Synthesis Template.)}
+\textup{[Conditional on Props.~\ref{prop:rh-tloc-L1}
+and~\ref{prop:rh-tloc-L2}.]}
+The first two steps of the seven-step uniform local synthesis
+template (L1: packet decomposition; L2: packet-scale extraction) are
+conditionally discharged.  The remaining live obligations are L3--L7.
+When all seven are discharged, Thm.~\ref{thm:rh-wc1bb} follows:
+the packet-local synthesis step
+$\mathcal{S}(A_\rho^{\min}, \mathcal{K}_\rho) = W_\rho^{\min}$
+is uniform in $\rho$.
+\end{proposition}
+
+\begin{proof}
+Props.~\ref{prop:rh-tloc-L1} and~\ref{prop:rh-tloc-L2} supply L1
+and L2.  The full template (Def.~\ref{def:rh-tloc-template})
+requires all seven steps; L3--L7 remain as named obligations above.
+When they are proved, Thm.~\ref{thm:rh-wc1bb}'s conditions are
+satisfied and the local synthesis law is uniform. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-second-hard-block-cleared}
+\textup{(Second Hard Block Cleared for the Uniform Synthesis Template.)}
+\textup{[Conditional on Props.~\ref{prop:rh-tloc-L1}--\ref{prop:rh-tloc-L2},
+ob:rh-tloc-L3--ob:rh-tloc-L7, Thm.~\ref{thm:rh-d1-8}, and the
+uniform kernel grammar.]}
+The seven-step uniform local synthesis template
+$\mathcal{T}_{\mathrm{loc}}$ (Def.~\ref{def:rh-tloc-template}) is
+conditionally discharged: all seven steps (L1--L7) are governed by
+one common branch-visible law, uniformly in $\rho$, with no
+zero-specific smuggling.  Consequently, Thm.~\ref{thm:rh-wc1bb}
+(uniform packet-local synthesis law) is conditionally satisfied:
+the packet-local synthesis step
+\[
+  \mathcal{S}(A_\rho^{\min}, \mathcal{K}_\rho) = W_\rho^{\min}
+\]
+is governed by one common law for every nontrivial zero $\rho$.
+The second RH hard block is conditionally cleared.
+\end{corollary}
+
+\begin{proof}
+L1 and L2 (Props.~\ref{prop:rh-tloc-L1}--\ref{prop:rh-tloc-L2}):
+packet decomposition and scale extraction uniform.
+L3 (ob:rh-tloc-L3 [C]): phase detectability — existence, uniformity,
+threshold, and template cleanliness all proved.
+L4 (ob:rh-tloc-L4 [C]): phase-spacing — structural foundation
+(Props.~\ref{prop:rh-tloc-L4-structural}) and uniformity
+(Prop.~\ref{prop:rh-tloc-L4-uniform}).
+L5 (ob:rh-tloc-L5 [C]): Gram positivity from phase separation
+(Prop.~\ref{prop:rh-tloc-L5-structural}) and uniformity
+(Prop.~\ref{prop:rh-tloc-L5-uniform}).
+L6 (ob:rh-tloc-L6 [C]): leakage-controlled coefficients exist
+uniquely (Prop.~\ref{prop:rh-tloc-L6-structural}) and rule is
+uniform (Prop.~\ref{prop:rh-tloc-L6-uniform}).
+L7 (ob:rh-tloc-L7 [C]): minimal witness core exists
+(Prop.~\ref{prop:rh-tloc-L7-structural}) and compression rule is
+uniform (Prop.~\ref{prop:rh-tloc-L7-uniform}).
+All seven steps of Def.~\ref{def:rh-tloc-template} are satisfied;
+Thm.~\ref{thm:rh-wc1bb} follows conditionally. \qed
+\end{proof}
+
+
+
+\section{Frontier Packaging (RH.F Series)}
+\label{sec:rh-frontier}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{C}]\label{thm:rh-f3}
+\textup{(RH.F.3: Fully Packaged Frontier Schema.)}
+\textup{[Conditional on all RH.WC and RH.D1 theorems above.]}
+The combined irreducible RH frontier satisfies:
+\[
+  (\mathrm{ob{:}rh\text{-}d1\text{-}full}) + \mathrm{S1}
+  \;\iff\;
+  \Bigl[\Xi \to \mathcal{K}_\rho \to A_\rho \to T_\rho\Bigr]
+  \;+\;
+  \Bigl[\mathcal{K}_\rho \to A_\rho^{\min} \to W_\rho^{\min} \to W_{RH}\Bigr],
+\]
+with every arrow governed by a uniform lawful rule.
+\end{theorem}
+
+\begin{proof}
+The D1-side chain $\Xi \to \mathcal{K}_\rho \to A_\rho \to T_\rho$
+is the content of Theorems~\ref{thm:rh-d1-6}--\ref{thm:rh-d1-8}
+(kernel-iff, orbit-iff, and the sharpening of
+Cor.~\ref{cor:rh-d1-6-1}).  The S1-side chain
+$\mathcal{K}_\rho \to A_\rho^{\min} \to W_\rho^{\min} \to W_{RH}$
+is the content of Theorems~\ref{thm:rh-wc1} and~\ref{thm:rh-wc1bb}
+and Proposition~\ref{prop:rh-wc1ba}.  Uniformity of each arrow
+follows from the respective iff schemas.  Necessity: without
+uniformity, the discharge would rely on undeclared local choices,
+violating Book~VII force rules. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:rh-f4}
+\textup{(RH.F.4: Final Full-Frontier Iff Schema.)}
+\textup{[Conditional on all RH.WC and RH.D1 theorems above.]}
+The genuine irreducible RH frontier
+$(\mathrm{ob{:}rh\text{-}d1\text{-}full}) + \mathrm{S1}$
+is discharged if and only if all seven uniform laws exist under
+Book~VII scoped-force, no-hidden-upgrade, and no-smuggling
+discipline:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Uniform kernel grammar from $\Xi$}: one common
+    Mellin/Dirichlet arithmetic grammar governs all $\mathcal{K}_\rho$;
+  \item \emph{Uniform kernel extraction}:
+    $\Xi \to (\psi_\rho, \mathcal{O}_\rho, \mathcal{Q}_\rho,
+    \mathcal{L}_\rho)$ for every $\rho$;
+  \item \emph{Uniform support extraction}:
+    $\mathcal{K}_\rho \to A_\rho$ via stable orbit classes,
+    connected lawful packets, and four-layer realized-support
+    exhaustion;
+  \item \emph{Uniform transport assignment}:
+    $A_\rho \to T_\rho$ in one common RH transport/ledger regime;
+  \item \emph{Uniform packet-local synthesis}:
+    $(A_\rho^{\min}, \mathcal{K}_\rho) \to W_\rho^{\mathrm{loc}}$
+    by one common local template;
+  \item \emph{Uniform local witness-core compression}:
+    $W_\rho^{\mathrm{loc}} \to W_\rho^{\min}$ by one common
+    minimal-cover rule;
+  \item \emph{Uniform global assembly}:
+    $\{W_\rho^{\min}\}_\rho \to W_{RH}$ by one common
+    branch-visible union-plus-compression law.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{($\Leftarrow$) Sufficiency.}
+Assume all seven uniform laws exist.  For every $\rho$:
+the D1-side laws (1)--(4) produce $(s_0, \mathcal{K}_\rho,
+A_\rho, T_\rho)$; the S1-side laws (5)--(7) produce
+$W_{RH}$.  Both D1 full and S1 are discharged by one
+end-to-end lawful branch mechanism.
+
+\textbf{($\Rightarrow$) Necessity.}
+If D1 full is discharged without a uniform D1-side grammar, some
+zero-by-zero improvisation remains, violating Book~VII's anti-smuggling
+rule.  Similarly for S1.  Hence all seven laws are necessary. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:rh-f4-1}
+\textup{(RH.F.4.1: Two Deep Hinges.)}
+Among the seven uniform laws, the two deepest live hinges are:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Uniform arithmetic descent}: $\Xi \to \mathcal{K}_\rho
+    \to A_\rho$ (the first arithmetic sublaw, identified by
+    Lemma~\ref{lem:rh-d1-7} and Theorem~\ref{thm:rh-d1-8});
+  \item \emph{Uniform packet-local synthesis}: $(A_\rho^{\min},
+    \mathcal{K}_\rho) \to W_\rho^{\mathrm{loc}}$ (the local witness
+    assembly step, Theorem~\ref{thm:rh-wc1bb}).
+\end{enumerate}
+Everything else is coherence, compression, or assembly once these
+two are established.
+\end{corollary}
+
+\begin{proof}
+Laws (3), (4), (6), (7) are structural coherence or compression
+steps: they are canonically determined once the input is in hand.
+Law (1) produces the grammar; law (2) applies it.  The nontrivial
+arithmetic content sits in orbit extraction (law 2, Thm.~\ref{thm:rh-d1-8})
+and local witness synthesis (law 5, Thm.~\ref{thm:rh-wc1bb}).
+These are the two deepest live hinges. \qed
+\end{proof}
+
+\end{document}

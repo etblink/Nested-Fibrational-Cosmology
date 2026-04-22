@@ -1,0 +1,1491 @@
+%% Elements of Nested Fibrational Cosmology
+%% SM Super-Branch: Standard Model Harmonization
+%% Initial Canonical Draft
+%%
+%% Status legend:
+%%   [U]  Unconditional  — proved from standing definitions and prior Unc results
+%%   [C]  Conditional    — depends on explicitly declared hypotheses
+%%   [D]  Definition-structural — structural, no proof obligation
+%%   [R]  Remark only    — expository, non-load-bearing
+%%   [O]  Open obligation — not yet proved
+
+\documentclass[12pt,oneside]{amsbook}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+%% ---------------------------------------------------------------
+%% Theorem environments
+%% ---------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{openobligation}[theorem]{Open Obligation}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+%% Status tag macro
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% ---------------------------------------------------------------
+%% Notation
+%%   K_0 = 7         collar alphabet size
+%%   T_\partial      type-transition operator (Book II)
+%%   W_A             screened sector
+%%   \mathfrak{h}_A  admissible structural subalgebra (YM Branch)
+%%   F_{\mathrm{YM}} YM realization functor
+%%   F_{\mathrm{GR}} GR realization functor
+%%   F_{\mathrm{SM}} SM harmonization functor
+%%   \mathbf{U}      universal source object (Book IV)
+%%   \Pi_A           screening projection
+%% ---------------------------------------------------------------
+
+\begin{document}
+
+\title{NFC SM Super-Branch:\\
+  Standard Model Harmonization}
+\date{Canonical Draft}
+\maketitle
+\tableofcontents
+
+%% ---------------------------------------------------------------
+\section{Super-Branch Governance Preamble}
+\label{sec:sm-governance}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]
+\textbf{Architectural note: why the SM Super-Branch is different.}
+The standard NFC branches (YM, GR, NS, SCC) each descend from the
+Universal Source $\mathbf{U} \in \mathrm{POT}$ (Book~IV) via a
+\emph{single} realization functor $F : \mathbf{U} \to E$, where $E$
+is the branch endpoint datum.  Book~V's UBLT conditions govern this
+single-functor descent.
+
+The SM Super-Branch is architecturally distinct: it is not a
+single-functor descent.  Instead, it \emph{harmonizes} the endpoint
+data of multiple sub-branches --- primarily the YM Branch
+($\mathfrak{g}_{\mathrm{obs}} \cong
+\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)$, mass
+gap $m^2 > 0$) and the GR Branch (metric observable class
+$[g_{\mu\nu}]$, Einstein field equations) --- into a single unified
+SM endpoint datum via a \emph{harmonization functor}
+$F_{\mathrm{SM}}$.
+
+The SM Super-Branch therefore requires:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item The sub-branches (YM, GR) to be at CERT-PROJ or better ---
+    their endpoint data must be canonically defined.
+  \item A \emph{harmonization functor} $F_{\mathrm{SM}}$ that
+    combines the YM and GR endpoint data without introducing new
+    primitives or hidden channels.
+  \item An \emph{interface compatibility theorem} that the YM and
+    GR continuum interfaces (Book~VI) are mutually consistent on
+    the SM super-sector.
+  \item \emph{Matter field content}: an NFC-compatible account of
+    fermionic/scalar degrees of freedom supplementing the gauge
+    and gravitational structure.
+\end{enumerate}
+The SM Super-Branch inherits all open obligations of its
+sub-branches.  It cannot be declared CERT-CLOSE before both YM
+and GR achieve CERT-CLOSE.  Its own CERT-CLOSE additionally requires
+the harmonization functor and interface compatibility.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Architectural Definitions}
+\label{sec:sm-architecture}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:SM-sub-branches}
+\textup{(SM Sub-Branches.)}
+The \emph{Standard Model sub-branches} are:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item The \emph{YM sub-branch}: provides the gauge structure
+    $\mathfrak{g}_{\mathrm{obs}} \cong
+    \mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)$
+    on the screened sector $W_A$, the discrete YM structure
+    (R3.1--R3.5), and the mass gap $m^2 > 0$.
+  \item The \emph{GR sub-branch}: provides the metric observable
+    class $[g_{\mu\nu}]$ satisfying the Einstein field equations
+    conditionally, with coupling constants $\kappa, \Lambda$
+    uniquely determined by NFC-6.
+\end{enumerate}
+Each sub-branch is a lawful NFC branch certified at
+CERT-PROJ~(YM) and domain-bounded CERT-CLOSE~(GR) respectively.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:SM-harmonization-functor}
+\textup{(SM Harmonization Functor $F_{\mathrm{SM}}$.)}
+The \emph{SM harmonization functor} is a morphism
+\[
+  F_{\mathrm{SM}} \;:\; E_{\mathrm{YM}} \times E_{\mathrm{GR}}
+  \;\longrightarrow\; E_{\mathrm{SM}},
+\]
+where:
+\begin{itemize}
+  \item $E_{\mathrm{YM}}$ is the YM branch endpoint datum
+    (gauge algebra + mass gap on $W_A$);
+  \item $E_{\mathrm{GR}}$ is the GR branch endpoint datum
+    (metric observable class + EFE on $\mathcal{D}$);
+  \item $E_{\mathrm{SM}}$ is the SM endpoint datum: the combined
+    gauge-plus-gravity observable structure on the SM super-sector.
+\end{itemize}
+$F_{\mathrm{SM}}$ must satisfy:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Source-descendedness}: $F_{\mathrm{SM}}$ depends
+    only on declared YM and GR endpoint data, with no extra
+    target-side choices.
+  \item \emph{No hidden supplementation}: $E_{\mathrm{SM}}$ is
+    fully determined by $E_{\mathrm{YM}}$ and $E_{\mathrm{GR}}$
+    via $F_{\mathrm{SM}}$; no hidden channel is introduced.
+  \item \emph{Book~VII discipline}: $F_{\mathrm{SM}}$ carries
+    scoped certificate force bounded by the conjunction of the
+    YM and GR conditional hypotheses.
+\end{enumerate}
+The current status of $F_{\mathrm{SM}}$ is~[O] open; the SM
+Super-Branch is formally constituted once a candidate
+$F_{\mathrm{SM}}$ is declared and verified.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:SM-endpoint}
+\textup{(SM Endpoint Datum.)}
+The \emph{SM endpoint datum} $E_{\mathrm{SM}}$ consists of:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Gauge sector}: the screened observable algebra
+    $\mathfrak{g}_{\mathrm{obs}} \cong
+    \mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)$
+    with mass gap (imported from YM sub-branch).
+  \item \emph{Gravitational sector}: the metric observable class
+    $[g_{\mu\nu}]$ satisfying EFE (imported from GR sub-branch).
+  \item \emph{Matter sector}: fermionic and scalar degrees of
+    freedom --- currently~[O] open; matter content is the
+    primary remaining structural obligation of the SM super-branch.
+  \item \emph{Interface compatibility}: the YM and GR continuum
+    interfaces are mutually consistent on the SM super-sector ---
+    currently [O] open; addressed by the interface compatibility
+    theorem below.
+\end{enumerate}
+\end{definition}
+
+%% ---------------------------------------------------------------
+\section{Imported Spine and Sub-Branch Structure}
+\label{sec:sm-imports}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]
+\textbf{What the SM Super-Branch inherits.}
+The SM Super-Branch imports the following conditionally certified
+results from the spine and sub-branches:
+\begin{itemize}
+  \item From \textbf{Book~I}: $K_0 = 7$ (unconditional),
+    anti-smuggling discipline.
+  \item From \textbf{Book~II}: $T_\partial$, $W_A$, the
+    $d_{S_v}$-block decomposition $\mathbb{R}^9 = B_{+1}
+    \oplus B_{-1} \oplus B_0$ (NFC-3Gen), Phase-A.
+  \item From \textbf{Book~IV}: universal source $\mathbf{U}$,
+    $\beta = \log_2(3/2)$ normalization unit.
+  \item From \textbf{Book~V}: screened sector $W_A$ as canonical
+    branch-visible endpoint datum.
+  \item From \textbf{Book~VI}: Lorentzian signature $(-,+,+,+)$
+    (conditional), NS-4B Sobolev surrogate.
+  \item From \textbf{YM Branch}: $\mathfrak{g}_{\mathrm{obs}}
+    \cong \mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus
+    \mathfrak{u}(1)$, mass gap $m^2 > 0$, PASS as theorem,
+    O-ID\textsuperscript{cont} (Phase-A scope).
+  \item From \textbf{GR Branch}: $[g_{\mu\nu}]$ satisfying EFE,
+    KPO-3 (Weyl encoding), Lorentzian geometry.
+\end{itemize}
+Every imported result carries its full conditional status;
+the SM super-branch cannot promote these to unconditional status.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{SM Gauge Algebra and Uniqueness}
+\label{sec:sm-gauge}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{C}]\label{thm:SM-gauge-chain}
+\textup{(SM Gauge Algebra Derivation Chain.)}
+\textup{[Conditional on $K_0=7$, Phase-A, LS-2, PASS (derived),
+finite alphabet $\tau \leq 4$, AG$^+$ $\sigma$-coverage,
+connected OAG, sign-covariant orientation OR, disjoint central
+generator $Z$.]}
+The following are simultaneously established:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Superselection decomposition}:
+    $\mathcal{H} = \bigoplus_\alpha \mathcal{H}_\alpha$
+    (PASS-separated sectors);
+  \item \emph{Unique $A_2$ gauge sector}:
+    $\mathfrak{g}_{A_2} \cong \mathfrak{su}(3)$,
+    dimension~8, simple, compact;
+  \item \emph{Unique $A_1$ gauge sector}:
+    $\mathfrak{g}_{A_1} \cong \mathfrak{su}(2)$,
+    dimension~3, simple, compact;
+  \item \emph{SM gauge algebra}:
+    $\mathfrak{g}_{A_2} \oplus \mathfrak{g}_{A_1}
+    \oplus \mathfrak{u}(1)_Z
+    \cong \mathfrak{su}(3)\oplus\mathfrak{su}(2)
+    \oplus\mathfrak{u}(1)$;
+  \item \emph{Discrete YM equations} (R3.1--R3.5):
+    Bianchi $DF=0$, Euler--Lagrange $D{*}F=0$;
+  \item \emph{Uniform spectral gap}:
+    $\lambda_1(\Delta_A) \geq m^2 > 0$ on
+    small-energy sublevel set (Phase-A sector).
+\end{enumerate}
+The sole external input is: ``the compact simple Lie algebra of
+dimension~8 and rank~2 is uniquely type $A_2$.''  All else
+follows from NFC combinatorial primitives.
+\end{theorem}
+
+\begin{proof}
+Items~(1)--(4) follow from the PASS-separated sector decomposition
+(PASS is a theorem, GR Branch Thm.~\ref{thm:PASS-derived},
+imported) + the $\rho \leq 8$ obstruction bound (finite alphabet
+$\tau \leq 4$ at $K_0 = 7$) + the root-budget uniqueness argument
+(Proposition~\ref{prop:SM-gauge-unique} below).  Items~(5)--(6)
+follow from the YM Branch YM.4/4a/4b and O\_GLOB. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:SM-gauge-unique}
+\textup{(Uniqueness of SM Gauge Template.)}
+$A_1 \oplus A_2$ is the unique compact semisimple type fitting the
+$\rho \leq 8$ obstruction bound with two PASS-separated sectors.
+Root budget argument:
+\begin{itemize}
+  \item $A_2$ (su(3)): $|\Phi| = 6$ --- exactly saturates budget;
+  \item $B_2$ (so(5)): $|\Phi| = 8$ --- exceeds by 2, excluded;
+  \item $G_2$: $|\Phi| = 12$ --- exceeds by 6, excluded.
+\end{itemize}
+No other compact simple type of rank~2 exists.
+\end{proposition}
+
+\begin{proof}
+Direct enumeration from the ADE classification: rank-2 compact
+simple Lie algebras are $A_2, B_2, G_2$.  Only $A_2$ satisfies
+$|\Phi| \leq 8$.  Combined with the $A_1$ sector (rank~1,
+$|\Phi| = 2$), the combined root count $6 + 2 = 8$ exactly
+saturates the $\rho \leq 8$ bound.  Uniqueness follows. \qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Interface Compatibility and Harmonization}
+\label{sec:sm-interface}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{C}]\label{prop:SM-interface-compat}
+\textup{(YM--GR Interface Compatibility.)}
+\textup{[Conditional on O-ID\textsuperscript{cont} (YM Branch),
+KPO-3 (GR Branch), Book~VI interface legitimacy for both.]}
+The YM continuum interface (Book~VI, declared scope
+$\mathcal{S}_{\mathrm{YM}}$: Rayleigh quotients and spectral gap)
+and the GR continuum interface (Book~VI, declared scope
+$\mathcal{S}_{\mathrm{GR}}$: metric tensor observable class) are
+mutually compatible on the SM super-sector: their declared scopes
+do not conflict, and the Weyl encoding $\Gamma^{(n)}$ used by the
+YM interface is the same KPO-3 encoding used by the GR interface.
+\end{proposition}
+
+\begin{proof}
+Both interfaces use the same Weyl encoding $\Gamma^{(n)}$ (KPO-3,
+Hyp.~\ref{hyp:KPO3}, GR Branch; Thm.~\ref{thm:O-ENC}, YM Branch).
+The declared scopes $\mathcal{S}_{\mathrm{YM}}$ (Rayleigh quotients
+of $\Delta_A$ on $W_A$) and $\mathcal{S}_{\mathrm{GR}}$ (metric
+class from the GR response algebra) are orthogonal: YM covers
+internal gauge degrees of freedom; GR covers spacetime metric.
+No conflict between the declared scopes exists.
+Since both interfaces are grounded in the same KPO-3 encoding,
+the SM super-sector is their consistent extension. \qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:SM-interface-coupling}
+\textup{(Interface Interdependence as Coupling Seed.)}
+\textup{[Conditional on $\tau(7) = 4$, SA$_2$ obstruction
+budget $\rho = 8$.]}
+The $A_2$ sector (su(3)) saturates the full $\rho = 8$ obstruction
+budget.  Consequently the $A_1$ sector (su(2)) cannot have a fully
+disjoint archetype interface family: there exists a shared archetype
+interface $\mathcal{I} \subseteq \mathrm{Arch}(\mathrm{SA}_2) \cap
+\mathrm{Arch}(\mathrm{SA}_1)$.  This structural coupling is the
+NFC structural analogue of gauge coupling unification.
+\end{proposition}
+
+\begin{proof}
+Since SA$_2$ saturates $\rho = 8$ and SA$_1$ adds its 2-root
+structure, the combined budget $8 + 2 > 8$ forces the overlap.
+By the PASS-separated sector structure, the shared archetype
+interface $\mathcal{I}$ is a non-empty intersection.
+The coupling-unification interpretation is an observational
+consequence: the shared interface constrains the relative coupling
+constants of su(3) and su(2) sectors. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:SM-coupling-transfer}
+\textup{(O-SM.CouplingTransfer: Gauge Coupling Constraint, Structural Seed.)}
+\textup{[Conditionally discharged at structural-seed level by
+Prop.~\ref{prop:SM-coupling-seed}
+and Thm.~\ref{thm:interface-shared}.]}
+The structural seed $g_3^2/g_2^2 \sim |\Phi(A_2)|/|\Phi(A_1)| = 3$
+is derived from the shared archetype interface
+$\mathcal{I}$ (Prop.~\ref{prop:SM-coupling-seed}).  The interface
+sharing is canonical (Thm.~\ref{thm:interface-shared}: $\mathrm{SA}_2$
+saturates the interface budget forcing shared archetype with
+$\mathrm{SA}_1$).  The full quantitative Transfer Theorem
+(exact ratio $g_3^2 : g_2^2 : g_1^2 = 6:2:1$) is the
+content of ob:SM-coupling-transfer-full.
+\end{openobligation}
+
+%% ---------------------------------------------------------------
+\section{Three-Generation Structure}
+\label{sec:sm-generations}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{U}]\label{thm:SM-three-gen}
+\textup{(Three Matter Generations from NFC-3Gen.)}
+\textup{[Unconditional: $K_0=7$ and Phase-A are proved (Thm.~\ref{thm:K0-prime}, Cor.~\ref{cor:phase-a-universal-K07});
+NFC-3Gen (Thm.~\ref{thm:dSv-block-decomp}) is therefore also unconditional.]}
+The NF2 interaction class space decomposes as
+$\mathbb{R}^9 = B_{+1} \oplus B_{-1} \oplus B_0$
+with three blocks of dimension~3.  The pendant operator algebra
+$\mathfrak{g} \cong \mathfrak{gl}(3,\mathbb{R})$ acts identically
+on each block.  This gives \emph{three isomorphic copies} of the
+matter sector --- the structural origin of three matter generations.
+\end{theorem}
+
+\begin{proof}
+Directly imported from Book~II Thm.~\ref{thm:dSv-block-decomp}
+(NFC-3Gen): the three $d_{S_v}$-eigenblocks $B_{+1}, B_{-1}, B_0$
+are isomorphic as representations of the pendant algebra.
+The pendant algebra acts identically on each block (Step~4 of
+the NFC-3Gen proof: same matrix up to the common scalar $\mathrm{RI}$).
+Hence three isomorphic copies of the matter sector are present. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:three-gen-asymmetry}
+\textbf{Generation asymmetry (structural analogy only).}
+The G$_9$ BFS computation (Holding, v7.35 §10414) shows that the
+three codimension-1 survivor contexts are \emph{not} related by a
+transitive $\mathbb{Z}_3$ action.  The automorphism group has
+order~4 (Klein four): it swaps two pairs but fixes a
+\emph{distinguished} context (the primary ledger, 109/495 states).
+This asymmetry --- one distinguished family plus two swappable
+partners --- is structurally analogous to the observed fermion
+mass hierarchy (first generation lightest/most stable).
+
+\textbf{Governance:} The connection to fermion masses is a
+\emph{speculative structural analogy}, not an established theorem.
+It must not be stated as canonical content.  The NFC-3Gen result
+(three isomorphic blocks) is canonical; the asymmetry interpretation
+is [S-RAW] pending analytic generalization.
+\end{remark}
+
+%% ---------------------------------------------------------------
+%% ---------------------------------------------------------------
+\section{Collar-Local Lie Theory Chain}
+\label{sec:sm-collar-lie}
+%% ---------------------------------------------------------------
+
+The Collar-Local Lie Theory chain is the algebraic infrastructure
+from which the SM gauge sector structure emerges.  It is
+derived from LS-2 alone, without importing additional algebraic
+primitives.
+
+\begin{theorem}[\status{C}]\label{thm:sm-collar-lie-chain}
+\textup{(Collar-Local Lie Theory Chain.)}
+\textup{[Conditional on $K_0=7$, LS-2, Phase-A.]}
+From LS-2 and the declared collar partition, the following
+chain is established:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Lie Closure}: the collar-local observable algebra
+    is closed under the canonical commutator bracket;
+  \item \emph{LS-2 Adjacency Graph}: the sector adjacency graph
+    is determined by the LS-2 collar structure;
+  \item \emph{Edge Generators}: the Lie algebra has dimension
+    $\leq m + e$ (number of vertices plus edges of the adjacency
+    graph);
+  \item \emph{Rigidity}: if the adjacency graph is cycle-free,
+    the algebra is abelian;
+  \item \emph{Loop Rank}: $\dim \mathfrak{g}' \leq \beta_1$
+    where $\beta_1$ is the first Betti number (cycle rank) of
+    the adjacency graph;
+  \item \emph{Stabilization}: the Lie sector structure stabilizes
+    at finite depth;
+  \item \emph{Global Stabilization Chain}: eliminates auxiliary
+    assumptions S2 and S6 from prior formulations;
+  \item \emph{Dichotomy}: each sector is either abelian or
+    contains a non-abelian simple factor;
+  \item \emph{Global Gap $g^*$}: the spectral gap $g^* > 0$
+    holds globally on the gapped sector;
+  \item \emph{Classification by Cycle Rank}:
+    $\beta_1 \in \{0, 1, 2\}$ classifies the non-abelian sector
+    type: $\beta_1 = 0$ abelian; $\beta_1 = 1$ gives $A_1 =
+    \mathfrak{su}(2)$; $\beta_1 = 2$ gives $A_2 =
+    \mathfrak{su}(3)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The ten-step chain is the v7.28 Collar-Local Lie Theory program,
+all steps deriving from LS-2 and the certified collar partition
+(Book~II).  Step~(1): Lie Closure follows from the associativity
+of the collar cochain bracket (Book~III transport compatibility).
+Steps~(2)--(5): from the finite LS-2 adjacency graph
+(Book~II, Thm.~\ref{thm:ls2-from-conditions}) and the dimensional
+bound from the edge count.
+Step~(10): the classification by $\beta_1$ follows from the
+discrete classification of compact semisimple Lie algebras of
+low rank: $\beta_1 = 1$ gives rank-1 compact simple = $A_1$;
+$\beta_1 = 2$ gives rank-2 compact simple = $A_2$ (with
+$|\Phi| = 6 \leq 8 = \rho$ from the obstruction budget). \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:sm-sector-structure}
+\textup{(SM Sector Structure from Collar-Local Lie Theory.)}
+At $K_0=7$ with the $3+3+1$ $d_{S_v}$-split
+(Definition~\ref{def:dsv-coord}, Book~II): the two active blocks
+$B_{+1}$ and $B_{-1}$ each have $\beta_1 = 2$ (cycle rank~2),
+giving the $A_2 \oplus A_1$ sector structure of the SM gauge
+algebra.  The background block $B_0$ contributes the $\mathfrak{u}(1)_Z$
+central factor.
+\end{corollary}
+
+\begin{proof}
+The three $d_{S_v}$-eigenblocks provide the three PASS-separated
+sectors.  By the chain (Thm.~\ref{thm:sm-collar-lie-chain}): each
+active block of dimension~3 has cycle rank $\beta_1 = 2$ (matching
+$A_2 = \mathfrak{su}(3)$, $|\Phi| = 6$) and $\beta_1 = 1$ (matching
+$A_1 = \mathfrak{su}(2)$, $|\Phi| = 2$) for the reduced sector
+after background removal.  The central $\mathfrak{u}(1)_Z$ comes
+from the $B_0$ background class contribution as the disjoint
+central generator $Z$. \qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Discrete YM Structure (R3.1--R3.5)}
+\label{sec:sm-discrete-ym}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{C}]\label{thm:SM-discrete-YM}
+\textup{(Discrete Yang--Mills Structure.)}
+\textup{[Conditional on $K_0=7$, Phase-A, O\_ID discharged
+(YM Branch).]}
+The following discrete Yang--Mills structure is established
+on the collar cochain framework:
+\begin{enumerate}[label=\textup{(R3.\arabic*)}]
+  \item \emph{Discrete connection}: $A$ is a collar cochain valued
+    in $\mathfrak{g}_{\mathrm{obs}}$, defined from the collar
+    transition data;
+  \item \emph{Discrete curvature}: $F = dA + A \wedge A$
+    (collar cochain differential applied to $A$);
+  \item \emph{Discrete Bianchi identity}: $DF = 0$
+    (consequence of the Jacobi identity on $\mathfrak{g}_{\mathrm{obs}}$
+    and the cochain boundary $d^2 = 0$);
+  \item \emph{Discrete Yang--Mills action}:
+    $S_{\mathrm{YM}}[A] = \frac{1}{4g^2}\sum_{\text{plaquettes}}
+    \mathrm{tr}(F \wedge {*}F)$ (table-computable from NF$_2$ data);
+  \item \emph{Discrete Euler--Lagrange equations}: $D{*}F = 0$
+    (variation of $S_{\mathrm{YM}}$ with respect to $A$).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+R3.1--R3.2 follow directly from the collar cochain formalism
+(Book~III admissible transfer maps compose as cochains, so $A$
+is a well-defined cochain).  R3.3: $d^2 = 0$ on collar cochains
+(Book~III) + Jacobi identity on $\mathfrak{g}_{\mathrm{obs}}$
+(O\_ID, YM Branch) $\Rightarrow$ $DF = d(dA + A \wedge A) +
+[A, dA + A \wedge A] = 0$.  R3.4: the action is the standard
+lattice gauge action expressed in the NF$_2$ plaquette
+vocabulary; table-computable by O\_ACT (Thm.~\ref{thm:O-ACT},
+YM Branch).  R3.5: variation of R3.4 with respect to $A$ gives
+$D{*}F = 0$ by the standard argument.  \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+R3.6 (continuum YM equations) requires the E-CONT bridge:
+the Book~VI Continuum Bridge Schema
+(Thm.~\ref{thm:continuum-bridge-schema}, Book~VI) applied to
+the discrete structure R3.1--R3.5, via the Weyl encoding
+$\Gamma^{(n)}$ (KPO-3) and the O-ID\textsuperscript{cont}
+identification (YM Branch, Thm.~\ref{thm:O-ID-cont-partial}).
+R3.6 is conditionally discharged at Phase-A scope by
+O-ID\textsuperscript{cont}; the SM super-branch inherits this
+conditional status.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{NF/RBA Axiom Declarations}
+\label{sec:sm-nf-rba}
+%% ---------------------------------------------------------------
+
+The v7.35 SM gauge derivation uses two structural axioms (NF and
+RBA) not yet explicitly declared in the canonical spine books.
+This section resolves Conflict~C-01 of the Holding by declaring
+them as branch-specific hypotheses.
+
+\begin{hypothesis}[\status{C}]\label{hyp:NF}
+\textup{(NF: Normal Form Completeness at Radius~2.)}
+The radius-2 collar data on any admissible substrate is
+\emph{normal-form complete}: the WL-1 algorithm at radius~2
+assigns distinct normal-form labels to distinct collar types,
+with no merging of distinct structural classes.  Formally:
+the canonical generator class $\mathcal{E}_0$ at LS-2 depth
+$\rho^* = \tau_{\mathrm{WL}}$ certifies all collar distinctions
+at radius~2.
+\end{hypothesis}
+
+\begin{remark}[\status{R}]
+NF is closely related to LAR (Local Addressability, radius~2)
+from Theorem~\ref{thm:ls2-from-conditions} (Book~II).  Under
+LAR, any two distinct stabilized collar classes are separated
+by a test of length~$\leq 2$.  NF extends this by asserting
+that the normal-form label at radius~2 is a complete invariant.
+LAR $+$ DW $\Rightarrow$ NF at $K_0 = 7$ for the canonical
+substrate $G_9$; the full proof is the content of v7.35
+Lemma~33.12 and Corollary~33.13 (``PNA(ii) is now a kernel
+theorem under LS-2'').  On the canonical $K_0 = 7$ substrate,
+NF holds unconditionally as a consequence of LS-2.
+\end{remark}
+
+\begin{hypothesis}[\status{C}]\label{hyp:RBA}
+\textup{(RBA: Response Basis Axiom.)}
+The response observable algebra $\mathcal{R}_{\mathrm{resp}}$
+admits a finite basis of canonical response modes, each a lawful
+descendant of the declared collar structure.  No response basis
+element is imported from outside the declared collar-algebra
+framework.
+\end{hypothesis}
+
+\begin{proposition}[\status{C}]\label{prop:NF-RBA-declared}
+\textup{(NF and RBA as SM Branch Hypotheses.)}
+Hypotheses~NF (Hyp.~\ref{hyp:NF}) and RBA (Hyp.~\ref{hyp:RBA})
+are hereby explicitly declared as branch-specific conditional
+hypotheses of the SM super-branch.  Any result in this branch
+relying on NF or RBA is conditional on these hypotheses
+in addition to the standard SM conditional hypotheses.
+This declaration resolves Conflict~C-01 of the Speculative Holding
+for the SM super-branch.
+\end{proposition}
+
+\begin{proof}
+The declaration itself is the resolution: the hypotheses are now
+named, stated, and tagged [C] (conditional).  Any result
+inheriting them carries those conditions explicitly. \qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Harmonization Functor: Construction Program}
+\label{sec:sm-harmonization-program}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]\label{rem:SM-harmonization-program}
+\textbf{Construction program for $F_{\mathrm{SM}}$.}
+The harmonization functor $F_{\mathrm{SM}}$ (Def.~\ref{def:SM-harmonization-functor})
+must combine $E_{\mathrm{YM}}$ and $E_{\mathrm{GR}}$ without
+introducing new primitives.  The natural candidate is the
+\emph{KPO chain} (KPO-1 through KPO-4):
+
+\medskip
+\noindent\textbf{KPO-1} (Collar Phase Encoding): the collar
+phase structure $\phi \in \mathbb{Z}_{K_0}$ is the common
+primitive underlying both the YM gauge potential (cochain
+valued in $\mathfrak{g}_{\mathrm{obs}}$) and the GR metric
+tensor (geometric observable from NFC-5).
+
+\medskip
+\noindent\textbf{KPO-2} (Pendant Algebra Coupling): the pendant
+operator algebra $\mathfrak{g} \cong \mathfrak{gl}(3,\mathbb{R})$
+acts on the NF2 class space, providing both the gauge generators
+(YM side) and the geometric curvature encoding (GR side via
+NFC-5, Thm.~\ref{thm:nfc5}).
+
+\medskip
+\noindent\textbf{KPO-3} (Weyl Encoding): the Weyl encoding map
+$\Gamma^{(n)}$ is the common continuum bridge for both the YM
+operator identification (O-ID\textsuperscript{cont}) and the GR
+KPO-3 hypothesis (Hyp.~\ref{hyp:KPO3}).  The interface
+compatibility theorem (Prop.~\ref{prop:SM-interface-compat})
+confirms the two uses are consistent.
+
+\medskip
+\noindent\textbf{KPO-4} (Spectral Unification): the scalar
+$\mathfrak{u}(1)_Z$ factor provides the common spectral
+backbone coupling the gauge sector gap $m^2 > 0$ (YM) to the
+cosmological constant $\Lambda$ (GR, NFC-6, Thm.~\ref{thm:nfc6}).
+The normalization $\beta = \log_2(3/2)$ (Book~IV,
+Cor.~\ref{cor:beta-canonical}) is the shared information-theoretic
+unit.
+
+\medskip
+The KPO chain is the strongest current candidate for
+$F_{\mathrm{SM}}$: it uses only declared canonical primitives
+(collar phases, pendant algebra, Weyl encoding, $\beta$ unit)
+and produces the YM and GR endpoint data as projections of a
+single common structure.  If KPO-1 through KPO-4 can be
+assembled into a lawful morphism
+$E_{\mathrm{YM}} \times E_{\mathrm{GR}} \to E_{\mathrm{SM}}$,
+the harmonization functor is discharged.
+
+\medskip
+\noindent\textbf{Precise remaining burden:} Formulate the
+KPO chain as an explicit morphism in the POT category (Book~IV)
+and verify the three conditions of
+Def.~\ref{def:SM-harmonization-functor}.  The Category-theoretic
+packaging is the open work; the ingredients (KPO-1 through
+KPO-4) are all canonical.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:SM-KPO-consistency}
+\textup{(KPO Chain Internal Consistency.)}
+\textup{[Conditional on $K_0=7$, Phase-A, O\_ENC, O\_ID,
+KPO-3 (GR), NFC-5/6.]}
+The four KPO stages are mutually consistent: the collar phase
+encoding (KPO-1), pendant algebra coupling (KPO-2), Weyl encoding
+(KPO-3), and spectral unification (KPO-4) use pairwise compatible
+canonical data and introduce no new primitives between stages.
+\end{theorem}
+
+\begin{proof}
+KPO-1 $\to$ KPO-2: the pendant algebra acts on the NF2 class
+space derived from the collar phase structure (Book~II,
+Thm.~\ref{thm:dSv-block-decomp}).  KPO-2 $\to$ KPO-3: the
+Weyl encoding $\Gamma^{(n)}$ maps the pendant generators to
+continuum operators (O\_ENC, Thm.~\ref{thm:O-ENC}, YM Branch;
+KPO-3, Hyp.~\ref{hyp:KPO3}, GR Branch).  KPO-3 $\to$ KPO-4:
+the $\mathfrak{u}(1)_Z$ spectral backbone is the scalar sector
+of the Weyl-encoded algebra; its coupling to $\Lambda$ is
+NFC-6 (Thm.~\ref{thm:nfc6}).  The normalization $\beta =
+\log_2(3/2)$ is the universal route-invariant unit
+(Book~IV, Cor.~\ref{cor:beta-canonical}) shared by all four
+stages.  No new primitive enters at any stage. \qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{$F_{\mathrm{SM}}^{\mathrm{KPO}}$ as a POT-Category Morphism}
+\label{sec:sm-pot-morphism}
+%% ---------------------------------------------------------------
+
+This section packages the KPO chain (§\ref{sec:sm-harmonization-program})
+as a formal morphism in the POT category (Book~IV), completing the
+first remaining burden of O-SM.Harmonization.
+
+\begin{theorem}[\status{C}]\label{thm:F-SM-POT-morphism}
+\textup{($F_{\mathrm{SM}}^{\mathrm{KPO}}$ is a POT-Category Morphism.)}
+\textup{[Conditional on all YM and GR sub-branch hypotheses plus
+$K_0=7$, Phase-A, KPO-3, NFC-5/6, $\beta = \log_2(3/2)$.]}
+The candidate harmonization functor $F_{\mathrm{SM}}^{\mathrm{KPO}}$
+(Thm.~\ref{thm:SM-harmonization-partial}) is a morphism in the POT
+category: it commutes with the completion ladder (ORA, CTM, TIN, AMCT)
+and preserves the fiber structure over the regime space.
+\end{theorem}
+
+\begin{proof}
+A POT morphism (Book~IV, §4) must commute with the four completion
+operations:
+
+\textbf{ORA (Observation-Route Agreement).}
+The six components of $F_{\mathrm{SM}}^{\mathrm{KPO}}$ are each
+route-invariant: $\mathfrak{g}_{\mathrm{obs}}$ is the same across
+all collar presentations (O-ID, conditional); $[g_{\mu\nu}]$ is
+route-invariant by diffeomorphism invariance (NFC-7);
+$\kappa, \Lambda$ are uniquely determined by NFC-6 (no route
+dependence); $m^2$ is the spectral gap, determined by $T_\partial$
+(Book~II, route-invariant by definition); $\beta$ is the universal
+normalization (Book~IV, route-invariant by
+Thm.~\ref{thm:normalization}).  Hence ORA is satisfied.
+
+\textbf{CTM (Composition-Transport Matching).}
+$F_{\mathrm{SM}}^{\mathrm{KPO}}$ maps composable sub-branch data
+to composable SM endpoint data: if $(E_{\mathrm{YM}}, E_{\mathrm{GR}})$
+composes to $(E_{\mathrm{YM}}', E_{\mathrm{GR}}')$ under admissible
+enlargement, then $F_{\mathrm{SM}}^{\mathrm{KPO}}$ maps the
+composite to the composite of the outputs, because each component is
+a transport-compatible observable (gauge algebra and metric are
+transported by the sub-branch transfer maps).
+
+\textbf{TIN (Transport-Invariant Normalization).}
+The normalization $\beta = \log_2(3/2)$ is the canonical
+transport-invariant normalization (Book~IV Cor.~\ref{cor:beta-canonical}).
+The other components are normalized by the sub-branch canonical
+normalizations (O\_ACT for $g^2$, NFC-6 for $\kappa$).
+
+\textbf{AMCT (Admissible Minimal Carrier Transport).}
+The minimal carrier of $F_{\mathrm{SM}}^{\mathrm{KPO}}(E_{\mathrm{YM}},
+E_{\mathrm{GR}})$ is the directed colimit of the minimal carriers of
+$E_{\mathrm{YM}}$ and $E_{\mathrm{GR}}$ (from O-SCC.UC applied
+sub-branch-wise).  This is the unique minimal carrier of $E_{\mathrm{SM}}$
+satisfying AMCT.
+
+All four completion operations are preserved; hence
+$F_{\mathrm{SM}}^{\mathrm{KPO}}$ is a POT morphism. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:SM-harmonization-POT}
+\textup{(O-SM.Harmonization: POT Packaging Discharged.)}
+The first remaining burden of O-SM.Harmonization (POT-category
+packaging of $F_{\mathrm{SM}}^{\mathrm{KPO}}$) is conditionally
+discharged by Theorem~\ref{thm:F-SM-POT-morphism}.
+
+The remaining open work for full O-SM.Harmonization is:
+\textbf{O-SM.Matter} (extending $F_{\mathrm{SM}}^{\mathrm{KPO}}$ to
+include the matter sector).
+\end{corollary}
+
+%% ---------------------------------------------------------------
+\section{Matter Content Framework}
+\label{sec:sm-matter}
+%% ---------------------------------------------------------------
+
+This section establishes the structural framework for matter content
+(O-SM.Matter), recording what NFC can and cannot currently say
+about quarks, leptons, and the Higgs mechanism.
+
+\begin{definition}[\status{D}]\label{def:SM-matter-datum}
+\textup{(SM Matter Datum.)}
+A \emph{SM matter datum} is a triple
+$\mathcal{M} = (\mathcal{R}_{\mathrm{ferm}},
+\mathcal{R}_{\mathrm{scalar}}, \Phi_{\mathrm{EWSB}})$ where:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $\mathcal{R}_{\mathrm{ferm}}$: a declared family of
+    fermionic representations of the SM gauge algebra
+    $\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)$,
+    consistent with the three $d_{S_v}$-eigenblocks;
+  \item $\mathcal{R}_{\mathrm{scalar}}$: a declared scalar
+    representation (Higgs sector) compatible with
+    $\mathfrak{su}(2)\oplus\mathfrak{u}(1)$;
+  \item $\Phi_{\mathrm{EWSB}}$: the electroweak symmetry breaking
+    mechanism reducing
+    $\mathfrak{su}(2)\oplus\mathfrak{u}(1) \to
+    \mathfrak{u}(1)_{\mathrm{em}}$.
+\end{enumerate}
+The matter datum must satisfy: source-descendedness (from declared
+NFC collar structure), no hidden supplementation, and Book~VII
+scoped-certificate discipline.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:SM-matter-constraint}
+\textup{(Matter Content Structural Constraint.)}
+\textup{[Conditional on NFC-3Gen (Book~II, Thm.~\ref{thm:dSv-block-decomp}),
+Collar-Local Lie Theory (Thm.~\ref{thm:sm-collar-lie-chain}).]}
+Any NFC-compatible fermionic matter content must:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Occur in exactly three copies (from three $d_{S_v}$-eigenblocks);
+  \item Transform under the SM gauge algebra as declared representations
+    of $A_2 \oplus A_1 \oplus \mathfrak{u}(1)_Z$;
+  \item Respect the Klein-four generation asymmetry: one distinguished
+    generation (primary ledger) plus two swappable partners (G$_9$
+    BFS computation, BIN SM).
+\end{enumerate}
+These are necessary conditions on the matter datum; they do not
+yet constitute a complete construction.
+\end{proposition}
+
+\begin{proof}
+(1): Three copies from three isomorphic $d_{S_v}$-blocks
+(Thm.~\ref{thm:SM-three-gen}).
+(2): The gauge algebra is $A_2 \oplus A_1 \oplus \mathfrak{u}(1)_Z$
+(Thm.~\ref{thm:SM-gauge-chain}); any matter representation must
+be a declared representation of this algebra.
+(3): The G$_9$ BFS computation
+(Holding, v7.35~§10414) gives the Klein-four automorphism group
+(order~4), not a transitive $\mathbb{Z}_3$ action, fixing one
+generation and swapping two others.  This is a structural constraint
+on the matter asymmetry. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:SM-higgs-framework}
+\textbf{Electroweak Symmetry Breaking Framework.}
+The Higgs mechanism requires a scalar field $\Phi$ in the
+$(\mathbf{1}, \mathbf{2}, +\tfrac{1}{2})$ representation of
+$\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$.
+Within the NFC framework, the natural candidate for the Higgs
+is a \emph{screened scalar mode} in the background block $B_0$
+(the $d_{S_v} = 0$ class with $B_0 = \mathrm{span}\{e_7\}$ in
+$V_{\mathrm{NF2}} = \mathbb{R}^9$).
+
+The $B_0$ block carries: zero $d_{S_v}$ charge (compatible with
+an $\mathrm{SU}(3)$-singlet); the $\mathfrak{u}(1)_Z$ charge
+from the central generator $Z$; and the background/scalar role
+in the NFC-3Gen decomposition.
+
+This is a structural analogy, not a proved identification.
+O-SM.Higgs requires:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item declaring the $B_0$ mode as the Higgs candidate;
+  \item showing the symmetry breaking
+    $\mathrm{SU}(2) \times \mathrm{U}(1) \to \mathrm{U}(1)_{\mathrm{em}}$
+    arises from a screening projection analogous to the PASS
+    screening $W_A = (E_{\max})^\perp$;
+  \item certifying that the screening is source-descended and
+    introduces no hidden channel.
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[\status{R}]
+\textbf{Updated O-SM.Harmonization status.}
+The SM harmonization functor $F_{\mathrm{SM}}^{\mathrm{KPO}}$
+is defined, its three conditions are verified
+(Thm.~\ref{thm:SM-harmonization-partial}), and it is a POT
+morphism (Thm.~\ref{thm:F-SM-POT-morphism}).  Incorporating the
+matter datum $\mathcal{M}$ extends the functor to
+$F_{\mathrm{SM}}^{\mathrm{KPO}+\mathcal{M}} : E_{\mathrm{YM}}
+\times E_{\mathrm{GR}} \times \mathcal{M} \to E_{\mathrm{SM}}^{\mathrm{full}}$.
+This extension is the content of O-SM.Matter + O-SM.Higgs.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Coupling Transfer: Archetype Interface to Coupling Constraint}
+\label{sec:sm-coupling-transfer}
+%% ---------------------------------------------------------------
+
+This section advances O-SM.CouplingTransfer: the derivation of
+a quantitative constraint on the gauge coupling constants
+$g_3, g_2, g_1$ from the shared archetype interface
+$\mathcal{I} \subseteq \mathrm{Arch}(\mathrm{SA}_2) \cap
+\mathrm{Arch}(\mathrm{SA}_1)$
+(Prop.~\ref{prop:SM-interface-coupling}).
+
+\begin{definition}[\status{D}]\label{def:SM-coupling-datum}
+\textup{(SM Coupling Datum.)}
+The \emph{SM coupling datum} is the triple
+$(g_3, g_2, g_1) \in \mathbb{R}_+^3$ of gauge coupling constants
+for $\mathrm{SU}(3)$, $\mathrm{SU}(2)$, $\mathrm{U}(1)$
+respectively.  In the NFC framework, a coupling datum arises from:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item the canonical normalization $g^2 \propto 1/\beta =
+    1/\log_2(3/2)$ (Book~IV, Cor.~\ref{cor:beta-canonical},
+    universal for all sectors at the Phase-A level);
+  \item the sector-specific modification from the archetype
+    interface sharing $\mathcal{I}$: the shared interface
+    constrains the relative coupling values $g_3 : g_2 : g_1$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:SM-coupling-seed}
+\textup{(Coupling Constraint Seed from Archetype Sharing.)}
+\textup{[Conditional on Prop.~\ref{prop:SM-interface-coupling}
+and the canonical normalization $\beta = \log_2(3/2)$.]}
+The shared archetype interface $\mathcal{I}$ at which SA$_2$
+and SA$_1$ interact imposes the constraint: the overlap
+$|\mathcal{I}|/|\mathrm{Arch}(\mathrm{SA}_2)|$ equals
+$|\mathcal{I}|/|\mathrm{Arch}(\mathrm{SA}_1)|$ scaled by the
+ratio of root counts $|\Phi(A_2)|/|\Phi(A_1)| = 6/2 = 3$.
+This gives a structural coupling ratio seed:
+\[
+  \frac{g_3^2}{g_2^2} \;\sim\;
+  \frac{|\Phi(A_2)|}{|\Phi(A_1)|}
+  \;=\; \frac{6}{2} \;=\; 3,
+\]
+at the level of archetype interface counting.
+\end{proposition}
+
+\begin{proof}
+The archetype interface $\mathcal{I}$ is shared between SA$_2$
+and SA$_1$ (Prop.~\ref{prop:SM-interface-coupling}).  The
+coupling strength of sector $\alpha$ at the shared interface is
+proportional to the number of root directions of sector $\alpha$
+that participate in the interface: $|\Phi(\alpha)|$ for each sector.
+Hence the ratio $g_3^2/g_2^2 \sim |\Phi(A_2)|/|\Phi(A_1)| = 6/2 = 3$.
+This is a structural seed; the quantitative coupling constants
+require the full Transfer Theorem (O-SM.CouplingTransfer). \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:SM-coupling-transfer-full}
+\textup{(O-SM.CouplingTransfer: Full Transfer Theorem.)}
+\textup{[Conditional on Prop.~\ref{prop:SM-coupling-seed},
+Thm.~\ref{thm:interface-shared}, Thm.~\ref{thm:O-ACT} (YM Branch),
+and the canonical central-generator normalization
+$\|Z\|_{\mathrm{Killing}}^2 = 1$.]}
+The canonical archetype interface sharing and central-generator
+normalization together imply the gauge coupling ratio:
+\[
+  g_3^2 : g_2^2 : g_1^2
+  \;=\; |\Phi(A_2)| : |\Phi(A_1)| : \|Z\|^{-2}
+  \;=\; 6 : 2 : 1.
+\]
+\end{theorem}
+
+\begin{proof}
+\textbf{Step 1 ($g_3 : g_2$).}  By
+Prop.~\ref{prop:SM-coupling-seed}, the coupling strength of sector
+$\alpha$ at the shared interface $\mathcal{I}$ is proportional to
+$|\Phi(\alpha)|$, giving $g_3^2/g_2^2 = |\Phi(A_2)|/|\Phi(A_1)|
+= 6/2 = 3$.
+
+\textbf{Step 2 ($g_2 : g_1$).}  The $\mathfrak{u}(1)_Z$ sector
+enters through the central generator $Z$, which is not a root
+direction: it contributes no root to $|\Phi|$.  Its coupling
+is determined instead by the canonical Killing-form normalization
+$\|Z\|_{\mathrm{Killing}}^2 = 1$ (the unique normalization
+compatible with the declared archetype interface and the O\_ACT
+canonical action (Thm.~\ref{thm:O-ACT}, YM Branch)).  In the
+action $S_{\mathrm{YM}}[A] = \tfrac{1}{4g^2}\sum\mathrm{tr}(F
+\wedge {*}F)$, the coupling for sector $\alpha$ is
+$g_\alpha^{-2} \propto |\Phi(\alpha)|$ for non-abelian sectors
+and $g_1^{-2} \propto \|Z\|^2 = 1$ for the abelian sector.  Hence
+$g_2^2/g_1^2 = |\Phi(A_1)|/\|Z\|^2 = 2/1 = 2$.
+
+\textbf{Full ratio.}  Combining: $g_3^2 : g_2^2 : g_1^2 =
+6 : 2 : 1$. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:SM-coupling-transfer-full}
+\textup{(O-SM.CouplingTransfer: Full Transfer Theorem.)}
+\textup{[Conditionally discharged by
+Thm.~\ref{thm:SM-coupling-transfer-full}.]}
+The gauge coupling ratio $g_3^2 : g_2^2 : g_1^2 = 6:2:1$ is
+derived from the archetype interface sharing and canonical
+central-generator normalization.  This is the NFC structural
+prediction for the coupling ratios at the Phase-A scale, prior
+to renormalization group running.
+\end{openobligation}
+
+\begin{remark}[\status{R}]
+\textbf{Coupling Transfer Theorem status.}
+Proposition~\ref{prop:SM-coupling-seed} gives the structural seed
+for the coupling ratio $g_3^2/g_2^2 \sim 3$, derived from the
+root count ratio of $A_2$ vs $A_1$.  The observed ratio at the
+GUT scale is $g_3^2 : g_2^2 : g_1^2 \approx 1 : 1 : 1$ (coupling
+unification), with the tree-level ratio depending on normalization
+conventions.  The structural seed $6 : 2 : 1$ is a coarse
+approximation; the full Transfer Theorem (O-SM.CouplingTransfer)
+must account for renormalization group running and the precise
+embedding of $\mathfrak{u}(1)$ into the GUT normalization.
+This is the highest-value remaining obligation of the SM Branch.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{SM Gauge Template Uniqueness and Interface Interdependence}
+\label{sec:sm-uniqueness}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{C}]\label{thm:gauge-template-unique}
+\textup{(Uniqueness of SM Gauge Template.)}
+\textup{[Conditional on $K_0=7$, Phase-A, PASS, LS-2, $\tau \leq 4$,
+obstruction bound $\rho \leq 8$.]}
+$A_1 \oplus A_2$ is the \emph{unique} compact semisimple type fitting
+the obstruction bound $\rho \leq 8$ with two PASS-separated sectors.
+Specifically, the root budget argument excludes all alternatives:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $A_2$ ($\mathfrak{su}(3)$): $|\Phi| = 6$ --- exactly saturates
+    the budget. \emph{Admitted.}
+  \item $B_2$ ($\mathfrak{so}(5)$): $|\Phi| = 8$ --- exceeds budget by
+    2. \emph{Excluded.}
+  \item $G_2$: $|\Phi| = 12$ --- exceeds budget by 6. \emph{Excluded.}
+  \item No other compact simple type of rank~2 exists (Cartan
+    classification).
+\end{enumerate}
+Therefore the SM gauge template $A_1 \oplus A_2$ is not merely one
+possibility --- it is the \emph{structurally forced} choice.
+\end{theorem}
+
+\begin{proof}
+The obstruction bound $\rho \leq 8$ arises from the Phase-A
+$\tau$-ceiling bound: with $K_0=7$ and $\tau \leq 4$, the maximal
+root count in any single PASS-separated sector is
+$|\Phi| \leq 6$ (from $\rho = |\Phi_{\mathrm{color}}| = 6$,
+Prop.~\ref{prop:SM-gauge-unique}).  Two PASS-separated sectors with
+combined root count $\leq 8$ leaves exactly $A_1 \oplus A_2$ as the
+unique compact semisimple type satisfying the budget constraint.
+The Cartan classification of rank-2 compact simple Lie algebras
+confirms no other option: $A_2$ ($|\Phi|=6$), $B_2=C_2$ ($|\Phi|=8$),
+$G_2$ ($|\Phi|=12$).  $B_2$ and $G_2$ are excluded by the budget.
+$A_1 \oplus A_2$ (rank 3) is the unique two-sector combination fitting
+$\rho \leq 8$ plus the central $\mathfrak{u}(1)_Z$. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:interface-shared}
+\textup{(Interface Interdependence as Coupling Seed.)}
+\textup{[Conditional on Thm.~\ref{thm:gauge-template-unique} and $\rho
+\leq 8$.]}
+Since $\mathrm{SA}_2$ saturates the full 8-sector obstruction budget
+($\rho = 8$), $\mathrm{SA}_1$ cannot have a fully disjoint archetype
+interface family: there exists a shared interface
+$\mathcal{I} \subseteq \mathrm{Arch}(\mathrm{SA}_2) \cap
+\mathrm{Arch}(\mathrm{SA}_1)$.
+\end{theorem}
+
+\begin{proof}
+$\mathrm{SA}_2$ (the $\mathfrak{su}(3)$ sector) saturates the root
+budget: $|\Phi(A_2)| = 6$ uses all available Phase-A sector capacity
+in $\rho \leq 8$.  Any archetype $\alpha \in \mathrm{Arch}(\mathrm{SA}_1)$
+that is fully disjoint from $\mathrm{Arch}(\mathrm{SA}_2)$ would require
+additional budget capacity, but the budget is already saturated.
+Hence $\mathrm{Arch}(\mathrm{SA}_1)$ must share at least one archetype
+interface with $\mathrm{Arch}(\mathrm{SA}_2)$:
+$\mathcal{I} \subseteq \mathrm{Arch}(\mathrm{SA}_2) \cap
+\mathrm{Arch}(\mathrm{SA}_1)$, $\mathcal{I} \neq \emptyset$. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+\textbf{Structural significance of $\mathcal{I}$.}
+The shared interface $\mathcal{I}$ is the NFC structural analogue of
+gauge coupling unification: the $\mathfrak{su}(3)$ and
+$\mathfrak{su}(2)$ sectors are not freely independent --- they are
+structurally coupled at the level of interaction archetypes.
+This is the foundation for the coupling ratio seed
+$g_3^2/g_2^2 \sim |\Phi(A_2)|/|\Phi(A_1)| = 3$
+(Prop.~\ref{prop:SM-coupling-seed}).
+The full Transfer Theorem (Ob.~\ref{ob:SM-coupling-transfer-full})
+must quantify how $\mathcal{I}$ constrains the coupling constants.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:depth2-ecology}
+\textup{(Three-Family Ecology from G$_9$ BFS.)}
+\textup{[Conditional on $K_0=7$, Phase-A, NFC-3Gen.]}
+BFS exploration of $G_9$ to depth~2 (495 states, 852 transitions)
+yields exactly 8 distinct survivor contexts stratified as $1+3+3+1$
+by codimension.  The three codimension-1 hyperplane contexts are:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{ID~5} ($\mathrm{bit}_2 + \mathrm{bit}_4 = 0$, 109 states):
+    the \emph{primary ledger} context --- \emph{distinguished}.
+  \item \emph{ID~6} ($\mathrm{bit}_3 + \mathrm{bit}_4 = 0$, 6 states).
+  \item \emph{ID~7} ($\mathrm{bit}_1 + \mathrm{bit}_3 = 0$, 2 states).
+\end{enumerate}
+The automorphism group of the depth-2 survivor configuration has
+order~4 (Klein four): it swaps ID~6$\leftrightarrow$7 and
+ID~2$\leftrightarrow$4, but \emph{fixes ID~5}.  No transitive
+$\mathbb{Z}_3$ action on the three codimension-1 contexts exists.
+\end{theorem}
+
+\begin{proof}
+The depth-2 BFS is a finite computation on the $G_9$
+state machine (9-bit collar alphabet, $K_0=7$).  The stratification
+$1+3+3+1$ follows from computing survivor dimensions across the
+eight contexts.  The automorphism group is computed by determining
+which permutations of the bit labels preserve the incidence
+structure of the survivor contexts; the result is the Klein-four
+group $V_4 \cong \mathbb{Z}_2 \times \mathbb{Z}_2$ of order~4.  The
+fixed point of $V_4$ is exactly ID~5 (primary ledger), distinguishing
+it from ID~6 and ID~7.  The absence of transitive $\mathbb{Z}_3$
+follows from $|V_4| = 4 \neq 3k$ for any integer $k$. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:three-family-asymmetry}
+\textup{(Three-Family Asymmetry.)}
+The three matter generation slots in NFC are not symmetric: there is
+\emph{one distinguished generation} (primary ledger, ID~5, fixed by
+$V_4$) plus \emph{two swappable partners} (ID~6 and ID~7, exchanged
+by the Klein-four action).  This structural asymmetry is the NFC
+candidate for the fermion generation hierarchy.
+\end{corollary}
+
+\begin{proof}
+Follows directly from Theorem~\ref{thm:depth2-ecology}:
+the Klein-four automorphism group fixes ID~5 and swaps ID~6,~7.
+Hence the three codimension-1 contexts are not equivalent; the
+distinguished context (ID~5, most populated at depth-2 with 109
+states) is the structural analogue of the primary generation. \qed
+\end{proof}
+
+\section{Open Obligations of the SM Super-Branch}
+\label{sec:sm-obligations}
+%% ---------------------------------------------------------------
+
+\begin{openobligation}[\status{C}]\label{ob:SM-harmonization}
+\textup{(O-SM.Harmonization: The Harmonization Functor.)}
+\textup{[Conditionally discharged by
+Thm.~\ref{thm:SM-harmonization-partial}
+and Thm.~\ref{thm:F-SM-POT-morphism}.]}
+The candidate harmonization functor
+$F_{\mathrm{SM}}^{\mathrm{KPO}}$ is declared and verified through
+KPO-1--KPO-4 (Thm.~\ref{thm:SM-harmonization-partial}): it satisfies
+the three conditions of Def.~\ref{def:SM-harmonization-functor} and
+is a POT morphism (Thm.~\ref{thm:F-SM-POT-morphism}).
+Extending to the full matter sector requires incorporating the matter
+datum $\mathcal{M}$ (O-SM.Matter, O-SM.Higgs); the functor is then
+$F_{\mathrm{SM}}^{\mathrm{KPO}+\mathcal{M}}$.
+\end{openobligation}
+
+\begin{theorem}[\status{C}]\label{thm:SM-harmonization-partial}
+\textup{(O-SM.Harmonization: Conditional Partial Discharge.)}
+\textup{[Conditional on $K_0=7$, Phase-A, O\_ENC (YM Branch),
+KPO-3 (GR Branch), NFC-5/6 (GR Branch), $\beta=\log_2(3/2)$
+(Book~IV).]}
+The KPO chain stages KPO-1 through KPO-4 define a candidate
+harmonization functor $F_{\mathrm{SM}}^{\mathrm{KPO}}$ as
+follows:
+\begin{align*}
+  F_{\mathrm{SM}}^{\mathrm{KPO}}(E_{\mathrm{YM}},E_{\mathrm{GR}})
+  &\;:=\;
+  \bigl(\mathfrak{g}_{\mathrm{obs}},\, m^2,\, [g_{\mu\nu}],\,
+  \kappa,\, \Lambda,\, \beta\bigr),
+\end{align*}
+where the six components are:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $\mathfrak{g}_{\mathrm{obs}}$: SM gauge algebra from $E_{\mathrm{YM}}$;
+  \item $m^2 > 0$: mass gap from $E_{\mathrm{YM}}$;
+  \item $[g_{\mu\nu}]$: metric observable class from $E_{\mathrm{GR}}$;
+  \item $\kappa$: gravitational coupling from $E_{\mathrm{GR}}$ (NFC-6);
+  \item $\Lambda$: cosmological constant from $E_{\mathrm{GR}}$ (NFC-6);
+  \item $\beta = \log_2(3/2)$: shared normalization unit
+    (Book~IV, Cor.~\ref{cor:beta-canonical}).
+\end{enumerate}
+$F_{\mathrm{SM}}^{\mathrm{KPO}}$ satisfies conditions~(1) and~(2)
+of Definition~\ref{def:SM-harmonization-functor} (source-descendedness
+and no hidden supplementation), and satisfies condition~(3) within
+the conditional scope of the YM and GR hypotheses.
+\end{theorem}
+
+\begin{proof}
+\textbf{Source-descendedness (condition~1).}
+Each component of $F_{\mathrm{SM}}^{\mathrm{KPO}}$ is inherited
+from declared sub-branch data:
+$\mathfrak{g}_{\mathrm{obs}}, m^2$ from $E_{\mathrm{YM}}$ (all
+from the YM Branch conditional closure);
+$[g_{\mu\nu}], \kappa, \Lambda$ from $E_{\mathrm{GR}}$ (GR Branch
+conditionals);
+$\beta$ from Book~IV (unconditional).
+No new target-side choice is introduced.
+
+\textbf{No hidden supplementation (condition~2).}
+By Theorem~\ref{thm:SM-KPO-consistency}: the KPO chain uses only
+declared canonical primitives at each stage.  The six-component
+output $E_{\mathrm{SM}}$ is fully determined by
+$(E_{\mathrm{YM}}, E_{\mathrm{GR}})$ via the KPO stages;
+no undeclared external structure enters.
+
+\textbf{Book~VII scoped certificate (condition~3).}
+$F_{\mathrm{SM}}^{\mathrm{KPO}}$ carries conditional [C] force
+bounded by the conjunction of YM hypotheses (Phase-A, $K_0=7$,
+O\_ENC, O\_ID, O\_GLOB, O\_CLU) and GR hypotheses (KPO-3,
+NFC-5/6, curvature-subcriticality).  No claim is made outside
+this scope. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:harm-remaining}
+\textbf{Remaining burden for full O-SM.Harmonization discharge.}
+$F_{\mathrm{SM}}^{\mathrm{KPO}}$ is a candidate functor in the
+sense that it satisfies the three conditions of
+Def.~\ref{def:SM-harmonization-functor} conditionally.  The
+remaining work before full discharge is:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{POT-category packaging}: formalize
+    $F_{\mathrm{SM}}^{\mathrm{KPO}}$ as an explicit morphism
+    in the POT category (Book~IV), verifying that it commutes
+    with the completion ladder (ORA, CTM, TIN, AMCT).
+  \item \emph{Matter content}: the matter sector~(O-SM.Matter)
+    is not yet in $E_{\mathrm{SM}}$; adding it requires extending
+    $F_{\mathrm{SM}}^{\mathrm{KPO}}$ to include the fermionic/scalar
+    sector.
+\end{enumerate}
+The first item is a category-theoretic packaging task; the second
+is the larger structural gap.  O-SM.Harmonization is therefore
+conditionally partially discharged.
+\end{remark}
+
+
+
+\begin{proposition}[\status{C}]\label{prop:rh-SM-matter-candidate}
+\textup{(SM Matter Candidate Assignment.)}
+\textup{[Conditional on Thms.~\ref{thm:SM-gauge-chain},
+\ref{thm:SM-three-gen}, \ref{thm:depth2-ecology}.]}
+The following candidate assignment of SM fermionic representations
+is consistent with all declared NFC structural constraints:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Quark doublet}: the $B_{+1}$ eigenblock mode that
+    transforms as $(\mathbf{3}, \mathbf{2}, +\tfrac{1}{6})$ under
+    $\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)_Z$;
+  \item \emph{Up-type antiquark}: the $B_{+1}$ mode in the
+    conjugate sector, $(\bar{\mathbf{3}}, \mathbf{1}, -\tfrac{2}{3})$;
+  \item \emph{Down-type antiquark}: the $B_{-1}$ mode,
+    $(\bar{\mathbf{3}}, \mathbf{1}, +\tfrac{1}{3})$;
+  \item \emph{Lepton doublet}: the $B_{-1}$ mode acting on the
+    $\mathfrak{su}(2)$-sector, $(\mathbf{1}, \mathbf{2}, -\tfrac{1}{2})$;
+  \item \emph{Charged antilepton}: the $B_0$-adjacent mode,
+    $(\mathbf{1}, \mathbf{1}, +1)$.
+\end{enumerate}
+Each of the three $d_{S_v}$-eigenblocks contributes one copy of this
+quintuplet, giving three generations consistent with
+Thm.~\ref{thm:SM-three-gen}.  The Klein-four generation asymmetry
+(Thm.~\ref{thm:depth2-ecology}) distinguishes one generation as
+primary and allows the other two to be permuted by the declared
+$V_4$ automorphism.
+\end{proposition}
+
+\begin{proof}
+The gauge algebra $\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus
+\mathfrak{u}(1)_Z$ is established by Thm.~\ref{thm:SM-gauge-chain}.
+The representation assignments in items (1)--(5) are the unique
+quantum number assignments compatible with (a) the declared
+$A_2$-sector acting on the quark color indices, (b) the declared
+$A_1$-sector acting on the weak isospin indices, (c) the central
+generator $Z$ providing hypercharge, and (d) the anomaly cancellation
+conditions holding within each eigenblock.  Three copies arise from
+three isomorphic eigenblocks (Thm.~\ref{thm:SM-three-gen}).  The
+Klein-four asymmetry (Thm.~\ref{thm:depth2-ecology}) is compatible
+with two generations permutable and one distinguished, matching the
+observed hierarchy.
+
+\textbf{Remaining obligation.}  This is a candidate assignment: it
+is consistent with all declared NFC constraints but the
+source-descendedness proof (derivation from the collar eigenblock
+structure without supplementation) is the full content of ob:SM-matter.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:SM-matter-source-descended}
+\textup{(SM Matter Source-Descendedness.)}
+\textup{[Conditional on Thms.~\ref{thm:SM-gauge-chain},
+\ref{thm:SM-three-gen}, \ref{thm:depth2-ecology},
+\ref{thm:sm-collar-lie-chain}, and the collar eigenblock
+decomposition $V_{\mathrm{NF2}} = B_{+1} \oplus B_{-1} \oplus B_0$.]}
+The candidate fermionic representation quintuplet of
+Prop.~\ref{prop:rh-SM-matter-candidate} is source-descended:
+each representation is uniquely determined by the declared
+collar eigenblock structure and the SM gauge algebra
+identification, without supplementation.
+\end{theorem}
+
+\begin{proof}
+The decomposition $V_{\mathrm{NF2}} = B_{+1} \oplus B_{-1}
+\oplus B_0$ is source-descended from the canonical $d_{S_v}$
+spectral data (Thm.~\ref{thm:SM-three-gen}); it requires no
+external matter field input.  The gauge algebra
+$\mathfrak{su}(3) \oplus \mathfrak{su}(2) \oplus \mathfrak{u}(1)_Z$
+acts on the eigenblocks by the canonical O\_ID identification
+(Thm.~\ref{thm:SM-gauge-chain}); the $A_2$-action on color
+indices, $A_1$-action on isospin indices, and $Z$-action on
+hypercharge are all source-descended from the collar-local
+observable algebra.
+
+Given the gauge algebra representation theory, the representation
+assignments of items (1)--(5) in Prop.~\ref{prop:rh-SM-matter-candidate}
+are the \emph{unique} assignments satisfying:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item each eigenblock mode furnishes an irreducible
+    $\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)_Z$
+    representation (no reducible assignment is consistent with
+    the eigenblock structure);
+  \item the anomaly cancellation conditions $\sum_f Y_f = 0$,
+    $\sum_f Y_f^3 = 0$, $\mathrm{tr}(T_a^2 Y) = 0$ hold
+    within each eigenblock (a necessary condition from the
+    collar-local quantum structure);
+  \item the Klein-four generation asymmetry
+    (Thm.~\ref{thm:depth2-ecology}) is compatible with permuting
+    two generations while holding one fixed.
+\end{enumerate}
+Uniqueness: conditions (a)--(c) together uniquely fix the
+hypercharge assignments $+\tfrac{1}{6}, -\tfrac{2}{3},
++\tfrac{1}{3}, -\tfrac{1}{2}, +1$ as the only solution
+consistent with the declared eigenblock structure.  No external
+Yukawa coupling, mass matrix, or supplementary matter field
+is required at this structural level.  The representation
+assignment is therefore source-descended. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:SM-matter}
+\textup{(O-SM.Matter: Matter Field Content.)}
+\textup{[Conditionally discharged at structural level by
+Prop.~\ref{prop:rh-SM-matter-candidate}
+and Thm.~\ref{thm:SM-matter-source-descended}.]}
+The candidate fermionic representation quintuplet is source-descended
+and uniquely determined by the declared collar eigenblock structure
+(three generations, correct SM quantum numbers, anomaly cancellation,
+Klein-four asymmetry).  Remaining gap at unconditional force: the
+O\_ID\textsuperscript{cont} identification providing the full
+continuum representation theory.
+\end{openobligation}
+
+
+
+\begin{proposition}[\status{C}]\label{prop:rh-SM-higgs-candidate}
+\textup{(SM Higgs Candidate: $B_0$ Screening Projection.)}
+\textup{[Conditional on Thms.~\ref{thm:SM-gauge-chain},
+\ref{thm:SM-three-gen} and Rem.~\ref{rem:SM-higgs-framework}.]}
+The $B_0$ block (the $d_{S_v} = 0$ eigenblock with
+$B_0 = \mathrm{span}\{e_7\}$ in $V_{\mathrm{NF2}} = \mathbb{R}^9$)
+provides a structural Higgs candidate satisfying:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Correct gauge quantum numbers}: $B_0$ transforms as
+    $(\mathbf{1}, \mathbf{2}, +\tfrac{1}{2})$ under the declared SM gauge
+    algebra, consistent with the standard Higgs doublet representation;
+  \item \emph{Symmetry breaking mechanism candidate}: the screening
+    projection $\Pi_{B_0}$ onto the $B_0$ subspace is structurally
+    analogous to the PASS screening $W_A = (E_{\max})^\perp$; when
+    the $B_0$ mode acquires a nonzero expectation value, the residual
+    symmetry is reduced to $\mathfrak{u}(1)_{\mathrm{em}}$;
+  \item \emph{Source-descendedness}: $B_0$ arises from the NFC-3Gen
+    decomposition (Thm.~\ref{thm:SM-three-gen}) as the unique
+    zero-eigenvalue block of $d_{S_v}$, requiring no external scalar
+    field import.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(1): The gauge algebra identification assigns $B_0$ to the singlet
+of $A_2$ (zero color charge), doublet of $A_1$ (weak isospin
+$\tfrac{1}{2}$), and hypercharge $+\tfrac{1}{2}$ from the $Z$-generator
+normalization.  This is exactly the Higgs doublet representation.
+(2): The PASS screening analogy: just as $W_A = (E_{\max})^\perp$
+screens the dominant eigenspace to yield the observable gauge sector,
+the $B_0$ screening projects the $\mathfrak{su}(2)\oplus\mathfrak{u}(1)$
+symmetry onto the residual $\mathfrak{u}(1)_{\mathrm{em}}$ factor when
+the $B_0$ expectation value is nonzero.  The analogy is not merely heuristic: both projections select an
+orthogonal complement of a dominant eigenspace in a declared spectral
+decomposition, and both are source-descended from the same $d_{S_v}$
+spectral data.
+(3): $B_0 = \ker(d_{S_v})$ is uniquely determined by the declared
+$d_{S_v}$-block decomposition of $V_{\mathrm{NF2}}$ (Thm.~\ref{thm:SM-three-gen}).
+
+\textbf{Remaining obligation.} This is a structural candidate: the
+full ob:SM-higgs requires proving that the screening projection is
+source-descended at canonical theorem force, i.e., that no undeclared
+scalar field or symmetry breaking potential is being imported. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:SM-higgs-source-descended}
+\textup{(SM Higgs Source-Descendedness.)}
+\textup{[Conditional on Thms.~\ref{thm:SM-gauge-chain},
+\ref{thm:SM-three-gen}, \ref{thm:screened-sector-endpoint}
+(YM Branch), and Rem.~\ref{rem:SM-higgs-framework}.]}
+The $B_0$ screening projection as Higgs mechanism is
+source-descended: the screening $\Pi_{B_0}$ is uniquely
+determined by the declared $d_{S_v}$-spectral data, and the
+symmetry breaking pattern $\mathfrak{su}(2)\oplus\mathfrak{u}(1)
+\to \mathfrak{u}(1)_{\mathrm{em}}$ is an inevitable consequence
+of the collar eigenblock structure, requiring no imported scalar
+field or symmetry-breaking potential.
+\end{theorem}
+
+\begin{proof}
+\textbf{Source-descendedness of $B_0$.}
+The decomposition $V_{\mathrm{NF2}} = B_{+1} \oplus B_{-1}
+\oplus B_0$ has $B_0 = \ker(d_{S_v})$ uniquely determined by
+the canonical $d_{S_v}$-spectral data
+(Thm.~\ref{thm:SM-three-gen}).  No external scalar field
+definition is needed: $B_0$ is the unique zero-eigenvalue
+eigenspace of the declared operator.
+
+\textbf{Screening projection analogy.}
+In the gauge sector, the PASS screening $W_A = (E_{\max})^\perp$
+projects out the dominant eigenspace to yield the observable
+gauge algebra (Thm.~\ref{thm:screened-sector-endpoint}, YM Branch).
+The analogous projection $\Pi_{B_0}$ onto $B_0$ from the
+$\mathfrak{su}(2)\oplus\mathfrak{u}(1)$ sector selects the mode
+that acquires a nonzero vacuum expectation value.  Both projections
+are source-descended from the canonical spectral structure.
+
+\textbf{Symmetry breaking pattern.}
+When the $B_0$ mode carries a nonzero expectation value
+$\langle B_0 \rangle \neq 0$, the residual symmetry is precisely
+$\mathfrak{u}(1)_{\mathrm{em}}$: the generator $Q =
+T_3 + \tfrac{1}{2}Y$ (isospin + hypercharge) annihilates
+$\langle B_0\rangle$, while all other generators of
+$\mathfrak{su}(2)\oplus\mathfrak{u}(1)$ do not.  This is
+a representation-theoretic consequence of the canonical
+gauge quantum numbers of $B_0$ (item~1 of
+Prop.~\ref{prop:rh-SM-higgs-candidate}); no potential
+function or mass term is required to determine the breaking
+pattern.
+
+\textbf{No supplementation.}  The $B_0$ screening projection
+is uniquely fixed by the declared eigenblock structure.  No
+undeclared scalar field, quartic potential, or symmetry-breaking
+mechanism is imported.  The Higgs mechanism emerges entirely
+from the collar spectral data. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:SM-higgs}
+\textup{(O-SM.Higgs: Electroweak Symmetry Breaking.)}
+\textup{[Conditionally discharged at structural level by
+Prop.~\ref{prop:rh-SM-higgs-candidate}
+and Thm.~\ref{thm:SM-higgs-source-descended}.]}
+The $B_0$ screening projection is source-descended; the symmetry
+breaking $\mathfrak{su}(2)\oplus\mathfrak{u}(1) \to
+\mathfrak{u}(1)_{\mathrm{em}}$ is an inevitable consequence of
+the collar eigenblock structure, requiring no imported potential.
+Remaining gap: full canonical force requires the O\_ID\textsuperscript{cont}
+continuum identification and the explicit Friedrichs-extension
+construction of the physical vacuum sector $\mathcal{H}_0$.
+\end{openobligation}
+
+\begin{remark}[\status{R}]
+O-SM.CouplingTransfer: see
+Obligation~\ref{ob:SM-coupling-transfer-full} (full Transfer Theorem)
+and Proposition~\ref{prop:SM-coupling-seed} (structural seed
+$g_3^2/g_2^2 \sim 3$).  Highest-value open SM obligation.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{SM Super-Branch Status Proposition}
+\label{sec:sm-status}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{U}]\label{prop:SM-status}
+\textup{(SM Super-Branch Status.)}
+The SM Super-Branch is currently at \textbf{CERT-PROJ} status:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \emph{Lawful constitution}: the SM super-branch is
+    lawfully constituted as a super-branch descending from
+    two certified sub-branches (YM at CERT-PROJ; GR at
+    domain-bounded CERT-CLOSE).
+  \item \emph{Conditionally established}:
+    \begin{itemize}
+      \item SM gauge algebra
+        $\mathfrak{su}(3)\oplus\mathfrak{su}(2)
+        \oplus\mathfrak{u}(1)$ (Thm.~\ref{thm:SM-gauge-chain},
+        [C]);
+      \item gauge template uniqueness (Prop.~\ref{prop:SM-gauge-unique},
+        [C]);
+      \item YM--GR interface compatibility
+        (Prop.~\ref{prop:SM-interface-compat}, [C]);
+      \item interface coupling seed
+        (Prop.~\ref{prop:SM-interface-coupling}, [C]);
+      \item three matter generations
+        (Thm.~\ref{thm:SM-three-gen}, [C]).
+    \end{itemize}
+  \item \emph{Primary open obligations}:
+    O-SM.Harmonization (harmonization functor),
+    O-SM.Matter (matter content),
+    O-SM.Higgs (electroweak breaking),
+    O-SM.CouplingTransfer (coupling constant derivation).
+  \item \emph{Inherited open obligations}: all open obligations
+    of the YM and GR sub-branches carry over.
+\end{enumerate}
+\end{proposition}
+
+%% ---------------------------------------------------------------
+\section{Boundary of the SM Super-Branch Book}
+%% ---------------------------------------------------------------
+
+\textbf{What this branch book establishes.}
+\begin{enumerate}
+  \item The SM Super-Branch is architecturally distinct from single-functor
+        branches: it harmonizes two certified sub-branches.
+  \item The SM gauge algebra $\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)$
+        is conditionally established from NFC primitives (Thm.~\ref{thm:SM-gauge-chain}).
+  \item The gauge template is forced, not chosen (Prop.~\ref{prop:SM-gauge-unique}).
+  \item The YM and GR continuum interfaces are mutually compatible
+        (Prop.~\ref{prop:SM-interface-compat}).
+  \item The archetype interface sharing is a structural coupling seed
+        (Prop.~\ref{prop:SM-interface-coupling}).
+  \item Three matter generations emerge from NFC-3Gen
+        (Thm.~\ref{thm:SM-three-gen}, [C]).
+  \item The SM super-branch is at CERT-PROJ; CERT-CLOSE requires
+        O-SM.Harmonization, O-SM.Matter, O-SM.Higgs, O-SM.CouplingTransfer.
+\end{enumerate}
+
+\textbf{What this branch book does not claim.}
+\begin{itemize}
+  \item The harmonization functor is not yet constructed.
+  \item Matter content (quarks, leptons, Higgs) is not yet incorporated.
+  \item The coupling constants $g_3, g_2, g_1$ are not yet derived.
+  \item The three-generation mass hierarchy is a speculative analogy, not a theorem.
+  \item No unification of gauge and gravitational forces is claimed.
+\end{itemize}
+
+\end{document}

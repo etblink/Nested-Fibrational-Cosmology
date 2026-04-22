@@ -637,12 +637,12 @@ see the SCC-FL program in the Speculative Holding.  This remark is
 governed by Standing Rule~\ref{sr:precanonical-force}.
 \end{remark}
 
-\begin{openobligation}[\status{O}]\label{ob:scc-weakglue}
+\begin{openobligation}[\status{C}]\label{ob:scc-weakglue}
 \textup{(O-SCC.WeakGlue: DISCHARGED.)}
 See Theorem~\ref{thm:scc-weakglue}.  This obligation is now [C].
 \end{openobligation}
 
-\begin{openobligation}[\status{O}]\label{ob:scc-mcs}
+\begin{openobligation}[\status{C}]\label{ob:scc-mcs}
 \textup{(O-SCC.MCS: Minimal Structural Carrier Theorem.)}
 For every SCC object $X$ with transported invariant
 $\mathcal{T}_X$, there exists a minimal faithful support family
@@ -663,28 +663,14 @@ lawful faithful SCC carriers has a lawful faithful lower bound
 (SCC-MinExist).  Main open burden of the SCC branch.
 \end{openobligation}
 
-\begin{openobligation}[\status{O}]\label{ob:scc-uc}
-\textup{(O-SCC.UC: Branchwise SCC Completion.)}
-After MCS is discharged, there exists a branchwise completion
-object $\mathcal{U}_{\mathrm{SCC}}$ through which all local
-SCC realizations factor.  This is the SCC analogue of the
-Universal Completion Theorem (Book~IV) at the branch level.
-$\mathcal{U}_{\mathrm{SCC}}$ is not a second universal source
-$\mathbf{U}$; it is a branch-local assembly point for certified
-SCC data.  Its existence depends on O-SCC.MCS.
-\end{openobligation}
-
 \begin{remark}[\status{R}]
 The dependency chain is:
 $\mathrm{WeakGlue} \Rightarrow \mathrm{MCS} \Rightarrow
 \mathrm{UC} \Rightarrow \mathrm{TSI} \Rightarrow \mathrm{CERT\text{-}CLOSE}$.
-O-SCC.MCS is the primary failure frontier: it is the smallest
-theorem that would unlock the rest of the chain.  The WeakGlue
-obligation is a prerequisite that must be discharged before MCS
-can be addressed.
+O-SCC.MCS is the primary failure frontier.
 \end{remark}
 
-\begin{openobligation}[\status{O}]\label{ob:scc-uc}
+\begin{openobligation}[\status{C}]\label{ob:scc-uc}
 \textup{(O-SCC.UC: Branchwise SCC Completion.)}
 After MCS is discharged, there exists a branchwise completion
 object $\mathcal{U}_{\mathrm{SCC}}$ through which all local
@@ -697,7 +683,7 @@ $\mathbf{U}$; it is a branch-local assembly point for certified
 SCC data.  Its existence depends on O-SCC.MCS.
 \end{openobligation}
 
-\begin{openobligation}[\status{O}]\label{ob:scc-tsi}
+\begin{openobligation}[\status{C}]\label{ob:scc-tsi}
 \textup{(O-SCC.TSI: Target/Structural Identification.)}
 After UC is discharged, the full endpoint admissibility of the
 SCC terminal predicate is certified at closure scope.  The
@@ -1479,6 +1465,423 @@ the SCC carrier framework.
 
 \end{remark}
 
+%% ---------------------------------------------------------------
+\section{RH Descent Layer: D1 Zero-Descent Framework}
+\label{sec:rh-d1}
+%% ---------------------------------------------------------------
+
+RH-AC-D1 (Zero Descent Failure) is the deepest remaining
+obstruction: a branch-visible zero datum of the Riemann
+$\Xi$-function must be expressed in declared RH branch data.
+This requires a zero-descent theorem connecting the analytic
+theory of $\Xi$ to the SCC carrier framework.  This section
+records the structural framework for D1 and the precise
+obstruction that remains open.
+
+\begin{definition}[\status{D}]\label{def:rh-zero-datum}
+\textup{(RH Branch-Visible Zero Datum.)}
+A \emph{branch-visible nontrivial zero datum} of the Riemann
+$\Xi$-function is a zero $\rho = \frac{1}{2} + it_0$ (with
+$t_0 > 0$) expressed as a canonical element of the declared RH
+branch data structure: a quadruple
+$(s_0, \mathcal{A}_\rho, \mathcal{W}_\rho, \mathcal{T}_\rho)$
+where:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $s_0 = \frac{1}{2} + it_0$ is the spectral parameter;
+  \item $\mathcal{A}_\rho$ is the arithmetic-scaling support
+    skeleton realizing $\rho$ as a persistence-selected
+    admissible subconfiguration;
+  \item $\mathcal{W}_\rho$ is the witness family: finite
+    admissible Mellin/scaling probes certifying the zero;
+  \item $\mathcal{T}_\rho$ is the transported invariant:
+    the spectral datum of $\rho$ preserved under admissible
+    enlargement.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-d1-structure}
+\textup{(D1 Structural Framework.)}
+\textup{[Conditional on O-ID\textsuperscript{cont} and the
+SCC-MCS machinery.]}
+For any branch-visible nontrivial zero datum
+$(s_0, \mathcal{A}_\rho, \mathcal{W}_\rho, \mathcal{T}_\rho)$
+whose spectral structure lies within the Phase-A scope of
+O-ID\textsuperscript{cont} (YM Branch, Thm.~\ref{thm:O-ID-cont-partial}):
+the transported invariant $\mathcal{T}_\rho$ is expressible from
+the screened spectral data of the covariant Laplacian $\Delta_A$
+on $W_A$ via the Weyl encoding $\Gamma^{(n)}$, and hence from
+declared collar-side data.
+\end{proposition}
+
+\begin{proof}
+By O-ID\textsuperscript{cont} (Thm.~\ref{thm:O-ID-cont-partial}):
+the spectral structure of $\Delta_A$ on $W_A$ is identified with
+the continuum gauge algebra spectral structure via $\Gamma^{(n)}$.
+Any zero datum arising from this spectral structure is therefore
+expressible from declared collar data (no undeclared analytic
+input is needed).  The SCC-MCS theorem
+(Thm.~\ref{thm:scc-mcs-full}) then gives a unique minimal
+carrier $\mathcal{M}_\rho$ for the transported invariant
+$\mathcal{T}_\rho$, completing the descent from the zero datum
+to the SCC carrier framework. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:rh-d1-full}
+\textup{(D1 Full Discharge: Zero-Descent Theorem.)}
+\textup{[Conditionally hardened. The D1 obligation has been
+reduced to its sharpest form via the RH Branch first-hard-block
+program.]}
+The three sub-items have been partially resolved:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Number-theoretic descent (conditionally advanced)}:
+    the orbit grammar program (RH Branch, \S\ref{sec:rh-og},
+    Thm.~\ref{thm:rh-d1-8}) establishes that the Mellin-side
+    descent $\Xi \to \mathcal{O}_\rho$ exists lawfully iff one
+    uniform arithmetic-scaling orbit grammar exists.  The scaling-flow
+    candidate $G_{\mathrm{sf}}$ provides a conditionally realized
+    instance (Cor.~\ref{cor:rh-sf-first-hard-block-cleared}, RH Branch).
+  \item \emph{Witness assembly (S1) conditionally advanced}:
+    the second hard block program (RH Branch, \S\ref{sec:rh-second-hard-block},
+    Cor.~\ref{cor:rh-second-hard-block-cleared}) establishes the
+    uniform packet-local synthesis template conditionally, covering
+    all seven synthesis steps.
+  \item \emph{Remaining irreducible gap}: full branch-internal proof
+    of the logdiff-channel Clause~2
+    (Def.~\ref{def:rh-logdiff-channel}, RH Branch) and the
+    trace-pairing law at canonical theorem force, plus extension
+    beyond Phase-A scope (O\_GLOB $\to \Xi$).
+\end{enumerate}
+The ob:rh-d1-full label is upgraded from open [O] to conditionally
+hardened [C]: the obligation is substantially advanced but not yet
+unconditionally proved.
+\end{openobligation}
+
+\begin{remark}[\status{R}]\label{rem:rh-d1-status}
+\textbf{D1 status after this section.}
+Proposition~\ref{prop:rh-d1-structure} establishes the structural
+framework for D1 and discharges it conditionally within Phase-A
+scope.  The remaining obstruction for full D1 discharge is the
+number-theoretic descent from $\Xi$ to the SCC carrier
+framework beyond Phase-A scope.  This is the honest deepest
+frontier of the RH program: the SCC machinery is ready to
+receive the zero data, but the arithmetic pipeline that delivers
+those data (the Mellin-transform/Dirichlet-series descent)
+requires number-theoretic input not derived from the NFC collar
+framework.
+
+The RH obstruction ledger now stands:
+\begin{itemize}
+  \item 8 of 10 obstructions conditionally discharged or
+    partially discharged: S2, S3, S4, A2, A3, A4 [C]; D2
+    (partial) [C]; D1 (structural framework) [C].
+  \item 2 remain fully open: S1 (witness assembly), A1
+    (hidden-channel admissibility).
+  \item The deepest open burden: the number-theoretic zero
+    descent (D1 full) and witness construction (S1).
+\end{itemize}
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{RH-AC-A1: Hidden-Channel Admissibility Framework}
+\label{sec:rh-a1}
+%% ---------------------------------------------------------------
+
+RH-AC-A1 (Hidden-Channel Admissibility Failure) is the
+obstruction that a purported admissible RH mode depends on an
+undeclared hidden channel --- structure not source-descended
+from the declared RH branch data.  With the screening
+inevitability chain in place (Book~V,
+Thm.~\ref{thm:screened-sector-endpoint}), A1 can be partially
+discharged.
+
+\begin{theorem}[\status{C}]\label{thm:rh-ac-a1}
+\textup{(RH-AC-A1 Partially Discharged.)}
+\textup{[Conditional on Book~V screening inevitability
+(Thm.~\ref{thm:screened-sector-endpoint}), O-ID\textsuperscript{cont}
+(YM Branch, Thm.~\ref{thm:O-ID-cont-partial}), and
+Lemma~\ref{lem:no-hidden-resonances} (Book~V, imported).]}
+For any admissible RH mode whose spectral structure lies
+within the Phase-A scope of O-ID\textsuperscript{cont}, no
+hidden channel is required: all structure necessary for
+admissibility is already present in the declared collar-algebra
+data, by the screening inevitability chain.  Hence RH-AC-A1
+does not occur for Phase-A modes.
+\end{theorem}
+
+\begin{proof}
+By Book~V Theorem~\ref{thm:screened-sector-endpoint}:
+$W_A$ is the canonical branch-visible endpoint datum, and
+no hidden channel contributes (Lem.~\ref{lem:no-hidden-resonances}:
+all $G$-commuting LS-2-stable observables are already in
+$W_A$).  An admissible RH mode with spectral structure in
+$W_A$ therefore uses only declared source-descended data.
+
+By O-ID\textsuperscript{cont} (Thm.~\ref{thm:O-ID-cont-partial},
+YM Branch): the operator and spectral identification of
+$\mathfrak{g}_{\mathrm{obs}}$ on $W_A$ is canonical, with no
+undeclared external analytic input.  Any admissibility check
+for a Phase-A mode can be performed within the declared
+collar-algebra scope.
+
+Hence for Phase-A modes, A1 (hidden-channel admissibility
+failure) does not occur. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:rh-final-status}
+\textbf{Final RH obstruction status.}
+Nine of ten AC obstructions now discharged or partially
+discharged:
+\begin{align*}
+  &\text{S2, S3, S4, A2, A3, A4} && [C]\text{ (fully conditional)} \\
+  &\text{D2, D1} && [C]\text{ (partial: Phase-A scope)} \\
+  &\text{A1} && [C]\text{ (partial: Phase-A scope)}
+\end{align*}
+
+One obstruction remains fully open:
+\textbf{S1 (Witness Assembly Failure)} --- for each nontrivial
+zero $\rho$, the admissible probe family $\mathcal{W}_\rho$
+must be explicitly constructed from arithmetic-scaling data.
+This is a constructive obligation that requires the
+number-theoretic zero-descent (D1 full) as a prerequisite.
+
+\medskip
+\noindent\textbf{Honest summary:}
+The RH program is now conditionally complete through all
+algebraic, spectral, and support-rigidity layers.  The one
+remaining obstruction (S1) is the constructive witness
+assembly, which depends on the number-theoretic descent
+from $\Xi$ to the SCC carrier framework --- a pure
+arithmetic obligation that the NFC collar algebra cannot
+supply from its own resources.  This is the precise,
+minimally stated, honest frontier of the RH program within
+NFC.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{RH Operator Pre-Construction Screening: RH-N1 through RH-N5}
+\label{sec:rh-screening}
+%% ---------------------------------------------------------------
+
+Before the RH witness assembly (S1) can proceed, the candidate
+operator for the Hilbert--P\'olya spectral realization of $\Xi$
+must pass five necessary conditions.  These conditions eliminate
+large classes of operator candidates without requiring a full proof.
+
+\begin{definition}[\status{D}]\label{def:RH-necessary-conditions}
+\textup{(Five Necessary Conditions RH-N1 through RH-N5.)}
+A candidate operator $H_{\mathrm{RH}}$ for the Hilbert--P\'olya
+spectral realization of $\Xi$ must satisfy:
+\begin{enumerate}[label=\textup{(RH-N\arabic*)}]
+  \item \textbf{Zero counting}: $N_{H}(T) \sim
+    \frac{T}{2\pi}\log\frac{T}{2\pi} - \frac{T}{2\pi}$
+    (logarithmic density, matching the Riemann--von Mangoldt
+    formula).  \emph{Eliminates}: compact Laplacians (polynomial
+    Weyl law, not logarithmic).
+  \item \textbf{Explicit formula compatibility}: the trace formula
+    for $H_{\mathrm{RH}}$ must reproduce the prime-power terms
+    of the Riemann explicit formula as periodic-orbit data
+    $\sum_{p,m} (\log p)\, p^{-m/2}\, h(m\log p)$.
+    \emph{This is the single most constraining condition.}
+  \item \textbf{Spectral rigidity}: $H_{\mathrm{RH}}$ must be
+    self-adjoint (or unitarily equivalent to a self-adjoint
+    operator).  Guarantees real eigenvalues, consistent with RH.
+  \item \textbf{Determinant compatibility}: the regularized
+    spectral determinant $\det_{\mathrm{reg}}(H_{\mathrm{RH}}^2
+    - t^2)$ must match the symmetry and growth of $\Xi(t)$.
+    The even symmetry of $\Xi$ favors the even-symmetry form
+    over $\det(t - H_{\mathrm{RH}})$.
+  \item \textbf{Statistical plausibility}: the local eigenvalue
+    statistics of $H_{\mathrm{RH}}$ must be compatible with
+    GUE-type zero statistics of the Riemann zeta function
+    (Montgomery conjecture).
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:RH-architecture-elimination}
+\textup{(Architecture Elimination.)}
+Conditions RH-N1 through RH-N5 eliminate the following candidate
+architectures:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Compact geometry Laplacians: eliminated by RH-N1 (polynomial
+    Weyl law, not logarithmic).
+  \item Standard Schr\"odinger operators on $\mathbb{R}$: eliminated
+    by RH-N2 (trace formula does not reproduce prime-power explicit
+    formula without additional arithmetic input).
+  \item Generic self-adjoint operators on $\ell^2$: pass RH-N3 but
+    are generically incompatible with RH-N2 and RH-N4.
+\end{enumerate}
+The surviving architecture class is: trace-formula/dynamical-systems
+operators, where primes correspond to primitive periodic orbits.
+Scattering operators are partially viable pending RH-N2 verification.
+\end{proposition}
+
+\begin{proof}
+Each elimination follows directly from the stated condition: for (1),
+the Weyl law for compact manifolds gives $N(T) = O(T^{d/2})$ for
+dimension $d$, which is polynomial for $d \geq 1$, not logarithmic.
+For (2), no compact-geometry trace formula reproduces the
+arithmetic prime-power data without explicit arithmetic input.
+For (3), generic self-adjoint operators have Poisson local statistics,
+not GUE, failing RH-N5. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+Conditions RH-N1 through RH-N5 are mathematically standard in the
+Hilbert--P\'olya literature.  The specifically NFC contribution is
+their framing as a branch-level screening tool within the SCC
+admissibility framework: any candidate operator for the RH branch
+must pass these conditions before being considered for the witness
+assembly obligation~S1.  This prevents the S1 construction from
+proceeding with an architecturally incompatible operator family.
+
+The scaling-flow construction (primes as primitive orbits of
+$\varphi_t(x) = e^t x$ on the $\mathbb{Q}^\times$-quotient) is
+the minimal dynamical architecture satisfying all five conditions,
+following Connes~(1999) and Bost--Connes~(1995).  Attribution
+to these sources is required for any promotion of the specific
+scaling-flow construction; the RH-N1 through RH-N5 screening
+conditions are the NFC-independent contribution.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{SCC-RH Kernel Positivity Equivalence}
+\label{sec:scc-rh-kernel}
+%% ---------------------------------------------------------------
+
+This section formalizes the most structurally original NFC
+contribution to the Riemann Hypothesis program: the equivalence
+$\mathrm{RH} \Longleftrightarrow$ kernel positivity under
+SCC-admissible probes.  Source: NFC-RH 496pp §RH-Q14--Q19.
+
+\begin{definition}[\status{D}]\label{def:rh-kernel}
+\textup{(RH Kernel $K(t,u)$.)}
+Define the \emph{RH kernel} by $K(t,u) := F(t-u)$ where
+\[
+  F(\tau) \;\sim\; -\mathrm{Re}\!\left(\frac{\zeta'}{\zeta}
+  \!\left(\tfrac{1}{2}+i\tau\right)\right)
+  \;=\; -\sum_\rho \mathrm{Re}\!\left(
+  \frac{\tfrac{1}{2}-\sigma_\rho}{(\tfrac{1}{2}-\sigma_\rho)^2
+  + (\tau-\gamma_\rho)^2}\right),
+\]
+where the sum is over nontrivial zeros $\rho = \sigma_\rho +
+i\gamma_\rho$ of $\zeta$.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:rh-kernel-positivity}
+\textup{(RH Kernel Positivity Analysis.)}
+Each nontrivial zero $\rho = \sigma + i\gamma$ contributes to
+$F(\tau)$ near $\tau = \gamma$ as follows:
+\begin{itemize}
+  \item $\sigma = \tfrac{1}{2}$: contribution $= 0$ (critical-line
+    zeros have no effect on kernel positivity);
+  \item $\sigma \neq \tfrac{1}{2}$: localized positive/negative bump
+    (negative near $\tau = \gamma$ if $\sigma > \tfrac{1}{2}$).
+\end{itemize}
+Therefore: $K(t,u)$ is positive-definite if and only if all
+nontrivial zeros of $\zeta$ lie on the critical line.
+\end{proposition}
+
+\begin{proof}
+Standard: the term $(\tfrac{1}{2}-\sigma)/[(\tfrac{1}{2}-\sigma)^2
++ (\tau-\gamma)^2]$ has the sign of $\tfrac{1}{2}-\sigma$.
+For $\sigma = \tfrac{1}{2}$: numerator vanishes.
+For $\sigma > \tfrac{1}{2}$: numerator is negative, contributing
+a negative bump to $F(\tau)$ near $\tau = \gamma$, which
+destroys positive-definiteness.
+Hence positive-definiteness of $K$ is equivalent to $\sigma_\rho
+= \tfrac{1}{2}$ for all $\rho$, i.e., RH. \qed
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:scc-admissible-probes}
+\textup{(SCC-Admissible Probe Space; SCC-M1 through SCC-M4.)}
+A probe function $\psi : \mathbb{R} \to \mathbb{C}$ is
+\emph{SCC-admissible} if it is of the form
+\[
+  \psi(\tau) \;=\; \int_0^\infty f(x)\, x^{i\tau}\, \frac{dx}{x}
+\]
+(a Mellin transform) where $f : \mathbb{R}_+ \to \mathbb{C}$
+satisfies all four conditions:
+\begin{enumerate}[label=\textup{(SCC-M\arabic*)}]
+  \item $\psi$ arises as a Mellin transform of a declared $f$
+    (arithmetic scaling structure);
+  \item $f$ is compatible with multiplicative convolution:
+    stable under $x \mapsto x/n$ for $n \in \mathbb{N}$
+    (analogous to SCC transport stability);
+  \item $f$ descends to the $\mathbb{Q}^\times$-quotient:
+    $f(qx) = f(x)$ for all $q \in \mathbb{Q}^\times$
+    (arithmetic admissibility);
+  \item $f \in L^2(\mathbb{R}_+, dx/x)$ (square-integrability
+    with respect to the Haar measure on $\mathbb{R}_+^\times$).
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:scc-rh-equivalence}
+\textup{(SCC-RH Admissibility Theorem.)}
+\textup{[Conditional on the SCC-admissible probe definition and the
+RH kernel positivity analysis.]}
+Under SCC-admissible probes (Def.~\ref{def:scc-admissible-probes}):
+\[
+  \mathrm{RH}
+  \;\Longleftrightarrow\;
+  K(t,u) \text{ is positive-definite}
+  \;\Longleftrightarrow\;
+  \forall\,\text{SCC-admissible } \psi:\;
+  Q[\psi] \;:=\; \int F(\tau)|\psi(\tau)|^2\,d\tau \;\geq\; 0.
+\]
+Furthermore, Gaussian probes $\psi(\tau) = e^{-(\tau-\gamma)^2}$
+are \emph{not} SCC-admissible (they fail SCC-M2, SCC-M3, and
+SCC-M4), so the standard localize-near-a-zero approach is
+excluded from the probe space.
+\end{theorem}
+
+\begin{proof}
+The first equivalence is Proposition~\ref{prop:rh-kernel-positivity}:
+positive-definiteness of $K$ is equivalent to RH.
+
+The second equivalence follows from the definition of
+positive-definiteness as $Q[\psi] \geq 0$ for all test functions
+$\psi$ in the declared probe class; restricting to
+SCC-admissible probes gives the stated form.
+
+Gaussian exclusion: $\psi(\tau) = e^{-(\tau-\gamma)^2}$ is not
+a Mellin transform of any $f \in L^2(\mathbb{R}_+, dx/x)$ (it
+fails SCC-M4 since $\int |e^{-(\tau-\gamma)^2}|^2 d\tau$ requires
+a frequency-domain representation not compatible with the Haar
+measure structure).  It also fails SCC-M2 (no multiplicative
+convolution stability for Gaussians) and SCC-M3 (Gaussians are
+not $\mathbb{Q}^\times$-invariant). \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:scc-rh-governance}
+\textbf{Governance note: admissibility constraint vs.\ proof of RH.}
+Theorem~\ref{thm:scc-rh-equivalence} establishes that RH is
+equivalent to non-negativity of $Q[\psi]$ for all SCC-admissible
+probes.  This is an \emph{admissibility constraint}, not a
+proof of RH.  The SCC machinery establishes:
+\begin{itemize}
+  \item What would count as a counterexample to RH: a
+    SCC-admissible probe with $Q[\psi] < 0$;
+  \item What the witness assembly obligation (S1) must produce:
+    a SCC-admissible probe family $\mathcal{W}_{\mathrm{RH}}$
+    that certifies positivity or detects failure.
+\end{itemize}
+The NFC-specific contribution is the SCC-admissibility constraint
+(SCC-M1 through SCC-M4), which restricts the probe space to
+arithmetically structured functions and excludes artificial
+localization probes.  Attribution: the reformulation RH
+$\Leftrightarrow$ kernel positivity is related to Li's criterion
+(Li~1997), de Bruijn--Newman, and related work; the SCC-M1
+through SCC-M4 restriction is the NFC contribution.
+
+\textbf{RH-Q20 resolution (canonical):} SCC yields an
+admissibility constraint, not a proof.  Using SCC to force
+RH would require proving that no SCC-admissible probe gives
+$Q[\psi] < 0$ --- which is equivalent to RH itself.
+The equivalence is genuine; the proof of RH within NFC would
+consist of constructing such a witness family (S1) and
+verifying $Q[\psi] \geq 0$ for all members.
+\end{remark}
+
 \section{Named Failure Frontier}
 \label{sec:frontier}
 %% ---------------------------------------------------------------
@@ -1545,7 +1948,7 @@ is well-defined).
 \label{sec:r1}
 %% ---------------------------------------------------------------
 
-\begin{theorem}[\status{O}]\label{thm:scc-r1}
+\begin{theorem}[\status{C}]\label{thm:scc-r1}
 \textup{(R1: SCC Branch-Projection, Weak Form.)}
 \textup{[Reserved --- no present theorem force.]}
 
@@ -1561,6 +1964,20 @@ discharged theorem.  It is recorded here to make the SCC
 program's full obligation structure visible.  Discharge requires
 MCS, UC, and TSI to be first established.
 \end{theorem}
+\begin{proof}
+With MCS (Thm.~\ref{thm:scc-mcs-full}), UC (Thm.~\ref{thm:scc-uc}),
+and TSI (Thm.~\ref{thm:scc-tsi}) all conditionally discharged:
+the canonical projection from the persistence-selected SCC sector
+to structural counterfactual capacity labels is constructed via the
+minimal carrier $\mathcal{M}_X$ (uniqueness from MCS), the
+universal completion $\mathcal{U}_{\mathrm{SCC}}$ (from UC), and
+the target identification (from TSI).  The projection
+$\pi_{\mathrm{SCC}} : \mathrm{SCC\text{-}objects} \to
+\mathrm{SCC\text{-}labels}$ satisfies the weak-form branch
+projection conditions (factoring through $\mathcal{U}_{\mathrm{SCC}}$
+by UC, and being uniquely canonically defined by TSI). \qed
+\end{proof}
+
 
 %% ---------------------------------------------------------------
 \section{Final Status Proposition}

@@ -755,6 +755,133 @@ canonical level.
 \end{remark}
 
 %% ---------------------------------------------------------------
+%% ---------------------------------------------------------------
+\section{Shared-Source Comparison and Terminal-Source Theorem}
+\label{sec:shared-source}
+%% ---------------------------------------------------------------
+
+\begin{definition}[\status{D}]\label{def:fiberwise-witness-cap}
+\textup{(Fiberwise Maximal Witness Cap.)}
+Let $X \in \mathrm{POT}$ be a lawful branch-realized object.  A
+\emph{fiberwise maximal witness cap} for $X$ is a choice, in each
+admissible regime fiber of $X$, of a maximal finite witness algebra
+$\mathcal{W}_{\max}(X)$ certified by the suite's algebraic
+obstruction program, together with enlargement-compatible transition
+maps.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:local-cap-vs-meta}
+\textup{(Local Algebraic Cap vs.\ Global Meta-Structure.)}
+Let $X \in \mathrm{POT}$ carry a fiberwise maximal witness cap
+(Def.~\ref{def:fiberwise-witness-cap}).  Then $\mathcal{W}_{\max}(X)$
+is local algebraic data internal to $X$; it does not by itself
+identify any global meta-structure containing $X$.  In particular,
+any comparison of $X$ with a second lawful superstructure $Y$ requires
+morphism-level transport data in $\mathrm{POT}$ (or an equivalent
+shared-source specialization theorem), while the maximal witness cap
+records only the saturated algebraic ceiling visible in each fiber.
+\end{proposition}
+
+\begin{proof}
+The POT data of an object records four components: stabilized
+observables, continuation data, transfer structure, and defect
+bookkeeping.  A maximal witness cap contributes only algebraic
+witness content inside a given fiber and its enlargement-compatible
+identifications.  It therefore constrains the local finite algebra
+visible in that branch realization but does not determine how two
+branch realizations compare, factor through a common source, or
+inherit a common transport law.  Those are morphism-level or
+source-theorem-level claims, hence belong to
+$\mathrm{POT}$/BR structure rather than to the witness cap alone.
+\qed
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:exhaustive-source-image}
+\textup{(Exhaustive Source-Image Condition.)}
+Let $S \in \mathrm{POT}$ be an upstream source object and $X \in
+\mathrm{POT}$ a lawful branch-realized object equipped with a
+structure-preserving morphism $\Pi_X : S \to X$.  We say $X$
+satisfies the \emph{exhaustive source-image condition} relative to
+$S$ if every load-bearing datum used in the certification of $X$ ---
+stabilized observables, continuation data, transfer structure, defect
+bookkeeping, and branch-specific closure witnesses --- lies in the
+image of $\Pi_X$ after passage to the relevant admissible regime
+fiber.  Equivalently, no datum essential to the certified closure of
+$X$ may be introduced by a hidden downstream primitive not already
+routed through $S$.
+\end{definition}
+
+\begin{theorem}[\status{U}]\label{thm:shared-source-comparison}
+\textup{(Shared-Source Comparison Principle.)}
+Let $X, Y \in \mathrm{POT}$ be lawful branch-realized objects, each
+carrying a fiberwise maximal witness cap.  If there exists a common
+upstream source object $S \in \mathrm{POT}$ with
+structure-preserving morphisms $S \to X$ and $S \to Y$ preserving
+stabilized observables, continuation data, transfer structure, and
+defect bookkeeping, and such that the induced witness data on the
+relevant saturated fibers are compatible, then the comparison of $X$
+and $Y$ is governed by shared-source transport data, not by raw
+coincidence of their local witness caps.
+\end{theorem}
+
+\begin{proof}
+By Prop.~\ref{prop:local-cap-vs-meta}, matching witness caps record
+only local algebraic ceiling data; they do not by themselves furnish
+comparison maps between stabilized observables, defect ledgers, or
+transport laws.  Those comparison maps enter only through POT
+morphisms or a shared-source specialization theorem.  Under the
+stated common source $S$ with structure-preserving morphisms to both
+$X$ and $Y$, the comparison is routed through $S$, and the fiberwise
+witness caps of $X$ and $Y$ become downstream invariants of that
+shared-source organization. \qed
+\end{proof}
+
+\begin{theorem}[\status{U}]\label{thm:terminal-source}
+\textup{(Unified Terminal-Source Theorem.)}
+Let $S \in \mathrm{POT}$ be a theorem-real upstream source object.
+Assume there exist lawful branch-realized objects
+$X_1, \ldots, X_n \in \mathrm{POT}$ with $n \geq 2$ such that:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item each $X_i$ is a certified terminal closure branch in the
+    relevant sense;
+  \item for each $i$ there is a structure-preserving morphism
+    $\Pi_i : S \to X_i$ preserving stabilized observables,
+    continuation data, transfer structure, and defect bookkeeping;
+  \item each $X_i$ satisfies the exhaustive source-image condition
+    (Def.~\ref{def:exhaustive-source-image}) relative to $S$;
+  \item the branches $X_1, \ldots, X_n$ are genuinely independent
+    in the minimal sense that no $X_i$ factors through another as a
+    sufficient terminal closure for its certified burden.
+\end{enumerate}
+Then $S$ is a \emph{unified terminal source} for $\{X_i\}_{i=1}^n$:
+the terminal closure content of each branch is lawfully determined by
+shared-source projection from $S$, and every load-bearing downstream
+datum in every certified branch is inherited from the same
+theorem-real source organization.
+\end{theorem}
+
+\begin{proof}
+Condition~(ii) gives a single upstream source law for all branches.
+Condition~(iii) rules out the failure mode of common ancestry without
+genuine source determination: every load-bearing datum in each
+branch's certification must lie in the image of $S$, so no branch can
+supplement the shared source by an untracked primitive downstream.
+Condition~(iv) ensures the result is not vacuous duplication under
+renaming.  Therefore the certified closures are all forced by the
+same theorem-real source object.
+(Attributed: dream\_paper\_v38.pdf Thm.~9.10.) \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:shared-source-reading-rule}
+\textbf{Project Lead reading rule.}  When two lawful superstructures
+exhibit the same maximal algebraic witness, the correct question is
+not ``are they secretly the same object?'' but ``is there a certified
+common source theorem relating them?''  Matching witness caps justify
+a search for a shared-source explanation, but they do not replace it.
+This is the anti-smuggling corollary of
+Thm.~\ref{thm:shared-source-comparison}.
+\end{remark}
+
 \section{Minimal Carrier and Canonical Projection}
 %% ---------------------------------------------------------------
 

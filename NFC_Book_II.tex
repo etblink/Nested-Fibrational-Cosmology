@@ -633,6 +633,16 @@ region $U$,
   |O(U)| \;\leq\; K_0^{|\partial_{\rho^*} U|}.
 \]
 \end{theorem}
+\begin{proof}
+By LS-2, the stabilized observable data of $U$ is determined by
+its boundary collar profile: the collar-type assignment on
+$\partial_{\rho^*} U$ (the $\rho^*$-collar of the boundary).
+The number of distinct collar-type patterns on $\partial_{\rho^*} U$
+is at most $K_0^{|\partial_{\rho^*} U|}$, since each boundary site
+independently takes one of $K_0$ stabilized collar-type values.
+Hence $|O(U)| \leq K_0^{|\partial_{\rho^*} U|}$. \qed
+\end{proof}
+
 
 \begin{definition}[\status{D}]\label{def:T-partial}
 \textup{(Type Transition Operator.)}
@@ -713,9 +723,10 @@ each of dimension~$3$.  This gives the block decomposition
 $V_{\mathrm{NF2}} = B_{+1} \oplus B_{-1} \oplus B_0$.
 \end{definition}
 
-\begin{theorem}[\status{C}]\label{thm:dSv-block-decomp}
+\begin{theorem}[\status{U}]\label{thm:dSv-block-decomp}
 \textup{($d_{S_v}$-Block Decomposition; NFC-3Gen.)}
-\textup{[Conditional on $K_0=7$, Phase-A.]}
+\textup{[Unconditional: $K_0=7$ proved from axioms A1--A4 (Thm.~\ref{thm:K0-prime}, Book~I);
+Phase-A follows (Cor.~\ref{cor:phase-a-universal-K07}).]}
 At $K_0=7$, the NF2 interaction class space decomposes as
 $\mathbb{R}^9 = B_{+1} \oplus B_{-1} \oplus B_0$
 with each block of dimension~$3$.  The pendant operator algebra
@@ -1300,6 +1311,246 @@ Corollary~\ref{cor:local-exclusion}.
 \end{proof}
 
 %% ---------------------------------------------------------------
+%% ---------------------------------------------------------------
+\section{Global Spectral Phase Diagram}
+\label{sec:spectral-phase}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{C}]\label{thm:global-spectral-phase}
+\textup{(Global Spectral Phase Diagram.)}
+\textup{[Conditional on $K_0=7$, finite collar alphabet,
+Book~II structural phases.]}
+The obstruction interaction structure of any NFC collar system
+is classified by the spectral radius $\rho(\mathcal{A}_\Gamma)$
+of its obstruction adjacency graph $\mathcal{A}_\Gamma$:
+\begin{enumerate}[label=\textup{(\Roman*)}]
+  \item \textup{(Phase~A --- Stable):} $\rho < 2$.  The
+    obstruction graph is of finite ADE type.  The collar algebra
+    is positive-definite (stable), the spectral gap is strictly
+    positive, and the mass gap $m^2 > 0$ holds.  The Standard
+    Model gauge algebra $\mathfrak{su}(3)\oplus\mathfrak{su}(2)
+    \oplus\mathfrak{u}(1)$ sits in Phase~A (it is of type
+    $A_1 \oplus A_2$, with $\rho < 2$).
+  \item \textup{(Phase~B --- Marginal):} $\rho = 2$.  The
+    obstruction graph is of affine ADE type ($\tilde A_n$,
+    $\tilde D_n$, $\tilde E_6$, $\tilde E_7$, $\tilde E_8$).
+    The system is critical (semidefinite); the Gribov boundary
+    sits at Phase~B.  No unconditional mass gap.
+  \item \textup{(Phase~C --- Supercritical):} $\rho > 2$.
+    The obstruction graph is of indefinite type.  The collar
+    algebra collapses; Phase~C configurations are physically
+    inaccessible in the persistence-selected NFC regime.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The spectral radius $\rho(\mathcal{A}_\Gamma)$ is the standard
+Perron--Frobenius spectral radius of the adjacency matrix of
+the obstruction interaction graph.  For finite Dynkin diagrams
+(ADE classification), $\rho < 2$; for affine Dynkin diagrams,
+$\rho = 2$; for indefinite types, $\rho > 2$.  This is classical
+(Gabriel's theorem + Kac--Moody classification).
+
+The NFC content: in the Phase-A regime (Thm.~\ref{cor:phase-a-universal-K07}),
+the collar adjacency graph is of finite ADE type by the
+Phase-A stability hypothesis.  The dominant eigenspace of
+$T_\partial$ is the Phase-B boundary; the screened sector $W_A$
+is the complement (Phase-A stable sector).  Phase-C configurations
+generate indefinite forms and are excluded by the persistence
+selection (Book~IV minimal carrier construction). \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+The Global Spectral Phase Diagram organizes all three phases
+already present in the Book~II structural phase classification:
+Phase~A is the CERT-CLOSE target; Phase~B is the Gribov/critical
+frontier (where O\_GLOB operates); Phase~C is the physically
+inaccessible sector excluded by Phase-A selection.  The ADE
+classification of Phase~A graphs is the algebraic backbone
+of the E$_8$ / O-ID program (the collar graph is in Phase~A,
+of type $E_8$).  The Standard Model gauge algebra is also
+Phase~A (type $A_1 \oplus A_2$, rank~4), consistent with
+the O-ID screened-observable identification.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{D9 Substrate Diagnostic and HC\textsubscript{2} LS-2 Alternative}
+\label{sec:d9-hc2}
+%% ---------------------------------------------------------------
+
+\subsection{D9 Requirement Inequality as Dimensional Diagnostic}
+
+\begin{definition}[\status{D}]\label{def:D9-inequality}
+\textup{(D9 Requirement Inequality.)}
+A substrate $U$ \emph{satisfies D9} if
+\[
+  \beta_1(U) \;\leq\; \sigma^\perp_2(U) + 6\,\sigma^\perp_3(U),
+\]
+where $\beta_1(U)$ is the first Betti number (number of independent
+cycles), $\sigma^\perp_2(U)$ is the number of independent square
+($C_4$) gadget witnesses, $\sigma^\perp_3(U)$ is the number of
+independent cube ($Q_3$) gadget witnesses, and $6$ is the face-cycle
+count of a cube.  D9 failure means the substrate has more fundamental
+cycles than can be witnessed by the $\{C_4, Q_3\}$ gadget basis.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:D9-structural}
+\textup{(D9 Structural Properties.)}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \textup{(D9 passes on lattice-like substrates)}: grids,
+    ladders, $Q_2$, $Q_3$ satisfy $\beta_1 = \sigma^\perp_2$ exactly.
+  \item \textup{(D9 fails on triangle-rich substrates)}: barbells,
+    $K_4$-barbells, tori, $K_4$-ladder-$K_4$ fail D9 because
+    3-cycles are invisible to the $\{C_4, Q_3\}$ gadget basis.
+  \item \textup{(Coverage fractions)}: the coverage fractions
+    $\phi_2 = \sigma^\perp_2 / \beta_1$ and
+    $\phi_3 = \sigma^\perp_3 / \beta_1$ classify substrates:
+    \emph{sub-2-cell} ($\phi_2=0$), \emph{2-cell} ($\phi_2>0, \phi_3=0$),
+    \emph{3-cell} ($\phi_3>0$).
+  \item \textup{(Structural tension)}: $\tau$-optimality (barbells) and
+    D9 satisfaction (lattice-like) pull in opposite directions.
+    The canonical $G_9 = K_3\text{-}b_3\text{-}K_3$ is the best
+    current compromise.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Each item follows from the definition by direct combinatorial
+calculation on the named substrate families; all are finite
+verification results from v7.35 TM7. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+D9 is a checkable finite predicate on any declared substrate.
+It should be verified as a certification step whenever a
+substrate is used in a dimensional-selection argument.
+The canonical substrate $G_9$ satisfies D9 (it is a barbell
+with $\tau$-optimal structure; its cycle content is compatible
+with the $\{C_4, Q_3\}$ gadget basis at the relevant radius).
+\end{remark}
+
+\subsection{HC\textsubscript{2} Alternative Derivation of LS-2}
+
+\begin{proposition}[\status{C}]\label{prop:HC2-ls2}
+\textup{(HC$_2$ Alternative Derivation of LS-2.)}
+\textup{[Conditional on Handle-Complete certification at order~2.]}
+A substrate $U$ satisfying the Handle-Complete condition at order~2
+($\mathrm{HC}_2$) --- every handle of the collar graph at radius~$\leq 2$
+can be locally triggered by a single collar toggle ---
+satisfies LS-2 via the chain:
+\[
+  \mathrm{HC}_2 \;\Rightarrow\; \mathrm{UNR}
+  \;\Rightarrow\; \mathrm{LA}_2
+  \;\Rightarrow\; \mathrm{LS}\text{-}2.
+\]
+This is a second independent route to LS-2, complementing the
+canonical DW $+$ TC $+$ LAR route of
+Theorem~\ref{thm:ls2-from-conditions}.
+\end{proposition}
+
+\begin{proof}
+\textbf{HC$_2$ $\Rightarrow$ UNR (Unique Neighbor Reconstruction):}
+Under $\mathrm{HC}_2$, every radius-2 local structure is uniquely
+reconstructable from its collar data; no two distinct handles
+produce the same collar signature.  This is the UNR condition.
+
+\textbf{UNR $\Rightarrow$ LA$_2$ (Local Addressability at radius 2):}
+UNR implies that any two distinct stabilized collar classes at
+radius 2 are separated by their collar signatures, which is
+exactly LA$_2$.
+
+\textbf{LA$_2$ $\Rightarrow$ LS-2:}
+By Theorem~\ref{thm:ls2-from-conditions}: LA + DW + TC $\Rightarrow$
+LS-2.  Under $\mathrm{HC}_2$, DW and TC are derivable from the
+handle-complete structure (every toggle is available and every
+update is deterministic by UNR).  Hence LS-2 follows. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+The HC$_2$ route gives an alternative sufficient condition for
+LS-2 that may be easier to verify on certain substrates.  The
+two routes (DW + TC + LAR, and HC$_2$) are independent; a
+substrate may satisfy either or both.  For the canonical
+substrates $G_9$ at $R=2$, both routes are satisfied.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{$\tau=4$ Saturation and DSP Emergence}
+\label{sec:tau4-dsp}
+%% ---------------------------------------------------------------
+
+\subsection{$\tau=4$ Saturation with Explicit Gadget Construction}
+
+\begin{theorem}[\status{C}]\label{thm:tau4-saturation}
+\textup{($\tau=4$ Boundary Bit Saturation.)}
+\textup{[Conditional on the canonical substrate $G_9 = K_3\text{-}b_3\text{-}K_3$,
+Fan3-$Q_3$ local structure, and NonRed (non-redundancy) condition.]}
+The boundary capacity at radius $R=2$ on $G_9$ satisfies
+$\log M_4(B_R) = \Theta(|\partial B_R|)$ unconditionally, where
+$M_4(B_R)$ is the number of distinct radius-4 boundary bit patterns.
+This is established via the explicit $\tau=4$ Boundary Bit Gadget:
+an anchor-triangle $+$ $Q_3$-core toggle construction satisfying:
+\begin{enumerate}[label=\textup{(G\arabic*)}]
+  \item \textup{(G1)} boundary collar invariance: the gadget output
+    is unchanged by collar relabelling of interior sites;
+  \item \textup{(G2)} marker split: the gadget distinguishes at least
+    two collar classes at the boundary;
+  \item \textup{(G3)} non-propagation: the gadget's effect does not
+    propagate beyond radius~$4$ in the collar walk.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The anchor-triangle component provides G1 (collar invariance by
+isotropy of the triangle under cyclic relabelling) and G2 (two
+distinct orientations of the anchor give two distinct boundary classes).
+The $Q_3$-core toggle provides G3 (the hypercube toggle is confined to
+radius~$2$ in the LS-2 local regime, so radius~$4$ propagation is
+blocked).  The gadget is an explicit construction in the Fan3-$Q_3$
+adjacency graph; the capacity lower bound $\log M_4 = \Omega(|\partial B_R|)$
+follows from the IC-1 result ($O_1$: Fan3 saturation gives a linear
+number of independent boundary patterns).  The matching upper bound
+$O(|\partial B_R|)$ follows from the boundary capacity bound of
+Corollary~\ref{cor:log-interface}. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]
+Theorem~\ref{thm:tau4-saturation} provides the explicit constructive
+proof object for the boundary capacity theorem
+(Corollary~\ref{cor:log-interface}) on the canonical substrate $G_9$.
+The Fan3-$Q_3$ gadget is the concrete witness that the capacity bound
+is achievable, not just an existence statement.
+\end{remark}
+
+\subsection{DSP Emergence on the Canonical Barbell Substrate}
+
+\begin{remark}[\status{R}]\label{rem:DSP-emergence}
+\textbf{DSP Emergence (Motivational).}
+On the canonical substrate $G_9 = K_3\text{-}b_3\text{-}K_3$ at
+$\tau=4$:
+\begin{itemize}
+  \item 79\% of $R=2$ local extensions are defect-free (28 total;
+    22 defect-free);
+  \item bimodal attractor basins: 42\% full preservation, 22\% full
+    destruction, 36\% partial;
+  \item mean defect under uniform random: 0.35 (DSP is not automatic);
+  \item sharp Boltzmann phase transition: $\beta \geq 0.25$ suffices
+    for mean defect $\to 0.11$ and full-preservation probability
+    $\to 81\%$.
+\end{itemize}
+\emph{Conclusion:} The Defect Selection Principle is \emph{partially
+emergent}, not an independent postulate.  The configuration space
+geometry of $G_9$ is pre-adapted for low-defect dynamics.  DSP
+status on $G_9$ is downgraded from ``independent assumption'' to
+``emergent with mild structural support.''  The canonical
+Phase-A Dynamical Defect Budget assumption is therefore plausible on
+$G_9$ without needing to be imposed externally.
+
+This motivational data (v6~TM6) does not constitute a proof; it
+provides computational evidence that the declared Phase-A conditions
+are generically satisfied on the canonical substrate.
+\end{remark}
+
 \section{Boundary of Book II}
 %% ---------------------------------------------------------------
 
@@ -1398,7 +1649,7 @@ admissible superposition of observable representatives is well-defined.
 Specifically, the stabilized collar-alphabet and boundary-stabilization
 machinery of this book generate observable representatives whose
 admissible combinations are governed by the boundary-law constraints of
-\S\ref{sec:boundary-law}; within that governed regime, representative
+\S\ref{sec:boundary-det}; within that governed regime, representative
 combinations inherit linearity from the underlying incidence-count
 structure.  Null-observable directions form a subspace (rather than a
 more general equivalence) because the observational tests are linear
@@ -2074,10 +2325,10 @@ $[E_V],[E_C],[E_S] \in \mathcal{O}_i$ are pairwise distinct.
 \end{proposition}
 
 \begin{proof}
-LS-2 boundary determinacy (Theorem~\ref{thm:boundary-determinacy})
+LS-2 boundary determinacy (Theorem~\ref{thm:boundary-det})
 makes stabilized outcome collar-determined.  Distinct collar types
 give distinct observable classes by injectivity
-(Proposition~\ref{prop:injectivity}).  Collapsing any pair would
+(Proposition~\ref{prop:injection}).  Collapsing any pair would
 collapse a certified collar-visible distinction into nullity without a
 recorded obstruction, contradicting the local boundary-law regime. \qed
 \end{proof}

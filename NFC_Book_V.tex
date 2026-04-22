@@ -789,4 +789,109 @@ that satisfies all five conditions has genuinely earned its canonical
 status.
 \end{scholium}
 
+
+%% ---------------------------------------------------------------
+\section{Coercive-Transport Source Theorem and ICDC Schema}
+\label{sec:br-source}
+%% ---------------------------------------------------------------
+
+\begin{theorem}[\status{C}]\label{thm:BR-source}
+\textup{(Unified Coercive-Transport Source Theorem, BR.)}
+\textup{[Conditional on $K_0 = 7$, the universal object
+$\mathbf{U} \in \mathrm{POT}$ (Book~IV, Thm.~\ref{thm:universal-completion}),
+and the controlled continuum realization
+(Book~VI, Thm.~\ref{thm:continuum-bridge-schema}).]}
+There exists a single upstream coercive-transport structure on
+$\mathbf{U}$ with the following burden-routed content:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \emph{Source-level existence.}  A coercive form
+    $\mathcal{B}(f,g) = \int_{\mathbf{U}} \langle\nabla_{\mathbf{U}}
+    f, \nabla_{\mathbf{U}} g\rangle\,d\mu_{\mathrm{nl}}$ is
+    well-defined on $\mathcal{H}_\infty = L^2(\mathbf{U}, \mu_{\mathrm{nl}})$,
+    with screened-sector lower bound
+    $\mathcal{B}(f,f) \geq c\|f\|^2$ for some $c > 0$.
+    This is the intrinsic content of the BR theorem.
+  \item \emph{Yang--Mills specialization.}  Under the realization
+    and quantization inputs of the YM Branch, the source coercivity
+    pushes forward to the Yang--Mills branch Hamiltonian estimate.
+  \item \emph{Navier--Stokes specialization.}  Under the realization
+    and transport inputs of the NS Branch, the same source pushes
+    forward to the NS branch floor/transport estimate.
+  \item \emph{Structural Einstein specialization.}  Under the
+    geometric realization inputs of the GR Branch (KPO-3), the same
+    source pushes forward to the EFE coercive structure.
+\end{enumerate}
+Accordingly, the YM, NS, and GR branch theorems are to be read as
+certified specializations of one upstream source theorem, not as
+independent foundations.
+\end{theorem}
+
+\begin{proof}
+The unconditional existence of the coercive form follows from
+Thm.~\ref{thm:universal-completion} (Book~IV), which provides both
+the transfer structure on $\mathbf{U}$ and the canonical transport
+measure $\mu_{\mathrm{nl}}$.  Branch specialization under $K_0 = 7$
+follows from the controlled continuum realization
+(Book~VI, Thm.~\ref{thm:continuum-bridge-schema}), which licenses
+the push-forward of the coercive structure to the realized operators
+in each branch.  No branch conclusion belongs to the unconditional BR
+theorem beyond this burden-routed transfer principle.
+(Attributed: dream\_paper\_v38.pdf Thm.~9.19.) \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:ICDC}
+\textup{(Interface-Coherent Directed Compression, ICDC Schema.)}
+\textup{[Conditional on $K_0 = 7$ and one-step inheritance.]}
+Let $U_{n_0} \subseteq U_{n_0+1} \subseteq \cdots$ be an admissible
+enlargement ladder from $\mathbf{U}$, and let $(B_n)_{n \geq n_0}$ be
+a branch family functorially extracted along this ladder.  Assume:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{One-step inheritance}: branch data transport lawfully
+    from $B_n$ to $B_{n+1}$;
+  \item \emph{Interface localization}: any failure of exact
+    inheritance is confined to an explicit interface residue
+    $\partial_n$;
+  \item \emph{Two-step transitivity}: corrections for $n \to n+1
+    \to n+2$ compose into a single accumulated residue $\partial_{n,n+2}$;
+  \item \emph{Source-image discipline}: every load-bearing datum of
+    each $B_n$ remains in the image of $\mathbf{U}$ with no new
+    branch-local primitive introduced;
+  \item \emph{Admissible compression}: the accumulated interface
+    residues are summably admissible or uniformly subordinate to a
+    branch-specific coercive margin.
+\end{enumerate}
+Then the family admits a controlled scale-limit compression
+$B_\infty := \varinjlim_\partial B_n$ in which the load-bearing
+branch data survive coherently across scale modulo explicit interface
+bookkeeping.
+\end{theorem}
+
+\begin{proof}
+The one-step inheritance maps define the direct-system spine.
+Interface localization isolates all failure of exact transport in
+named residues.  Two-step transitivity ensures residues assemble
+coherently.  Source-image discipline blocks hidden downstream
+smuggling.  Admissible compression yields a well-defined controlled
+limit object.
+(Attributed: dream\_paper\_v38.pdf Thm.~9.12.) \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:icdc-branches}
+\textbf{Branch-specific ICDC readings.}
+The ICDC schema specializes to three terminal branches:
+\begin{itemize}
+  \item \emph{Yang--Mills} ($\Theta_n = 1$, gap-subcritical): gap
+    preservation holds whenever $E_n + B_n < g_\infty^{(n)}$;
+  \item \emph{Navier--Stokes} ($\Theta_n = \theta < 1$): obstruction
+    contraction $C_{n+1}^{NS} \leq \theta C_n^{NS} + E_n + B_n$;
+  \item \emph{Gravity} ($\Theta_n = 1$, curvature-subcritical):
+    domain extension holds when new interface contributes curvature
+    defect strictly subordinate to the already-controlled gravity margin.
+\end{itemize}
+The common upstream law is the interface-relative stability
+functional $\mathcal{C}_n(U_n) = B_n^{\mathrm{bulk}}(U_n) -
+\mathcal{I}_n(U_n)$; what changes branch-to-branch is only the
+terminal observable and closure criterion.
+\end{remark}
+
 \end{document}
