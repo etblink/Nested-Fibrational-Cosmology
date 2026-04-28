@@ -1488,4 +1488,121 @@ The SM Super-Branch is currently at \textbf{CERT-PROJ} status:
   \item No unification of gauge and gravitational forces is claimed.
 \end{itemize}
 
+
+
+%% ---------------------------------------------------------------
+\section{Conditional SM Intrinsic Closure}\label{sec:sm-intrinsic-closure}
+%% ---------------------------------------------------------------
+
+\begin{proposition}[\status{C}]\label{prop:SM-intrinsic-closure}
+\textup{(Conditional SM Intrinsic Closure.)}
+\textup{[Conditional on the discharged/hardened forms of
+O-SM.Harmonization (Ob.~\ref{ob:SM-harmonization}),
+O-SM.Matter (Ob.~\ref{ob:SM-matter}),
+O-SM.Higgs (Ob.~\ref{ob:SM-higgs}), and
+O-SM.CouplingTransfer (Ob.~\ref{ob:SM-coupling-transfer-full}).]}
+The SM super-branch has \emph{conditional intrinsic structural closure}:
+its internal anti-smuggling obligations for gauge algebra, gauge-template
+uniqueness, YM--GR interface compatibility, harmonization functor,
+matter datum, Higgs/EWSB screening, and structural coupling transfer
+are discharged at conditional force.
+
+However, this proposition does \emph{not} promote the SM branch to
+unconditional CERT-CLOSE.  The SM super-branch:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item inherits all unresolved obligations of the YM and GR sub-branches;
+  \item does not claim low-energy phenomenological matching, RG-running
+    derivation, measured particle masses, CKM/PMNS data, or full
+    empirical Standard Model reconstruction;
+  \item does not claim unification of gauge and gravitational forces.
+\end{enumerate}
+\[
+  \operatorname{Status}(\mathrm{SM}) \;\le\;
+  \operatorname{Status}(\mathrm{YM}) \wedge
+  \operatorname{Status}(\mathrm{GR}) \wedge
+  \operatorname{Status}(\mathrm{SM}_{\mathrm{intrinsic}}).
+\]
+\end{proposition}
+
+\begin{proof}
+The four SM-internal obligations are conditionally discharged as stated:
+O-SM.Harmonization by Thms.~\ref{thm:SM-harmonization-partial}
+and~\ref{thm:F-SM-POT-morphism};
+O-SM.Matter by Prop.~\ref{prop:rh-SM-matter-candidate}
+and Thm.~\ref{thm:SM-matter-source-descended};
+O-SM.Higgs by Prop.~\ref{prop:rh-SM-higgs-candidate}
+and Thm.~\ref{thm:SM-higgs-source-descended};
+O-SM.CouplingTransfer by Thm.~\ref{thm:SM-coupling-transfer-full}.
+The SM super-branch is defined as a harmonization of YM and GR
+endpoint data and explicitly inherits all open obligations of both
+sub-branches by the super-branch governance rule; no SM-internal
+discharge reduces those inherited obligations.
+\qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:SM-status-reconciliation}
+\textup{(SM Status Reconciliation.)}
+Let SM-Old denote the status recorded in
+Prop.~\ref{prop:SM-status} (CERT-PROJ with primary open obligations
+O-SM.Harmonization, O-SM.Matter, O-SM.Higgs, O-SM.CouplingTransfer).
+Let SM-New denote the later conditional hardening state in which those
+four obligations are conditionally discharged at structural level.
+
+Then SM-New supersedes SM-Old \emph{only with respect to} the
+internal SM obligation ledger, not with respect to:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item inherited YM/GR obligation scope;
+  \item CERT-CLOSE limitations (SM full CERT-CLOSE still unavailable);
+  \item phenomenological non-claims (measured masses, CKM/PMNS,
+    RG-running, full empirical reconstruction).
+\end{enumerate}
+The corrected status is:
+\begin{center}
+SM: \emph{conditionally intrinsic-structural closed,
+inherited-scope open.}
+\end{center}
+This is strictly stronger than raw CERT-PROJ, but strictly weaker than
+unconditional or full empirical CERT-CLOSE.
+
+The following items in Prop.~\ref{prop:SM-status} are superseded
+\emph{as internal ledger entries only}:
+(i) ``The harmonization functor is not yet constructed'' ---
+superseded in part by $F_{\mathrm{SM}}^{\mathrm{KPO}}$;
+(ii) ``Electroweak breaking is still fully open'' ---
+superseded at structural level by the $B_0$ screening discharge;
+(iii) SM-three-gen was previously conditional; it has since been
+upgraded to [U] by promotion of its former conditions.
+
+The following warnings from Prop.~\ref{prop:SM-status} remain
+fully binding: inherited YM/GR obligations, no unconditional
+CERT-CLOSE, no phenomenological Standard Model completion.
+\end{proposition}
+
+\begin{proof}
+Prop.~\ref{prop:SM-intrinsic-closure} gives the internal structural
+closure; the inherited-scope and non-claims clauses follow directly
+from the super-branch governance rule established in the preamble
+(§\ref{sec:sm-setup}): the SM super-branch cannot be stronger than
+the conjunction of its parent-branch assumptions, and the explicit
+non-claims list is carried forward from the branch book boundary
+(§\ref{sec:sm-boundary}).
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:sm-status-current}
+\textbf{Current SM status after reconciliation.}
+The most accurate current status line is:
+\begin{center}
+SM: \emph{conditionally intrinsic-structural closed, inherited-scope open.}
+\end{center}
+The next highest-leverage SM obligation is the extension of the
+harmonization functor to the full matter sector:
+$F_{\mathrm{SM}}^{\mathrm{KPO}+\mathcal{M}}$, requiring
+O-SM.Matter and O-SM.Higgs at unconditional (rather than conditional
+structural) force.  That full canonical force requires the
+O-ID\textsuperscript{cont} identification providing the full
+continuum representation theory (see Thm.~\ref{thm:O-ID-cont-rate},
+YM Branch).
+\end{remark}
+
 \end{document}

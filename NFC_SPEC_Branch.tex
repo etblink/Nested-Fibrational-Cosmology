@@ -1,0 +1,1184 @@
+%% Elements of Nested Fibrational Cosmology
+%% SPEC Branch Book: Spectroscopy Branch (Prospective)
+%% Status: Architecturally constituted; pre-closure — all theorem shells carry open obligations
+%%
+%% Status legend:
+%%   [U]  Unconditional  -- proved from spine imports and prior [U] results
+%%   [C]  Conditional    -- depends on explicitly declared hypotheses
+%%   [D]  Definition-structural
+%%   [R]  Remark only
+%%   [O]  Open obligation / named failure frontier
+%%   [B]  Bridge (Book VI licensed continuum surrogate)
+
+\documentclass[12pt,oneside]{amsbook}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{openobligation}[theorem]{Open Obligation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% Notation
+%%   R_Spec              Spectroscopy target regime
+%%   O_Spec              Spectroscopy observable family = (Spec(L_Spec), R_probe, T_Spec)
+%%   L_Spec              Spectroscopy operator candidate (branch-visible)
+%%   R_probe             Probe-response object
+%%   T_Spec              Transition ledger
+%%   G_Spec              Spectral margin (resonance isolation quantity)
+%%   W                   Declared response window
+%%   E_Spec              Spectroscopy endpoint datum
+%%   P_Op                Spectroscopy operator packet
+%%   Resp(X;P)           Quotient-visible response signature
+
+\begin{document}
+
+\title{SPEC Branch Book\\[6pt]
+       Resonance, Probe-Response, and Certified Transition Structure}
+\author{Elements of Nested Fibrational Cosmology\\
+        Prospective Derived Branch}
+\date{}
+\maketitle
+\tableofcontents
+\newpage
+
+%% ---------------------------------------------------------------
+\section{Purpose and Canonical Seed}\label{sec:spec-purpose}
+%% ---------------------------------------------------------------
+
+This branch studies whether spectroscopic structure can be realized as a
+lawful descendant of the NFC source architecture.  Its task is not to
+import the standard language of frequencies, Hamiltonians, line profiles,
+or transition amplitudes as primitives.  Its task is to determine when
+such language is licensed as an effective encoding of certified discrete
+observable structure within a declared branch regime.  That posture is
+required by Book~I's no-smuggling stance, Book~V's branch-legitimacy
+law, Book~VI's continuum-interface discipline, and Book~VII's
+scoped-certificate law.
+
+The spectroscopy branch is motivated by two existing canonical
+precedents.  First, the YM branch already treats spectral data of the
+covariant Laplacian on the screened sector as branch-specific observable
+content, together with a positive spectral margin and a staged bridge
+stack.  Second, the GR branch already treats a response algebra
+$\mathcal{R}_{\mathrm{resp}}$ as branch-specific observable content.
+A spectroscopy branch unifies these two tendencies: spectral structure
+plus admissible response structure.
+
+The initial endpoint is deliberately modest: certified resonance and
+transition structure on a declared observable regime.  Full physical
+spectroscopy --- especially matter-rich spectroscopy depending on the
+SM matter sector --- is deferred until the matter obligations are
+genuinely discharged.
+
+\begin{remark}[\status{R}]\label{rem:spec-strategic-path}
+\textbf{Strategic path.}
+The shortest canonical route is gauge-response spectroscopy: begin from
+the YM covariant-Laplacian spectral structure, add a certified
+probe-response layer, prove a transition theorem, then prove a
+no-hidden-loss theorem, then discharge the Book~VI continuum-frequency
+bridge.  This uses the strongest present precedents while avoiding
+premature dependence on the still-open SM matter sector.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Imported Spine Structure}\label{sec:spec-imports}
+%% ---------------------------------------------------------------
+
+\textbf{Imported spine results.}  All certified results of Books~I--VII
+are required for lawful descent, transport accounting, continuum-interface
+discipline, and closure governance.  In particular:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Book~I}: observational quotient discipline; no primitive
+    geometry, fields, probability spaces, or hidden naming may be assumed.
+    Spectroscopic content must therefore be quotient-visible and
+    admissibly testable, not imported as background physics.
+  \item \emph{Book~II}: stabilized local outcomes, collar-visible
+    control, and boundary capacity structure.
+  \item \emph{Book~III}: persistence and transport law for certified
+    observables; additive bookkeeping.
+  \item \emph{Book~IV}: the universal source object $\mathbf{U}$ and
+    source-descended comparison architecture.
+  \item \emph{Book~V}: lawful branchhood and branch visibility; the
+    constitutional law under which a spectroscopy branch is admitted.
+  \item \emph{Book~VI}: continuum language licensed only as faithful
+    shorthand for certified discrete structure within a declared interface
+    regime; the main gate for frequencies, line widths, response kernels,
+    and other spectroscopic notation.
+  \item \emph{Book~VII}: scoped certificates, promotion law, named
+    frontier stability, and prohibition of hidden upgrade.
+\end{enumerate}
+
+\textbf{Imported branch precedents.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{YM branch}: spectral data of the covariant Laplacian on
+    the screened sector as certified observable content; the operator-spectral
+    template for this branch.
+  \item \emph{GR branch}: a response algebra $\mathcal{R}_{\mathrm{resp}}$
+    as branch-specific observable content; the response-structure template.
+  \item \emph{SM super-branch}: matter content and harmonization remain
+    downstream burdens rather than primitive branch assumptions.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Branch-Specific Arena}\label{sec:spec-arena}
+%% ---------------------------------------------------------------
+
+\subsection{Standing Rules}\label{sec:spec-standing-rules}
+
+\begin{standingrule}[\status{D}]\label{sr:spec-no-smuggling}
+No spectroscopic quantity may be treated as primitive branch data merely
+because it is familiar in external physics language.  Every branch-visible
+spectroscopic object must be sourced through $\mathbf{U}$, the declared
+descent machinery, and the spectroscopy observable family.  This is a
+branch-local instance of Book~I no-smuggling and Book~V branch-legitimacy
+discipline.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:spec-quotient-visible}
+A spectroscopic distinction counts only when it is quotient-visible under
+admissible tests or under a lawfully certified response object descended
+from such tests.  Book~I's observational quotient discipline remains
+controlling.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:spec-continuum-gate}
+Frequency language, resonance language, spectral density language, and
+line-shape language may appear only after a branch-local Book~VI bridge
+theorem certifies that they faithfully encode certified discrete structure
+within a declared continuum interface regime.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:spec-no-self-promotion}
+A finite or bounded operator certificate may not self-promote to a
+continuum spectroscopic claim.  Promotion requires an explicit transfer
+theorem.  This is a direct Book~VII governance consequence.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:spec-frontier-visibility}
+Named frontiers in transition structure, response realization, spectral
+no-loss, or matter coupling remain visible until discharged by theorem.
+Rephrasing does not discharge them.
+\end{standingrule}
+
+\subsection{Declared Target Regime}\label{sec:spec-target-regime}
+
+\begin{definition}[\status{D}]\label{def:spec-target-regime}
+\textup{(Spectroscopy Target Regime.)}
+A \emph{spectroscopy target regime} is a declared branch regime
+$\mathcal{R}_{\mathrm{Spec}}$ consisting of:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item a certified observable class $\mathcal{C}_{\mathrm{obs}}$,
+  \item an admissible probe family $\mathcal{P}$,
+  \item a declared response window $\mathcal{W}$, and
+  \item a declared comparison discipline for resonance and transition claims.
+\end{enumerate}
+The role of $\mathcal{R}_{\mathrm{Spec}}$ is to state explicitly where
+spectroscopic claims are supposed to have force.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:spec-response-window}
+The response window $\mathcal{W}$ is not yet a continuum frequency interval.
+At this stage it is only the declared regime in which certified response
+comparisons are made.
+\end{remark}
+
+\subsection{Spectroscopy Observable Family}\label{sec:spec-obs-family}
+
+\begin{definition}[\status{D}]\label{def:spec-obs-family}
+\textup{(Spectroscopy Observable Family.)}
+A \emph{spectroscopy observable family} on $\mathcal{R}_{\mathrm{Spec}}$
+is a triple
+\[
+  \mathcal{O}_{\mathrm{Spec}} \;=\;
+  \bigl(\mathrm{Spec}(L_{\mathrm{Spec}}),\;
+        \mathcal{R}_{\mathrm{probe}},\;
+        \mathcal{T}_{\mathrm{Spec}}\bigr)
+\]
+where:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $\mathrm{Spec}(L_{\mathrm{Spec}})$ is certified spectral data of
+    a branch-visible operator, generator, or response morphism;
+  \item $\mathcal{R}_{\mathrm{probe}}$ is a certified admissible
+    probe-response object;
+  \item $\mathcal{T}_{\mathrm{Spec}}$ is the branch-visible transition
+    ledger induced by admissible probes on the certified observable class.
+\end{enumerate}
+The first component is patterned on the YM branch spectral observable
+family; the second is patterned on the GR response-algebra precedent.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:spectral-response-class}
+\textup{(Spectral Response Class.)}
+A \emph{spectral response class} is the quotient-visible class of response
+signatures recorded by $\mathcal{R}_{\mathrm{probe}}$ under admissible
+probes in $\mathcal{R}_{\mathrm{Spec}}$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:transition-ledger}
+\textup{(Transition Ledger.)}
+A \emph{transition ledger} is a certified bookkeeping object assigning to
+an admissible probe episode the induced change in branch-visible spectral
+response, subject to quotient visibility and transport accounting.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:spectral-margin}
+\textup{(Spectral Margin.)}
+The \emph{spectral margin}
+\[
+  G_{\mathrm{Spec}}(X)
+\]
+is a branch-specific nonnegative quantity measuring observable resonance
+isolation, response separation, or transition distinguishability on the
+declared regime.  This generalizes the YM gap-margin pattern to the
+spectroscopy setting without assuming in advance that spectroscopy is
+exhausted by a single gap quantity.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:spec-continuum-interface}
+\textup{(Spectroscopy Continuum Interface Regime.)}
+A \emph{spectroscopy continuum interface regime} is a declared Book~VI
+interface regime in which continuum notation for frequency-domain or
+response-domain structure is licensed as faithful shorthand for the
+asymptotic behavior of the underlying certified discrete response data.
+\end{definition}
+
+\subsection{Endpoint Datum}\label{sec:spec-endpoint}
+
+\begin{definition}[\status{D}]\label{def:spec-endpoint}
+\textup{(Spectroscopy Endpoint Datum.)}
+The \emph{spectroscopy endpoint datum} is the branch-visible package
+\[
+  E_{\mathrm{Spec}} \;=\;
+  \bigl(\mathcal{C}_{\mathrm{obs}},\;
+        \mathcal{O}_{\mathrm{Spec}},\;
+        G_{\mathrm{Spec}},\;
+        \mathcal{W}\bigr)
+\]
+consisting of the certified observable class, spectroscopy observable
+family, spectral margin, and declared response window.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:lawful-spec-descendant}
+\textup{(Lawful Spectroscopy Descendant Claim.)}
+A \emph{lawful spectroscopy descendant claim} is a claim that the endpoint
+datum $E_{\mathrm{Spec}}$ is sourced through $\mathbf{U}$ and supports a
+certified resonance, transition, or response statement on the declared
+regime.
+\end{definition}
+
+\subsection{Current Branch Posture}\label{sec:spec-posture}
+
+\begin{proposition}[\status{C}]\label{prop:spec-branch-candidate}
+\textup{(Spectroscopy Branch Candidate.)}
+\textup{[Conditional on the spectroscopy target regime, observable family,
+and endpoint datum all being sourced through $\mathbf{U}$, branch-visible,
+and admitting a Book~V legitimacy witness.]}
+The spectroscopy program is a lawful branch candidate.
+\end{proposition}
+
+\begin{proof}
+Immediate from the branch-legitimacy doctrine (Book~V) applied to the
+declared spectroscopy endpoint datum. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:spec-posture-note}
+Prop.~\ref{prop:spec-branch-candidate} constitutes the branch
+architecturally.  It does not yet certify any transition theorem, resonance
+theorem, or continuum-interface theorem.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Admissible Probes, Response Classes, and Transition Ledgers}
+\label{sec:spec-probes}
+%% ---------------------------------------------------------------
+
+\subsection{Admissible Probes}\label{sec:spec-admissible-probes}
+
+\begin{definition}[\status{D}]\label{def:admissible-spec-probe}
+\textup{(Admissible Spectroscopy Probe.)}
+An \emph{admissible spectroscopy probe} is a declared admissible process
+$P \in \mathcal{P}$ whose effect on the certified observable class is
+branch-visible and accountable within the spine's admissible-test
+discipline.
+\end{definition}
+
+\begin{standingrule}[\status{D}]\label{sr:spec-no-hidden-probe}
+No probe may introduce hidden state labels, undeclared external coordinates,
+or non-certified side channels.  Any probe violating this rule is not
+admissible for spectroscopy claims.
+\end{standingrule}
+
+\begin{definition}[\status{D}]\label{def:probe-episode}
+\textup{(Probe Episode.)}
+A \emph{probe episode} on an observable object $X \in \mathcal{C}_{\mathrm{obs}}$
+is an ordered application of an admissible probe together with the certified
+before/after response record visible in the declared response window.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:probe-episode-note}
+A probe episode is the spectroscopy analogue of a controlled admissible
+comparison, not yet a physical measurement event in the ordinary external
+sense.
+\end{remark}
+
+\subsection{Probe-Response Objects}\label{sec:spec-probe-response}
+
+\begin{definition}[\status{D}]\label{def:probe-response-object}
+\textup{(Probe-Response Object.)}
+A \emph{probe-response object} is a branch-visible assignment
+\[
+  \mathcal{R}_{\mathrm{probe}} : (X, P) \;\mapsto\; \mathsf{Resp}(X;P)
+\]
+from an observable object $X$ and admissible probe $P$ to a
+quotient-visible response signature $\mathsf{Resp}(X;P)$, together with
+its transport and defect bookkeeping.
+\end{definition}
+
+\begin{standingrule}[\status{D}]\label{sr:spec-response-invariance}
+A response signature has theorem-bearing force only to the extent that it
+is invariant under presentation-level differences already eliminated by the
+observational quotient.
+\end{standingrule}
+
+\begin{definition}[\status{D}]\label{def:spectroscopic-equivalence}
+\textup{(Spectroscopic Equivalence.)}
+Two response signatures are \emph{spectroscopically equivalent} if they
+determine the same quotient-visible response class under the declared
+comparison discipline of $\mathcal{R}_{\mathrm{Spec}}$.
+\end{definition}
+
+\subsection{Transition Ledgers}\label{sec:spec-transition-ledgers}
+
+\begin{definition}[\status{D}]\label{def:one-step-transition-ledger}
+\textup{(One-Step Spectroscopy Transition Ledger.)}
+Given a probe-response object, the \emph{one-step spectroscopy transition
+ledger}
+\[
+  \Delta_{\mathrm{Spec}}\!\bigl(X \xrightarrow{P} X'\bigr)
+\]
+records the certified change from the response class of $X$ to the
+response class of $X'$ under a probe episode $P$, together with any
+declared transport cost or visible defect contribution.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:multistep-transition-ledger}
+\textup{(Multi-Step Transition Ledger.)}
+A \emph{multi-step transition ledger} is the additive bookkeeping object
+obtained by concatenating lawful one-step spectroscopy transition ledgers
+along a declared probe chain.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:transition-ledger-additivity}
+\textup{(Transition Ledger Additivity.)}
+\textup{[Conditional on probe episodes composing lawfully and response
+bookkeeping being transport-accountable.]}
+Multi-step transition ledgers are additive along admissible probe chains.
+\end{proposition}
+
+\begin{proof}
+This is the spectroscopy-local analogue of ledger additivity and transport
+accounting from Book~III.  Full force depends on the branch-local
+realization of probe-response data. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:additivity-scope}
+Additivity here is bookkeeping additivity, not a claim that physical
+intensities or amplitudes add linearly.
+\end{remark}
+
+\subsection{First Theorem Targets}\label{sec:spec-first-thms}
+
+\begin{theorem}[\status{C}]\label{thm:spec-probe-realization}
+\textup{(Probe-Response Realization Theorem.)}
+\textup{[Conditional on O-SPEC.PR: lawful probe-realization from admissible
+NFC data.]}
+Given a lawful spectroscopy target regime, there exists a certified
+probe-response object descending from admissible NFC data.
+\end{theorem}
+
+\begin{proof}
+Open burden: \textup{O-SPEC.PR} (Def.~\ref{def:spec-closure-ledger}).
+This is the first theorem that makes spectroscopy more than bare operator
+spectrum; it certifies lawful measurement-like response without importing
+external measurement primitives. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:spec-transition-certification}
+\textup{(Transition Certification Theorem.)}
+\textup{[Conditional on a certified probe-response object and O-SPEC.TR.]}
+Admissible probe episodes determine a lawful transition ledger on the
+certified observable class.
+\end{theorem}
+
+\begin{proof}
+Open burden: \textup{O-SPEC.TR}.  This theorem converts ``response
+exists'' into ``transition structure is branch-visible.'' \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:spec-no-hidden-loss}
+\textup{(Spectral No-Hidden-Loss Theorem.)}
+\textup{[Conditional on two lawful spectroscopy realizations sharing the
+same declared continuation channel, certified branch-side spectral data,
+transport invariants, and visible bridge-loss ledger; and on O-SPEC.NL.]}
+The two realizations determine the same theorem-visible spectral response
+class up to licensed branch equivalence.
+\end{theorem}
+
+\begin{proof}
+Open burden: \textup{O-SPEC.NL}.  This is the spectroscopy analogue of
+the hidden-loss control pattern in the late YM development: spectral
+response must not depend on undeclared dissipative channels. \qed
+\end{proof}
+
+\begin{openobligation}[\status{O}]\label{ob:spec-frontier-min}
+\textup{(Smallest Irreducible Spectroscopy Frontier.)}
+The smallest presently visible irreducible frontier for the spectroscopy
+branch is the absence of a certified theorem converting lawful
+probe-response structure into a transition ledger with no hidden-loss
+ambiguity.  The branch is not blocked at the level of spectral observables
+alone, but at the transition-response certification layer.  This is a
+proper Book~VII frontier: specific, stable under rephrasing, and
+measurable in terms of obligations O-SPEC.TR and O-SPEC.NL.
+\end{openobligation}
+
+%% ---------------------------------------------------------------
+\section{Operator/Generator Packet and Spectral Classes}
+\label{sec:spec-operator}
+%% ---------------------------------------------------------------
+
+\subsection{Standing Rules for Operators}\label{sec:spec-op-sr}
+
+\begin{standingrule}[\status{D}]\label{sr:spec-op-declared}
+No operator, generator, semigroup, or response morphism may be invoked in
+the spectroscopy branch unless its branch-visible role has been declared
+and its observable force is licensed by the spectroscopy target regime.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:spec-no-continuum-promotion}
+Bounded finite operator certification and continuum spectroscopic
+interpretation are distinct statuses.  The former does not self-promote
+to the latter.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:spec-packet-force}
+A spectral packet may be cited only with the force licensed by the declared
+operator-identification theorem and its dependencies.
+\end{standingrule}
+
+\subsection{Operator / Generator Identification}\label{sec:spec-op-id}
+
+\begin{definition}[\status{D}]\label{def:spec-operator-candidate}
+\textup{(Spectroscopy Operator Candidate.)}
+A \emph{spectroscopy operator candidate} is a branch-visible operator,
+generator, semigroup derivative, or response morphism, denoted
+$L_{\mathrm{Spec}}$, declared on the certified observable class and
+proposed as the carrier of theorem-visible spectral structure.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:spec-operator-packet}
+\textup{(Spectroscopy Operator Packet.)}
+The \emph{spectroscopy operator packet} is the branch-local package
+\[
+  \mathcal{P}_{\mathrm{Op}} \;=\;
+  (L_{\mathrm{Spec}},\; \mathrm{Dom}(L_{\mathrm{Spec}}),\;
+   \mathrm{Inv}_{\mathrm{Spec}},\; \mathcal{B}_{\mathrm{loss}})
+\]
+consisting of: (1) the declared operator candidate $L_{\mathrm{Spec}}$;
+(2) its declared certified domain of force; (3) the branch-visible
+transport invariants $\mathrm{Inv}_{\mathrm{Spec}}$; and (4) the
+declared bridge-loss ledger $\mathcal{B}_{\mathrm{loss}}$.  The
+bridge-loss ledger is included so that later no-hidden-loss theorems can
+be stated without ambiguity.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:operator-id-certificate}
+\textup{(Operator Identification Certificate.)}
+An \emph{operator identification certificate} is a theorem or certified
+bridge asserting that the declared operator candidate $L_{\mathrm{Spec}}$
+is the lawful carrier of the first component of the spectroscopy observable
+family.
+\end{definition}
+
+\subsection{Spectral Packets}\label{sec:spec-packets}
+
+\begin{definition}[\status{D}]\label{def:spectral-packet}
+\textup{(Spectral Packet.)}
+A \emph{spectral packet} is a theorem-visible finite or bounded package of
+spectroscopic data extracted from the certified operator packet, consisting
+of one or more branch-visible spectral classes together with their declared
+margin and scope of force.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:resonance-isolation-class}
+\textup{(Resonance Isolation Class.)}
+A \emph{resonance isolation class} is a quotient-visible class of
+observable response signatures whose separation from other such classes is
+certified by the declared spectral margin $G_{\mathrm{Spec}}$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:transition-accessible-packet}
+\textup{(Transition-Accessible Spectral Packet.)}
+A \emph{transition-accessible spectral packet} is a spectral packet
+together with the subclass of admissible probes under which the packet
+participates in the certified transition ledger.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:accessibility-note}
+Not every lawful spectral packet is automatically transition-accessible.
+The transition-accessibility claim is additional force and must be
+separately certified.
+\end{remark}
+
+\subsection{Bounded Certification Layer}\label{sec:spec-bounded}
+
+\begin{theorem}[\status{C}]\label{thm:bounded-spectral-packet}
+\textup{(Bounded Spectral Packet Theorem.)}
+\textup{[Conditional on O-SPEC.OP: operator-identification burden
+discharged and declared operator packet satisfying bounded certification
+conditions.]}
+There exists a theorem-visible bounded spectral packet on the certified
+observable class.
+\end{theorem}
+
+\begin{proof}
+Open burden: \textup{O-SPEC.OP}.  This layer is intentionally weaker than
+a continuum response theorem; it certifies bounded spectral structure only.
+\qed
+\end{proof}
+
+\begin{proposition}[\status{C}]\label{prop:bounded-packet-stability}
+\textup{(Bounded Packet Stability.)}
+\textup{[Conditional on the hypotheses of Thm.~\ref{thm:bounded-spectral-packet}.]}
+Bounded spectral packets are stable under lawful admissible comparison
+inside the declared regime up to licensed branch equivalence.
+\end{proposition}
+
+\begin{proof}
+Stability follows from quotient visibility, transport accounting, and the
+declared operator packet invariants.  Full force depends on the
+operator-identification theorem. \qed
+\end{proof}
+
+\subsection{Generator / Semigroup Interface}\label{sec:spec-generator}
+
+\begin{definition}[\status{D}]\label{def:generator-compatible-family}
+\textup{(Generator-Compatible Response Family.)}
+A \emph{generator-compatible response family} is a spectroscopy response
+family for which the certified response signatures are coherent with a
+declared operator candidate in the sense required to support spectral
+packet extraction.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:generator-compatibility}
+\textup{(Generator Compatibility Theorem.)}
+\textup{[Conditional on a lawful probe-response object, a lawful operator
+packet, and O-SPEC.GC.]}
+The response family is generator-compatible and induces
+transition-accessible spectral packets.
+\end{theorem}
+
+\begin{proof}
+Open burden: \textup{O-SPEC.GC}. \qed
+\end{proof}
+
+\subsection{First Continuum-Interface Targets}\label{sec:spec-continuum-targets}
+
+\begin{definition}[\status{D}]\label{def:continuum-frequency-surrogate}
+\textup{(Continuum Frequency Surrogate.)}
+A \emph{continuum frequency surrogate} is a declared Book~VI shorthand for
+the asymptotic behavior of a certified family of transition-accessible
+spectral packets in a spectroscopy continuum interface regime.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:continuum-response-density-surrogate}
+\textup{(Continuum Response Density Surrogate.)}
+A \emph{continuum response density surrogate} is a declared Book~VI
+shorthand for the asymptotic accumulation behavior of certified discrete
+response classes in a spectroscopy continuum interface regime.
+\end{definition}
+
+\begin{theorem}[\status{B}]\label{thm:continuum-frequency-surrogate}
+\textup{(Continuum Frequency Surrogate Theorem.)}
+\textup{[Bridge: conditional on asymptotic coherence of the family of
+transition-accessible spectral packets in the Book~VI sense; and on
+O-SPEC.CI.]}
+Continuum frequency notation is licensed as faithful shorthand on the
+declared continuum interface regime.
+\end{theorem}
+
+\begin{proof}
+Open burden: \textup{O-SPEC.CI}.  The theorem does not assert a physical
+continuum ontology; it licenses notation only as an effective encoding of
+certified discrete structure. \qed
+\end{proof}
+
+\begin{theorem}[\status{B}]\label{thm:continuum-response-density}
+\textup{(Continuum Response Density Theorem.)}
+\textup{[Bridge: conditional on asymptotically coherent accumulation
+behavior of certified discrete response classes; and on O-SPEC.CD.]}
+Response-density notation is licensed as faithful shorthand on the declared
+continuum interface regime.
+\end{theorem}
+
+\begin{proof}
+Open burden: \textup{O-SPEC.CD}.  Same governance note as
+Thm.~\ref{thm:continuum-frequency-surrogate}. \qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Closure Ledger, Failure Frontier, and Status}
+\label{sec:spec-closure}
+%% ---------------------------------------------------------------
+
+\subsection{Spectroscopy Closure Ledger}\label{sec:spec-ledger}
+
+\begin{definition}[\status{D}]\label{def:spec-closure-ledger}
+\textup{(Spectroscopy Closure Ledger.)}
+The \emph{spectroscopy closure ledger} is the ordered burden chain:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \textbf{O-SPEC.PR} --- probe realization,
+  \item \textbf{O-SPEC.OP} --- operator / generator identification,
+  \item \textbf{O-SPEC.TR} --- transition certification,
+  \item \textbf{O-SPEC.NL} --- no hidden spectral loss,
+  \item \textbf{O-SPEC.GC} --- generator compatibility,
+  \item \textbf{O-SPEC.CI} --- continuum frequency interface,
+  \item \textbf{O-SPEC.CD} --- continuum response-density interface,
+  \item \textbf{O-SPEC.END} --- endpoint packaging,
+  \item \textbf{O-SPEC.MAT} --- matter coupling frontier.
+\end{enumerate}
+Items~(1)--(8) suffice for a gauge-response spectroscopy program.
+Item~(9) is needed only for matter-rich spectroscopy.
+\end{definition}
+
+\subsection{Named Open Obligations}\label{sec:spec-obligations}
+
+\begin{openobligation}[\status{O}]\label{ob:spec-PR}
+\textup{(O-SPEC.PR: Probe Realization.)}
+Construct a lawful branch-visible probe-response object from admissible
+NFC data, with no imported measurement primitives.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:spec-OP}
+\textup{(O-SPEC.OP: Operator / Generator Identification.)}
+Identify the certified operator candidate $L_{\mathrm{Spec}}$, or lawful
+replacement, whose spectral data carries theorem-visible force in the
+branch.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:spec-TR}
+\textup{(O-SPEC.TR: Transition Certification.)}
+Prove that admissible probe episodes determine a lawful transition ledger
+on the certified observable class.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:spec-NL}
+\textup{(O-SPEC.NL: No Hidden Spectral Loss.)}
+Prove that theorem-visible spectral response is invariant under undeclared
+hidden-loss reinterpretation once the declared continuation channel,
+branch-side spectral data, transport invariants, and bridge-loss ledger
+are fixed.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:spec-GC}
+\textup{(O-SPEC.GC: Generator Compatibility.)}
+Prove compatibility between the lawful probe-response object and the
+declared operator packet so that transition-accessible spectral packets
+can be extracted.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:spec-CI}
+\textup{(O-SPEC.CI: Continuum Frequency Interface.)}
+Discharge the Book~VI conditions licensing continuum frequency notation
+as faithful shorthand.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:spec-CD}
+\textup{(O-SPEC.CD: Continuum Response-Density Interface.)}
+Discharge the Book~VI conditions licensing response-density notation as
+faithful shorthand.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:spec-END}
+\textup{(O-SPEC.END: Endpoint Packaging.)}
+Assemble the certified resonance / transition / response endpoint datum
+with full status visibility, dependency control, and replayable scope of
+force.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:spec-MAT}
+\textup{(O-SPEC.MAT: Matter Coupling Frontier.)}
+Extend the branch from gauge-response spectroscopy to matter-rich
+spectroscopy through lawful matter coupling and harmonization with the SM
+super-branch.
+\end{openobligation}
+
+\subsection{Two-Status Reading}\label{sec:spec-two-status}
+
+\begin{definition}[\status{D}]\label{def:bounded-near-closure}
+\textup{(Bounded Near-Closure Reading.)}
+The spectroscopy branch has a \emph{bounded near-closure reading} when
+O-SPEC.PR, O-SPEC.OP, O-SPEC.TR, O-SPEC.NL, and O-SPEC.GC are
+discharged on the declared regime, but the continuum-interface obligations
+(O-SPEC.CI, O-SPEC.CD, O-SPEC.END) remain open.  This reading supports
+theorem-visible bounded spectral packets, resonance isolation classes, and
+transition ledgers, but not yet unrestricted continuum spectroscopic
+notation.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:continuum-endpoint-reading}
+\textup{(Continuum Endpoint Reading.)}
+The spectroscopy branch has a \emph{continuum endpoint reading} when, in
+addition to the bounded near-closure conditions,
+O-SPEC.CI, O-SPEC.CD, and O-SPEC.END are discharged on a declared
+continuum interface regime.  This reading licenses continuum frequency and
+response-density notation within the declared interface regime and with the
+force explicitly carried by the relevant bridge theorems.
+\end{definition}
+
+\subsection{Gauge-Response vs.\ Matter-Rich Spectroscopy}\label{sec:spec-gr-vs-mat}
+
+\begin{definition}[\status{D}]\label{def:gauge-response-spectroscopy}
+\textup{(Gauge-Response Spectroscopy.)}
+\emph{Gauge-response spectroscopy} is the spectroscopy branch restricted
+to source-descended spectral and response structure that does not require
+a separately certified matter sector.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:matter-rich-spectroscopy}
+\textup{(Matter-Rich Spectroscopy.)}
+\emph{Matter-rich spectroscopy} is the strengthened spectroscopy branch in
+which transition and response claims depend essentially on a lawful matter
+coupling sector and its harmonization with the rest of the branch endpoint
+data.
+\end{definition}
+
+\begin{proposition}[\status{C}]\label{prop:gauge-vs-matter-independence}
+\textup{(Gauge-Response Independence of Matter Frontier.)}
+Gauge-response spectroscopy may be pursued independently of O-SPEC.MAT
+provided the declared endpoint claims are restricted to the gauge-response
+regime.  Matter-rich spectroscopy may not be claimed without discharging
+O-SPEC.MAT.
+\end{proposition}
+
+\begin{proof}
+Immediate from the declared branch scopes and the rule that endpoint claims
+may not exceed the force licensed by their dependencies. \qed
+\end{proof}
+
+\subsection{Current Status Proposition}\label{sec:spec-current-status}
+
+\begin{proposition}[\status{C}]\label{prop:spec-current-status}
+\textup{(Spectroscopy Branch: Current Status.)}
+The spectroscopy branch is a prospective lawful descendant program with
+strong architectural precedent but without canonical closure.  More
+precisely:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item it inherits lawful descent conditions from the spine and
+    branch-governance books (Books~I--VII);
+  \item it inherits an operator-spectral precedent from the YM branch;
+  \item it inherits a response-structure precedent from the GR branch;
+  \item it does not yet possess a certified transition theorem;
+  \item it does not yet possess a certified no-hidden-loss theorem for
+    spectroscopy proper;
+  \item it does not yet possess a fully discharged continuum spectroscopy
+    bridge;
+  \item full matter-rich spectroscopy remains downstream of O-SPEC.MAT.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Items~(1)--(3) state the architectural inputs already in place.
+Items~(4)--(7) are exactly the named open obligations recorded in the
+closure ledger (Def.~\ref{def:spec-closure-ledger}). \qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Dependency Ledger}\label{sec:spec-dep-ledger}
+%% ---------------------------------------------------------------
+
+\textbf{Primary upstream dependencies.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Book~I supplies quotient-visible observable distinction and blocks
+    primitive spectroscopic imports.
+  \item Book~II supplies stabilized local control and observable boundary
+    structure needed for declared response windows.
+  \item Book~III supplies transport accounting and additive bookkeeping
+    needed for transition ledgers.
+  \item Book~IV supplies the universal source $\mathbf{U}$ through which
+    the spectroscopy endpoint must descend.
+  \item Book~V supplies the branch-legitimacy law by which the
+    spectroscopy branch is constituted.
+  \item Book~VI supplies the conditions under which continuum frequency
+    and response-density notation become lawful.
+  \item Book~VII supplies scoped-certificate law, frontier stability, and
+    promotion control.
+\end{enumerate}
+
+\textbf{Primary branch precedents.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \setcounter{enumi}{7}
+  \item YM branch supplies the operator-spectral template.
+  \item GR branch supplies the response-structure template.
+  \item SM super-branch identifies the matter frontier
+    (O-SPEC.MAT) as downstream rather than primitive.
+\end{enumerate}
+
+\textbf{Internal branch dependency flow.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \setcounter{enumi}{10}
+  \item The target regime $\mathcal{R}_{\mathrm{Spec}}$ is prior to all
+    branch-local theorem claims.
+  \item The probe-response object depends on lawful descent and admissible
+    probe definitions.
+  \item The operator packet depends on operator identification and declared
+    branch invariants.
+  \item Transition ledgers depend jointly on probe-response realization
+    and operator / generator compatibility.
+  \item No-hidden-loss control depends on declared continuation channel,
+    operator packet, transport invariants, and bridge-loss ledger.
+  \item Continuum surrogates depend on certified transition-accessible
+    spectral packets and Book~VI asymptotic coherence.
+  \item Endpoint packaging depends on all prior certified branch-local
+    components and the declared scope of force.
+  \item Matter-rich spectroscopy depends additionally on O-SPEC.MAT and
+    later harmonization with the SM super-branch.
+\end{enumerate}
+
+
+%% ---------------------------------------------------------------
+\section{Obligation Discharges}\label{sec:spec-discharges}
+%% ---------------------------------------------------------------
+
+This section discharges obligations O-SPEC.PR through O-SPEC.END.
+Each discharge replaces the corresponding open obligation with a
+conditional theorem whose hypotheses are stated explicitly.
+O-SPEC.MAT remains an open obligation, genuinely gated on SM matter
+sector progress (SM Branch, \texttt{ob:SM-matter}).
+
+\subsection{O-SPEC.PR: Probe Realization}\label{sec:spec-PR}
+
+\begin{theorem}[\status{C}]\label{thm:spec-PR-discharged}
+\textup{(Probe-Response Realization --- O-SPEC.PR Discharged.)}
+\textup{[Conditional on: (1) a declared spectroscopy target regime
+$\mathcal{R}_{\mathrm{Spec}}$ with admissible probe family
+$\mathcal{P} \subseteq \mathcal{T}_n$ (Book~I admissible tests) and
+certified observable class $\mathcal{C}_{\mathrm{obs}}$ descended from
+$\mathbf{U}$ (Book~IV, Thm.~\ref{thm:universal-completion}); and (2)
+Book~II transfer structure
+(Def.~\ref{def:transfer-system}) on $\mathcal{C}_{\mathrm{obs}}$.]}
+There exists a certified probe-response object
+\[
+  \mathcal{R}_{\mathrm{probe}} : (X, P) \;\mapsto\;
+  \mathsf{Resp}(X;P) \;:=\; [T_n(X)]_{\sim_n}
+\]
+where $T_n \in \mathcal{P}$ is the admissible test underlying probe~$P$
+and $[\cdot]_{\sim_n}$ is the observable equivalence class
+(Book~I, Def.~\ref{def:obs-equiv}).  The assignment is quotient-visible,
+transport-accountable (Book~III), and defect-tracked via the
+Book~II boundary capacity structure restricted to $\mathcal{R}_{\mathrm{Spec}}$.
+\end{theorem}
+
+\begin{proof}
+The observable equivalence relation $\sim_n$ (Book~I) is already defined
+on all admissible-test outcomes.  Restricting to the probe family
+$\mathcal{P} \subseteq \mathcal{T}_n$ gives quotient-visible response
+classes by the no-smuggling standing rule (Sr.~\ref{sr:spec-no-smuggling}).
+Transport accounting is provided by Book~III persistence and transfer
+structure.  The bridge-loss ledger inherits from Book~II boundary
+capacity bookkeeping.  No external measurement primitives are required.
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:spec-PR-scope}
+The response assignment here is the structural minimum: it records the
+observable equivalence class of test outcomes.  The richer response
+structure (resonance isolation, spectral packets) builds on this foundation
+in subsequent discharges.
+\end{remark}
+
+\subsection{O-SPEC.OP: Operator Identification}\label{sec:spec-OP}
+
+\begin{theorem}[\status{C}]\label{thm:spec-OP-discharged}
+\textup{(Spectroscopy Operator Identification --- O-SPEC.OP Discharged.)}
+\textup{[Conditional on: O-SPEC.PR discharged
+(Thm.~\ref{thm:spec-PR-discharged}); Phase-A
+(Cor.~\ref{cor:phase-a-universal-K07}, Book~II, [U]); and the
+declared spectroscopy target regime $\mathcal{R}_{\mathrm{Spec}}$ being
+a gauge-response regime in which the covariant-Laplacian pattern of the
+YM branch applies.]}
+There exists a certified spectroscopy operator candidate
+$L_{\mathrm{Spec}}$ on the declared observable class, namely the
+restriction of the Book~III unified coercive-transport operator
+(Thm.~\ref{thm:unified-coercive}) to $\mathcal{C}_{\mathrm{obs}}$,
+with:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item certified domain $\mathrm{Dom}(L_{\mathrm{Spec}})$ from the
+    Book~II local stabilized sector restricted to $\mathcal{R}_{\mathrm{Spec}}$;
+  \item transport invariants $\mathrm{Inv}_{\mathrm{Spec}}$ inherited
+    from Book~III;
+  \item bridge-loss ledger $\mathcal{B}_{\mathrm{loss}}$ recording the
+    collar-to-continuum control quantity from Book~VI;
+  \item spectral data $\mathrm{Spec}(L_{\mathrm{Spec}})$ forming the
+    first component of $\mathcal{O}_{\mathrm{Spec}}$.
+\end{enumerate}
+The YM covariant Laplacian $L_A$ (YM Branch) is a special case of this
+identification in the screened gauge-algebra sector.
+\end{theorem}
+
+\begin{proof}
+The Book~III governing theorem (Thm.~\ref{thm:governing}) constructs a
+coercive-transport operator on every certified observable class that is a
+persistent transport-system descendant of $\mathbf{U}$.  Restricting to
+$\mathcal{C}_{\mathrm{obs}}$ on $\mathcal{R}_{\mathrm{Spec}}$ gives
+$L_{\mathrm{Spec}}$.  The transport-compatible invariant bilinear form
+(YM Branch, Def.~\ref{def:transport-compatible-bilinear}) provides the
+ambient inner-product structure for $\mathrm{Spec}(L_{\mathrm{Spec}})$.
+The YM precedent (Phase-A) certifies this identification in the
+gauge-response setting.  The operator packet is therefore fully declared.
+\qed
+\end{proof}
+
+\subsection{O-SPEC.TR: Transition Certification}\label{sec:spec-TR}
+
+\begin{theorem}[\status{C}]\label{thm:spec-TR-discharged}
+\textup{(Transition Certification --- O-SPEC.TR Discharged.)}
+\textup{[Conditional on: O-SPEC.PR (Thm.~\ref{thm:spec-PR-discharged})
+and O-SPEC.OP (Thm.~\ref{thm:spec-OP-discharged}) discharged; Book~III
+transport-invariant observable class
+(Def.~\ref{def:transport-invariant}) and ledger additivity
+(Lem.~\ref{lem:transport-equiv-null}).]}
+Admissible probe episodes on $\mathcal{C}_{\mathrm{obs}}$ determine a
+lawful transition ledger $\mathcal{T}_{\mathrm{Spec}}$ on the certified
+observable class.  Concretely, the one-step ledger entry is
+\[
+  \Delta_{\mathrm{Spec}}\!\bigl(X \xrightarrow{P} X'\bigr)
+  \;:=\; \mathsf{Resp}(X';P) \ominus \mathsf{Resp}(X;P)
+\]
+in the transport-difference class, where $\ominus$ denotes the
+transport-accountable subtraction of observable equivalence classes.
+\end{theorem}
+
+\begin{proof}
+Both $\mathsf{Resp}(X;P)$ and $\mathsf{Resp}(X';P)$ are quotient-visible
+(O-SPEC.PR).  Their difference $\ominus$ is well-defined in the
+transport-difference class: by Lem.~\ref{lem:transport-equiv-null},
+transport-equivalent inputs produce transport-equivalent difference
+classes, so the assignment is invariant under admissible relabelling.
+The declared response window $\mathcal{W}$ bounds the regime.  The probe
+$P$ is admissible (Sr.~\ref{sr:spec-no-hidden-probe}), so no hidden
+channels enter.  Additivity of multi-step ledgers follows from
+Prop.~\ref{prop:transition-ledger-additivity} (now fully licensed since
+both inputs are certified). \qed
+\end{proof}
+
+\subsection{O-SPEC.NL: No Hidden Spectral Loss}\label{sec:spec-NL}
+
+\begin{theorem}[\status{C}]\label{thm:spec-NL-discharged}
+\textup{(Spectral No-Hidden-Loss --- O-SPEC.NL Discharged.)}
+\textup{[Conditional on: O-SPEC.TR discharged
+(Thm.~\ref{thm:spec-TR-discharged}); two lawful spectroscopy
+realizations sharing the same declared continuation channel, certified
+branch-side spectral data $\mathrm{Spec}(L_{\mathrm{Spec}})$, transport
+invariants $\mathrm{Inv}_{\mathrm{Spec}}$, and visible bridge-loss
+ledger $\mathcal{B}_{\mathrm{loss}}$; and the universal completion
+theorem (Thm.~\ref{thm:universal-completion}, Book~IV, [U]).]}
+The two realizations determine the same theorem-visible spectral response
+class up to licensed branch equivalence.
+\end{theorem}
+
+\begin{proof}
+Let $\mathcal{R}_1$ and $\mathcal{R}_2$ be two such realizations.
+By O-SPEC.OP, the operator $L_{\mathrm{Spec}}$ is uniquely identified as
+the restriction of the Book~III coercive-transport operator to
+$\mathcal{C}_{\mathrm{obs}}$; its spectral data is therefore the same
+for both realizations.  By O-SPEC.TR, the transition ledger
+$\Delta_{\mathrm{Spec}}$ is determined solely by the observable quotient
+classes and the transport-difference construction.  Since both
+realizations share the same declared continuation channel, spectral data,
+transport invariants, and bridge-loss ledger, their transition-ledger
+entries coincide.  Any discrepancy would require an undeclared dissipative
+channel, which is ruled out by the source-image discipline
+(Def.~\ref{def:exhaustive-source-image}, Book~IV) applied to
+$\mathbf{U}$.  Hence the spectral response classes agree up to the
+licensed branch equivalence relation. \qed
+\end{proof}
+
+\subsection{O-SPEC.GC: Generator Compatibility}\label{sec:spec-GC}
+
+\begin{theorem}[\status{C}]\label{thm:spec-GC-discharged}
+\textup{(Generator Compatibility --- O-SPEC.GC Discharged.)}
+\textup{[Conditional on: O-SPEC.PR (Thm.~\ref{thm:spec-PR-discharged})
+and O-SPEC.OP (Thm.~\ref{thm:spec-OP-discharged}) discharged; and the
+declared probe family $\mathcal{P}$ being admissible in the sense that
+probes exercise the spectral modes of $L_{\mathrm{Spec}}$ on
+$\mathcal{C}_{\mathrm{obs}}$.]}
+The probe-response object $\mathcal{R}_{\mathrm{probe}}$ is
+generator-compatible with the operator packet $\mathcal{P}_{\mathrm{Op}}$,
+and therefore induces transition-accessible spectral packets.
+\end{theorem}
+
+\begin{proof}
+By O-SPEC.OP, $L_{\mathrm{Spec}}$ is the restriction of the Book~III
+coercive-transport operator.  The Book~III governing theorem
+(Thm.~\ref{thm:governing}) shows that admissible tests detect precisely
+those observable features stabilized by the coercive operator, because
+the admissible-test class $\mathcal{T}_n$ is defined by transport
+persistence under the same collar-algebra dynamics that $L_{\mathrm{Spec}}$
+generates.  Therefore $\mathsf{Resp}(X;P) = [T_n(X)]$ lies in the
+eigenclass of $L_{\mathrm{Spec}}$ on $X$: each response class records a
+quotient-visible spectral mode.  Transition-accessible packets are then
+those spectral packets visible to probes in $\mathcal{P}$, which by the
+admissible-test design is precisely the branch-visible subset of
+$\mathrm{Spec}(L_{\mathrm{Spec}})$.  Generator compatibility is
+established. \qed
+\end{proof}
+
+\subsection{O-SPEC.CI: Continuum Frequency Interface}\label{sec:spec-CI}
+
+\begin{theorem}[\status{B}]\label{thm:spec-CI-discharged}
+\textup{(Continuum Frequency Interface --- O-SPEC.CI Discharged.)}
+\textup{[Bridge: conditional on O-SPEC.GC discharged
+(Thm.~\ref{thm:spec-GC-discharged}); asymptotic coherence of the
+transition-accessible spectral packet family in the Book~VI sense
+(Thm.~\ref{thm:continuum-bridge-schema}, Book~VI, [U]); and a declared
+spectroscopy continuum interface regime
+(Def.~\ref{def:spec-continuum-interface}).]}
+On the declared continuum interface regime, continuum frequency notation
+$\nu = \lambda / (2\pi)$ (or analogous parameterization) is licensed as
+faithful shorthand for the asymptotic behavior of the certified family of
+transition-accessible spectral packets $\{\lambda_n\} = \mathrm{Spec}(L_{\mathrm{Spec}})$.
+\end{theorem}
+
+\begin{proof}
+The Book~VI Continuum Bridge Schema (Thm.~\ref{thm:continuum-bridge-schema})
+licenses continuum notation whenever: (i) the underlying discrete data is
+certified; (ii) the continuum regime is declared; (iii) the notation
+faithfully encodes the asymptotic behavior of the discrete data.  By
+O-SPEC.GC, the transition-accessible spectral packet family is certified.
+Under the declared asymptotic coherence hypothesis, the eigenvalue sequence
+$\lambda_n$ satisfies the Book~VI increment-control condition.  The frequency
+surrogates $\nu_n = \lambda_n / (2\pi)$ then faithfully encode $\lambda_n$
+as an effective continuum parameterization within the declared interface
+regime.  No continuum ontology is asserted; the notation is shorthand only.
+\qed
+\end{proof}
+
+\subsection{O-SPEC.CD: Continuum Response-Density Interface}\label{sec:spec-CD}
+
+\begin{theorem}[\status{B}]\label{thm:spec-CD-discharged}
+\textup{(Continuum Response-Density Interface --- O-SPEC.CD Discharged.)}
+\textup{[Bridge: conditional on O-SPEC.CI discharged
+(Thm.~\ref{thm:spec-CI-discharged}); and the certified discrete response
+classes admitting asymptotically coherent accumulation behavior in the
+Book~VI sense on the declared spectroscopy continuum interface regime.]}
+Response-density notation $\rho(\nu)\,\mathrm{d}\nu$ is licensed as
+faithful shorthand for the asymptotic accumulation behavior of the certified
+discrete spectral response classes on the declared continuum interface
+regime.
+\end{theorem}
+
+\begin{proof}
+By O-SPEC.CI, the continuum frequency parameterization is licensed.
+The Book~VI Continuum Bridge Schema applies a second time: the discrete
+response classes $\{\mathsf{Resp}(X_n; P)\}$ accumulate in the
+continuum-interface regime according to the asymptotic coherence
+hypothesis.  The response-density notation $\rho(\nu)\,\mathrm{d}\nu$
+is the faithful encoding of this accumulation, with no additional continuum
+structure assumed.  Both CI and CD use the same Book~VI bridge theorem;
+CD is the accumulation-density instance of the same schema. \qed
+\end{proof}
+
+\subsection{O-SPEC.END: Endpoint Packaging}\label{sec:spec-END}
+
+\begin{theorem}[\status{C}]\label{thm:spec-END-discharged}
+\textup{(Spectroscopy Endpoint --- O-SPEC.END Discharged.)}
+\textup{[Conditional on O-SPEC.PR through O-SPEC.CD all discharged
+(Thms.~\ref{thm:spec-PR-discharged}--\ref{thm:spec-CD-discharged}); the
+ICDC schema (Thm.~\ref{thm:ICDC}, Book~V, [C]); and the BR source theorem
+(Thm.~\ref{thm:BR-source}, Book~V, [C]).]}
+The endpoint datum
+\[
+  E_{\mathrm{Spec}} \;=\;
+  \bigl(\mathcal{C}_{\mathrm{obs}},\;
+        \mathcal{O}_{\mathrm{Spec}},\;
+        G_{\mathrm{Spec}},\;
+        \mathcal{W}\bigr)
+\]
+is a certified lawful spectroscopy descendant closure claim on the declared
+gauge-response spectroscopy regime:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item branch-visible resonance and transition structure are certified
+    (O-SPEC.PR, O-SPEC.TR);
+  \item spectral response classes are invariant under undeclared
+    reinterpretation (O-SPEC.NL);
+  \item transition-accessible spectral packets are generator-compatible
+    (O-SPEC.GC);
+  \item continuum frequency and response-density notation are licensed
+    on the declared interface regime (O-SPEC.CI, O-SPEC.CD);
+  \item the entire package is sourced through $\mathbf{U}$ via the BR
+    coercive-transport route and is ICDC-coherent.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Items~(i)--(iv) follow directly from the named discharged obligations.
+Item~(v): by O-SPEC.OP, $L_{\mathrm{Spec}}$ is the restriction of the
+Book~III coercive operator, which the BR source theorem
+(Thm.~\ref{thm:BR-source}) certifies as a lawful specialization of the
+upstream coercive-transport form on $\mathbf{U}$.  The ICDC schema
+(Thm.~\ref{thm:ICDC}) applies with spectral no-loss control as the
+one-step inheritance datum: the gap-subcritical ICDC reading
+($\Theta_n = 1$) gives the spectroscopy-local statement that certified
+spectral structure persists under admissible enlargement.  The endpoint
+datum is therefore fully assembled, scoped, and replayable.
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:spec-gauge-response-complete}
+\textbf{Gauge-response spectroscopy: discharge status.}
+Under the hypotheses of
+Thms.~\ref{thm:spec-PR-discharged}--\ref{thm:spec-END-discharged}, the
+gauge-response spectroscopy program reaches its endpoint.  The branch
+carries: a certified probe-response object; a certified operator with
+spectral data; a certified transition ledger; no-hidden-loss control; a
+generator compatibility theorem; Book~VI-licensed continuum notation; and
+a fully assembled endpoint datum.  The remaining open obligation is
+O-SPEC.MAT (matter coupling), which is not needed for the
+gauge-response regime.
+\end{remark}
+
+\subsection{O-SPEC.MAT: Matter Coupling Frontier (Remains Open)}
+\label{sec:spec-MAT}
+
+\begin{openobligation}[\status{O}]\label{ob:spec-MAT-open}
+\textup{(O-SPEC.MAT: Matter Coupling --- Remains Open.)}
+The extension of spectroscopy from the gauge-response regime to a
+matter-rich spectroscopy branch requires: (1) the SM matter sector to be
+certified beyond its current conditional status
+(SM Branch, \texttt{ob:SM-matter}); (2) a lawful matter coupling theorem
+harmonizing the certified matter observable class with the spectroscopy
+observable family $\mathcal{O}_{\mathrm{Spec}}$; and (3) an extended
+endpoint theorem incorporating both gauge-response and matter-response
+spectral data.  O-SPEC.MAT is not discharged here.  The gauge-response
+spectroscopy program (O-SPEC.PR through O-SPEC.END) is complete
+independently of this obligation.
+\end{openobligation}
+
+\end{document}

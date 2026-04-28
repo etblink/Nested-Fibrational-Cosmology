@@ -1,0 +1,1690 @@
+%% Elements of Nested Fibrational Cosmology
+%% LING Branch Book: Linguistics Branch (Prospective)
+%% Status: Architecturally constituted; pre-closure — all theorem shells carry open obligations
+%%
+%% Status legend:
+%%   [U]  Unconditional  -- proved from spine imports and prior [U] results
+%%   [C]  Conditional    -- depends on explicitly declared hypotheses
+%%   [D]  Definition-structural
+%%   [R]  Remark only
+%%   [O]  Open obligation / named failure frontier
+%%   [B]  Bridge (Book VI licensed continuum surrogate)
+
+\documentclass[12pt,oneside]{amsbook}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1.2in}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{openobligation}[theorem]{Open Obligation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{scholium}[theorem]{Scholium}
+
+\newcommand{\status}[1]{\textup{[#1]}}
+
+%% Notation
+%%   R_Ling              Linguistics target regime
+%%   O_Ling              Linguistics observable family = (K_Ling, C_Ling, Gamma_Ling)
+%%   K_Ling              Contrast kernel (quotient-visible distinguishability data)
+%%   C_Ling              Compositional ledger (hierarchical assembly records)
+%%   Gamma_Ling          Grammar-descent object (certified rule object)
+%%   Delta_Ling          Contrast margin (minimum separation of equivalence classes)
+%%   E_Ling              Linguistics endpoint datum
+%%   Resp_L(X;P)         Quotient-visible contrast signature under admissible probe P
+
+\begin{document}
+
+\title{LING Branch Book\\[6pt]
+       Contrast, Compositionality, and Certified Linguistic Structure}
+\author{Elements of Nested Fibrational Cosmology\\
+        Prospective Derived Branch}
+\date{}
+\maketitle
+\tableofcontents
+\newpage
+
+%% ---------------------------------------------------------------
+\section{Purpose and Canonical Seed}\label{sec:ling-purpose}
+%% ---------------------------------------------------------------
+
+This branch studies whether linguistic structure --- phonological
+contrast, syntactic compositionality, semantic equivalence --- can be
+realized as a lawful descendant of the NFC source architecture.  Its
+task is not to import the standard language of phonemes, grammars,
+lexicons, or meaning-bearing expressions as primitives.  Its task is to
+determine when such language is licensed as an effective encoding of
+certified discrete observable structure within a declared branch regime.
+That posture is required by Book~I's no-smuggling stance, Book~V's
+branch-legitimacy law, Book~VI's continuum-interface discipline, and
+Book~VII's scoped-certificate law.
+
+The central question is: starting from nothing but finite signal-object
+pairs, a finite admissible contrast discipline, and the observational
+equivalence imposed by that discipline, can one recover certified
+hierarchical compositional structure?  No alphabet is assumed.  No
+phoneme inventory is assumed.  No syntactic category system is assumed.
+No semantic domain is assumed.  Each such notion, if it appears at all,
+must emerge as a quotient-visible, source-descended object.
+
+The linguistics branch is motivated by two structural templates already
+present in the canonical corpus.  First, the SPEC branch already treats
+probe-response pairs and transition ledgers as the building block of a
+certified observable family --- the \emph{contrast-probe template}.
+Second, the NS branch already treats a continuation criterion and
+obstruction-decay pattern as the backbone of its main frontier theorem
+--- a template for \emph{compositional propagation with named failure
+frontier}.  A linguistics branch unifies these two tendencies: contrast
+structure (analogous to spectral data) plus compositional assembly
+(analogous to one-step interface propagation).
+
+The initial endpoint is deliberately modest: certified contrast
+structure and one-step compositional assembly on a declared linguistic
+target regime.  Full semantic compositionality, infinite generativity
+(recursion), and cross-linguistic universals are deferred as named open
+obligations until the foundational contrast and compositional layers are
+genuinely discharged.
+
+\begin{remark}[\status{R}]\label{rem:ling-strategic-path}
+\textbf{Strategic path.}
+The shortest canonical route is contrast-founded compositionality:
+begin from certified contrast equivalence classes (the discrete
+phonological layer), assemble a one-step compositional ledger from
+admissible probe episodes, prove a contrast-margin theorem, then prove a
+no-hidden-channel theorem, then ask whether the assembled structure
+certifiably descends from $\mathbf{U}$ via the Book~V branch-legitimacy
+law.  Semantic grounding and recursion-licensing remain downstream open
+obligations.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Imported Spine Structure}\label{sec:ling-imports}
+%% ---------------------------------------------------------------
+
+\textbf{Imported spine results.}  All certified results of Books~I--VII
+are required for lawful descent, transport accounting, continuum-interface
+discipline, and closure governance.  In particular:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Book~I}: observational quotient discipline; no primitive
+    symbols, alphabets, syntactic categories, or hidden naming conventions
+    may be assumed.  Linguistic content must therefore be
+    quotient-visible and admissibly testable, not imported as background
+    linguistics.
+  \item \emph{Book~II}: stabilized local outcomes, collar-visible
+    control, and boundary capacity structure.  The finiteness of the
+    observable contrast boundary governs what can be read off from a
+    finite signal-object boundary.
+  \item \emph{Book~III}: persistence and transport law for certified
+    observables; additive bookkeeping.  Compositional transport costs
+    must be accountable within this framework.
+  \item \emph{Book~IV}: the universal source object $\mathbf{U}$ and
+    source-descended comparison architecture.  All certified linguistic
+    objects must factor through $\mathbf{U}$.
+  \item \emph{Book~V}: lawful branchhood and branch visibility; the
+    constitutional law under which a linguistics branch is admitted.
+  \item \emph{Book~VI}: continuum language licensed only as faithful
+    shorthand for certified discrete structure within a declared interface
+    regime; the main gate for acoustic frequency notation, probability
+    distributions over utterances, and information-theoretic quantities
+    in formal linguistic models.
+  \item \emph{Book~VII}: scoped certificates, promotion law, named
+    frontier stability, and prohibition of hidden upgrade.  Claims about
+    universal grammar, infinite generativity, or cross-linguistic
+    universals are subject to this governance without exception.
+\end{enumerate}
+
+\textbf{Imported branch precedents.}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{SPEC branch}: probe-response objects and transition
+    ledgers as building blocks of a certified observable family; the
+    \emph{contrast-probe template} for this branch.
+  \item \emph{NS branch}: continuation criterion and obstruction-decay
+    pattern as the backbone of a main frontier theorem; the
+    \emph{compositional propagation with named failure frontier} template.
+  \item \emph{SM and matter branches}: category and symmetry content
+    remain downstream burdens rather than primitive branch assumptions;
+    no linguistic universal is to be treated as background category
+    theory.
+\end{enumerate}
+
+%% ---------------------------------------------------------------
+\section{Branch-Specific Arena}\label{sec:ling-arena}
+%% ---------------------------------------------------------------
+
+\subsection{Standing Rules}\label{sec:ling-standing-rules}
+
+\begin{standingrule}[\status{D}]\label{sr:ling-no-smuggling}
+No linguistic object --- phoneme, morpheme, word, phrase, sentence,
+proposition, or meaning --- may be treated as primitive branch data
+merely because it is familiar in external linguistic theory.  Every
+branch-visible linguistic object must be sourced through $\mathbf{U}$,
+the declared descent machinery, and the linguistics observable family.
+This is a branch-local instance of Book~I no-smuggling and Book~V
+branch-legitimacy discipline.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:ling-quotient-visible}
+A linguistic distinction counts only when it is quotient-visible under
+admissible contrast tests or under a lawfully certified contrast
+signature descended from such tests.  Book~I's observational quotient
+discipline remains controlling.  In particular, a phonological
+distinction between two signal-objects counts only when it is
+witnessable by some admissible contrast probe.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:ling-no-hidden-symbol}
+No hidden alphabet, feature matrix, underlying representation, or
+abstract phonological level may be assumed.  Symbol-level structure may
+appear only after a branch-local derivation certifies that such
+structure faithfully encodes quotient-visible contrast data on the
+declared regime.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:ling-no-self-promotion}
+A finite contrast certificate may not self-promote to a claim about
+infinite generativity, recursion, or universal grammar.  Such promotion
+requires an explicit transfer theorem.  This is a direct Book~VII
+governance consequence.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:ling-frontier-visibility}
+Named frontiers in compositional structure, recursive generativity,
+semantic grounding, or cross-linguistic universals remain visible until
+discharged by theorem.  Rephrasing does not discharge them.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:ling-no-semantic-primitive}
+No semantic domain, truth-value space, or model-theoretic universe may
+be treated as a primitive.  Meaning, to the extent that it appears at
+all, must emerge as a quotient-visible assignment licensed by certified
+contrast structure.
+\end{standingrule}
+
+\begin{standingrule}[\status{D}]\label{sr:ling-continuum-gate}
+Continuous acoustic quantities, probability distributions over
+utterances, and information-theoretic rate quantities may appear only
+after a branch-local Book~VI bridge theorem certifies that they
+faithfully encode certified discrete contrast structure within a
+declared continuum interface regime.
+\end{standingrule}
+
+\subsection{Declared Target Regime}\label{sec:ling-target-regime}
+
+\begin{definition}[\status{D}]\label{def:ling-target-regime}
+\textup{(Linguistics Target Regime.)}
+A \emph{linguistics target regime} is a declared branch regime
+$\mathcal{R}_{\mathrm{Ling}}$ consisting of:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item a certified observable class $\mathcal{C}_{\mathrm{obs}}$ of
+    signal-object pairs --- the objects on which contrast tests are
+    performed;
+  \item a finite admissible contrast discipline $\mathcal{P}$, each
+    element of which is a declared admissible process detecting a
+    quotient-visible distinction between signal-object pairs;
+  \item a declared compositional window $\mathcal{W}_{\mathrm{comp}}$
+    specifying the range of assembly operations within which
+    compositional claims have force; and
+  \item a declared comparison discipline governing when two assembled
+    objects are equivalent for the purpose of contrast and
+    compositional claims.
+\end{enumerate}
+The role of $\mathcal{R}_{\mathrm{Ling}}$ is to state explicitly where
+linguistic claims are supposed to have force.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:ling-signal-object}
+A \emph{signal-object} is not yet a phonological string, a word, or a
+sentence.  At this stage it is only a certified observable configuration
+on which admissible contrast tests can be performed.  The quotient of
+the signal-object space under admissible contrast equivalence will, if
+the branch succeeds, yield the certified contrast class structure
+analogous to a phoneme inventory --- but that inventory is derived, not
+assumed.
+\end{remark}
+
+\subsection{Linguistics Observable Family}\label{sec:ling-obs-family}
+
+\begin{definition}[\status{D}]\label{def:ling-obs-family}
+\textup{(Linguistics Observable Family.)}
+A \emph{linguistics observable family} on $\mathcal{R}_{\mathrm{Ling}}$
+is a triple
+\[
+  \mathcal{O}_{\mathrm{Ling}} \;=\;
+  \bigl(K_{\mathrm{Ling}},\;
+        \mathcal{C}_{\mathrm{Ling}},\;
+        \Gamma_{\mathrm{Ling}}\bigr)
+\]
+where:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $K_{\mathrm{Ling}}$ is the \emph{contrast kernel}: the
+    quotient-visible distinguishability data induced on
+    $\mathcal{C}_{\mathrm{obs}}$ by the admissible contrast discipline
+    $\mathcal{P}$; it is the analogue of $\mathrm{Spec}(L_{\mathrm{Spec}})$
+    in the SPEC branch;
+  \item $\mathcal{C}_{\mathrm{Ling}}$ is the \emph{compositional ledger}:
+    certified records of one-step assembly operations and their
+    transport costs, analogous to the transition ledger of the SPEC
+    branch; and
+  \item $\Gamma_{\mathrm{Ling}}$ is the \emph{grammar-descent object}:
+    a branch-visible certified rule object governing when an assembled
+    sequence of contrast-class representatives is admissible within the
+    declared compositional window.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:ling-contrast-kernel}
+\textup{(Contrast Kernel.)}
+The \emph{contrast kernel} $K_{\mathrm{Ling}}$ is the collection of
+ordered pairs $(X, X')$ of signal-objects together with the certified
+set of admissible contrast probes that distinguish them, modulo the
+observational quotient imposed by Book~I's equivalence discipline.
+Two signal-objects belong to the same \emph{contrast equivalence class}
+if and only if no admissible probe in $\mathcal{P}$ distinguishes them.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:ling-contrast-equivalence}
+\textup{(Contrast Equivalence Class.)}
+A \emph{contrast equivalence class} $[X]_{K}$ is the quotient class of
+a signal-object $X$ under the contrast kernel $K_{\mathrm{Ling}}$.
+The collection of all contrast equivalence classes on the declared
+regime is the \emph{certified contrast inventory} --- the canonical
+analogue of a phoneme or morpheme inventory, derived rather than
+assumed.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:ling-phoneme-remark}
+The certified contrast inventory is not assumed to coincide with any
+pre-existing phonological category system.  If, under a given regime
+and admissible contrast discipline, the contrast equivalence classes
+stabilize to a finite partition matching a known phoneme inventory,
+that match is a derived theorem, not a branch assumption.
+\end{remark}
+
+\begin{definition}[\status{D}]\label{def:ling-contrast-margin}
+\textup{(Contrast Margin.)}
+The \emph{contrast margin}
+\[
+  \Delta_{\mathrm{Ling}}(X, X')
+\]
+is a branch-specific nonnegative quantity measuring the observable
+separation between two contrast equivalence classes $[X]_{K}$ and
+$[X']_{K}$ within the declared regime.  It is positive if and only if
+$[X]_{K} \neq [X']_{K}$.  This is the linguistic analogue of the
+spectral margin of the SPEC branch and the mass gap of the YM branch.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:ling-compositional-ledger}
+\textup{(Compositional Ledger.)}
+The \emph{compositional ledger} $\mathcal{C}_{\mathrm{Ling}}$ is a
+certified bookkeeping object assigning to each admissible one-step
+assembly operation --- combining two contrast-class representatives
+into a larger signal-object --- the induced change in branch-visible
+contrast signature, together with any declared transport cost or visible
+defect contribution.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:ling-compositionality-remark}
+The compositional ledger is a probe-ledger for assembly operations.
+It does not assume that the result of an assembly is a sentence, a
+phrase, or any other pre-theoretic linguistic unit.  Whether such units
+emerge as stable quotient-visible objects is a derived question, not a
+branch primitive.
+\end{remark}
+
+\begin{definition}[\status{D}]\label{def:ling-grammar-descent}
+\textup{(Grammar-Descent Object.)}
+A \emph{grammar-descent object} $\Gamma_{\mathrm{Ling}}$ is a
+branch-visible certified rule object that:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item is sourced through $\mathbf{U}$;
+  \item governs which assembly sequences are admissible within the
+    declared compositional window; and
+  \item produces only quotient-visible distinctions among assembled
+    objects.
+\end{enumerate}
+$\Gamma_{\mathrm{Ling}}$ is not a context-free grammar, a minimalist
+feature system, or any other pre-given formalism.  It is a derived
+certified object, admitted only when the branch-legitimacy conditions of
+Book~V are satisfied.
+\end{definition}
+
+\subsection{Endpoint Datum}\label{sec:ling-endpoint}
+
+\begin{definition}[\status{D}]\label{def:ling-endpoint}
+\textup{(Linguistics Endpoint Datum.)}
+The \emph{linguistics endpoint datum} is the branch-visible package
+\[
+  E_{\mathrm{Ling}} \;=\;
+  \bigl(\mathcal{C}_{\mathrm{obs}},\;
+        \mathcal{O}_{\mathrm{Ling}},\;
+        \Delta_{\mathrm{Ling}},\;
+        \mathcal{W}_{\mathrm{comp}}\bigr)
+\]
+consisting of the certified observable class, the linguistics
+observable family, the contrast margin, and the declared compositional
+window.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:lawful-ling-descendant}
+\textup{(Lawful Linguistics Descendant Claim.)}
+A \emph{lawful linguistics descendant claim} is a claim that the
+endpoint datum $E_{\mathrm{Ling}}$ is sourced through $\mathbf{U}$ and
+supports a certified contrast, compositionality, or grammar-descent
+statement on the declared regime.
+\end{definition}
+
+\subsection{Current Branch Posture}\label{sec:ling-posture}
+
+\begin{proposition}[\status{C}]\label{prop:ling-branch-candidate}
+\textup{(Linguistics Branch Candidate.)}
+\textup{[Conditional on the linguistics target regime, observable
+family, and endpoint datum all being sourced through $\mathbf{U}$,
+branch-visible, and admitting a Book~V legitimacy witness.]}
+The linguistics program is a lawful branch candidate.
+\end{proposition}
+
+\begin{proof}
+Immediate from the branch-legitimacy doctrine (Book~V) applied to the
+declared linguistics endpoint datum.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:ling-posture-note}
+Prop.~\ref{prop:ling-branch-candidate} constitutes the branch
+architecturally.  It does not yet certify any contrast theorem,
+compositional theorem, or grammar-descent theorem.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Admissible Contrast Probes and Contrast Signatures}
+\label{sec:ling-probes}
+%% ---------------------------------------------------------------
+
+\subsection{Admissible Contrast Probes}\label{sec:ling-admissible-probes}
+
+\begin{definition}[\status{D}]\label{def:ling-admissible-probe}
+\textup{(Admissible Contrast Probe.)}
+An \emph{admissible contrast probe} is a declared admissible process
+$P \in \mathcal{P}$ whose effect on the certified observable class is
+branch-visible and accountable within the spine's admissible-test
+discipline.  In the linguistic setting, paradigm cases include minimal
+contrast tests, substitution tests, and admissible distributional
+comparison tests --- but none of these is assumed as a primitive; each
+must be declared and certified within the NFC framework.
+\end{definition}
+
+\begin{standingrule}[\status{D}]\label{sr:ling-no-hidden-probe}
+No admissible contrast probe may introduce hidden feature labels,
+undeclared phonological representations, or non-certified side
+channels.  Any probe violating this rule is not admissible for
+linguistics branch claims.
+\end{standingrule}
+
+\begin{definition}[\status{D}]\label{def:ling-probe-episode}
+\textup{(Contrast Probe Episode.)}
+A \emph{contrast probe episode} on a pair of signal-objects
+$(X, X') \in \mathcal{C}_{\mathrm{obs}} \times \mathcal{C}_{\mathrm{obs}}$
+is an ordered application of an admissible contrast probe together with
+the certified before/after distinction record visible in the declared
+regime.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:ling-probe-episode-note}
+A contrast probe episode is the linguistics analogue of a controlled
+admissible comparison, not yet a phonological judgment event in the
+ordinary external sense.
+\end{remark}
+
+\subsection{Contrast Signatures}\label{sec:ling-contrast-signatures}
+
+\begin{definition}[\status{D}]\label{def:ling-contrast-signature}
+\textup{(Contrast Signature.)}
+A \emph{contrast signature} is a branch-visible assignment
+\[
+  \mathsf{Resp}_{L}(X; P)
+\]
+from a signal-object $X$ and admissible probe $P$ to a quotient-visible
+detection outcome, together with its transport and defect bookkeeping.
+The contrast signature is the linguistic analogue of the spectroscopic
+response signature.
+\end{definition}
+
+\begin{standingrule}[\status{D}]\label{sr:ling-signature-invariance}
+A contrast signature has theorem-bearing force only to the extent that
+it is invariant under presentation-level differences already eliminated
+by the observational quotient.  Two signal-objects that are
+observationally equivalent cannot bear different contrast signatures.
+\end{standingrule}
+
+\begin{definition}[\status{D}]\label{def:ling-contrast-equiv-signature}
+\textup{(Contrast-Signature Equivalence.)}
+Two contrast signatures are \emph{contrast-equivalent} if they
+determine the same quotient-visible detection outcome class under the
+declared comparison discipline of $\mathcal{R}_{\mathrm{Ling}}$.
+\end{definition}
+
+\subsection{One-Step Compositional Ledger}\label{sec:ling-one-step}
+
+\begin{definition}[\status{D}]\label{def:ling-one-step-comp}
+\textup{(One-Step Compositional Ledger Entry.)}
+Given an admissible assembly operation combining $X$ and $X'$ into an
+assembled signal-object $X \cdot X'$ (within the declared compositional
+window), the \emph{one-step compositional ledger entry}
+\[
+  \Delta_{\mathrm{comp}}\!\bigl(X,\, X'\bigr)
+\]
+records the certified contrast-class of $X \cdot X'$, together with
+any declared transport cost or visible defect contribution inherited
+from $X$ and $X'$.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:ling-assembly-note}
+The assembly operation $X \cdot X'$ is not concatenation in the
+ordinary sense.  It is any admissible process (declared within the
+branch regime) that produces a new signal-object from two existing
+ones, with all transport bookkeeping declared.  Whether a familiar
+notion of string concatenation is lawfully licensed here is a
+downstream derived question.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Core Theorem Shells and Named Frontiers}
+\label{sec:ling-theorems}
+%% ---------------------------------------------------------------
+
+The following theorem shells articulate the main claims of the
+linguistics branch.  Each carries the status it would bear
+\emph{if} its stated open obligations were discharged.  The open
+obligations are named explicitly as branch frontiers.
+
+\subsection{Contrast Realization}\label{sec:ling-CR}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-CR}
+\textup{(O-LING.CR: Contrast Realization.)}
+Show that the contrast kernel $K_{\mathrm{Ling}}$ is sourced through
+$\mathbf{U}$ and constitutes a lawful branch observable within the
+declared regime, with all probe declarations inherited from the
+Book~I admissible-test discipline.
+\end{openobligation}
+
+\begin{theorem}[\status{C}]\label{thm:ling-contrast-realization}
+\textup{(Contrast Realization Theorem.)}
+\textup{[Conditional on O-LING.CR: Contrast Realization.]}
+The contrast kernel $K_{\mathrm{Ling}}$ is a lawful branch observable
+descended from $\mathbf{U}$.  The certified contrast equivalence
+classes $\{[X]_K\}$ are quotient-visible and admissibly testable.
+\end{theorem}
+
+\begin{proof}
+By the branch-legitimacy doctrine (Book~V) applied to the declared
+contrast kernel, together with the Book~I observational quotient
+discipline.  The full proof is conditional on O-LING.CR.
+\end{proof}
+
+\subsection{Compositional Ledger Theorem}\label{sec:ling-CL}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-CL}
+\textup{(O-LING.CL: Compositional Ledger.)}
+Show that the compositional ledger $\mathcal{C}_{\mathrm{Ling}}$ is
+additive, sourced through the Book~III transport accounting, and that
+one-step assembly operations preserve transport bookkeeping without
+hidden defect.
+\end{openobligation}
+
+\begin{theorem}[\status{C}]\label{thm:ling-comp-ledger}
+\textup{(Compositional Ledger Theorem.)}
+\textup{[Conditional on O-LING.CL: Compositional Ledger.]}
+The compositional ledger $\mathcal{C}_{\mathrm{Ling}}$ is additive
+over declared assembly steps: transport costs distribute across
+components without hidden channel.
+\end{theorem}
+
+\begin{proof}
+By the Book~III unified coercive-transport inequality applied to the
+assembly operation, together with the no-hidden-channel standing rule
+(Sr.~\ref{sr:ling-no-hidden-probe}).  Full proof is conditional on
+O-LING.CL.
+\end{proof}
+
+\subsection{Contrast Margin Theorem}\label{sec:ling-CM}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-CM}
+\textup{(O-LING.CM: Contrast Margin.)}
+Show that the contrast margin $\Delta_{\mathrm{Ling}}$ is
+branch-computably positive across distinct contrast equivalence classes
+within the declared regime, and that no equivalence class collapse
+occurs without a declared admissible merger.
+\end{openobligation}
+
+\begin{theorem}[\status{C}]\label{thm:ling-contrast-margin}
+\textup{(Contrast Margin Theorem.)}
+\textup{[Conditional on O-LING.CM: Contrast Margin.]}
+For any two distinct contrast equivalence classes $[X]_K \neq [X']_K$
+in the certified contrast inventory, $\Delta_{\mathrm{Ling}}(X,X') > 0$.
+The contrast inventory is discretely separated on the declared regime.
+\end{theorem}
+
+\begin{proof}
+By the observational quotient discipline (Book~I) and the declared
+admissible-test finiteness condition on $\mathcal{R}_{\mathrm{Ling}}$.
+The positivity of the contrast margin reflects the separating power of
+the admissible contrast discipline.  Full proof is conditional on
+O-LING.CM.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:ling-gap-analogy}
+The contrast margin theorem is the linguistics branch analogue of the
+mass gap theorem (YM branch) and the spectral margin theorem (SPEC
+branch).  In each case the key structural fact is a positive separation
+between inequivalent observable classes.  Here the separation is
+between phonologically (or otherwise observationally) distinct
+contrast equivalence classes.
+\end{remark}
+
+\subsection{No-Hidden-Channel Theorem}\label{sec:ling-NC}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-NC}
+\textup{(O-LING.NC: No Hidden Channel.)}
+Show that no compositional assembly pathway exists outside the
+declared one-step compositional ledger: any discrepancy between two
+assembled objects sharing the same declared component contrast classes
+would require an undeclared assembly channel, ruled out by the
+exhaustive source-image condition.
+\end{openobligation}
+
+\begin{theorem}[\status{C}]\label{thm:ling-no-hidden-channel}
+\textup{(No-Hidden-Channel Theorem.)}
+\textup{[Conditional on O-LING.NC: No Hidden Channel.]}
+Two assembled signal-objects sharing the same declared component
+contrast classes and the same admissible assembly operation have the
+same contrast signature.  No undeclared compositional pathway can
+produce a branch-visible distinction invisible to the declared ledger.
+\end{theorem}
+
+\begin{proof}
+Any discrepancy would require an undeclared dissipative or
+combinatorial channel.  By the exhaustive source-image condition
+(\texttt{def:exhaustive-source-image}, Book~IV) applied to
+$\mathbf{U}$ and the no-hidden-symbol standing rule
+(Sr.~\ref{sr:ling-no-hidden-symbol}), no such channel is admitted.
+Full proof is conditional on O-LING.NC.
+\end{proof}
+
+\subsection{Grammar Descent Theorem}\label{sec:ling-GD}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-GD}
+\textup{(O-LING.GD: Grammar Descent.)}
+Show that the grammar-descent object $\Gamma_{\mathrm{Ling}}$ is
+sourced through $\mathbf{U}$, passes the five-condition Book~V
+branch-legitimacy test, and produces only quotient-visible distinctions
+among assembled objects within the declared compositional window.
+\end{openobligation}
+
+\begin{theorem}[\status{C}]\label{thm:ling-grammar-descent}
+\textup{(Grammar Descent Theorem.)}
+\textup{[Conditional on O-LING.GD: Grammar Descent.]}
+The grammar-descent object $\Gamma_{\mathrm{Ling}}$ is a lawful
+branch-visible certified rule object.  Its admissible assembly
+sequences are exactly those whose contrast-class outcomes are
+branch-visible within $\mathcal{R}_{\mathrm{Ling}}$.
+\end{theorem}
+
+\begin{proof}
+By the Book~V branch-legitimacy doctrine applied to
+$\Gamma_{\mathrm{Ling}}$, together with the no-hidden-symbol and
+no-smuggling standing rules.  Full proof is conditional on O-LING.GD.
+\end{proof}
+
+\subsection{Recursion and Infinite Generativity}\label{sec:ling-REC}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-REC}
+\textup{(O-LING.REC: Recursion.)}
+Show, or certify the impossibility of showing within the NFC framework,
+that the compositional ledger $\mathcal{C}_{\mathrm{Ling}}$ supports
+iterated self-embedding without bound --- the formal analogue of
+linguistic recursion.  This obligation is expected to require a
+Book~VI bridge theorem licensing the infinite-generativity notion as
+a certified asymptotic encoding of finite iterated assembly, and may
+be permanently open at the finite-observable level.
+\end{openobligation}
+
+\begin{remark}[\status{R}]\label{rem:ling-rec-posture}
+\textbf{Posture on recursion.}
+Recursion in the ordinary linguistic sense refers to the unbounded
+self-embedding of syntactic constituents.  Within the NFC framework
+this cannot be a finite observable fact --- any finite probe episode
+sees only finitely many nesting levels.  If recursion appears at all,
+it must be licensed by a Book~VI bridge theorem as the asymptotic limit
+of a certified sequence of finite assembly operations.  Whether such a
+bridge theorem can be proved is a genuine open question, not a defect
+of the branch architecture.
+\end{remark}
+
+\subsection{Semantic Grounding}\label{sec:ling-SEM}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-SEM}
+\textup{(O-LING.SEM: Semantic Grounding.)}
+Show that a semantic assignment --- a quotient-visible branch object
+playing the role of meaning for contrast-class sequences --- can be
+sourced through $\mathbf{U}$, without importing a background semantic
+domain, truth-value space, or model-theoretic universe.  Semantic
+grounding is expected to require the full grammar-descent result plus
+a certified probe-response structure on the assembled objects.
+\end{openobligation}
+
+\begin{remark}[\status{R}]\label{rem:ling-sem-posture}
+\textbf{Posture on semantics.}
+Semantic grounding is the deepest downstream obligation in this branch.
+No claim of meaning is made here.  The no-semantic-primitive standing
+rule (Sr.~\ref{sr:ling-no-semantic-primitive}) prohibits importing a
+semantic domain.  The task of showing that a quotient-visible semantic
+assignment exists and is sourced through $\mathbf{U}$ is a named open
+obligation, not a currently certified result.
+\end{remark}
+
+\subsection{Linguistics Endpoint}\label{sec:ling-END}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-END}
+\textup{(O-LING.END: Linguistics Endpoint.)}
+Show that the endpoint datum $E_{\mathrm{Ling}}$ is fully certified:
+contrast realization, compositional ledger, contrast margin, no-hidden
+channel, and grammar descent all discharged.  The endpoint is reached
+when the linguistics branch satisfies the shared-endgame schema of
+Book~VII.
+\end{openobligation}
+
+\begin{theorem}[\status{C}]\label{thm:ling-endpoint}
+\textup{(Linguistics Endpoint Theorem.)}
+\textup{[Conditional on O-LING.CR, O-LING.CL, O-LING.CM, O-LING.NC,
+O-LING.GD.]}
+The endpoint datum
+\[
+  E_{\mathrm{Ling}} \;=\;
+  \bigl(\mathcal{C}_{\mathrm{obs}},\;
+        \mathcal{O}_{\mathrm{Ling}},\;
+        \Delta_{\mathrm{Ling}},\;
+        \mathcal{W}_{\mathrm{comp}}\bigr)
+\]
+is a certified lawful linguistics endpoint: certified contrast
+structure, additive compositional ledger, positive contrast margin,
+no-hidden-channel control, and grammar-descent sourced through
+$\mathbf{U}$.  The contrast-founded compositionality endpoint is
+reached under the stated conditions.
+\end{theorem}
+
+\begin{proof}
+Combine Thms.~\ref{thm:ling-contrast-realization},
+\ref{thm:ling-comp-ledger}, \ref{thm:ling-contrast-margin},
+\ref{thm:ling-no-hidden-channel}, and
+\ref{thm:ling-grammar-descent}.  Apply the shared-endgame schema
+(Book~VII, Prop.~6.11): part~(i) is the source-controlled realized
+object given by the contrast kernel descended from $\mathbf{U}$;
+part~(ii) is the compositional ledger theorem; part~(iii) is the
+no-hidden-channel theorem together with the contrast margin.  Full
+proof is conditional on O-LING.CR through O-LING.GD.
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{Closure Ledger}\label{sec:ling-closure}
+%% ---------------------------------------------------------------
+
+\subsection{Summary of Named Open Obligations}
+
+The following table records all named open obligations in the
+linguistics branch as of the current canonical state.
+
+\medskip
+\noindent
+\begin{tabular}{|l|l|p{8.5cm}|}
+\hline
+\textbf{Label} & \textbf{Status} & \textbf{Description} \\
+\hline
+\texttt{ob:ling-CR} & [O] & Contrast Realization: $K_{\mathrm{Ling}}$ sourced through $\mathbf{U}$ \\
+\texttt{ob:ling-CL} & [O] & Compositional Ledger: additivity and transport accounting \\
+\texttt{ob:ling-CM} & [O] & Contrast Margin: positive separation of distinct classes \\
+\texttt{ob:ling-NC} & [O] & No Hidden Channel: no undeclared compositional pathway \\
+\texttt{ob:ling-GD} & [O] & Grammar Descent: $\Gamma_{\mathrm{Ling}}$ passes Book~V test \\
+\texttt{ob:ling-REC} & [O] & Recursion: infinite generativity via Book~VI bridge (may remain open) \\
+\texttt{ob:ling-SEM} & [O] & Semantic Grounding: meaning as quotient-visible branch object \\
+\texttt{ob:ling-END} & [O] & Endpoint: full certification of $E_{\mathrm{Ling}}$ \\
+\hline
+\end{tabular}
+
+\medskip
+
+\begin{remark}[\status{R}]\label{rem:ling-discharge-order}
+\textbf{Discharge order.}
+The natural discharge order is: CR $\to$ CL $\to$ CM $\to$ NC $\to$
+GD $\to$ END.  Recursion (REC) and Semantic Grounding (SEM) are
+downstream of END and may remain permanently open.  Crucially, END can
+be reached without discharging REC or SEM: the
+contrast-founded-compositionality endpoint is the minimal honest claim
+of this branch.
+\end{remark}
+
+\subsection{Two-Status Reading}
+
+\begin{remark}[\status{R}]\label{rem:ling-two-status}
+\textbf{Two-status reading.}
+The linguistics branch admits two natural closure readings:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item \emph{Contrast-compositionality closure} (obligations CR--END
+    discharged, REC and SEM open): certified contrast inventory,
+    additive compositional ledger, positive contrast margin, and a
+    grammar-descent object --- the minimal honest linguistic endpoint
+    within the NFC framework.
+  \item \emph{Semantic closure} (obligations CR--SEM discharged): adds
+    a quotient-visible meaning assignment, licensed as a probe-response
+    structure on assembled objects.  Requires the full grammar-descent
+    result and a certified probe-response object at the compositional
+    level.
+\end{enumerate}
+Posture~(a) is the correct near-term target.  Posture~(b) is the
+genuine long-term ambition.
+\end{remark}
+
+\subsection{Relation to Existing Branches}
+
+\begin{remark}[\status{R}]\label{rem:ling-branch-relations}
+\textbf{Relation to existing branches.}
+The linguistics branch imports structural templates from the SPEC and
+NS branches but does not depend on any of their open obligations being
+discharged.  In particular:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item The contrast-probe structure is formally parallel to the
+    probe-response structure of the SPEC branch (\texttt{def:probe-response-object},
+    \texttt{def:transition-ledger}), but operates on signal-object
+    pairs rather than physical resonance data.  No SPEC branch
+    obligation is a prerequisite.
+  \item The compositional propagation structure is formally parallel to
+    the NS continuation criterion, but governed by admissible assembly
+    rather than differential-equation dynamics.  No NS branch
+    obligation is a prerequisite.
+  \item The contrast margin is the linguistic analogue of the YM mass
+    gap (positive spectral margin) and the SPEC spectral margin.  No YM
+    or SPEC margin theorem is a prerequisite; the linguistic instance is
+    derived independently from the admissible contrast discipline.
+  \item The SM matter branch and the RH branch have no direct bearing
+    on the linguistics branch at the contrast-compositionality level.
+    Cross-branch obligations may emerge if semantics requires matter
+    content, but this is not anticipated at the current architectural
+    stage.
+\end{enumerate}
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Obligation Discharges}\label{sec:ling-discharges}
+%% ---------------------------------------------------------------
+
+This section discharges obligations O-LING.CR through O-LING.END by
+appeal to existing certified spine results.  Each discharge replaces
+the corresponding open obligation with a conditional theorem whose
+hypotheses are stated explicitly.  O-LING.REC and O-LING.SEM remain
+open obligations: recursion is genuinely open (expected permanently
+open at the finite-observable level) and semantic grounding has no
+discharge path available in the current canon.
+
+\subsection{O-LING.CR: Contrast Realization}\label{sec:ling-CR-discharge}
+
+\begin{theorem}[\status{C}]\label{thm:ling-CR-discharged}
+\textup{(Contrast Realization --- O-LING.CR Discharged.)}
+\textup{[Conditional on: (1) a declared linguistics target regime
+$\mathcal{R}_{\mathrm{Ling}}$ with admissible contrast probe family
+$\mathcal{P} \subseteq \mathcal{T}_n$ (Book~I admissible tests) and
+certified observable class $\mathcal{C}_{\mathrm{obs}}$ descended from
+$\mathbf{U}$ (Book~IV, \texttt{thm:universal-completion}); and (2)
+Book~II transfer structure (\texttt{def:transfer-system}) on
+$\mathcal{C}_{\mathrm{obs}}$.]}
+There exists a certified contrast kernel
+\[
+  K_{\mathrm{Ling}} : (X, X') \;\mapsto\;
+  \bigl([X]_{\sim_n},\, [X']_{\sim_n},\,
+  \{P \in \mathcal{P} : P \text{ distinguishes } X \text{ from } X'\}\bigr)
+\]
+where $[\cdot]_{\sim_n}$ is the Book~I observable equivalence class.
+The contrast equivalence classes $\{[X]_K\}$ are quotient-visible,
+admissibly testable, and transport-accountable under Book~III.
+\end{theorem}
+
+\begin{proof}
+The observable equivalence relation $\sim_n$ (Book~I,
+\texttt{def:obs-equiv}) is already defined on all admissible-test
+outcomes.  Restricting to the contrast probe family
+$\mathcal{P} \subseteq \mathcal{T}_n$ gives quotient-visible contrast
+equivalence classes by the no-smuggling standing rule
+(Sr.~\ref{sr:ling-no-smuggling}).  The contrast kernel records exactly
+the probes that witness distinctions, together with the equivalence
+classes of the two signal-objects.  Transport accounting is provided
+by Book~III persistence and transfer structure.  The
+boundary-capacity bookkeeping from Book~II bounds the information
+capacity of any contrast boundary within $\mathcal{R}_{\mathrm{Ling}}$.
+No imported symbol system or phonological primitive is required.
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:ling-CR-scope}
+The contrast kernel here is the structural minimum: it records
+observable equivalence classes and the probes that separate them.
+The richer structure --- compositional ledger, grammar descent,
+contrast margin --- builds on this foundation in subsequent discharges.
+\end{remark}
+
+\subsection{O-LING.CL: Compositional Ledger}\label{sec:ling-CL-discharge}
+
+\begin{theorem}[\status{C}]\label{thm:ling-CL-discharged}
+\textup{(Compositional Ledger --- O-LING.CL Discharged.)}
+\textup{[Conditional on: O-LING.CR discharged
+(Thm.~\ref{thm:ling-CR-discharged}); Book~III unified
+coercive-transport inequality (\texttt{thm:unified-coercive}, [U])
+and ledger additivity (\texttt{lem:transport-equiv-null}).]}
+The compositional ledger $\mathcal{C}_{\mathrm{Ling}}$ is additive over
+declared assembly steps.  Concretely, for a one-step assembly of
+$X$ and $X'$ into $X \cdot X'$, the ledger entry is
+\[
+  \Delta_{\mathrm{comp}}\!\bigl(X,\, X'\bigr)
+  \;:=\; [X \cdot X']_{\sim_n}
+\]
+with transport cost bounded by the Book~III coercive-transport
+inequality applied to the assembly operation.  Multi-step assembly
+costs distribute additively without hidden channel.
+\end{theorem}
+
+\begin{proof}
+Both $[X]_{\sim_n}$ and $[X']_{\sim_n}$ are quotient-visible by
+O-LING.CR.  The assembly operation $X \cdot X'$ is a declared
+admissible process; its observable equivalence class is
+$[X \cdot X']_{\sim_n}$.  By the Book~III unified coercive-transport
+inequality, the transport cost of the assembly is bounded by the sum
+of the constituent costs plus any declared defect, and by
+\texttt{lem:transport-equiv-null} the ledger entry is invariant under
+admissible relabelling of the components.  Additivity over multi-step
+assembly follows by induction, with each step contributing its
+transport cost to the running total.  The no-hidden-probe standing
+rule (Sr.~\ref{sr:ling-no-hidden-probe}) ensures no side channels
+enter.
+\qed
+\end{proof}
+
+\subsection{O-LING.CM: Contrast Margin}\label{sec:ling-CM-discharge}
+
+\begin{theorem}[\status{C}]\label{thm:ling-CM-discharged}
+\textup{(Contrast Margin --- O-LING.CM Discharged.)}
+\textup{[Conditional on: O-LING.CR discharged
+(Thm.~\ref{thm:ling-CR-discharged}); the admissible contrast probe
+family $\mathcal{P}$ being non-trivially separating on the declared
+regime, i.e., for any two distinct equivalence classes $[X]_K \neq
+[X']_K$ there exists at least one $P \in \mathcal{P}$ distinguishing
+them.]}
+For any two distinct contrast equivalence classes $[X]_K \neq [X']_K$
+in the certified contrast inventory, $\Delta_{\mathrm{Ling}}(X,X') > 0$.
+The certified contrast inventory is discretely separated on the
+declared regime.
+\end{theorem}
+
+\begin{proof}
+By definition, $[X]_K \neq [X']_K$ if and only if some probe
+$P \in \mathcal{P}$ distinguishes $X$ from $X'$ within the declared
+regime.  The contrast margin $\Delta_{\mathrm{Ling}}(X, X')$ is defined
+as the quotient-visible measure of this separation; it is positive
+whenever at least one separating probe exists
+(Def.~\ref{def:ling-contrast-margin}).  The non-trivially-separating
+condition precisely requires this: no two distinct equivalence classes
+are probe-indistinguishable within $\mathcal{R}_{\mathrm{Ling}}$.
+Therefore $\Delta_{\mathrm{Ling}}(X,X') > 0$ for all distinct pairs.
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:ling-CM-note}
+The contrast margin theorem is essentially definitional once the
+contrast probe family is declared to be non-trivially separating.  The
+substantive work is in establishing which probe family satisfies this
+condition for a given physical or formal language target.  The theorem
+records the structural consequence cleanly: a declared separating
+probe family implies a positive contrast margin.
+\end{remark}
+
+\subsection{O-LING.NC: No Hidden Channel}\label{sec:ling-NC-discharge}
+
+\begin{theorem}[\status{C}]\label{thm:ling-NC-discharged}
+\textup{(No Hidden Compositional Channel --- O-LING.NC Discharged.)}
+\textup{[Conditional on: O-LING.CL discharged
+(Thm.~\ref{thm:ling-CL-discharged}); two assembled signal-objects
+sharing the same declared component contrast classes and the same
+admissible assembly operation; and the universal completion theorem
+(\texttt{thm:universal-completion}, Book~IV, [U]) applied via the
+exhaustive source-image condition
+(\texttt{def:exhaustive-source-image}, Book~IV).]}
+The two assembled signal-objects have the same contrast signature.
+No undeclared compositional pathway can produce a branch-visible
+distinction invisible to the declared ledger.
+\end{theorem}
+
+\begin{proof}
+Let $A = X \cdot X'$ and $B = Y \cdot Y'$ where $[X]_K = [Y]_K$,
+$[X']_K = [Y']_K$, and the same admissible assembly operation is
+applied.  By O-LING.CL, the compositional ledger entry for each is
+determined by the equivalence classes $[X]_K$, $[X']_K$ and the
+transport cost, both of which are shared.  Suppose for contradiction
+that $[A]_K \neq [B]_K$.  Then some probe $P \in \mathcal{P}$
+distinguishes $A$ from $B$.  This probe witnesses a difference in
+their observable equivalence classes that is not attributable to
+any declared component-level or assembly-level difference.  Such a
+difference would require an undeclared compositional channel --- a
+source of observable variation not appearing in the ledger.  By the
+exhaustive source-image condition
+(\texttt{def:exhaustive-source-image}, Book~IV) applied to
+$\mathbf{U}$, no such undeclared channel exists.  Contradiction.
+Hence $[A]_K = [B]_K$ and the contrast signatures agree.
+\qed
+\end{proof}
+
+\subsection{O-LING.GD: Grammar Descent}\label{sec:ling-GD-discharge}
+
+\begin{theorem}[\status{C}]\label{thm:ling-GD-discharged}
+\textup{(Grammar Descent --- O-LING.GD Discharged.)}
+\textup{[Conditional on: O-LING.CR (Thm.~\ref{thm:ling-CR-discharged})
+and O-LING.NC (Thm.~\ref{thm:ling-NC-discharged}) discharged; the
+declared admissible contrast discipline $\mathcal{P}$ being closed
+under the declared assembly operation in the sense that probe outcomes
+on assembled objects are determined by probe outcomes on components;
+and Book~V branch-legitimacy doctrine (\texttt{thm:UBLT}, [U]).]}
+There exists a certified grammar-descent object $\Gamma_{\mathrm{Ling}}$
+sourced through $\mathbf{U}$, identified as the restriction of the
+Book~III coercive-transport rule to the contrast-visible sector of
+$\mathcal{C}_{\mathrm{obs}}$ on $\mathcal{R}_{\mathrm{Ling}}$:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $\Gamma_{\mathrm{Ling}}$ governs admissible assembly sequences
+    within the declared compositional window;
+  \item its outputs are quotient-visible within $\mathcal{R}_{\mathrm{Ling}}$;
+  \item it passes the Book~V five-condition branch-legitimacy test;
+  \item the admissible assembly sequences it licenses are exactly
+    those whose contrast-class outcomes are branch-visible.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By O-LING.CR, the observable equivalence classes on
+$\mathcal{C}_{\mathrm{obs}}$ are certified.  The Book~III
+coercive-transport governing theorem (\texttt{thm:governing}) constructs
+a canonical rule on every certified transport-system descendant of
+$\mathbf{U}$.  Restricting to $\mathcal{C}_{\mathrm{obs}}$ on
+$\mathcal{R}_{\mathrm{Ling}}$ gives $\Gamma_{\mathrm{Ling}}$.  By
+O-LING.NC, the assembly outputs of $\Gamma_{\mathrm{Ling}}$ are
+uniquely determined by their component contrast classes: no hidden
+channel breaks the linkage.  The admissible assembly sequences
+licensed by $\Gamma_{\mathrm{Ling}}$ are therefore exactly those
+producing branch-visible contrast-class outcomes.  The Book~V
+five-condition test is satisfied:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item explicit branch candidate ($\Gamma_{\mathrm{Ling}}$ declared);
+  \item observable family visibility (outputs are quotient-visible);
+  \item source-descended comparison (inherits from $\mathbf{U}$ via
+    Book~III);
+  \item no hidden supplement (Sr.~\ref{sr:ling-no-hidden-symbol});
+  \item no path multiplication (O-LING.NC ensures uniqueness of
+    contrast-class output per assembly operation).
+\end{enumerate}
+\qed
+\end{proof}
+
+\subsection{O-LING.END: Linguistics Endpoint}\label{sec:ling-END-discharge}
+
+\begin{theorem}[\status{C}]\label{thm:ling-END-discharged}
+\textup{(Linguistics Endpoint --- O-LING.END Discharged.)}
+\textup{[Conditional on O-LING.CR through O-LING.GD all discharged
+(Thms.~\ref{thm:ling-CR-discharged}--\ref{thm:ling-GD-discharged}); the
+BR source theorem (\texttt{thm:BR-source}, Book~V, [C]); and the ICDC
+schema (\texttt{thm:ICDC}, Book~V, [C]).]}
+The endpoint datum
+\[
+  E_{\mathrm{Ling}} \;=\;
+  \bigl(\mathcal{C}_{\mathrm{obs}},\;
+        \mathcal{O}_{\mathrm{Ling}},\;
+        \Delta_{\mathrm{Ling}},\;
+        \mathcal{W}_{\mathrm{comp}}\bigr)
+\]
+is a certified lawful linguistics descendant closure claim on the declared
+contrast-compositionality regime:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item branch-visible contrast equivalence classes are certified
+    (O-LING.CR);
+  \item compositional ledger is additive and transport-accountable
+    (O-LING.CL);
+  \item contrast inventory is discretely separated (O-LING.CM);
+  \item no undeclared compositional pathway exists (O-LING.NC);
+  \item grammar-descent object passes Book~V legitimacy test
+    (O-LING.GD);
+  \item the entire package is sourced through $\mathbf{U}$ via the BR
+    coercive-transport route and is ICDC-coherent.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Items~(i)--(v) follow directly from the named discharged obligations.
+Item~(vi): by O-LING.GD, $\Gamma_{\mathrm{Ling}}$ is the restriction
+of the Book~III coercive operator to the contrast-visible sector, which
+the BR source theorem (\texttt{thm:BR-source}) certifies as a lawful
+specialization of the upstream coercive-transport form on $\mathbf{U}$.
+The ICDC schema applies with no-hidden-channel control as the one-step
+inheritance datum: the gap-subcritical ICDC reading ($\Theta_n = 1$)
+gives the contrast-compositionality-local statement that certified
+contrast structure persists under admissible assembly.  Apply the
+Book~VII shared-endgame schema (Prop.~6.11): part~(i) is the
+source-controlled contrast kernel descended from $\mathbf{U}$;
+part~(ii) is the compositional ledger theorem; part~(iii) is the
+no-hidden-channel theorem together with the contrast margin.  The
+endpoint datum is therefore fully assembled, scoped, and replayable.
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:ling-contrast-comp-complete}
+\textbf{Contrast-compositionality endpoint: discharge status.}
+Under the hypotheses of
+Thms.~\ref{thm:ling-CR-discharged}--\ref{thm:ling-END-discharged},
+the contrast-compositionality program reaches its endpoint.  The
+branch carries: a certified contrast kernel; additive compositional
+ledger; positive contrast margin; no-hidden-channel control; and a
+grammar-descent object passing Book~V legitimacy.  The two remaining
+open obligations are O-LING.REC (recursion) and O-LING.SEM (semantic
+grounding), neither of which is needed for the
+contrast-compositionality endpoint.
+\end{remark}
+
+\subsection{O-LING.REC and O-LING.SEM: Remaining Frontiers}
+\label{sec:ling-frontiers}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-REC-open}
+\textup{(O-LING.REC: Recursion --- Remains Open.)}
+The extension of the contrast-compositionality endpoint to infinite
+generativity requires: (1) a certified iterated-assembly family
+admitting self-embedding without bound; and (2) a Book~VI bridge
+theorem licensing the infinite-generativity notion as the
+faithful asymptotic limit of a certified sequence of finite assembly
+operations.  No such bridge theorem is available in the current
+canon.  O-LING.REC is not discharged here and is expected to remain
+permanently open at the finite-observable level.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-SEM-open}
+\textup{(O-LING.SEM: Semantic Grounding --- Remains Open.)}
+The extension of the contrast-compositionality endpoint to semantic
+grounding requires: (1) a quotient-visible meaning assignment sourced
+through $\mathbf{U}$; (2) no imported semantic domain, truth-value
+space, or model-theoretic universe; and (3) a certified probe-response
+structure on assembled objects supporting the meaning assignment.
+No such structure is available in the current canon.  O-LING.SEM is
+not discharged here.  It is the deepest downstream obligation in the
+linguistics branch.
+\end{openobligation}
+
+%% ---------------------------------------------------------------
+\section{SCC-Mediated Recursion}\label{sec:ling-REC-SCC}
+%% ---------------------------------------------------------------
+
+This section splits the monolithic recursion obligation O-LING.REC
+into two parts and conditionally discharges the finite-stage SCC-carrier
+part.  Strong infinite generativity retains its own named frontier.
+
+\[
+  \mathrm{O\text{-}LING.REC}
+  \;=\;
+  \mathrm{O\text{-}LING.REC}_{\mathrm{SCC}}
+  \;+\;
+  \mathrm{O\text{-}LING.REC}_{\infty}.
+\]
+
+\subsection{Iterated Assembly Chains}\label{sec:ling-REC-chains}
+
+\begin{definition}[\status{D}]\label{def:ling-rec-chain}
+\textup{(LING Finite Recursion Chain.)}
+A \emph{LING finite recursion chain} is a sequence
+$(X_n)_{n \ge 0}$ of certified LING objects in the
+contrast-compositional regime $\mathcal{C}_{\mathrm{Ling}}^{cc}$
+such that each transition $X_n \to X_{n+1}$ is generated by the
+declared one-step compositional ledger $\mathcal{C}_{\mathrm{Ling}}$.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:ling-rec-invariant}
+\textup{(Transported Recursion Invariant.)}
+The \emph{finite-stage recursion record} at depth $n$ is
+\[
+  T_n^{\mathrm{rec}} \;:=\;
+  \bigl(
+    [X_n]_K,\;
+    \mathcal{C}_{\mathrm{Ling}}(X_n, X_{n+1}),\;
+    \Delta_{\mathrm{Ling}}(X_n, X_{n+1}),\;
+    \Gamma_{\mathrm{Ling}}|_{\le n}
+  \bigr).
+\]
+This is not an infinite grammar.  It is a finite observable record at
+depth $n$.  The \emph{transported recursion invariant} is the family
+$T^{\mathrm{rec}} = (T_n^{\mathrm{rec}}, \rho_{n,n+1})_{n \ge 0}$,
+where $\rho_{n,n+1} : T_n^{\mathrm{rec}} \to T_{n+1}^{\mathrm{rec}}$
+is the declared transport map induced by one-step composition and
+Book~III transport.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:ling-rec-finite-stages-visible}
+\textup{(Finite-Stage Visibility.)}
+\textup{[Conditional on O-LING.CR through O-LING.END discharged.]}
+Every $T_n^{\mathrm{rec}}$ is quotient-visible and source-descended.
+No hidden alphabet, grammar, feature matrix, or semantic domain is
+used.
+\end{theorem}
+
+\begin{proof}
+Each $X_n$ is visible through the contrast kernel (O-LING.CR).  Each
+step $X_n \to X_{n+1}$ is recorded by the compositional ledger
+(O-LING.CL).  The contrast margin separates distinct certified classes
+(O-LING.CM).  O-LING.NC blocks hidden parse rules.  O-LING.GD
+identifies grammar descent from Book~III transport.  The LING endpoint
+theorem already records that these ingredients are sufficient for the
+contrast-compositional endpoint, which itself descends through Book~V
+branch legitimacy.  Hence each finite recursion record is
+source-descended.
+\qed
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:ling-rec-support}
+\textup{(SCC-Sufficient LING-Recursive Support.)}
+A \emph{LING-recursive support family} $W^{\mathrm{rec}}$ consists
+of the finite realized support components needed to recover $T_n^{\mathrm{rec}}$
+for every finite stage $n$.  It is \emph{SCC-sufficient} when all
+load-bearing support is exhausted by:
+contrast outcome support,
+composition-type support,
+transport and defect-history support, and
+ORA/CTM/TIN/ledger compatibility support.
+This is the SCC support-sufficiency architecture specialized to LING
+recursion; no semantic domain or hidden grammar is permitted.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:ling-rec-carrier}
+\textup{(SCC-Recursive LING Carrier.)}
+A \emph{SCC-recursive LING carrier} $K^{\mathrm{rec}}$ is a lawful
+faithful SCC carrier supporting $T^{\mathrm{rec}}$, satisfying:
+finite-stage faithfulness, extension stability, no-hidden-grammar
+discipline, and SCC support sufficiency.  It is \emph{minimal} when
+no proper lawful subcarrier remains faithful.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:ling-rec-support-sufficiency}
+\textup{(LING-Recursive Support Sufficiency.)}
+\textup{[Conditional on O-LING.END discharged; no hidden grammar,
+hidden semantic domain, or undeclared compositional pathway.]}
+The LING-recursive support family $W^{\mathrm{rec}}$ is SCC-sufficient.
+\end{theorem}
+
+\begin{proof}
+Every load-bearing part of $T^{\mathrm{rec}}$ is one of four things:
+a certified contrast outcome,
+a certified one-step assembly type,
+a transported defect or history record, or
+a compatibility condition ensuring the update path is lawful.
+Any additional support would be invisible in the contrast kernel,
+compositional ledger, transport history, or compatibility ledger; it
+would therefore be a hidden grammar, parse rule, feature system, or
+semantic supplement.  That violates LING no-hidden-channel discipline
+(O-LING.NC) and the SCC anti-smuggling rule.  Therefore the four
+support types exhaust all load-bearing recursion support.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:ling-rec-finite-localizability}
+\textup{(LING-Recursive Finite Localizability.)}
+\textup{[Conditional on Thm.~\ref{thm:ling-rec-support-sufficiency}
+and the SCC finite-localizability chain (SCC Branch,
+\texttt{thm:scc-sv}, \texttt{thm:scc-tl}, \texttt{thm:scc-fl}).]}
+For every finite depth $n$, there exists a finite realized-support
+subfamily $S_n \subseteq W^{\mathrm{rec}}$ such that $T_n^{\mathrm{rec}}$
+is recoverable from $S_n$-level data alone.
+\end{theorem}
+
+\begin{proof}
+At each depth $n$, the record $T_n^{\mathrm{rec}}$ contains finitely
+many contrast classes, composition events, defect entries, and
+compatibility checks.  The SCC branch packages the finite-localizability
+chain as SCC-SV $\to$ SCC-TL $\to$ SCC-FL, using witness discreteness,
+type compression, transport localization, and ledger discreteness.
+Applying that chain to the LING-recursive invariant yields the finite
+$S_n$ for each stage.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:ling-rec-scc-carrier}
+\textup{(SCC-Mediated LING Recursion.)}
+\textup{[Conditional on: O-LING.CR through O-LING.END discharged;
+Thms.~\ref{thm:ling-rec-support-sufficiency} and
+\ref{thm:ling-rec-finite-localizability}; SCC-MCS available at
+conditional force (\texttt{thm:scc-mcs}, SCC Branch); and
+SCC-UC/source-descent verification in the applied SCC arena.]}
+There exists a unique minimal SCC-recursive LING carrier
+$M_{\mathrm{Ling-rec}}$, and every finite self-embedding stage
+factors through it.  No hidden grammar or semantic domain is imported.
+Therefore
+\[
+  \mathrm{O\text{-}LING.REC}_{\mathrm{SCC}} : [O] \to [C].
+\]
+\end{theorem}
+
+\begin{proof}
+Finite-stage visibility (Thm.~\ref{thm:ling-rec-finite-stages-visible})
+gives lawful finite records.  The transported recursion invariant
+(Def.~\ref{def:ling-rec-invariant}) gives a lawful update structure.
+Support sufficiency (Thm.~\ref{thm:ling-rec-support-sufficiency}) blocks
+hidden grammar.  Finite localizability
+(Thm.~\ref{thm:ling-rec-finite-localizability}) supplies finite support
+at every stage, enabling SCC chain-lower-bound arguments.  SCC-MCS
+gives a unique minimal faithful carrier; SCC uniqueness blocks carrier
+inflation.
+
+The no-semantic-smuggling check: the data carried by
+$M_{\mathrm{Ling-rec}}$ are contrast classes, composition events,
+transport histories, and compatibility conditions.  None assigns
+meanings, truth conditions, or reference.  If a semantic object were
+required, it would be extra support not in the SCC-sufficient list, i.e.,
+hidden supplementation, excluded by Thm.~\ref{thm:ling-rec-support-sufficiency}.
+
+Therefore SCC-recursive LING certifies iterated contrast-visible
+composition as stable finite-stage extensibility through a unique
+minimal SCC carrier, not as an imported actually-infinite grammar.
+\qed
+\end{proof}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-rec-infty}
+\textup{(O-LING.REC$_\infty$: Strong Infinite Generativity --- Split and Partially Discharged.)}
+Strong infinite generativity is split into three sub-obligations:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{O-LING.REC$_{\mathrm{fam}}$}: construct a certified
+    iterated assembly family --- conditionally discharged below;
+  \item \emph{O-LING.REC$_{\mathrm{noncollapse}}$}: prove unbounded
+    finite-stage distinctness does not collapse under the observational
+    quotient --- conditionally discharged for declared noncollapsing families;
+  \item \emph{O-LING.REC$_{\mathrm{bridge}}$}: prove the Book~VI
+    asymptotic coherence bridge --- \emph{remains open}.
+\end{enumerate}
+\end{openobligation}
+
+%% ---------------------------------------------------------------
+\section{Strong Recursion Sub-Obligations}\label{sec:ling-REC-infty}
+%% ---------------------------------------------------------------
+
+\subsection{Finite Iterated Assembly Family}
+
+\begin{definition}[\status{D}]\label{def:ling-certified-iterated-assembly-family}
+\textup{(Certified Iterated Assembly Family.)}
+A \emph{certified iterated assembly family} is a sequence
+$\mathcal{A} = (X_0 \to X_1 \to X_2 \to \cdots)$
+such that each transition $X_n \to X_{n+1}$ is produced by the
+declared one-step compositional ledger $\mathcal{C}_{\mathrm{Ling}}$.
+Each finite stage has a quotient-visible record $T_n^{\mathrm{rec}}$
+(Def.~\ref{def:ling-rec-invariant}).  This imports no infinite grammar;
+it is only a certified sequence of finite assembly records.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:ling-rec-finite-iterated-assembly}
+\textup{(Finite Iterated Assembly Legitimacy.)}
+\textup{[Conditional on O-LING.CR, O-LING.CL, O-LING.CM, O-LING.NC,
+and O-LING.GD discharged.]}
+Every finite prefix $X_0 \to \cdots \to X_n$ of a certified iterated
+assembly family is lawful LING branch data.
+Therefore $\mathrm{O\text{-}LING.REC}_{\mathrm{fam}} : [O] \to [C]$.
+\end{theorem}
+
+\begin{proof}
+Each step is a declared one-step assembly, so O-LING.CL supplies
+additive ledger accounting.  Each object is visible through the
+contrast kernel, so O-LING.CR and O-LING.CM supply quotient-visible
+contrast separation.  O-LING.NC blocks hidden parse rules, alphabets,
+or feature matrices.  O-LING.GD identifies grammar descent as the
+restriction of Book~III transport to the contrast-visible sector.
+The LING endpoint theorem already records that these ingredients
+are sufficient for the contrast-compositional endpoint, which descends
+through Book~V branch legitimacy.  Hence every finite assembly prefix
+is source-descended.
+\qed
+\end{proof}
+
+\subsection{Noncollapse and Unbounded Finite Generativity}
+
+\begin{definition}[\status{D}]\label{def:ling-recursion-noncollapse}
+\textup{(Recursion Noncollapse.)}
+An iterated assembly family $\mathcal{A}$ is \emph{noncollapsing}
+if for every depth $N$ there exist $m, n \ge N$ such that
+$[X_m]_K \neq [X_n]_K$, or the finite-stage assembly histories
+remain distinguishable by declared contrast/compositional probes.
+In plain terms: the sequence does not merely cycle through finitely
+many observationally identical states.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:ling-rec-noncollapse-criterion}
+\textup{(Noncollapse Yields Unbounded Finite Generativity.)}
+\textup{[Conditional on Thm.~\ref{thm:ling-rec-finite-iterated-assembly}
+and the assembly family being declared noncollapsing.]}
+A noncollapsing certified iterated assembly family realizes unbounded
+finite generativity at the contrast-compositional level.
+Therefore $\mathrm{O\text{-}LING.REC}_{\mathrm{noncollapse}}$ is
+conditionally discharged for declared noncollapsing families.
+\end{theorem}
+
+\begin{proof}
+At every finite depth $N$, noncollapse supplies a later finite-stage
+distinction visible to the declared probes.  Because contrast classes
+are quotient-visible and distinct classes have positive contrast margin
+(O-LING.CM), the family exhibits arbitrarily deep finite-stage novelty
+without hidden grammar.  This proves \emph{unbounded finite generativity},
+not actual infinite generativity.
+\qed
+\end{proof}
+
+\subsection{Book~VI Asymptotic Bridge}
+
+\begin{definition}[\status{D}]\label{def:ling-asymptotic-recursion-bridge}
+\textup{(Asymptotic Recursion Bridge.)}
+A \emph{Book~VI recursion bridge} for a noncollapsing certified
+assembly family is a theorem showing that the sequence
+$(T_n^{\mathrm{rec}})_{n \ge 0}$ is asymptotically coherent in
+a declared normed recursion interface regime
+$\mathcal{R}_{\mathrm{LingRec}}$, and admits an effective limit
+object $T_\infty^{\mathrm{rec}}$ such that:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item every finite stage is recovered as a finite approximation;
+  \item unbounded finite generativity is preserved in the limit;
+  \item no infinite grammar is imported as primitive;
+  \item the effective limit is shorthand for the asymptotic behavior
+    of certified finite assembly.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[\status{B}]\label{thm:ling-rec-infty-bridge}
+\textup{(Infinite Generativity Bridge.)}
+\textup{[Bridge: conditional on a certified iterated assembly family
+being noncollapsing and its finite-stage recursion records being
+asymptotically coherent in the Book~VI sense in the declared regime
+$\mathcal{R}_{\mathrm{LingRec}}$.]}
+Strong infinite generativity is licensed as an effective asymptotic
+object, not as a primitive grammar.
+\end{theorem}
+
+\begin{proof}
+Book~VI licenses continuum or limit language only when it faithfully
+encodes the asymptotic behavior of certified discrete structure in a
+declared interface regime.  It explicitly says branch books must
+verify the relevant asymptotic coherence and stabilization hypotheses
+themselves.  Given those hypotheses, the infinite-generativity object
+is not imported; it is the effective encoding of the certified
+noncollapsing finite-stage family.
+\qed
+\end{proof}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-rec-infty-bridge}
+\textup{(O-LING.REC$_{\mathrm{bridge}}$: Asymptotic Coherence --- Remains Open.)}
+The minimal remaining recursion frontier is: prove that a noncollapsing
+certified iterated LING assembly family satisfies Book~VI asymptotic
+coherence in the declared recursion interface regime
+$\mathcal{R}_{\mathrm{LingRec}}$.  This is the exact missing ingredient
+for Thm.~\ref{thm:ling-rec-infty-bridge} to produce a fully licensed
+infinite-generativity claim.
+\end{openobligation}
+
+\begin{remark}[\status{R}]\label{rem:ling-REC-full-status}
+\textbf{Full recursion status after sub-split.}
+The LING recursion picture is now three-tiered:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item \emph{SCC-carrier recursion} (O-LING.REC$_{\mathrm{SCC}}$):
+    conditionally discharged --- iterated composition admits a unique
+    minimal SCC carrier; every finite stage factors through it;
+    conditional on SCC-MCS.
+  \item \emph{Noncollapsing finite generativity}
+    (O-LING.REC$_{\mathrm{fam}}$ + O-LING.REC$_{\mathrm{noncollapse}}$):
+    conditionally discharged for declared noncollapsing families ---
+    certified finite iterated assembly is lawful; noncollapse implies
+    unbounded finite novelty.
+  \item \emph{Strong infinite generativity}
+    (O-LING.REC$_{\mathrm{bridge}}$): the Book~VI asymptotic coherence
+    bridge remains open.  This is the minimal remaining frontier for
+    the full infinite-generativity claim.
+\end{enumerate}
+\end{remark}
+
+
+
+%% ---------------------------------------------------------------
+\section{Context-Response Semantic Grounding}\label{sec:ling-SEM-discharge}
+%% ---------------------------------------------------------------
+
+This section reduces O-LING.SEM from a vague ``find a meaning
+assignment'' obligation to a precise conditional theorem with a named
+remaining construction problem.  The key move: treat semantics as
+a probe-response object, not as imported denotation.
+
+\subsection{Semantic Probe Family}\label{sec:ling-SEM-probes}
+
+\begin{definition}[\status{D}]\label{def:ling-context-frame}
+\textup{(LING Context Frame.)}
+A \emph{LING context frame} is a finite triple
+$\mathcal{C} = (L, \Box, R)$
+where $L$ and $R$ are finite assembled LING objects certified by the
+compositional ledger, and $\Box$ is one declared insertion site.  For
+an assembled object $X$, write $\mathcal{C}[X] = L \cdot X \cdot R$.
+This uses only the certified compositional ledger (O-LING.CL).
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:ling-context-response-probe}
+\textup{(Context-Response Probe.)}
+A \emph{semantic context-response probe}
+$P_{\mathcal{C},A}(X) := A\bigl([\mathcal{C}[X]]_K\bigr)$
+is indexed by a context frame $\mathcal{C} = (L,\Box,R)$ and a
+declared admissible contrast question $A$ on the assembled output.
+The probe asks: which contrast class does $X$ produce when inserted
+into a declared finite contrast-compositional context?  No truth
+value, possible world, reference object, or model-theoretic domain
+is used.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:ling-sem-response-equivalence}
+\textup{(Semantic Response Equivalence.)}
+For assembled LING objects $X, Y$, define
+\[
+  X \sim_{\mathrm{sem}} Y
+\]
+iff $P_{\mathcal{C},A}(X) = P_{\mathcal{C},A}(Y)$ for every declared
+context-response probe.  The \emph{semantic value} is
+$\mu_{\mathrm{Ling}}(X) := [X]_{\sim_{\mathrm{sem}}}$.  This is
+meaning as response-equivalence, not meaning as external reference.
+\end{definition}
+
+\subsection{Discharge on Declared Context-Response Regime}
+\label{sec:ling-SEM-theorems}
+
+\begin{theorem}[\status{C}]\label{thm:ling-sem-ctx-existence}
+\textup{(Nontrivial Context-Probe Existence.)}
+\textup{[Conditional on O-LING.CR and O-LING.CL discharged; the
+admissible contrast probe family being nontrivially separating; and
+the compositional ledger containing at least one nondegenerate context
+$\mathcal{C}$ such that insertion can change the contrast class of the
+assembled output.]}
+The family $\mathcal{P}_{\mathrm{sem}}^{\mathrm{ctx}} :=
+\{P_{\mathcal{C},A}\}$ is a nontrivial admissible semantic probe family.
+\end{theorem}
+
+\begin{proof}
+The probe $P_{\mathcal{C},A}$ is a composition of two licensed
+operations: (i) $X \mapsto L \cdot X \cdot R$ by the compositional
+ledger theorem; (ii) $Y \mapsto A([Y]_K)$ by the contrast realization
+theorem.  Nontriviality follows from the assumed nondegenerate context:
+there exist $X, Y$ with $[\mathcal{C}[X]]_K \neq [\mathcal{C}[Y]]_K$.
+By the contrast margin theorem, distinct contrast classes are positively
+separated; hence at least one context-response probe separates $X$ and $Y$.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:ling-sem-ctx-extension}
+\textup{(Context-Extension Closure.)}
+\textup{[Conditional on Thm.~\ref{thm:ling-sem-ctx-existence} and
+the LING compositional ledger being closed under finite declared assembly.]}
+The context-response probe family
+$\mathcal{P}_{\mathrm{sem}}^{\mathrm{ctx}}$ is closed under
+context extension: placing a context inside a larger certified context
+yields another admissible context-response probe.
+\end{theorem}
+
+\begin{proof}
+Let $\mathcal{C} = (L,\Box,R)$ be a certified context and $L', R'$
+certified assembled objects.  By compositional ledger additivity,
+$L' \cdot L$ and $R \cdot R'$ are certified finite assemblies; hence
+$\mathcal{C}' = (L' \cdot L, \Box, R \cdot R')$ is a certified finite
+context.  Since the probe family includes all finite certified contexts,
+$P_{\mathcal{C}',A}$ belongs to $\mathcal{P}_{\mathrm{sem}}^{\mathrm{ctx}}$.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:ling-sem-ctx-congruence}
+\textup{(Semantic Congruence.)}
+\textup{[Conditional on Thm.~\ref{thm:ling-sem-ctx-extension}.]}
+Semantic response equivalence is stable under declared composition:
+\[
+  X \sim_{\mathrm{sem}} X',\quad Y \sim_{\mathrm{sem}} Y'
+  \quad\Rightarrow\quad X \cdot Y \sim_{\mathrm{sem}} X' \cdot Y'.
+\]
+\end{theorem}
+
+\begin{proof}
+Apply any probe $P_{\mathcal{C},A}$ to $X \cdot Y$.  Then
+$\mathcal{C}[X \cdot Y]$ is a context-extension probe on the pair
+$(X,Y)$.  Since the family is closed under context extension
+(Thm.~\ref{thm:ling-sem-ctx-extension}), the derived tests are
+declared context-response probes.  Since $X \sim_{\mathrm{sem}} X'$
+and $Y \sim_{\mathrm{sem}} Y'$, substitution preserves all declared
+context responses.  Hence $P_{\mathcal{C},A}(X \cdot Y) =
+P_{\mathcal{C},A}(X' \cdot Y')$ for every declared probe, giving
+$X \cdot Y \sim_{\mathrm{sem}} X' \cdot Y'$.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:ling-sem-source-descended}
+\textup{(Source-Descended Semantics.)}
+\textup{[Conditional on O-LING.END discharged and every semantic
+probe acting only on certified contrast-compositional endpoint data.]}
+$\mu_{\mathrm{Ling}}$ is source-descended through $\mathbf{U}$.
+\end{theorem}
+
+\begin{proof}
+The contrast-compositional endpoint is already source-descended via
+the LING branch-legitimacy chain.  A probe acting only on that
+endpoint is downstream of the same source image.  Any semantic
+distinction not detectable by declared probes would require an
+undeclared semantic channel, excluded by the no-semantic-primitive
+standing rule (Sr.~\ref{sr:ling-no-semantic-primitive}) and Book~V
+hidden-supplement prohibition.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:ling-sem-context-grounding}
+\textup{(Context-Response Semantic Grounding.)}
+\textup{[Conditional on O-LING.CR through O-LING.END discharged;
+Thms.~\ref{thm:ling-sem-ctx-existence}, \ref{thm:ling-sem-ctx-extension},
+\ref{thm:ling-sem-ctx-congruence}, \ref{thm:ling-sem-source-descended};
+and no external semantic domain imported.]}
+Define $\mu_{\mathrm{Ling}}(X) := [X]_{\sim_{\mathrm{sem}}}$.
+Then $\mu_{\mathrm{Ling}}$ is a lawful semantic grounding object:
+it is quotient-visible, source-descended through $\mathbf{U}$,
+stable under declared composition, and introduces no external semantic
+domain.  Therefore, relative to the declared nondegenerate
+context-response regime:
+\[
+  \mathrm{O\text{-}LING.SEM}_{\mathrm{ctx}} : [O] \to [C].
+\]
+\end{theorem}
+
+\begin{proof}
+Thm.~\ref{thm:ling-sem-ctx-existence}: probes are admissible and
+nontrivial.  Thm.~\ref{thm:ling-sem-ctx-extension}: family is
+stable under context extension.  Thm.~\ref{thm:ling-sem-ctx-congruence}:
+semantic equivalence is a congruence for declared composition.
+Thm.~\ref{thm:ling-sem-source-descended}: $\mu_{\mathrm{Ling}}$
+descends from $\mathbf{U}$.  No background semantic domain is
+used: $\mu_{\mathrm{Ling}}(X)$ is the equivalence class of $X$
+under declared context-response behavior.  Any semantic distinction
+not detected by declared probes would require a hidden semantic
+channel; that is excluded by Sr.~\ref{sr:ling-no-semantic-primitive}.
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:ling-SEM-scope}
+\textbf{Semantic scope note.}
+Thm.~\ref{thm:ling-sem-context-grounding} gives the first lawful
+semantic grounding layer: meaning as context-response equivalence.
+It does not give reference, truth conditions, intentionality, or
+model-theoretic semantics.  The semantic ladder is:
+\[
+  \text{contrast} \;\Rightarrow\;
+  \text{composition} \;\Rightarrow\;
+  \text{context-response meaning} \;\Rightarrow\;
+  \underbrace{\text{reference-bearing probes}}_{\mathrm{O\text{-}LING.SEM}_{\mathrm{ref}}}
+  \;\Rightarrow\;
+  \underbrace{\text{truth-condition structure}}_{\mathrm{O\text{-}LING.SEM}_{\mathrm{truth}}}.
+\]
+The two downstream frontiers are open obligations.
+\end{remark}
+
+\begin{openobligation}[\status{O}]\label{ob:ling-SEM-ref-open}
+\textup{(O-LING.SEM$_{\mathrm{ref}}$: Reference-Bearing Probes --- Remains Open.)}
+Constructing a nontrivial reference-probe family that maps assembled
+LING objects to stable selections of certified observable objects
+within an already-certified arena, without importing an external
+semantic domain, is a named open obligation.  This would upgrade
+context-response semantics to reference-bearing semantics.
+\end{openobligation}
+
+%% ---------------------------------------------------------------
+\section{Updated LING Closure Ledger}\label{sec:ling-closure-updated}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]\label{rem:ling-closure-updated}
+\textbf{Updated discharge status after synthesis pass.}
+
+\medskip
+\noindent
+\begin{tabular}{|l|l|p{7.5cm}|}
+\hline
+\textbf{Label} & \textbf{Status} & \textbf{Description} \\
+\hline
+O-LING.CR   & [C] & Contrast Realization \\
+O-LING.CL   & [C] & Compositional Ledger \\
+O-LING.CM   & [C] & Contrast Margin \\
+O-LING.NC   & [C] & No Hidden Channel \\
+O-LING.GD   & [C] & Grammar Descent \\
+O-LING.END  & [C] & Contrast-compositionality endpoint \\
+O-LING.REC$_{\mathrm{SCC}}$ & [C] & SCC-carrier recursion (conditional on SCC-MCS) \\
+O-LING.REC$_{\mathrm{fam}}$ & [C] & Finite iterated assembly is lawful LING data \\
+O-LING.REC$_{\mathrm{noncollapse}}$ & [C] & Noncollapsing families yield unbounded finite generativity \\
+O-LING.REC$_{\mathrm{bridge}}$     & [O] & Book~VI asymptotic coherence bridge (remains open) \\
+O-LING.SEM$_{\mathrm{ctx}}$ & [C] & Context-response semantic grounding \\
+O-LING.REC$_\infty$       & [O] & Strong infinite generativity (Book~VI bridge needed) \\
+O-LING.SEM$_{\mathrm{ref}}$ & [O] & Reference-bearing probes \\
+O-LING.SEM$_{\mathrm{truth}}$ & [O] & Truth-condition structure \\
+\hline
+\end{tabular}
+
+\medskip
+The LING branch now has three tiers: (1) contrast-compositional
+endpoint (conditionally closed); (2) SCC-carrier recursion
+(conditionally discharged, gated on SCC-MCS) and context-response
+semantics (conditionally discharged on the declared nondegenerate
+context-response regime); (3) strong infinite generativity and
+reference/truth semantics (genuinely open frontiers).
+\end{remark}
+
+\end{document}

@@ -2064,7 +2064,35 @@ Phase-A, $K_0=7$, LS-2, PASS (derived), and the NS
 architecture declaration.
 \end{remark}
 
-\section{NS.6.1 Full Scope: Global Window Promotion}
+\begin{remark}[\status{R}]\label{rem:NS-window-Q2a-hardening}
+\textbf{Micro-hardening note: Deterministic Finite Transition Lemma.}
+The pigeonhole argument in Thm.~\ref{thm:NS-window-uniformity} shows
+that the safe-tail window configuration sequence takes values in a
+finite set and therefore must repeat some state.  For the conclusion of
+\emph{eventual periodicity} --- not merely recurrence --- the proof
+requires the following micro-lemma, which is the named hardening item
+(Q2a in the synthesis record):
+
+\begin{quote}
+\textbf{Lemma (NS Deterministic Window-Transition).}
+In the NS active architecture, the next safe-tail window configuration
+is determined by the current canonical collar-labelled window
+configuration plus the declared finite transport/defect update rule.
+\end{quote}
+
+If this determinism holds, the proof is clean: finite state space
+plus deterministic transition implies eventual cycle, hence eventual
+periodicity, hence uniform coefficient bounds, hence global NS.6.1
+contraction.  Without it, the pigeonhole argument gives recurrence
+but not periodicity.  The NS active architecture declaration is the
+expected source for determinism, but the explicit statement is not
+yet promoted to canonical theorem form.  This is the one
+proof-quality issue to harden before treating
+Thm.~\ref{thm:NS-window-uniformity} as fully clean [C] without
+qualification.
+\end{remark}
+
+
 \label{sec:ns61-global}
 %% ---------------------------------------------------------------
 
