@@ -1,0 +1,22 @@
+body_file: text/spine/VII/rmk_VII_posture_vs_force.md
+book: VII
+canonical_xref:
+  canonical_label: Branch Posture vs. Claim-Force Vocabulary Remark [R]
+  canonical_section: Book VII §Branch Status Table
+  canonical_theorem: rmk:posture-vs-force
+  cross_check: ADDED Session L+6; [U]/[C]/[O] are per-claim; CERT-PROJ/domain-bounded/conditional-cert-close
+    are branch-level postures
+declared_status: R
+dependencies:
+  requires:
+  - sr:VII.declare-status
+id: rmk:VII.posture-vs-force
+kind: remark
+number: VII.R.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: R
+  regime: universal
+title: Branch Posture vs. Claim-Force Vocabulary
+track: spine

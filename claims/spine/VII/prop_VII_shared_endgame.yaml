@@ -1,0 +1,22 @@
+body_file: text/spine/VII/prop_VII_shared_endgame.md
+book: VII
+canonical_xref:
+  canonical_label: Shared Endgame Schema [U]
+  canonical_section: Book VII §Import Discipline
+  canonical_theorem: prop:shared-endgame
+  cross_check: 'Three-part structure: source-controlled realized object; endpoint
+    structure; no-hidden-channel control'
+declared_status: U
+dependencies:
+  requires:
+  - thm:VII.6.4
+id: prop:VII.shared-endgame
+kind: proposition
+number: VII.P.5
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Shared Endgame Schema
+track: spine

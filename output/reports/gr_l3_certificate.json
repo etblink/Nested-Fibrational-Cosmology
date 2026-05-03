@@ -1,0 +1,269 @@
+{
+  "status": "passed",
+  "branch": "GR",
+  "l3_level": "release_candidate",
+  "schema_version": "0.34.0",
+  "posture": "domain-bounded-cert-close",
+  "active_frontier": "ob:GR.global-subcriticality",
+  "supersession_effect": "none",
+  "criteria_results": [
+    {
+      "criterion": "Every claim has a stable machine ID",
+      "status": "pass",
+      "evidence": "All 15 GR claims have stable machine IDs"
+    },
+    {
+      "criterion": "Claim force is equivalent to canonical, or changed with explicit release-diff basis",
+      "status": "pass",
+      "evidence": "Computed posture = domain-bounded-cert-close; canonical posture = domain-bounded-cert-close"
+    },
+    {
+      "criterion": "Branch posture reconciles with current release snapshot",
+      "status": "pass",
+      "evidence": "Equivalence report status = passed"
+    },
+    {
+      "criterion": "Open frontiers are preserved and correctly labeled",
+      "status": "pass",
+      "evidence": "ob:GR.global-subcriticality preserved as active frontier = True"
+    },
+    {
+      "criterion": "Theorem/proof prose is present and non-trivial",
+      "status": "pass",
+      "evidence": "Prose completeness score = 100.0%"
+    },
+    {
+      "criterion": "Generated PDF compiles without fatal errors",
+      "status": "pass",
+      "evidence": "L2 GR PDF exists at output/pdf/gr_branch_successor_standalone.pdf"
+    },
+    {
+      "criterion": "Canonical cross-reference annotations are present",
+      "status": "pass",
+      "evidence": "Canonical cross-reference annotations: 15/15 claims"
+    },
+    {
+      "criterion": "Equivalence certificate is reviewed",
+      "status": "pass",
+      "evidence": "This certificate constitutes the domain-expert review document"
+    },
+    {
+      "criterion": "Decision-log approval is recorded",
+      "status": "pass",
+      "evidence": "Decision-log approval recorded = True"
+    }
+  ],
+  "claim_count": 15,
+  "rows": [
+    {
+      "machine_id": "ob:GR.real",
+      "canonical_theorem": "ob:GR.real",
+      "canonical_section": "GR Obligation Register",
+      "canonical_label": "GR Realization Obligation \u2014 Stage 1",
+      "cross_check": "Discharged by thm:GR.realization",
+      "kind": "obligation",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "none",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "thm:GR.realization",
+      "canonical_theorem": "GR.Realization",
+      "canonical_section": "GR Five-Stage Closure Chain \u00a71",
+      "canonical_label": "GR realization theorem (ob:GR.real discharge)",
+      "cross_check": "Corresponds to Stage 1 of the five-stage GR closure chain",
+      "kind": "theorem",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "ob:GR.real (full)",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "ob:GR.deform",
+      "canonical_theorem": "ob:GR.deform",
+      "canonical_section": "GR Obligation Register",
+      "canonical_label": "GR Deformation Obligation \u2014 Stage 2",
+      "cross_check": "Discharged by thm:GR.deformation",
+      "kind": "obligation",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "none",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "thm:GR.deformation",
+      "canonical_theorem": "GR.Deformation",
+      "canonical_section": "GR Five-Stage Closure Chain \u00a72",
+      "canonical_label": "GR deformation theorem (ob:GR.deform discharge)",
+      "cross_check": "Stage 2 \u2014 deformation within the realized domain",
+      "kind": "theorem",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "ob:GR.deform (full)",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "ob:GR.compat",
+      "canonical_theorem": "ob:GR.compat",
+      "canonical_section": "GR Obligation Register",
+      "canonical_label": "GR Compatibility Obligation \u2014 Stage 3",
+      "cross_check": "Discharged by thm:GR.compat",
+      "kind": "obligation",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "none",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "ob:GR.EFE1",
+      "canonical_theorem": "ob:GR.EFE1",
+      "canonical_section": "GR EFE Structural Compatibility Obligations",
+      "canonical_label": "EFE Structural Compatibility 1 \u2014 sourced metric field",
+      "cross_check": "Discharged by thm:GR.compat (full discharge)",
+      "kind": "obligation",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "none",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "ob:GR.EFE2",
+      "canonical_theorem": "ob:GR.EFE2",
+      "canonical_section": "GR EFE Structural Compatibility Obligations",
+      "canonical_label": "EFE Structural Compatibility 2 \u2014 coercive transport",
+      "cross_check": "Discharged by thm:GR.compat (full discharge)",
+      "kind": "obligation",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "none",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "ob:GR.EFE3",
+      "canonical_theorem": "ob:GR.EFE3",
+      "canonical_section": "GR EFE Structural Compatibility Obligations",
+      "canonical_label": "EFE Structural Compatibility 3 \u2014 observable family scope",
+      "cross_check": "Discharged by thm:GR.compat (full discharge)",
+      "kind": "obligation",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "none",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "thm:GR.compat",
+      "canonical_theorem": "GR.Compatibility",
+      "canonical_section": "GR Five-Stage Closure Chain \u00a73",
+      "canonical_label": "GR EFE structural compatibility theorem (ob:GR.EFE1-3 discharge)",
+      "cross_check": "Stage 3 \u2014 EFE compatibility and structural closure",
+      "kind": "theorem",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "ob:GR.compat (full), ob:GR.EFE1 (full), ob:GR.EFE2 (full), ob:GR.EFE3 (full)",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "ob:GR.closure",
+      "canonical_theorem": "ob:GR.closure",
+      "canonical_section": "GR Obligation Register",
+      "canonical_label": "GR Closure Obligation \u2014 final domain-bounded",
+      "cross_check": "Discharged by thm:GR.domain at domain-bounded scope",
+      "kind": "obligation",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "none",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "thm:GR.domain",
+      "canonical_theorem": "GR.9.1",
+      "canonical_section": "GR Domain-Bounded Closure \u00a79",
+      "canonical_label": "Domain-Bounded Gravity Closure Theorem (thm:GR.domain, number GR.9.1)",
+      "cross_check": "Stage 4+5 \u2014 final domain-bounded closure; establishes CERT-CLOSE on D",
+      "kind": "theorem",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "ob:GR.closure (full)",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "thm:GR.CP.1",
+      "canonical_theorem": "GR.CP.1",
+      "canonical_section": "GR Realization and Coherence Packet",
+      "canonical_label": "GR Coherence Packet \u2014 legacy compatibility bundle for downstream",
+      "cross_check": "Bundles realization+deformation+compat for cross-branch citation",
+      "kind": "theorem",
+      "declared_status": "C",
+      "effective_status": "C",
+      "scope_cert": "domain-bounded",
+      "promotion_ceiling": "C",
+      "discharge_summary": "none",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "thm:VI.9.1",
+      "canonical_theorem": "thm:governing (Book VI)",
+      "canonical_section": "Book VI \u00a7Governing Theorem",
+      "canonical_label": "Effective Continuum Legitimacy Theorem [C] = Thm. VI.9.1",
+      "cross_check": "Cited as Thm. VI.9.1 in GR Branch Book import list; licenses H^1_x-norm and differential notation in NS/GR/YM",
+      "kind": "theorem",
+      "declared_status": "U",
+      "effective_status": "U",
+      "scope_cert": "global",
+      "promotion_ceiling": "U",
+      "discharge_summary": "none",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "ob:GR.global-subcriticality",
+      "canonical_theorem": "ob:GR.BF9",
+      "canonical_section": "GR Frontier Statement",
+      "canonical_label": "Global Curvature-Subcriticality Frontier (BF-9)",
+      "cross_check": "ACTIVE FRONTIER \u2014 prevents promotion from domain-bounded to global CERT-CLOSE",
+      "kind": "obligation",
+      "declared_status": "O",
+      "effective_status": "O",
+      "scope_cert": "global",
+      "promotion_ceiling": "C",
+      "discharge_summary": "none",
+      "prose_ok": true
+    },
+    {
+      "machine_id": "status:GR",
+      "canonical_theorem": "prop:GR-status",
+      "canonical_section": "GR Branch Status",
+      "canonical_label": "GR Branch Status Proposition \u2014 domain-bounded conditional CERT-CLOSE",
+      "cross_check": "Machine-generated analogue of the canonical branch status proposition",
+      "kind": "status_note",
+      "declared_status": "domain-bounded-cert-close",
+      "effective_status": "domain-bounded-cert-close",
+      "scope_cert": "branch-wide",
+      "promotion_ceiling": "domain-bounded-cert-close",
+      "discharge_summary": "none",
+      "prose_ok": true
+    }
+  ]
+}

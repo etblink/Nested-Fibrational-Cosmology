@@ -1,0 +1,19 @@
+severity_levels:
+  error:
+    meaning: Build-invalid governance state.
+    examples:
+      - unresolved dependency
+      - malformed claim record
+      - illegal promotion
+      - missing discharge target
+  warning:
+    meaning: Build-valid but governance-drift or review-needed state.
+    examples:
+      - stale declared label
+      - branch posture mismatch
+      - retired alias detected
+  info:
+    meaning: Informational trace or non-blocking release note.
+    examples:
+      - superseded claim retained for history
+      - release diff note

@@ -1,0 +1,21 @@
+body_file: text/branches/NS/thm_NS_stage0.md
+book: NS
+canonical_xref:
+  canonical_label: NS Stage-0 Thermodynamic Floor Density [U]
+  canonical_section: NS §Lawful Descent
+  canonical_theorem: NS.Stage-0
+  cross_check: Unconditional; no Phase-A or K_0 hypothesis needed
+declared_status: U
+dependencies:
+  requires: []
+discharges: []
+id: thm:NS.stage0
+kind: theorem
+number: NS.stage0
+scope:
+  certificate_scope: unconditional
+  domain: NS-branch
+  promotion_ceiling: U
+  regime: NS-source-descended
+title: NS Stage-0 Thermodynamic Floor Density
+track: branch

@@ -1,0 +1,21 @@
+body_file: text/spine/VII/def_VII_declared_effective_audit.md
+book: VII
+canonical_xref:
+  canonical_label: Declared/Effective/Audit Status Trichotomy
+  canonical_section: Book VII §Status and Dependency Law
+  canonical_theorem: def:declared-effective-audit
+  cross_check: ADDED in Session L+6; stale label = declared status exceeds effective
+    status
+declared_status: D
+dependencies:
+  requires: []
+id: def:VII.declared-effective-audit
+kind: definition
+number: VII.D.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Declared, Effective, and Audit Status Trichotomy
+track: spine

@@ -1,0 +1,22 @@
+body_file: text/branches/BIO/ob_BIO_NC.md
+book: BIO
+canonical_xref:
+  canonical_label: No-Hidden Hereditary Channel [C]
+  canonical_section: BIO §Obligations
+  canonical_theorem: ob:BIO.NC
+  cross_check: Discharged by thm:BIO.NC
+declared_status: C
+dependencies:
+  requires:
+  - ob:BIO.REP
+discharges: []
+id: ob:BIO.NC
+kind: obligation
+number: BIO.NC
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: No-Hidden Hereditary Channel
+track: branch

@@ -1,0 +1,24 @@
+body_file: text/spine/IV/thm_IV_universal_completion.md
+book: IV
+canonical_xref:
+  canonical_label: Universal Completion Theorem (Thm. IV.5.1) [U] — five properties
+  canonical_section: Book IV §Universal Completion
+  canonical_theorem: thm:universal-completion
+  cross_check: 'U = T/~_pres satisfies: (a) observable factoring; (b) coherent presentation;
+    (c) minimality; (d) realization initiality; (e) uniqueness. The primary existence
+    theorem for the universal source.'
+declared_status: U
+dependencies:
+  requires:
+  - thm:IV.completion-ladder
+  - def:IV.candidate-U
+id: thm:IV.universal-completion
+kind: theorem
+number: IV.5.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Universal Completion Theorem (Thm. IV.5.1)
+track: spine

@@ -1,0 +1,1 @@
+The boundary flux phi_inf >= 0 stabilizes unconditionally: the source-descended boundary flux of the NS observable family achieves a non-negative limit along the Van Hove exhaustion. This follows from the floor density (Stage-0) and the declared monotonicity of the transport regime.

@@ -1,0 +1,29 @@
+body_file: text/branches/NS/prop_NS_status.md
+book: NS
+canonical_xref:
+  canonical_label: NS Branch Status (Updated) [C] — domain-bounded conditional CERT-CLOSE
+  canonical_section: NS §Branch Status
+  canonical_theorem: prop:NS-status
+  cross_check: Corrects stale frontier-blocked preamble; v31 governance finding
+declared_status: C
+dependencies:
+  requires:
+  - cor:NS.domain-bounded-cert-close
+  - thm:NS.SB2-discharged
+  - thm:NS.Ren5
+discharges: []
+id: prop:NS.status
+kind: proposition
+number: NS.status
+scope:
+  certificate_scope: domain-bounded
+  domain: NS-branch
+  inherited_constraints:
+  - Phase-A
+  - K0-7
+  - PASS
+  - LS-2
+  promotion_ceiling: C
+  regime: NS-Phase-A-K0-7-PASS-LS2
+title: NS Branch Status (Domain-Bounded Conditional CERT-CLOSE)
+track: branch

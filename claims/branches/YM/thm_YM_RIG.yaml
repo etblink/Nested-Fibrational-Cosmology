@@ -1,0 +1,48 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/thm_YM_RIG.md
+book: YM
+canonical_xref:
+  canonical_label: YM Rigidity Theorem
+  canonical_section: YM Bridge Stack §2
+  canonical_theorem: YM.RIG
+  cross_check: Discharges ob:YM.O-RIG; uniqueness of gauge structure
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VII.6.4
+  - thm:YM.ID
+discharges:
+- basis:
+  - thm:YM.RIG
+  kind: full
+  scope_relation: preserved
+  target: ob:YM.O-RIG
+  transfer_basis: []
+  transfer_required: false
+id: thm:YM.RIG
+imports: []
+kind: theorem
+number: YM.RIG
+proof_file: text/branches/YM/proof_thm_YM_RIG.md
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - operator-rigidity
+  - msc-normalized
+  promotion_ceiling: C
+  regime: ym-bridge-stack
+supersedes: []
+tags:
+- ym
+- bridge-stack
+- operator-rigidity
+title: YM Rigidity Discharge Packet
+track: branch

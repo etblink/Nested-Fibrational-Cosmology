@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "pilot_level": "L2",
+  "generated_claim_count": 16,
+  "generated_ids": [
+    "ob:BIO.REP",
+    "ob:BIO.MET",
+    "ob:BIO.FID",
+    "ob:BIO.NC",
+    "ob:BIO.HER",
+    "ob:BIO.BND",
+    "thm:BIO.REP",
+    "thm:BIO.MET",
+    "thm:BIO.FID",
+    "thm:BIO.NC",
+    "thm:BIO.HER",
+    "thm:BIO.BND",
+    "thm:BIO.END",
+    "thm:BIO.MULTI.twocell",
+    "ob:BIO.BND-open",
+    "status:BIO"
+  ],
+  "missing_expected": [],
+  "unexpected_claims": [],
+  "active_frontiers": [
+    "ob:BIO.BND-open"
+  ],
+  "posture": "conditional-cert-close",
+  "endpoint_scope": "nondegenerate-bio",
+  "bnd_frontier_preserved": true,
+  "checks": [
+    {
+      "id": "bio.successor.expected-claim-list",
+      "status": "pass",
+      "observed": {
+        "missing": []
+      },
+      "expected": "All BIO_ORDER claims are present."
+    },
+    {
+      "id": "bio.successor.posture",
+      "status": "pass",
+      "observed": "conditional-cert-close",
+      "expected": "conditional-cert-close"
+    },
+    {
+      "id": "bio.successor.frontier-profile",
+      "status": "pass",
+      "observed": [
+        "ob:BIO.BND-open"
+      ],
+      "expected": [
+        "ob:BIO.BND-open"
+      ]
+    },
+    {
+      "id": "bio.successor.no-unexpected-claims",
+      "status": "pass",
+      "observed": [],
+      "expected": "No branch-local BIO records outside the pilot order."
+    },
+    {
+      "id": "bio.successor.endpoint-scoped-to-nd",
+      "status": "pass",
+      "observed": "nondegenerate-bio",
+      "expected": "Endpoint regime must be scoped to nondegenerate C_Bio^nd, not full class."
+    },
+    {
+      "id": "bio.successor.bnd-frontier-preserved",
+      "status": "pass",
+      "observed": {
+        "declared": "O",
+        "effective": "O"
+      },
+      "expected": "ob:BIO.BND-open must remain open: BND for the full replicator class is a live frontier."
+    },
+    {
+      "id": "bio.successor.no-evolutionary-cert-close",
+      "status": "pass",
+      "observed": "conditional-cert-close",
+      "expected": "Must not claim evolutionary-cert-close or full-class-biology-cert-close."
+    }
+  ],
+  "supersession_effect": "none; pilot shell only",
+  "no_smuggling_invariant": "No genes, cells, fitness functions, thermodynamic entropy, membrane biophysics, Lipschitz geometry, or biological vocabulary outside role-carrier framework."
+}

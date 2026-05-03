@@ -1,0 +1,21 @@
+body_file: text/branches/SPEC/status_SPEC.md
+book: SPEC
+canonical_xref:
+  canonical_label: SPEC Branch Status — cert-close on gauge-response spectroscopy
+  canonical_section: SPEC §Branch Status
+  canonical_theorem: status:SPEC
+  cross_check: Cleanest closure result; no active SPEC-local frontier in declared
+    scope
+declared_status: cert-close
+dependencies:
+  requires:
+  - thm:SPEC.10.1
+id: status:SPEC
+kind: status_note
+number: SPEC.status
+scope:
+  certificate_scope: branch
+  domain: SPEC-branch
+  regime: gauge-response-spectroscopy
+title: SPEC Branch Posture
+track: branch

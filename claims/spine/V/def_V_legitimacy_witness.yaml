@@ -1,0 +1,23 @@
+body_file: text/spine/V/def_V_legitimacy_witness.md
+book: V
+canonical_xref:
+  canonical_label: Legitimacy Witness — certifies endpoint depends only on U, F, and
+    declared hypotheses
+  canonical_section: Book V §Branch Definitions
+  canonical_theorem: def:legitimacy-witness
+  cross_check: The canonical proof object that certifies no hidden channels are present;
+    required for UBLT condition 4
+declared_status: D
+dependencies:
+  requires:
+  - def:V.endpoint-datum
+id: def:V.legitimacy-witness
+kind: definition
+number: V.D.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Legitimacy Witness
+track: spine

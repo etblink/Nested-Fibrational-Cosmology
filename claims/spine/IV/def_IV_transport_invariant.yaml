@@ -1,0 +1,22 @@
+body_file: text/spine/IV/def_IV_transport_invariant.md
+book: IV
+canonical_xref:
+  canonical_label: Transport Invariant I_nl(R, U)
+  canonical_section: Book IV §Transport Invariants
+  canonical_theorem: def:transport-invariant
+  cross_check: The canonical invariant preserved under POT-morphisms; the witness
+    that source structure is transported correctly
+declared_status: D
+dependencies:
+  requires:
+  - def:IV.POT-object
+id: def:IV.transport-invariant
+kind: definition
+number: IV.D.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Transport Invariant
+track: spine

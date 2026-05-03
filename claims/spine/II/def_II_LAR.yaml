@@ -1,0 +1,22 @@
+body_file: text/spine/II/def_II_LAR.md
+book: II
+canonical_xref:
+  canonical_label: Local Admissible Realizability (LAR) Condition
+  canonical_section: Book II §LS-2 from Structural Conditions
+  canonical_theorem: def:LAR
+  cross_check: Every collar type is locally realizable; injectivity of the boundary-law
+    map
+declared_status: D
+dependencies:
+  requires:
+  - def:II.collar
+id: def:II.LAR
+kind: definition
+number: II.D.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Local Admissible Realizability Condition (LAR)
+track: spine

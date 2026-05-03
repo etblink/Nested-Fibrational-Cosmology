@@ -1,0 +1,21 @@
+body_file: text/branches/LING/status_LING.md
+book: LING
+canonical_xref:
+  canonical_label: LING Branch Status — conditional-cert-close
+  canonical_section: LING §Branch Status
+  canonical_theorem: status:LING
+  cross_check: Closed on contrast/recursion/context-response; REF-INVIS-RECOV preserved
+declared_status: conditional-cert-close
+dependencies:
+  requires:
+  - thm:LING.END
+  - ob:LING.REF-INVIS-RECOV
+id: status:LING
+kind: status_note
+number: LING.status
+scope:
+  certificate_scope: branch
+  domain: LING-branch
+  regime: contrast-compositional-context-response
+title: LING Branch Posture
+track: branch

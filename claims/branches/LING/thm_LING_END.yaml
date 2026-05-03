@@ -1,0 +1,22 @@
+body_file: text/branches/LING/thm_LING_END.md
+book: LING
+canonical_xref:
+  canonical_label: LING Endpoint — Contrast/Recursion/Context-Response [C]
+  canonical_section: LING §Endpoint
+  canonical_theorem: thm:LING.END
+  cross_check: Conditional closure on declared contrast/recursion/context-response
+    structure
+declared_status: C
+dependencies:
+  requires:
+  - thm:VII.6.4
+id: thm:LING.END
+kind: theorem
+number: LING.END
+scope:
+  certificate_scope: branch
+  domain: LING-branch
+  promotion_ceiling: C
+  regime: contrast-compositional-context-response
+title: LING Endpoint Status Proposition
+track: branch

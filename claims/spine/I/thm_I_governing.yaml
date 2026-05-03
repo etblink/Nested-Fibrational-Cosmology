@@ -1,0 +1,23 @@
+body_file: text/spine/I/thm_I_governing.md
+book: I
+canonical_xref:
+  canonical_label: Observational Quotient Theorem [U] — Book I governing result
+  canonical_section: Book I §Governing Theorem
+  canonical_theorem: thm:governing
+  cross_check: Sigma_n well-defined and canonical (part a); refinement chain stabilizes
+    finitely (part b); packages both main exports
+declared_status: U
+dependencies:
+  requires:
+  - thm:I.stabilization
+  - lem:I.obs-equiv-equiv
+id: thm:I.governing
+kind: theorem
+number: I.T.6
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Observational Quotient Theorem (Book I Governing)
+track: spine

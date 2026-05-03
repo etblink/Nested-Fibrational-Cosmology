@@ -1,0 +1,30 @@
+body_file: text/spine/II/thm_II_ls2_from_conditions.md
+book: II
+canonical_xref:
+  canonical_label: Stabilized Collar Determinacy Theorem [C] — LS-2 with rho*=2
+  canonical_section: Book II §LS-2 from Structural Conditions
+  canonical_theorem: thm:ls2-from-conditions
+  cross_check: Under DW+TC+LAR, LS-2 holds with rho*=2; this is the conditional proof
+    of LS-2
+declared_status: C
+dependencies:
+  requires:
+  - def:II.DW
+  - def:II.TC
+  - def:II.LAR
+  - thm:II.DW-from-A2
+  - thm:II.TC-from-sr
+id: thm:II.ls2-from-conditions
+kind: theorem
+number: II.T.7
+scope:
+  certificate_scope: conditional-DW-TC-LAR
+  domain: spine
+  inherited_constraints:
+  - DW
+  - TC
+  - LAR
+  promotion_ceiling: C
+  regime: K07-DW-TC-LAR
+title: Stabilized Collar Determinacy Theorem (LS-2 from DW/TC/LAR)
+track: spine

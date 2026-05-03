@@ -1,0 +1,22 @@
+body_file: text/spine/IV/thm_IV_completion_ladder.md
+book: IV
+canonical_xref:
+  canonical_label: Completion Ladder Theorem [U]
+  canonical_section: Book IV §Source-Side Ladder
+  canonical_theorem: thm:completion-ladder
+  cross_check: The five ORA rungs (IV.2.1 through IV.5.3) are jointly sufficient to
+    construct the universal completion U
+declared_status: U
+dependencies:
+  requires:
+  - thm:IV.AMCT
+id: thm:IV.completion-ladder
+kind: theorem
+number: IV.T.5
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Completion Ladder Theorem
+track: spine

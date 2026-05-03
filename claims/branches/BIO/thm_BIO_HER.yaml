@@ -1,0 +1,30 @@
+body_file: text/branches/BIO/thm_BIO_HER.md
+book: BIO
+canonical_xref:
+  canonical_label: Hereditary Descent Transport Theorem [C]
+  canonical_section: BIO §Hereditary
+  canonical_theorem: thm:BIO.HER
+  cross_check: Book V branch-legitimacy satisfied on C_Bio^nd
+declared_status: C
+dependencies:
+  requires:
+  - thm:BIO.REP
+  - thm:BIO.NC
+discharges:
+- basis:
+  - thm:BIO.HER
+  kind: full
+  scope_relation: preserved
+  target: ob:BIO.HER
+  transfer_required: false
+id: thm:BIO.HER
+kind: theorem
+number: BIO.HER
+proof_file: text/branches/BIO/proof_thm_BIO_HER.md
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: Hereditary Descent Transport Theorem
+track: branch

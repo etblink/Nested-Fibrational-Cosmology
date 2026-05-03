@@ -1,0 +1,22 @@
+body_file: text/spine/V/status_V.md
+book: V
+canonical_xref:
+  canonical_label: Book V Status
+  canonical_section: Book V §Boundary of Book V
+  canonical_theorem: status:V
+  cross_check: '[U]: UBLT, collapse, diamond, branch projection, mandatory declarations.
+    [C]: screened sector (conditional on PASS/LS-2/Phase-A)'
+declared_status: R
+dependencies:
+  requires:
+  - thm:V.UBLT
+id: status:V
+kind: remark
+number: V.status
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: R
+  regime: universal
+title: Book V Status — UBLT unconditional; screened sector conditional
+track: spine

@@ -1,0 +1,20 @@
+body_file: text/spine/VII/sr_VII_declare_status.md
+book: VII
+canonical_xref:
+  canonical_label: Declare-Status Standing Rule
+  canonical_section: Book VII §Status and Dependency Law
+  canonical_theorem: sr:declare-status
+  cross_check: Every theorem must declare status, dependencies, and scoped regime
+declared_status: D
+dependencies:
+  requires: []
+id: sr:VII.declare-status
+kind: standing_rule
+number: VII.SR.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Declare Status Standing Rule
+track: spine

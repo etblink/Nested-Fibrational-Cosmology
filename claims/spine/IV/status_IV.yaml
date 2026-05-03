@@ -1,0 +1,23 @@
+body_file: text/spine/IV/status_IV.md
+book: IV
+canonical_xref:
+  canonical_label: Book IV Status — U exists and is unique
+  canonical_section: Book IV §Posture
+  canonical_theorem: status:IV
+  cross_check: '[U]: all five rung theorems, universal completion, source uniqueness,
+    all descendants factor, terminal source, governing. [C]: unified emergence (K_0=7+Phase-A+Books
+    I-III)'
+declared_status: R
+dependencies:
+  requires:
+  - thm:IV.governing
+id: status:IV
+kind: remark
+number: IV.status
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: R
+  regime: universal
+title: Book IV Status — primarily unconditional; existence and uniqueness of U
+track: spine

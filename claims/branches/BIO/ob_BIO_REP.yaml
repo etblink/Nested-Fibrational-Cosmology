@@ -1,0 +1,22 @@
+body_file: text/branches/BIO/ob_BIO_REP.md
+book: BIO
+canonical_xref:
+  canonical_label: Replication Certification [C]
+  canonical_section: BIO §Obligations
+  canonical_theorem: ob:BIO.REP
+  cross_check: Discharged by thm:BIO.REP
+declared_status: C
+dependencies:
+  requires:
+  - thm:SCC.MCS
+discharges: []
+id: ob:BIO.REP
+kind: obligation
+number: BIO.REP
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: Replication Certification
+track: branch

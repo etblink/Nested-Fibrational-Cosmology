@@ -1,0 +1,68 @@
+active_obligations:
+- thm:RH.S1.formal
+- ob:YM.B3.A2
+- front:NS.main
+- ob:GR.global-subcriticality
+- ob:SM.O-IDcont
+- ob:LING.REF-INVIS-RECOV
+- ob:CRYST.phase-problem
+change_basis:
+- basis:
+  - aliases.yaml
+  - thm:RH.S1.formal
+  change_id: active-obligation:remove:ob:rh-s1-formal
+  change_type: alias-normalization
+  note: Retired/legacy RH active-obligation label is replaced by the local canonical
+    S1 frontier record. No mathematical force changes.
+  scope_relation: preserved
+- basis:
+  - aliases.yaml
+  - thm:RH.S1.formal
+  change_id: active-obligation:add:thm:RH.S1.formal
+  change_type: alias-normalization
+  note: Canonical local RH S1 record is surfaced in the active-obligation list.
+  scope_relation: preserved
+- basis:
+  - front:NS.main
+  - ob:NS.SB2
+  change_id: active-obligation:add:front:NS.main
+  change_type: frontier-explicitness
+  note: The NS main frontier is listed explicitly while preserving the underlying
+    SB2 obligation.
+  scope_relation: preserved
+- basis:
+  - prop:NS.status
+  - thm:NS.7.1
+  - thm:NS.6.1
+  change_id: branch-posture:update:NS
+  change_type: stale-posture-correction
+  note: NS posture corrected from frontier-blocked to domain-bounded-cert-close. Canonical
+    NS branch book contains prop:NS-status [C], thm:NS71 [C], and cor:NS-both-give-endpoint
+    [C] establishing domain-bounded conditional CERT-CLOSE. The NS preamble was stale.
+    Correction surfaced by v31 pilot.
+  scope_relation: restricted
+- basis:
+  - thm:NS.SB2-discharged
+  - thm:NS.Ren5
+  change_id: active-obligation:remove:ob:NS.SB2
+  change_type: obligation-discharge
+  note: ob:NS.SB2 conditionally discharged via SCT.6b coercive-transport mechanism
+    (thm:NS.SB2-discharged). Full discharge conditional on Phase-A/K_0=7/PASS/SCT.6b.
+  scope_relation: preserved
+date: '2026-05-01'
+effective_branch_postures:
+  BIO: conditional-cert-close
+  CRYST: conditional-cert-close
+  GR: domain-bounded-cert-close
+  LING: conditional-cert-close
+  NS: domain-bounded-cert-close
+  RH: cert-proj
+  SCC: conditional-cert-close
+  SM: intrinsic-structural-close
+  SPEC: cert-close
+  YM: conditional-cert-close
+inherits: L+4
+notes: Illustrative next-release snapshot for release-diff governance. This is not
+  a canon-session claim; it demonstrates how changes must be annotated.
+release: L+5-draft
+status: draft-for-governance-testing

@@ -1,0 +1,25 @@
+body_file: text/spine/VI/thm_VI_continuum_bridge_schema.md
+book: VI
+canonical_xref:
+  canonical_label: Continuum Bridge Schema Theorem [U] — both scoped cert AND bridge
+    required
+  canonical_section: Book VI §Continuum Bridge Schema
+  canonical_theorem: thm:continuum-bridge-schema
+  cross_check: Promotion from discrete to continuum requires (1) scoped certificate
+    on the discrete regime AND (2) separately proved continuum bridge. Neither alone
+    suffices.
+declared_status: U
+dependencies:
+  requires:
+  - def:VI.continuum-bridge
+  - def:VI.cert-obs-family
+id: thm:VI.continuum-bridge-schema
+kind: theorem
+number: VI.T.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Continuum Bridge Schema Theorem
+track: spine

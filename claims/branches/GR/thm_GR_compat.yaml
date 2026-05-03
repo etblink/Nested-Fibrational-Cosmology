@@ -1,0 +1,68 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/GR/thm_GR_compat.md
+book: GR
+canonical_xref:
+  canonical_book: NFC_GR_Branch.tex
+  canonical_label: GR EFE structural compatibility theorem (ob:GR.EFE1-3 discharge)
+  canonical_section: GR Five-Stage Closure Chain §3
+  canonical_theorem: GR.Compatibility
+  cross_check: Stage 3 — EFE compatibility and structural closure
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:GR.deformation
+discharges:
+- basis:
+  - thm:GR.compat
+  kind: full
+  scope_relation: preserved
+  target: ob:GR.compat
+  transfer_basis: []
+  transfer_required: false
+- basis:
+  - thm:GR.compat
+  kind: full
+  scope_relation: preserved
+  target: ob:GR.EFE1
+  transfer_basis: []
+  transfer_required: false
+- basis:
+  - thm:GR.compat
+  kind: full
+  scope_relation: preserved
+  target: ob:GR.EFE2
+  transfer_basis: []
+  transfer_required: false
+- basis:
+  - thm:GR.compat
+  kind: full
+  scope_relation: preserved
+  target: ob:GR.EFE3
+  transfer_basis: []
+  transfer_required: false
+id: thm:GR.compat
+imports: []
+kind: theorem
+number: GR.C1
+proof_file: text/branches/GR/proof_thm_GR_compat.md
+scope:
+  certificate_scope: domain-bounded
+  continuum_license: book-VI-certified
+  domain: GR-branch
+  inherited_constraints:
+  - realized-domain-D
+  promotion_ceiling: C
+  regime: declared-GR-target
+supersedes: []
+tags:
+- gr
+- compatibility
+- efe
+title: Metric/Connection Compatible Structural Compatibility Packet
+track: branch

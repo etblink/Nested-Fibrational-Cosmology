@@ -1,0 +1,22 @@
+body_file: text/spine/VI/def_VI_cert_obs_family.md
+book: VI
+canonical_xref:
+  canonical_label: Certified Observable Family
+  canonical_section: Book VI §Continuum Bridge Infrastructure
+  canonical_theorem: def:cert-obs-family
+  cross_check: An observable family whose stabilized quotient class is invariant under
+    the declared admissible test family; the input to a continuum bridge
+declared_status: D
+dependencies:
+  requires:
+  - def:I.obs-quotient
+id: def:VI.cert-obs-family
+kind: definition
+number: VI.D.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Certified Observable Family
+track: spine

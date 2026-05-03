@@ -1,0 +1,23 @@
+body_file: text/spine/I/thm_I_emax_unique.md
+book: I
+canonical_xref:
+  canonical_label: Admissible-Class Canonicity (E_max unique) [U]
+  canonical_section: Book I §Observational Structure
+  canonical_theorem: thm:emax-unique
+  cross_check: The maximal admissible extension E_max is unique; the observational
+    structure is canonical
+declared_status: U
+dependencies:
+  requires:
+  - def:I.admissible-class
+  - lem:I.behavioral-canonical
+id: thm:I.emax-unique
+kind: theorem
+number: I.T.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Admissible-Class Canonicity Theorem
+track: spine

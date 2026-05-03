@@ -1,0 +1,164 @@
+{
+  "entries": [
+    {
+      "claim_id": "thm:VI.9.1",
+      "field": "body_file",
+      "path": "text/spine/VI/thm_VI_governing.md",
+      "exists": true,
+      "size_bytes": 787,
+      "sha256": "33f338ff08795df9609e5b1bafecd9b213eec563b0d7ec15179abdbe93853b49"
+    },
+    {
+      "claim_id": "thm:GR.CP.1",
+      "field": "body_file",
+      "path": "text/branches/GR/thm_GR_CP_1.md",
+      "exists": true,
+      "size_bytes": 179,
+      "sha256": "b65f3de8fa47c93e0065800298c9dbe1dc7a15f65736c9029c1ece655756c7b8"
+    },
+    {
+      "claim_id": "thm:GR.CP.1",
+      "field": "proof_file",
+      "path": "text/branches/GR/proof_thm_GR_CP_1.md",
+      "exists": true,
+      "size_bytes": 19,
+      "sha256": "a05edc24405f3dbb52a25ad7223b3df1a67bb88d366ca501384b943d78d54feb"
+    },
+    {
+      "claim_id": "ob:GR.real",
+      "field": "body_file",
+      "path": "text/branches/GR/ob_GR_real.md",
+      "exists": true,
+      "size_bytes": 168,
+      "sha256": "b7dee143bf8ebbdcf5da38f6a9b86403f0948189e2c041a9715649cc10d5a853"
+    },
+    {
+      "claim_id": "thm:GR.realization",
+      "field": "body_file",
+      "path": "text/branches/GR/thm_GR_realization.md",
+      "exists": true,
+      "size_bytes": 179,
+      "sha256": "1235ca3428fd259500dcec61634f3085e457efc0f2b51f6518e5ef7b636c61d3"
+    },
+    {
+      "claim_id": "thm:GR.realization",
+      "field": "proof_file",
+      "path": "text/branches/GR/proof_thm_GR_realization.md",
+      "exists": true,
+      "size_bytes": 187,
+      "sha256": "e851b2690e09c48a608bf9f42180ef504f07da15de8ba1b6a1ece85a01efdb58"
+    },
+    {
+      "claim_id": "ob:GR.deform",
+      "field": "body_file",
+      "path": "text/branches/GR/ob_GR_deform.md",
+      "exists": true,
+      "size_bytes": 160,
+      "sha256": "ebfc8c6f08f1a171819a367c899c2bad95726d65430f0218b40bebb47af91d56"
+    },
+    {
+      "claim_id": "thm:GR.deformation",
+      "field": "body_file",
+      "path": "text/branches/GR/thm_GR_deformation.md",
+      "exists": true,
+      "size_bytes": 162,
+      "sha256": "53f665cf022faac325cb4f941bda1668fbaafd2e726ef24bc0bee57a44c6f474"
+    },
+    {
+      "claim_id": "thm:GR.deformation",
+      "field": "proof_file",
+      "path": "text/branches/GR/proof_thm_GR_deformation.md",
+      "exists": true,
+      "size_bytes": 170,
+      "sha256": "4ceba9ce85037390b9eab2484f64bbd8f6e25e19fa40d0b0fbd11b33d6c57ed9"
+    },
+    {
+      "claim_id": "ob:GR.compat",
+      "field": "body_file",
+      "path": "text/branches/GR/ob_GR_compat.md",
+      "exists": true,
+      "size_bytes": 189,
+      "sha256": "b3e906a8c10036e9a0294958c0f4f8fcd6b5ed8f68dae338a863897d19966967"
+    },
+    {
+      "claim_id": "thm:GR.compat",
+      "field": "body_file",
+      "path": "text/branches/GR/thm_GR_compat.md",
+      "exists": true,
+      "size_bytes": 192,
+      "sha256": "541e63579665db5f735a2a9c04ff1dc7803fc51157b079e332842b712409e0de"
+    },
+    {
+      "claim_id": "thm:GR.compat",
+      "field": "proof_file",
+      "path": "text/branches/GR/proof_thm_GR_compat.md",
+      "exists": true,
+      "size_bytes": 200,
+      "sha256": "9d5e8fcfd2e462f079ebc2dbf19dc23096fb415d9ebc6c3f507a79f266196909"
+    },
+    {
+      "claim_id": "ob:GR.EFE1",
+      "field": "body_file",
+      "path": "text/branches/GR/ob_GR_EFE1.md",
+      "exists": true,
+      "size_bytes": 72,
+      "sha256": "973ba4fe9284397d3ae74650116a71f5fcbf37149adac761bfb346840929c5e4"
+    },
+    {
+      "claim_id": "ob:GR.EFE2",
+      "field": "body_file",
+      "path": "text/branches/GR/ob_GR_EFE2.md",
+      "exists": true,
+      "size_bytes": 178,
+      "sha256": "cbad970ffd5e6b2d32e5aa785134e242b4426674d00ae8f15628f4c2a7e6bbcd"
+    },
+    {
+      "claim_id": "ob:GR.EFE3",
+      "field": "body_file",
+      "path": "text/branches/GR/ob_GR_EFE3.md",
+      "exists": true,
+      "size_bytes": 185,
+      "sha256": "7a7b5c26c4d0f9d2f0faa6dcac5ddffe5c5201dd2e1b15e4f5c9fd180b277d77"
+    },
+    {
+      "claim_id": "ob:GR.closure",
+      "field": "body_file",
+      "path": "text/branches/GR/ob_GR_closure.md",
+      "exists": true,
+      "size_bytes": 167,
+      "sha256": "de64fb4e2ef6ad86156cb172a39a2081e83664500768419982de23400e2e2be5"
+    },
+    {
+      "claim_id": "thm:GR.domain",
+      "field": "body_file",
+      "path": "text/branches/GR/thm_GR_domain.md",
+      "exists": true,
+      "size_bytes": 170,
+      "sha256": "7640f968799cd2faa28bce706100948d2ade788b1e69c88e3c425d1031537f8a"
+    },
+    {
+      "claim_id": "thm:GR.domain",
+      "field": "proof_file",
+      "path": "text/branches/GR/proof_thm_GR_domain.md",
+      "exists": true,
+      "size_bytes": 178,
+      "sha256": "dda0d916a05b89f1d8c0847b9ea8ca219323461695ae678a7113df62fb6e392d"
+    },
+    {
+      "claim_id": "ob:GR.global-subcriticality",
+      "field": "body_file",
+      "path": "text/branches/GR/ob_GR_global.md",
+      "exists": true,
+      "size_bytes": 87,
+      "sha256": "97a335ce9847a84ecfafa92b3e4008d24d17d1fdaff33438bef79a59162fdd48"
+    },
+    {
+      "claim_id": "status:GR",
+      "field": "body_file",
+      "path": "text/branches/GR/status_GR.md",
+      "exists": true,
+      "size_bytes": 128,
+      "sha256": "98d5868680322415154b8b808eec261699b14b93fccaba2b5efd8adad36ff12b"
+    }
+  ]
+}

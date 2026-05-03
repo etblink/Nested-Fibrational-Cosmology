@@ -1,0 +1,20 @@
+body_file: text/spine/V/sr_V_endpoint_visibility.md
+book: V
+canonical_xref:
+  canonical_label: Endpoint-Visibility Standing Rule
+  canonical_section: Book V §Branch Standing Rules
+  canonical_theorem: sr:endpoint-visibility
+  cross_check: 'Branch endpoint must be branch-visible: invariant under source equivalence'
+declared_status: D
+dependencies:
+  requires: []
+id: sr:V.endpoint-visibility
+kind: standing_rule
+number: V.SR.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Endpoint-Visibility Standing Rule
+track: spine

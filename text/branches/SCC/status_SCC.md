@@ -1,0 +1,1 @@
+SCC posture record kept intentionally stale to exercise reconciliation.

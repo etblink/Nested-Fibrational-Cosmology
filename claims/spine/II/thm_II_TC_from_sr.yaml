@@ -1,0 +1,22 @@
+body_file: text/spine/II/thm_II_TC_from_sr.md
+book: II
+canonical_xref:
+  canonical_label: TC from Toggle-Complete Standing Rule [U]
+  canonical_section: Book II §LS-2 from Structural Conditions
+  canonical_theorem: thm:TC-from-sr
+  cross_check: The toggle-complete standing rule implies the TC condition; unconditional
+declared_status: U
+dependencies:
+  requires:
+  - def:II.TC
+  - sr:II.no-local-smuggling
+id: thm:II.TC-from-sr
+kind: theorem
+number: II.T.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: TC from Toggle-Complete Standing Rule
+track: spine

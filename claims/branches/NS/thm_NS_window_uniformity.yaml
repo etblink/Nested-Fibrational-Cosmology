@@ -1,0 +1,27 @@
+body_file: text/branches/NS/thm_NS_window_uniformity.md
+book: NS
+canonical_xref:
+  canonical_label: NS Window Uniformity + Q2a Resolution [C]
+  canonical_section: NS §Active Continuation Criterion
+  canonical_theorem: NS.WindowUnif
+  cross_check: Conditional Phase-A/K_0=7; Q2a resolved; eventual periodicity
+declared_status: C
+dependencies:
+  requires:
+  - thm:NS.stage2a
+  - thm:NS.6.1
+discharges: []
+id: thm:NS.window-uniformity
+kind: theorem
+number: NS.window-uniformity
+scope:
+  certificate_scope: conditional-Phase-A
+  domain: NS-branch
+  inherited_constraints:
+  - Phase-A
+  - K0-7
+  - kappa-bound
+  promotion_ceiling: C
+  regime: NS-Phase-A-K0-7
+title: NS Window-Uniformity and Eventual Periodicity (Q2a Resolved)
+track: branch

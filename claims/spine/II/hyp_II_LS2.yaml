@@ -1,0 +1,29 @@
+body_file: text/spine/II/hyp_II_LS2.md
+book: II
+canonical_xref:
+  canonical_label: LS-2 Locality Hypothesis [C] — the principal conditional hinge
+  canonical_section: Book II §LS-2 Hypothesis
+  canonical_theorem: hyp:LS2
+  cross_check: There exists rho* such that stabilized local outcome on U is determined
+    by stabilized collar type on del_{rho*}(U). Holds universally for K_0=7 Phase-A
+    substrates (cor:II.ls2-universal-K07). Controls most conditional force in later
+    books.
+declared_status: C
+dependencies:
+  requires:
+  - def:II.collar
+id: hyp:II.LS2
+kind: obligation
+number: II.H.1
+scope:
+  certificate_scope: conditional-LS2
+  domain: spine
+  inherited_constraints:
+  - K0-7
+  - DW
+  - TC
+  - LAR
+  promotion_ceiling: C
+  regime: LS2-declared
+title: LS-2 Locality Hypothesis
+track: spine

@@ -1,0 +1,22 @@
+body_file: text/spine/I/def_I_obs_quotient.md
+book: I
+canonical_xref:
+  canonical_label: Observational Quotient Sigma_n = Omega / ~_n
+  canonical_section: Book I §Observational Structure
+  canonical_theorem: def:obs-quotient
+  cross_check: The canonical state space at stage n; output of the observational quotienting
+    process
+declared_status: D
+dependencies:
+  requires:
+  - def:I.obs-equiv
+id: def:I.obs-quotient
+kind: definition
+number: I.D.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Observational Quotient
+track: spine

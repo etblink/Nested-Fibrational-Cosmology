@@ -1,0 +1,22 @@
+body_file: text/branches/BIO/ob_BIO_MET.md
+book: BIO
+canonical_xref:
+  canonical_label: Metabolic Bookkeeping [C]
+  canonical_section: BIO §Obligations
+  canonical_theorem: ob:BIO.MET
+  cross_check: Discharged by thm:BIO.MET
+declared_status: C
+dependencies:
+  requires:
+  - ob:BIO.REP
+discharges: []
+id: ob:BIO.MET
+kind: obligation
+number: BIO.MET
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: Metabolic Bookkeeping
+track: branch

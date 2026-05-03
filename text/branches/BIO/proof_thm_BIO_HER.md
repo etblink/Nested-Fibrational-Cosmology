@@ -1,0 +1,1 @@
+Combine thm:BIO.REP (source-descent of the replication kernel) and thm:BIO.NC (no-hidden-channel). The hereditary transport is the carrier-push of the replication kernel through the declared descent map. Book V legitimacy follows: source-controlled (thm:BIO.REP), no hidden supplementation (thm:BIO.NC), probe-visible (nondegeneracy of C_Bio^nd).

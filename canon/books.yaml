@@ -1,0 +1,36 @@
+books:
+- id: VII
+  title: Closure Governance and Canonical Status Discipline
+  kind: spine
+  claims_order:
+  - thm:VII.2.4
+  - thm:VII.2.5
+  - thm:VII.4.3
+  - thm:VII.6.4
+- id: GR
+  title: GR Branch
+  kind: branch
+  claims_order:
+  - status:GR
+  - ob:GR.EFE1
+  - thm:GR.CP.1
+- id: NS
+  title: NS Branch
+  kind: branch
+  claims_order:
+  - status:NS
+  - ob:NS.SB2
+  - front:NS.main
+  - thm:NS.6.1
+- id: YM
+  title: YM Branch
+  kind: branch
+  claims_order:
+  - status:YM
+  - ob:YM.B3.A2
+  - thm:YM.7
+- id: SM
+  title: SM Super-Branch
+  kind: branch
+  claims_order:
+  - status:SM

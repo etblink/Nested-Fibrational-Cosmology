@@ -1,0 +1,1 @@
+CRYST reaches diffraction-periodicity-symmetry closure at conditional branch force.

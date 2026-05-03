@@ -1,0 +1,24 @@
+body_file: text/spine/IV/thm_IV_terminal_source.md
+book: IV
+canonical_xref:
+  canonical_label: Unified Terminal-Source Theorem [U]
+  canonical_section: Book IV §Shared Source
+  canonical_theorem: thm:terminal-source
+  cross_check: When n>=2 independent certified terminal branches all factor through
+    S, S is a unified terminal source; all branches inherit load-bearing data from
+    the same source object
+declared_status: U
+dependencies:
+  requires:
+  - thm:IV.universal-completion
+  - def:IV.exhaustive-source-image
+id: thm:IV.terminal-source
+kind: theorem
+number: IV.T.7
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Unified Terminal-Source Theorem
+track: spine

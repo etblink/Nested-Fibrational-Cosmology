@@ -1,0 +1,25 @@
+body_file: text/spine/VI/def_VI_continuum_bridge.md
+book: VI
+canonical_xref:
+  canonical_label: Continuum Bridge — separately proved convergence certificate from
+    discrete to continuum
+  canonical_section: Book VI §Scoped Certificates and Continuum Bridges
+  canonical_theorem: def:continuum-bridge
+  cross_check: A separately proved theorem certifying that a discrete result converges
+    to a declared continuum target; the second ingredient of the Continuum Bridge
+    Schema
+declared_status: D
+dependencies:
+  requires:
+  - def:VI.cert-obs-family
+  - def:VI.scale-norm-increment
+id: def:VI.continuum-bridge
+kind: definition
+number: VI.D.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Continuum Bridge
+track: spine

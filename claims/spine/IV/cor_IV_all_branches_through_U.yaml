@@ -1,0 +1,22 @@
+body_file: text/spine/IV/cor_IV_all_branches_through_U.md
+book: IV
+canonical_xref:
+  canonical_label: Every Branch Book Attaches Through Book IV [U]
+  canonical_section: Book IV §Governing Theorem
+  canonical_theorem: cor:all-branches-through-U
+  cross_check: No branch book may function as an alternate source foundation; uniqueness
+    of U prevents any genuine alternate foundation
+declared_status: U
+dependencies:
+  requires:
+  - thm:IV.governing
+id: cor:IV.all-branches-through-U
+kind: corollary
+number: IV.C.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Every Branch Book Attaches Through Book IV
+track: spine

@@ -1,0 +1,21 @@
+body_file: text/branches/CRYST/ob_CRYST_PHASE.md
+book: CRYST
+canonical_xref:
+  canonical_label: Crystallographic Phase Problem [O] ACTIVE FRONTIER
+  canonical_section: CRYST §Frontier
+  canonical_theorem: ob:CRYST.PHASE
+  cross_check: Generic non-centrosymmetric phase recovery; structurally parallel to
+    RH S1-ARC
+declared_status: O
+dependencies:
+  requires:
+  - thm:CRYST.END
+id: ob:CRYST.phase-problem
+kind: obligation
+number: CRYST.PHASE
+scope:
+  certificate_scope: branch
+  domain: CRYST-branch
+  regime: diffraction-periodicity-symmetry
+title: Crystallographic Phase Problem
+track: branch

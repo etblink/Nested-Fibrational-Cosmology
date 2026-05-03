@@ -1,0 +1,21 @@
+body_file: text/spine/V/sr_V_legitimacy_before_closure.md
+book: V
+canonical_xref:
+  canonical_label: Legitimacy-Before-Closure Standing Rule
+  canonical_section: Book V §Branch Standing Rules
+  canonical_theorem: sr:legitimacy-before-closure
+  cross_check: Branch legitimacy must be established before closure is claimed; order
+    constraint
+declared_status: D
+dependencies:
+  requires: []
+id: sr:V.legitimacy-before-closure
+kind: standing_rule
+number: V.SR.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Legitimacy-Before-Closure Standing Rule
+track: spine

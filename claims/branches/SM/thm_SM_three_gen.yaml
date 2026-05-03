@@ -1,0 +1,24 @@
+body_file: text/branches/SM/thm_SM_three_gen.md
+book: SM
+canonical_xref:
+  canonical_label: Three-Generation Structure [U]
+  canonical_section: SM §Three-Generation Structure
+  canonical_theorem: thm:SM-three-gen
+  cross_check: UNCONDITIONAL; multiplicity-3 eigenblock count from NFC-3Gen structure
+declared_status: U
+dependencies:
+  requires: []
+discharges: []
+id: thm:SM.three-gen
+kind: theorem
+number: SM.three-gen
+proof_file: text/branches/SM/proof_thm_SM_three_gen.md
+scope:
+  certificate_scope: branch
+  domain: SM-branch
+  inherited_constraints:
+  - NFC-3Gen-declared-structure
+  promotion_ceiling: U
+  regime: SM-super-sector
+title: Three-Generation Structure
+track: branch

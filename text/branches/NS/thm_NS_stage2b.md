@@ -1,0 +1,1 @@
+The nonlinear term (u dot grad)u + grad p is identified from the discrete balance identity in the continuum limit, conditional on PASS screening: the transverse component of the nonlinear term vanishes under PASS, yielding the canonical Navier-Stokes nonlinear form. This identification requires the PASS condition from Book II and is therefore conditional [C].

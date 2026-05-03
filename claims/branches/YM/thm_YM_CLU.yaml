@@ -1,0 +1,48 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/thm_YM_CLU.md
+book: YM
+canonical_xref:
+  canonical_label: YM Clustering Theorem
+  canonical_section: YM Bridge Stack §5
+  canonical_theorem: YM.CLU
+  cross_check: Discharges ob:YM.O-CLU; vacuum clustering established
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VII.6.4
+  - thm:YM.GLOB
+discharges:
+- basis:
+  - thm:YM.CLU
+  kind: full
+  scope_relation: preserved
+  target: ob:YM.O-CLU
+  transfer_basis: []
+  transfer_required: false
+id: thm:YM.CLU
+imports: []
+kind: theorem
+number: YM.CLU
+proof_file: text/branches/YM/proof_thm_YM_CLU.md
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - cluster-vacuum
+  - msc-normalized
+  promotion_ceiling: C
+  regime: ym-bridge-stack
+supersedes: []
+tags:
+- ym
+- bridge-stack
+- cluster-vacuum
+title: YM Cluster and Vacuum Packet
+track: branch

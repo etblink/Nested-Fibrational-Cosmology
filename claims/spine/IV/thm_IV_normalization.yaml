@@ -1,0 +1,23 @@
+body_file: text/spine/IV/thm_IV_normalization.md
+book: IV
+canonical_xref:
+  canonical_label: Transport-Invariant Normalization [U]
+  canonical_section: Book IV §Source-Side Ladder
+  canonical_theorem: thm:normalization
+  cross_check: The canonical transport invariant I_nl is witness-descending, extension-stable,
+    and normalization-compatible; ORA rungs IV.2.1 through IV.5.3
+declared_status: U
+dependencies:
+  requires:
+  - thm:IV.CTM
+  - def:IV.transport-invariant
+id: thm:IV.normalization
+kind: theorem
+number: IV.T.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Transport-Invariant Normalization Theorem
+track: spine

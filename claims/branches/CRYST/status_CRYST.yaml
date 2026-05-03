@@ -1,0 +1,23 @@
+body_file: text/branches/CRYST/status_CRYST.md
+book: CRYST
+canonical_xref:
+  canonical_label: CRYST Branch Status — conditional-cert-close on diffraction-periodicity-symmetry
+    domain
+  canonical_section: CRYST §Branch Status
+  canonical_theorem: status:CRYST
+  cross_check: Phase problem preserved; DOM-epsilon and EWALD-epsilon convergence
+    conditions noted
+declared_status: conditional-cert-close
+dependencies:
+  requires:
+  - thm:CRYST.END
+  - ob:CRYST.phase-problem
+id: status:CRYST
+kind: status_note
+number: CRYST.status
+scope:
+  certificate_scope: branch
+  domain: CRYST-branch
+  regime: diffraction-periodicity-symmetry
+title: CRYST Branch Posture
+track: branch

@@ -1,0 +1,22 @@
+body_file: text/spine/IV/thm_IV_AMCT.md
+book: IV
+canonical_xref:
+  canonical_label: AMCT — Admissible Morphism Closure Theorem [U]
+  canonical_section: Book IV §Source-Side Ladder
+  canonical_theorem: thm:AMCT
+  cross_check: POT-morphisms close under composition; the Grothendieck fibration is
+    well-defined; ORA rung IV.4
+declared_status: U
+dependencies:
+  requires:
+  - thm:IV.normalization
+id: thm:IV.AMCT
+kind: theorem
+number: IV.T.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Admissible Morphism Closure Theorem (AMCT)
+track: spine

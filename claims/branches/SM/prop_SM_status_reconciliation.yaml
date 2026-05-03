@@ -1,0 +1,28 @@
+body_file: text/branches/SM/prop_SM_status_reconciliation.md
+book: SM
+canonical_xref:
+  canonical_label: SM Status Reconciliation — corrected from CERT-PROJ [C]
+  canonical_section: SM §Status Reconciliation
+  canonical_theorem: prop:SM-status-rec
+  cross_check: 'Corrected posture: conditionally intrinsic-structural closed, inherited-scope
+    open'
+declared_status: C
+dependencies:
+  requires:
+  - prop:SM.intrinsic-closure
+  - ob:SM.O-IDcont
+discharges: []
+id: prop:SM.status-reconciliation
+kind: proposition
+number: SM.status-reconciliation
+proof_file: text/branches/SM/proof_prop_SM_status_reconciliation.md
+scope:
+  certificate_scope: intrinsic-structural
+  domain: SM-branch
+  inherited_constraints:
+  - YM-inherited-scope
+  - GR-inherited-scope
+  promotion_ceiling: C
+  regime: SM-super-sector
+title: SM Status Reconciliation
+track: branch

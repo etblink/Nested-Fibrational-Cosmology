@@ -1,0 +1,21 @@
+body_file: text/spine/VI/sr_VI_interface_locality.md
+book: VI
+canonical_xref:
+  canonical_label: Interface-Locality Rule
+  canonical_section: Book VI §Standing Rules
+  canonical_theorem: sr:interface-locality
+  cross_check: A certified continuum interface regime licenses notations only within
+    its declared scope; cannot be exported to a wider regime without a new bridge
+declared_status: D
+dependencies:
+  requires: []
+id: sr:VI.interface-locality
+kind: standing_rule
+number: VI.SR.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Interface-Locality Rule
+track: spine

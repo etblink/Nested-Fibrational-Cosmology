@@ -1,0 +1,21 @@
+body_file: text/spine/VII/prop_VII_downstream_force.md
+book: VII
+canonical_xref:
+  canonical_label: Downstream Force Proposition [U]
+  canonical_section: Book VII §Status Inflation
+  canonical_theorem: prop:downstream-force
+  cross_check: Downstream claim carries only the force of its named bridge stack
+declared_status: U
+dependencies:
+  requires:
+  - prop:VII.cite-declared-force
+id: prop:VII.downstream-force
+kind: proposition
+number: VII.P.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Downstream Force Proposition
+track: spine

@@ -1,0 +1,39 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/GR/ob_GR_compat.md
+book: GR
+canonical_xref:
+  canonical_book: NFC_GR_Branch.tex
+  canonical_label: GR Compatibility Obligation — Stage 3
+  canonical_section: GR Obligation Register
+  canonical_theorem: ob:GR.compat
+  cross_check: Discharged by thm:GR.compat
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - ob:GR.deform
+discharges: []
+id: ob:GR.compat
+imports: []
+kind: obligation
+number: GR.compat
+scope:
+  certificate_scope: domain-bounded
+  continuum_license: book-VI-certified
+  domain: GR-branch
+  inherited_constraints:
+  - realized-domain-D
+  promotion_ceiling: C
+  regime: declared-GR-target
+supersedes: []
+tags:
+- gr
+- closure-stack
+- discharged
+title: Metric/Connection and Einstein-Type Structural Compatibility
+track: branch

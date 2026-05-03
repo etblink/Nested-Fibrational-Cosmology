@@ -1,0 +1,1 @@
+The d_{S_v}-spectral decomposition of the SM matter sector yields exactly three isomorphic copies of the matter eigenblock structure. This is unconditional: the three-generation count follows from the rank of the structural eigenspace decomposition and is independent of the conditional YM/GR hypotheses. It is the structural origin of three matter generations in the NFC framework.

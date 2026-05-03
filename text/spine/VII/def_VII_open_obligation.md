@@ -1,0 +1,1 @@
+An open obligation is a named burden not yet discharged by theorem or certified bridge. Open obligations are mathematical objects, not admissions of failure: a precisely stated open obligation constrains future work and prevents false closure. The name of an open obligation is part of the canon; renaming or omitting an obligation does not discharge it.

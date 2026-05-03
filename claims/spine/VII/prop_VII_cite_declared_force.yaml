@@ -1,0 +1,22 @@
+body_file: text/spine/VII/prop_VII_cite_declared_force.md
+book: VII
+canonical_xref:
+  canonical_label: Cite-Declared-Force Proposition [U]
+  canonical_section: Book VII §Status and Dependency Law
+  canonical_theorem: prop:cite-declared-force
+  cross_check: A theorem may be cited only with the force licensed by its declared
+    status and dependencies
+declared_status: U
+dependencies:
+  requires:
+  - sr:VII.declare-status
+id: prop:VII.cite-declared-force
+kind: proposition
+number: VII.P.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Cite-Declared-Force Proposition
+track: spine

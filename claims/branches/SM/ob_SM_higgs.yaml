@@ -1,0 +1,22 @@
+body_file: text/branches/SM/ob_SM_higgs.md
+book: SM
+canonical_xref:
+  canonical_label: O-SM.Higgs — Higgs/EWSB Screening [C]
+  canonical_section: SM §Open Obligations
+  canonical_theorem: O-SM.Higgs
+  cross_check: B0 screening scoped discharge; full higgs mechanism pending
+declared_status: C
+dependencies:
+  requires:
+  - thm:SM.gauge-chain
+discharges: []
+id: ob:SM.higgs
+kind: obligation
+number: SM.higgs
+scope:
+  certificate_scope: scoped-B0-screening
+  domain: SM-branch
+  promotion_ceiling: C
+  regime: SM-super-sector
+title: Higgs/EWSB Screening (O-SM.Higgs)
+track: branch

@@ -1,0 +1,28 @@
+body_file: text/spine/VI/thm_VI_governing.md
+book: VI
+canonical_xref:
+  canonical_label: Effective Continuum Legitimacy Theorem [C] = Thm. VI.9.1
+  canonical_section: Book VI §Governing Theorem
+  canonical_theorem: thm:governing (Book VI)
+  cross_check: Differential AND integral notation are jointly lawful iff they faithfully
+    encode the discrete dynamics. This is the canonical theorem cited as Thm. VI.9.1
+    in GR and NS branch books.
+declared_status: C
+dependencies:
+  requires:
+  - thm:VI.differential-legitimacy
+  - thm:VI.integral-legitimacy
+id: thm:VI.governing
+kind: theorem
+number: VI.9.1
+scope:
+  certificate_scope: conditional-certified-regime
+  domain: spine
+  inherited_constraints:
+  - certified-observable-family
+  - scoped-certificate
+  - continuum-bridge
+  promotion_ceiling: C
+  regime: certified-interface-regime
+title: Effective Continuum Legitimacy Theorem (Thm. VI.9.1)
+track: spine

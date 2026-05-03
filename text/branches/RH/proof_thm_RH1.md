@@ -1,0 +1,1 @@
+Immediate from the definition of the RH canonical object in the branch-specific arena. The xi-function is the canonical completion of the Riemann zeta function, satisfying the functional equation xi(s) = xi(1-s). The branch target (RH: all zeros of Xi are real) is the canonical formulation adopted by the branch. No hypotheses beyond the branch architecture declaration are needed.

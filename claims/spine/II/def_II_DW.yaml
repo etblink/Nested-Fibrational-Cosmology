@@ -1,0 +1,22 @@
+body_file: text/spine/II/def_II_DW.md
+book: II
+canonical_xref:
+  canonical_label: Dominated-Witness (DW) Condition
+  canonical_section: Book II §LS-2 from Structural Conditions
+  canonical_theorem: def:DW
+  cross_check: Local admissible behavior is controlled by collar-type propagation;
+    one of the three DW/TC/LAR conditions
+declared_status: D
+dependencies:
+  requires:
+  - def:II.collar
+id: def:II.DW
+kind: definition
+number: II.D.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Dominated-Witness Condition (DW)
+track: spine

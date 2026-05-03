@@ -1,0 +1,32 @@
+body_file: text/branches/NS/thm_NS_7_1.md
+book: NS
+canonical_xref:
+  canonical_label: NS.7.1 Continuation-Criterion-to-Endpoint [C]
+  canonical_section: NS §Endpoint Bridge
+  canonical_theorem: NS.7.1
+  cross_check: Domain-bounded CERT-CLOSE on declared interval; Stage-3 Clay remains
+    external
+declared_status: C
+dependencies:
+  requires:
+  - thm:NS.6.1
+  - thm:NS.window-uniformity
+  - thm:NS.SB2-discharged
+discharges: []
+id: thm:NS.7.1
+kind: theorem
+number: NS.7.1
+scope:
+  certificate_scope: domain-bounded
+  domain: NS-branch
+  inherited_constraints:
+  - Phase-A
+  - K0-7
+  - PASS
+  - LS-2
+  - NS.6.1-discharged
+  - Book-VI-H1x-interface
+  promotion_ceiling: C
+  regime: NS-Phase-A-K0-7-PASS-LS2
+title: Continuation-Criterion-to-Endpoint Theorem (NS.7.1)
+track: branch

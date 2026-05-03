@@ -1,0 +1,22 @@
+body_file: text/spine/II/def_II_collar.md
+book: II
+canonical_xref:
+  canonical_label: Collar Definition — the stabilized boundary shell of a region
+  canonical_section: Book II §Local Structure
+  canonical_theorem: def:collar
+  cross_check: del_rho(U) = rho-neighborhood boundary of U; collar type = stabilized
+    observational class of collar
+declared_status: D
+dependencies:
+  requires:
+  - def:I.obs-quotient
+id: def:II.collar
+kind: definition
+number: II.D.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Collar and Collar Type
+track: spine

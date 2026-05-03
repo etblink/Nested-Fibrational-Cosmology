@@ -1,0 +1,94 @@
+{
+  "status": "passed",
+  "book": "VI",
+  "track": "spine",
+  "l4_level": "spine_release_candidate",
+  "schema_version": "0.41.0",
+  "claim_count": 18,
+  "xref_count": 18,
+  "prose_score": 100.0,
+  "VI91_status": "C",
+  "bridge_schema_status": "U",
+  "no_smuggling_status": "U",
+  "T_partial_status": "U",
+  "vi91_citation_gap_closed": true,
+  "citing_branches": [
+    "GR",
+    "NS",
+    "YM"
+  ],
+  "supersession_effect": "none",
+  "honest_posture": "Book VI is the thinnest spine book from source-content perspective. Its theorems are mostly biconditionals: differential notation is legitimate iff it encodes the right thing; integral notation is legitimate iff it encodes the right thing. The conceptual weight lies in the definitions. Its job is tool-licensing, not physics.",
+  "checks": [
+    {
+      "id": "l4.vi.VI91-governing-conditional",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:VI.governing (= Thm.VI.9.1) status = C",
+      "expected": "thm:VI.governing must be [C] \u2014 conditional on certified interface regime"
+    },
+    {
+      "id": "l4.vi.bridge-schema-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:VI.continuum-bridge-schema status = U",
+      "expected": "[U]: both ingredients required is a structural fact, not a specific case"
+    },
+    {
+      "id": "l4.vi.no-smuggling-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:VI.no-smuggling status = U",
+      "expected": "[U]: continuum outside regime = non-canonical is a structural fact"
+    },
+    {
+      "id": "l4.vi.T-partial-stability-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:VI.T-partial-stability status = U",
+      "expected": "[U]: unconditional from K_0=7 (thm:I.K0-prime)"
+    },
+    {
+      "id": "l4.vi.standing-rules",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all 4 present",
+      "expected": "All 4 Book VI standing rules present"
+    },
+    {
+      "id": "l4.vi.c-layer-has-constraints",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all have constraints",
+      "expected": "[C] theorems must carry certified-interface-regime constraints"
+    },
+    {
+      "id": "l4.vi.NS-4B-sobolev-conditional",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:VI.NS-4B-sobolev status = C",
+      "expected": "[C]: NS-4B Sobolev surrogate conditional on K_0=7+Phase-A+BUO+ACA"
+    },
+    {
+      "id": "l4.vi.VI91-citation-gap-closed",
+      "status": "pass",
+      "severity": "error",
+      "observed": "GR thm:VI.9.1 body_file = text/spine/VI/thm_VI_governing.md",
+      "expected": "GR branch thm:VI.9.1 stub should point to Book VI text (text/spine/VI/...)"
+    },
+    {
+      "id": "l4.vi.prose-completeness",
+      "status": "pass",
+      "severity": "warning",
+      "observed": "100.0% (18/18)",
+      "expected": ">= 90% prose"
+    },
+    {
+      "id": "l4.vi.xref-annotations",
+      "status": "pass",
+      "severity": "error",
+      "observed": "18/18",
+      "expected": ">= 16 xrefs"
+    }
+  ]
+}

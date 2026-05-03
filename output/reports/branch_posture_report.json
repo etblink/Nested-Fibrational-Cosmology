@@ -1,0 +1,13 @@
+{
+  "issues": [
+    {
+      "severity": "warning",
+      "type": "release-vs-computed-posture-mismatch",
+      "id": "status:NS",
+      "path": "claims/branches/NS/status_NS.yaml",
+      "branch": "NS",
+      "computed_posture": "domain-bounded-cert-close",
+      "release_posture": "frontier-blocked"
+    }
+  ]
+}

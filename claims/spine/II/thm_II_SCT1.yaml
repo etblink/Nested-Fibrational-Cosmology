@@ -1,0 +1,25 @@
+body_file: text/spine/II/thm_II_SCT1.md
+book: II
+canonical_xref:
+  canonical_label: SCT.1 Coercive Transport Stage 1 [C]
+  canonical_section: Book II §SCT Doctrine
+  canonical_theorem: thm:SCT1
+  cross_check: First stage of the shared coercive transport doctrine; feeds NS and
+    SCC branches
+declared_status: C
+dependencies:
+  requires:
+  - thm:II.boundary-capacity
+id: thm:II.SCT1
+kind: theorem
+number: II.T.10
+scope:
+  certificate_scope: conditional-SCT
+  domain: spine
+  inherited_constraints:
+  - LS-2
+  - Phase-A
+  promotion_ceiling: C
+  regime: LS2-Phase-A
+title: Shared Coercive Transport Stage 1 (SCT.1)
+track: spine

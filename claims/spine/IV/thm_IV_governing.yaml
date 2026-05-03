@@ -1,0 +1,25 @@
+body_file: text/spine/IV/thm_IV_governing.md
+book: IV
+canonical_xref:
+  canonical_label: Universal Source Theorem (Book IV Governing) [U]
+  canonical_section: Book IV §Governing Theorem
+  canonical_theorem: thm:governing (Book IV)
+  cross_check: U exists (thm:universal-completion), is unique (thm:source-uniqueness),
+    all lawful realizations factor through it (cor:descendants-factor), carries canonical
+    layered structure T* -> K* -> U
+declared_status: U
+dependencies:
+  requires:
+  - thm:IV.universal-completion
+  - thm:IV.source-uniqueness
+  - cor:IV.descendants-factor
+id: thm:IV.governing
+kind: theorem
+number: IV.T.8
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Universal Source Theorem (Book IV Governing)
+track: spine

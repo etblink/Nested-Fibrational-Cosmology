@@ -1,0 +1,24 @@
+body_file: text/spine/II/cor_II_ls2_universal_K07.md
+book: II
+canonical_xref:
+  canonical_label: LS-2 Universal for K_0=7 Phase-A Substrates [U]
+  canonical_section: Book II §LS-2 from Structural Conditions
+  canonical_theorem: cor:ls2-universal-K07
+  cross_check: For canonical K_0=7 Phase-A substrates, LS-2 holds unconditionally
+    — this is the universal bridge between hyp:LS2 [C] and the canonical K_0=7 case
+    [U]
+declared_status: U
+dependencies:
+  requires:
+  - thm:II.DW-from-A2
+  - thm:II.TC-from-sr
+id: cor:II.ls2-universal-K07
+kind: corollary
+number: II.C.1
+scope:
+  certificate_scope: global-K07
+  domain: spine
+  promotion_ceiling: U
+  regime: universal-K07-PhaseA
+title: LS-2 Universal for K_0=7 Phase-A Substrates
+track: spine

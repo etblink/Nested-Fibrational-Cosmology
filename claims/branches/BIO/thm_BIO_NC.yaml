@@ -1,0 +1,29 @@
+body_file: text/branches/BIO/thm_BIO_NC.md
+book: BIO
+canonical_xref:
+  canonical_label: No-Hidden Hereditary Channel Theorem [C]
+  canonical_section: BIO §No-Hidden-Channel
+  canonical_theorem: thm:BIO.NC
+  cross_check: No undeclared hereditary pathways; Book V no-hidden-supplementation
+declared_status: C
+dependencies:
+  requires:
+  - thm:BIO.REP
+discharges:
+- basis:
+  - thm:BIO.NC
+  kind: full
+  scope_relation: preserved
+  target: ob:BIO.NC
+  transfer_required: false
+id: thm:BIO.NC
+kind: theorem
+number: BIO.NC
+proof_file: text/branches/BIO/proof_thm_BIO_NC.md
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: No-Hidden Hereditary Channel Theorem
+track: branch

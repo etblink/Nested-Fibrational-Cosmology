@@ -1,0 +1,23 @@
+body_file: text/spine/VI/def_VI_effective_smooth.md
+book: VI
+canonical_xref:
+  canonical_label: Effective Smooth Representative
+  canonical_section: Book VI §Effective Smooth Representatives
+  canonical_theorem: def:effective-smooth
+  cross_check: The continuum-side object licensed by a certified bridge; what f(x)
+    means in Book VI — not a literal smooth function but an effective encoding of
+    discrete data
+declared_status: D
+dependencies:
+  requires:
+  - def:VI.cert-obs-family
+id: def:VI.effective-smooth
+kind: definition
+number: VI.D.5
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Effective Smooth Representative
+track: spine

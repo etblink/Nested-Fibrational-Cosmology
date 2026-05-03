@@ -1,0 +1,22 @@
+body_file: text/spine/V/thm_V_collapse.md
+book: V
+canonical_xref:
+  canonical_label: Collapse Criterion [U]
+  canonical_section: Book V §Collapse Criterion
+  canonical_theorem: thm:collapse
+  cross_check: Path-equivalent and endpoint-equivalent descendants are not distinct
+    branches; prevents branch inflation by redescription
+declared_status: U
+dependencies:
+  requires:
+  - def:V.endpoint-datum
+id: thm:V.collapse
+kind: theorem
+number: V.T.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Collapse Criterion
+track: spine

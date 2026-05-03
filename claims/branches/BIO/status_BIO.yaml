@@ -1,0 +1,20 @@
+body_file: text/branches/BIO/status_BIO.md
+book: BIO
+canonical_xref:
+  canonical_label: BIO Branch Status — conditional-cert-close on C_Bio^nd
+  canonical_section: BIO §Branch Status
+  canonical_theorem: status:BIO
+  cross_check: No-smuggling maintained; EVO/MULTI not claimed
+declared_status: conditional-cert-close
+dependencies:
+  requires:
+  - thm:BIO.END
+id: status:BIO
+kind: status_note
+number: BIO.status
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  regime: nondegenerate-bio
+title: BIO Branch Posture
+track: branch

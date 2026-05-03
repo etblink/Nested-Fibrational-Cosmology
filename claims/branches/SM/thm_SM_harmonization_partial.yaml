@@ -1,0 +1,37 @@
+body_file: text/branches/SM/thm_SM_harmonization_partial.md
+book: SM
+canonical_xref:
+  canonical_label: Conditional Partial Harmonization Functor (KPO-1 to KPO-4) [C]
+  canonical_section: SM §Harmonization Functor
+  canonical_theorem: thm:SM-harm-partial
+  cross_check: PARTIAL discharge of O-SM.Harmonization; matter sector excluded
+declared_status: C
+dependencies:
+  requires:
+  - thm:YM.7
+  - thm:GR.CP.1
+  - thm:SM.gauge-chain
+discharges:
+- basis:
+  - thm:SM.harmonization-partial
+  kind: partial
+  scope_relation: restricted
+  target: ob:SM.harmonization
+  transfer_required: false
+id: thm:SM.harmonization-partial
+kind: theorem
+number: SM.harmonization-partial
+proof_file: text/branches/SM/proof_thm_SM_harmonization_partial.md
+scope:
+  certificate_scope: scoped-KPO
+  domain: SM-branch
+  inherited_constraints:
+  - YM-Phase-A
+  - YM-K0-7
+  - YM-O-ENC
+  - GR-KPO-3
+  - GR-NFC-5-6
+  promotion_ceiling: C
+  regime: SM-super-sector
+title: Conditional Partial Harmonization Functor (KPO-1 through KPO-4)
+track: branch

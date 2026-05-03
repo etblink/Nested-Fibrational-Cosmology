@@ -1,0 +1,22 @@
+body_file: text/spine/IV/def_IV_POT_category.md
+book: IV
+canonical_xref:
+  canonical_label: POT Category — the canonical source category
+  canonical_section: Book IV §POT Category
+  canonical_theorem: def:POT-category
+  cross_check: 'The category of all POT objects with POT-morphisms as arrows; the
+    domain of all realization functors F: POT -> C'
+declared_status: D
+dependencies:
+  requires:
+  - def:IV.POT-object
+id: def:IV.POT-category
+kind: definition
+number: IV.D.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: POT Category
+track: spine

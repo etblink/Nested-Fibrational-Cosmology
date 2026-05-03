@@ -1,0 +1,46 @@
+claim_schema:
+  required_all:
+    - id
+    - book
+    - track
+    - kind
+    - title
+    - scope
+  required_theoremish:
+    - declared_status
+    - dependencies
+  required_status_note:
+    - declared_status
+  scope_required:
+    - regime
+    - domain
+    - certificate_scope
+  allowed_kinds:
+    - definition
+    - standing_rule
+    - theorem
+    - proposition
+    - corollary
+    - bridge
+    - obligation
+    - frontier
+    - remark
+    - status_note
+  dependency_sections:
+    - requires
+    - optional
+    - excludes
+  discharge_required:
+    - target
+    - kind
+    - basis
+    - scope_relation
+  discharge_kinds:
+    - full
+    - partial
+    - scoped
+    - superseding
+  scope_relations:
+    - preserved
+    - restricted
+    - widened

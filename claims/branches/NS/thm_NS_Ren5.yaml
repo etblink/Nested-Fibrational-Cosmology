@@ -1,0 +1,27 @@
+body_file: text/branches/NS/thm_NS_Ren5.md
+book: NS
+canonical_xref:
+  canonical_label: Late Alignment-to-Dissipation Lemma Ren.5 [C]
+  canonical_section: NS §Boundary Chain
+  canonical_theorem: NS.Ren.5
+  cross_check: Conditional; discharges proof-program frontier via sub-lemma chain
+declared_status: C
+dependencies:
+  requires:
+  - thm:NS.window-uniformity
+  - thm:NS.6.1
+discharges: []
+id: thm:NS.Ren5
+kind: theorem
+number: NS.Ren5
+scope:
+  certificate_scope: conditional-Phase-A
+  domain: NS-branch
+  inherited_constraints:
+  - Phase-A
+  - K0-7
+  - PASS
+  promotion_ceiling: C
+  regime: NS-Phase-A-K0-7
+title: Late Alignment-to-Dissipation Lemma (Ren.5)
+track: branch

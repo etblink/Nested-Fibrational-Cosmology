@@ -1,0 +1,22 @@
+body_file: text/branches/NS/thm_NS_stage2a.md
+book: NS
+canonical_xref:
+  canonical_label: NS Stage-2a Discrete Balance Identity [U]
+  canonical_section: NS §Source-Descended Obstruction
+  canonical_theorem: NS.Stage-2a
+  cross_check: Unconditional; canonical decomposition of obstruction quantity
+declared_status: U
+dependencies:
+  requires:
+  - thm:NS.stage1
+discharges: []
+id: thm:NS.stage2a
+kind: theorem
+number: NS.stage2a
+scope:
+  certificate_scope: unconditional
+  domain: NS-branch
+  promotion_ceiling: U
+  regime: NS-source-descended
+title: NS Stage-2a Discrete Balance Identity
+track: branch

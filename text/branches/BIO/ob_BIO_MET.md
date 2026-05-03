@@ -1,0 +1,1 @@
+Show that the metabolic transport satisfies additivity: the metabolic ledger W_met is an additive accounting of energy-equivalent transport across the certified replication boundary. No thermodynamic primitives may be imported outside the NFC carrier framework.

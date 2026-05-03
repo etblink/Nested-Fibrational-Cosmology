@@ -1,0 +1,954 @@
+{
+  "standard_version": "1.4",
+  "level": "L2",
+  "status": "passed",
+  "pilot_count": 10,
+  "failed_count": 0,
+  "rows": [
+    {
+      "branch": "GR",
+      "status": "passed",
+      "expected_posture": "domain-bounded-cert-close",
+      "computed_posture": "domain-bounded-cert-close",
+      "preserved_frontiers": [
+        "ob:GR.global-subcriticality"
+      ],
+      "frontier_statuses": {
+        "ob:GR.global-subcriticality": "O"
+      },
+      "compile_status": "passed",
+      "equivalence_status": "passed",
+      "supersession_effect": "none; pilot shell only",
+      "failed_checks": 0
+    },
+    {
+      "branch": "YM",
+      "status": "passed",
+      "expected_posture": "conditional-cert-close",
+      "computed_posture": "conditional-cert-close",
+      "preserved_frontiers": [
+        "ob:YM.B3.A2"
+      ],
+      "frontier_statuses": {
+        "ob:YM.B3.A2": "O"
+      },
+      "compile_status": "passed",
+      "equivalence_status": "passed",
+      "supersession_effect": "none; pilot shell only",
+      "failed_checks": 0
+    },
+    {
+      "branch": "SPEC",
+      "status": "passed",
+      "expected_posture": "cert-close",
+      "computed_posture": "cert-close",
+      "preserved_frontiers": [],
+      "frontier_statuses": {},
+      "compile_status": "passed",
+      "equivalence_status": "passed",
+      "supersession_effect": "none; pilot shell only",
+      "failed_checks": 0
+    },
+    {
+      "branch": "SCC",
+      "status": "passed",
+      "expected_posture": "conditional-cert-close",
+      "computed_posture": "conditional-cert-close",
+      "preserved_frontiers": [],
+      "frontier_statuses": {},
+      "compile_status": "passed",
+      "equivalence_status": "passed",
+      "supersession_effect": "none; pilot shell only",
+      "failed_checks": 0
+    },
+    {
+      "branch": "CRYST",
+      "status": "passed",
+      "expected_posture": "conditional-cert-close",
+      "computed_posture": "conditional-cert-close",
+      "preserved_frontiers": [
+        "ob:CRYST.phase-problem"
+      ],
+      "frontier_statuses": {
+        "ob:CRYST.phase-problem": "O"
+      },
+      "compile_status": "passed",
+      "equivalence_status": "passed",
+      "supersession_effect": "none; pilot shell only",
+      "failed_checks": 0
+    },
+    {
+      "branch": "LING",
+      "status": "passed",
+      "expected_posture": "conditional-cert-close",
+      "computed_posture": "conditional-cert-close",
+      "preserved_frontiers": [
+        "ob:LING.REF-INVIS-RECOV"
+      ],
+      "frontier_statuses": {
+        "ob:LING.REF-INVIS-RECOV": "O"
+      },
+      "compile_status": "passed",
+      "equivalence_status": "passed",
+      "supersession_effect": "none; pilot shell only",
+      "failed_checks": 0
+    },
+    {
+      "branch": "BIO",
+      "status": "passed",
+      "expected_posture": "conditional-cert-close",
+      "computed_posture": "conditional-cert-close",
+      "preserved_frontiers": [
+        "ob:BIO.BND-open"
+      ],
+      "frontier_statuses": {
+        "ob:BIO.BND-open": "O"
+      },
+      "compile_status": "passed",
+      "equivalence_status": "passed",
+      "supersession_effect": "none; pilot shell only",
+      "failed_checks": 0
+    },
+    {
+      "branch": "SM",
+      "status": "passed",
+      "expected_posture": "intrinsic-structural-close",
+      "computed_posture": "intrinsic-structural-close",
+      "preserved_frontiers": [
+        "ob:SM.O-IDcont"
+      ],
+      "frontier_statuses": {
+        "ob:SM.O-IDcont": "O"
+      },
+      "compile_status": "passed",
+      "equivalence_status": "passed",
+      "supersession_effect": "none; pilot shell only",
+      "failed_checks": 0
+    },
+    {
+      "branch": "NS",
+      "status": "passed",
+      "expected_posture": "domain-bounded-cert-close",
+      "computed_posture": "domain-bounded-cert-close",
+      "preserved_frontiers": [
+        "front:NS.main",
+        "ob:NS.bridge-stage2"
+      ],
+      "frontier_statuses": {
+        "front:NS.main": "O",
+        "ob:NS.bridge-stage2": "O"
+      },
+      "compile_status": "passed",
+      "equivalence_status": "passed",
+      "supersession_effect": "none; pilot shell only",
+      "failed_checks": 0
+    },
+    {
+      "branch": "RH",
+      "status": "passed",
+      "expected_posture": "cert-proj",
+      "computed_posture": "cert-proj",
+      "preserved_frontiers": [
+        "ob:RH.S1-ARC",
+        "thm:RH.S1.formal"
+      ],
+      "frontier_statuses": {
+        "ob:RH.S1-ARC": "O",
+        "thm:RH.S1.formal": "O"
+      },
+      "compile_status": null,
+      "equivalence_status": "passed",
+      "supersession_effect": "none; pilot shell only",
+      "failed_checks": 0
+    }
+  ],
+  "checks": [
+    {
+      "id": "GR.equivalence_report_passed",
+      "branch": "GR",
+      "check": "equivalence_report_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "GR.compile_target_passed",
+      "branch": "GR",
+      "check": "compile_target_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "GR.expected_posture_preserved",
+      "branch": "GR",
+      "check": "expected_posture_preserved",
+      "status": "pass",
+      "observed": {
+        "equivalence": "domain-bounded-cert-close",
+        "computed": "domain-bounded-cert-close"
+      },
+      "expected": "domain-bounded-cert-close"
+    },
+    {
+      "id": "GR.expected_frontier_profile_preserved",
+      "branch": "GR",
+      "check": "expected_frontier_profile_preserved",
+      "status": "pass",
+      "observed": [
+        "ob:GR.global-subcriticality"
+      ],
+      "expected": [
+        "ob:GR.global-subcriticality"
+      ]
+    },
+    {
+      "id": "GR.no_supersession_effect",
+      "branch": "GR",
+      "check": "no_supersession_effect",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": [
+        "none",
+        "none; pilot shell only"
+      ]
+    },
+    {
+      "id": "GR.expected_active_frontiers_are_open",
+      "branch": "GR",
+      "check": "expected_active_frontiers_are_open",
+      "status": "pass",
+      "observed": {
+        "ob:GR.global-subcriticality": "O"
+      },
+      "expected": "all expected frontiers have effective status O"
+    },
+    {
+      "id": "GR.successor_tex_present",
+      "branch": "GR",
+      "check": "successor_tex_present",
+      "status": "pass",
+      "observed": "output/tex/gr_branch_successor_standalone.tex",
+      "expected": "exists"
+    },
+    {
+      "id": "GR.successor_pdf_present",
+      "branch": "GR",
+      "check": "successor_pdf_present",
+      "status": "pass",
+      "observed": "output/pdf/gr_branch_successor_standalone.pdf",
+      "expected": "exists"
+    },
+    {
+      "id": "GR.hardening_passed",
+      "branch": "GR",
+      "check": "hardening_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "YM.equivalence_report_passed",
+      "branch": "YM",
+      "check": "equivalence_report_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "YM.compile_target_passed",
+      "branch": "YM",
+      "check": "compile_target_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "YM.expected_posture_preserved",
+      "branch": "YM",
+      "check": "expected_posture_preserved",
+      "status": "pass",
+      "observed": {
+        "equivalence": "conditional-cert-close",
+        "computed": "conditional-cert-close"
+      },
+      "expected": "conditional-cert-close"
+    },
+    {
+      "id": "YM.expected_frontier_profile_preserved",
+      "branch": "YM",
+      "check": "expected_frontier_profile_preserved",
+      "status": "pass",
+      "observed": [
+        "ob:YM.B3.A2"
+      ],
+      "expected": [
+        "ob:YM.B3.A2"
+      ]
+    },
+    {
+      "id": "YM.no_supersession_effect",
+      "branch": "YM",
+      "check": "no_supersession_effect",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": [
+        "none",
+        "none; pilot shell only"
+      ]
+    },
+    {
+      "id": "YM.expected_active_frontiers_are_open",
+      "branch": "YM",
+      "check": "expected_active_frontiers_are_open",
+      "status": "pass",
+      "observed": {
+        "ob:YM.B3.A2": "O"
+      },
+      "expected": "all expected frontiers have effective status O"
+    },
+    {
+      "id": "YM.successor_tex_present",
+      "branch": "YM",
+      "check": "successor_tex_present",
+      "status": "pass",
+      "observed": "output/tex/ym_branch_successor_standalone.tex",
+      "expected": "exists"
+    },
+    {
+      "id": "YM.successor_pdf_present",
+      "branch": "YM",
+      "check": "successor_pdf_present",
+      "status": "pass",
+      "observed": "output/pdf/ym_branch_successor_standalone.pdf",
+      "expected": "exists"
+    },
+    {
+      "id": "SPEC.equivalence_report_passed",
+      "branch": "SPEC",
+      "check": "equivalence_report_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "SPEC.compile_target_passed",
+      "branch": "SPEC",
+      "check": "compile_target_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "SPEC.expected_posture_preserved",
+      "branch": "SPEC",
+      "check": "expected_posture_preserved",
+      "status": "pass",
+      "observed": {
+        "equivalence": "cert-close",
+        "computed": "cert-close"
+      },
+      "expected": "cert-close"
+    },
+    {
+      "id": "SPEC.expected_frontier_profile_preserved",
+      "branch": "SPEC",
+      "check": "expected_frontier_profile_preserved",
+      "status": "pass",
+      "observed": [],
+      "expected": []
+    },
+    {
+      "id": "SPEC.no_supersession_effect",
+      "branch": "SPEC",
+      "check": "no_supersession_effect",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": [
+        "none",
+        "none; pilot shell only"
+      ]
+    },
+    {
+      "id": "SPEC.expected_active_frontiers_are_open",
+      "branch": "SPEC",
+      "check": "expected_active_frontiers_are_open",
+      "status": "pass",
+      "observed": {},
+      "expected": "all expected frontiers have effective status O"
+    },
+    {
+      "id": "SPEC.successor_tex_present",
+      "branch": "SPEC",
+      "check": "successor_tex_present",
+      "status": "pass",
+      "observed": "output/tex/spec_branch_successor_standalone.tex",
+      "expected": "exists"
+    },
+    {
+      "id": "SPEC.successor_pdf_present",
+      "branch": "SPEC",
+      "check": "successor_pdf_present",
+      "status": "pass",
+      "observed": "output/pdf/spec_branch_successor_standalone.pdf",
+      "expected": "exists"
+    },
+    {
+      "id": "SCC.equivalence_report_passed",
+      "branch": "SCC",
+      "check": "equivalence_report_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "SCC.compile_target_passed",
+      "branch": "SCC",
+      "check": "compile_target_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "SCC.expected_posture_preserved",
+      "branch": "SCC",
+      "check": "expected_posture_preserved",
+      "status": "pass",
+      "observed": {
+        "equivalence": "conditional-cert-close",
+        "computed": "conditional-cert-close"
+      },
+      "expected": "conditional-cert-close"
+    },
+    {
+      "id": "SCC.expected_frontier_profile_preserved",
+      "branch": "SCC",
+      "check": "expected_frontier_profile_preserved",
+      "status": "pass",
+      "observed": [],
+      "expected": []
+    },
+    {
+      "id": "SCC.no_supersession_effect",
+      "branch": "SCC",
+      "check": "no_supersession_effect",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": [
+        "none",
+        "none; pilot shell only"
+      ]
+    },
+    {
+      "id": "SCC.expected_active_frontiers_are_open",
+      "branch": "SCC",
+      "check": "expected_active_frontiers_are_open",
+      "status": "pass",
+      "observed": {},
+      "expected": "all expected frontiers have effective status O"
+    },
+    {
+      "id": "SCC.successor_tex_present",
+      "branch": "SCC",
+      "check": "successor_tex_present",
+      "status": "pass",
+      "observed": "output/tex/scc_branch_successor_standalone.tex",
+      "expected": "exists"
+    },
+    {
+      "id": "SCC.successor_pdf_present",
+      "branch": "SCC",
+      "check": "successor_pdf_present",
+      "status": "pass",
+      "observed": "output/pdf/scc_branch_successor_standalone.pdf",
+      "expected": "exists"
+    },
+    {
+      "id": "CRYST.equivalence_report_passed",
+      "branch": "CRYST",
+      "check": "equivalence_report_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "CRYST.compile_target_passed",
+      "branch": "CRYST",
+      "check": "compile_target_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "CRYST.expected_posture_preserved",
+      "branch": "CRYST",
+      "check": "expected_posture_preserved",
+      "status": "pass",
+      "observed": {
+        "equivalence": "conditional-cert-close",
+        "computed": "conditional-cert-close"
+      },
+      "expected": "conditional-cert-close"
+    },
+    {
+      "id": "CRYST.expected_frontier_profile_preserved",
+      "branch": "CRYST",
+      "check": "expected_frontier_profile_preserved",
+      "status": "pass",
+      "observed": [
+        "ob:CRYST.phase-problem"
+      ],
+      "expected": [
+        "ob:CRYST.phase-problem"
+      ]
+    },
+    {
+      "id": "CRYST.no_supersession_effect",
+      "branch": "CRYST",
+      "check": "no_supersession_effect",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": [
+        "none",
+        "none; pilot shell only"
+      ]
+    },
+    {
+      "id": "CRYST.expected_active_frontiers_are_open",
+      "branch": "CRYST",
+      "check": "expected_active_frontiers_are_open",
+      "status": "pass",
+      "observed": {
+        "ob:CRYST.phase-problem": "O"
+      },
+      "expected": "all expected frontiers have effective status O"
+    },
+    {
+      "id": "CRYST.successor_tex_present",
+      "branch": "CRYST",
+      "check": "successor_tex_present",
+      "status": "pass",
+      "observed": "output/tex/cryst_branch_successor_standalone.tex",
+      "expected": "exists"
+    },
+    {
+      "id": "CRYST.successor_pdf_present",
+      "branch": "CRYST",
+      "check": "successor_pdf_present",
+      "status": "pass",
+      "observed": "output/pdf/cryst_branch_successor_standalone.pdf",
+      "expected": "exists"
+    },
+    {
+      "id": "LING.equivalence_report_passed",
+      "branch": "LING",
+      "check": "equivalence_report_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "LING.compile_target_passed",
+      "branch": "LING",
+      "check": "compile_target_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "LING.expected_posture_preserved",
+      "branch": "LING",
+      "check": "expected_posture_preserved",
+      "status": "pass",
+      "observed": {
+        "equivalence": "conditional-cert-close",
+        "computed": "conditional-cert-close"
+      },
+      "expected": "conditional-cert-close"
+    },
+    {
+      "id": "LING.expected_frontier_profile_preserved",
+      "branch": "LING",
+      "check": "expected_frontier_profile_preserved",
+      "status": "pass",
+      "observed": [
+        "ob:LING.REF-INVIS-RECOV"
+      ],
+      "expected": [
+        "ob:LING.REF-INVIS-RECOV"
+      ]
+    },
+    {
+      "id": "LING.no_supersession_effect",
+      "branch": "LING",
+      "check": "no_supersession_effect",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": [
+        "none",
+        "none; pilot shell only"
+      ]
+    },
+    {
+      "id": "LING.expected_active_frontiers_are_open",
+      "branch": "LING",
+      "check": "expected_active_frontiers_are_open",
+      "status": "pass",
+      "observed": {
+        "ob:LING.REF-INVIS-RECOV": "O"
+      },
+      "expected": "all expected frontiers have effective status O"
+    },
+    {
+      "id": "LING.successor_tex_present",
+      "branch": "LING",
+      "check": "successor_tex_present",
+      "status": "pass",
+      "observed": "output/tex/ling_branch_successor_standalone.tex",
+      "expected": "exists"
+    },
+    {
+      "id": "LING.successor_pdf_present",
+      "branch": "LING",
+      "check": "successor_pdf_present",
+      "status": "pass",
+      "observed": "output/pdf/ling_branch_successor_standalone.pdf",
+      "expected": "exists"
+    },
+    {
+      "id": "BIO.equivalence_report_passed",
+      "branch": "BIO",
+      "check": "equivalence_report_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "BIO.compile_target_passed",
+      "branch": "BIO",
+      "check": "compile_target_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "BIO.expected_posture_preserved",
+      "branch": "BIO",
+      "check": "expected_posture_preserved",
+      "status": "pass",
+      "observed": {
+        "equivalence": "conditional-cert-close",
+        "computed": "conditional-cert-close"
+      },
+      "expected": "conditional-cert-close"
+    },
+    {
+      "id": "BIO.expected_frontier_profile_preserved",
+      "branch": "BIO",
+      "check": "expected_frontier_profile_preserved",
+      "status": "pass",
+      "observed": [
+        "ob:BIO.BND-open"
+      ],
+      "expected": [
+        "ob:BIO.BND-open"
+      ]
+    },
+    {
+      "id": "BIO.no_supersession_effect",
+      "branch": "BIO",
+      "check": "no_supersession_effect",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": [
+        "none",
+        "none; pilot shell only"
+      ]
+    },
+    {
+      "id": "BIO.expected_active_frontiers_are_open",
+      "branch": "BIO",
+      "check": "expected_active_frontiers_are_open",
+      "status": "pass",
+      "observed": {
+        "ob:BIO.BND-open": "O"
+      },
+      "expected": "all expected frontiers have effective status O"
+    },
+    {
+      "id": "BIO.successor_tex_present",
+      "branch": "BIO",
+      "check": "successor_tex_present",
+      "status": "pass",
+      "observed": "output/tex/bio_branch_successor_standalone.tex",
+      "expected": "exists"
+    },
+    {
+      "id": "BIO.successor_pdf_present",
+      "branch": "BIO",
+      "check": "successor_pdf_present",
+      "status": "pass",
+      "observed": "output/pdf/bio_branch_successor_standalone.pdf",
+      "expected": "exists"
+    },
+    {
+      "id": "SM.equivalence_report_passed",
+      "branch": "SM",
+      "check": "equivalence_report_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "SM.compile_target_passed",
+      "branch": "SM",
+      "check": "compile_target_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "SM.expected_posture_preserved",
+      "branch": "SM",
+      "check": "expected_posture_preserved",
+      "status": "pass",
+      "observed": {
+        "equivalence": "intrinsic-structural-close",
+        "computed": "intrinsic-structural-close"
+      },
+      "expected": "intrinsic-structural-close"
+    },
+    {
+      "id": "SM.expected_frontier_profile_preserved",
+      "branch": "SM",
+      "check": "expected_frontier_profile_preserved",
+      "status": "pass",
+      "observed": [
+        "ob:SM.O-IDcont"
+      ],
+      "expected": [
+        "ob:SM.O-IDcont"
+      ]
+    },
+    {
+      "id": "SM.no_supersession_effect",
+      "branch": "SM",
+      "check": "no_supersession_effect",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": [
+        "none",
+        "none; pilot shell only"
+      ]
+    },
+    {
+      "id": "SM.expected_active_frontiers_are_open",
+      "branch": "SM",
+      "check": "expected_active_frontiers_are_open",
+      "status": "pass",
+      "observed": {
+        "ob:SM.O-IDcont": "O"
+      },
+      "expected": "all expected frontiers have effective status O"
+    },
+    {
+      "id": "SM.successor_tex_present",
+      "branch": "SM",
+      "check": "successor_tex_present",
+      "status": "pass",
+      "observed": "output/tex/sm_branch_successor_standalone.tex",
+      "expected": "exists"
+    },
+    {
+      "id": "SM.successor_pdf_present",
+      "branch": "SM",
+      "check": "successor_pdf_present",
+      "status": "pass",
+      "observed": "output/pdf/sm_branch_successor_standalone.pdf",
+      "expected": "exists"
+    },
+    {
+      "id": "NS.equivalence_report_passed",
+      "branch": "NS",
+      "check": "equivalence_report_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "NS.compile_target_passed",
+      "branch": "NS",
+      "check": "compile_target_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "NS.expected_posture_preserved",
+      "branch": "NS",
+      "check": "expected_posture_preserved",
+      "status": "pass",
+      "observed": {
+        "equivalence": "domain-bounded-cert-close",
+        "computed": "domain-bounded-cert-close"
+      },
+      "expected": "domain-bounded-cert-close"
+    },
+    {
+      "id": "NS.expected_frontier_profile_preserved",
+      "branch": "NS",
+      "check": "expected_frontier_profile_preserved",
+      "status": "pass",
+      "observed": [
+        "ob:NS.bridge-stage2",
+        "front:NS.main"
+      ],
+      "expected": [
+        "front:NS.main",
+        "ob:NS.bridge-stage2"
+      ]
+    },
+    {
+      "id": "NS.no_supersession_effect",
+      "branch": "NS",
+      "check": "no_supersession_effect",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": [
+        "none",
+        "none; pilot shell only"
+      ]
+    },
+    {
+      "id": "NS.expected_active_frontiers_are_open",
+      "branch": "NS",
+      "check": "expected_active_frontiers_are_open",
+      "status": "pass",
+      "observed": {
+        "front:NS.main": "O",
+        "ob:NS.bridge-stage2": "O"
+      },
+      "expected": "all expected frontiers have effective status O"
+    },
+    {
+      "id": "NS.successor_tex_present",
+      "branch": "NS",
+      "check": "successor_tex_present",
+      "status": "pass",
+      "observed": "output/tex/ns_branch_successor_standalone.tex",
+      "expected": "exists"
+    },
+    {
+      "id": "NS.successor_pdf_present",
+      "branch": "NS",
+      "check": "successor_pdf_present",
+      "status": "pass",
+      "observed": "output/pdf/ns_branch_successor_standalone.pdf",
+      "expected": "exists"
+    },
+    {
+      "id": "RH.equivalence_report_passed",
+      "branch": "RH",
+      "check": "equivalence_report_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "RH.compile_target_passed",
+      "branch": "RH",
+      "check": "compile_target_passed",
+      "status": "pass",
+      "observed": "pdf_exists",
+      "expected": "passed"
+    },
+    {
+      "id": "RH.expected_posture_preserved",
+      "branch": "RH",
+      "check": "expected_posture_preserved",
+      "status": "pass",
+      "observed": {
+        "equivalence": "cert-proj",
+        "computed": "cert-proj"
+      },
+      "expected": "cert-proj"
+    },
+    {
+      "id": "RH.expected_frontier_profile_preserved",
+      "branch": "RH",
+      "check": "expected_frontier_profile_preserved",
+      "status": "pass",
+      "observed": [
+        "ob:RH.S1-ARC",
+        "thm:RH.S1.formal"
+      ],
+      "expected": [
+        "ob:RH.S1-ARC",
+        "thm:RH.S1.formal"
+      ]
+    },
+    {
+      "id": "RH.no_supersession_effect",
+      "branch": "RH",
+      "check": "no_supersession_effect",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": [
+        "none",
+        "none; pilot shell only"
+      ]
+    },
+    {
+      "id": "RH.expected_active_frontiers_are_open",
+      "branch": "RH",
+      "check": "expected_active_frontiers_are_open",
+      "status": "pass",
+      "observed": {
+        "ob:RH.S1-ARC": "O",
+        "thm:RH.S1.formal": "O"
+      },
+      "expected": "all expected frontiers have effective status O"
+    },
+    {
+      "id": "RH.successor_tex_present",
+      "branch": "RH",
+      "check": "successor_tex_present",
+      "status": "pass",
+      "observed": "output/tex/rh_branch_successor_standalone.tex",
+      "expected": "exists"
+    },
+    {
+      "id": "RH.successor_pdf_present",
+      "branch": "RH",
+      "check": "successor_pdf_present",
+      "status": "pass",
+      "observed": "output/pdf/rh_branch_successor_standalone.pdf",
+      "expected": "exists"
+    }
+  ],
+  "template": {
+    "required_checks": [
+      "equivalence_report_passed",
+      "compile_target_passed",
+      "expected_posture_preserved",
+      "expected_frontier_profile_preserved",
+      "no_supersession_effect",
+      "expected_active_frontiers_are_open",
+      "successor_tex_present",
+      "successor_pdf_present"
+    ],
+    "required_pilot_fields": [
+      "branch",
+      "status_id",
+      "generator",
+      "tex_target",
+      "pdf_target",
+      "compile_target_id",
+      "equivalence_report",
+      "expected_posture",
+      "expected_frontiers",
+      "must_not_claim",
+      "supersession_effect_allowed"
+    ]
+  }
+}

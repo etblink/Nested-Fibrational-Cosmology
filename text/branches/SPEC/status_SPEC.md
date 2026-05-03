@@ -1,0 +1,1 @@
+Current branch posture rendered from the reconciled claim graph.

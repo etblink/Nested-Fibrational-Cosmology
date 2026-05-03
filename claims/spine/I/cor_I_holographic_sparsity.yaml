@@ -1,0 +1,22 @@
+body_file: text/spine/I/cor_I_holographic_sparsity.md
+book: I
+canonical_xref:
+  canonical_label: Holographic Sparsity Corollary [U]
+  canonical_section: Book I §Entropy and Defect Duality
+  canonical_theorem: cor:holographic-sparsity
+  cross_check: 'Observational content is sparse: most of Omega is observationally
+    invisible; only Sigma_inf carries canonical information'
+declared_status: U
+dependencies:
+  requires:
+  - thm:I.ledger-entropy-duality
+id: cor:I.holographic-sparsity
+kind: corollary
+number: I.C.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Holographic Sparsity Corollary
+track: spine

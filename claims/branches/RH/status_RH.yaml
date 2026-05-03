@@ -1,0 +1,22 @@
+body_file: text/branches/RH/status_RH.md
+book: RH
+canonical_xref:
+  canonical_label: RH Branch Status — CERT-PROJ
+  canonical_section: RH §Branch Status
+  canonical_theorem: prop:RH-status
+  cross_check: Architecture constituted; S1-ARC is the irreducible arithmetic frontier
+declared_status: cert-proj
+dependencies:
+  requires:
+  - thm:RH.3
+  - ob:RH.4
+  - ob:RH.5
+id: status:RH
+kind: status_note
+number: RH.status
+scope:
+  certificate_scope: branch
+  domain: RH-branch
+  regime: RH-arithmetic-frontier
+title: RH Branch Posture
+track: branch

@@ -1,0 +1,47 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/GR/thm_GR_domain.md
+book: GR
+canonical_xref:
+  canonical_book: NFC_GR_Branch.tex
+  canonical_label: Domain-Bounded Gravity Closure Theorem (thm:GR.domain, number GR.9.1)
+  canonical_section: GR Domain-Bounded Closure §9
+  canonical_theorem: GR.9.1
+  cross_check: Stage 4+5 — final domain-bounded closure; establishes CERT-CLOSE on
+    D
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:GR.compat
+discharges:
+- basis:
+  - thm:GR.domain
+  kind: full
+  scope_relation: preserved
+  target: ob:GR.closure
+  transfer_basis: []
+  transfer_required: false
+id: thm:GR.domain
+imports: []
+kind: theorem
+number: GR.9.1
+proof_file: text/branches/GR/proof_thm_GR_domain.md
+scope:
+  certificate_scope: domain-bounded
+  continuum_license: book-VI-certified
+  domain: GR-branch
+  inherited_constraints:
+  - realized-domain-D
+  promotion_ceiling: C
+  regime: declared-GR-target
+supersedes: []
+tags:
+- gr
+- domain-bounded-closure
+title: Domain-Bounded Gravity Closure Theorem
+track: branch

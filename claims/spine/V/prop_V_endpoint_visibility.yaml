@@ -1,0 +1,22 @@
+body_file: text/spine/V/prop_V_endpoint_visibility.md
+book: V
+canonical_xref:
+  canonical_label: Endpoint Visibility Proposition [U]
+  canonical_section: Book V §Branch Propositions
+  canonical_theorem: prop:endpoint-visibility
+  cross_check: 'E = F(U) is branch-visible: invariant under source equivalence; UBLT
+    condition 3 derivation'
+declared_status: U
+dependencies:
+  requires:
+  - prop:V.branch-projection
+id: prop:V.endpoint-visibility
+kind: proposition
+number: V.P.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Endpoint Visibility Proposition
+track: spine

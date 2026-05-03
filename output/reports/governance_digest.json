@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.41.0",
+  "build_status": "passed-with-warnings",
+  "claims_count": 226,
+  "computed_statuses": 226,
+  "errors": 0,
+  "warnings": 3,
+  "info": 0,
+  "tex_files": 5,
+  "active_open_items": [
+    "front:NS.main",
+    "ob:BIO.BND-open",
+    "ob:CRYST.phase-problem",
+    "ob:GR.global-subcriticality",
+    "ob:LING.REF-INVIS-RECOV",
+    "ob:NS.bridge-stage2",
+    "ob:RH.S1-ARC",
+    "ob:SM.O-IDcont",
+    "ob:YM.B3.A2",
+    "thm:RH.S1.formal"
+  ],
+  "top_warning_types": [
+    "release-vs-computed-posture-mismatch",
+    "retired-alias-detected"
+  ]
+}

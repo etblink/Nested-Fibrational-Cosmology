@@ -1,0 +1,1 @@
+Status inflation is prohibited. No claim may acquire force beyond what its proof licenses. A conditional result cannot be re-presented as unconditional by change of notation, verbal compression, or contextual implication. A scoped certificate cannot be cited at wider scope without an explicit Transfer Theorem. The force of a result is determined by its proof, not its summary.

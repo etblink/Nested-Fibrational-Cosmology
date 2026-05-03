@@ -1,0 +1,1 @@
+The discrete balance identity holds unconditionally for the source-descended NS obstruction: for every test element f in the observable family, sum_k <D_k, f> = <D_inf, f>. The identity is the canonical decomposition of the obstruction quantity into its transport and defect components. No continuum or PASS hypothesis is needed.

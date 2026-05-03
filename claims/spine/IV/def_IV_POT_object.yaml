@@ -1,0 +1,22 @@
+body_file: text/spine/IV/def_IV_POT_object.md
+book: IV
+canonical_xref:
+  canonical_label: POT Object — Persistent Observable Type
+  canonical_section: Book IV §POT Category
+  canonical_theorem: def:POT-object
+  cross_check: A quadruple (Sigma, Lambda, T, D) of stabilized observational quotient,
+    linkage algebra, transfer structure, and defect bookkeeping
+declared_status: D
+dependencies:
+  requires:
+  - def:I.obs-quotient
+id: def:IV.POT-object
+kind: definition
+number: IV.D.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: POT Object
+track: spine

@@ -1,0 +1,168 @@
+pilot_standard:
+  description: Reusable standard for generated branch-successor pilot packets, including
+    frontier-preserving, zero-frontier, structural-scope, and non-physics linguistic
+    pilots.
+  level: L2
+  pilots:
+  - branch: GR
+    compile_target_id: gr_branch_successor
+    equivalence_report: output/reports/gr_successor_equivalence_report.json
+    expected_frontiers:
+    - ob:GR.global-subcriticality
+    expected_posture: domain-bounded-cert-close
+    generator: build/gr_branch_successor.py
+    hardening_report: output/reports/gr_l2_hardening_report.json
+    must_not_claim: global-cert-close
+    pdf_target: output/pdf/gr_branch_successor_standalone.pdf
+    status_id: status:GR
+    supersession_effect_allowed:
+    - none
+    - none; pilot shell only
+    tex_target: output/tex/gr_branch_successor_standalone.tex
+  - branch: YM
+    compile_target_id: ym_branch_successor
+    equivalence_report: output/reports/ym_successor_equivalence_report.json
+    expected_frontiers:
+    - ob:YM.B3.A2
+    expected_posture: conditional-cert-close
+    generator: build/ym_branch_successor.py
+    hardening_report: null
+    must_not_claim: unconditional-clay-cert-close
+    pdf_target: output/pdf/ym_branch_successor_standalone.pdf
+    status_id: status:YM
+    supersession_effect_allowed:
+    - none
+    - none; pilot shell only
+    tex_target: output/tex/ym_branch_successor_standalone.tex
+  - branch: SPEC
+    compile_target_id: spec_branch_successor
+    equivalence_report: output/reports/spec_successor_equivalence_report.json
+    expected_frontiers: []
+    expected_posture: cert-close
+    generator: build/spec_branch_successor.py
+    hardening_report: null
+    must_not_claim: matter-rich-spectroscopy-cert-close
+    pdf_target: output/pdf/spec_branch_successor_standalone.pdf
+    status_id: status:SPEC
+    supersession_effect_allowed:
+    - none
+    - none; pilot shell only
+    tex_target: output/tex/spec_branch_successor_standalone.tex
+  - branch: SCC
+    compile_target_id: scc_branch_successor
+    equivalence_report: output/reports/scc_successor_equivalence_report.json
+    expected_frontiers: []
+    expected_posture: conditional-cert-close
+    generator: build/scc_branch_successor.py
+    hardening_report: null
+    must_not_claim: phenomenological-consciousness-cert-close
+    pdf_target: output/pdf/scc_branch_successor_standalone.pdf
+    status_id: status:SCC
+    supersession_effect_allowed:
+    - none
+    - none; pilot shell only
+    tex_target: output/tex/scc_branch_successor_standalone.tex
+  - branch: CRYST
+    compile_target_id: cryst_branch_successor
+    equivalence_report: output/reports/cryst_successor_equivalence_report.json
+    expected_frontiers:
+    - ob:CRYST.phase-problem
+    expected_posture: conditional-cert-close
+    generator: build/cryst_branch_successor.py
+    hardening_report: null
+    must_not_claim: phase-problem-solved-or-absolute-crystallography-cert-close
+    pdf_target: output/pdf/cryst_branch_successor_standalone.pdf
+    status_id: status:CRYST
+    supersession_effect_allowed:
+    - none
+    - none; pilot shell only
+    tex_target: output/tex/cryst_branch_successor_standalone.tex
+  - branch: LING
+    compile_target_id: ling_branch_successor
+    equivalence_report: output/reports/ling_successor_equivalence_report.json
+    expected_frontiers:
+    - ob:LING.REF-INVIS-RECOV
+    expected_posture: conditional-cert-close
+    generator: build/ling_branch_successor.py
+    hardening_report: null
+    must_not_claim: full-reference-recovery
+    pdf_target: output/pdf/ling_branch_successor_standalone.pdf
+    status_id: status:LING
+    supersession_effect_allowed:
+    - none
+    - none; pilot shell only
+    tex_target: output/tex/ling_branch_successor_standalone.tex
+  - branch: BIO
+    compile_target_id: bio_branch_successor
+    equivalence_report: output/reports/bio_successor_equivalence_report.json
+    expected_frontiers:
+    - ob:BIO.BND-open
+    expected_posture: conditional-cert-close
+    generator: build/bio_branch_successor.py
+    hardening_report: null
+    must_not_claim: full-class-biology-cert-close-or-evolutionary-cert-close
+    pdf_target: output/pdf/bio_branch_successor_standalone.pdf
+    status_id: status:BIO
+    supersession_effect_allowed:
+    - none
+    - none; pilot shell only
+    tex_target: output/tex/bio_branch_successor_standalone.tex
+  - branch: SM
+    compile_target_id: sm_branch_successor
+    equivalence_report: output/reports/sm_successor_equivalence_report.json
+    expected_frontiers:
+    - ob:SM.O-IDcont
+    expected_posture: intrinsic-structural-close
+    generator: build/sm_branch_successor.py
+    hardening_report: null
+    must_not_claim: cert-close-or-full-empirical-sm
+    pdf_target: output/pdf/sm_branch_successor_standalone.pdf
+    status_id: status:SM
+    supersession_effect_allowed:
+    - none
+    - none; pilot shell only
+    tex_target: output/tex/sm_branch_successor_standalone.tex
+  - branch: NS
+    compile_target_id: ns_branch_successor
+    correction_note: Corrects stale frontier-blocked posture in governance repo.
+    equivalence_report: output/reports/ns_successor_equivalence_report.json
+    expected_frontiers:
+    - front:NS.main
+    - ob:NS.bridge-stage2
+    expected_posture: domain-bounded-cert-close
+    generator: build/ns_branch_successor.py
+    hardening_report: null
+    must_not_claim: unconditional-global-regularity-or-clay-prize
+    pdf_target: output/pdf/ns_branch_successor_standalone.pdf
+    status_id: status:NS
+    supersession_effect_allowed:
+    - none
+    - none; pilot shell only
+    tex_target: output/tex/ns_branch_successor_standalone.tex
+  - branch: RH
+    compile_target_id: rh_branch_successor
+    critical_note: S1-ARC must be [O]. Any other status = implicit RH proof claim.
+    equivalence_report: output/reports/rh_successor_equivalence_report.json
+    expected_frontiers:
+    - ob:RH.S1-ARC
+    - thm:RH.S1.formal
+    expected_posture: cert-proj
+    generator: build/rh_branch_successor.py
+    hardening_report: null
+    must_not_claim: rh-proved-or-s1-arc-closed
+    pdf_target: output/pdf/rh_branch_successor_standalone.pdf
+    status_id: status:RH
+    supersession_effect_allowed:
+    - none
+    - none; pilot shell only
+    tex_target: output/tex/rh_branch_successor_standalone.tex
+  required_checks:
+  - equivalence_report_passed
+  - compile_target_passed
+  - expected_posture_preserved
+  - expected_frontier_profile_preserved
+  - no_supersession_effect
+  - expected_active_frontiers_are_open
+  - successor_tex_present
+  - successor_pdf_present
+  version: '1.4'

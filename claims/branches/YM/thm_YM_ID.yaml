@@ -1,0 +1,47 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/thm_YM_ID.md
+book: YM
+canonical_xref:
+  canonical_label: YM Identity/Sourcing Theorem
+  canonical_section: YM Bridge Stack §1
+  canonical_theorem: YM.ID
+  cross_check: Discharges ob:YM.O-ID; first rung of YM bridge stack
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VII.6.4
+discharges:
+- basis:
+  - thm:YM.ID
+  kind: full
+  scope_relation: preserved
+  target: ob:YM.O-ID
+  transfer_basis: []
+  transfer_required: false
+id: thm:YM.ID
+imports: []
+kind: theorem
+number: YM.ID
+proof_file: text/branches/YM/proof_thm_YM_ID.md
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - source-identification
+  - msc-normalized
+  promotion_ceiling: C
+  regime: ym-bridge-stack
+supersedes: []
+tags:
+- ym
+- bridge-stack
+- source-identification
+title: YM Identification Discharge Packet
+track: branch

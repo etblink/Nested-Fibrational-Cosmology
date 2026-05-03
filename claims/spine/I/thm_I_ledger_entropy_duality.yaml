@@ -1,0 +1,23 @@
+body_file: text/spine/I/thm_I_ledger_entropy_duality.md
+book: I
+canonical_xref:
+  canonical_label: Ledger-Entropy Duality Theorem [U]
+  canonical_section: Book I §Entropy and Defect Duality
+  canonical_theorem: thm:ledger-entropy-duality
+  cross_check: D(chi) = H_0 - H_inf for stabilized chains; defect and entropy are
+    dual accounting systems
+declared_status: U
+dependencies:
+  requires:
+  - thm:I.entropy-monotone
+  - prop:I.ledger-additivity
+id: thm:I.ledger-entropy-duality
+kind: theorem
+number: I.T.5
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Ledger–Entropy Duality Theorem
+track: spine

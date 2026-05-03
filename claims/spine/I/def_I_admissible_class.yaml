@@ -1,0 +1,21 @@
+body_file: text/spine/I/def_I_admissible_class.md
+book: I
+canonical_xref:
+  canonical_label: Admissible Class Definition (A1–A4)
+  canonical_section: Book I §Observational Structure
+  canonical_theorem: def:admissible-class
+  cross_check: 'Four axioms: closure under typed composition (A1), structural invariance
+    (A2), base-signature accountability (A3), finite output control (A4)'
+declared_status: D
+dependencies:
+  requires: []
+id: def:I.admissible-class
+kind: definition
+number: I.D.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Admissible Class (A1–A4)
+track: spine

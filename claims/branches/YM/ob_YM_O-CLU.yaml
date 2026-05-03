@@ -1,0 +1,39 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/ob_YM_O_CLU.md
+book: YM
+canonical_xref:
+  canonical_label: YM Clustering Obligation
+  canonical_section: YM Obligations
+  canonical_theorem: ob:YM.O-CLU
+  cross_check: Discharged by thm:YM.CLU
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: ob:YM.O-CLU
+imports: []
+kind: obligation
+number: YM.O-CLU
+proof_file: null
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - cluster-vacuum
+  promotion_ceiling: C
+  regime: ym-bridge-stack
+supersedes: []
+tags:
+- cluster-vacuum
+- discharged-conditionally
+- obligation
+- ym
+title: Cluster / Vacuum Uniqueness Obligation
+track: branch

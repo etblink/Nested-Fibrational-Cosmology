@@ -1,0 +1,40 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/ob_YM_B3.md
+book: YM
+canonical_xref:
+  canonical_label: YM B3 Post-Program Obligation
+  canonical_section: YM Post-Program Obligations
+  canonical_theorem: ob:YM.B3
+  cross_check: Conditionally discharged by thm:YM.B3.bridge; B3-A2 residual
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: ob:YM.B3
+imports: []
+kind: obligation
+number: YM.B3
+proof_file: null
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - compact-simple-su3-bridge
+  promotion_ceiling: C
+  regime: ym-postprogram
+supersedes: []
+tags:
+- compact-simple-su3-bridge
+- discharged-conditionally
+- obligation
+- postprogram
+- ym
+title: B3 Compact Simple SU(3) Bridge Residual
+track: branch

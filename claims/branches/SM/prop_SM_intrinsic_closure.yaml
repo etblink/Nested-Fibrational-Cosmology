@@ -1,0 +1,54 @@
+body_file: text/branches/SM/prop_SM_intrinsic_closure.md
+book: SM
+canonical_xref:
+  canonical_label: Conditional SM Intrinsic Structural Closure [C]
+  canonical_section: SM §Intrinsic Closure
+  canonical_theorem: prop:SM-intrinsic
+  cross_check: Four SM internal obligations conditionally discharged; inherits YM+GR
+    scope limits
+declared_status: C
+dependencies:
+  requires:
+  - thm:SM.harmonization-partial
+  - thm:SM.higgs-source-descended
+  - thm:SM.coupling-transfer-full
+  - thm:SM.18.1
+discharges:
+- basis:
+  - prop:SM.intrinsic-closure
+  kind: scoped
+  scope_relation: restricted
+  target: ob:SM.harmonization
+  transfer_required: false
+- basis:
+  - prop:SM.intrinsic-closure
+  kind: scoped
+  scope_relation: restricted
+  target: ob:SM.matter
+  transfer_required: false
+- basis:
+  - prop:SM.intrinsic-closure
+  kind: scoped
+  scope_relation: restricted
+  target: ob:SM.higgs
+  transfer_required: false
+- basis:
+  - prop:SM.intrinsic-closure
+  kind: scoped
+  scope_relation: restricted
+  target: ob:SM.coupling-transfer
+  transfer_required: false
+id: prop:SM.intrinsic-closure
+kind: proposition
+number: SM.intrinsic-closure
+proof_file: text/branches/SM/proof_prop_SM_intrinsic_closure.md
+scope:
+  certificate_scope: intrinsic-structural
+  domain: SM-branch
+  inherited_constraints:
+  - YM-all-open-obligations
+  - GR-curvature-subcriticality
+  promotion_ceiling: C
+  regime: SM-super-sector
+title: Conditional SM Intrinsic Structural Closure
+track: branch

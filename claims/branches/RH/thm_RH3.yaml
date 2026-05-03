@@ -1,0 +1,27 @@
+body_file: text/branches/RH/thm_RH3.md
+book: RH
+canonical_xref:
+  canonical_label: RH3 — Admissible Probe Space H_RH [C]
+  canonical_section: RH §Six-Step Ladder
+  canonical_theorem: thm:RH3
+  cross_check: SCC-admissible probe space; RH iff K(t,u) positive-definite
+declared_status: C
+dependencies:
+  requires:
+  - thm:RH.2
+  - thm:SCC.MCS
+discharges: []
+id: thm:RH.3
+kind: theorem
+number: RH.3
+proof_file: text/branches/RH/proof_thm_RH3.md
+scope:
+  certificate_scope: branch
+  domain: RH-branch
+  inherited_constraints:
+  - SCC-M1-M4
+  - SCC-RH-kernel-positivity-equivalence
+  promotion_ceiling: C
+  regime: RH-SCC-admissible
+title: RH3 — Admissible Probe Space
+track: branch

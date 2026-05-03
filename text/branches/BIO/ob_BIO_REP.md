@@ -1,0 +1,1 @@
+Show that the replication kernel \Phi{}_Bio is sourced through U and satisfies the carrier-descent conditions. The kernel must be derived from the SCC role-carrier machinery without importing genes, cells, or primitive biological vocabulary.

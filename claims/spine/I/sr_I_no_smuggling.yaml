@@ -1,0 +1,21 @@
+body_file: text/spine/I/sr_I_no_smuggling.md
+book: I
+canonical_xref:
+  canonical_label: No-Smuggling Rule
+  canonical_section: Book I §Source Architecture
+  canonical_theorem: sr:no-smuggling
+  cross_check: No undeclared external structure; all imports must be in the declared
+    import ledger
+declared_status: D
+dependencies:
+  requires: []
+id: sr:I.no-smuggling
+kind: standing_rule
+number: I.SR.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: No-Smuggling Rule
+track: spine

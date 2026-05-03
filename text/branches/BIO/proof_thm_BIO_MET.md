@@ -1,0 +1,1 @@
+The metabolic ledger inherits additivity from the carrier-transport algebra established in thm:BIO.REP. The independence condition is carrier-algebraic: two replication events are metabolically independent when their carrier supports are disjoint in the replication record.

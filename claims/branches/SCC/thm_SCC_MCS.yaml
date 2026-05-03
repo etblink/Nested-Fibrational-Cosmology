@@ -1,0 +1,52 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/SCC/thm_SCC_MCS.md
+book: SCC
+canonical_xref:
+  canonical_label: SCC Minimal Carrier Structure Theorem [C]
+  canonical_section: SCC §MCS
+  canonical_theorem: thm:SCC.MCS
+  cross_check: Structural counterfactual capacity at minimal faithful carrier level;
+    feeds RH.S1-COMP
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VII.6.4
+discharges:
+- basis:
+  - thm:SCC.MCS
+  kind: scoped
+  scope_relation: preserved
+  target: ob:SCC.MCS
+  transfer_basis: []
+  transfer_required: false
+id: thm:SCC.MCS
+imports:
+- items:
+  - thm:VII.6.4
+  source: book:VII
+kind: theorem
+number: SCC.MCS
+proof_file: text/branches/SCC/proof_thm_SCC_MCS.md
+scope:
+  certificate_scope: branch-wide
+  continuum_license: none
+  domain: SCC-branch
+  inherited_constraints:
+  - MCS
+  - UC
+  - TSI
+  promotion_ceiling: conditional-cert-close
+  regime: scc-branch-governance
+supersedes: []
+tags:
+- scc
+- conditional-cert-close
+- inference-basis
+title: SCC Minimal Structural Carrier Existence/Selection Packet
+track: branch

@@ -1,0 +1,143 @@
+{
+  "status": "passed",
+  "schema_version": "0.35.0",
+  "branches_processed": [
+    "NS",
+    "SM",
+    "RH",
+    "BIO",
+    "LING",
+    "CRYST",
+    "SCC",
+    "SPEC"
+  ],
+  "xref_annotations_added": {
+    "NS": 0,
+    "SM": 0,
+    "RH": 0,
+    "BIO": 0,
+    "LING": 0,
+    "CRYST": 0,
+    "SCC": 0,
+    "SPEC": 0
+  },
+  "certificates": [
+    {
+      "branch": "NS",
+      "status": "passed",
+      "l3_level": "release_candidate",
+      "schema_version": "0.35.0",
+      "posture": "domain-bounded-cert-close",
+      "active_frontier": "front:NS.main",
+      "frontier_label": "Stage-3 Global Unconditional Regularity (Clay Prize)",
+      "special_note": "Stale-posture correction: preamble says frontier-blocked; actual posture is domain-bounded-cert-close.",
+      "supersession_effect": "none",
+      "claim_count": 17,
+      "xref_count": 16,
+      "prose_ok_count": 16
+    },
+    {
+      "branch": "SM",
+      "status": "passed",
+      "l3_level": "release_candidate",
+      "schema_version": "0.35.0",
+      "posture": "intrinsic-structural-close",
+      "active_frontier": "ob:SM.O-IDcont",
+      "frontier_label": "O-IDcont Continuum/Operator Identification Force Upgrade",
+      "special_note": "First pilot to exercise intrinsic-structural-close posture. thm:SM.three-gen is [U] (unconditional).",
+      "supersession_effect": "none",
+      "claim_count": 14,
+      "xref_count": 14,
+      "prose_ok_count": 14
+    },
+    {
+      "branch": "RH",
+      "status": "passed",
+      "l3_level": "release_candidate",
+      "schema_version": "0.35.0",
+      "posture": "cert-proj",
+      "active_frontier": "ob:RH.S1-ARC",
+      "frontier_label": "S1-ARC: Q[psi]>=0 from arithmetic structure of Xi \u2014 IRREDUCIBLE",
+      "special_note": "CRITICAL: S1-ARC is [O]. This certificate explicitly records that RH is not proved.",
+      "supersession_effect": "none",
+      "claim_count": 12,
+      "xref_count": 12,
+      "prose_ok_count": 12
+    },
+    {
+      "branch": "BIO",
+      "status": "passed",
+      "l3_level": "release_candidate",
+      "schema_version": "0.35.0",
+      "posture": "conditional-cert-close",
+      "active_frontier": "ob:BIO.BND-open",
+      "frontier_label": "Boundary Self-Organization for Full Replicator Class",
+      "special_note": "No biological primitives (genes, cells, fitness, membrane biophysics) imported.",
+      "supersession_effect": "none",
+      "claim_count": 16,
+      "xref_count": 16,
+      "prose_ok_count": 16
+    },
+    {
+      "branch": "LING",
+      "status": "passed",
+      "l3_level": "release_candidate",
+      "schema_version": "0.35.0",
+      "posture": "conditional-cert-close",
+      "active_frontier": "ob:LING.REF-INVIS-RECOV",
+      "frontier_label": "Reference Invisibility/Recovery Frontier",
+      "special_note": null,
+      "supersession_effect": "none",
+      "claim_count": 3,
+      "xref_count": 3,
+      "prose_ok_count": 3
+    },
+    {
+      "branch": "CRYST",
+      "status": "passed",
+      "l3_level": "release_candidate",
+      "schema_version": "0.35.0",
+      "posture": "conditional-cert-close",
+      "active_frontier": "ob:CRYST.phase-problem",
+      "frontier_label": "Crystallographic Phase Problem",
+      "special_note": null,
+      "supersession_effect": "none",
+      "claim_count": 3,
+      "xref_count": 3,
+      "prose_ok_count": 3
+    },
+    {
+      "branch": "SCC",
+      "status": "passed",
+      "l3_level": "release_candidate",
+      "schema_version": "0.35.0",
+      "posture": "conditional-cert-close",
+      "active_frontier": null,
+      "frontier_label": "No active SCC-local frontier",
+      "special_note": "No phenomenological or consciousness overclaim.",
+      "supersession_effect": "none",
+      "claim_count": 7,
+      "xref_count": 7,
+      "prose_ok_count": 7
+    },
+    {
+      "branch": "SPEC",
+      "status": "passed",
+      "l3_level": "release_candidate",
+      "schema_version": "0.35.0",
+      "posture": "cert-close",
+      "active_frontier": null,
+      "frontier_label": "No active SPEC-local frontier (gauge-response scope)",
+      "special_note": null,
+      "supersession_effect": "none",
+      "claim_count": 2,
+      "xref_count": 2,
+      "prose_ok_count": 2
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "passed": 8,
+    "needs_review": 0
+  }
+}

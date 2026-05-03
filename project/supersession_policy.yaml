@@ -1,0 +1,60 @@
+supersession_policy:
+  version: 0.24.0
+  status: pilot
+  goal: eventual generated successor corpus for NFC spine and branch books
+  principle: replace only after equivalence, auditability, compile verification, and
+    release approval
+  non_goals_v18:
+  - do not replace any current spine book
+  - do not replace any current branch book
+  - do not migrate full theorem prose
+  - do not treat governance-table import as corpus supersession
+  supersession_levels:
+  - level: L0
+    name: audit-only
+    meaning: governance engine audits existing canon metadata without authoring replacement
+      text
+  - level: L1
+    name: importable-governance-appendix
+    meaning: generated tables may be imported into current books as appendices/status
+      packets
+  - level: L2
+    name: branch-pilot-generated-packet
+    meaning: one branch has generated governance shell and hand-authored theorem bodies,
+      with equivalence report
+  - level: L3
+    name: branch-successor-release-candidate
+    meaning: generated branch book compiles, matches current canon claims, and has
+      accepted delta report
+  - level: L4
+    name: spine-successor-release-candidate
+    meaning: generated spine book compiles and passes theorem/dependency equivalence
+      checks
+  - level: L5
+    name: full-corpus-supersession
+    meaning: all spine and branch books are generated from structured source and current
+      books are archived as superseded inputs
+  required_gates_for_full_supersession:
+  - zero audit errors
+  - zero release reconciliation mismatches
+  - schema validation for every claim
+  - dependency closure for every theorem-like object
+  - frontier register equivalence
+  - branch posture equivalence
+  - claim catalog equivalence
+  - source-text preservation or reviewed intentional rewrite
+  - compiled PDF equivalence review
+  - release-diff basis for every change
+  - human approval recorded in DECISION_LOG.md
+  current_level: L2
+  approved_for_full_supersession: false
+  recommended_next_level: L2-generator-hardening
+  non_goals_v19:
+  - do not supersede the live GR branch book
+  - do not migrate full theorem proof prose beyond pilot stubs
+  - do not claim full branch successor status before equivalence and review gates
+    mature
+  non_goals_v24:
+  - do not supersede the live SPEC branch book
+  - do not widen SPEC closure beyond the declared gauge-response spectroscopy regime
+  - do not infer matter-rich spectroscopy closure from the SPEC pilot

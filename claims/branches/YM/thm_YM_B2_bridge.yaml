@@ -1,0 +1,47 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/thm_YM_B2_bridge.md
+book: YM
+canonical_xref:
+  canonical_label: YM B2 Post-Program Bridge (Domain Extension)
+  canonical_section: YM Post-Program Bridges
+  canonical_theorem: YM.B2
+  cross_check: Conditionally discharges ob:YM.B2
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:YM.7
+discharges:
+- basis:
+  - thm:YM.B2.bridge
+  kind: scoped
+  scope_relation: restricted
+  target: ob:YM.B2
+  transfer_basis: []
+  transfer_required: false
+id: thm:YM.B2.bridge
+imports: []
+kind: theorem
+number: YM.B2
+proof_file: text/branches/YM/proof_thm_YM_B2_bridge.md
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - domain-bridge
+  - conditional-postprogram
+  promotion_ceiling: C
+  regime: ym-postprogram
+supersedes: []
+tags:
+- ym
+- postprogram
+- domain-bridge
+title: B2 Domain Bridge Conditional Packet
+track: branch

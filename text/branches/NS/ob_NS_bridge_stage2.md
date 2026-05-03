@@ -1,0 +1,1 @@
+Intermediate NS bridge-stage obligation used to test explicit discharge edges.

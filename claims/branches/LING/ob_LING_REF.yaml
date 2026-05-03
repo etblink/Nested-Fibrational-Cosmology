@@ -1,0 +1,21 @@
+body_file: text/branches/LING/ob_LING_REF.md
+book: LING
+canonical_xref:
+  canonical_label: Reference Invisibility/Recovery Frontier [O] ACTIVE FRONTIER
+  canonical_section: LING §Frontier
+  canonical_theorem: ob:LING.REF
+  cross_check: Reference recovery is live structural frontier; contrast closure does
+    not solve it
+declared_status: O
+dependencies:
+  requires:
+  - thm:LING.END
+id: ob:LING.REF-INVIS-RECOV
+kind: obligation
+number: LING.REF
+scope:
+  certificate_scope: branch
+  domain: LING-branch
+  regime: contrast-compositional-context-response
+title: Reference Invisibility / Recovery Frontier
+track: branch

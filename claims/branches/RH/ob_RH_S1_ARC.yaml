@@ -1,0 +1,26 @@
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/RH/ob_RH_S1_ARC.md
+book: RH
+canonical_xref:
+  canonical_label: S1-ARC — Q[psi]>=0 from arithmetic structure of Xi [O] IRREDUCIBLE
+  canonical_section: RH §S1 Formal Packet — IRREDUCIBLE
+  canonical_theorem: S1-ARC
+  cross_check: THIS IS THE MATHEMATICAL CONTENT OF RH ITSELF. NOT discharged. Not
+    claimed proved.
+declared_status: O
+dependencies:
+  requires: []
+discharges: []
+id: ob:RH.S1-ARC
+kind: frontier
+number: RH.S1-ARC
+scope:
+  certificate_scope: arithmetic-irreducible
+  domain: RH-branch
+  promotion_ceiling: O
+  regime: RH-pure-arithmetic
+title: S1-ARC — Prove Q[psi]>=0 from Arithmetic Structure of Xi (IRREDUCIBLE FRONTIER)
+track: branch

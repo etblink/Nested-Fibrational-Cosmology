@@ -1,0 +1,21 @@
+body_file: text/spine/I/lem_I_obs_equiv_equiv.md
+book: I
+canonical_xref:
+  canonical_label: Observational Equivalence is an Equivalence Relation [U]
+  canonical_section: Book I §Observational Structure
+  canonical_theorem: lem:obs-equiv-equiv
+  cross_check: Reflexivity, symmetry, transitivity — unconditional from the definition
+declared_status: U
+dependencies:
+  requires:
+  - def:I.obs-equiv
+id: lem:I.obs-equiv-equiv
+kind: theorem
+number: I.L.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Observational Equivalence is an Equivalence Relation
+track: spine

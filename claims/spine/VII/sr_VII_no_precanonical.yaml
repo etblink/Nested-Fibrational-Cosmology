@@ -1,0 +1,20 @@
+body_file: text/spine/VII/sr_VII_no_precanonical.md
+book: VII
+canonical_xref:
+  canonical_label: Pre-Canonical Force Standing Rule
+  canonical_section: Book VII §Status Inflation
+  canonical_theorem: sr:precanonical-force
+  cross_check: Pre-canonical derivations have no canonical force; force requires re-derivation
+declared_status: D
+dependencies:
+  requires: []
+id: sr:VII.no-precanonical
+kind: standing_rule
+number: VII.SR.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Pre-Canonical Force Standing Rule
+track: spine

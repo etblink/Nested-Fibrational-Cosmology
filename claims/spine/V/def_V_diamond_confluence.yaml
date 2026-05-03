@@ -1,0 +1,22 @@
+body_file: text/spine/V/def_V_diamond_confluence.md
+book: V
+canonical_xref:
+  canonical_label: Diamond Confluence — two distinct paths to the same endpoint
+  canonical_section: Book V §Diamond Confluence
+  canonical_theorem: def:diamond-confluence
+  cross_check: Two lawful descent paths that are path-distinct but endpoint-equivalent;
+    the canonical multiplicity-without-inflation configuration
+declared_status: D
+dependencies:
+  requires:
+  - def:V.endpoint-datum
+id: def:V.diamond-confluence
+kind: definition
+number: V.D.5
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Diamond Confluence Configuration
+track: spine

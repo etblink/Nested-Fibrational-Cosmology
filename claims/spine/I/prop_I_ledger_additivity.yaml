@@ -1,0 +1,22 @@
+body_file: text/spine/I/prop_I_ledger_additivity.md
+book: I
+canonical_xref:
+  canonical_label: Defect Ledger Additivity [U]
+  canonical_section: Book I §Defect Structure
+  canonical_theorem: prop:ledger-additivity
+  cross_check: D(chi1 + chi2) = D(chi1) + D(chi2) for concatenated survivor chains
+declared_status: U
+dependencies:
+  requires:
+  - def:I.defect-ledger
+  - prop:I.defect-nonneg
+id: prop:I.ledger-additivity
+kind: proposition
+number: I.P.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Defect Ledger Additivity
+track: spine

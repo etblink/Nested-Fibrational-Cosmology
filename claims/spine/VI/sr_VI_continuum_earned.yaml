@@ -1,0 +1,21 @@
+body_file: text/spine/VI/sr_VI_continuum_earned.md
+book: VI
+canonical_xref:
+  canonical_label: Continuum-Earned Standing Rule
+  canonical_section: Book VI §Standing Rules
+  canonical_theorem: sr:continuum-earned
+  cross_check: Continuum notation must be earned by a certified continuum bridge;
+    it cannot be assumed as background
+declared_status: D
+dependencies:
+  requires: []
+id: sr:VI.continuum-earned
+kind: standing_rule
+number: VI.SR.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Continuum-Earned Standing Rule
+track: spine

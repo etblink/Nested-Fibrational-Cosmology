@@ -1,0 +1,22 @@
+audit:
+  local_label_hardened_in: v15
+body_file: text/branches/SCC/status_SCC.md
+book: SCC
+canonical_xref:
+  canonical_label: SCC Branch Status — conditional-cert-close (MCS+UC+TSI)
+  canonical_section: SCC §Branch Status
+  canonical_theorem: status:SCC
+  cross_check: No active SCC-local frontier; feeds RH/BIO/YM structurally
+declared_status: conditional-cert-close
+dependencies:
+  requires:
+  - thm:VII.6.4
+id: status:SCC
+kind: status_note
+number: SCC.status
+scope:
+  certificate_scope: branch
+  domain: SCC-branch
+  regime: scc-branch-governance
+title: SCC Branch Posture
+track: branch

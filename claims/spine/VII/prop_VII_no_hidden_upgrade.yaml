@@ -1,0 +1,22 @@
+body_file: text/spine/VII/prop_VII_no_hidden_upgrade.md
+book: VII
+canonical_xref:
+  canonical_label: No-Hidden-Upgrade Rule [U]
+  canonical_section: Book VII §Import Discipline
+  canonical_theorem: prop:no-hidden-upgrade
+  cross_check: 'Endpoint label must pass four tests: eliminability, no-ontology-upgrade,
+    no-enlargement, no-scope-inflation'
+declared_status: U
+dependencies:
+  requires:
+  - thm:VII.6.4
+id: prop:VII.no-hidden-upgrade
+kind: proposition
+number: VII.P.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: No-Hidden-Upgrade Rule
+track: spine

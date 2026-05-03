@@ -1,0 +1,22 @@
+body_file: text/spine/V/def_V_hidden_channel.md
+book: V
+canonical_xref:
+  canonical_label: Hidden Channel — undeclared structure contribution to endpoint
+  canonical_section: Book V §Hidden Channels
+  canonical_theorem: def:hidden-channel
+  cross_check: Any structural input to the endpoint datum not visible in the declared
+    legitimacy witness; the canonical smuggling detector
+declared_status: D
+dependencies:
+  requires:
+  - def:V.endpoint-datum
+id: def:V.hidden-channel
+kind: definition
+number: V.D.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Hidden Channel
+track: spine

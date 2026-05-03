@@ -1,0 +1,22 @@
+body_file: text/branches/RH/thm_RH_S1_formal.md
+book: RH
+canonical_xref:
+  canonical_label: S1 Formal Witness Assembly — reduces to S1-ARC [O]
+  canonical_section: RH §S1 Formal Packet
+  canonical_theorem: ob:rh-s1-formal
+  cross_check: Containing frontier; S1-TRACE/DESCENT/COMP conditionally discharged;
+    S1-ARC remains
+declared_status: O
+dependencies:
+  requires:
+  - ob:RH.S1-ARC
+id: thm:RH.S1.formal
+kind: frontier
+number: RH.S1
+scope:
+  certificate_scope: arithmetic-irreducible
+  domain: RH-branch
+  promotion_ceiling: O
+  regime: RH-pure-arithmetic
+title: RH S1 Formal Witness Assembly — Containing Frontier (Reduces to S1-ARC)
+track: branch

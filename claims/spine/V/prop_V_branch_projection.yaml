@@ -1,0 +1,23 @@
+body_file: text/spine/V/prop_V_branch_projection.md
+book: V
+canonical_xref:
+  canonical_label: Branch Projection Theorem (Prop. V.3.1) [U]
+  canonical_section: Book V §Branch Propositions
+  canonical_theorem: prop:branch-projection
+  cross_check: E = F(U) is well-defined and canonical; depends only on U and F; the
+    canonical existence result for branch endpoints
+declared_status: U
+dependencies:
+  requires:
+  - def:V.branch-candidate
+  - def:V.endpoint-datum
+id: prop:V.branch-projection
+kind: proposition
+number: V.3.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Branch Projection Theorem (Prop. V.3.1)
+track: spine

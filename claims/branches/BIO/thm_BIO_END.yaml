@@ -1,0 +1,36 @@
+body_file: text/branches/BIO/thm_BIO_END.md
+book: BIO
+canonical_xref:
+  canonical_label: BIO Endpoint on C_Bio^nd [C]
+  canonical_section: BIO §Endpoint
+  canonical_theorem: thm:BIO.END
+  cross_check: Conditional endpoint; REP through HER discharged; EVO/MULTI downstream
+declared_status: C
+dependencies:
+  requires:
+  - thm:BIO.REP
+  - thm:BIO.MET
+  - thm:BIO.FID
+  - thm:BIO.NC
+  - thm:BIO.BND
+  - thm:BIO.HER
+  - thm:VII.6.4
+discharges: []
+id: thm:BIO.END
+kind: theorem
+number: BIO.END
+proof_file: text/branches/BIO/proof_thm_BIO_END.md
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  inherited_constraints:
+  - ob:BIO.REP
+  - ob:BIO.MET
+  - ob:BIO.FID
+  - ob:BIO.NC
+  - ob:BIO.BND
+  - ob:BIO.HER
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: BIO Endpoint on C_Bio^nd
+track: branch

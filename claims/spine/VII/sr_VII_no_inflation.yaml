@@ -1,0 +1,21 @@
+body_file: text/spine/VII/sr_VII_no_inflation.md
+book: VII
+canonical_xref:
+  canonical_label: No-Inflation Standing Rule
+  canonical_section: Book VII §Status Inflation
+  canonical_theorem: sr:no-inflation
+  cross_check: Status inflation is prohibited; no claim may acquire force beyond what
+    its proof licenses
+declared_status: D
+dependencies:
+  requires: []
+id: sr:VII.no-inflation
+kind: standing_rule
+number: VII.SR.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: No-Inflation Standing Rule
+track: spine

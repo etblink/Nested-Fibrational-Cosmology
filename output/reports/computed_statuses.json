@@ -1,0 +1,2249 @@
+{
+  "ob:BIO.BND": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:BIO.BND.",
+    "basis": [
+      "thm:BIO.BND"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:BIO.BND.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:BIO.BND-open": {
+    "effective_status": "O",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:BIO.FID": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:BIO.FID.",
+    "basis": [
+      "thm:BIO.FID"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:BIO.FID.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:BIO.HER": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:BIO.HER.",
+    "basis": [
+      "thm:BIO.HER"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:BIO.HER.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:BIO.MET": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:BIO.MET.",
+    "basis": [
+      "thm:BIO.MET"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:BIO.MET.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:BIO.NC": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:BIO.NC.",
+    "basis": [
+      "thm:BIO.NC"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:BIO.NC.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:BIO.REP": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:BIO.REP.",
+    "basis": [
+      "thm:BIO.REP"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:BIO.REP.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "status:BIO": {
+    "effective_status": "conditional-cert-close",
+    "source": "branch-packet-inference",
+    "reason": "BIO posture is inferred from the nondegenerate endpoint packet.",
+    "basis": [
+      "thm:BIO.END"
+    ],
+    "trace_steps": [
+      "Matched branch-packet inference rule.",
+      "Basis item(s): thm:BIO.END.",
+      "Computed branch posture: conditional-cert-close.",
+      "BIO posture is inferred from the nondegenerate endpoint packet."
+    ]
+  },
+  "thm:BIO.BND": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:BIO.END": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:BIO.FID": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:BIO.HER": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:BIO.MET": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:BIO.MULTI.twocell": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:BIO.NC": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:BIO.REP": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:CRYST.phase-problem": {
+    "effective_status": "O",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:CRYST": {
+    "effective_status": "conditional-cert-close",
+    "source": "branch-packet-inference",
+    "reason": "CRYST posture is inferred from endpoint closure plus the retained phase frontier.",
+    "basis": [
+      "thm:CRYST.END",
+      "ob:CRYST.phase-problem"
+    ],
+    "trace_steps": [
+      "Matched branch-packet inference rule.",
+      "Basis item(s): thm:CRYST.END, ob:CRYST.phase-problem.",
+      "Computed branch posture: conditional-cert-close.",
+      "CRYST posture is inferred from endpoint closure plus the retained phase frontier."
+    ]
+  },
+  "thm:CRYST.END": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:GR.EFE1": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:GR.compat.",
+    "basis": [
+      "thm:GR.compat"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:GR.compat.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:GR.EFE2": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:GR.compat.",
+    "basis": [
+      "thm:GR.compat"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:GR.compat.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:GR.EFE3": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:GR.compat.",
+    "basis": [
+      "thm:GR.compat"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:GR.compat.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:GR.closure": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:GR.domain.",
+    "basis": [
+      "thm:GR.domain"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:GR.domain.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:GR.compat": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:GR.compat.",
+    "basis": [
+      "thm:GR.compat"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:GR.compat.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:GR.deform": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:GR.deformation.",
+    "basis": [
+      "thm:GR.deformation"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:GR.deformation.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:GR.global-subcriticality": {
+    "effective_status": "O",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:GR.real": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:GR.realization.",
+    "basis": [
+      "thm:GR.realization"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:GR.realization.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "status:GR": {
+    "effective_status": "domain-bounded-cert-close",
+    "source": "branch-packet-inference",
+    "reason": "Local GR pilot packet supports domain-bounded closure while global curvature-subcriticality / BF-9 remains open.",
+    "basis": [
+      "thm:GR.domain",
+      "ob:GR.global-subcriticality"
+    ],
+    "trace_steps": [
+      "Matched branch-packet inference rule.",
+      "Basis item(s): thm:GR.domain, ob:GR.global-subcriticality.",
+      "Computed branch posture: domain-bounded-cert-close.",
+      "Local GR pilot packet supports domain-bounded closure while global curvature-subcriticality / BF-9 remains open."
+    ]
+  },
+  "thm:GR.CP.1": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:GR.compat": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:GR.deformation": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:GR.domain": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:GR.realization": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VI.9.1": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:LING.REF-INVIS-RECOV": {
+    "effective_status": "O",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:LING": {
+    "effective_status": "conditional-cert-close",
+    "source": "branch-packet-inference",
+    "reason": "LING posture is inferred from endpoint closure plus the retained reference frontier.",
+    "basis": [
+      "thm:LING.END",
+      "ob:LING.REF-INVIS-RECOV"
+    ],
+    "trace_steps": [
+      "Matched branch-packet inference rule.",
+      "Basis item(s): thm:LING.END, ob:LING.REF-INVIS-RECOV.",
+      "Computed branch posture: conditional-cert-close.",
+      "LING posture is inferred from endpoint closure plus the retained reference frontier."
+    ]
+  },
+  "thm:LING.END": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "cor:NS.domain-bounded-cert-close": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "front:NS.main": {
+    "effective_status": "O",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:NS.SB2": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:NS.SB2-discharged.",
+    "basis": [
+      "thm:NS.SB2-discharged"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:NS.SB2-discharged.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:NS.bridge-stage2": {
+    "effective_status": "O",
+    "source": "declared",
+    "reason": "Partial discharge recorded; effective status remains declared unless a closing edge exists.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value.",
+      "Located partial discharge edge(s).",
+      "Partial basis claim(s): thm:NS.6.1.",
+      "Partial discharge is recorded but does not close the obligation."
+    ]
+  },
+  "prop:NS.status": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:NS": {
+    "effective_status": "domain-bounded-cert-close",
+    "source": "branch-packet-inference",
+    "reason": "NS reaches domain-bounded conditional CERT-CLOSE via NS.6.1+NS.7.1 chain; Stage-3 global frontier remains active.",
+    "basis": [
+      "thm:NS.7.1",
+      "thm:NS.6.1",
+      "front:NS.main"
+    ],
+    "trace_steps": [
+      "Matched branch-packet inference rule.",
+      "Basis item(s): thm:NS.7.1, thm:NS.6.1, front:NS.main.",
+      "Computed branch posture: domain-bounded-cert-close.",
+      "NS reaches domain-bounded conditional CERT-CLOSE via NS.6.1+NS.7.1 chain; Stage-3 global frontier remains active."
+    ]
+  },
+  "thm:NS.6.1": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:NS.7.1": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:NS.Ren5": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:NS.SB2-discharged": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:NS.leray": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:NS.stage0": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:NS.stage1": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:NS.stage2a": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:NS.stage2b": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:NS.window-uniformity": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VI.8.1": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:RH.4": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:RH.5": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:RH.6": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:RH.S1-ARC": {
+    "effective_status": "O",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:RH.S1-COMP": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:RH.S1-DESCENT": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:RH.S1-TRACE": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:RH": {
+    "effective_status": "cert-proj",
+    "source": "branch-packet-inference",
+    "reason": "RH posture is cert-proj: RH1-RH3 constituted, S1-ARC irreducibly open.",
+    "basis": [
+      "thm:RH.3",
+      "ob:RH.S1-ARC"
+    ],
+    "trace_steps": [
+      "Matched branch-packet inference rule.",
+      "Basis item(s): thm:RH.3, ob:RH.S1-ARC.",
+      "Computed branch posture: cert-proj.",
+      "RH posture is cert-proj: RH1-RH3 constituted, S1-ARC irreducibly open."
+    ]
+  },
+  "thm:RH.1": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:RH.2": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:RH.3": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:RH.S1.formal": {
+    "effective_status": "O",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:SCC.MCS": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:SCC.MCS.",
+    "basis": [
+      "thm:SCC.MCS"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:SCC.MCS.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:SCC.TSI": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:SCC.TSI.",
+    "basis": [
+      "thm:SCC.TSI"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:SCC.TSI.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:SCC.UC": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:SCC.UC.",
+    "basis": [
+      "thm:SCC.UC"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:SCC.UC.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "status:SCC": {
+    "effective_status": "conditional-cert-close",
+    "source": "branch-packet-inference",
+    "reason": "Local SCC packet supports conditional closure once MCS, UC, and TSI packets are present.",
+    "basis": [
+      "thm:SCC.MCS",
+      "thm:SCC.UC",
+      "thm:SCC.TSI"
+    ],
+    "trace_steps": [
+      "Matched branch-packet inference rule.",
+      "Basis item(s): thm:SCC.MCS, thm:SCC.UC, thm:SCC.TSI.",
+      "Computed branch posture: conditional-cert-close.",
+      "Local SCC packet supports conditional closure once MCS, UC, and TSI packets are present."
+    ]
+  },
+  "thm:SCC.MCS": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:SCC.TSI": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:SCC.UC": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:SM.O-IDcont": {
+    "effective_status": "O",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:SM.coupling-transfer": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by prop:SM.intrinsic-closure, thm:SM.coupling-transfer-full.",
+    "basis": [
+      "prop:SM.intrinsic-closure",
+      "thm:SM.coupling-transfer-full"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): prop:SM.intrinsic-closure, thm:SM.coupling-transfer-full.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:SM.harmonization": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by prop:SM.intrinsic-closure.",
+    "basis": [
+      "prop:SM.intrinsic-closure"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): prop:SM.intrinsic-closure.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:SM.higgs": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by prop:SM.intrinsic-closure, thm:SM.higgs-source-descended.",
+    "basis": [
+      "prop:SM.intrinsic-closure",
+      "thm:SM.higgs-source-descended"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): prop:SM.intrinsic-closure, thm:SM.higgs-source-descended.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:SM.matter": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by prop:SM.intrinsic-closure.",
+    "basis": [
+      "prop:SM.intrinsic-closure"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): prop:SM.intrinsic-closure.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "prop:SM.intrinsic-closure": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "prop:SM.status-reconciliation": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:SM": {
+    "effective_status": "intrinsic-structural-close",
+    "source": "branch-packet-inference",
+    "reason": "Local SM packet supports intrinsic-structural closure while O-IDcont blocks unconditional force-upgrade.",
+    "basis": [
+      "thm:SM.18.1",
+      "ob:SM.O-IDcont"
+    ],
+    "trace_steps": [
+      "Matched branch-packet inference rule.",
+      "Basis item(s): thm:SM.18.1, ob:SM.O-IDcont.",
+      "Computed branch posture: intrinsic-structural-close.",
+      "Local SM packet supports intrinsic-structural closure while O-IDcont blocks unconditional force-upgrade."
+    ]
+  },
+  "thm:SM.18.1": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:SM.coupling-transfer-full": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:SM.gauge-chain": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:SM.harmonization-partial": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:SM.higgs-source-descended": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:SM.three-gen": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:SPEC": {
+    "effective_status": "cert-close",
+    "source": "branch-packet-inference",
+    "reason": "SPEC is inferred closed from a locally unconditional endpoint packet.",
+    "basis": [
+      "thm:SPEC.10.1"
+    ],
+    "trace_steps": [
+      "Matched branch-packet inference rule.",
+      "Basis item(s): thm:SPEC.10.1.",
+      "Computed branch posture: cert-close.",
+      "SPEC is inferred closed from a locally unconditional endpoint packet."
+    ]
+  },
+  "thm:SPEC.10.1": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:YM.B1": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:YM.B1.bridge.",
+    "basis": [
+      "thm:YM.B1.bridge"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:YM.B1.bridge.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:YM.B2": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:YM.B2.bridge.",
+    "basis": [
+      "thm:YM.B2.bridge"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:YM.B2.bridge.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:YM.B3": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:YM.B3.bridge.",
+    "basis": [
+      "thm:YM.B3.bridge"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:YM.B3.bridge.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:YM.B3.A2": {
+    "effective_status": "O",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "ob:YM.O-CLU": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:YM.CLU.",
+    "basis": [
+      "thm:YM.CLU"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:YM.CLU.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:YM.O-ENC": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:YM.ENC.",
+    "basis": [
+      "thm:YM.ENC"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:YM.ENC.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:YM.O-GLOB": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:YM.GLOB.",
+    "basis": [
+      "thm:YM.GLOB"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:YM.GLOB.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:YM.O-ID": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:YM.ID.",
+    "basis": [
+      "thm:YM.ID"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:YM.ID.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "ob:YM.O-RIG": {
+    "effective_status": "C",
+    "source": "local-discharge-inference",
+    "reason": "Locally inferred from explicit closing discharge edges by thm:YM.RIG.",
+    "basis": [
+      "thm:YM.RIG"
+    ],
+    "trace_steps": [
+      "Located explicit closing discharge edge(s).",
+      "Accepted discharge kinds: full, scoped, superseding.",
+      "Basis claim(s): thm:YM.RIG.",
+      "Inferred obligation status: C."
+    ]
+  },
+  "status:YM": {
+    "effective_status": "conditional-cert-close",
+    "source": "branch-packet-inference",
+    "reason": "Local YM pilot packet supports conditional closure through B1/B2/B3 bridge packets while B3-A2 remains the surviving residual frontier.",
+    "basis": [
+      "thm:YM.7",
+      "thm:YM.B1.bridge",
+      "thm:YM.B2.bridge",
+      "thm:YM.B3.bridge",
+      "ob:YM.B3.A2"
+    ],
+    "trace_steps": [
+      "Matched branch-packet inference rule.",
+      "Basis item(s): thm:YM.7, thm:YM.B1.bridge, thm:YM.B2.bridge, thm:YM.B3.bridge, ob:YM.B3.A2.",
+      "Computed branch posture: conditional-cert-close.",
+      "Local YM pilot packet supports conditional closure through B1/B2/B3 bridge packets while B3-A2 remains the surviving residual frontier."
+    ]
+  },
+  "thm:YM.7": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:YM.B1.bridge": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:YM.B2.bridge": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:YM.B3.bridge": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:YM.CLU": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:YM.ENC": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:YM.GLOB": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:YM.ID": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:YM.RIG": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "cor:I.defect-welldef": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "cor:I.holographic-sparsity": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "cor:I.no-presentation-surplus": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:I.admissible-class": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:I.defect-ledger": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:I.obs-equiv": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:I.obs-quotient": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:I.stabilization": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "lem:I.behavioral-canonical": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "lem:I.obs-equiv-equiv": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "prop:I.defect-nonneg": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "prop:I.ledger-additivity": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:I.cg-alphabet": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:I.no-primitive": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:I.no-smuggling": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:I": {
+    "effective_status": "R",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:I.K0-prime": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:I.emax-unique": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:I.entropy-monotone": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:I.governing": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:I.ledger-entropy-duality": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:I.stabilization": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "cor:II.ls2-universal-K07": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:II.DW": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:II.LAR": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:II.TC": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:II.collar": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:II.structural-phases": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "hyp:II.LS2": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:II.no-local-smuggling": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:II": {
+    "effective_status": "R",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.DW-from-A2": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.PASS": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.SCT1": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.SCT6b": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.TC-from-sr": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.binary-rigidity": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.boundary-capacity": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.boundary-det": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.covering-bound-K07": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.governing": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.local-nuclear": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:II.ls2-from-conditions": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "cor:IV.all-branches-through-U": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "cor:IV.descendants-factor": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:IV.POT-category": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:IV.POT-object": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:IV.candidate-U": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:IV.exhaustive-source-image": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:IV.transport-invariant": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:IV.source-not-branch": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:IV": {
+    "effective_status": "R",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:IV.AMCT": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:IV.CTM": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:IV.ORA": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:IV.completion-ladder": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:IV.governing": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:IV.normalization": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:IV.source-uniqueness": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:IV.terminal-source": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:IV.unified-emergence": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:IV.universal-completion": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "cor:V.mandatory-declarations": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "cor:V.open-branch-still-canonical": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:V.branch-candidate": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:V.diamond-confluence": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:V.endpoint-datum": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:V.hidden-channel": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:V.legitimacy-witness": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "prop:V.branch-projection": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "prop:V.endpoint-visibility": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "prop:V.hidden-channel-exclusion": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:V.endpoint-visibility": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:V.legitimacy-before-closure": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:V.no-hidden-supplementation": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:V.source-descent-only": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:V": {
+    "effective_status": "R",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:V.UBLT": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:V.collapse": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:V.diamond": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:V.screened-sector": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "cor:VI.joint-legitimacy": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:VI.cert-obs-family": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:VI.continuum-bridge": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:VI.continuum-interface-regime": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:VI.effective-smooth": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:VI.scale-norm-increment": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:VI.continuum-earned": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:VI.interface-locality": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:VI.no-asymptotic-promotion": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:VI.no-derivative-without-increment": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:VI": {
+    "effective_status": "R",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VI.NS-4B-sobolev": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VI.T-partial-stability": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VI.continuum-bridge-schema": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VI.differential-legitimacy": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VI.governing": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VI.integral-legitimacy": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VI.no-smuggling": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:VII.declared-effective-audit": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:VII.discharge-modes": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:VII.open-obligation": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "prop:VII.cite-declared-force": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "prop:VII.downstream-force": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "prop:VII.no-hidden-upgrade": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "prop:VII.shared-endgame": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "prop:VII.stale-label-correction": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "rmk:VII.posture-vs-force": {
+    "effective_status": "R",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:VII.declare-status": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:VII.no-inflation": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:VII.no-precanonical": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:VII": {
+    "effective_status": "R",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VII.2.4": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VII.2.5": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VII.4.3": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VII.6.4": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VII.governing": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:VII.non-retroactive": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  }
+}

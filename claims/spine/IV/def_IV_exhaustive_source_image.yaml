@@ -1,0 +1,23 @@
+body_file: text/spine/IV/def_IV_exhaustive_source_image.md
+book: IV
+canonical_xref:
+  canonical_label: Exhaustive Source-Image Condition — all load-bearing branch data
+    inherited from S
+  canonical_section: Book IV §Shared Source
+  canonical_theorem: def:exhaustive-source-image
+  cross_check: Every load-bearing datum in a branch certification lies in the image
+    of the source S; prevents untracked primitive downstream supplements
+declared_status: D
+dependencies:
+  requires:
+  - def:IV.POT-category
+id: def:IV.exhaustive-source-image
+kind: definition
+number: IV.D.5
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Exhaustive Source-Image Condition
+track: spine

@@ -1,0 +1,38 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/GR/ob_GR_real.md
+book: GR
+canonical_xref:
+  canonical_book: NFC_GR_Branch.tex
+  canonical_label: GR Realization Obligation — Stage 1
+  canonical_section: GR Obligation Register
+  canonical_theorem: ob:GR.real
+  cross_check: Discharged by thm:GR.realization
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: ob:GR.real
+imports: []
+kind: obligation
+number: GR.real
+scope:
+  certificate_scope: domain-bounded
+  continuum_license: book-VI-certified
+  domain: GR-branch
+  inherited_constraints:
+  - realized-domain-D
+  promotion_ceiling: C
+  regime: declared-GR-target
+supersedes: []
+tags:
+- gr
+- closure-stack
+- discharged
+title: Controlled Causal-Geometric Realization
+track: branch

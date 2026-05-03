@@ -1,0 +1,39 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/spine/VII/thm_VII_2_5.md
+book: VII
+canonical_xref:
+  canonical_label: Promotion Requires Transfer Theorem [U]
+  canonical_section: Book VII §Scoped Certificates
+  canonical_theorem: thm:promotion-requires-transfer
+  cross_check: Conditional-to-unconditional promotion requires an explicit transfer
+    theorem
+declared_status: U
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VII.2.4
+discharges: []
+id: thm:VII.2.5
+imports: []
+kind: theorem
+number: VII.2.5
+proof_file: text/spine/VII/proof_thm_VII_2_5.md
+scope:
+  certificate_scope: global
+  continuum_license: none
+  domain: spine
+  inherited_constraints: []
+  promotion_ceiling: U
+  regime: governance
+supersedes: []
+tags:
+- governance
+- promotion
+- transfer
+title: Promotion Requires Transfer Theorem
+track: spine

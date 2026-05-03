@@ -1,0 +1,49 @@
+admissible_discharge_modes:
+- explicit full theorem
+- explicit supersession with proof of equivalence
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/NS/front_NS_main.md
+book: NS
+burden_statement: 'Stage-3 global unconditional closure: proving unconditional global
+  regularity for all smooth initial data (the Navier-Stokes Clay Millennium Prize).
+  The domain-bounded conditional closure (under Phase-A/K_0=7/PASS/LS-2) has been
+  achieved. This frontier is the external residual: promotion from domain-bounded
+  conditional CERT-CLOSE to unconditional global CERT-CLOSE.'
+canonical_xref:
+  canonical_label: NS Stage-3 Global Frontier — Clay Millennium Prize [O]
+  canonical_section: NS §Stage-3 Frontier
+  canonical_theorem: front:NS.main
+  cross_check: ACTIVE EXTERNAL FRONTIER; unconditional global regularity outside NFC
+    toolkit
+declared_status: O
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: front:NS.main
+imports: []
+inadmissible_discharge_modes:
+- renaming only
+- prose softening
+- table omission
+kind: frontier
+linked_obligations: []
+number: NS.main
+scope:
+  certificate_scope: branch-local
+  continuum_license: pending
+  domain: NS-branch
+  inherited_constraints: []
+  promotion_ceiling: O
+  regime: declared-NS-target
+supersedes: []
+tags:
+- ns
+- frontier
+title: NS Main Frontier
+track: branch

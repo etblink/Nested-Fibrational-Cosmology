@@ -1,0 +1,23 @@
+body_file: text/branches/RH/thm_RH2.md
+book: RH
+canonical_xref:
+  canonical_label: RH2 — Spine Reduction [C]
+  canonical_section: RH §Six-Step Ladder
+  canonical_theorem: thm:RH2
+  cross_check: Prime/explicit-formula/zero data all descend from Xi
+declared_status: C
+dependencies:
+  requires:
+  - thm:RH.1
+discharges: []
+id: thm:RH.2
+kind: theorem
+number: RH.2
+proof_file: text/branches/RH/proof_thm_RH2.md
+scope:
+  certificate_scope: branch
+  domain: RH-branch
+  promotion_ceiling: C
+  regime: RH-canonical-object
+title: RH2 — Spine Reduction
+track: branch

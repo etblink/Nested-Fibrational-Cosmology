@@ -1,0 +1,17 @@
+branch_postures:
+  lawful-descendant:
+    name: Lawful Descendant
+  cert-proj:
+    name: CERT-PROJ
+  conditional-cert-close:
+    name: Conditional CERT-CLOSE
+  domain-bounded-cert-close:
+    name: Domain-Bounded CERT-CLOSE
+  cert-close:
+    name: CERT-CLOSE
+  frontier-blocked:
+    name: Frontier-Blocked
+  intrinsic-structural-close:
+    name: Intrinsic-Structural Close
+  inherited-scope-open:
+    name: Inherited-Scope Open

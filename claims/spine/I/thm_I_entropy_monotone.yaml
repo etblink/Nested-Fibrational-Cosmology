@@ -1,0 +1,23 @@
+body_file: text/spine/I/thm_I_entropy_monotone.md
+book: I
+canonical_xref:
+  canonical_label: Structural Entropy Monotonicity [U]
+  canonical_section: Book I §Entropy and Defect Duality
+  canonical_theorem: thm:entropy-monotone
+  cross_check: Structural entropy H_n is non-increasing along the refinement chain;
+    pairs with defect ledger via duality
+declared_status: U
+dependencies:
+  requires:
+  - def:I.defect-ledger
+  - thm:I.stabilization
+id: thm:I.entropy-monotone
+kind: theorem
+number: I.T.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Structural Entropy Monotonicity Theorem
+track: spine

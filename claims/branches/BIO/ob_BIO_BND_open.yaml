@@ -1,0 +1,22 @@
+body_file: text/branches/BIO/ob_BIO_BND_open.md
+book: BIO
+canonical_xref:
+  canonical_label: Boundary Self-Organization (Full Replicator Class) [O] ACTIVE FRONTIER
+  canonical_section: BIO §Frontier
+  canonical_theorem: ob:BIO.BND-open
+  cross_check: Force question; BND for full class requires new ingredient or Book
+    VI bridge
+declared_status: O
+dependencies:
+  requires: []
+discharges: []
+id: ob:BIO.BND-open
+kind: frontier
+number: BIO.BND-open
+scope:
+  certificate_scope: open-class
+  domain: BIO-branch
+  promotion_ceiling: C
+  regime: full-replicator-class
+title: Boundary Self-Organization (Full Replicator Class)
+track: branch

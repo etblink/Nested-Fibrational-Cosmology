@@ -1,0 +1,21 @@
+release: L+4
+date: '2026-04-30'
+effective_branch_postures:
+  SPEC: cert-close
+  YM: conditional-cert-close
+  SCC: conditional-cert-close
+  NS: frontier-blocked
+  GR: domain-bounded-cert-close
+  SM: intrinsic-structural-close
+  BIO: conditional-cert-close
+  LING: conditional-cert-close
+  CRYST: conditional-cert-close
+  RH: cert-proj
+active_obligations:
+- ob:rh-s1-formal
+- ob:YM.B3.A2
+- ob:NS.SB2
+- ob:GR.global-subcriticality
+- ob:SM.O-IDcont
+- ob:LING.REF-INVIS-RECOV
+- ob:CRYST.phase-problem

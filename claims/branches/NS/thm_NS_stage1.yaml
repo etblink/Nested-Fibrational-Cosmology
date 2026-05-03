@@ -1,0 +1,22 @@
+body_file: text/branches/NS/thm_NS_stage1.md
+book: NS
+canonical_xref:
+  canonical_label: NS Stage-1 Boundary Flux Stabilization [U]
+  canonical_section: NS §Source-Descended Obstruction
+  canonical_theorem: NS.Stage-1
+  cross_check: Unconditional; follows from Stage-0
+declared_status: U
+dependencies:
+  requires:
+  - thm:NS.stage0
+discharges: []
+id: thm:NS.stage1
+kind: theorem
+number: NS.stage1
+scope:
+  certificate_scope: unconditional
+  domain: NS-branch
+  promotion_ceiling: U
+  regime: NS-source-descended
+title: NS Stage-1 Boundary Flux Stabilization
+track: branch

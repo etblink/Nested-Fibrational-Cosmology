@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "pilot_level": "L2",
+  "generated_claim_count": 2,
+  "generated_ids": [
+    "thm:SPEC.10.1",
+    "status:SPEC"
+  ],
+  "missing_expected": [],
+  "unexpected_claims": [],
+  "active_frontiers": [],
+  "posture": "cert-close",
+  "checks": [
+    {
+      "id": "spec.successor.expected-claim-list",
+      "status": "pass",
+      "observed": {
+        "missing": []
+      },
+      "expected": "All SPEC_ORDER claims are present."
+    },
+    {
+      "id": "spec.successor.posture",
+      "status": "pass",
+      "observed": "cert-close",
+      "expected": "cert-close"
+    },
+    {
+      "id": "spec.successor.zero-frontier-profile",
+      "status": "pass",
+      "observed": [],
+      "expected": "No active SPEC-local frontier in the gauge-response successor pilot."
+    },
+    {
+      "id": "spec.successor.no-unexpected-claims",
+      "status": "pass",
+      "observed": [],
+      "expected": "No branch-local SPEC records outside the pilot order."
+    },
+    {
+      "id": "spec.successor.no-matter-rich-upgrade",
+      "status": "pass",
+      "observed": {
+        "posture": "cert-close",
+        "active_frontiers": []
+      },
+      "expected": "Closure is scoped to gauge-response spectroscopy only; no matter-rich spectroscopy closure is inferred."
+    }
+  ],
+  "supersession_effect": "none; pilot shell only"
+}

@@ -1,0 +1,121 @@
+{
+  "status": "passed",
+  "pilot_level": "L2",
+  "generated_claim_count": 12,
+  "generated_ids": [
+    "thm:RH.1",
+    "thm:RH.2",
+    "thm:RH.3",
+    "ob:RH.4",
+    "ob:RH.5",
+    "ob:RH.6",
+    "ob:RH.S1-TRACE",
+    "ob:RH.S1-DESCENT",
+    "ob:RH.S1-COMP",
+    "ob:RH.S1-ARC",
+    "thm:RH.S1.formal",
+    "status:RH"
+  ],
+  "missing_expected": [],
+  "unexpected_claims": [],
+  "active_frontiers": [
+    "ob:RH.S1-ARC",
+    "thm:RH.S1.formal"
+  ],
+  "posture": "cert-proj",
+  "s1_arc_is_open": true,
+  "s1_arc_declared": "O",
+  "s1_arc_effective": "O",
+  "s1_sub_statuses": {
+    "ob:RH.S1-TRACE": {
+      "declared": "C",
+      "effective": "C"
+    },
+    "ob:RH.S1-DESCENT": {
+      "declared": "C",
+      "effective": "C"
+    },
+    "ob:RH.S1-COMP": {
+      "declared": "C",
+      "effective": "C"
+    }
+  },
+  "s1_sub_all_conditional": true,
+  "illegal_s1_arc_discharges": [],
+  "checks": [
+    {
+      "id": "rh.successor.expected-claim-list",
+      "status": "pass",
+      "observed": {
+        "missing": []
+      },
+      "expected": "All RH_ORDER claims present."
+    },
+    {
+      "id": "rh.successor.posture",
+      "status": "pass",
+      "observed": "cert-proj",
+      "expected": "cert-proj"
+    },
+    {
+      "id": "rh.successor.S1-ARC-is-open",
+      "status": "pass",
+      "observed": {
+        "declared": "O",
+        "effective": "O"
+      },
+      "expected": "ob:RH.S1-ARC MUST be [O]. Any other status implies a proof of RH. Declared: O"
+    },
+    {
+      "id": "rh.successor.S1-subs-are-conditional",
+      "status": "pass",
+      "observed": {
+        "ob:RH.S1-TRACE": {
+          "declared": "C",
+          "effective": "C"
+        },
+        "ob:RH.S1-DESCENT": {
+          "declared": "C",
+          "effective": "C"
+        },
+        "ob:RH.S1-COMP": {
+          "declared": "C",
+          "effective": "C"
+        }
+      },
+      "expected": "S1-TRACE, S1-DESCENT, S1-COMP must all be [C]. None may be [U] or [O]."
+    },
+    {
+      "id": "rh.successor.no-illegal-S1-ARC-discharge",
+      "status": "pass",
+      "observed": [],
+      "expected": "No S1 sub-predicate may list ob:RH.S1-ARC as a discharge target."
+    },
+    {
+      "id": "rh.successor.active-frontiers",
+      "status": "pass",
+      "observed": [
+        "ob:RH.S1-ARC",
+        "thm:RH.S1.formal"
+      ],
+      "expected": "ob:RH.S1-ARC must appear in active frontiers."
+    },
+    {
+      "id": "rh.successor.no-unexpected-claims",
+      "status": "pass",
+      "observed": [],
+      "expected": "No RH records outside pilot order."
+    },
+    {
+      "id": "rh.successor.no-rh-proof-claim",
+      "status": "pass",
+      "observed": {
+        "posture": "cert-proj",
+        "s1_arc_open": true
+      },
+      "expected": "cert-proj posture + S1-ARC open = no RH proof claimed. Any deviation from this combination is a governance violation."
+    }
+  ],
+  "supersession_effect": "none; pilot shell only",
+  "critical_invariant": "S1-ARC is [O]. This pilot does not prove the Riemann Hypothesis. S1-TRACE/DESCENT/COMP are [C]. All ladder obligations RH1-RH6 are [C]. 9 of 10 AC obstructions are discharged. The irreducible remaining burden is S1-ARC: Q[psi]>=0 from the arithmetic structure of Xi."
+}

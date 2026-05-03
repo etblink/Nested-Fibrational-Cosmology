@@ -1,0 +1,22 @@
+body_file: text/spine/IV/thm_IV_source_uniqueness.md
+book: IV
+canonical_xref:
+  canonical_label: Certified Uniqueness of Universal Source [U]
+  canonical_section: Book IV §Source Uniqueness
+  canonical_theorem: thm:source-uniqueness
+  cross_check: Any two POT objects satisfying the universal factorization property
+    are related by a unique POT-isomorphism; uniqueness by factorization role
+declared_status: U
+dependencies:
+  requires:
+  - thm:IV.universal-completion
+id: thm:IV.source-uniqueness
+kind: theorem
+number: IV.T.6
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Certified Uniqueness of the Universal Source
+track: spine

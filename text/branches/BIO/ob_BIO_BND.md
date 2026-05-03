@@ -1,0 +1,1 @@
+Show that interface self-organization is sourced from the Book II capacity law on the nondegenerate regime: the boundary structure B_Bio derives from bounded observational channel capacity without importing Lipschitz geometry, membrane biophysics, or cell-biology primitives as assumptions.

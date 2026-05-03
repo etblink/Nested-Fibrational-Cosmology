@@ -1,0 +1,1 @@
+The SM super-branch is conditionally intrinsic-structurally closed, subject to inherited-scope and force-upgrade limits.

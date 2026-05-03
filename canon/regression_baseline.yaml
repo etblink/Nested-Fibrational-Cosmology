@@ -1,0 +1,58 @@
+claim_count: 226
+computed_status_count: 226
+pilot_postures:
+  BIO: conditional-cert-close
+protected_claim_statuses:
+  ob:BIO.BND-open: O
+  thm:BIO.END: C
+regression_baseline:
+  expected_active_open_items:
+  - front:NS.main
+  - ob:BIO.BND-open
+  - ob:CRYST.phase-problem
+  - ob:GR.global-subcriticality
+  - ob:LING.REF-INVIS-RECOV
+  - ob:NS.bridge-stage2
+  - ob:RH.S1-ARC
+  - ob:SM.O-IDcont
+  - ob:YM.B3.A2
+  - thm:RH.S1.formal
+  expected_branch_postures:
+    BIO: conditional-cert-close
+    CRYST: conditional-cert-close
+    GR: domain-bounded-cert-close
+    LING: conditional-cert-close
+    NS: domain-bounded-cert-close
+    RH: cert-proj
+    SCC: conditional-cert-close
+    SM: intrinsic-structural-close
+    SPEC: cert-close
+    YM: conditional-cert-close
+  expected_counts:
+    claims: 226
+    computed_statuses: 226
+    errors: 0
+    release_diff_changes: 5
+    release_diff_missing_basis: 0
+    warnings_max: 3
+  expected_warning_types:
+  - retired-alias-detected
+  - release-vs-computed-posture-mismatch
+  protected_claim_statuses:
+    front:NS.main: O
+    ob:GR.global-subcriticality: O
+    ob:RH.S1-ARC: O
+    ob:SM.O-IDcont: O
+    ob:YM.B3.A2: O
+    prop:NS.status: C
+    prop:SM.intrinsic-closure: C
+    status:RH: cert-proj
+    thm:GR.domain: C
+    thm:NS.7.1: C
+    thm:RH.S1.formal: O
+    thm:SCC.MCS: C
+    thm:SCC.TSI: C
+    thm:SCC.UC: C
+    thm:YM.7: C
+  schema_version: 0.41.0
+schema_version: 0.29.0

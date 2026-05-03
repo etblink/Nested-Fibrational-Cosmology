@@ -1,0 +1,8 @@
+schema:
+  compatibility: v41-book-vi-l4-spine-pilot
+  name: NFC Governance Core Schema
+  notes: 'v41 — Book VI L4 Spine Pilot: 18 Book VI claim records, thm:VI.governing=[C]
+    (= Thm. VI.9.1), bridge-schema=[U], no-smuggling=[U], T_partial-stability=[U],
+    closes VI.9.1 citation gap for GR/NS/YM branches. Sixth spine-level L4 pilot.
+    All 7 spine books now have L4 pilots.'
+  version: 0.41.0

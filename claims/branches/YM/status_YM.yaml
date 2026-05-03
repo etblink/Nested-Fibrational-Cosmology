@@ -1,0 +1,48 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/status_YM.md
+book: YM
+canonical_xref:
+  canonical_label: YM Branch Status — conditional CERT-CLOSE at MSC-normalized scope
+  canonical_section: YM Branch Status
+  canonical_theorem: prop:YM-status
+  cross_check: Machine-generated analogue of the YM branch status proposition
+declared_posture: conditional-cert-close
+declared_status: conditional-cert-close
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VII.6.4
+  - thm:YM.7
+  - thm:YM.B1.bridge
+  - thm:YM.B2.bridge
+  - thm:YM.B3.bridge
+  - ob:YM.B3.A2
+discharges: []
+id: status:YM
+imports: []
+kind: status_note
+number: YM.status
+scope:
+  certificate_scope: branch-wide
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - msc-normalized
+  - persistence-selected
+  - clay-grade-postprogram-gaps
+  - B3-A2-residual-frontier
+  promotion_ceiling: conditional-cert-close
+  regime: ym-branch-governance
+supersedes: []
+tags:
+- conditional-cert-close
+- governance
+- posture
+- ym
+title: YM Branch Posture Record
+track: branch

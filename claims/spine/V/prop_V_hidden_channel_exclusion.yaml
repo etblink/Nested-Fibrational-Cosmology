@@ -1,0 +1,23 @@
+body_file: text/spine/V/prop_V_hidden_channel_exclusion.md
+book: V
+canonical_xref:
+  canonical_label: Hidden Channel Exclusion [U]
+  canonical_section: Book V §Hidden Channels
+  canonical_theorem: prop:hidden-channel-exclusion
+  cross_check: Any branch depending on a hidden channel is non-canonical; the canonical
+    anti-smuggling theorem for branches
+declared_status: U
+dependencies:
+  requires:
+  - def:V.hidden-channel
+  - def:V.legitimacy-witness
+id: prop:V.hidden-channel-exclusion
+kind: proposition
+number: V.P.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Hidden Channel Exclusion Proposition
+track: spine

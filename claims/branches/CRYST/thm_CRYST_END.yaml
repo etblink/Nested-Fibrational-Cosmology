@@ -1,0 +1,21 @@
+body_file: text/branches/CRYST/thm_CRYST_END.md
+book: CRYST
+canonical_xref:
+  canonical_label: CRYST Endpoint — Diffraction/Periodicity/Symmetry [C]
+  canonical_section: CRYST §Endpoint
+  canonical_theorem: thm:CRYST.END
+  cross_check: Eight of nine obligations discharged; phase problem the principal frontier
+declared_status: C
+dependencies:
+  requires:
+  - thm:VII.6.4
+id: thm:CRYST.END
+kind: theorem
+number: CRYST.END
+scope:
+  certificate_scope: branch
+  domain: CRYST-branch
+  promotion_ceiling: C
+  regime: diffraction-periodicity-symmetry
+title: CRYST Endpoint Status Proposition
+track: branch

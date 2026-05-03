@@ -1,0 +1,29 @@
+body_file: text/spine/IV/thm_IV_unified_emergence.md
+book: IV
+canonical_xref:
+  canonical_label: Unified Emergence Theorem [C] — conditional on K_0=7, Phase-A,
+    Books I-III
+  canonical_section: Book IV §Unified Emergence
+  canonical_theorem: thm:unified-emergence
+  cross_check: From U alone, all declared physical layers emerge as lawful realizations;
+    conditional on K_0=7 and Phase-A and canonical branch programs of Books I-III
+declared_status: C
+dependencies:
+  requires:
+  - thm:IV.governing
+  - thm:I.K0-prime
+  - hyp:II.LS2
+id: thm:IV.unified-emergence
+kind: theorem
+number: IV.T.C.1
+scope:
+  certificate_scope: conditional-K07-PhaseA
+  domain: spine
+  inherited_constraints:
+  - K0-7
+  - Phase-A
+  - Books-I-III
+  promotion_ceiling: C
+  regime: K07-PhaseA-BookI-III
+title: Unified Emergence Theorem (conditional)
+track: spine

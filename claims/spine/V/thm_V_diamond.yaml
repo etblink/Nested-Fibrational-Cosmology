@@ -1,0 +1,23 @@
+body_file: text/spine/V/thm_V_diamond.md
+book: V
+canonical_xref:
+  canonical_label: Diamond Confluence Principle [U]
+  canonical_section: Book V §Diamond Confluence
+  canonical_theorem: thm:diamond
+  cross_check: Two endpoint-equivalent but path-distinct lawful descents are canonically
+    confluent; permits multiplicity without collapse
+declared_status: U
+dependencies:
+  requires:
+  - def:V.diamond-confluence
+  - thm:V.collapse
+id: thm:V.diamond
+kind: theorem
+number: V.T.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Diamond Confluence Principle
+track: spine

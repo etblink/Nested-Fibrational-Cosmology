@@ -1,0 +1,23 @@
+body_file: text/spine/II/thm_II_local_nuclear.md
+book: II
+canonical_xref:
+  canonical_label: Local Nuclear Theorem [U] — two regimes of observational behavior
+  canonical_section: Book II §Nuclear Regime
+  canonical_theorem: thm:local-nuclear
+  cross_check: 'Two regimes: local (admissible class acts freely on Sigma) and nuclear
+    (any admissible class has a fixed collar type); unconditional partition'
+declared_status: U
+dependencies:
+  requires:
+  - thm:II.covering-bound-K07
+  - thm:I.stabilization
+id: thm:II.local-nuclear
+kind: theorem
+number: II.T.6
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Local Nuclear Theorem
+track: spine

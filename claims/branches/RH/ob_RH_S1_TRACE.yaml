@@ -1,0 +1,25 @@
+body_file: text/branches/RH/ob_RH_S1_TRACE.md
+book: RH
+canonical_xref:
+  canonical_label: S1-TRACE — Trace Formula Pairing CONDITIONALLY DISCHARGED [C]
+  canonical_section: RH §S1 Formal Packet
+  canonical_theorem: S1-TRACE
+  cross_check: Scaling-flow candidate conditionally realizes RH-N2 trace formula
+declared_status: C
+dependencies:
+  requires:
+  - ob:RH.4
+discharges: []
+id: ob:RH.S1-TRACE
+kind: obligation
+number: RH.S1-TRACE
+scope:
+  certificate_scope: conditional-scaling-flow
+  domain: RH-branch
+  inherited_constraints:
+  - Phase-A
+  - scaling-flow-candidate-Gsf
+  promotion_ceiling: C
+  regime: RH-scaling-flow
+title: S1-TRACE — Trace Formula Pairing (Conditionally Discharged)
+track: branch

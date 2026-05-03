@@ -1,0 +1,1 @@
+The thermodynamic floor density f_inf > 0 exists unconditionally: under the NS active architecture declarations (N-add, T-add, BV, non-degeneracy), the Van Hove exhaustion window family has a positive limiting floor density. This is the first unconditional structural result of the NS branch and holds without any Phase-A or K_0 hypothesis.

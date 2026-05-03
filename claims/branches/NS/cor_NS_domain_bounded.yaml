@@ -1,0 +1,28 @@
+body_file: text/branches/NS/cor_NS_domain_bounded.md
+book: NS
+canonical_xref:
+  canonical_label: NS Domain-Bounded CERT-CLOSE Corollary [C]
+  canonical_section: NS §Domain-Bounded CERT-CLOSE
+  canonical_theorem: NS.DomBdd
+  cross_check: Corollary of NS.6.1+NS.7.1; domain-bounded scope only
+declared_status: C
+dependencies:
+  requires:
+  - thm:NS.6.1
+  - thm:NS.7.1
+discharges: []
+id: cor:NS.domain-bounded-cert-close
+kind: corollary
+number: NS.domain-bounded
+scope:
+  certificate_scope: domain-bounded
+  domain: NS-branch
+  inherited_constraints:
+  - Phase-A
+  - K0-7
+  - PASS
+  - LS-2
+  promotion_ceiling: C
+  regime: NS-Phase-A-K0-7-PASS-LS2
+title: NS Domain-Bounded CERT-CLOSE
+track: branch

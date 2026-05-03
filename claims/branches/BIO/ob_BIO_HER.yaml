@@ -1,0 +1,23 @@
+body_file: text/branches/BIO/ob_BIO_HER.md
+book: BIO
+canonical_xref:
+  canonical_label: Hereditary Descent Transport [C]
+  canonical_section: BIO §Obligations
+  canonical_theorem: ob:BIO.HER
+  cross_check: Discharged by thm:BIO.HER
+declared_status: C
+dependencies:
+  requires:
+  - ob:BIO.REP
+  - ob:BIO.NC
+discharges: []
+id: ob:BIO.HER
+kind: obligation
+number: BIO.HER
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: Hereditary Descent
+track: branch

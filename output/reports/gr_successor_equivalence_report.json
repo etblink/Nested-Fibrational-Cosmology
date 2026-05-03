@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "pilot_level": "L2",
+  "generated_claim_count": 15,
+  "generated_ids": [
+    "thm:VI.9.1",
+    "thm:GR.CP.1",
+    "ob:GR.real",
+    "thm:GR.realization",
+    "ob:GR.deform",
+    "thm:GR.deformation",
+    "ob:GR.compat",
+    "thm:GR.compat",
+    "ob:GR.EFE1",
+    "ob:GR.EFE2",
+    "ob:GR.EFE3",
+    "ob:GR.closure",
+    "thm:GR.domain",
+    "ob:GR.global-subcriticality",
+    "status:GR"
+  ],
+  "missing_expected": [],
+  "unexpected_claims": [],
+  "active_frontiers": [
+    "ob:GR.global-subcriticality"
+  ],
+  "posture": "domain-bounded-cert-close",
+  "checks": [
+    {
+      "id": "gr.successor.expected-claim-list",
+      "status": "pass",
+      "observed": {
+        "missing": []
+      },
+      "expected": "All GR_ORDER claims are present."
+    },
+    {
+      "id": "gr.successor.posture",
+      "status": "pass",
+      "observed": "domain-bounded-cert-close",
+      "expected": "domain-bounded-cert-close"
+    },
+    {
+      "id": "gr.successor.frontier-preservation",
+      "status": "pass",
+      "observed": [
+        "ob:GR.global-subcriticality"
+      ],
+      "expected": [
+        "ob:GR.global-subcriticality"
+      ]
+    },
+    {
+      "id": "gr.successor.no-unexpected-claims",
+      "status": "pass",
+      "observed": [],
+      "expected": "No branch-local GR records outside the pilot order."
+    }
+  ],
+  "supersession_effect": "none; pilot shell only"
+}

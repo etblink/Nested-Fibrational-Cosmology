@@ -1,0 +1,37 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/spine/VII/thm_VII_4_3.md
+book: VII
+canonical_xref:
+  canonical_label: Named Failure Frontier Theorem [U]
+  canonical_section: Book VII §Named Failure Frontiers
+  canonical_theorem: thm:frontier-stability
+  cross_check: Rephrasing is not progress; named frontier requires explicit new theorem
+    to discharge
+declared_status: U
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: thm:VII.4.3
+imports: []
+kind: theorem
+number: VII.4.3
+proof_file: text/spine/VII/proof_thm_VII_4_3.md
+scope:
+  certificate_scope: global
+  continuum_license: none
+  domain: spine
+  inherited_constraints: []
+  promotion_ceiling: U
+  regime: governance
+supersedes: []
+tags:
+- governance
+- frontier
+title: Named Failure Frontier Theorem
+track: spine

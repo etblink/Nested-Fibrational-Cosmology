@@ -1,0 +1,3819 @@
+{
+  "schema_version": "0.41.0",
+  "built_at_utc": "2026-05-03T00:09:53.376403+00:00",
+  "steps": [
+    {
+      "label": "validate",
+      "module": "build/validate.py",
+      "returncode": 0,
+      "stdout": "{\n  \"total_issues\": 3,\n  \"errors\": 0,\n  \"warnings\": 3,\n  \"schema_version\": \"0.41.0\",\n  \"claims_count\": 226,\n  \"computed_statuses\": 226\n}",
+      "stderr": ""
+    },
+    {
+      "label": "render",
+      "module": "build/render.py",
+      "returncode": 0,
+      "stdout": "{\n  \"tex_files\": 5,\n  \"branch_rows\": 10,\n  \"frontier_rows\": 10,\n  \"claim_rows\": 226,\n  \"issue_rows\": 3,\n  \"release_mismatches\": 1\n}",
+      "stderr": ""
+    },
+    {
+      "label": "gr_pilot_report",
+      "module": "build/gr_pilot_report.py",
+      "returncode": 0,
+      "stdout": "{\n  \"gr_rows\": 13\n}",
+      "stderr": ""
+    },
+    {
+      "label": "ym_pilot_report",
+      "module": "build/ym_pilot_report.py",
+      "returncode": 0,
+      "stdout": "{\n  \"ym_rows\": 19\n}",
+      "stderr": ""
+    },
+    {
+      "label": "release_diff",
+      "module": "build/release_diff.py",
+      "returncode": 0,
+      "stdout": "{\n  \"source_release\": \"L+4\",\n  \"target_release\": \"L+5-draft\",\n  \"change_count\": 5,\n  \"missing_basis_count\": 0\n}",
+      "stderr": ""
+    },
+    {
+      "label": "regression_tests",
+      "module": "build/regression_tests.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"test_count\": 11,\n  \"failed_count\": 0\n}",
+      "stderr": ""
+    },
+    {
+      "label": "canon_import_packet",
+      "module": "build/canon_import_packet.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"generated\",\n  \"files\": [\n    \"output/tex/canon_governance_appendix.tex\",\n    \"output/tex/canon_governance_appendix_standalone.tex\"\n  ],\n  \"tables\": {\n    \"branch_postures\": 16,\n    \"active_open_items\": 10,\n    \"audit_issues\": 3,\n    \"release_diff_events\": 5,\n    \"quality_gates\": 33\n  }\n}",
+      "stderr": ""
+    },
+    {
+      "label": "gr_branch_successor",
+      "module": "build/gr_branch_successor.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"generated_claim_count\": 15,\n  \"posture\": \"domain-bounded-cert-close\",\n  \"active_frontiers\": [\n    \"ob:GR.global-subcriticality\"\n  ]\n}",
+      "stderr": ""
+    },
+    {
+      "label": "ym_branch_successor",
+      "module": "build/ym_branch_successor.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"generated_claim_count\": 19,\n  \"posture\": \"conditional-cert-close\",\n  \"active_frontiers\": [\n    \"ob:YM.B3.A2\"\n  ]\n}",
+      "stderr": ""
+    },
+    {
+      "label": "spec_branch_successor",
+      "module": "build/spec_branch_successor.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"generated_claim_count\": 2,\n  \"posture\": \"cert-close\",\n  \"active_frontiers\": []\n}",
+      "stderr": ""
+    },
+    {
+      "label": "scc_branch_successor",
+      "module": "build/scc_branch_successor.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"generated_claim_count\": 7,\n  \"posture\": \"conditional-cert-close\",\n  \"active_frontiers\": []\n}",
+      "stderr": ""
+    },
+    {
+      "label": "cryst_branch_successor",
+      "module": "build/cryst_branch_successor.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"generated_claim_count\": 3,\n  \"posture\": \"conditional-cert-close\",\n  \"active_frontiers\": [\n    \"ob:CRYST.phase-problem\"\n  ]\n}",
+      "stderr": ""
+    },
+    {
+      "label": "ling_branch_successor",
+      "module": "build/ling_branch_successor.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"generated_claim_count\": 3,\n  \"posture\": \"conditional-cert-close\",\n  \"active_frontiers\": [\n    \"ob:LING.REF-INVIS-RECOV\"\n  ]\n}",
+      "stderr": ""
+    },
+    {
+      "label": "bio_branch_successor",
+      "module": "build/bio_branch_successor.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"generated_claim_count\": 16,\n  \"posture\": \"conditional-cert-close\",\n  \"active_frontiers\": [\n    \"ob:BIO.BND-open\"\n  ],\n  \"endpoint_scope\": \"nondegenerate-bio\",\n  \"bnd_frontier_preserved\": true\n}",
+      "stderr": ""
+    },
+    {
+      "label": "sm_branch_successor",
+      "module": "build/sm_branch_successor.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"generated_claim_count\": 14,\n  \"posture\": \"intrinsic-structural-close\",\n  \"ym_posture\": \"conditional-cert-close\",\n  \"gr_posture\": \"domain-bounded-cert-close\",\n  \"active_frontiers\": [\n    \"ob:SM.O-IDcont\"\n  ],\n  \"o_idcont_open\": true\n}",
+      "stderr": ""
+    },
+    {
+      "label": "ns_branch_successor",
+      "module": "build/ns_branch_successor.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"generated_claim_count\": 16,\n  \"posture\": \"domain-bounded-cert-close\",\n  \"stale_posture_corrected_from\": \"frontier-blocked\",\n  \"stale_posture_corrected\": true,\n  \"active_frontiers\": [\n    \"ob:NS.bridge-stage2\",\n    \"front:NS.main\"\n  ],\n  \"sb2_discharged\": true\n}",
+      "stderr": ""
+    },
+    {
+      "label": "rh_branch_successor",
+      "module": "build/rh_branch_successor.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"generated_claim_count\": 12,\n  \"posture\": \"cert-proj\",\n  \"s1_arc_is_open\": true,\n  \"s1_arc_declared\": \"O\",\n  \"s1_sub_all_conditional\": true,\n  \"active_frontiers\": [\n    \"ob:RH.S1-ARC\",\n    \"thm:RH.S1.formal\"\n  ],\n  \"critical_invariant\": \"S1-ARC is [O]. This pilot does not prove the Riemann Hypothesis. S1-TRACE/DESCENT/COMP are [C]. All ...\"\n}",
+      "stderr": ""
+    },
+    {
+      "label": "proof_tree",
+      "module": "build/proof_tree.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"branches_traced\": 10,\n  \"branch_postures\": {\n    \"GR\": \"domain-bounded-cert-close\",\n    \"YM\": \"conditional-cert-close\",\n    \"NS\": \"domain-bounded-cert-close\",\n    \"SM\": \"intrinsic-structural-close\",\n    \"SPEC\": \"cert-close\",\n    \"SCC\": \"conditional-cert-close\",\n    \"BIO\": \"conditional-cert-close\",\n    \"LING\": \"conditional-cert-close\",\n    \"CRYST\": \"conditional-cert-close\",\n    \"RH\": \"cert-proj\"\n  },\n  \"active_frontiers_all\": [\n    \"ob:GR.global-subcriticality\",\n    \"ob:YM.B3.A2\",\n    \"front:NS.main\",\n    \"ob:SM.O-IDcont\",\n    \"ob:BIO.BND-open\",\n    \"ob:LING.REF-INVIS-RECOV\",\n    \"ob:CRYST.phase-problem\",\n    \"ob:RH.S1-ARC\"\n  ]\n}",
+      "stderr": ""
+    },
+    {
+      "label": "canonical_coverage",
+      "module": "build/canonical_coverage.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"GR\": {\n    \"coverage_pct\": 100.0,\n    \"prose_score\": 100.0,\n    \"scope_score\": 100.0,\n    \"discharge_score\": 100.0,\n    \"l3_ready\": true,\n    \"l3_gaps\": []\n  },\n  \"YM\": {\n    \"coverage_pct\": 100.0,\n    \"prose_score\": 100.0,\n    \"scope_score\": 100.0,\n    \"discharge_score\": 100.0,\n    \"l3_ready\": true,\n    \"l3_gaps\": []\n  }\n}",
+      "stderr": ""
+    },
+    {
+      "label": "l3_readiness",
+      "module": "build/l3_readiness.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"l3_ready_branches\": [\n    \"GR\",\n    \"YM\",\n    \"NS\",\n    \"SM\",\n    \"RH\",\n    \"SPEC\",\n    \"SCC\",\n    \"BIO\",\n    \"LING\",\n    \"CRYST\"\n  ],\n  \"l3_candidate_branches\": [],\n  \"summary\": {\n    \"total_pilots\": 10,\n    \"l3_ready\": 10,\n    \"l3_candidate\": 0,\n    \"not_started\": 0\n  }\n}",
+      "stderr": ""
+    },
+    {
+      "label": "gr_l3_certificate",
+      "module": "build/gr_l3_certificate.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"criteria_passed\": 9,\n  \"criteria_total\": 9,\n  \"posture\": \"domain-bounded-cert-close\",\n  \"active_frontier\": \"ob:GR.global-subcriticality\",\n  \"l3_level\": \"release_candidate\"\n}",
+      "stderr": ""
+    },
+    {
+      "label": "multi_branch_certificate",
+      "module": "build/multi_branch_certificate.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"branches_processed\": 8,\n  \"xref_annotations_added\": {\n    \"NS\": 0,\n    \"SM\": 0,\n    \"RH\": 0,\n    \"BIO\": 0,\n    \"LING\": 0,\n    \"CRYST\": 0,\n    \"SCC\": 0,\n    \"SPEC\": 0\n  },\n  \"certificates_passed\": 8,\n  \"certificates_needs_review\": 0,\n  \"pdf_certs_generated\": [\n    \"RH\",\n    \"SM\",\n    \"NS\"\n  ]\n}",
+      "stderr": ""
+    },
+    {
+      "label": "book_vii_l4_pilot",
+      "module": "build/book_vii_l4_pilot.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"l4_level\": \"spine_release_candidate\",\n  \"claim_count\": 19,\n  \"xref_count\": 19,\n  \"prose_score\": 100.0,\n  \"all_governance_unconditional\": true,\n  \"l6_additions_present\": true,\n  \"governance_rule_mapping_complete\": true\n}",
+      "stderr": ""
+    },
+    {
+      "label": "book_i_l4_pilot",
+      "module": "build/book_i_l4_pilot.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"l4_level\": \"spine_release_candidate\",\n  \"claim_count\": 22,\n  \"prose_score\": 100.0,\n  \"all_results_unconditional\": true,\n  \"k0_prime_present\": true,\n  \"defect_ledger_complete\": true\n}",
+      "stderr": ""
+    },
+    {
+      "label": "book_ii_l4_pilot",
+      "module": "build/book_ii_l4_pilot.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"l4_level\": \"spine_release_candidate\",\n  \"claim_count\": 21,\n  \"prose_score\": 100.0,\n  \"ls2_status\": \"C\",\n  \"ls2_universal_status\": \"U\",\n  \"pass_status\": \"U\",\n  \"sct6b_present\": true\n}",
+      "stderr": ""
+    },
+    {
+      "label": "book_v_l4_pilot",
+      "module": "build/book_v_l4_pilot.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"l4_level\": \"spine_release_candidate\",\n  \"claim_count\": 19,\n  \"prose_score\": 100.0,\n  \"ublt_status\": \"U\",\n  \"branch_projection_status\": \"U\",\n  \"all_primary_unconditional\": true\n}",
+      "stderr": ""
+    },
+    {
+      "label": "book_iv_l4_pilot",
+      "module": "build/book_iv_l4_pilot.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"l4_level\": \"spine_release_candidate\",\n  \"claim_count\": 19,\n  \"prose_score\": 100.0,\n  \"universal_completion_status\": \"U\",\n  \"source_uniqueness_status\": \"U\",\n  \"descendants_factor_status\": \"U\",\n  \"full_chain_traceable\": true\n}",
+      "stderr": ""
+    },
+    {
+      "label": "book_vi_l4_pilot",
+      "module": "build/book_vi_l4_pilot.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"l4_level\": \"spine_release_candidate\",\n  \"claim_count\": 18,\n  \"prose_score\": 100.0,\n  \"VI91_status\": \"C\",\n  \"bridge_schema_status\": \"U\",\n  \"no_smuggling_status\": \"U\",\n  \"vi91_citation_gap_closed\": true\n}",
+      "stderr": ""
+    },
+    {
+      "label": "compile_check",
+      "module": "build/compile_check.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"targets\": {\n    \"canon_governance_appendix\": {\n      \"status\": \"passed\",\n      \"pdf\": \"output/pdf/canon_governance_appendix_standalone.pdf\",\n      \"pages\": 6\n    },\n    \"gr_branch_successor\": {\n      \"status\": \"passed\",\n      \"pdf\": \"output/pdf/gr_branch_successor_standalone.pdf\",\n      \"pages\": 5\n    },\n    \"ym_branch_successor\": {\n      \"status\": \"passed\",\n      \"pdf\": \"output/pdf/ym_branch_successor_standalone.pdf\",\n      \"pages\": 7\n    },\n    \"spec_branch_successor\": {\n      \"status\": \"passed\",\n      \"pdf\": \"output/pdf/spec_branch_successor_standalone.pdf\",\n      \"pages\": 1\n    },\n    \"scc_branch_successor\": {\n      \"status\": \"passed\",\n      \"pdf\": \"output/pdf/scc_branch_successor_standalone.pdf\",\n      \"pages\": 3\n    },\n    \"cryst_branch_successor\": {\n      \"status\": \"passed\",\n      \"pdf\": \"output/pdf/cryst_branch_successor_standalone.pdf\",\n      \"pages\": 2\n    },\n    \"ling_branch_successor\": {\n      \"status\": \"passed\",\n      \"pdf\": \"output/pdf/ling_branch_successor_standalone.pdf\",\n      \"pages\": 2\n    },\n    \"bio_branch_successor\": {\n      \"status\": \"passed\",\n      \"pdf\": \"output/pdf/bio_branch_successor_standalone.pdf\",\n      \"pages\": 6\n    },\n    \"sm_branch_successor\": {\n      \"status\": \"passed\",\n      \"pdf\": \"output/pdf/sm_branch_successor_standalone.pdf\",\n      \"pages\": 7\n    },\n    \"ns_branch_successor\": {\n      \"status\": \"passed\",\n      \"pdf\": \"output/pdf/ns_branch_successor_standalone.pdf\",\n      \"pages\": 6\n    }\n  }\n}",
+      "stderr": ""
+    },
+    {
+      "label": "gr_l2_hardening",
+      "module": "build/gr_l2_hardening.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"failed_count\": 0,\n  \"prose_files\": 20\n}",
+      "stderr": ""
+    },
+    {
+      "label": "pilot_comparison",
+      "module": "build/pilot_comparison.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"failed_count\": 0\n}",
+      "stderr": ""
+    },
+    {
+      "label": "pilot_standard",
+      "module": "build/pilot_standard.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"pilot_count\": 10,\n  \"failed_count\": 0\n}",
+      "stderr": ""
+    },
+    {
+      "label": "pilot_intake",
+      "module": "build/pilot_intake.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"recommended_next_pilot\": \"BIO\",\n  \"candidate_count\": 6\n}",
+      "stderr": ""
+    },
+    {
+      "label": "supersession_readiness",
+      "module": "build/supersession_readiness.py",
+      "returncode": 0,
+      "stdout": "{\n  \"current_level\": \"L2\",\n  \"l1_import_ready\": true,\n  \"l2_pilot_ready\": true,\n  \"l5_full_supersession_ready\": false,\n  \"approved_for_full_supersession\": false\n}",
+      "stderr": ""
+    },
+    {
+      "label": "quality_gate",
+      "module": "build/quality_gate.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"failed_gates\": [],\n  \"gate_count\": 34\n}",
+      "stderr": ""
+    }
+  ],
+  "summary": {
+    "total_issues": 3,
+    "errors": 0,
+    "warnings": 3,
+    "schema_version": "0.41.0",
+    "claims_count": 226,
+    "computed_statuses": 226
+  },
+  "render_summary": {
+    "tex_files": 5,
+    "branch_rows": 10,
+    "frontier_rows": 10,
+    "claim_rows": 226,
+    "issue_rows": 3,
+    "release_mismatches": 1
+  },
+  "quality_gate": {
+    "status": "passed",
+    "context": {
+      "schema_version": "0.41.0",
+      "claims_count": 226,
+      "warnings": 3,
+      "errors": 0,
+      "active_open_items": [
+        "front:NS.main",
+        "ob:BIO.BND-open",
+        "ob:CRYST.phase-problem",
+        "ob:GR.global-subcriticality",
+        "ob:LING.REF-INVIS-RECOV",
+        "ob:NS.bridge-stage2",
+        "ob:RH.S1-ARC",
+        "ob:SM.O-IDcont",
+        "ob:YM.B3.A2",
+        "thm:RH.S1.formal"
+      ],
+      "release_diff_changes": 5,
+      "release_diff_missing_basis": 0
+    },
+    "gates": [
+      {
+        "id": "gate.no_errors",
+        "status": "pass",
+        "severity": "error",
+        "observed": 0,
+        "expected": 0,
+        "message": "Audit error count must be zero."
+      },
+      {
+        "id": "gate.release_reconciliation",
+        "status": "pass",
+        "severity": "error",
+        "observed": 0,
+        "expected": 0,
+        "message": "Computed branch postures must reconcile with active release snapshot.",
+        "details": []
+      },
+      {
+        "id": "gate.warning_budget",
+        "status": "pass",
+        "severity": "warning",
+        "observed": 3,
+        "expected": "<= 3",
+        "message": "Warning count may not increase without a decision-log entry."
+      },
+      {
+        "id": "gate.active_frontier_trace",
+        "status": "pass",
+        "severity": "error",
+        "observed": 0,
+        "expected": 0,
+        "message": "Every active open item in digest must appear in computed statuses.",
+        "details": []
+      },
+      {
+        "id": "gate.release_diff_basis",
+        "status": "pass",
+        "severity": "error",
+        "observed": 0,
+        "expected": 0,
+        "message": "Every release-diff event must have an explicit basis note in the target release snapshot.",
+        "details": []
+      },
+      {
+        "id": "gate.regression_tests",
+        "status": "pass",
+        "severity": "error",
+        "observed": 0,
+        "expected": 0,
+        "message": "Regression test failures must be zero."
+      },
+      {
+        "id": "gate.canon_import_packet",
+        "status": "pass",
+        "severity": "error",
+        "observed": 0,
+        "expected": 0,
+        "message": "Canon-import TeX packet and import manifest must be generated.",
+        "details": []
+      },
+      {
+        "id": "gate.compile_verification",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "compile_status": "passed",
+          "pdf_pages": 6,
+          "rendered_pages": 2,
+          "missing_outputs": []
+        },
+        "expected": "compiled PDF with at least one rendered page and no missing required outputs",
+        "message": "Canon-import standalone TeX packet must compile to PDF and render successfully.",
+        "details": []
+      },
+      {
+        "id": "gate.supersession_readiness_report",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "missing_outputs": [],
+          "l1_import_ready": true,
+          "l5_full_supersession_ready": false,
+          "approved_for_full_supersession": false
+        },
+        "expected": "readiness report generated with explicit import-ready and full-supersession-ready fields",
+        "message": "Supersession readiness must be reported explicitly before any generated-corpus replacement work.",
+        "details": []
+      },
+      {
+        "id": "gate.gr_successor_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "equivalence_status": "passed",
+          "compile_status": "passed",
+          "missing_outputs": [],
+          "posture": "domain-bounded-cert-close",
+          "active_frontiers": [
+            "ob:GR.global-subcriticality"
+          ]
+        },
+        "expected": "GR successor pilot artifacts generated, equivalence report passed, and standalone PDF compiled/rendered.",
+        "message": "GR branch-successor pilot must be generated, equivalence-checked, and compile verified.",
+        "details": []
+      },
+      {
+        "id": "gate.ym_successor_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "equivalence_status": "passed",
+          "compile_status": "passed",
+          "missing_outputs": [],
+          "posture": "conditional-cert-close",
+          "active_frontiers": [
+            "ob:YM.B3.A2"
+          ]
+        },
+        "expected": "YM successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, conditional posture preserved, and B3-A2 remains open.",
+        "message": "YM branch-successor pilot must be generated, equivalence-checked, compile verified, and must not upgrade to unconditional Clay-grade closure.",
+        "details": []
+      },
+      {
+        "id": "gate.spec_successor_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "equivalence_status": "passed",
+          "compile_status": "passed",
+          "missing_outputs": [],
+          "posture": "cert-close",
+          "active_frontiers": []
+        },
+        "expected": "SPEC successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, cert-close posture preserved, and no SPEC-local frontier introduced.",
+        "message": "SPEC branch-successor pilot must verify the zero-frontier gauge-response CERT-CLOSE case without widening to matter-rich spectroscopy.",
+        "details": []
+      },
+      {
+        "id": "gate.scc_successor_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "equivalence_status": "passed",
+          "compile_status": "passed",
+          "missing_outputs": [],
+          "posture": "conditional-cert-close",
+          "active_frontiers": [],
+          "basis_statuses": {
+            "thm:SCC.MCS": "C",
+            "thm:SCC.UC": "C",
+            "thm:SCC.TSI": "C"
+          }
+        },
+        "expected": "SCC successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, conditional structural posture preserved, no SCC-local frontier introduced, and MCS+UC+TSI basis retained.",
+        "message": "SCC branch-successor pilot must preserve structural counterfactual-capacity scope and must not introduce a phenomenological overclaim.",
+        "details": []
+      },
+      {
+        "id": "gate.cryst_successor_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "equivalence_status": "passed",
+          "compile_status": "passed",
+          "missing_outputs": [],
+          "posture": "conditional-cert-close",
+          "active_frontiers": [
+            "ob:CRYST.phase-problem"
+          ]
+        },
+        "expected": "CRYST successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, conditional posture preserved, and phase-problem frontier remains open.",
+        "message": "CRYST branch-successor pilot must preserve conditional crystallography closure without erasing or solving the phase problem.",
+        "details": []
+      },
+      {
+        "id": "gate.ling_successor_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "equivalence_status": "passed",
+          "compile_status": "passed",
+          "missing_outputs": [],
+          "posture": "conditional-cert-close",
+          "active_frontiers": [
+            "ob:LING.REF-INVIS-RECOV"
+          ]
+        },
+        "expected": "LING successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, conditional posture preserved, and REF-INVIS/RECOV frontier remains open.",
+        "message": "LING branch-successor pilot must preserve contrast+recursion+context-response closure without importing or erasing reference recovery.",
+        "details": []
+      },
+      {
+        "id": "gate.bio_successor_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "equivalence_status": "passed",
+          "compile_status": "passed",
+          "posture": "conditional-cert-close",
+          "active_frontiers": [
+            "ob:BIO.BND-open"
+          ],
+          "bnd_frontier_preserved": true,
+          "endpoint_scope": "nondegenerate-bio"
+        },
+        "expected": "BIO successor pilot artifacts generated, equivalence report passed, standalone PDF compiled, conditional posture on C_Bio^nd preserved, ob:BIO.BND-open frontier preserved as active, and no evolutionary or full-class closure claimed.",
+        "message": "BIO branch-successor pilot must preserve scoped endpoint on C_Bio^nd and keep the BND full-class frontier open without smuggling biological primitives.",
+        "details": []
+      },
+      {
+        "id": "gate.sm_successor_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "equivalence_status": "passed",
+          "compile_status": "passed",
+          "posture": "intrinsic-structural-close",
+          "active_frontiers": [
+            "ob:SM.O-IDcont"
+          ],
+          "o_idcont_open": true,
+          "ym_posture": "conditional-cert-close",
+          "gr_posture": "domain-bounded-cert-close"
+        },
+        "expected": "SM successor pilot: intrinsic-structural-close posture, ob:SM.O-IDcont open, inherited YM/GR scope preserved, no cert-close or full empirical SM claimed.",
+        "message": "SM branch-successor pilot must preserve intrinsic-structural-close posture with O-IDcont open and no empirical SM overclaim.",
+        "details": []
+      },
+      {
+        "id": "gate.ns_successor_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "equivalence_status": "passed",
+          "compile_status": "passed",
+          "posture": "domain-bounded-cert-close",
+          "active_frontiers": [
+            "ob:NS.bridge-stage2",
+            "front:NS.main"
+          ],
+          "sb2_discharged": true,
+          "stale_posture_corrected": true
+        },
+        "expected": "NS successor pilot: domain-bounded-cert-close posture (correcting stale frontier-blocked), front:NS.main open, ob:NS.SB2 discharged [C], no Clay Prize claim.",
+        "message": "NS branch-successor pilot must correct the stale frontier-blocked posture to domain-bounded-cert-close with front:NS.main active.",
+        "details": []
+      },
+      {
+        "id": "gate.rh_successor_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "equivalence_status": "passed",
+          "compile_status": "pdf_exists",
+          "posture": "cert-proj",
+          "s1_arc_is_open": true,
+          "s1_sub_all_conditional": true,
+          "illegal_s1_arc_discharges": []
+        },
+        "expected": "cert-proj posture, S1-ARC [O], S1-TRACE/DESCENT/COMP [C], no illegal S1-ARC discharges. FAILURE = implicit RH proof claim.",
+        "message": "RH pilot: S1-ARC must be [O]. Any other status is a governance violation implying a proof of the Riemann Hypothesis.",
+        "details": []
+      },
+      {
+        "id": "gate.proof_trees",
+        "status": "pass",
+        "severity": "warning",
+        "observed": {
+          "branches_traced": 10,
+          "missing": []
+        },
+        "expected": "Proof trees generated for all 10 branches.",
+        "message": "Proof tree engine must produce structured dependency chains for all branches.",
+        "details": []
+      },
+      {
+        "id": "gate.canonical_coverage",
+        "status": "pass",
+        "severity": "warning",
+        "observed": {
+          "GR_coverage": 100.0,
+          "YM_coverage": 100.0
+        },
+        "expected": "GR and YM canonical coverage >= 90%.",
+        "message": "GR and YM canonical coverage manifests must reach 90% to unlock L3.",
+        "details": []
+      },
+      {
+        "id": "gate.l3_readiness",
+        "status": "pass",
+        "severity": "info",
+        "observed": {
+          "l3_ready": [
+            "GR",
+            "YM",
+            "NS",
+            "SM",
+            "RH",
+            "SPEC",
+            "SCC",
+            "BIO",
+            "LING",
+            "CRYST"
+          ],
+          "l3_candidate": [],
+          "total_pilots": 10
+        },
+        "expected": "L3 readiness report generated for all pilots.",
+        "message": "L3 readiness is tracked but not yet a hard gate.",
+        "details": []
+      },
+      {
+        "id": "gate.gr_l3_certificate",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "status": "passed",
+          "l3_level": "release_candidate",
+          "criteria_passed": 9,
+          "criteria_total": 9,
+          "pdf_exists": true
+        },
+        "expected": "GR L3 certificate: passed, release_candidate level, all criteria met, PDF compiled.",
+        "message": "GR L3 Release Candidate certificate must pass all 9 supersession criteria.",
+        "details": []
+      },
+      {
+        "id": "gate.v35_multi_branch_certificates",
+        "status": "pass",
+        "severity": "warning",
+        "observed": {
+          "passed": 8,
+          "total": 8
+        },
+        "expected": "All 8 remaining branch L3 certificates passed.",
+        "message": "v35 multi-branch certificates must all pass (8 branches).",
+        "details": []
+      },
+      {
+        "id": "gate.book_vii_l4_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "status": "passed",
+          "l4_level": "spine_release_candidate",
+          "all_unconditional": true,
+          "l6_additions": true,
+          "shell_pdf_exists": true
+        },
+        "expected": "Book VII L4: spine_release_candidate, all [U], L+6 additions present, shell PDF compiled.",
+        "message": "Book VII L4 spine pilot: all governance theorems must be [U]; Session L+6 additions must be present.",
+        "details": []
+      },
+      {
+        "id": "gate.book_i_l4_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "status": "passed",
+          "l4_level": "spine_release_candidate",
+          "all_unconditional": true,
+          "k0_prime": true,
+          "defect_ledger": true
+        },
+        "expected": "Book I L4: spine_release_candidate, all [U], K0=7 present, defect ledger complete.",
+        "message": "Book I L4 spine pilot: all theorems must be [U]; K_0=7 and defect ledger required.",
+        "details": []
+      },
+      {
+        "id": "gate.book_ii_l4_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "status": "passed",
+          "l4_level": "spine_release_candidate",
+          "ls2_status": "C",
+          "ls2_universal": "U",
+          "pass_status": "U",
+          "sct6b_present": true
+        },
+        "expected": "Book II L4: spine_RC, LS-2=[C], ls2-universal=[U], PASS=[U], SCT.6b present.",
+        "message": "Book II L4 spine pilot: two-layer structure must be correctly represented.",
+        "details": []
+      },
+      {
+        "id": "gate.book_v_l4_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "status": "passed",
+          "l4_level": "spine_release_candidate",
+          "ublt_status": "U",
+          "branch_projection": "U",
+          "all_unconditional": true
+        },
+        "expected": "Book V L4: spine_RC, UBLT=[U], branch-projection=[U], all primary [U].",
+        "message": "Book V L4 spine pilot: UBLT and Prop.V.3.1 must be [U]; closes branch-spine dependency gap.",
+        "details": []
+      },
+      {
+        "id": "gate.book_iv_l4_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "status": "passed",
+          "l4_level": "spine_release_candidate",
+          "universal_completion": "U",
+          "source_uniqueness": "U",
+          "descendants_factor": "U",
+          "full_chain": true
+        },
+        "expected": "Book IV L4: spine_RC, Thm.IV.5.1=[U], uniqueness=[U], descendants=[U], chain traceable.",
+        "message": "Book IV L4: universal completion, uniqueness, and factoring must all be [U]; full chain traceable.",
+        "details": []
+      },
+      {
+        "id": "gate.book_vi_l4_pilot",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "status": "passed",
+          "l4_level": "spine_release_candidate",
+          "VI91_conditional": "C",
+          "bridge_schema_U": "U",
+          "no_smuggling_U": "U",
+          "gap_closed": true
+        },
+        "expected": "Book VI L4: spine_RC, VI.9.1=[C], bridge=[U], no-smug=[U], gap closed.",
+        "message": "Book VI L4: Thm.VI.9.1 must be [C]; bridge schema and no-smuggling must be [U].",
+        "details": []
+      },
+      {
+        "id": "gate.gr_l2_hardening",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "hardening_status": "passed",
+          "failed_count": 0,
+          "missing_outputs": []
+        },
+        "expected": "GR L2 hardening report passed, no failed checks, and required prose-preservation outputs generated.",
+        "message": "GR L2 successor pilot must pass hardening before further successor-corpus expansion.",
+        "details": []
+      },
+      {
+        "id": "gate.l2_pilot_comparison",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "status": "passed",
+          "failed_count": 0,
+          "missing_outputs": []
+        },
+        "expected": "L2 GR/YM pilot comparison report passed with no failed checks.",
+        "message": "Generated branch-successor pilots must preserve distinct closure regimes, open frontiers, and no-supersession status.",
+        "details": []
+      },
+      {
+        "id": "gate.l2_pilot_standard",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "status": "passed",
+          "failed_count": 0,
+          "missing_outputs": []
+        },
+        "expected": "Every configured L2 branch-successor pilot satisfies the reusable L2 pilot standard.",
+        "message": "Configured L2 pilot records must preserve equivalence, compile status, scoped posture, live frontier, and no-supersession semantics.",
+        "details": []
+      },
+      {
+        "id": "gate.pilot_intake_queue",
+        "status": "pass",
+        "severity": "error",
+        "observed": {
+          "status": "passed",
+          "recommended_next_pilot": "BIO",
+          "candidate_count": 6,
+          "missing_outputs": []
+        },
+        "expected": "Pilot intake report generated with at least one ranked candidate and one recommended next pilot.",
+        "message": "Project Lead branch-pilot expansion must be governed by an explicit ranked intake queue.",
+        "details": []
+      }
+    ]
+  },
+  "release_diff": {
+    "source_release": "L+4",
+    "target_release": "L+5-draft",
+    "target_status": "draft-for-governance-testing",
+    "changes": [
+      {
+        "change_id": "branch-posture:update:NS",
+        "category": "branch-posture",
+        "item": "NS",
+        "before": "frontier-blocked",
+        "after": "domain-bounded-cert-close",
+        "has_basis": true,
+        "basis": [
+          "prop:NS.status",
+          "thm:NS.7.1",
+          "thm:NS.6.1"
+        ],
+        "change_type": "stale-posture-correction",
+        "scope_relation": "restricted",
+        "note": "NS posture corrected from frontier-blocked to domain-bounded-cert-close. Canonical NS branch book contains prop:NS-status [C], thm:NS71 [C], and cor:NS-both-give-endpoint [C] establishing domain-bounded conditional CERT-CLOSE. The NS preamble was stale. Correction surfaced by v31 pilot."
+      },
+      {
+        "change_id": "active-obligation:remove:ob:NS.SB2",
+        "category": "active-obligation",
+        "item": "ob:NS.SB2",
+        "before": "active",
+        "after": "absent",
+        "has_basis": true,
+        "basis": [
+          "thm:NS.SB2-discharged",
+          "thm:NS.Ren5"
+        ],
+        "change_type": "obligation-discharge",
+        "scope_relation": "preserved",
+        "note": "ob:NS.SB2 conditionally discharged via SCT.6b coercive-transport mechanism (thm:NS.SB2-discharged). Full discharge conditional on Phase-A/K_0=7/PASS/SCT.6b."
+      },
+      {
+        "change_id": "active-obligation:remove:ob:rh-s1-formal",
+        "category": "active-obligation",
+        "item": "ob:rh-s1-formal",
+        "before": "active",
+        "after": "absent",
+        "has_basis": true,
+        "basis": [
+          "aliases.yaml",
+          "thm:RH.S1.formal"
+        ],
+        "change_type": "alias-normalization",
+        "scope_relation": "preserved",
+        "note": "Retired/legacy RH active-obligation label is replaced by the local canonical S1 frontier record. No mathematical force changes."
+      },
+      {
+        "change_id": "active-obligation:add:front:NS.main",
+        "category": "active-obligation",
+        "item": "front:NS.main",
+        "before": "absent",
+        "after": "active",
+        "has_basis": true,
+        "basis": [
+          "front:NS.main",
+          "ob:NS.SB2"
+        ],
+        "change_type": "frontier-explicitness",
+        "scope_relation": "preserved",
+        "note": "The NS main frontier is listed explicitly while preserving the underlying SB2 obligation."
+      },
+      {
+        "change_id": "active-obligation:add:thm:RH.S1.formal",
+        "category": "active-obligation",
+        "item": "thm:RH.S1.formal",
+        "before": "absent",
+        "after": "active",
+        "has_basis": true,
+        "basis": [
+          "aliases.yaml",
+          "thm:RH.S1.formal"
+        ],
+        "change_type": "alias-normalization",
+        "scope_relation": "preserved",
+        "note": "Canonical local RH S1 record is surfaced in the active-obligation list."
+      }
+    ],
+    "change_count": 5,
+    "missing_basis_count": 0,
+    "category_counts": {
+      "branch-posture": 1,
+      "active-obligation": 4
+    },
+    "missing_basis": []
+  },
+  "regression_tests": {
+    "status": "passed",
+    "test_count": 11,
+    "failed_count": 0,
+    "results": [
+      {
+        "id": "regression.schema_version",
+        "status": "pass",
+        "message": "schema_version must match the active regression baseline.",
+        "observed": "0.41.0",
+        "expected": "0.41.0"
+      },
+      {
+        "id": "regression.claims",
+        "status": "pass",
+        "message": "claims must match the active regression baseline.",
+        "observed": 226,
+        "expected": 226
+      },
+      {
+        "id": "regression.computed_statuses",
+        "status": "pass",
+        "message": "computed_statuses must match the active regression baseline.",
+        "observed": 226,
+        "expected": 226
+      },
+      {
+        "id": "regression.errors",
+        "status": "pass",
+        "message": "errors must match the active regression baseline.",
+        "observed": 0,
+        "expected": 0
+      },
+      {
+        "id": "regression.release_diff_changes",
+        "status": "pass",
+        "message": "release_diff_changes must match the active regression baseline.",
+        "observed": 5,
+        "expected": 5
+      },
+      {
+        "id": "regression.release_diff_missing_basis",
+        "status": "pass",
+        "message": "release_diff_missing_basis must match the active regression baseline.",
+        "observed": 0,
+        "expected": 0
+      },
+      {
+        "id": "regression.warnings_max",
+        "status": "pass",
+        "message": "Warning count must not exceed the accepted baseline.",
+        "observed": 3,
+        "expected": 3
+      },
+      {
+        "id": "regression.warning_types",
+        "status": "pass",
+        "message": "Warning classes must remain stable unless the baseline is intentionally updated.",
+        "observed": [
+          "release-vs-computed-posture-mismatch",
+          "retired-alias-detected"
+        ],
+        "expected": [
+          "release-vs-computed-posture-mismatch",
+          "retired-alias-detected"
+        ]
+      },
+      {
+        "id": "regression.active_open_items",
+        "status": "pass",
+        "message": "Active open-item identity must remain stable unless canon coverage or release state changes.",
+        "observed": [
+          "front:NS.main",
+          "ob:BIO.BND-open",
+          "ob:CRYST.phase-problem",
+          "ob:GR.global-subcriticality",
+          "ob:LING.REF-INVIS-RECOV",
+          "ob:NS.bridge-stage2",
+          "ob:RH.S1-ARC",
+          "ob:SM.O-IDcont",
+          "ob:YM.B3.A2",
+          "thm:RH.S1.formal"
+        ],
+        "expected": [
+          "front:NS.main",
+          "ob:BIO.BND-open",
+          "ob:CRYST.phase-problem",
+          "ob:GR.global-subcriticality",
+          "ob:LING.REF-INVIS-RECOV",
+          "ob:NS.bridge-stage2",
+          "ob:RH.S1-ARC",
+          "ob:SM.O-IDcont",
+          "ob:YM.B3.A2",
+          "thm:RH.S1.formal"
+        ]
+      },
+      {
+        "id": "regression.branch_postures",
+        "status": "pass",
+        "message": "Computed branch postures must match the active regression baseline.",
+        "observed": "all matched",
+        "expected": {
+          "BIO": "conditional-cert-close",
+          "CRYST": "conditional-cert-close",
+          "GR": "domain-bounded-cert-close",
+          "LING": "conditional-cert-close",
+          "NS": "domain-bounded-cert-close",
+          "RH": "cert-proj",
+          "SCC": "conditional-cert-close",
+          "SM": "intrinsic-structural-close",
+          "SPEC": "cert-close",
+          "YM": "conditional-cert-close"
+        }
+      },
+      {
+        "id": "regression.protected_claim_statuses",
+        "status": "pass",
+        "message": "Protected pilot claims must retain their effective statuses.",
+        "observed": "all matched",
+        "expected": {
+          "front:NS.main": "O",
+          "ob:GR.global-subcriticality": "O",
+          "ob:RH.S1-ARC": "O",
+          "ob:SM.O-IDcont": "O",
+          "ob:YM.B3.A2": "O",
+          "prop:NS.status": "C",
+          "prop:SM.intrinsic-closure": "C",
+          "status:RH": "cert-proj",
+          "thm:GR.domain": "C",
+          "thm:NS.7.1": "C",
+          "thm:RH.S1.formal": "O",
+          "thm:SCC.MCS": "C",
+          "thm:SCC.TSI": "C",
+          "thm:SCC.UC": "C",
+          "thm:YM.7": "C"
+        }
+      }
+    ]
+  },
+  "compile_check": {
+    "status": "passed",
+    "targets": {
+      "canon_governance_appendix": {
+        "status": "passed",
+        "compile": {
+          "id": "canon_governance_appendix",
+          "status": "passed",
+          "runs": [
+            {
+              "run": 1,
+              "returncode": 0,
+              "stdout_tail": "\\T1/cmr/m/n/10 pi-lot sat-is-fies the\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 144--145\n\\T1/cmr/m/n/10 reusable L2 pi-lot\n\nOverfull \\hbox (8.5759pt too wide) in paragraph at lines 145--145\n[]|\\T1/cmr/m/n/10 gate.pilot_intake_queue| \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n[]|\\T1/cmr/m/n/10 {'status':\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'passed', 'rec-om-\n\nOverfull \\hbox (4.38808pt too wide) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 mended_next_pilot':\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'BIO', 'can-di-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 date_count': 6,\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'miss-ing_outputs':\n\nUnderfull \\hbox (badness 6575) in paragraph at lines 145--146\n[]|\\T1/cmr/m/n/10 Pilot in-take re-port\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 gen-er-ated with at\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 least one ranked\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 can-di-date and one\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 rec-om-mended next\n\nOverfull \\hbox (10.12305pt too wide) in alignment at lines 112--146\n [] [] [] [] [] \n[2] [3] [4] [5]) [6]\n(/home/claude/nfc_gov/output/pdf/canon_governance_appendix_standalone.aux) )\n(see the transcript file for additional information) </root/.texlive2023/texmf-\nvar/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </root/.texlive2023/texmf-var/f\nonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </root/.texlive2023/texmf-var/fonts/\npk/ljfour/jknappen/ec/ecbx1440.600pk>\nOutput written on /home/claude/nfc_gov/output/pdf/canon_governance_appendix_sta\nndalone.pdf (6 pages, 47852 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/canon_governance_appendix\n_standalone.log.\n",
+              "stderr_tail": ""
+            },
+            {
+              "run": 2,
+              "returncode": 0,
+              "stdout_tail": "\\T1/cmr/m/n/10 pi-lot sat-is-fies the\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 144--145\n\\T1/cmr/m/n/10 reusable L2 pi-lot\n\nOverfull \\hbox (8.5759pt too wide) in paragraph at lines 145--145\n[]|\\T1/cmr/m/n/10 gate.pilot_intake_queue| \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n[]|\\T1/cmr/m/n/10 {'status':\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'passed', 'rec-om-\n\nOverfull \\hbox (4.38808pt too wide) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 mended_next_pilot':\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'BIO', 'can-di-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 date_count': 6,\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'miss-ing_outputs':\n\nUnderfull \\hbox (badness 6575) in paragraph at lines 145--146\n[]|\\T1/cmr/m/n/10 Pilot in-take re-port\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 gen-er-ated with at\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 least one ranked\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 can-di-date and one\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 rec-om-mended next\n\nOverfull \\hbox (10.12305pt too wide) in alignment at lines 112--146\n [] [] [] [] [] \n[2] [3] [4] [5]) [6]\n(/home/claude/nfc_gov/output/pdf/canon_governance_appendix_standalone.aux) )\n(see the transcript file for additional information) </root/.texlive2023/texmf-\nvar/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </root/.texlive2023/texmf-var/f\nonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </root/.texlive2023/texmf-var/fonts/\npk/ljfour/jknappen/ec/ecbx1440.600pk>\nOutput written on /home/claude/nfc_gov/output/pdf/canon_governance_appendix_sta\nndalone.pdf (6 pages, 47852 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/canon_governance_appendix\n_standalone.log.\n",
+              "stderr_tail": ""
+            }
+          ],
+          "pdf_exists": true,
+          "pdf_path": "output/pdf/canon_governance_appendix_standalone.pdf",
+          "page_count": 6,
+          "log_summary": {
+            "latex_warnings": 0,
+            "overfull_hbox": 60,
+            "underfull_hbox": 297,
+            "undefined_references": false
+          }
+        },
+        "render": {
+          "id": "canon_governance_appendix",
+          "status": "passed",
+          "returncode": 0,
+          "rendered_pages": 2,
+          "render_dir": "output/pdf_render_check/canon_governance_appendix",
+          "renderer": "pymupdf",
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      },
+      "gr_branch_successor": {
+        "status": "passed",
+        "compile": {
+          "id": "gr_branch_successor",
+          "status": "passed",
+          "runs": [
+            {
+              "run": 1,
+              "returncode": 0,
+              "stdout_tail": " [] [] [] [] \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 41--41\n[]|\\OT1/cmr/m/n/10.95 domain-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 41--41\n\\OT1/cmr/m/n/10.95 bounded-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 41--41\n[]|\\OT1/cmr/m/n/10.95 domain-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 41--41\n\\OT1/cmr/m/n/10.95 bounded-\n\nOverfull \\hbox (5.93428pt too wide) in alignment at lines 26--42\n [] [] [] [] [] \n\nOverfull \\hbox (2.90042pt too wide) in paragraph at lines 49--52\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=continuum-interface; do-ma\nin=spine; cer-tifi-cate[]scope=global; con-tin-uum[]license=none;\n[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]\nOverfull \\hbox (30.1234pt too wide) in paragraph at lines 269--272\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=declared-GR-target; domain\n=GR-branch; cer-tifi-cate[]scope=global; con-tin-uum[]license=book-\n\nOverfull \\hbox (26.52689pt too wide) in paragraph at lines 282--285\n\\OT1/cmr/m/n/10.95 uum[]license=book-VI-certified; pro-mo-tion[]ceiling=domain-\nbounded-cert-close; constraints=realized-domain-\n) [5] (/home/claude/nfc_gov/output/pdf/gr_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/gr_branch_successor_standalon\ne.pdf (5 pages, 113219 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/gr_branch_successor_stand\nalone.log.\n",
+              "stderr_tail": ""
+            },
+            {
+              "run": 2,
+              "returncode": 0,
+              "stdout_tail": " [] [] [] [] \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 41--41\n[]|\\OT1/cmr/m/n/10.95 domain-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 41--41\n\\OT1/cmr/m/n/10.95 bounded-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 41--41\n[]|\\OT1/cmr/m/n/10.95 domain-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 41--41\n\\OT1/cmr/m/n/10.95 bounded-\n\nOverfull \\hbox (5.93428pt too wide) in alignment at lines 26--42\n [] [] [] [] [] \n\nOverfull \\hbox (2.90042pt too wide) in paragraph at lines 49--52\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=continuum-interface; do-ma\nin=spine; cer-tifi-cate[]scope=global; con-tin-uum[]license=none;\n[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]\nOverfull \\hbox (30.1234pt too wide) in paragraph at lines 269--272\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=declared-GR-target; domain\n=GR-branch; cer-tifi-cate[]scope=global; con-tin-uum[]license=book-\n\nOverfull \\hbox (26.52689pt too wide) in paragraph at lines 282--285\n\\OT1/cmr/m/n/10.95 uum[]license=book-VI-certified; pro-mo-tion[]ceiling=domain-\nbounded-cert-close; constraints=realized-domain-\n) [5] (/home/claude/nfc_gov/output/pdf/gr_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/gr_branch_successor_standalon\ne.pdf (5 pages, 113219 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/gr_branch_successor_stand\nalone.log.\n",
+              "stderr_tail": ""
+            }
+          ],
+          "pdf_exists": true,
+          "pdf_path": "output/pdf/gr_branch_successor_standalone.pdf",
+          "page_count": 5,
+          "log_summary": {
+            "latex_warnings": 0,
+            "overfull_hbox": 7,
+            "underfull_hbox": 4,
+            "undefined_references": false
+          }
+        },
+        "render": {
+          "id": "gr_branch_successor",
+          "status": "passed",
+          "returncode": 0,
+          "rendered_pages": 2,
+          "render_dir": "output/pdf_render_check/gr_branch_successor",
+          "renderer": "pymupdf",
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      },
+      "ym_branch_successor": {
+        "status": "passed",
+        "compile": {
+          "id": "ym_branch_successor",
+          "status": "passed",
+          "runs": [
+            {
+              "run": 1,
+              "returncode": 0,
+              "stdout_tail": "rogram; domain=YM-\nbranch; cer-tifi-cate[]scope=branch-local; con-tin-uum[]license=book-\n\nOverfull \\hbox (43.53957pt too wide) in paragraph at lines 376--377\n []\\OT1/cmr/bx/n/10.95 B3 Com-pact Sim-ple SU(3) Con-di-tional Packet[] \\OT1/cm\nr/m/n/10.95 Place-holder canon-migration text for `thm:YM.B3.bridge`. \n\nOverfull \\hbox (43.53957pt too wide) in paragraph at lines 389--390\n []\\OT1/cmr/bx/n/10.95 B3 Com-pact Sim-ple SU(3) Con-di-tional Packet[] \\OT1/cm\nr/m/n/10.95 Place-holder canon-migration text for `thm:YM.B3.bridge`. \n[6]\nOverfull \\hbox (48.61676pt too wide) in paragraph at lines 397--400\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=ym-postprogram; domain=YM-\nbranch; cer-tifi-cate[]scope=branch-local; con-tin-uum[]license=book-\n\nOverfull \\hbox (20.99301pt too wide) in paragraph at lines 397--400\n\\OT1/cmr/m/n/10.95 VI-certified; pro-mo-tion[]ceiling=C; constraints=standalone\n-a2-gap,simple-a2-gap-without-sm-gauge-algebra-\n\nOverfull \\hbox (53.5065pt too wide) in paragraph at lines 407--410\n\\OT1/cmr/m/n/10.95 uum[]license=book-VI-certified; pro-mo-tion[]ceiling=conditi\nonal-cert-close; constraints=msc-normalized,persistence-\n) [7] (/home/claude/nfc_gov/output/pdf/ym_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/ym_branch_successor_standalon\ne.pdf (7 pages, 114723 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/ym_branch_successor_stand\nalone.log.\n",
+              "stderr_tail": ""
+            },
+            {
+              "run": 2,
+              "returncode": 0,
+              "stdout_tail": "rogram; domain=YM-\nbranch; cer-tifi-cate[]scope=branch-local; con-tin-uum[]license=book-\n\nOverfull \\hbox (43.53957pt too wide) in paragraph at lines 376--377\n []\\OT1/cmr/bx/n/10.95 B3 Com-pact Sim-ple SU(3) Con-di-tional Packet[] \\OT1/cm\nr/m/n/10.95 Place-holder canon-migration text for `thm:YM.B3.bridge`. \n\nOverfull \\hbox (43.53957pt too wide) in paragraph at lines 389--390\n []\\OT1/cmr/bx/n/10.95 B3 Com-pact Sim-ple SU(3) Con-di-tional Packet[] \\OT1/cm\nr/m/n/10.95 Place-holder canon-migration text for `thm:YM.B3.bridge`. \n[6]\nOverfull \\hbox (48.61676pt too wide) in paragraph at lines 397--400\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=ym-postprogram; domain=YM-\nbranch; cer-tifi-cate[]scope=branch-local; con-tin-uum[]license=book-\n\nOverfull \\hbox (20.99301pt too wide) in paragraph at lines 397--400\n\\OT1/cmr/m/n/10.95 VI-certified; pro-mo-tion[]ceiling=C; constraints=standalone\n-a2-gap,simple-a2-gap-without-sm-gauge-algebra-\n\nOverfull \\hbox (53.5065pt too wide) in paragraph at lines 407--410\n\\OT1/cmr/m/n/10.95 uum[]license=book-VI-certified; pro-mo-tion[]ceiling=conditi\nonal-cert-close; constraints=msc-normalized,persistence-\n) [7] (/home/claude/nfc_gov/output/pdf/ym_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/ym_branch_successor_standalon\ne.pdf (7 pages, 114723 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/ym_branch_successor_stand\nalone.log.\n",
+              "stderr_tail": ""
+            }
+          ],
+          "pdf_exists": true,
+          "pdf_path": "output/pdf/ym_branch_successor_standalone.pdf",
+          "page_count": 7,
+          "log_summary": {
+            "latex_warnings": 0,
+            "overfull_hbox": 30,
+            "underfull_hbox": 2,
+            "undefined_references": false
+          }
+        },
+        "render": {
+          "id": "ym_branch_successor",
+          "status": "passed",
+          "returncode": 0,
+          "rendered_pages": 2,
+          "render_dir": "output/pdf_render_check/ym_branch_successor",
+          "renderer": "pymupdf",
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      },
+      "spec_branch_successor": {
+        "status": "passed",
+        "compile": {
+          "id": "spec_branch_successor",
+          "status": "passed",
+          "runs": [
+            {
+              "run": 1,
+              "returncode": 0,
+              "stdout_tail": "ive/texmf-dist/tex/latex/xcolor/xcolor.sty\n(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)\n(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)\n(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))\n(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)\n(/home/claude/nfc_gov/output/pdf/spec_branch_successor_standalone.aux)\n*geometry* driver: auto-detecting\n*geometry* detected driver: pdftex\n(/home/claude/nfc_gov/output/pdf/spec_branch_successor_standalone.out)\n(/home/claude/nfc_gov/output/pdf/spec_branch_successor_standalone.out)\n(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii\n[Loading MPS to PDF converter (version 2006.09.02).]\n) (/home/claude/nfc_gov/output/pdf/spec_branch_successor_standalone.toc)\n(/home/claude/nfc_gov/output/tex/spec_branch_successor.tex\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 19--23\n [] [] [] [] [] \n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 23--26\n [] [] [] [] [] \n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 26--29\n [] [] [] [] [] \n) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]\n(/home/claude/nfc_gov/output/pdf/spec_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/spec_branch_successor_standal\none.pdf (1 page, 93048 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/spec_branch_successor_sta\nndalone.log.\n",
+              "stderr_tail": ""
+            },
+            {
+              "run": 2,
+              "returncode": 0,
+              "stdout_tail": "ive/texmf-dist/tex/latex/xcolor/xcolor.sty\n(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)\n(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)\n(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))\n(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)\n(/home/claude/nfc_gov/output/pdf/spec_branch_successor_standalone.aux)\n*geometry* driver: auto-detecting\n*geometry* detected driver: pdftex\n(/home/claude/nfc_gov/output/pdf/spec_branch_successor_standalone.out)\n(/home/claude/nfc_gov/output/pdf/spec_branch_successor_standalone.out)\n(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii\n[Loading MPS to PDF converter (version 2006.09.02).]\n) (/home/claude/nfc_gov/output/pdf/spec_branch_successor_standalone.toc)\n(/home/claude/nfc_gov/output/tex/spec_branch_successor.tex\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 19--23\n [] [] [] [] [] \n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 23--26\n [] [] [] [] [] \n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 26--29\n [] [] [] [] [] \n) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]\n(/home/claude/nfc_gov/output/pdf/spec_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/spec_branch_successor_standal\none.pdf (1 page, 93048 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/spec_branch_successor_sta\nndalone.log.\n",
+              "stderr_tail": ""
+            }
+          ],
+          "pdf_exists": true,
+          "pdf_path": "output/pdf/spec_branch_successor_standalone.pdf",
+          "page_count": 1,
+          "log_summary": {
+            "latex_warnings": 0,
+            "overfull_hbox": 3,
+            "underfull_hbox": 0,
+            "undefined_references": false
+          }
+        },
+        "render": {
+          "id": "spec_branch_successor",
+          "status": "passed",
+          "returncode": 0,
+          "rendered_pages": 1,
+          "render_dir": "output/pdf_render_check/spec_branch_successor",
+          "renderer": "pymupdf",
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      },
+      "scc_branch_successor": {
+        "status": "passed",
+        "compile": {
+          "id": "scc_branch_successor",
+          "status": "passed",
+          "runs": [
+            {
+              "run": 1,
+              "returncode": 0,
+              "stdout_tail": "texmf-dist/tex/latex/graphics/mathcolor.ltx))\n(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)\n(/home/claude/nfc_gov/output/pdf/scc_branch_successor_standalone.aux)\n*geometry* driver: auto-detecting\n*geometry* detected driver: pdftex\n(/home/claude/nfc_gov/output/pdf/scc_branch_successor_standalone.out)\n(/home/claude/nfc_gov/output/pdf/scc_branch_successor_standalone.out)\n(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii\n[Loading MPS to PDF converter (version 2006.09.02).]\n) (/home/claude/nfc_gov/output/pdf/scc_branch_successor_standalone.toc)\n(/home/claude/nfc_gov/output/tex/scc_branch_successor.tex\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 19--23\n [] [] [] [] [] \n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 23--26\n [] [] [] [] [] \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 33--33\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 33--33\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 26--34\n [] [] [] [] [] \n[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]) [3]\n(/home/claude/nfc_gov/output/pdf/scc_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/scc_branch_successor_standalo\nne.pdf (3 pages, 98363 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/scc_branch_successor_stan\ndalone.log.\n",
+              "stderr_tail": ""
+            },
+            {
+              "run": 2,
+              "returncode": 0,
+              "stdout_tail": "texmf-dist/tex/latex/graphics/mathcolor.ltx))\n(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)\n(/home/claude/nfc_gov/output/pdf/scc_branch_successor_standalone.aux)\n*geometry* driver: auto-detecting\n*geometry* detected driver: pdftex\n(/home/claude/nfc_gov/output/pdf/scc_branch_successor_standalone.out)\n(/home/claude/nfc_gov/output/pdf/scc_branch_successor_standalone.out)\n(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii\n[Loading MPS to PDF converter (version 2006.09.02).]\n) (/home/claude/nfc_gov/output/pdf/scc_branch_successor_standalone.toc)\n(/home/claude/nfc_gov/output/tex/scc_branch_successor.tex\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 19--23\n [] [] [] [] [] \n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 23--26\n [] [] [] [] [] \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 33--33\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 33--33\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 26--34\n [] [] [] [] [] \n[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]) [3]\n(/home/claude/nfc_gov/output/pdf/scc_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/scc_branch_successor_standalo\nne.pdf (3 pages, 98363 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/scc_branch_successor_stan\ndalone.log.\n",
+              "stderr_tail": ""
+            }
+          ],
+          "pdf_exists": true,
+          "pdf_path": "output/pdf/scc_branch_successor_standalone.pdf",
+          "page_count": 3,
+          "log_summary": {
+            "latex_warnings": 0,
+            "overfull_hbox": 3,
+            "underfull_hbox": 2,
+            "undefined_references": false
+          }
+        },
+        "render": {
+          "id": "scc_branch_successor",
+          "status": "passed",
+          "returncode": 0,
+          "rendered_pages": 2,
+          "render_dir": "output/pdf_render_check/scc_branch_successor",
+          "renderer": "pymupdf",
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      },
+      "cryst_branch_successor": {
+        "status": "passed",
+        "compile": {
+          "id": "cryst_branch_successor",
+          "status": "passed",
+          "runs": [
+            {
+              "run": 1,
+              "returncode": 0,
+              "stdout_tail": "ex/latex/graphics/mathcolor.ltx))\n(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)\n(/home/claude/nfc_gov/output/pdf/cryst_branch_successor_standalone.aux)\n*geometry* driver: auto-detecting\n*geometry* detected driver: pdftex\n(/home/claude/nfc_gov/output/pdf/cryst_branch_successor_standalone.out)\n(/home/claude/nfc_gov/output/pdf/cryst_branch_successor_standalone.out)\n(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii\n[Loading MPS to PDF converter (version 2006.09.02).]\n) (/home/claude/nfc_gov/output/pdf/cryst_branch_successor_standalone.toc)\n(/home/claude/nfc_gov/output/tex/cryst_branch_successor.tex\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 19--23\n [] [] [] [] [] \n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 23--26\n [] [] [] [] [] \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 29--29\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 29--29\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 26--30\n [] [] [] [] [] \n[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [2]\n(/home/claude/nfc_gov/output/pdf/cryst_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/cryst_branch_successor_standa\nlone.pdf (2 pages, 97073 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/cryst_branch_successor_st\nandalone.log.\n",
+              "stderr_tail": ""
+            },
+            {
+              "run": 2,
+              "returncode": 0,
+              "stdout_tail": "ex/latex/graphics/mathcolor.ltx))\n(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)\n(/home/claude/nfc_gov/output/pdf/cryst_branch_successor_standalone.aux)\n*geometry* driver: auto-detecting\n*geometry* detected driver: pdftex\n(/home/claude/nfc_gov/output/pdf/cryst_branch_successor_standalone.out)\n(/home/claude/nfc_gov/output/pdf/cryst_branch_successor_standalone.out)\n(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii\n[Loading MPS to PDF converter (version 2006.09.02).]\n) (/home/claude/nfc_gov/output/pdf/cryst_branch_successor_standalone.toc)\n(/home/claude/nfc_gov/output/tex/cryst_branch_successor.tex\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 19--23\n [] [] [] [] [] \n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 23--26\n [] [] [] [] [] \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 29--29\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 29--29\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 26--30\n [] [] [] [] [] \n[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [2]\n(/home/claude/nfc_gov/output/pdf/cryst_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/cryst_branch_successor_standa\nlone.pdf (2 pages, 97073 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/cryst_branch_successor_st\nandalone.log.\n",
+              "stderr_tail": ""
+            }
+          ],
+          "pdf_exists": true,
+          "pdf_path": "output/pdf/cryst_branch_successor_standalone.pdf",
+          "page_count": 2,
+          "log_summary": {
+            "latex_warnings": 0,
+            "overfull_hbox": 3,
+            "underfull_hbox": 2,
+            "undefined_references": false
+          }
+        },
+        "render": {
+          "id": "cryst_branch_successor",
+          "status": "passed",
+          "returncode": 0,
+          "rendered_pages": 2,
+          "render_dir": "output/pdf_render_check/cryst_branch_successor",
+          "renderer": "pymupdf",
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      },
+      "ling_branch_successor": {
+        "status": "passed",
+        "compile": {
+          "id": "ling_branch_successor",
+          "status": "passed",
+          "runs": [
+            {
+              "run": 1,
+              "returncode": 0,
+              "stdout_tail": "h_successor.tex\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 19--23\n [] [] [] [] [] \n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 23--26\n [] [] [] [] [] \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 29--29\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 29--29\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 26--30\n [] [] [] [] [] \n\nOverfull \\hbox (20.58975pt too wide) in paragraph at lines 37--40\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=contrast-compositional-con\ntext-response; domain=LING-branch; cer-tifi-cate[]scope=branch;\n\nOverfull \\hbox (17.54808pt too wide) in paragraph at lines 50--53\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=contrast-compositional-con\ntext-response; domain=LING-branch; cer-tifi-cate[]scope=branch \n\nOverfull \\hbox (17.54808pt too wide) in paragraph at lines 63--66\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=contrast-compositional-con\ntext-response; domain=LING-branch; cer-tifi-cate[]scope=branch \n[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [2]\n(/home/claude/nfc_gov/output/pdf/ling_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/ling_branch_successor_standal\none.pdf (2 pages, 97960 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/ling_branch_successor_sta\nndalone.log.\n",
+              "stderr_tail": ""
+            },
+            {
+              "run": 2,
+              "returncode": 0,
+              "stdout_tail": "h_successor.tex\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 19--23\n [] [] [] [] [] \n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 23--26\n [] [] [] [] [] \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 29--29\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 29--29\n[]|\\OT1/cmr/m/n/10.95 conditional-\n\nOverfull \\hbox (10.85344pt too wide) in alignment at lines 26--30\n [] [] [] [] [] \n\nOverfull \\hbox (20.58975pt too wide) in paragraph at lines 37--40\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=contrast-compositional-con\ntext-response; domain=LING-branch; cer-tifi-cate[]scope=branch;\n\nOverfull \\hbox (17.54808pt too wide) in paragraph at lines 50--53\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=contrast-compositional-con\ntext-response; domain=LING-branch; cer-tifi-cate[]scope=branch \n\nOverfull \\hbox (17.54808pt too wide) in paragraph at lines 63--66\n\\OT1/cmr/bx/n/10.95 Scope. \\OT1/cmr/m/n/10.95 regime=contrast-compositional-con\ntext-response; domain=LING-branch; cer-tifi-cate[]scope=branch \n[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [2]\n(/home/claude/nfc_gov/output/pdf/ling_branch_successor_standalone.aux) )\n(see the transcript file for additional information)</usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams\nfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c\nm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt\n10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/ling_branch_successor_standal\none.pdf (2 pages, 97960 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/ling_branch_successor_sta\nndalone.log.\n",
+              "stderr_tail": ""
+            }
+          ],
+          "pdf_exists": true,
+          "pdf_path": "output/pdf/ling_branch_successor_standalone.pdf",
+          "page_count": 2,
+          "log_summary": {
+            "latex_warnings": 0,
+            "overfull_hbox": 6,
+            "underfull_hbox": 2,
+            "undefined_references": false
+          }
+        },
+        "render": {
+          "id": "ling_branch_successor",
+          "status": "passed",
+          "returncode": 0,
+          "rendered_pages": 2,
+          "render_dir": "output/pdf_render_check/ling_branch_successor",
+          "renderer": "pymupdf",
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      },
+      "bio_branch_successor": {
+        "status": "passed",
+        "compile": {
+          "id": "bio_branch_successor",
+          "status": "passed",
+          "runs": [
+            {
+              "run": 1,
+              "returncode": 0,
+              "stdout_tail": "ro-mo-tion_ceiling=C;\n\nOverfull \\hbox (0.2074pt too wide) in paragraph at lines 252--253\n\\T1/cmr/m/n/10.95 founded-heredity end-point is reached un-der these con-di-tio\nns. The end-point is con-di-tional on ob:BIO.REP\n\nOverfull \\hbox (13.69147pt too wide) in paragraph at lines 255--256\n\\T1/cmr/m/it/10.95 Dependencies. \\T1/cmr/m/n/10.95 thm:BIO.REP, thm:BIO.MET, th\nm:BIO.FID, thm:BIO.NC, thm:BIO.BND, thm:BIO.HER,\n\nOverfull \\hbox (20.59074pt too wide) in paragraph at lines 264--267\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=nondegenerate-bio; domain=BI\nO-branch; cer-tifi-cate_scope=branch; pro-mo-tion_ceiling=C;\n[5]\nOverfull \\hbox (36.87721pt too wide) in paragraph at lines 280--283\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=full-replicator-class; domai\nn=BIO-branch; certificate_scope=open-class; pro-mo-tion_ceiling=C \n) [6] (/home/claude/nfc_gov/output/pdf/bio_branch_successor_standalone.aux) )\n(see the transcript file for additional information) </root/.texlive2023/texmf-\nvar/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </root/.texlive2023/texmf-var/f\nonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </root/.texlive2023/texmf-var/fonts/\npk/ljfour/jknappen/ec/ecrm0800.600pk> </root/.texlive2023/texmf-var/fonts/pk/lj\nfour/jknappen/ec/ecti1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/\njknappen/ec/ecrm1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknap\npen/ec/ecbx1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/e\nc/ecbx1440.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr\nm1200.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728\n.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><\n/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/bio_branch_successor_standalo\nne.pdf (6 pages, 108255 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/bio_branch_successor_stan\ndalone.log.\n",
+              "stderr_tail": ""
+            },
+            {
+              "run": 2,
+              "returncode": 0,
+              "stdout_tail": "ro-mo-tion_ceiling=C;\n\nOverfull \\hbox (0.2074pt too wide) in paragraph at lines 252--253\n\\T1/cmr/m/n/10.95 founded-heredity end-point is reached un-der these con-di-tio\nns. The end-point is con-di-tional on ob:BIO.REP\n\nOverfull \\hbox (13.69147pt too wide) in paragraph at lines 255--256\n\\T1/cmr/m/it/10.95 Dependencies. \\T1/cmr/m/n/10.95 thm:BIO.REP, thm:BIO.MET, th\nm:BIO.FID, thm:BIO.NC, thm:BIO.BND, thm:BIO.HER,\n\nOverfull \\hbox (20.59074pt too wide) in paragraph at lines 264--267\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=nondegenerate-bio; domain=BI\nO-branch; cer-tifi-cate_scope=branch; pro-mo-tion_ceiling=C;\n[5]\nOverfull \\hbox (36.87721pt too wide) in paragraph at lines 280--283\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=full-replicator-class; domai\nn=BIO-branch; certificate_scope=open-class; pro-mo-tion_ceiling=C \n) [6] (/home/claude/nfc_gov/output/pdf/bio_branch_successor_standalone.aux) )\n(see the transcript file for additional information) </root/.texlive2023/texmf-\nvar/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </root/.texlive2023/texmf-var/f\nonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </root/.texlive2023/texmf-var/fonts/\npk/ljfour/jknappen/ec/ecrm0800.600pk> </root/.texlive2023/texmf-var/fonts/pk/lj\nfour/jknappen/ec/ecti1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/\njknappen/ec/ecrm1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknap\npen/ec/ecbx1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/e\nc/ecbx1440.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr\nm1200.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728\n.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><\n/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/bio_branch_successor_standalo\nne.pdf (6 pages, 108255 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/bio_branch_successor_stan\ndalone.log.\n",
+              "stderr_tail": ""
+            }
+          ],
+          "pdf_exists": true,
+          "pdf_path": "output/pdf/bio_branch_successor_standalone.pdf",
+          "page_count": 6,
+          "log_summary": {
+            "latex_warnings": 0,
+            "overfull_hbox": 22,
+            "underfull_hbox": 4,
+            "undefined_references": false
+          }
+        },
+        "render": {
+          "id": "bio_branch_successor",
+          "status": "passed",
+          "returncode": 0,
+          "rendered_pages": 2,
+          "render_dir": "output/pdf_render_check/bio_branch_successor",
+          "renderer": "pymupdf",
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      },
+      "sm_branch_successor": {
+        "status": "passed",
+        "compile": {
+          "id": "sm_branch_successor",
+          "status": "passed",
+          "runs": [
+            {
+              "run": 1,
+              "returncode": 0,
+              "stdout_tail": "222\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=SM-super-sector; domain=SM-b\nranch; cer-tifi-cate_scope=branch; pro-mo-tion_ceiling=C \n\nOverfull \\hbox (9.30112pt too wide) in paragraph at lines 226--227\n\\T1/cmr/m/it/10.95 Dependencies. \\T1/cmr/m/n/10.95 thm:YM.7, thm:GR.CP.1, thm:S\nM.harmonization-partial, thm:SM.higgs-source-descended,\n[5]\nOverfull \\hbox (12.08452pt too wide) in paragraph at lines 246--247\n\\T1/cmr/m/it/10.95 Dependencies. \\T1/cmr/m/n/10.95 thm:SM.harmonization-partial\n, thm:SM.higgs-source-descended, thm:SM.coupling-transfer-\n\nOverfull \\hbox (37.33403pt too wide) in paragraph at lines 249--250\n\\T1/cmr/m/it/10.95 Discharge edges. \\T1/cmr/m/n/10.95 ob:SM.harmonization (scop\ned), ob:SM.matter (scoped), ob:SM.higgs (scoped), ob:SM.coupling-\n[6]) [7] (/home/claude/nfc_gov/output/pdf/sm_branch_successor_standalone.aux) )\n(see the transcript file for additional information) </root/.texlive2023/texmf-\nvar/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </root/.texlive2023/texmf-var/f\nonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </root/.texlive2023/texmf-var/fonts/\npk/ljfour/jknappen/ec/ecti1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/lj\nfour/jknappen/ec/ecbx1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/\njknappen/ec/ecbx1440.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknap\npen/ec/ectt1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/e\nc/ecrm1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr\nm1200.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728\n.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>\n</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh\nare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/sm_branch_successor_standalon\ne.pdf (7 pages, 124360 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/sm_branch_successor_stand\nalone.log.\n",
+              "stderr_tail": ""
+            },
+            {
+              "run": 2,
+              "returncode": 0,
+              "stdout_tail": "222\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=SM-super-sector; domain=SM-b\nranch; cer-tifi-cate_scope=branch; pro-mo-tion_ceiling=C \n\nOverfull \\hbox (9.30112pt too wide) in paragraph at lines 226--227\n\\T1/cmr/m/it/10.95 Dependencies. \\T1/cmr/m/n/10.95 thm:YM.7, thm:GR.CP.1, thm:S\nM.harmonization-partial, thm:SM.higgs-source-descended,\n[5]\nOverfull \\hbox (12.08452pt too wide) in paragraph at lines 246--247\n\\T1/cmr/m/it/10.95 Dependencies. \\T1/cmr/m/n/10.95 thm:SM.harmonization-partial\n, thm:SM.higgs-source-descended, thm:SM.coupling-transfer-\n\nOverfull \\hbox (37.33403pt too wide) in paragraph at lines 249--250\n\\T1/cmr/m/it/10.95 Discharge edges. \\T1/cmr/m/n/10.95 ob:SM.harmonization (scop\ned), ob:SM.matter (scoped), ob:SM.higgs (scoped), ob:SM.coupling-\n[6]) [7] (/home/claude/nfc_gov/output/pdf/sm_branch_successor_standalone.aux) )\n(see the transcript file for additional information) </root/.texlive2023/texmf-\nvar/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </root/.texlive2023/texmf-var/f\nonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </root/.texlive2023/texmf-var/fonts/\npk/ljfour/jknappen/ec/ecti1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/lj\nfour/jknappen/ec/ecbx1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/\njknappen/ec/ecbx1440.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknap\npen/ec/ectt1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/e\nc/ecrm1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr\nm1200.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728\n.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>\n</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh\nare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/sm_branch_successor_standalon\ne.pdf (7 pages, 124360 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/sm_branch_successor_stand\nalone.log.\n",
+              "stderr_tail": ""
+            }
+          ],
+          "pdf_exists": true,
+          "pdf_path": "output/pdf/sm_branch_successor_standalone.pdf",
+          "page_count": 7,
+          "log_summary": {
+            "latex_warnings": 0,
+            "overfull_hbox": 15,
+            "underfull_hbox": 9,
+            "undefined_references": false
+          }
+        },
+        "render": {
+          "id": "sm_branch_successor",
+          "status": "passed",
+          "returncode": 0,
+          "rendered_pages": 2,
+          "render_dir": "output/pdf_render_check/sm_branch_successor",
+          "renderer": "pymupdf",
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      },
+      "ns_branch_successor": {
+        "status": "passed",
+        "compile": {
+          "id": "ns_branch_successor",
+          "status": "passed",
+          "runs": [
+            {
+              "run": 1,
+              "returncode": 0,
+              "stdout_tail": "es 236--238\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=NS-Phase-A-K0-7-PASS-LS2; do\nmain=NS-branch; certificate_scope=domain-bounded;\n\nOverfull \\hbox (2.07292pt too wide) in paragraph at lines 251--253\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=NS-Phase-A-K0-7-PASS-LS2; do\nmain=NS-branch; certificate_scope=domain-bounded;\n\nOverfull \\hbox (40.7065pt too wide) in paragraph at lines 266--268\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=declared-NS-target; domain=N\nS-branch; certificate_scope=branch-local; pro-mo-tion_ceiling=O \n[5]\nOverfull \\hbox (83.72061pt too wide) in paragraph at lines 275--277\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=ns-branch-governance; domain\n=NS-branch; certificate_scope=branch-wide; promotion_ceiling=frontier-\n) [6] (/home/claude/nfc_gov/output/pdf/ns_branch_successor_standalone.aux) )\n(see the transcript file for additional information) </root/.texlive2023/texmf-\nvar/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </root/.texlive2023/texmf-var/f\nonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </root/.texlive2023/texmf-var/fonts/\npk/ljfour/jknappen/ec/ecbx1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/lj\nfour/jknappen/ec/ecbx1440.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/\njknappen/ec/ectt1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknap\npen/ec/ecrm1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/e\nc/ecrm1200.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr\nm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1\n0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><\n/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sha\nre/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/ns_branch_successor_standalon\ne.pdf (6 pages, 131768 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/ns_branch_successor_stand\nalone.log.\n",
+              "stderr_tail": ""
+            },
+            {
+              "run": 2,
+              "returncode": 0,
+              "stdout_tail": "es 236--238\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=NS-Phase-A-K0-7-PASS-LS2; do\nmain=NS-branch; certificate_scope=domain-bounded;\n\nOverfull \\hbox (2.07292pt too wide) in paragraph at lines 251--253\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=NS-Phase-A-K0-7-PASS-LS2; do\nmain=NS-branch; certificate_scope=domain-bounded;\n\nOverfull \\hbox (40.7065pt too wide) in paragraph at lines 266--268\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=declared-NS-target; domain=N\nS-branch; certificate_scope=branch-local; pro-mo-tion_ceiling=O \n[5]\nOverfull \\hbox (83.72061pt too wide) in paragraph at lines 275--277\n\\T1/cmr/bx/n/10.95 Scope. \\T1/cmr/m/n/10.95 regime=ns-branch-governance; domain\n=NS-branch; certificate_scope=branch-wide; promotion_ceiling=frontier-\n) [6] (/home/claude/nfc_gov/output/pdf/ns_branch_successor_standalone.aux) )\n(see the transcript file for additional information) </root/.texlive2023/texmf-\nvar/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </root/.texlive2023/texmf-var/f\nonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </root/.texlive2023/texmf-var/fonts/\npk/ljfour/jknappen/ec/ecbx1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/lj\nfour/jknappen/ec/ecbx1440.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/\njknappen/ec/ectt1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknap\npen/ec/ecrm1095.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/e\nc/ecrm1200.600pk> </root/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr\nm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1\n0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><\n/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sha\nre/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>\nOutput written on /home/claude/nfc_gov/output/pdf/ns_branch_successor_standalon\ne.pdf (6 pages, 131768 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/ns_branch_successor_stand\nalone.log.\n",
+              "stderr_tail": ""
+            }
+          ],
+          "pdf_exists": true,
+          "pdf_path": "output/pdf/ns_branch_successor_standalone.pdf",
+          "page_count": 6,
+          "log_summary": {
+            "latex_warnings": 0,
+            "overfull_hbox": 10,
+            "underfull_hbox": 9,
+            "undefined_references": false
+          }
+        },
+        "render": {
+          "id": "ns_branch_successor",
+          "status": "passed",
+          "returncode": 0,
+          "rendered_pages": 2,
+          "render_dir": "output/pdf_render_check/ns_branch_successor",
+          "renderer": "pymupdf",
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      }
+    },
+    "compile": {
+      "id": "canon_governance_appendix",
+      "status": "passed",
+      "runs": [
+        {
+          "run": 1,
+          "returncode": 0,
+          "stdout_tail": "\\T1/cmr/m/n/10 pi-lot sat-is-fies the\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 144--145\n\\T1/cmr/m/n/10 reusable L2 pi-lot\n\nOverfull \\hbox (8.5759pt too wide) in paragraph at lines 145--145\n[]|\\T1/cmr/m/n/10 gate.pilot_intake_queue| \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n[]|\\T1/cmr/m/n/10 {'status':\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'passed', 'rec-om-\n\nOverfull \\hbox (4.38808pt too wide) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 mended_next_pilot':\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'BIO', 'can-di-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 date_count': 6,\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'miss-ing_outputs':\n\nUnderfull \\hbox (badness 6575) in paragraph at lines 145--146\n[]|\\T1/cmr/m/n/10 Pilot in-take re-port\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 gen-er-ated with at\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 least one ranked\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 can-di-date and one\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 rec-om-mended next\n\nOverfull \\hbox (10.12305pt too wide) in alignment at lines 112--146\n [] [] [] [] [] \n[2] [3] [4] [5]) [6]\n(/home/claude/nfc_gov/output/pdf/canon_governance_appendix_standalone.aux) )\n(see the transcript file for additional information) </root/.texlive2023/texmf-\nvar/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </root/.texlive2023/texmf-var/f\nonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </root/.texlive2023/texmf-var/fonts/\npk/ljfour/jknappen/ec/ecbx1440.600pk>\nOutput written on /home/claude/nfc_gov/output/pdf/canon_governance_appendix_sta\nndalone.pdf (6 pages, 47852 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/canon_governance_appendix\n_standalone.log.\n",
+          "stderr_tail": ""
+        },
+        {
+          "run": 2,
+          "returncode": 0,
+          "stdout_tail": "\\T1/cmr/m/n/10 pi-lot sat-is-fies the\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 144--145\n\\T1/cmr/m/n/10 reusable L2 pi-lot\n\nOverfull \\hbox (8.5759pt too wide) in paragraph at lines 145--145\n[]|\\T1/cmr/m/n/10 gate.pilot_intake_queue| \n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n[]|\\T1/cmr/m/n/10 {'status':\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'passed', 'rec-om-\n\nOverfull \\hbox (4.38808pt too wide) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 mended_next_pilot':\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'BIO', 'can-di-\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 date_count': 6,\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--145\n\\T1/cmr/m/n/10 'miss-ing_outputs':\n\nUnderfull \\hbox (badness 6575) in paragraph at lines 145--146\n[]|\\T1/cmr/m/n/10 Pilot in-take re-port\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 gen-er-ated with at\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 least one ranked\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 can-di-date and one\n\nUnderfull \\hbox (badness 10000) in paragraph at lines 145--146\n\\T1/cmr/m/n/10 rec-om-mended next\n\nOverfull \\hbox (10.12305pt too wide) in alignment at lines 112--146\n [] [] [] [] [] \n[2] [3] [4] [5]) [6]\n(/home/claude/nfc_gov/output/pdf/canon_governance_appendix_standalone.aux) )\n(see the transcript file for additional information) </root/.texlive2023/texmf-\nvar/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </root/.texlive2023/texmf-var/f\nonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </root/.texlive2023/texmf-var/fonts/\npk/ljfour/jknappen/ec/ecbx1440.600pk>\nOutput written on /home/claude/nfc_gov/output/pdf/canon_governance_appendix_sta\nndalone.pdf (6 pages, 47852 bytes).\nTranscript written on /home/claude/nfc_gov/output/pdf/canon_governance_appendix\n_standalone.log.\n",
+          "stderr_tail": ""
+        }
+      ],
+      "pdf_exists": true,
+      "pdf_path": "output/pdf/canon_governance_appendix_standalone.pdf",
+      "page_count": 6,
+      "log_summary": {
+        "latex_warnings": 0,
+        "overfull_hbox": 60,
+        "underfull_hbox": 297,
+        "undefined_references": false
+      }
+    },
+    "render": {
+      "id": "canon_governance_appendix",
+      "status": "passed",
+      "returncode": 0,
+      "rendered_pages": 2,
+      "render_dir": "output/pdf_render_check/canon_governance_appendix",
+      "renderer": "pymupdf",
+      "stdout_tail": "",
+      "stderr_tail": ""
+    }
+  },
+  "gr_successor_equivalence": {
+    "status": "passed",
+    "pilot_level": "L2",
+    "generated_claim_count": 15,
+    "generated_ids": [
+      "thm:VI.9.1",
+      "thm:GR.CP.1",
+      "ob:GR.real",
+      "thm:GR.realization",
+      "ob:GR.deform",
+      "thm:GR.deformation",
+      "ob:GR.compat",
+      "thm:GR.compat",
+      "ob:GR.EFE1",
+      "ob:GR.EFE2",
+      "ob:GR.EFE3",
+      "ob:GR.closure",
+      "thm:GR.domain",
+      "ob:GR.global-subcriticality",
+      "status:GR"
+    ],
+    "missing_expected": [],
+    "unexpected_claims": [],
+    "active_frontiers": [
+      "ob:GR.global-subcriticality"
+    ],
+    "posture": "domain-bounded-cert-close",
+    "checks": [
+      {
+        "id": "gr.successor.expected-claim-list",
+        "status": "pass",
+        "observed": {
+          "missing": []
+        },
+        "expected": "All GR_ORDER claims are present."
+      },
+      {
+        "id": "gr.successor.posture",
+        "status": "pass",
+        "observed": "domain-bounded-cert-close",
+        "expected": "domain-bounded-cert-close"
+      },
+      {
+        "id": "gr.successor.frontier-preservation",
+        "status": "pass",
+        "observed": [
+          "ob:GR.global-subcriticality"
+        ],
+        "expected": [
+          "ob:GR.global-subcriticality"
+        ]
+      },
+      {
+        "id": "gr.successor.no-unexpected-claims",
+        "status": "pass",
+        "observed": [],
+        "expected": "No branch-local GR records outside the pilot order."
+      }
+    ],
+    "supersession_effect": "none; pilot shell only"
+  },
+  "ym_successor_equivalence": {
+    "status": "passed",
+    "pilot_level": "L2",
+    "generated_claim_count": 19,
+    "generated_ids": [
+      "ob:YM.O-ID",
+      "thm:YM.ID",
+      "ob:YM.O-RIG",
+      "thm:YM.RIG",
+      "ob:YM.O-ENC",
+      "thm:YM.ENC",
+      "ob:YM.O-GLOB",
+      "thm:YM.GLOB",
+      "ob:YM.O-CLU",
+      "thm:YM.CLU",
+      "thm:YM.7",
+      "ob:YM.B1",
+      "thm:YM.B1.bridge",
+      "ob:YM.B2",
+      "thm:YM.B2.bridge",
+      "ob:YM.B3",
+      "thm:YM.B3.bridge",
+      "ob:YM.B3.A2",
+      "status:YM"
+    ],
+    "missing_expected": [],
+    "unexpected_claims": [],
+    "active_frontiers": [
+      "ob:YM.B3.A2"
+    ],
+    "posture": "conditional-cert-close",
+    "checks": [
+      {
+        "id": "ym.successor.expected-claim-list",
+        "status": "pass",
+        "observed": {
+          "missing": []
+        },
+        "expected": "All YM_ORDER claims are present."
+      },
+      {
+        "id": "ym.successor.posture",
+        "status": "pass",
+        "observed": "conditional-cert-close",
+        "expected": "conditional-cert-close"
+      },
+      {
+        "id": "ym.successor.frontier-preservation",
+        "status": "pass",
+        "observed": [
+          "ob:YM.B3.A2"
+        ],
+        "expected": [
+          "ob:YM.B3.A2"
+        ]
+      },
+      {
+        "id": "ym.successor.no-unexpected-claims",
+        "status": "pass",
+        "observed": [],
+        "expected": "No branch-local YM records outside the pilot order."
+      },
+      {
+        "id": "ym.successor.no-clay-upgrade",
+        "status": "pass",
+        "observed": [
+          "ob:YM.B3.A2"
+        ],
+        "expected": "B3-A2 remains open; no unconditional Clay-grade upgrade is inferred."
+      }
+    ],
+    "supersession_effect": "none; pilot shell only"
+  },
+  "spec_successor_equivalence": {
+    "status": "passed",
+    "pilot_level": "L2",
+    "generated_claim_count": 2,
+    "generated_ids": [
+      "thm:SPEC.10.1",
+      "status:SPEC"
+    ],
+    "missing_expected": [],
+    "unexpected_claims": [],
+    "active_frontiers": [],
+    "posture": "cert-close",
+    "checks": [
+      {
+        "id": "spec.successor.expected-claim-list",
+        "status": "pass",
+        "observed": {
+          "missing": []
+        },
+        "expected": "All SPEC_ORDER claims are present."
+      },
+      {
+        "id": "spec.successor.posture",
+        "status": "pass",
+        "observed": "cert-close",
+        "expected": "cert-close"
+      },
+      {
+        "id": "spec.successor.zero-frontier-profile",
+        "status": "pass",
+        "observed": [],
+        "expected": "No active SPEC-local frontier in the gauge-response successor pilot."
+      },
+      {
+        "id": "spec.successor.no-unexpected-claims",
+        "status": "pass",
+        "observed": [],
+        "expected": "No branch-local SPEC records outside the pilot order."
+      },
+      {
+        "id": "spec.successor.no-matter-rich-upgrade",
+        "status": "pass",
+        "observed": {
+          "posture": "cert-close",
+          "active_frontiers": []
+        },
+        "expected": "Closure is scoped to gauge-response spectroscopy only; no matter-rich spectroscopy closure is inferred."
+      }
+    ],
+    "supersession_effect": "none; pilot shell only"
+  },
+  "scc_successor_equivalence": {
+    "status": "passed",
+    "pilot_level": "L2",
+    "generated_claim_count": 7,
+    "generated_ids": [
+      "ob:SCC.MCS",
+      "thm:SCC.MCS",
+      "ob:SCC.UC",
+      "thm:SCC.UC",
+      "ob:SCC.TSI",
+      "thm:SCC.TSI",
+      "status:SCC"
+    ],
+    "missing_expected": [],
+    "unexpected_claims": [],
+    "active_frontiers": [],
+    "posture": "conditional-cert-close",
+    "basis_statuses": {
+      "thm:SCC.MCS": "C",
+      "thm:SCC.UC": "C",
+      "thm:SCC.TSI": "C"
+    },
+    "obligation_statuses": {
+      "ob:SCC.MCS": "C",
+      "ob:SCC.UC": "C",
+      "ob:SCC.TSI": "C"
+    },
+    "checks": [
+      {
+        "id": "scc.successor.expected-claim-list",
+        "status": "pass",
+        "observed": {
+          "missing": []
+        },
+        "expected": "All SCC_ORDER claims are present."
+      },
+      {
+        "id": "scc.successor.posture",
+        "status": "pass",
+        "observed": "conditional-cert-close",
+        "expected": "conditional-cert-close"
+      },
+      {
+        "id": "scc.successor.zero-frontier-profile",
+        "status": "pass",
+        "observed": [],
+        "expected": "No active SCC-local frontier in the MCS+UC+TSI successor pilot."
+      },
+      {
+        "id": "scc.successor.mcs-uc-tsi-basis",
+        "status": "pass",
+        "observed": {
+          "thm:SCC.MCS": "C",
+          "thm:SCC.UC": "C",
+          "thm:SCC.TSI": "C"
+        },
+        "expected": "MCS, UC, and TSI basis theorems have conditional or unconditional force."
+      },
+      {
+        "id": "scc.successor.obligations-conditionally-closed",
+        "status": "pass",
+        "observed": {
+          "ob:SCC.MCS": "C",
+          "ob:SCC.UC": "C",
+          "ob:SCC.TSI": "C"
+        },
+        "expected": "SCC MCS, UC, and TSI obligation records are conditionally closed."
+      },
+      {
+        "id": "scc.successor.no-unexpected-claims",
+        "status": "pass",
+        "observed": [],
+        "expected": "No branch-local SCC records outside the pilot order."
+      },
+      {
+        "id": "scc.successor.no-phenomenological-upgrade",
+        "status": "pass",
+        "observed": {
+          "posture": "conditional-cert-close",
+          "active_frontiers": []
+        },
+        "expected": "Closure remains structural counterfactual capacity only; no phenomenological/consciousness endpoint is inferred."
+      }
+    ],
+    "supersession_effect": "none; pilot shell only"
+  },
+  "cryst_successor_equivalence": {
+    "status": "passed",
+    "pilot_level": "L2",
+    "generated_claim_count": 3,
+    "generated_ids": [
+      "thm:CRYST.END",
+      "ob:CRYST.phase-problem",
+      "status:CRYST"
+    ],
+    "missing_expected": [],
+    "unexpected_claims": [],
+    "active_frontiers": [
+      "ob:CRYST.phase-problem"
+    ],
+    "posture": "conditional-cert-close",
+    "checks": [
+      {
+        "id": "cryst.successor.expected-claim-list",
+        "status": "pass",
+        "observed": {
+          "missing": []
+        },
+        "expected": "All CRYST_ORDER claims are present."
+      },
+      {
+        "id": "cryst.successor.posture",
+        "status": "pass",
+        "observed": "conditional-cert-close",
+        "expected": "conditional-cert-close"
+      },
+      {
+        "id": "cryst.successor.frontier-profile",
+        "status": "pass",
+        "observed": [
+          "ob:CRYST.phase-problem"
+        ],
+        "expected": [
+          "ob:CRYST.phase-problem"
+        ]
+      },
+      {
+        "id": "cryst.successor.no-unexpected-claims",
+        "status": "pass",
+        "observed": [],
+        "expected": "No branch-local CRYST records outside the pilot order."
+      },
+      {
+        "id": "cryst.successor.no-phase-problem-erasure",
+        "status": "pass",
+        "observed": {
+          "posture": "conditional-cert-close",
+          "active_frontiers": [
+            "ob:CRYST.phase-problem"
+          ]
+        },
+        "expected": "Conditional closure is preserved while the phase-problem frontier remains active."
+      }
+    ],
+    "supersession_effect": "none; pilot shell only"
+  },
+  "ling_successor_equivalence": {
+    "status": "passed",
+    "pilot_level": "L2",
+    "generated_claim_count": 3,
+    "generated_ids": [
+      "thm:LING.END",
+      "ob:LING.REF-INVIS-RECOV",
+      "status:LING"
+    ],
+    "missing_expected": [],
+    "unexpected_claims": [],
+    "active_frontiers": [
+      "ob:LING.REF-INVIS-RECOV"
+    ],
+    "posture": "conditional-cert-close",
+    "checks": [
+      {
+        "id": "ling.successor.expected-claim-list",
+        "status": "pass",
+        "observed": {
+          "missing": []
+        },
+        "expected": "All LING_ORDER claims are present."
+      },
+      {
+        "id": "ling.successor.posture",
+        "status": "pass",
+        "observed": "conditional-cert-close",
+        "expected": "conditional-cert-close"
+      },
+      {
+        "id": "ling.successor.frontier-profile",
+        "status": "pass",
+        "observed": [
+          "ob:LING.REF-INVIS-RECOV"
+        ],
+        "expected": [
+          "ob:LING.REF-INVIS-RECOV"
+        ]
+      },
+      {
+        "id": "ling.successor.no-unexpected-claims",
+        "status": "pass",
+        "observed": [],
+        "expected": "No branch-local LING records outside the pilot order."
+      },
+      {
+        "id": "ling.successor.no-reference-frontier-erasure",
+        "status": "pass",
+        "observed": {
+          "posture": "conditional-cert-close",
+          "active_frontiers": [
+            "ob:LING.REF-INVIS-RECOV"
+          ]
+        },
+        "expected": "Conditional linguistic closure is preserved while the reference invisibility/recovery frontier remains active."
+      }
+    ],
+    "supersession_effect": "none; pilot shell only"
+  },
+  "supersession_readiness": {
+    "schema_version": "0.41.0",
+    "policy_version": "0.24.0",
+    "current_level": "L2",
+    "recommended_next_level": "L2-generator-hardening",
+    "approved_for_full_supersession": false,
+    "l1_import_ready": true,
+    "l2_pilot_ready": true,
+    "l5_full_supersession_ready": false,
+    "checks": [
+      {
+        "id": "sup.audit.zero-errors",
+        "label": "Governance audit has zero errors",
+        "status": "pass",
+        "required_for": "L1+",
+        "evidence": {
+          "errors": 0,
+          "warnings": 3
+        }
+      },
+      {
+        "id": "sup.import.packet",
+        "label": "Canon-import appendix packet exists",
+        "status": "pass",
+        "required_for": "L1+",
+        "evidence": {
+          "schema_version": "0.41.0",
+          "purpose": "canon-import-pilot",
+          "files": [
+            "output/tex/canon_governance_appendix.tex",
+            "output/tex/canon_governance_appendix_standalone.tex"
+          ],
+          "required_latex_packages": [
+            "longtable",
+            "array",
+            "hyperref"
+          ],
+          "tables": {
+            "branch_postures": 16,
+            "active_open_items": 10,
+            "audit_issues": 3,
+            "release_diff_events": 5,
+            "quality_gates": 33
+          },
+          "status": "generated"
+        }
+      },
+      {
+        "id": "sup.compile.packet",
+        "label": "Standalone governance appendix compiles",
+        "status": "pass",
+        "required_for": "L1+",
+        "evidence": {
+          "status": "passed",
+          "pages": 6
+        }
+      },
+      {
+        "id": "sup.release.diff-basis",
+        "label": "Release-diff changes carry basis notes",
+        "status": "pass",
+        "required_for": "L1+",
+        "evidence": {
+          "changes": 5,
+          "missing_basis": 0
+        }
+      },
+      {
+        "id": "sup.regression",
+        "label": "Regression baseline passes",
+        "status": "pass",
+        "required_for": "L1+",
+        "evidence": {
+          "status": "passed",
+          "failed_count": 0
+        }
+      },
+      {
+        "id": "sup.gr.pilot",
+        "label": "GR pilot locally infers current posture",
+        "status": "pass",
+        "required_for": "L2+",
+        "evidence": {
+          "computed_posture": "domain-bounded-cert-close"
+        }
+      },
+      {
+        "id": "sup.ym.pilot",
+        "label": "YM pilot locally infers current posture",
+        "status": "pass",
+        "required_for": "L2+",
+        "evidence": {
+          "computed_posture": "conditional-cert-close"
+        }
+      },
+      {
+        "id": "sup.gr.successor-packet",
+        "label": "GR generated branch-successor shell passes equivalence and compile checks",
+        "status": "pass",
+        "required_for": "L2+",
+        "evidence": {
+          "status": "passed",
+          "computed_posture": "domain-bounded-cert-close",
+          "pages": 5
+        }
+      },
+      {
+        "id": "sup.full-claim-equivalence",
+        "label": "Full current-corpus claim catalog equivalence",
+        "status": "not-started",
+        "required_for": "L5",
+        "evidence": "No full spine/branch claim equivalence audit has been run."
+      },
+      {
+        "id": "sup.full-prose-migration",
+        "label": "Full theorem/proof prose migrated into structured source",
+        "status": "not-started",
+        "required_for": "L5",
+        "evidence": "Human-authored theorem bodies remain outside the generated successor corpus."
+      },
+      {
+        "id": "sup.full-pdf-corpus",
+        "label": "All successor books compile as generated PDFs",
+        "status": "not-started",
+        "required_for": "L5",
+        "evidence": "Only the governance appendix compiles in v18."
+      },
+      {
+        "id": "sup.human-release-approval",
+        "label": "Formal supersession decision recorded",
+        "status": "not-started",
+        "required_for": "L5",
+        "evidence": "No decision log entry approves full corpus supersession."
+      }
+    ],
+    "summary": {
+      "pass": 8,
+      "needs_work": 0,
+      "not_started": 4,
+      "fail": 0
+    },
+    "recommendation": "Harden the L2 GR branch-successor pilot and then decide whether to pilot YM. Do not supersede the full spine/branch corpus yet."
+  },
+  "gr_l2_hardening": {
+    "status": "passed",
+    "pilot_level": "L2-hardened",
+    "claim_count": 15,
+    "prose_file_count": 20,
+    "failed_count": 0,
+    "checks": [
+      {
+        "id": "gr.l2.equivalence-report-passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed",
+        "message": "Base GR successor equivalence report must pass before L2 hardening can pass."
+      },
+      {
+        "id": "gr.l2.compile-passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed",
+        "message": "GR successor pilot PDF must compile and render."
+      },
+      {
+        "id": "gr.l2.posture-preserved",
+        "status": "pass",
+        "observed": "domain-bounded-cert-close",
+        "expected": "domain-bounded-cert-close",
+        "message": "GR pilot posture must remain domain-bounded CERT-CLOSE."
+      },
+      {
+        "id": "gr.l2.frontier-preserved",
+        "status": "pass",
+        "observed": [
+          "ob:GR.global-subcriticality"
+        ],
+        "expected": [
+          "ob:GR.global-subcriticality"
+        ],
+        "message": "GR global-subcriticality frontier must remain active."
+      },
+      {
+        "id": "gr.l2.no-supersession",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": "none; pilot shell only",
+        "message": "L2 GR pilot must not supersede the canonical GR Branch Book."
+      },
+      {
+        "id": "gr.l2.prose-files-present",
+        "status": "pass",
+        "observed": 0,
+        "expected": 0,
+        "message": "Every generated GR pilot claim must have non-empty human-authored body text; proof files are checked when declared.",
+        "details": []
+      },
+      {
+        "id": "gr.render.contains.thm:VI.9.1",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.thm:GR.CP.1",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.ob:GR.real",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.thm:GR.realization",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.ob:GR.deform",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.thm:GR.deformation",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.ob:GR.compat",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.thm:GR.compat",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.ob:GR.EFE1",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.ob:GR.EFE2",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.ob:GR.EFE3",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.ob:GR.closure",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.thm:GR.domain",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.ob:GR.global-subcriticality",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.render.contains.status:GR",
+        "status": "pass",
+        "observed": true,
+        "expected": true,
+        "message": "Generated GR successor TeX should contain every pilot machine ID."
+      },
+      {
+        "id": "gr.scope.thm:GR.CP.1",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.ob:GR.real",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.thm:GR.realization",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.ob:GR.deform",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.thm:GR.deformation",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.ob:GR.compat",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.thm:GR.compat",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.ob:GR.EFE1",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.ob:GR.EFE2",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.ob:GR.EFE3",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.ob:GR.closure",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.thm:GR.domain",
+        "status": "pass",
+        "observed": "domain-bounded",
+        "expected": "domain-bounded or explicitly global for the terminal frontier",
+        "message": "GR pilot claims must carry explicit certificate scope."
+      },
+      {
+        "id": "gr.scope.global-frontier-remains-global-open",
+        "status": "pass",
+        "observed": {
+          "certificate_scope": "global",
+          "declared_status": "O"
+        },
+        "expected": {
+          "certificate_scope": "global",
+          "declared_status": "O"
+        },
+        "message": "The GR global frontier must remain open at global scope."
+      }
+    ],
+    "prose_issues": [],
+    "supersession_effect": "none; pilot shell only"
+  },
+  "l2_pilot_comparison": {
+    "status": "passed",
+    "failed_count": 0,
+    "pilots": [
+      {
+        "pilot": "GR",
+        "equivalence_status": "passed",
+        "compile_status": "passed",
+        "posture": "domain-bounded-cert-close",
+        "expected_posture": "domain-bounded-cert-close",
+        "frontier_preserved": true,
+        "expected_frontier": "ob:GR.global-subcriticality",
+        "supersession_effect": "none; pilot shell only",
+        "hardening_status": "passed"
+      },
+      {
+        "pilot": "YM",
+        "equivalence_status": "passed",
+        "compile_status": "passed",
+        "posture": "conditional-cert-close",
+        "expected_posture": "conditional-cert-close",
+        "frontier_preserved": true,
+        "expected_frontier": "ob:YM.B3.A2",
+        "supersession_effect": "none; pilot shell only",
+        "hardening_status": "not-required-in-v22"
+      }
+    ],
+    "checks": [
+      {
+        "id": "GR.equivalence_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "GR.compiled",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "GR.posture_preserved",
+        "status": "pass",
+        "observed": "domain-bounded-cert-close",
+        "expected": "domain-bounded-cert-close"
+      },
+      {
+        "id": "GR.frontier_preserved",
+        "status": "pass",
+        "observed": [
+          "ob:GR.global-subcriticality"
+        ],
+        "expected": "ob:GR.global-subcriticality"
+      },
+      {
+        "id": "GR.no_supersession",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": "none; pilot shell only"
+      },
+      {
+        "id": "GR.l2_hardening_passed",
+        "status": "pass",
+        "observed": {
+          "status": "passed",
+          "failed_count": 0
+        },
+        "expected": {
+          "status": "passed",
+          "failed_count": 0
+        }
+      },
+      {
+        "id": "YM.equivalence_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "YM.compiled",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "YM.posture_preserved",
+        "status": "pass",
+        "observed": "conditional-cert-close",
+        "expected": "conditional-cert-close"
+      },
+      {
+        "id": "YM.frontier_preserved",
+        "status": "pass",
+        "observed": [
+          "ob:YM.B3.A2"
+        ],
+        "expected": "ob:YM.B3.A2"
+      },
+      {
+        "id": "YM.no_supersession",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": "none; pilot shell only"
+      },
+      {
+        "id": "cross_pilot.distinct_closure_regimes",
+        "status": "pass",
+        "observed": {
+          "GR": "domain-bounded-cert-close",
+          "YM": "conditional-cert-close"
+        },
+        "expected": "GR and YM postures remain distinct"
+      },
+      {
+        "id": "cross_pilot.both_frontiers_in_computed_graph",
+        "status": "pass",
+        "observed": {
+          "ob:GR.global-subcriticality": true,
+          "ob:YM.B3.A2": true
+        },
+        "expected": "both active frontier IDs exist in computed status graph"
+      }
+    ],
+    "summary": {
+      "pilot_count": 2,
+      "checked_pilots": [
+        "GR",
+        "YM"
+      ],
+      "distinct_closure_regimes": true,
+      "full_supersession_effect": "none"
+    }
+  },
+  "l2_pilot_standard": {
+    "standard_version": "1.4",
+    "level": "L2",
+    "status": "passed",
+    "pilot_count": 10,
+    "failed_count": 0,
+    "rows": [
+      {
+        "branch": "GR",
+        "status": "passed",
+        "expected_posture": "domain-bounded-cert-close",
+        "computed_posture": "domain-bounded-cert-close",
+        "preserved_frontiers": [
+          "ob:GR.global-subcriticality"
+        ],
+        "frontier_statuses": {
+          "ob:GR.global-subcriticality": "O"
+        },
+        "compile_status": "passed",
+        "equivalence_status": "passed",
+        "supersession_effect": "none; pilot shell only",
+        "failed_checks": 0
+      },
+      {
+        "branch": "YM",
+        "status": "passed",
+        "expected_posture": "conditional-cert-close",
+        "computed_posture": "conditional-cert-close",
+        "preserved_frontiers": [
+          "ob:YM.B3.A2"
+        ],
+        "frontier_statuses": {
+          "ob:YM.B3.A2": "O"
+        },
+        "compile_status": "passed",
+        "equivalence_status": "passed",
+        "supersession_effect": "none; pilot shell only",
+        "failed_checks": 0
+      },
+      {
+        "branch": "SPEC",
+        "status": "passed",
+        "expected_posture": "cert-close",
+        "computed_posture": "cert-close",
+        "preserved_frontiers": [],
+        "frontier_statuses": {},
+        "compile_status": "passed",
+        "equivalence_status": "passed",
+        "supersession_effect": "none; pilot shell only",
+        "failed_checks": 0
+      },
+      {
+        "branch": "SCC",
+        "status": "passed",
+        "expected_posture": "conditional-cert-close",
+        "computed_posture": "conditional-cert-close",
+        "preserved_frontiers": [],
+        "frontier_statuses": {},
+        "compile_status": "passed",
+        "equivalence_status": "passed",
+        "supersession_effect": "none; pilot shell only",
+        "failed_checks": 0
+      },
+      {
+        "branch": "CRYST",
+        "status": "passed",
+        "expected_posture": "conditional-cert-close",
+        "computed_posture": "conditional-cert-close",
+        "preserved_frontiers": [
+          "ob:CRYST.phase-problem"
+        ],
+        "frontier_statuses": {
+          "ob:CRYST.phase-problem": "O"
+        },
+        "compile_status": "passed",
+        "equivalence_status": "passed",
+        "supersession_effect": "none; pilot shell only",
+        "failed_checks": 0
+      },
+      {
+        "branch": "LING",
+        "status": "passed",
+        "expected_posture": "conditional-cert-close",
+        "computed_posture": "conditional-cert-close",
+        "preserved_frontiers": [
+          "ob:LING.REF-INVIS-RECOV"
+        ],
+        "frontier_statuses": {
+          "ob:LING.REF-INVIS-RECOV": "O"
+        },
+        "compile_status": "passed",
+        "equivalence_status": "passed",
+        "supersession_effect": "none; pilot shell only",
+        "failed_checks": 0
+      },
+      {
+        "branch": "BIO",
+        "status": "passed",
+        "expected_posture": "conditional-cert-close",
+        "computed_posture": "conditional-cert-close",
+        "preserved_frontiers": [
+          "ob:BIO.BND-open"
+        ],
+        "frontier_statuses": {
+          "ob:BIO.BND-open": "O"
+        },
+        "compile_status": "passed",
+        "equivalence_status": "passed",
+        "supersession_effect": "none; pilot shell only",
+        "failed_checks": 0
+      },
+      {
+        "branch": "SM",
+        "status": "passed",
+        "expected_posture": "intrinsic-structural-close",
+        "computed_posture": "intrinsic-structural-close",
+        "preserved_frontiers": [
+          "ob:SM.O-IDcont"
+        ],
+        "frontier_statuses": {
+          "ob:SM.O-IDcont": "O"
+        },
+        "compile_status": "passed",
+        "equivalence_status": "passed",
+        "supersession_effect": "none; pilot shell only",
+        "failed_checks": 0
+      },
+      {
+        "branch": "NS",
+        "status": "passed",
+        "expected_posture": "domain-bounded-cert-close",
+        "computed_posture": "domain-bounded-cert-close",
+        "preserved_frontiers": [
+          "front:NS.main",
+          "ob:NS.bridge-stage2"
+        ],
+        "frontier_statuses": {
+          "front:NS.main": "O",
+          "ob:NS.bridge-stage2": "O"
+        },
+        "compile_status": "passed",
+        "equivalence_status": "passed",
+        "supersession_effect": "none; pilot shell only",
+        "failed_checks": 0
+      },
+      {
+        "branch": "RH",
+        "status": "passed",
+        "expected_posture": "cert-proj",
+        "computed_posture": "cert-proj",
+        "preserved_frontiers": [
+          "ob:RH.S1-ARC",
+          "thm:RH.S1.formal"
+        ],
+        "frontier_statuses": {
+          "ob:RH.S1-ARC": "O",
+          "thm:RH.S1.formal": "O"
+        },
+        "compile_status": null,
+        "equivalence_status": "passed",
+        "supersession_effect": "none; pilot shell only",
+        "failed_checks": 0
+      }
+    ],
+    "checks": [
+      {
+        "id": "GR.equivalence_report_passed",
+        "branch": "GR",
+        "check": "equivalence_report_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "GR.compile_target_passed",
+        "branch": "GR",
+        "check": "compile_target_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "GR.expected_posture_preserved",
+        "branch": "GR",
+        "check": "expected_posture_preserved",
+        "status": "pass",
+        "observed": {
+          "equivalence": "domain-bounded-cert-close",
+          "computed": "domain-bounded-cert-close"
+        },
+        "expected": "domain-bounded-cert-close"
+      },
+      {
+        "id": "GR.expected_frontier_profile_preserved",
+        "branch": "GR",
+        "check": "expected_frontier_profile_preserved",
+        "status": "pass",
+        "observed": [
+          "ob:GR.global-subcriticality"
+        ],
+        "expected": [
+          "ob:GR.global-subcriticality"
+        ]
+      },
+      {
+        "id": "GR.no_supersession_effect",
+        "branch": "GR",
+        "check": "no_supersession_effect",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": [
+          "none",
+          "none; pilot shell only"
+        ]
+      },
+      {
+        "id": "GR.expected_active_frontiers_are_open",
+        "branch": "GR",
+        "check": "expected_active_frontiers_are_open",
+        "status": "pass",
+        "observed": {
+          "ob:GR.global-subcriticality": "O"
+        },
+        "expected": "all expected frontiers have effective status O"
+      },
+      {
+        "id": "GR.successor_tex_present",
+        "branch": "GR",
+        "check": "successor_tex_present",
+        "status": "pass",
+        "observed": "output/tex/gr_branch_successor_standalone.tex",
+        "expected": "exists"
+      },
+      {
+        "id": "GR.successor_pdf_present",
+        "branch": "GR",
+        "check": "successor_pdf_present",
+        "status": "pass",
+        "observed": "output/pdf/gr_branch_successor_standalone.pdf",
+        "expected": "exists"
+      },
+      {
+        "id": "GR.hardening_passed",
+        "branch": "GR",
+        "check": "hardening_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "YM.equivalence_report_passed",
+        "branch": "YM",
+        "check": "equivalence_report_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "YM.compile_target_passed",
+        "branch": "YM",
+        "check": "compile_target_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "YM.expected_posture_preserved",
+        "branch": "YM",
+        "check": "expected_posture_preserved",
+        "status": "pass",
+        "observed": {
+          "equivalence": "conditional-cert-close",
+          "computed": "conditional-cert-close"
+        },
+        "expected": "conditional-cert-close"
+      },
+      {
+        "id": "YM.expected_frontier_profile_preserved",
+        "branch": "YM",
+        "check": "expected_frontier_profile_preserved",
+        "status": "pass",
+        "observed": [
+          "ob:YM.B3.A2"
+        ],
+        "expected": [
+          "ob:YM.B3.A2"
+        ]
+      },
+      {
+        "id": "YM.no_supersession_effect",
+        "branch": "YM",
+        "check": "no_supersession_effect",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": [
+          "none",
+          "none; pilot shell only"
+        ]
+      },
+      {
+        "id": "YM.expected_active_frontiers_are_open",
+        "branch": "YM",
+        "check": "expected_active_frontiers_are_open",
+        "status": "pass",
+        "observed": {
+          "ob:YM.B3.A2": "O"
+        },
+        "expected": "all expected frontiers have effective status O"
+      },
+      {
+        "id": "YM.successor_tex_present",
+        "branch": "YM",
+        "check": "successor_tex_present",
+        "status": "pass",
+        "observed": "output/tex/ym_branch_successor_standalone.tex",
+        "expected": "exists"
+      },
+      {
+        "id": "YM.successor_pdf_present",
+        "branch": "YM",
+        "check": "successor_pdf_present",
+        "status": "pass",
+        "observed": "output/pdf/ym_branch_successor_standalone.pdf",
+        "expected": "exists"
+      },
+      {
+        "id": "SPEC.equivalence_report_passed",
+        "branch": "SPEC",
+        "check": "equivalence_report_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "SPEC.compile_target_passed",
+        "branch": "SPEC",
+        "check": "compile_target_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "SPEC.expected_posture_preserved",
+        "branch": "SPEC",
+        "check": "expected_posture_preserved",
+        "status": "pass",
+        "observed": {
+          "equivalence": "cert-close",
+          "computed": "cert-close"
+        },
+        "expected": "cert-close"
+      },
+      {
+        "id": "SPEC.expected_frontier_profile_preserved",
+        "branch": "SPEC",
+        "check": "expected_frontier_profile_preserved",
+        "status": "pass",
+        "observed": [],
+        "expected": []
+      },
+      {
+        "id": "SPEC.no_supersession_effect",
+        "branch": "SPEC",
+        "check": "no_supersession_effect",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": [
+          "none",
+          "none; pilot shell only"
+        ]
+      },
+      {
+        "id": "SPEC.expected_active_frontiers_are_open",
+        "branch": "SPEC",
+        "check": "expected_active_frontiers_are_open",
+        "status": "pass",
+        "observed": {},
+        "expected": "all expected frontiers have effective status O"
+      },
+      {
+        "id": "SPEC.successor_tex_present",
+        "branch": "SPEC",
+        "check": "successor_tex_present",
+        "status": "pass",
+        "observed": "output/tex/spec_branch_successor_standalone.tex",
+        "expected": "exists"
+      },
+      {
+        "id": "SPEC.successor_pdf_present",
+        "branch": "SPEC",
+        "check": "successor_pdf_present",
+        "status": "pass",
+        "observed": "output/pdf/spec_branch_successor_standalone.pdf",
+        "expected": "exists"
+      },
+      {
+        "id": "SCC.equivalence_report_passed",
+        "branch": "SCC",
+        "check": "equivalence_report_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "SCC.compile_target_passed",
+        "branch": "SCC",
+        "check": "compile_target_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "SCC.expected_posture_preserved",
+        "branch": "SCC",
+        "check": "expected_posture_preserved",
+        "status": "pass",
+        "observed": {
+          "equivalence": "conditional-cert-close",
+          "computed": "conditional-cert-close"
+        },
+        "expected": "conditional-cert-close"
+      },
+      {
+        "id": "SCC.expected_frontier_profile_preserved",
+        "branch": "SCC",
+        "check": "expected_frontier_profile_preserved",
+        "status": "pass",
+        "observed": [],
+        "expected": []
+      },
+      {
+        "id": "SCC.no_supersession_effect",
+        "branch": "SCC",
+        "check": "no_supersession_effect",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": [
+          "none",
+          "none; pilot shell only"
+        ]
+      },
+      {
+        "id": "SCC.expected_active_frontiers_are_open",
+        "branch": "SCC",
+        "check": "expected_active_frontiers_are_open",
+        "status": "pass",
+        "observed": {},
+        "expected": "all expected frontiers have effective status O"
+      },
+      {
+        "id": "SCC.successor_tex_present",
+        "branch": "SCC",
+        "check": "successor_tex_present",
+        "status": "pass",
+        "observed": "output/tex/scc_branch_successor_standalone.tex",
+        "expected": "exists"
+      },
+      {
+        "id": "SCC.successor_pdf_present",
+        "branch": "SCC",
+        "check": "successor_pdf_present",
+        "status": "pass",
+        "observed": "output/pdf/scc_branch_successor_standalone.pdf",
+        "expected": "exists"
+      },
+      {
+        "id": "CRYST.equivalence_report_passed",
+        "branch": "CRYST",
+        "check": "equivalence_report_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "CRYST.compile_target_passed",
+        "branch": "CRYST",
+        "check": "compile_target_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "CRYST.expected_posture_preserved",
+        "branch": "CRYST",
+        "check": "expected_posture_preserved",
+        "status": "pass",
+        "observed": {
+          "equivalence": "conditional-cert-close",
+          "computed": "conditional-cert-close"
+        },
+        "expected": "conditional-cert-close"
+      },
+      {
+        "id": "CRYST.expected_frontier_profile_preserved",
+        "branch": "CRYST",
+        "check": "expected_frontier_profile_preserved",
+        "status": "pass",
+        "observed": [
+          "ob:CRYST.phase-problem"
+        ],
+        "expected": [
+          "ob:CRYST.phase-problem"
+        ]
+      },
+      {
+        "id": "CRYST.no_supersession_effect",
+        "branch": "CRYST",
+        "check": "no_supersession_effect",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": [
+          "none",
+          "none; pilot shell only"
+        ]
+      },
+      {
+        "id": "CRYST.expected_active_frontiers_are_open",
+        "branch": "CRYST",
+        "check": "expected_active_frontiers_are_open",
+        "status": "pass",
+        "observed": {
+          "ob:CRYST.phase-problem": "O"
+        },
+        "expected": "all expected frontiers have effective status O"
+      },
+      {
+        "id": "CRYST.successor_tex_present",
+        "branch": "CRYST",
+        "check": "successor_tex_present",
+        "status": "pass",
+        "observed": "output/tex/cryst_branch_successor_standalone.tex",
+        "expected": "exists"
+      },
+      {
+        "id": "CRYST.successor_pdf_present",
+        "branch": "CRYST",
+        "check": "successor_pdf_present",
+        "status": "pass",
+        "observed": "output/pdf/cryst_branch_successor_standalone.pdf",
+        "expected": "exists"
+      },
+      {
+        "id": "LING.equivalence_report_passed",
+        "branch": "LING",
+        "check": "equivalence_report_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "LING.compile_target_passed",
+        "branch": "LING",
+        "check": "compile_target_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "LING.expected_posture_preserved",
+        "branch": "LING",
+        "check": "expected_posture_preserved",
+        "status": "pass",
+        "observed": {
+          "equivalence": "conditional-cert-close",
+          "computed": "conditional-cert-close"
+        },
+        "expected": "conditional-cert-close"
+      },
+      {
+        "id": "LING.expected_frontier_profile_preserved",
+        "branch": "LING",
+        "check": "expected_frontier_profile_preserved",
+        "status": "pass",
+        "observed": [
+          "ob:LING.REF-INVIS-RECOV"
+        ],
+        "expected": [
+          "ob:LING.REF-INVIS-RECOV"
+        ]
+      },
+      {
+        "id": "LING.no_supersession_effect",
+        "branch": "LING",
+        "check": "no_supersession_effect",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": [
+          "none",
+          "none; pilot shell only"
+        ]
+      },
+      {
+        "id": "LING.expected_active_frontiers_are_open",
+        "branch": "LING",
+        "check": "expected_active_frontiers_are_open",
+        "status": "pass",
+        "observed": {
+          "ob:LING.REF-INVIS-RECOV": "O"
+        },
+        "expected": "all expected frontiers have effective status O"
+      },
+      {
+        "id": "LING.successor_tex_present",
+        "branch": "LING",
+        "check": "successor_tex_present",
+        "status": "pass",
+        "observed": "output/tex/ling_branch_successor_standalone.tex",
+        "expected": "exists"
+      },
+      {
+        "id": "LING.successor_pdf_present",
+        "branch": "LING",
+        "check": "successor_pdf_present",
+        "status": "pass",
+        "observed": "output/pdf/ling_branch_successor_standalone.pdf",
+        "expected": "exists"
+      },
+      {
+        "id": "BIO.equivalence_report_passed",
+        "branch": "BIO",
+        "check": "equivalence_report_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "BIO.compile_target_passed",
+        "branch": "BIO",
+        "check": "compile_target_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "BIO.expected_posture_preserved",
+        "branch": "BIO",
+        "check": "expected_posture_preserved",
+        "status": "pass",
+        "observed": {
+          "equivalence": "conditional-cert-close",
+          "computed": "conditional-cert-close"
+        },
+        "expected": "conditional-cert-close"
+      },
+      {
+        "id": "BIO.expected_frontier_profile_preserved",
+        "branch": "BIO",
+        "check": "expected_frontier_profile_preserved",
+        "status": "pass",
+        "observed": [
+          "ob:BIO.BND-open"
+        ],
+        "expected": [
+          "ob:BIO.BND-open"
+        ]
+      },
+      {
+        "id": "BIO.no_supersession_effect",
+        "branch": "BIO",
+        "check": "no_supersession_effect",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": [
+          "none",
+          "none; pilot shell only"
+        ]
+      },
+      {
+        "id": "BIO.expected_active_frontiers_are_open",
+        "branch": "BIO",
+        "check": "expected_active_frontiers_are_open",
+        "status": "pass",
+        "observed": {
+          "ob:BIO.BND-open": "O"
+        },
+        "expected": "all expected frontiers have effective status O"
+      },
+      {
+        "id": "BIO.successor_tex_present",
+        "branch": "BIO",
+        "check": "successor_tex_present",
+        "status": "pass",
+        "observed": "output/tex/bio_branch_successor_standalone.tex",
+        "expected": "exists"
+      },
+      {
+        "id": "BIO.successor_pdf_present",
+        "branch": "BIO",
+        "check": "successor_pdf_present",
+        "status": "pass",
+        "observed": "output/pdf/bio_branch_successor_standalone.pdf",
+        "expected": "exists"
+      },
+      {
+        "id": "SM.equivalence_report_passed",
+        "branch": "SM",
+        "check": "equivalence_report_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "SM.compile_target_passed",
+        "branch": "SM",
+        "check": "compile_target_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "SM.expected_posture_preserved",
+        "branch": "SM",
+        "check": "expected_posture_preserved",
+        "status": "pass",
+        "observed": {
+          "equivalence": "intrinsic-structural-close",
+          "computed": "intrinsic-structural-close"
+        },
+        "expected": "intrinsic-structural-close"
+      },
+      {
+        "id": "SM.expected_frontier_profile_preserved",
+        "branch": "SM",
+        "check": "expected_frontier_profile_preserved",
+        "status": "pass",
+        "observed": [
+          "ob:SM.O-IDcont"
+        ],
+        "expected": [
+          "ob:SM.O-IDcont"
+        ]
+      },
+      {
+        "id": "SM.no_supersession_effect",
+        "branch": "SM",
+        "check": "no_supersession_effect",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": [
+          "none",
+          "none; pilot shell only"
+        ]
+      },
+      {
+        "id": "SM.expected_active_frontiers_are_open",
+        "branch": "SM",
+        "check": "expected_active_frontiers_are_open",
+        "status": "pass",
+        "observed": {
+          "ob:SM.O-IDcont": "O"
+        },
+        "expected": "all expected frontiers have effective status O"
+      },
+      {
+        "id": "SM.successor_tex_present",
+        "branch": "SM",
+        "check": "successor_tex_present",
+        "status": "pass",
+        "observed": "output/tex/sm_branch_successor_standalone.tex",
+        "expected": "exists"
+      },
+      {
+        "id": "SM.successor_pdf_present",
+        "branch": "SM",
+        "check": "successor_pdf_present",
+        "status": "pass",
+        "observed": "output/pdf/sm_branch_successor_standalone.pdf",
+        "expected": "exists"
+      },
+      {
+        "id": "NS.equivalence_report_passed",
+        "branch": "NS",
+        "check": "equivalence_report_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "NS.compile_target_passed",
+        "branch": "NS",
+        "check": "compile_target_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "NS.expected_posture_preserved",
+        "branch": "NS",
+        "check": "expected_posture_preserved",
+        "status": "pass",
+        "observed": {
+          "equivalence": "domain-bounded-cert-close",
+          "computed": "domain-bounded-cert-close"
+        },
+        "expected": "domain-bounded-cert-close"
+      },
+      {
+        "id": "NS.expected_frontier_profile_preserved",
+        "branch": "NS",
+        "check": "expected_frontier_profile_preserved",
+        "status": "pass",
+        "observed": [
+          "ob:NS.bridge-stage2",
+          "front:NS.main"
+        ],
+        "expected": [
+          "front:NS.main",
+          "ob:NS.bridge-stage2"
+        ]
+      },
+      {
+        "id": "NS.no_supersession_effect",
+        "branch": "NS",
+        "check": "no_supersession_effect",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": [
+          "none",
+          "none; pilot shell only"
+        ]
+      },
+      {
+        "id": "NS.expected_active_frontiers_are_open",
+        "branch": "NS",
+        "check": "expected_active_frontiers_are_open",
+        "status": "pass",
+        "observed": {
+          "front:NS.main": "O",
+          "ob:NS.bridge-stage2": "O"
+        },
+        "expected": "all expected frontiers have effective status O"
+      },
+      {
+        "id": "NS.successor_tex_present",
+        "branch": "NS",
+        "check": "successor_tex_present",
+        "status": "pass",
+        "observed": "output/tex/ns_branch_successor_standalone.tex",
+        "expected": "exists"
+      },
+      {
+        "id": "NS.successor_pdf_present",
+        "branch": "NS",
+        "check": "successor_pdf_present",
+        "status": "pass",
+        "observed": "output/pdf/ns_branch_successor_standalone.pdf",
+        "expected": "exists"
+      },
+      {
+        "id": "RH.equivalence_report_passed",
+        "branch": "RH",
+        "check": "equivalence_report_passed",
+        "status": "pass",
+        "observed": "passed",
+        "expected": "passed"
+      },
+      {
+        "id": "RH.compile_target_passed",
+        "branch": "RH",
+        "check": "compile_target_passed",
+        "status": "pass",
+        "observed": "pdf_exists",
+        "expected": "passed"
+      },
+      {
+        "id": "RH.expected_posture_preserved",
+        "branch": "RH",
+        "check": "expected_posture_preserved",
+        "status": "pass",
+        "observed": {
+          "equivalence": "cert-proj",
+          "computed": "cert-proj"
+        },
+        "expected": "cert-proj"
+      },
+      {
+        "id": "RH.expected_frontier_profile_preserved",
+        "branch": "RH",
+        "check": "expected_frontier_profile_preserved",
+        "status": "pass",
+        "observed": [
+          "ob:RH.S1-ARC",
+          "thm:RH.S1.formal"
+        ],
+        "expected": [
+          "ob:RH.S1-ARC",
+          "thm:RH.S1.formal"
+        ]
+      },
+      {
+        "id": "RH.no_supersession_effect",
+        "branch": "RH",
+        "check": "no_supersession_effect",
+        "status": "pass",
+        "observed": "none; pilot shell only",
+        "expected": [
+          "none",
+          "none; pilot shell only"
+        ]
+      },
+      {
+        "id": "RH.expected_active_frontiers_are_open",
+        "branch": "RH",
+        "check": "expected_active_frontiers_are_open",
+        "status": "pass",
+        "observed": {
+          "ob:RH.S1-ARC": "O",
+          "thm:RH.S1.formal": "O"
+        },
+        "expected": "all expected frontiers have effective status O"
+      },
+      {
+        "id": "RH.successor_tex_present",
+        "branch": "RH",
+        "check": "successor_tex_present",
+        "status": "pass",
+        "observed": "output/tex/rh_branch_successor_standalone.tex",
+        "expected": "exists"
+      },
+      {
+        "id": "RH.successor_pdf_present",
+        "branch": "RH",
+        "check": "successor_pdf_present",
+        "status": "pass",
+        "observed": "output/pdf/rh_branch_successor_standalone.pdf",
+        "expected": "exists"
+      }
+    ],
+    "template": {
+      "required_checks": [
+        "equivalence_report_passed",
+        "compile_target_passed",
+        "expected_posture_preserved",
+        "expected_frontier_profile_preserved",
+        "no_supersession_effect",
+        "expected_active_frontiers_are_open",
+        "successor_tex_present",
+        "successor_pdf_present"
+      ],
+      "required_pilot_fields": [
+        "branch",
+        "status_id",
+        "generator",
+        "tex_target",
+        "pdf_target",
+        "compile_target_id",
+        "equivalence_report",
+        "expected_posture",
+        "expected_frontiers",
+        "must_not_claim",
+        "supersession_effect_allowed"
+      ]
+    }
+  },
+  "pilot_intake": {
+    "schema_version": "0.28.0",
+    "status": "passed",
+    "current_l2_pilots": [
+      "GR",
+      "YM",
+      "SPEC",
+      "SCC",
+      "CRYST",
+      "LING",
+      "BIO",
+      "SM",
+      "NS",
+      "RH"
+    ],
+    "candidate_count": 6,
+    "recommended_next_pilot": "BIO",
+    "recommended_rationale": "BIO L2 pilot completed in v29; retained for portfolio history.",
+    "ranked_candidates": [
+      {
+        "branch": "BIO",
+        "canon_value": "medium-high",
+        "current_posture": "conditional-cert-close",
+        "frontier_profile": "BIO endpoint is scoped to nondegenerate C_Bio^nd with BND limits for full class.",
+        "migration_readiness": "medium",
+        "rationale": "BIO L2 pilot completed in v29; retained for portfolio history.",
+        "recommended_order": 99,
+        "required_successor_checks": [
+          "preserve C_Bio^nd scope",
+          "preserve BND/full-class limitation",
+          "avoid primitive genes/cells/fitness import"
+        ],
+        "risk_band": "medium-high",
+        "status_id": "status:BIO",
+        "computed_posture": "conditional-cert-close",
+        "posture_matches_computed": true,
+        "score": 5.0,
+        "blocked": false
+      },
+      {
+        "branch": "NS",
+        "canon_value": "very-high",
+        "current_posture": "frontier-blocked",
+        "frontier_profile": "front:NS.main, ob:NS.SB2, and partial bridge-stage obligations remain active.",
+        "migration_readiness": "low-medium",
+        "rationale": "NS L2 pilot completed in v31; stale-posture correction applied. Retained for portfolio history.",
+        "recommended_order": 99,
+        "required_successor_checks": [
+          "preserve frontier-blocked posture",
+          "preserve partial-discharge semantics",
+          "keep SB2 and main frontier open"
+        ],
+        "risk_band": "high",
+        "status_id": "status:NS",
+        "computed_posture": "domain-bounded-cert-close",
+        "posture_matches_computed": false,
+        "score": 4.5,
+        "blocked": true
+      },
+      {
+        "branch": "SM",
+        "canon_value": "very-high",
+        "current_posture": "intrinsic-structural-close",
+        "frontier_profile": "O-IDcont and inherited YM/GR force limits remain active.",
+        "migration_readiness": "medium-low",
+        "rationale": "SM L2 pilot completed in v30; retained for portfolio history.",
+        "recommended_order": 99,
+        "required_successor_checks": [
+          "preserve intrinsic-structural close",
+          "preserve O-IDcont",
+          "preserve inherited YM/GR limitations",
+          "avoid external-specification overclaim"
+        ],
+        "risk_band": "high",
+        "status_id": "status:SM",
+        "computed_posture": "intrinsic-structural-close",
+        "posture_matches_computed": true,
+        "score": 4.5,
+        "blocked": false
+      },
+      {
+        "blocked": false,
+        "branch": "CRYST",
+        "canon_value": "medium-high",
+        "current_posture": "conditional-cert-close",
+        "frontier_profile": "phase problem remains active.",
+        "migration_readiness": "complete",
+        "rationale": "CRYST L2 pilot completed in v27; retained for portfolio history.",
+        "recommended_order": 99,
+        "required_successor_checks": [
+          "preserve conditional CERT-CLOSE scope",
+          "keep phase problem open",
+          "avoid importing Euclidean/Fourier/atomic primitives as assumptions"
+        ],
+        "risk_band": "medium",
+        "status_id": "status:CRYST",
+        "computed_posture": "conditional-cert-close",
+        "posture_matches_computed": true,
+        "score": 2.5
+      },
+      {
+        "branch": "LING",
+        "canon_value": "medium-high",
+        "current_posture": "conditional-cert-close",
+        "frontier_profile": "reference invisibility/recovery frontier remains active.",
+        "migration_readiness": "complete",
+        "rationale": "LING L2 pilot completed in v28; retained for portfolio history.",
+        "recommended_order": 99,
+        "required_successor_checks": [
+          "preserve contrast+recursion+context-response closure",
+          "keep REF-INVIS/RECOV frontier open",
+          "avoid semantic import smuggling"
+        ],
+        "risk_band": "medium",
+        "status_id": "status:LING",
+        "computed_posture": "conditional-cert-close",
+        "posture_matches_computed": true,
+        "score": 2.5,
+        "blocked": false
+      },
+      {
+        "branch": "RH",
+        "canon_value": "very-high",
+        "current_posture": "cert-proj",
+        "frontier_profile": "S1 formal arithmetic frontier remains active.",
+        "migration_readiness": "low",
+        "rationale": "RH L2 pilot completed in v32 \u2014 final branch. All 10 branches now piloted.",
+        "recommended_order": 99,
+        "required_successor_checks": [
+          "preserve CERT-PROJ posture",
+          "preserve S1-ARC/S1 formal frontier",
+          "avoid RH-proof implication"
+        ],
+        "risk_band": "very-high",
+        "status_id": "status:RH",
+        "computed_posture": "cert-proj",
+        "posture_matches_computed": true,
+        "score": 2.0,
+        "blocked": false
+      }
+    ],
+    "quality_gate_status_observed": "passed",
+    "policy": {
+      "avoid_next_pilot_if": [
+        "requires full proof-prose migration before value is visible",
+        "would imply global supersession",
+        "depends on unsettled branch posture vocabulary"
+      ],
+      "do_not_expand_if_quality_gate_fails": true,
+      "prefer_next_pilot_with": [
+        "high canonical leverage",
+        "manageable frontier profile",
+        "available local records",
+        "limited supersession risk"
+      ]
+    }
+  },
+  "outputs": {
+    "reports": [
+      "output/reports/audit_report.json",
+      "output/reports/audit_summary.json",
+      "output/reports/bio_successor_equivalence_report.json",
+      "output/reports/book_i_l4_certificate.json",
+      "output/reports/book_ii_l4_certificate.json",
+      "output/reports/book_iv_l4_certificate.json",
+      "output/reports/book_v_l4_certificate.json",
+      "output/reports/book_vi_l4_certificate.json",
+      "output/reports/book_vii_l4_certificate.json",
+      "output/reports/branch_posture_report.json",
+      "output/reports/canon_import_manifest.json",
+      "output/reports/canonical_coverage_gr.json",
+      "output/reports/canonical_coverage_ym.json",
+      "output/reports/compile_check_report.json",
+      "output/reports/computed_statuses.json",
+      "output/reports/cryst_successor_equivalence_report.json",
+      "output/reports/governance_digest.json",
+      "output/reports/gr_l2_hardening_report.json",
+      "output/reports/gr_l3_certificate.json",
+      "output/reports/gr_pilot_report.json",
+      "output/reports/gr_prose_preservation_manifest.json",
+      "output/reports/gr_successor_equivalence_report.json",
+      "output/reports/l2_pilot_comparison_report.json",
+      "output/reports/l2_pilot_standard_report.json",
+      "output/reports/l3_readiness_report.json",
+      "output/reports/ling_successor_equivalence_report.json",
+      "output/reports/ns_successor_equivalence_report.json",
+      "output/reports/pilot_intake_report.json",
+      "output/reports/pilot_status_traces.json",
+      "output/reports/proof_trees.json",
+      "output/reports/quality_gate_report.json",
+      "output/reports/regression_test_report.json",
+      "output/reports/release_diff_report.json",
+      "output/reports/rh_successor_equivalence_report.json",
+      "output/reports/scc_successor_equivalence_report.json",
+      "output/reports/sm_successor_equivalence_report.json",
+      "output/reports/spec_successor_equivalence_report.json",
+      "output/reports/supersession_readiness_report.json",
+      "output/reports/v35_certificates.json",
+      "output/reports/ym_l3_certificate.json",
+      "output/reports/ym_pilot_report.json",
+      "output/reports/ym_successor_equivalence_report.json"
+    ],
+    "tables": [
+      "output/tables/active_frontiers.md",
+      "output/tables/audit_issues.md",
+      "output/tables/bio_l3_certificate.md",
+      "output/tables/bio_successor_equivalence_report.md",
+      "output/tables/book_i_l4_certificate.md",
+      "output/tables/book_ii_l4_certificate.md",
+      "output/tables/book_iv_l4_certificate.md",
+      "output/tables/book_v_l4_certificate.md",
+      "output/tables/book_vi_l4_certificate.md",
+      "output/tables/book_vii_l4_certificate.md",
+      "output/tables/branch_postures.md",
+      "output/tables/canon_import_manifest.md",
+      "output/tables/canonical_coverage.md",
+      "output/tables/compile_check_report.md",
+      "output/tables/cryst_l3_certificate.md",
+      "output/tables/cryst_successor_equivalence_report.md",
+      "output/tables/governance_digest.md",
+      "output/tables/gr_l2_hardening_report.md",
+      "output/tables/gr_l3_certificate.md",
+      "output/tables/gr_pilot_report.md",
+      "output/tables/gr_successor_equivalence_report.md",
+      "output/tables/l2_pilot_comparison_report.md",
+      "output/tables/l2_pilot_standard_report.md",
+      "output/tables/l2_pilot_standard_template.md",
+      "output/tables/l3_readiness_report.md",
+      "output/tables/ling_l3_certificate.md",
+      "output/tables/ling_successor_equivalence_report.md",
+      "output/tables/ns_l3_certificate.md",
+      "output/tables/ns_successor_equivalence_report.md",
+      "output/tables/pilot_intake_report.md",
+      "output/tables/pilot_status_traces.md",
+      "output/tables/proof_trees.md",
+      "output/tables/proof_trees_summary.md",
+      "output/tables/quality_gate_report.md",
+      "output/tables/regression_test_report.md",
+      "output/tables/release_diff_report.md",
+      "output/tables/release_reconciliation.md",
+      "output/tables/rh_l3_certificate.md",
+      "output/tables/rh_successor_equivalence_report.md",
+      "output/tables/scc_l3_certificate.md",
+      "output/tables/scc_successor_equivalence_report.md",
+      "output/tables/sm_l3_certificate.md",
+      "output/tables/sm_successor_equivalence_report.md",
+      "output/tables/spec_l3_certificate.md",
+      "output/tables/spec_successor_equivalence_report.md",
+      "output/tables/supersession_readiness_report.md",
+      "output/tables/v35_certificates_summary.md",
+      "output/tables/warning_explanations.md",
+      "output/tables/why_status.md",
+      "output/tables/ym_l3_certificate.md",
+      "output/tables/ym_pilot_report.md",
+      "output/tables/ym_successor_equivalence_report.md"
+    ],
+    "tex": [
+      "output/tex/active_frontiers.tex",
+      "output/tex/audit_issues.tex",
+      "output/tex/bio_branch_successor.tex",
+      "output/tex/bio_branch_successor_standalone.aux",
+      "output/tex/bio_branch_successor_standalone.log",
+      "output/tex/bio_branch_successor_standalone.out",
+      "output/tex/bio_branch_successor_standalone.pdf",
+      "output/tex/bio_branch_successor_standalone.tex",
+      "output/tex/bio_branch_successor_standalone.toc",
+      "output/tex/book_i_l4_certificate.tex",
+      "output/tex/book_i_l4_certificate_standalone.aux",
+      "output/tex/book_i_l4_certificate_standalone.log",
+      "output/tex/book_i_l4_certificate_standalone.out",
+      "output/tex/book_i_l4_certificate_standalone.pdf",
+      "output/tex/book_i_l4_certificate_standalone.tex",
+      "output/tex/book_i_l4_certificate_standalone.toc",
+      "output/tex/book_i_l4_shell.tex",
+      "output/tex/book_i_l4_shell_standalone.aux",
+      "output/tex/book_i_l4_shell_standalone.log",
+      "output/tex/book_i_l4_shell_standalone.out",
+      "output/tex/book_i_l4_shell_standalone.pdf",
+      "output/tex/book_i_l4_shell_standalone.tex",
+      "output/tex/book_i_l4_shell_standalone.toc",
+      "output/tex/book_ii_l4_certificate.tex",
+      "output/tex/book_ii_l4_certificate_standalone.aux",
+      "output/tex/book_ii_l4_certificate_standalone.log",
+      "output/tex/book_ii_l4_certificate_standalone.out",
+      "output/tex/book_ii_l4_certificate_standalone.pdf",
+      "output/tex/book_ii_l4_certificate_standalone.tex",
+      "output/tex/book_ii_l4_certificate_standalone.toc",
+      "output/tex/book_ii_l4_shell.tex",
+      "output/tex/book_ii_l4_shell_standalone.aux",
+      "output/tex/book_ii_l4_shell_standalone.log",
+      "output/tex/book_ii_l4_shell_standalone.out",
+      "output/tex/book_ii_l4_shell_standalone.pdf",
+      "output/tex/book_ii_l4_shell_standalone.tex",
+      "output/tex/book_ii_l4_shell_standalone.toc",
+      "output/tex/book_iv_l4_certificate.tex",
+      "output/tex/book_iv_l4_certificate_standalone.aux",
+      "output/tex/book_iv_l4_certificate_standalone.log",
+      "output/tex/book_iv_l4_certificate_standalone.out",
+      "output/tex/book_iv_l4_certificate_standalone.pdf",
+      "output/tex/book_iv_l4_certificate_standalone.tex",
+      "output/tex/book_iv_l4_certificate_standalone.toc",
+      "output/tex/book_iv_l4_shell.tex",
+      "output/tex/book_iv_l4_shell_standalone.aux",
+      "output/tex/book_iv_l4_shell_standalone.log",
+      "output/tex/book_iv_l4_shell_standalone.out",
+      "output/tex/book_iv_l4_shell_standalone.pdf",
+      "output/tex/book_iv_l4_shell_standalone.tex",
+      "output/tex/book_iv_l4_shell_standalone.toc",
+      "output/tex/book_v_l4_certificate.tex",
+      "output/tex/book_v_l4_certificate_standalone.aux",
+      "output/tex/book_v_l4_certificate_standalone.log",
+      "output/tex/book_v_l4_certificate_standalone.out",
+      "output/tex/book_v_l4_certificate_standalone.pdf",
+      "output/tex/book_v_l4_certificate_standalone.tex",
+      "output/tex/book_v_l4_certificate_standalone.toc",
+      "output/tex/book_v_l4_shell.tex",
+      "output/tex/book_v_l4_shell_standalone.aux",
+      "output/tex/book_v_l4_shell_standalone.log",
+      "output/tex/book_v_l4_shell_standalone.out",
+      "output/tex/book_v_l4_shell_standalone.pdf",
+      "output/tex/book_v_l4_shell_standalone.tex",
+      "output/tex/book_v_l4_shell_standalone.toc",
+      "output/tex/book_vi_l4_certificate.tex",
+      "output/tex/book_vi_l4_certificate_standalone.aux",
+      "output/tex/book_vi_l4_certificate_standalone.log",
+      "output/tex/book_vi_l4_certificate_standalone.out",
+      "output/tex/book_vi_l4_certificate_standalone.pdf",
+      "output/tex/book_vi_l4_certificate_standalone.tex",
+      "output/tex/book_vi_l4_certificate_standalone.toc",
+      "output/tex/book_vi_l4_shell.tex",
+      "output/tex/book_vi_l4_shell_standalone.aux",
+      "output/tex/book_vi_l4_shell_standalone.log",
+      "output/tex/book_vi_l4_shell_standalone.out",
+      "output/tex/book_vi_l4_shell_standalone.pdf",
+      "output/tex/book_vi_l4_shell_standalone.tex",
+      "output/tex/book_vi_l4_shell_standalone.toc",
+      "output/tex/book_vii_l4_certificate.tex",
+      "output/tex/book_vii_l4_certificate_standalone.aux",
+      "output/tex/book_vii_l4_certificate_standalone.log",
+      "output/tex/book_vii_l4_certificate_standalone.out",
+      "output/tex/book_vii_l4_certificate_standalone.pdf",
+      "output/tex/book_vii_l4_certificate_standalone.tex",
+      "output/tex/book_vii_l4_certificate_standalone.toc",
+      "output/tex/book_vii_l4_shell.tex",
+      "output/tex/book_vii_l4_shell_standalone.aux",
+      "output/tex/book_vii_l4_shell_standalone.log",
+      "output/tex/book_vii_l4_shell_standalone.out",
+      "output/tex/book_vii_l4_shell_standalone.pdf",
+      "output/tex/book_vii_l4_shell_standalone.tex",
+      "output/tex/book_vii_l4_shell_standalone.toc",
+      "output/tex/branch_postures.tex",
+      "output/tex/canon_governance_appendix.tex",
+      "output/tex/canon_governance_appendix_standalone.tex",
+      "output/tex/claim_catalog.tex",
+      "output/tex/cryst_branch_successor.tex",
+      "output/tex/cryst_branch_successor_standalone.tex",
+      "output/tex/governance_packet.tex",
+      "output/tex/governance_packet_standalone.tex",
+      "output/tex/gr_branch_successor.tex",
+      "output/tex/gr_branch_successor_standalone.tex",
+      "output/tex/gr_l3_certificate.tex",
+      "output/tex/gr_l3_certificate_standalone.aux",
+      "output/tex/gr_l3_certificate_standalone.log",
+      "output/tex/gr_l3_certificate_standalone.out",
+      "output/tex/gr_l3_certificate_standalone.pdf",
+      "output/tex/gr_l3_certificate_standalone.tex",
+      "output/tex/gr_l3_certificate_standalone.toc",
+      "output/tex/ling_branch_successor.tex",
+      "output/tex/ling_branch_successor_standalone.tex",
+      "output/tex/ns_branch_successor.tex",
+      "output/tex/ns_branch_successor_standalone.aux",
+      "output/tex/ns_branch_successor_standalone.log",
+      "output/tex/ns_branch_successor_standalone.out",
+      "output/tex/ns_branch_successor_standalone.pdf",
+      "output/tex/ns_branch_successor_standalone.tex",
+      "output/tex/ns_branch_successor_standalone.toc",
+      "output/tex/ns_l3_certificate.tex",
+      "output/tex/ns_l3_certificate_standalone.aux",
+      "output/tex/ns_l3_certificate_standalone.log",
+      "output/tex/ns_l3_certificate_standalone.out",
+      "output/tex/ns_l3_certificate_standalone.pdf",
+      "output/tex/ns_l3_certificate_standalone.tex",
+      "output/tex/ns_l3_certificate_standalone.toc",
+      "output/tex/rh_branch_successor.tex",
+      "output/tex/rh_branch_successor_standalone.aux",
+      "output/tex/rh_branch_successor_standalone.log",
+      "output/tex/rh_branch_successor_standalone.out",
+      "output/tex/rh_branch_successor_standalone.pdf",
+      "output/tex/rh_branch_successor_standalone.tex",
+      "output/tex/rh_branch_successor_standalone.toc",
+      "output/tex/rh_l3_certificate.tex",
+      "output/tex/rh_l3_certificate_standalone.aux",
+      "output/tex/rh_l3_certificate_standalone.log",
+      "output/tex/rh_l3_certificate_standalone.out",
+      "output/tex/rh_l3_certificate_standalone.pdf",
+      "output/tex/rh_l3_certificate_standalone.tex",
+      "output/tex/rh_l3_certificate_standalone.toc",
+      "output/tex/scc_branch_successor.tex",
+      "output/tex/scc_branch_successor_standalone.tex",
+      "output/tex/sm_branch_successor.tex",
+      "output/tex/sm_branch_successor_standalone.aux",
+      "output/tex/sm_branch_successor_standalone.log",
+      "output/tex/sm_branch_successor_standalone.out",
+      "output/tex/sm_branch_successor_standalone.pdf",
+      "output/tex/sm_branch_successor_standalone.tex",
+      "output/tex/sm_branch_successor_standalone.toc",
+      "output/tex/sm_l3_certificate.tex",
+      "output/tex/sm_l3_certificate_standalone.aux",
+      "output/tex/sm_l3_certificate_standalone.log",
+      "output/tex/sm_l3_certificate_standalone.out",
+      "output/tex/sm_l3_certificate_standalone.pdf",
+      "output/tex/sm_l3_certificate_standalone.tex",
+      "output/tex/sm_l3_certificate_standalone.toc",
+      "output/tex/spec_branch_successor.tex",
+      "output/tex/spec_branch_successor_standalone.tex",
+      "output/tex/ym_branch_successor.tex",
+      "output/tex/ym_branch_successor_standalone.tex"
+    ],
+    "pdf": [
+      "output/pdf/bio_branch_successor_standalone.aux",
+      "output/pdf/bio_branch_successor_standalone.log",
+      "output/pdf/bio_branch_successor_standalone.out",
+      "output/pdf/bio_branch_successor_standalone.pdf",
+      "output/pdf/bio_branch_successor_standalone.toc",
+      "output/pdf/book_i_l4_certificate_standalone.pdf",
+      "output/pdf/book_i_l4_shell_standalone.pdf",
+      "output/pdf/book_ii_l4_certificate_standalone.pdf",
+      "output/pdf/book_ii_l4_shell_standalone.pdf",
+      "output/pdf/book_iv_l4_certificate_standalone.pdf",
+      "output/pdf/book_iv_l4_shell_standalone.pdf",
+      "output/pdf/book_v_l4_certificate_standalone.pdf",
+      "output/pdf/book_v_l4_shell_standalone.pdf",
+      "output/pdf/book_vi_l4_certificate_standalone.pdf",
+      "output/pdf/book_vi_l4_shell_standalone.pdf",
+      "output/pdf/book_vii_l4_certificate_standalone.pdf",
+      "output/pdf/book_vii_l4_shell_standalone.pdf",
+      "output/pdf/canon_governance_appendix_standalone.aux",
+      "output/pdf/canon_governance_appendix_standalone.log",
+      "output/pdf/canon_governance_appendix_standalone.out",
+      "output/pdf/canon_governance_appendix_standalone.pdf",
+      "output/pdf/cryst_branch_successor_standalone.aux",
+      "output/pdf/cryst_branch_successor_standalone.log",
+      "output/pdf/cryst_branch_successor_standalone.out",
+      "output/pdf/cryst_branch_successor_standalone.pdf",
+      "output/pdf/cryst_branch_successor_standalone.toc",
+      "output/pdf/gr_branch_successor_standalone.aux",
+      "output/pdf/gr_branch_successor_standalone.log",
+      "output/pdf/gr_branch_successor_standalone.out",
+      "output/pdf/gr_branch_successor_standalone.pdf",
+      "output/pdf/gr_branch_successor_standalone.toc",
+      "output/pdf/gr_l3_certificate_standalone.pdf",
+      "output/pdf/ling_branch_successor_standalone.aux",
+      "output/pdf/ling_branch_successor_standalone.log",
+      "output/pdf/ling_branch_successor_standalone.out",
+      "output/pdf/ling_branch_successor_standalone.pdf",
+      "output/pdf/ling_branch_successor_standalone.toc",
+      "output/pdf/ns_branch_successor_standalone.aux",
+      "output/pdf/ns_branch_successor_standalone.log",
+      "output/pdf/ns_branch_successor_standalone.out",
+      "output/pdf/ns_branch_successor_standalone.pdf",
+      "output/pdf/ns_branch_successor_standalone.toc",
+      "output/pdf/ns_l3_certificate_standalone.pdf",
+      "output/pdf/rh_branch_successor_standalone.pdf",
+      "output/pdf/rh_l3_certificate_standalone.pdf",
+      "output/pdf/scc_branch_successor_standalone.aux",
+      "output/pdf/scc_branch_successor_standalone.log",
+      "output/pdf/scc_branch_successor_standalone.out",
+      "output/pdf/scc_branch_successor_standalone.pdf",
+      "output/pdf/scc_branch_successor_standalone.toc",
+      "output/pdf/sm_branch_successor_standalone.aux",
+      "output/pdf/sm_branch_successor_standalone.log",
+      "output/pdf/sm_branch_successor_standalone.out",
+      "output/pdf/sm_branch_successor_standalone.pdf",
+      "output/pdf/sm_branch_successor_standalone.toc",
+      "output/pdf/sm_l3_certificate_standalone.pdf",
+      "output/pdf/spec_branch_successor_standalone.aux",
+      "output/pdf/spec_branch_successor_standalone.log",
+      "output/pdf/spec_branch_successor_standalone.out",
+      "output/pdf/spec_branch_successor_standalone.pdf",
+      "output/pdf/spec_branch_successor_standalone.toc",
+      "output/pdf/ym_branch_successor_standalone.aux",
+      "output/pdf/ym_branch_successor_standalone.log",
+      "output/pdf/ym_branch_successor_standalone.out",
+      "output/pdf/ym_branch_successor_standalone.pdf",
+      "output/pdf/ym_branch_successor_standalone.toc"
+    ],
+    "pdf_render_check": [
+      "output/pdf_render_check/page-1.png",
+      "output/pdf_render_check/page-2.png"
+    ]
+  }
+}

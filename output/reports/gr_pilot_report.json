@@ -1,0 +1,121 @@
+{
+  "rows": [
+    {
+      "id": "ob:GR.real",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "domain-bounded",
+      "source": "local-discharge-inference",
+      "title": "Controlled Causal-Geometric Realization"
+    },
+    {
+      "id": "thm:GR.realization",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "domain-bounded",
+      "source": "declared",
+      "title": "Controlled Causal-Geometric Realization Theorem"
+    },
+    {
+      "id": "ob:GR.deform",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "domain-bounded",
+      "source": "local-discharge-inference",
+      "title": "Causal-Deformation Response Law"
+    },
+    {
+      "id": "thm:GR.deformation",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "domain-bounded",
+      "source": "declared",
+      "title": "Causal-Deformation Law Theorem"
+    },
+    {
+      "id": "ob:GR.compat",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "domain-bounded",
+      "source": "local-discharge-inference",
+      "title": "Metric/Connection and Einstein-Type Structural Compatibility"
+    },
+    {
+      "id": "thm:GR.compat",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "domain-bounded",
+      "source": "declared",
+      "title": "Metric/Connection Compatible Structural Compatibility Packet"
+    },
+    {
+      "id": "ob:GR.EFE1",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "domain-bounded",
+      "source": "local-discharge-inference",
+      "title": "EFE Curvature Encoding Obligation"
+    },
+    {
+      "id": "ob:GR.EFE2",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "domain-bounded",
+      "source": "local-discharge-inference",
+      "title": "EFE Coupling Constants Obligation"
+    },
+    {
+      "id": "ob:GR.EFE3",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "domain-bounded",
+      "source": "local-discharge-inference",
+      "title": "EFE Diffeomorphism Invariance Obligation"
+    },
+    {
+      "id": "ob:GR.closure",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "domain-bounded",
+      "source": "local-discharge-inference",
+      "title": "Domain-Bounded Gravity Closure Package"
+    },
+    {
+      "id": "thm:GR.domain",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "domain-bounded",
+      "source": "declared",
+      "title": "Domain-Bounded Gravity Closure Theorem"
+    },
+    {
+      "id": "ob:GR.global-subcriticality",
+      "kind": "obligation",
+      "declared": "O",
+      "computed": "O",
+      "scope": "global",
+      "source": "declared",
+      "title": "Global Curvature-Subcriticality / BF-9 Extension Frontier"
+    },
+    {
+      "id": "status:GR",
+      "kind": "status_note",
+      "declared": "domain-bounded-cert-close",
+      "computed": "domain-bounded-cert-close",
+      "scope": "branch-wide",
+      "source": "branch-packet-inference",
+      "title": "GR Branch Posture Record"
+    }
+  ]
+}

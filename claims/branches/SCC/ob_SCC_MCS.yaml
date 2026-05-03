@@ -1,0 +1,44 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  local_label_hardened_in: v15
+  retired: false
+body_file: text/branches/SCC/ob_SCC_MCS.md
+book: SCC
+canonical_xref:
+  canonical_label: SCC Minimal Carrier Structure Obligation [C]
+  canonical_section: SCC §Obligations
+  canonical_theorem: ob:SCC.MCS
+  cross_check: Discharged by thm:SCC.MCS
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VII.4.3
+discharges: []
+id: ob:SCC.MCS
+imports:
+- items:
+  - thm:VII.4.3
+  source: book:VII
+kind: obligation
+number: SCC.MCS
+scope:
+  certificate_scope: branch-wide
+  continuum_license: none
+  domain: SCC-branch
+  inherited_constraints:
+  - MCS
+  - UC
+  - TSI
+  promotion_ceiling: conditional-cert-close
+  regime: scc-branch-governance
+supersedes: []
+tags:
+- scc
+- obligation
+- conditional-closure
+title: Minimal Structural Carrier Selection
+track: branch

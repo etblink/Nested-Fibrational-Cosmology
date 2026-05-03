@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "pilot_level": "L2",
+  "generated_claim_count": 19,
+  "generated_ids": [
+    "ob:YM.O-ID",
+    "thm:YM.ID",
+    "ob:YM.O-RIG",
+    "thm:YM.RIG",
+    "ob:YM.O-ENC",
+    "thm:YM.ENC",
+    "ob:YM.O-GLOB",
+    "thm:YM.GLOB",
+    "ob:YM.O-CLU",
+    "thm:YM.CLU",
+    "thm:YM.7",
+    "ob:YM.B1",
+    "thm:YM.B1.bridge",
+    "ob:YM.B2",
+    "thm:YM.B2.bridge",
+    "ob:YM.B3",
+    "thm:YM.B3.bridge",
+    "ob:YM.B3.A2",
+    "status:YM"
+  ],
+  "missing_expected": [],
+  "unexpected_claims": [],
+  "active_frontiers": [
+    "ob:YM.B3.A2"
+  ],
+  "posture": "conditional-cert-close",
+  "checks": [
+    {
+      "id": "ym.successor.expected-claim-list",
+      "status": "pass",
+      "observed": {
+        "missing": []
+      },
+      "expected": "All YM_ORDER claims are present."
+    },
+    {
+      "id": "ym.successor.posture",
+      "status": "pass",
+      "observed": "conditional-cert-close",
+      "expected": "conditional-cert-close"
+    },
+    {
+      "id": "ym.successor.frontier-preservation",
+      "status": "pass",
+      "observed": [
+        "ob:YM.B3.A2"
+      ],
+      "expected": [
+        "ob:YM.B3.A2"
+      ]
+    },
+    {
+      "id": "ym.successor.no-unexpected-claims",
+      "status": "pass",
+      "observed": [],
+      "expected": "No branch-local YM records outside the pilot order."
+    },
+    {
+      "id": "ym.successor.no-clay-upgrade",
+      "status": "pass",
+      "observed": [
+        "ob:YM.B3.A2"
+      ],
+      "expected": "B3-A2 remains open; no unconditional Clay-grade upgrade is inferred."
+    }
+  ],
+  "supersession_effect": "none; pilot shell only"
+}

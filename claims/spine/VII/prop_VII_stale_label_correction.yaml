@@ -1,0 +1,23 @@
+body_file: text/spine/VII/prop_VII_stale_label_correction.md
+book: VII
+canonical_xref:
+  canonical_label: Stale-Label Correction Proposition [U]
+  canonical_section: Book VII §Status and Dependency Law
+  canonical_theorem: prop:stale-label-correction
+  cross_check: ADDED in Session L+6; stale labels must be corrected before citation
+    at declared force
+declared_status: U
+dependencies:
+  requires:
+  - prop:VII.cite-declared-force
+  - def:VII.declared-effective-audit
+id: prop:VII.stale-label-correction
+kind: proposition
+number: VII.P.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Stale-Label Correction Proposition
+track: spine

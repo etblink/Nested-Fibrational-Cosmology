@@ -1,0 +1,23 @@
+body_file: text/branches/SM/ob_SM_harmonization.md
+book: SM
+canonical_xref:
+  canonical_label: O-SM.Harmonization — Harmonization Functor [C]
+  canonical_section: SM §Open Obligations
+  canonical_theorem: O-SM.Harm
+  cross_check: Partially discharged by KPO chain; matter extension pending
+declared_status: C
+dependencies:
+  requires:
+  - thm:YM.7
+  - thm:GR.CP.1
+discharges: []
+id: ob:SM.harmonization
+kind: obligation
+number: SM.harmonization
+scope:
+  certificate_scope: scoped-KPO
+  domain: SM-branch
+  promotion_ceiling: C
+  regime: SM-super-sector
+title: Harmonization Functor (O-SM.Harmonization)
+track: branch

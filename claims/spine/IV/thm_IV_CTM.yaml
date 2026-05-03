@@ -1,0 +1,22 @@
+body_file: text/spine/IV/thm_IV_CTM.md
+book: IV
+canonical_xref:
+  canonical_label: CTM — Coherent Transition-Map Theorem [U]
+  canonical_section: Book IV §Source-Side Ladder
+  canonical_theorem: thm:CTM
+  cross_check: 'R |-> F_R is a functor D_pers: Reg -> POT; the persistent diagram
+    whose colimit is U'
+declared_status: U
+dependencies:
+  requires:
+  - thm:IV.ORA
+id: thm:IV.CTM
+kind: theorem
+number: IV.T.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Coherent Transition-Map Theorem (CTM)
+track: spine

@@ -1,0 +1,26 @@
+body_file: text/branches/RH/ob_RH6.md
+book: RH
+canonical_xref:
+  canonical_label: RH6 — Critical-Line Localization [C]
+  canonical_section: RH §Six-Step Ladder
+  canonical_theorem: ob:RH6
+  cross_check: Conditionally hardened; requires full RH4 at canonical force to complete
+declared_status: C
+dependencies:
+  requires:
+  - ob:RH.4
+  - ob:RH.5
+discharges: []
+id: ob:RH.6
+kind: obligation
+number: RH.6
+scope:
+  certificate_scope: conditional-structural
+  domain: RH-branch
+  inherited_constraints:
+  - Phase-A
+  - SCC-RH-equivalence
+  promotion_ceiling: C
+  regime: RH-SCC-admissible
+title: RH6 — Critical-Line Localization
+track: branch

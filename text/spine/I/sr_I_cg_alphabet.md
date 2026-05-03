@@ -1,0 +1,1 @@
+The collar alphabet size K_0 is the primary structural count of the NFC collar geometry. Its value is determined by the collar geometry axioms alone, without reference to physics or prior mathematical theory. The standing rule declares that K_0 is fixed by the structural self-consistency condition; the uniqueness value K_0 = 7 is proved unconditionally in thm:I.K0-prime.

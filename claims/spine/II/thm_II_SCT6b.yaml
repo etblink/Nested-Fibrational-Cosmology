@@ -1,0 +1,27 @@
+body_file: text/spine/II/thm_II_SCT6b.md
+book: II
+canonical_xref:
+  canonical_label: SCT.6b Coercive Transport Stage 6b [C] — safe tail condition
+  canonical_section: Book II §SCT Doctrine
+  canonical_theorem: thm:SCT6b
+  cross_check: Final SCT stage; discharges ob:NS.SB2 in NS branch; requires three
+    firing conditions
+declared_status: C
+dependencies:
+  requires:
+  - thm:II.SCT1
+  - thm:II.boundary-capacity
+id: thm:II.SCT6b
+kind: theorem
+number: II.T.11
+scope:
+  certificate_scope: conditional-SCT
+  domain: spine
+  inherited_constraints:
+  - LS-2
+  - Phase-A
+  - SCT-firing-conditions
+  promotion_ceiling: C
+  regime: LS2-Phase-A
+title: Shared Coercive Transport Stage 6b (SCT.6b)
+track: spine

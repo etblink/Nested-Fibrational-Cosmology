@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "book": "I",
+  "track": "spine",
+  "l4_level": "spine_release_candidate",
+  "schema_version": "0.37.0",
+  "claim_count": 22,
+  "xref_count": 22,
+  "prose_score": 100.0,
+  "all_results_unconditional": true,
+  "k0_prime_present": true,
+  "defect_ledger_complete": true,
+  "supersession_effect": "none",
+  "primary_exports": [
+    {
+      "id": "thm:I.governing",
+      "title": "Observational Quotient Theorem",
+      "canonical": "thm:governing (Book I)",
+      "note": "Packages both main exports: quotient well-defined + finite stabilization"
+    },
+    {
+      "id": "thm:I.stabilization",
+      "title": "Finite Stabilization Theorem",
+      "canonical": "thm:stabilization",
+      "note": "Every refinement chain on finite Omega stabilizes finitely"
+    },
+    {
+      "id": "cor:I.no-presentation-surplus",
+      "title": "No-Presentation-Surplus Rule",
+      "canonical": "cor:no-presentation-surplus",
+      "note": "Primary downstream governance rule; cited by Book VII"
+    },
+    {
+      "id": "thm:I.K0-prime",
+      "title": "K_0=7 Uniqueness Theorem",
+      "canonical": "thm:K0-prime",
+      "note": "Unique prime fixed point of F(p); source of su(3)+su(2)+u(1)"
+    },
+    {
+      "id": "prop:I.defect-nonneg",
+      "title": "Defect Ledger Non-Negativity",
+      "canonical": "prop:defect-nonneg",
+      "note": "D(chi)>=0; foundational for defect accounting"
+    },
+    {
+      "id": "prop:I.ledger-additivity",
+      "title": "Defect Ledger Additivity",
+      "canonical": "prop:ledger-additivity",
+      "note": "D(chi1+chi2)=D(chi1)+D(chi2)"
+    },
+    {
+      "id": "cor:I.defect-welldef",
+      "title": "Defect Ledger Well-Definedness",
+      "canonical": "cor:defect-welldef",
+      "note": "Complete defect ledger characterization"
+    },
+    {
+      "id": "thm:I.entropy-monotone",
+      "title": "Structural Entropy Monotonicity",
+      "canonical": "thm:entropy-monotone",
+      "note": "H_n non-increasing; pairs with defect via duality"
+    },
+    {
+      "id": "thm:I.ledger-entropy-duality",
+      "title": "Ledger-Entropy Duality",
+      "canonical": "thm:ledger-entropy-duality",
+      "note": "D(chi)=H_0-H_inf; information-theoretic interpretation"
+    }
+  ],
+  "book_i_boundary": [
+    "Local stability of observable outcomes \u2014 belongs to Books II/III",
+    "Boundary determinacy \u2014 belongs to Books II/IV",
+    "Source universality \u2014 belongs to Book III",
+    "Branch legitimacy \u2014 belongs to Book V",
+    "Continuum correspondence \u2014 belongs to Book VI"
+  ],
+  "checks": [
+    {
+      "id": "l4.i.primary-exports-present",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all present",
+      "expected": "All 9 primary Book I exports present"
+    },
+    {
+      "id": "l4.i.all-results-unconditional",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all [U]",
+      "expected": "All Book I theorems must be [U] \u2014 no conditional results in the unconditional foundation"
+    },
+    {
+      "id": "l4.i.k0-prime-present",
+      "status": "pass",
+      "severity": "error",
+      "observed": "present=True, status=U",
+      "expected": "thm:I.K0-prime present and [U] \u2014 source of K_0=7 for YM and SM branches"
+    },
+    {
+      "id": "l4.i.no-presentation-surplus-present",
+      "status": "pass",
+      "severity": "error",
+      "observed": "present",
+      "expected": "cor:I.no-presentation-surplus present \u2014 primary governance rule exported to Book VII+"
+    },
+    {
+      "id": "l4.i.source-arch-rules",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all present",
+      "expected": "Source architecture standing rules (no-primitive, no-smuggling, cg-alphabet) present"
+    },
+    {
+      "id": "l4.i.defect-ledger-complete",
+      "status": "pass",
+      "severity": "error",
+      "observed": "complete",
+      "expected": "Defect ledger structure: def + nonneg + additivity + welldef all present"
+    },
+    {
+      "id": "l4.i.prose-completeness",
+      "status": "pass",
+      "severity": "warning",
+      "observed": "100.0% (22/22)",
+      "expected": ">= 90% prose completeness"
+    },
+    {
+      "id": "l4.i.xref-annotations",
+      "status": "pass",
+      "severity": "error",
+      "observed": "22/22",
+      "expected": ">= 20 xref annotations"
+    },
+    {
+      "id": "l4.i.book-i-boundary",
+      "status": "pass",
+      "severity": "error",
+      "observed": "none",
+      "expected": "Book I must not contain [C] or [O] results \u2014 those belong to later books"
+    }
+  ]
+}

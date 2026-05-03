@@ -1,0 +1,46 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/GR/thm_GR_deformation.md
+book: GR
+canonical_xref:
+  canonical_book: NFC_GR_Branch.tex
+  canonical_label: GR deformation theorem (ob:GR.deform discharge)
+  canonical_section: GR Five-Stage Closure Chain §2
+  canonical_theorem: GR.Deformation
+  cross_check: Stage 2 — deformation within the realized domain
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:GR.realization
+discharges:
+- basis:
+  - thm:GR.deformation
+  kind: full
+  scope_relation: preserved
+  target: ob:GR.deform
+  transfer_basis: []
+  transfer_required: false
+id: thm:GR.deformation
+imports: []
+kind: theorem
+number: GR.D1
+proof_file: text/branches/GR/proof_thm_GR_deformation.md
+scope:
+  certificate_scope: domain-bounded
+  continuum_license: book-VI-certified
+  domain: GR-branch
+  inherited_constraints:
+  - realized-domain-D
+  promotion_ceiling: C
+  regime: declared-GR-target
+supersedes: []
+tags:
+- gr
+- deformation
+title: Causal-Deformation Law Theorem
+track: branch

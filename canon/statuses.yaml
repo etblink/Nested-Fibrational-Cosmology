@@ -1,0 +1,25 @@
+claim_statuses:
+  D:
+    name: Definition / Standing Rule
+    promotable: false
+    theorem_force: false
+  U:
+    name: Unconditional
+    promotable: false
+    theorem_force: true
+  C:
+    name: Conditional
+    promotable: true
+    theorem_force: true
+  O:
+    name: Open Obligation
+    promotable: true
+    theorem_force: false
+  B:
+    name: Bridge Theorem
+    promotable: true
+    theorem_force: true
+  R:
+    name: Remark / Scholium
+    promotable: false
+    theorem_force: false

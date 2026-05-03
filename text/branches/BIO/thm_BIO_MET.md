@@ -1,0 +1,1 @@
+The metabolic ledger W_met is an additive accounting function on the replication-certified class C_Bio^nd: W_met(X \cup{} Y) = W_met(X) + W_met(Y) when X and Y are metabolically independent replication events. Additivity follows from the carrier-transport structure without importing thermodynamic primitives.

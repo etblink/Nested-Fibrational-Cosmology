@@ -1,0 +1,22 @@
+body_file: text/branches/BIO/ob_BIO_FID.md
+book: BIO
+canonical_xref:
+  canonical_label: Replication Fidelity Margin [C]
+  canonical_section: BIO §Obligations
+  canonical_theorem: ob:BIO.FID
+  cross_check: Discharged by thm:BIO.FID; positive gap on C_Bio^nd
+declared_status: C
+dependencies:
+  requires:
+  - ob:BIO.REP
+discharges: []
+id: ob:BIO.FID
+kind: obligation
+number: BIO.FID
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: Replication Fidelity Margin
+track: branch

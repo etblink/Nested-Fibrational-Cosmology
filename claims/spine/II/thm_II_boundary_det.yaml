@@ -1,0 +1,26 @@
+body_file: text/spine/II/thm_II_boundary_det.md
+book: II
+canonical_xref:
+  canonical_label: Boundary Determinacy Theorem [C]
+  canonical_section: Book II §Boundary Determinacy
+  canonical_theorem: thm:boundary-det
+  cross_check: Under LS-2, stabilized local outcome is determined by stabilized collar
+    data; boundary-law map is well-defined
+declared_status: C
+dependencies:
+  requires:
+  - hyp:II.LS2
+  - def:II.structural-phases
+id: thm:II.boundary-det
+kind: theorem
+number: II.T.8
+scope:
+  certificate_scope: conditional-LS2
+  domain: spine
+  inherited_constraints:
+  - LS-2
+  - Phase-A
+  promotion_ceiling: C
+  regime: LS2-Phase-A
+title: Boundary Determinacy Theorem
+track: spine

@@ -1,0 +1,22 @@
+body_file: text/branches/NS/thm_NS_leray.md
+book: NS
+canonical_xref:
+  canonical_label: NS Leray Weak Existence [U]
+  canonical_section: NS §Lawful Descent
+  canonical_theorem: NS.Leray
+  cross_check: Unconditional; canonical base for all NS closure arguments
+declared_status: U
+dependencies:
+  requires:
+  - thm:NS.stage2a
+discharges: []
+id: thm:NS.leray
+kind: theorem
+number: NS.leray
+scope:
+  certificate_scope: unconditional
+  domain: NS-branch
+  promotion_ceiling: U
+  regime: NS-source-descended
+title: NS Leray Weak Existence
+track: branch

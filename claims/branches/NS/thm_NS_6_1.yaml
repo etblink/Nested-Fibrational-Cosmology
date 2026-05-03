@@ -1,0 +1,48 @@
+aliases:
+- KPO3
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/NS/thm_NS_6_1.md
+book: NS
+canonical_xref:
+  canonical_label: NS.6.1 Active Missing Bridge Theorem [C]
+  canonical_section: NS §Active Missing Bridge
+  canonical_theorem: NS.6.1
+  cross_check: Conditional; partial discharge of ob:NS.bridge-stage2
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VI.8.1
+  - front:NS.main
+discharges:
+- basis:
+  - thm:NS.6.1
+  kind: partial
+  scope_relation: restricted
+  target: ob:NS.bridge-stage2
+  transfer_basis:
+  - thm:VI.8.1
+  transfer_required: true
+id: thm:NS.6.1
+imports: []
+kind: theorem
+number: NS.6.1
+proof_file: text/branches/NS/proof_thm_NS_6_1.md
+scope:
+  certificate_scope: branch-local
+  continuum_license: pending
+  domain: NS-branch
+  inherited_constraints: []
+  promotion_ceiling: C
+  regime: declared-NS-target
+supersedes: []
+tags:
+- ns
+- continuation
+- obstruction
+title: Active Missing Bridge Theorem
+track: branch

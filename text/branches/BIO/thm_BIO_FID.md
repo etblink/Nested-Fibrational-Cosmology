@@ -1,0 +1,1 @@
+On the nondegenerate regime C_Bio^nd, there exists a positive fidelity margin \delta{}_fid > 0 separating the certified replicating class from the boundary of the non-replicating class. The margin is computable from the carrier parameters without invoking mutation-rate primitives.

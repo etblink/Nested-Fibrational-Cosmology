@@ -1,0 +1,175 @@
+{
+  "rows": [
+    {
+      "id": "ob:YM.O-ID",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "local-discharge-inference",
+      "title": "Operator / Target-Side Identification Obligation"
+    },
+    {
+      "id": "thm:YM.ID",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "declared",
+      "title": "YM Identification Discharge Packet"
+    },
+    {
+      "id": "ob:YM.O-RIG",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "local-discharge-inference",
+      "title": "Operator Rigidity Obligation"
+    },
+    {
+      "id": "thm:YM.RIG",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "declared",
+      "title": "YM Rigidity Discharge Packet"
+    },
+    {
+      "id": "ob:YM.O-ENC",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "local-discharge-inference",
+      "title": "Encoding Compatibility Obligation"
+    },
+    {
+      "id": "thm:YM.ENC",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "declared",
+      "title": "YM Encoding Compatibility Packet"
+    },
+    {
+      "id": "ob:YM.O-GLOB",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "local-discharge-inference",
+      "title": "Global Coercivity Obligation"
+    },
+    {
+      "id": "thm:YM.GLOB",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "declared",
+      "title": "YM Global Coercivity Packet"
+    },
+    {
+      "id": "ob:YM.O-CLU",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "local-discharge-inference",
+      "title": "Cluster / Vacuum Uniqueness Obligation"
+    },
+    {
+      "id": "thm:YM.CLU",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "declared",
+      "title": "YM Cluster and Vacuum Packet"
+    },
+    {
+      "id": "thm:YM.7",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-wide",
+      "source": "declared",
+      "title": "Endpoint Mass-Gap and OS/Wightman Closure Packet"
+    },
+    {
+      "id": "ob:YM.B1",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "local-discharge-inference",
+      "title": "B1 Quantization Bridge Residual"
+    },
+    {
+      "id": "thm:YM.B1.bridge",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "declared",
+      "title": "B1 Quantization Bridge Conditional Packet"
+    },
+    {
+      "id": "ob:YM.B2",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "local-discharge-inference",
+      "title": "B2 Domain Bridge Residual"
+    },
+    {
+      "id": "thm:YM.B2.bridge",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "declared",
+      "title": "B2 Domain Bridge Conditional Packet"
+    },
+    {
+      "id": "ob:YM.B3",
+      "kind": "obligation",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "local-discharge-inference",
+      "title": "B3 Compact Simple SU(3) Bridge Residual"
+    },
+    {
+      "id": "thm:YM.B3.bridge",
+      "kind": "theorem",
+      "declared": "C",
+      "computed": "C",
+      "scope": "branch-local",
+      "source": "declared",
+      "title": "B3 Compact Simple SU(3) Conditional Packet"
+    },
+    {
+      "id": "ob:YM.B3.A2",
+      "kind": "obligation",
+      "declared": "O",
+      "computed": "O",
+      "scope": "branch-local",
+      "source": "declared",
+      "title": "Simple A2 Gap Restriction Without SM Gauge Dependence"
+    },
+    {
+      "id": "status:YM",
+      "kind": "status_note",
+      "declared": "conditional-cert-close",
+      "computed": "conditional-cert-close",
+      "scope": "branch-wide",
+      "source": "branch-packet-inference",
+      "title": "YM Branch Posture Record"
+    }
+  ]
+}

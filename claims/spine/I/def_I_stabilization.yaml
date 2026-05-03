@@ -1,0 +1,21 @@
+body_file: text/spine/I/def_I_stabilization.md
+book: I
+canonical_xref:
+  canonical_label: Stabilization — the refinement chain stabilizes to Sigma_inf
+  canonical_section: Book I §Refinement and Stabilization
+  canonical_theorem: def:stabilization
+  cross_check: Sigma_inf is the limiting stabilized observational quotient
+declared_status: D
+dependencies:
+  requires:
+  - def:I.obs-quotient
+id: def:I.stabilization
+kind: definition
+number: I.D.5
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Stabilization and Stabilized Quotient
+track: spine

@@ -1,0 +1,4 @@
+# Manual effective-status facts.
+# v6 intentionally leaves this empty for the migrated slice; effective status is
+# computed from declared records, discharge edges, and branch-packet inference.
+status_facts: []

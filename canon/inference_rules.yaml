@@ -1,0 +1,71 @@
+branch_posture_inference:
+  BIO:
+    if:
+    - thm:BIO.END in {C,U}
+    - ob:BIO.BND-open == O
+    then: conditional-cert-close
+  CRYST:
+    if:
+    - thm:CRYST.END in {C,U}
+    - ob:CRYST.phase-problem == O
+    then: conditional-cert-close
+  GR:
+    if:
+    - thm:GR.CP.1 in {C,U}
+    - ob:GR.global-subcriticality == O
+    then: domain-bounded-cert-close
+  LING:
+    if:
+    - thm:LING.END in {C,U}
+    - ob:LING.REF-INVIS-RECOV == O
+    then: conditional-cert-close
+  NS:
+    correction_note: Corrects stale frontier-blocked posture from governance repo
+      v28. The canonical NS branch book sections (prop:NS-status, thm:NS71, cor:NS-both-give-endpoint)
+      establish domain-bounded conditional CERT-CLOSE. The NS preamble is stale. This
+      is a stale-posture correction surfaced by the v31 pilot migration.
+    if:
+    - thm:NS.7.1 in {C,U}
+    - thm:NS.6.1 in {C,U}
+    - front:NS.main == O
+    then: domain-bounded-cert-close
+  RH:
+    if:
+    - thm:RH.3 in {C,U}
+    - ob:RH.S1-ARC == O
+    note: 'RH branch architecture constituted (RH1-RH3, ladder, probe space, 9/10
+      AC obstructions). S1 reduced to S1-ARC. S1-TRACE/DESCENT/COMP all [C]. S1-ARC
+      irreducibly [O]. CERT-PROJ is the correct terminal posture: architecture established,
+      irreducible arithmetic frontier sharply named.'
+    then: cert-proj
+  SCC:
+    if:
+    - thm:SCC.MCS in {C,U}
+    - thm:SCC.UC in {C,U}
+    - thm:SCC.TSI in {C,U}
+    then: conditional-cert-close
+  SM:
+    if:
+    - prop:SM.intrinsic-closure in {C,U}
+    - prop:SM.status-reconciliation in {C,U}
+    - ob:SM.O-IDcont == O
+    then: intrinsic-structural-close
+  SPEC:
+    if:
+    - thm:SPEC.10.1 == U
+    then: cert-close
+  YM:
+    if:
+    - thm:YM.7 in {C,U}
+    - thm:YM.B1.bridge in {C,U}
+    - thm:YM.B2.bridge in {C,U}
+    - thm:YM.B3.bridge in {C,U}
+    - ob:YM.B3.A2 == O
+    then: conditional-cert-close
+claim_inference:
+  discharged_obligation_rule:
+    description: 'If an obligation is explicitly discharged by an active theorem-like
+      claim, compute conditional or unconditional effective status from the discharging
+      basis.
+
+      '

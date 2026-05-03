@@ -1,0 +1,33 @@
+id: thm:VI.8.1
+book: VI
+track: spine
+kind: theorem
+number: "VI.8.1"
+title: Effective Continuum Legitimacy Theorem (earlier schema)
+declared_status: U
+
+scope:
+  regime: continuum-interface
+  domain: spine
+  certificate_scope: global
+  inherited_constraints: []
+  continuum_license: none
+  promotion_ceiling: U
+
+dependencies:
+  requires: []
+  optional: []
+  excludes: []
+
+imports: []
+discharges: []
+supersedes: []
+aliases: []
+tags: [continuum, bridge]
+
+body_file: text/spine/VII/thm_VI_8_1_stub.md
+
+audit:
+  active: true
+  canonical: true
+  retired: false

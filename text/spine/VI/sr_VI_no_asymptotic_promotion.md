@@ -1,0 +1,1 @@
+A scoped certificate does not self-promote to asymptotic or continuum force. Even if a discrete result holds on the canonical K_0=7 substrate, that result cannot be declared a continuum theorem without a separately proved bridge. This rule prevents the common failure mode of sliding from "works on the finite model" to "therefore the corresponding continuum statement holds."

@@ -1,0 +1,22 @@
+body_file: text/spine/VII/status_VII.md
+book: VII
+canonical_xref:
+  canonical_label: Book VII Status — all results unconditional; source architecture
+    stable
+  canonical_section: Book VII §Terminal Status
+  canonical_theorem: status:VII
+  cross_check: Book VII has no open obligations; all results [U]; no active frontier
+declared_status: R
+dependencies:
+  requires:
+  - thm:VII.governing
+id: status:VII
+kind: remark
+number: VII.status
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Book VII Branch Status
+track: spine

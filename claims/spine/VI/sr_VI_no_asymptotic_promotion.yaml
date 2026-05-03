@@ -1,0 +1,21 @@
+body_file: text/spine/VI/sr_VI_no_asymptotic_promotion.md
+book: VI
+canonical_xref:
+  canonical_label: No-Asymptotic-Promotion Rule
+  canonical_section: Book VI §Standing Rules
+  canonical_theorem: sr:no-asymptotic-promotion
+  cross_check: A scoped certificate does not self-promote to asymptotic or continuum
+    force; needs a separately proved bridge
+declared_status: D
+dependencies:
+  requires: []
+id: sr:VI.no-asymptotic-promotion
+kind: standing_rule
+number: VI.SR.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: No-Asymptotic-Promotion Rule
+track: spine

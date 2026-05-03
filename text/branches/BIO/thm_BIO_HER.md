@@ -1,0 +1,1 @@
+The hereditary transport H_Bio passes the Book V branch-legitimacy test on C_Bio^nd: it descends from U through the declared replication functor with no hidden supplementation, and the descent structure is probe-response visible under the declared observation family.

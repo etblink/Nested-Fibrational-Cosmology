@@ -1,0 +1,3 @@
+Book V status: primarily unconditional. [U] results: all four standing rules, all five key definitions, prop:branch-projection, prop:endpoint-visibility, prop:hidden-channel-exclusion, thm:collapse, thm:diamond, thm:UBLT, cor:mandatory-declarations, cor:open-branch-still-canonical. [C] result: thm:screened-sector (conditional on PASS/LS-2/Phase-A/K_0=7). The governing theorem is thm:UBLT [U]: the five-condition biconditional for branch legitimacy.
+
+Book V does NOT prove: the validity of any specific branch endpoint (those are proved in the branch books); the existence of U (Book IV); the computational value of any coupling constant; that any branch has reached CERT-CLOSE (those are branch book conclusions).

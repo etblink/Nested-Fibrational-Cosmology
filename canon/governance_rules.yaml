@@ -1,0 +1,24 @@
+rules:
+  - id: rule.claim.must-have-core-fields
+    applies_to: [theorem, proposition, corollary, bridge, obligation, frontier]
+    requires: [id, declared_status, scope]
+
+  - id: rule.dependencies.must-resolve
+    applies_to: [all]
+    check: all_dependencies_resolve
+
+  - id: rule.no-hidden-promotion
+    applies_to: [theorem, proposition, corollary, bridge]
+    check: promotion_requires_transfer
+
+  - id: rule.frontier-stability
+    applies_to: [frontier, obligation]
+    check: frontier_discharge_requires_explicit_edge
+
+  - id: rule.no-retired-alias-in-active-record
+    applies_to: [all]
+    check: aliases_must_resolve
+
+  - id: rule.status-fact.reconciliation
+    applies_to: [all]
+    check: reconcile_declared_with_status_facts

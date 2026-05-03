@@ -1,0 +1,48 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/thm_YM_GLOB.md
+book: YM
+canonical_xref:
+  canonical_label: YM Globalization Theorem
+  canonical_section: YM Bridge Stack §4
+  canonical_theorem: YM.GLOB
+  cross_check: Discharges ob:YM.O-GLOB; local-to-global gauge extension
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VII.6.4
+  - thm:YM.ENC
+discharges:
+- basis:
+  - thm:YM.GLOB
+  kind: full
+  scope_relation: preserved
+  target: ob:YM.O-GLOB
+  transfer_basis: []
+  transfer_required: false
+id: thm:YM.GLOB
+imports: []
+kind: theorem
+number: YM.GLOB
+proof_file: text/branches/YM/proof_thm_YM_GLOB.md
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - global-coercivity
+  - msc-normalized
+  promotion_ceiling: C
+  regime: ym-bridge-stack
+supersedes: []
+tags:
+- ym
+- bridge-stack
+- global-coercivity
+title: YM Global Coercivity Packet
+track: branch

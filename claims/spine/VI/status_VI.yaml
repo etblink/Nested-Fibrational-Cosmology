@@ -1,0 +1,23 @@
+body_file: text/spine/VI/status_VI.md
+book: VI
+canonical_xref:
+  canonical_label: 'Book VI Status — tool-licensing; [U]: bridge-schema, no-smuggling,
+    T_partial-stability; [C]: everything else'
+  canonical_section: Book VI §Honest Posture
+  canonical_theorem: status:VI
+  cross_check: Book VI is the thinnest spine book from a source-content perspective;
+    its theorems are mostly biconditionals; the conceptual weight lies in the definitions
+declared_status: R
+dependencies:
+  requires:
+  - thm:VI.governing
+id: status:VI
+kind: remark
+number: VI.status
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: R
+  regime: universal
+title: Book VI Status — tool-licensing book; mostly [C]; thm:VI.9.1 is conditional
+track: spine

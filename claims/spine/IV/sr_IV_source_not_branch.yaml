@@ -1,0 +1,21 @@
+body_file: text/spine/IV/sr_IV_source_not_branch.md
+book: IV
+canonical_xref:
+  canonical_label: Source-Not-Branch Standing Rule
+  canonical_section: Book IV §Source Architecture
+  canonical_theorem: sr:source-not-branch
+  cross_check: The universal source U is not a branch; it is the source from which
+    all branches descend
+declared_status: D
+dependencies:
+  requires: []
+id: sr:IV.source-not-branch
+kind: standing_rule
+number: IV.SR.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Source-Not-Branch Standing Rule
+track: spine

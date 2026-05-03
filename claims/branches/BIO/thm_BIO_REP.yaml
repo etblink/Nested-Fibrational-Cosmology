@@ -1,0 +1,32 @@
+body_file: text/branches/BIO/thm_BIO_REP.md
+book: BIO
+canonical_xref:
+  canonical_label: Replication Kernel Certification [C]
+  canonical_section: BIO §Replication
+  canonical_theorem: thm:BIO.REP
+  cross_check: Source-descended from SCC.MCS; no biological primitives
+declared_status: C
+dependencies:
+  requires:
+  - thm:SCC.MCS
+  - thm:VII.6.4
+discharges:
+- basis:
+  - thm:BIO.REP
+  kind: full
+  scope_relation: preserved
+  target: ob:BIO.REP
+  transfer_required: false
+id: thm:BIO.REP
+kind: theorem
+number: BIO.REP
+proof_file: text/branches/BIO/proof_thm_BIO_REP.md
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  inherited_constraints:
+  - SCC-role-carrier-machinery
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: Replication Kernel Certification
+track: branch

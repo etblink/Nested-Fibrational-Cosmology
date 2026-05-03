@@ -1,0 +1,40 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/spine/VII/thm_VII_6_4.md
+book: VII
+canonical_xref:
+  canonical_label: Canonical Closure Schema Theorem [U]
+  canonical_section: Book VII §Import Discipline
+  canonical_theorem: thm:closure-schema
+  cross_check: Every branch book must declare five items; may claim no stronger status
+    than declarations permit
+declared_status: U
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VII.2.4
+  - thm:VII.2.5
+  - thm:VII.4.3
+discharges: []
+id: thm:VII.6.4
+imports: []
+kind: theorem
+number: VII.6.4
+proof_file: text/spine/VII/proof_thm_VII_6_4.md
+scope:
+  certificate_scope: global
+  continuum_license: none
+  domain: spine
+  inherited_constraints: []
+  promotion_ceiling: U
+  regime: governance
+supersedes: []
+tags:
+- governance
+- closure
+title: Canonical Closure Schema Theorem
+track: spine

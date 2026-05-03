@@ -1,0 +1,27 @@
+body_file: text/spine/V/thm_V_UBLT.md
+book: V
+canonical_xref:
+  canonical_label: Universal Branch Legitimacy Theorem (UBLT) [U] = Thm. V.8.1
+  canonical_section: Book V §Universal Branch Legitimacy Theorem
+  canonical_theorem: thm:UBLT
+  cross_check: 'Five-condition biconditional: lawful branch iff (1) licensed intake
+    (2) certified source descent (3) endpoint visibility (4) legitimacy witness (5)
+    no hidden channels. Cited by GR, YM, NS, SM, BIO, etc.'
+declared_status: U
+dependencies:
+  requires:
+  - prop:V.branch-projection
+  - prop:V.endpoint-visibility
+  - prop:V.hidden-channel-exclusion
+  - thm:V.collapse
+  - thm:V.diamond
+id: thm:V.UBLT
+kind: theorem
+number: V.8.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Universal Branch Legitimacy Theorem (UBLT, Thm. V.8.1)
+track: spine

@@ -1,0 +1,509 @@
+{
+  "status": "passed",
+  "context": {
+    "schema_version": "0.41.0",
+    "claims_count": 226,
+    "warnings": 3,
+    "errors": 0,
+    "active_open_items": [
+      "front:NS.main",
+      "ob:BIO.BND-open",
+      "ob:CRYST.phase-problem",
+      "ob:GR.global-subcriticality",
+      "ob:LING.REF-INVIS-RECOV",
+      "ob:NS.bridge-stage2",
+      "ob:RH.S1-ARC",
+      "ob:SM.O-IDcont",
+      "ob:YM.B3.A2",
+      "thm:RH.S1.formal"
+    ],
+    "release_diff_changes": 5,
+    "release_diff_missing_basis": 0
+  },
+  "gates": [
+    {
+      "id": "gate.no_errors",
+      "status": "pass",
+      "severity": "error",
+      "observed": 0,
+      "expected": 0,
+      "message": "Audit error count must be zero."
+    },
+    {
+      "id": "gate.release_reconciliation",
+      "status": "pass",
+      "severity": "error",
+      "observed": 0,
+      "expected": 0,
+      "message": "Computed branch postures must reconcile with active release snapshot.",
+      "details": []
+    },
+    {
+      "id": "gate.warning_budget",
+      "status": "pass",
+      "severity": "warning",
+      "observed": 3,
+      "expected": "<= 3",
+      "message": "Warning count may not increase without a decision-log entry."
+    },
+    {
+      "id": "gate.active_frontier_trace",
+      "status": "pass",
+      "severity": "error",
+      "observed": 0,
+      "expected": 0,
+      "message": "Every active open item in digest must appear in computed statuses.",
+      "details": []
+    },
+    {
+      "id": "gate.release_diff_basis",
+      "status": "pass",
+      "severity": "error",
+      "observed": 0,
+      "expected": 0,
+      "message": "Every release-diff event must have an explicit basis note in the target release snapshot.",
+      "details": []
+    },
+    {
+      "id": "gate.regression_tests",
+      "status": "pass",
+      "severity": "error",
+      "observed": 0,
+      "expected": 0,
+      "message": "Regression test failures must be zero."
+    },
+    {
+      "id": "gate.canon_import_packet",
+      "status": "pass",
+      "severity": "error",
+      "observed": 0,
+      "expected": 0,
+      "message": "Canon-import TeX packet and import manifest must be generated.",
+      "details": []
+    },
+    {
+      "id": "gate.compile_verification",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "compile_status": "passed",
+        "pdf_pages": 6,
+        "rendered_pages": 2,
+        "missing_outputs": []
+      },
+      "expected": "compiled PDF with at least one rendered page and no missing required outputs",
+      "message": "Canon-import standalone TeX packet must compile to PDF and render successfully.",
+      "details": []
+    },
+    {
+      "id": "gate.supersession_readiness_report",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "missing_outputs": [],
+        "l1_import_ready": true,
+        "l5_full_supersession_ready": false,
+        "approved_for_full_supersession": false
+      },
+      "expected": "readiness report generated with explicit import-ready and full-supersession-ready fields",
+      "message": "Supersession readiness must be reported explicitly before any generated-corpus replacement work.",
+      "details": []
+    },
+    {
+      "id": "gate.gr_successor_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "equivalence_status": "passed",
+        "compile_status": "passed",
+        "missing_outputs": [],
+        "posture": "domain-bounded-cert-close",
+        "active_frontiers": [
+          "ob:GR.global-subcriticality"
+        ]
+      },
+      "expected": "GR successor pilot artifacts generated, equivalence report passed, and standalone PDF compiled/rendered.",
+      "message": "GR branch-successor pilot must be generated, equivalence-checked, and compile verified.",
+      "details": []
+    },
+    {
+      "id": "gate.ym_successor_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "equivalence_status": "passed",
+        "compile_status": "passed",
+        "missing_outputs": [],
+        "posture": "conditional-cert-close",
+        "active_frontiers": [
+          "ob:YM.B3.A2"
+        ]
+      },
+      "expected": "YM successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, conditional posture preserved, and B3-A2 remains open.",
+      "message": "YM branch-successor pilot must be generated, equivalence-checked, compile verified, and must not upgrade to unconditional Clay-grade closure.",
+      "details": []
+    },
+    {
+      "id": "gate.spec_successor_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "equivalence_status": "passed",
+        "compile_status": "passed",
+        "missing_outputs": [],
+        "posture": "cert-close",
+        "active_frontiers": []
+      },
+      "expected": "SPEC successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, cert-close posture preserved, and no SPEC-local frontier introduced.",
+      "message": "SPEC branch-successor pilot must verify the zero-frontier gauge-response CERT-CLOSE case without widening to matter-rich spectroscopy.",
+      "details": []
+    },
+    {
+      "id": "gate.scc_successor_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "equivalence_status": "passed",
+        "compile_status": "passed",
+        "missing_outputs": [],
+        "posture": "conditional-cert-close",
+        "active_frontiers": [],
+        "basis_statuses": {
+          "thm:SCC.MCS": "C",
+          "thm:SCC.UC": "C",
+          "thm:SCC.TSI": "C"
+        }
+      },
+      "expected": "SCC successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, conditional structural posture preserved, no SCC-local frontier introduced, and MCS+UC+TSI basis retained.",
+      "message": "SCC branch-successor pilot must preserve structural counterfactual-capacity scope and must not introduce a phenomenological overclaim.",
+      "details": []
+    },
+    {
+      "id": "gate.cryst_successor_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "equivalence_status": "passed",
+        "compile_status": "passed",
+        "missing_outputs": [],
+        "posture": "conditional-cert-close",
+        "active_frontiers": [
+          "ob:CRYST.phase-problem"
+        ]
+      },
+      "expected": "CRYST successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, conditional posture preserved, and phase-problem frontier remains open.",
+      "message": "CRYST branch-successor pilot must preserve conditional crystallography closure without erasing or solving the phase problem.",
+      "details": []
+    },
+    {
+      "id": "gate.ling_successor_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "equivalence_status": "passed",
+        "compile_status": "passed",
+        "missing_outputs": [],
+        "posture": "conditional-cert-close",
+        "active_frontiers": [
+          "ob:LING.REF-INVIS-RECOV"
+        ]
+      },
+      "expected": "LING successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, conditional posture preserved, and REF-INVIS/RECOV frontier remains open.",
+      "message": "LING branch-successor pilot must preserve contrast+recursion+context-response closure without importing or erasing reference recovery.",
+      "details": []
+    },
+    {
+      "id": "gate.bio_successor_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "equivalence_status": "passed",
+        "compile_status": "passed",
+        "posture": "conditional-cert-close",
+        "active_frontiers": [
+          "ob:BIO.BND-open"
+        ],
+        "bnd_frontier_preserved": true,
+        "endpoint_scope": "nondegenerate-bio"
+      },
+      "expected": "BIO successor pilot artifacts generated, equivalence report passed, standalone PDF compiled, conditional posture on C_Bio^nd preserved, ob:BIO.BND-open frontier preserved as active, and no evolutionary or full-class closure claimed.",
+      "message": "BIO branch-successor pilot must preserve scoped endpoint on C_Bio^nd and keep the BND full-class frontier open without smuggling biological primitives.",
+      "details": []
+    },
+    {
+      "id": "gate.sm_successor_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "equivalence_status": "passed",
+        "compile_status": "passed",
+        "posture": "intrinsic-structural-close",
+        "active_frontiers": [
+          "ob:SM.O-IDcont"
+        ],
+        "o_idcont_open": true,
+        "ym_posture": "conditional-cert-close",
+        "gr_posture": "domain-bounded-cert-close"
+      },
+      "expected": "SM successor pilot: intrinsic-structural-close posture, ob:SM.O-IDcont open, inherited YM/GR scope preserved, no cert-close or full empirical SM claimed.",
+      "message": "SM branch-successor pilot must preserve intrinsic-structural-close posture with O-IDcont open and no empirical SM overclaim.",
+      "details": []
+    },
+    {
+      "id": "gate.ns_successor_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "equivalence_status": "passed",
+        "compile_status": "passed",
+        "posture": "domain-bounded-cert-close",
+        "active_frontiers": [
+          "ob:NS.bridge-stage2",
+          "front:NS.main"
+        ],
+        "sb2_discharged": true,
+        "stale_posture_corrected": true
+      },
+      "expected": "NS successor pilot: domain-bounded-cert-close posture (correcting stale frontier-blocked), front:NS.main open, ob:NS.SB2 discharged [C], no Clay Prize claim.",
+      "message": "NS branch-successor pilot must correct the stale frontier-blocked posture to domain-bounded-cert-close with front:NS.main active.",
+      "details": []
+    },
+    {
+      "id": "gate.rh_successor_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "equivalence_status": "passed",
+        "compile_status": "pdf_exists",
+        "posture": "cert-proj",
+        "s1_arc_is_open": true,
+        "s1_sub_all_conditional": true,
+        "illegal_s1_arc_discharges": []
+      },
+      "expected": "cert-proj posture, S1-ARC [O], S1-TRACE/DESCENT/COMP [C], no illegal S1-ARC discharges. FAILURE = implicit RH proof claim.",
+      "message": "RH pilot: S1-ARC must be [O]. Any other status is a governance violation implying a proof of the Riemann Hypothesis.",
+      "details": []
+    },
+    {
+      "id": "gate.proof_trees",
+      "status": "pass",
+      "severity": "warning",
+      "observed": {
+        "branches_traced": 10,
+        "missing": []
+      },
+      "expected": "Proof trees generated for all 10 branches.",
+      "message": "Proof tree engine must produce structured dependency chains for all branches.",
+      "details": []
+    },
+    {
+      "id": "gate.canonical_coverage",
+      "status": "pass",
+      "severity": "warning",
+      "observed": {
+        "GR_coverage": 100.0,
+        "YM_coverage": 100.0
+      },
+      "expected": "GR and YM canonical coverage >= 90%.",
+      "message": "GR and YM canonical coverage manifests must reach 90% to unlock L3.",
+      "details": []
+    },
+    {
+      "id": "gate.l3_readiness",
+      "status": "pass",
+      "severity": "info",
+      "observed": {
+        "l3_ready": [
+          "GR",
+          "YM",
+          "NS",
+          "SM",
+          "RH",
+          "SPEC",
+          "SCC",
+          "BIO",
+          "LING",
+          "CRYST"
+        ],
+        "l3_candidate": [],
+        "total_pilots": 10
+      },
+      "expected": "L3 readiness report generated for all pilots.",
+      "message": "L3 readiness is tracked but not yet a hard gate.",
+      "details": []
+    },
+    {
+      "id": "gate.gr_l3_certificate",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "l3_level": "release_candidate",
+        "criteria_passed": 9,
+        "criteria_total": 9,
+        "pdf_exists": true
+      },
+      "expected": "GR L3 certificate: passed, release_candidate level, all criteria met, PDF compiled.",
+      "message": "GR L3 Release Candidate certificate must pass all 9 supersession criteria.",
+      "details": []
+    },
+    {
+      "id": "gate.v35_multi_branch_certificates",
+      "status": "pass",
+      "severity": "warning",
+      "observed": {
+        "passed": 8,
+        "total": 8
+      },
+      "expected": "All 8 remaining branch L3 certificates passed.",
+      "message": "v35 multi-branch certificates must all pass (8 branches).",
+      "details": []
+    },
+    {
+      "id": "gate.book_vii_l4_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "l4_level": "spine_release_candidate",
+        "all_unconditional": true,
+        "l6_additions": true,
+        "shell_pdf_exists": true
+      },
+      "expected": "Book VII L4: spine_release_candidate, all [U], L+6 additions present, shell PDF compiled.",
+      "message": "Book VII L4 spine pilot: all governance theorems must be [U]; Session L+6 additions must be present.",
+      "details": []
+    },
+    {
+      "id": "gate.book_i_l4_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "l4_level": "spine_release_candidate",
+        "all_unconditional": true,
+        "k0_prime": true,
+        "defect_ledger": true
+      },
+      "expected": "Book I L4: spine_release_candidate, all [U], K0=7 present, defect ledger complete.",
+      "message": "Book I L4 spine pilot: all theorems must be [U]; K_0=7 and defect ledger required.",
+      "details": []
+    },
+    {
+      "id": "gate.book_ii_l4_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "l4_level": "spine_release_candidate",
+        "ls2_status": "C",
+        "ls2_universal": "U",
+        "pass_status": "U",
+        "sct6b_present": true
+      },
+      "expected": "Book II L4: spine_RC, LS-2=[C], ls2-universal=[U], PASS=[U], SCT.6b present.",
+      "message": "Book II L4 spine pilot: two-layer structure must be correctly represented.",
+      "details": []
+    },
+    {
+      "id": "gate.book_v_l4_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "l4_level": "spine_release_candidate",
+        "ublt_status": "U",
+        "branch_projection": "U",
+        "all_unconditional": true
+      },
+      "expected": "Book V L4: spine_RC, UBLT=[U], branch-projection=[U], all primary [U].",
+      "message": "Book V L4 spine pilot: UBLT and Prop.V.3.1 must be [U]; closes branch-spine dependency gap.",
+      "details": []
+    },
+    {
+      "id": "gate.book_iv_l4_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "l4_level": "spine_release_candidate",
+        "universal_completion": "U",
+        "source_uniqueness": "U",
+        "descendants_factor": "U",
+        "full_chain": true
+      },
+      "expected": "Book IV L4: spine_RC, Thm.IV.5.1=[U], uniqueness=[U], descendants=[U], chain traceable.",
+      "message": "Book IV L4: universal completion, uniqueness, and factoring must all be [U]; full chain traceable.",
+      "details": []
+    },
+    {
+      "id": "gate.book_vi_l4_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "l4_level": "spine_release_candidate",
+        "VI91_conditional": "C",
+        "bridge_schema_U": "U",
+        "no_smuggling_U": "U",
+        "gap_closed": true
+      },
+      "expected": "Book VI L4: spine_RC, VI.9.1=[C], bridge=[U], no-smug=[U], gap closed.",
+      "message": "Book VI L4: Thm.VI.9.1 must be [C]; bridge schema and no-smuggling must be [U].",
+      "details": []
+    },
+    {
+      "id": "gate.gr_l2_hardening",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "hardening_status": "passed",
+        "failed_count": 0,
+        "missing_outputs": []
+      },
+      "expected": "GR L2 hardening report passed, no failed checks, and required prose-preservation outputs generated.",
+      "message": "GR L2 successor pilot must pass hardening before further successor-corpus expansion.",
+      "details": []
+    },
+    {
+      "id": "gate.l2_pilot_comparison",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "failed_count": 0,
+        "missing_outputs": []
+      },
+      "expected": "L2 GR/YM pilot comparison report passed with no failed checks.",
+      "message": "Generated branch-successor pilots must preserve distinct closure regimes, open frontiers, and no-supersession status.",
+      "details": []
+    },
+    {
+      "id": "gate.l2_pilot_standard",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "failed_count": 0,
+        "missing_outputs": []
+      },
+      "expected": "Every configured L2 branch-successor pilot satisfies the reusable L2 pilot standard.",
+      "message": "Configured L2 pilot records must preserve equivalence, compile status, scoped posture, live frontier, and no-supersession semantics.",
+      "details": []
+    },
+    {
+      "id": "gate.pilot_intake_queue",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "recommended_next_pilot": "BIO",
+        "candidate_count": 6,
+        "missing_outputs": []
+      },
+      "expected": "Pilot intake report generated with at least one ranked candidate and one recommended next pilot.",
+      "message": "Project Lead branch-pilot expansion must be governed by an explicit ranked intake queue.",
+      "details": []
+    }
+  ]
+}

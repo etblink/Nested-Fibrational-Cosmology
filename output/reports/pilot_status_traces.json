@@ -1,0 +1,156 @@
+{
+  "GR": [
+    {
+      "id": "status:GR",
+      "effective_status": "domain-bounded-cert-close",
+      "source": "branch-packet-inference",
+      "basis": [
+        "thm:GR.domain",
+        "ob:GR.global-subcriticality"
+      ],
+      "reason": "Local GR pilot packet supports domain-bounded closure while global curvature-subcriticality / BF-9 remains open.",
+      "trace_steps": [
+        "Matched branch-packet inference rule.",
+        "Basis item(s): thm:GR.domain, ob:GR.global-subcriticality.",
+        "Computed branch posture: domain-bounded-cert-close.",
+        "Local GR pilot packet supports domain-bounded closure while global curvature-subcriticality / BF-9 remains open."
+      ]
+    },
+    {
+      "id": "thm:GR.domain",
+      "effective_status": "C",
+      "source": "declared",
+      "basis": [],
+      "reason": "No stronger inference applied.",
+      "trace_steps": [
+        "Declared status/posture used as the initial effective value."
+      ]
+    },
+    {
+      "id": "ob:GR.global-subcriticality",
+      "effective_status": "O",
+      "source": "declared",
+      "basis": [],
+      "reason": "No stronger inference applied.",
+      "trace_steps": [
+        "Declared status/posture used as the initial effective value."
+      ]
+    },
+    {
+      "id": "ob:GR.EFE1",
+      "effective_status": "C",
+      "source": "local-discharge-inference",
+      "basis": [
+        "thm:GR.compat"
+      ],
+      "reason": "Locally inferred from explicit closing discharge edges by thm:GR.compat.",
+      "trace_steps": [
+        "Located explicit closing discharge edge(s).",
+        "Accepted discharge kinds: full, scoped, superseding.",
+        "Basis claim(s): thm:GR.compat.",
+        "Inferred obligation status: C."
+      ]
+    },
+    {
+      "id": "ob:GR.EFE2",
+      "effective_status": "C",
+      "source": "local-discharge-inference",
+      "basis": [
+        "thm:GR.compat"
+      ],
+      "reason": "Locally inferred from explicit closing discharge edges by thm:GR.compat.",
+      "trace_steps": [
+        "Located explicit closing discharge edge(s).",
+        "Accepted discharge kinds: full, scoped, superseding.",
+        "Basis claim(s): thm:GR.compat.",
+        "Inferred obligation status: C."
+      ]
+    },
+    {
+      "id": "ob:GR.EFE3",
+      "effective_status": "C",
+      "source": "local-discharge-inference",
+      "basis": [
+        "thm:GR.compat"
+      ],
+      "reason": "Locally inferred from explicit closing discharge edges by thm:GR.compat.",
+      "trace_steps": [
+        "Located explicit closing discharge edge(s).",
+        "Accepted discharge kinds: full, scoped, superseding.",
+        "Basis claim(s): thm:GR.compat.",
+        "Inferred obligation status: C."
+      ]
+    }
+  ],
+  "YM": [
+    {
+      "id": "status:YM",
+      "effective_status": "conditional-cert-close",
+      "source": "branch-packet-inference",
+      "basis": [
+        "thm:YM.7",
+        "thm:YM.B1.bridge",
+        "thm:YM.B2.bridge",
+        "thm:YM.B3.bridge",
+        "ob:YM.B3.A2"
+      ],
+      "reason": "Local YM pilot packet supports conditional closure through B1/B2/B3 bridge packets while B3-A2 remains the surviving residual frontier.",
+      "trace_steps": [
+        "Matched branch-packet inference rule.",
+        "Basis item(s): thm:YM.7, thm:YM.B1.bridge, thm:YM.B2.bridge, thm:YM.B3.bridge, ob:YM.B3.A2.",
+        "Computed branch posture: conditional-cert-close.",
+        "Local YM pilot packet supports conditional closure through B1/B2/B3 bridge packets while B3-A2 remains the surviving residual frontier."
+      ]
+    },
+    {
+      "id": "thm:YM.7",
+      "effective_status": "C",
+      "source": "declared",
+      "basis": [],
+      "reason": "No stronger inference applied.",
+      "trace_steps": [
+        "Declared status/posture used as the initial effective value."
+      ]
+    },
+    {
+      "id": "thm:YM.B1.bridge",
+      "effective_status": "C",
+      "source": "declared",
+      "basis": [],
+      "reason": "No stronger inference applied.",
+      "trace_steps": [
+        "Declared status/posture used as the initial effective value."
+      ]
+    },
+    {
+      "id": "thm:YM.B2.bridge",
+      "effective_status": "C",
+      "source": "declared",
+      "basis": [],
+      "reason": "No stronger inference applied.",
+      "trace_steps": [
+        "Declared status/posture used as the initial effective value."
+      ]
+    },
+    {
+      "id": "thm:YM.B3.bridge",
+      "effective_status": "C",
+      "source": "declared",
+      "basis": [],
+      "reason": "No stronger inference applied.",
+      "trace_steps": [
+        "Declared status/posture used as the initial effective value."
+      ]
+    },
+    {
+      "id": "ob:YM.B3.A2",
+      "effective_status": "O",
+      "source": "declared",
+      "basis": [],
+      "reason": "No stronger inference applied.",
+      "trace_steps": [
+        "Declared status/posture used as the initial effective value."
+      ]
+    }
+  ]
+}

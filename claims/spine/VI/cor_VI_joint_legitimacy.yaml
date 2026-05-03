@@ -1,0 +1,26 @@
+body_file: text/spine/VI/cor_VI_joint_legitimacy.md
+book: VI
+canonical_xref:
+  canonical_label: Joint Legitimacy of Full Calculus [C]
+  canonical_section: Book VI §Governing Theorem
+  canonical_theorem: cor:joint-legitimacy
+  cross_check: Within a certified regime, the full calculus (differential + integral)
+    is jointly legitimate as asymptotic encoding of certified discrete dynamics
+declared_status: C
+dependencies:
+  requires:
+  - thm:VI.governing
+id: cor:VI.joint-legitimacy
+kind: corollary
+number: VI.C.1
+scope:
+  certificate_scope: conditional-certified-regime
+  domain: spine
+  inherited_constraints:
+  - certified-observable-family
+  - scoped-certificate
+  - continuum-bridge
+  promotion_ceiling: C
+  regime: certified-interface-regime
+title: Joint Legitimacy of Full Calculus
+track: spine

@@ -1,0 +1,23 @@
+body_file: text/spine/I/status_I.md
+book: I
+canonical_xref:
+  canonical_label: Book I Status — unconditional source architecture
+  canonical_section: Book I §Boundary of Book I
+  canonical_theorem: status:I
+  cross_check: 'Book I proves: observational quotient, finite stabilization, defect
+    ledger, K_0=7. Does NOT prove: local stability, boundary determinacy, source universality,
+    branch legitimacy, continuum correspondence'
+declared_status: R
+dependencies:
+  requires:
+  - thm:I.governing
+id: status:I
+kind: remark
+number: I.status
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: R
+  regime: universal
+title: Book I Status — all results unconditional
+track: spine

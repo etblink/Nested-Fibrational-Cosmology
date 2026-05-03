@@ -1,0 +1,22 @@
+body_file: text/spine/IV/cor_IV_descendants_factor.md
+book: IV
+canonical_xref:
+  canonical_label: All Descendants Factor Through U [U]
+  canonical_section: Book IV §Universal Completion
+  canonical_theorem: cor:descendants-factor
+  cross_check: 'Every lawful downstream realization F: POT -> C factors through U;
+    UBLT condition 2 source for all branch books'
+declared_status: U
+dependencies:
+  requires:
+  - thm:IV.universal-completion
+id: cor:IV.descendants-factor
+kind: corollary
+number: IV.C.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: All Descendants Factor Through U
+track: spine

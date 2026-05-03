@@ -1,0 +1,1 @@
+Positive Reserve on the Safe Tail (SB2): CONDITIONALLY DISCHARGED via SCT.6b (thm:NS.SB2-discharged). The discharge is conditional on Phase-A/K_0=7/PASS and the SCT.6b firing conditions. The obligation is closed at this scope. Unconditional force for SB2 would require O-IDcont-style force upgrade (external to current architecture).

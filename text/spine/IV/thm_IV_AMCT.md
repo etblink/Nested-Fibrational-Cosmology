@@ -1,0 +1,1 @@
+Admissible Morphism Closure Theorem (AMCT): POT-morphisms close under composition; the Grothendieck fibration is well-defined. This theorem establishes that the POT category is a well-defined category with associative and unital composition. It covers ORA rung IV.4. Without closure under composition, the concept of a realization functor F: POT -> C would be ill-defined.

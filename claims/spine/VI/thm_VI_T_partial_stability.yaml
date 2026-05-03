@@ -1,0 +1,23 @@
+body_file: text/spine/VI/thm_VI_T_partial_stability.md
+book: VI
+canonical_xref:
+  canonical_label: Perturbation Stability of T_partial [U]
+  canonical_section: Book VI §T_partial Stability
+  canonical_theorem: thm:T-partial-stability
+  cross_check: T_partial is stable under small perturbations; eigenvalues are Lipschitz
+    with constant delta_stab = K_0 = 7; unconditional because K_0=7 is proved
+declared_status: U
+dependencies:
+  requires:
+  - thm:I.K0-prime
+  - cor:II.ls2-universal-K07
+id: thm:VI.T-partial-stability
+kind: theorem
+number: VI.T.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Perturbation Stability of T_partial
+track: spine

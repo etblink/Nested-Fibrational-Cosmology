@@ -1,0 +1,22 @@
+body_file: text/spine/II/thm_II_binary_rigidity.md
+book: II
+canonical_xref:
+  canonical_label: Binary Rigidity Theorem [U]
+  canonical_section: Book II §Binary Structure
+  canonical_theorem: thm:binary-rigidity
+  cross_check: 'The binary toggle structure (E+/E-) is rigid: the only admissible
+    generator of the parity symmetry is binary'
+declared_status: U
+dependencies:
+  requires:
+  - thm:II.covering-bound-K07
+id: thm:II.binary-rigidity
+kind: theorem
+number: II.T.5
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Binary Rigidity Theorem
+track: spine

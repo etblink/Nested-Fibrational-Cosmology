@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "pilot_level": "L2",
+  "generated_claim_count": 14,
+  "generated_ids": [
+    "ob:SM.harmonization",
+    "ob:SM.matter",
+    "ob:SM.higgs",
+    "ob:SM.coupling-transfer",
+    "thm:SM.gauge-chain",
+    "thm:SM.three-gen",
+    "thm:SM.harmonization-partial",
+    "thm:SM.coupling-transfer-full",
+    "thm:SM.higgs-source-descended",
+    "thm:SM.18.1",
+    "prop:SM.intrinsic-closure",
+    "prop:SM.status-reconciliation",
+    "ob:SM.O-IDcont",
+    "status:SM"
+  ],
+  "missing_expected": [],
+  "unexpected_claims": [],
+  "active_frontiers": [
+    "ob:SM.O-IDcont"
+  ],
+  "posture": "intrinsic-structural-close",
+  "ym_posture": "conditional-cert-close",
+  "gr_posture": "domain-bounded-cert-close",
+  "o_idcont_open": true,
+  "intrinsic_correctly_scoped": true,
+  "checks": [
+    {
+      "id": "sm.successor.expected-claim-list",
+      "status": "pass",
+      "observed": {
+        "missing": []
+      },
+      "expected": "All SM_ORDER claims present."
+    },
+    {
+      "id": "sm.successor.posture",
+      "status": "pass",
+      "observed": "intrinsic-structural-close",
+      "expected": "intrinsic-structural-close"
+    },
+    {
+      "id": "sm.successor.frontier-profile",
+      "status": "pass",
+      "observed": [
+        "ob:SM.O-IDcont"
+      ],
+      "expected": [
+        "ob:SM.O-IDcont"
+      ]
+    },
+    {
+      "id": "sm.successor.no-unexpected-claims",
+      "status": "pass",
+      "observed": [],
+      "expected": "No SM records outside pilot order."
+    },
+    {
+      "id": "sm.successor.o-idcont-open",
+      "status": "pass",
+      "observed": {
+        "declared": "O",
+        "effective": "O"
+      },
+      "expected": "ob:SM.O-IDcont must remain open: it is the named irreducible frontier."
+    },
+    {
+      "id": "sm.successor.intrinsic-scope-correct",
+      "status": "pass",
+      "observed": "intrinsic-structural",
+      "expected": "Intrinsic closure must be scoped to intrinsic-structural level."
+    },
+    {
+      "id": "sm.successor.status-inequality-preserved",
+      "status": "pass",
+      "observed": {
+        "sm": "intrinsic-structural-close",
+        "ym": "conditional-cert-close",
+        "gr": "domain-bounded-cert-close"
+      },
+      "expected": "Status(SM) <= Status(YM) AND Status(GR): SM must not claim posture stronger than its parent branches."
+    },
+    {
+      "id": "sm.successor.no-full-empirical-sm",
+      "status": "pass",
+      "observed": "intrinsic-structural-close",
+      "expected": "Must not claim cert-close or full empirical SM completion."
+    }
+  ],
+  "supersession_effect": "none; pilot shell only",
+  "non_claims": [
+    "No measured particle masses",
+    "No CKM/PMNS",
+    "No RG-running",
+    "No full empirical SM reconstruction",
+    "No gauge-gravity unification",
+    "No unconditional CERT-CLOSE"
+  ]
+}

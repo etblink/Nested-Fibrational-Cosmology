@@ -1,0 +1,157 @@
+{
+  "schema_version": "0.28.0",
+  "status": "passed",
+  "current_l2_pilots": [
+    "GR",
+    "YM",
+    "SPEC",
+    "SCC",
+    "CRYST",
+    "LING",
+    "BIO",
+    "SM",
+    "NS",
+    "RH"
+  ],
+  "candidate_count": 6,
+  "recommended_next_pilot": "BIO",
+  "recommended_rationale": "BIO L2 pilot completed in v29; retained for portfolio history.",
+  "ranked_candidates": [
+    {
+      "branch": "BIO",
+      "canon_value": "medium-high",
+      "current_posture": "conditional-cert-close",
+      "frontier_profile": "BIO endpoint is scoped to nondegenerate C_Bio^nd with BND limits for full class.",
+      "migration_readiness": "medium",
+      "rationale": "BIO L2 pilot completed in v29; retained for portfolio history.",
+      "recommended_order": 99,
+      "required_successor_checks": [
+        "preserve C_Bio^nd scope",
+        "preserve BND/full-class limitation",
+        "avoid primitive genes/cells/fitness import"
+      ],
+      "risk_band": "medium-high",
+      "status_id": "status:BIO",
+      "computed_posture": "conditional-cert-close",
+      "posture_matches_computed": true,
+      "score": 5.0,
+      "blocked": false
+    },
+    {
+      "branch": "NS",
+      "canon_value": "very-high",
+      "current_posture": "frontier-blocked",
+      "frontier_profile": "front:NS.main, ob:NS.SB2, and partial bridge-stage obligations remain active.",
+      "migration_readiness": "low-medium",
+      "rationale": "NS L2 pilot completed in v31; stale-posture correction applied. Retained for portfolio history.",
+      "recommended_order": 99,
+      "required_successor_checks": [
+        "preserve frontier-blocked posture",
+        "preserve partial-discharge semantics",
+        "keep SB2 and main frontier open"
+      ],
+      "risk_band": "high",
+      "status_id": "status:NS",
+      "computed_posture": "domain-bounded-cert-close",
+      "posture_matches_computed": false,
+      "score": 4.5,
+      "blocked": true
+    },
+    {
+      "branch": "SM",
+      "canon_value": "very-high",
+      "current_posture": "intrinsic-structural-close",
+      "frontier_profile": "O-IDcont and inherited YM/GR force limits remain active.",
+      "migration_readiness": "medium-low",
+      "rationale": "SM L2 pilot completed in v30; retained for portfolio history.",
+      "recommended_order": 99,
+      "required_successor_checks": [
+        "preserve intrinsic-structural close",
+        "preserve O-IDcont",
+        "preserve inherited YM/GR limitations",
+        "avoid external-specification overclaim"
+      ],
+      "risk_band": "high",
+      "status_id": "status:SM",
+      "computed_posture": "intrinsic-structural-close",
+      "posture_matches_computed": true,
+      "score": 4.5,
+      "blocked": false
+    },
+    {
+      "blocked": false,
+      "branch": "CRYST",
+      "canon_value": "medium-high",
+      "current_posture": "conditional-cert-close",
+      "frontier_profile": "phase problem remains active.",
+      "migration_readiness": "complete",
+      "rationale": "CRYST L2 pilot completed in v27; retained for portfolio history.",
+      "recommended_order": 99,
+      "required_successor_checks": [
+        "preserve conditional CERT-CLOSE scope",
+        "keep phase problem open",
+        "avoid importing Euclidean/Fourier/atomic primitives as assumptions"
+      ],
+      "risk_band": "medium",
+      "status_id": "status:CRYST",
+      "computed_posture": "conditional-cert-close",
+      "posture_matches_computed": true,
+      "score": 2.5
+    },
+    {
+      "branch": "LING",
+      "canon_value": "medium-high",
+      "current_posture": "conditional-cert-close",
+      "frontier_profile": "reference invisibility/recovery frontier remains active.",
+      "migration_readiness": "complete",
+      "rationale": "LING L2 pilot completed in v28; retained for portfolio history.",
+      "recommended_order": 99,
+      "required_successor_checks": [
+        "preserve contrast+recursion+context-response closure",
+        "keep REF-INVIS/RECOV frontier open",
+        "avoid semantic import smuggling"
+      ],
+      "risk_band": "medium",
+      "status_id": "status:LING",
+      "computed_posture": "conditional-cert-close",
+      "posture_matches_computed": true,
+      "score": 2.5,
+      "blocked": false
+    },
+    {
+      "branch": "RH",
+      "canon_value": "very-high",
+      "current_posture": "cert-proj",
+      "frontier_profile": "S1 formal arithmetic frontier remains active.",
+      "migration_readiness": "low",
+      "rationale": "RH L2 pilot completed in v32 \u2014 final branch. All 10 branches now piloted.",
+      "recommended_order": 99,
+      "required_successor_checks": [
+        "preserve CERT-PROJ posture",
+        "preserve S1-ARC/S1 formal frontier",
+        "avoid RH-proof implication"
+      ],
+      "risk_band": "very-high",
+      "status_id": "status:RH",
+      "computed_posture": "cert-proj",
+      "posture_matches_computed": true,
+      "score": 2.0,
+      "blocked": false
+    }
+  ],
+  "quality_gate_status_observed": "passed",
+  "policy": {
+    "avoid_next_pilot_if": [
+      "requires full proof-prose migration before value is visible",
+      "would imply global supersession",
+      "depends on unsettled branch posture vocabulary"
+    ],
+    "do_not_expand_if_quality_gate_fails": true,
+    "prefer_next_pilot_with": [
+      "high canonical leverage",
+      "manageable frontier profile",
+      "available local records",
+      "limited supersession risk"
+    ]
+  }
+}

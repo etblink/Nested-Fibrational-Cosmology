@@ -1,0 +1,20 @@
+body_file: text/spine/V/sr_V_source_descent_only.md
+book: V
+canonical_xref:
+  canonical_label: Source-Descent-Only Standing Rule
+  canonical_section: Book V §Branch Standing Rules
+  canonical_theorem: sr:source-descent-only
+  cross_check: Only source-descended structure may contribute to a branch endpoint
+declared_status: D
+dependencies:
+  requires: []
+id: sr:V.source-descent-only
+kind: standing_rule
+number: V.SR.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Source-Descent-Only Rule
+track: spine

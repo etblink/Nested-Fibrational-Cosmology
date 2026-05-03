@@ -1,0 +1,23 @@
+body_file: text/branches/SM/ob_SM_matter.md
+book: SM
+canonical_xref:
+  canonical_label: O-SM.Matter — Matter Content [C]
+  canonical_section: SM §Open Obligations
+  canonical_theorem: O-SM.Matter
+  cross_check: Candidate assignment at structural level; scoped discharge
+declared_status: C
+dependencies:
+  requires:
+  - thm:SM.gauge-chain
+  - thm:SM.three-gen
+discharges: []
+id: ob:SM.matter
+kind: obligation
+number: SM.matter
+scope:
+  certificate_scope: scoped-candidate-assignment
+  domain: SM-branch
+  promotion_ceiling: C
+  regime: SM-super-sector
+title: Matter Content (O-SM.Matter)
+track: branch

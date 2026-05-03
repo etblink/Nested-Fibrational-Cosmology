@@ -1,0 +1,27 @@
+body_file: text/spine/II/thm_II_boundary_capacity.md
+book: II
+canonical_xref:
+  canonical_label: Boundary Capacity Counting Bound [C]
+  canonical_section: Book II §Capacity
+  canonical_theorem: thm:boundary-capacity
+  cross_check: Under LS-2, the number of distinct stabilized outcomes is bounded by
+    boundary capacity; feeds NS branch and BIO boundary structure
+declared_status: C
+dependencies:
+  requires:
+  - hyp:II.LS2
+  - thm:II.boundary-det
+id: thm:II.boundary-capacity
+kind: theorem
+number: II.T.9
+scope:
+  certificate_scope: conditional-LS2
+  domain: spine
+  inherited_constraints:
+  - LS-2
+  - Phase-A
+  - K0-7
+  promotion_ceiling: C
+  regime: LS2-Phase-A
+title: Boundary Capacity Counting Bound
+track: spine

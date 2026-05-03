@@ -1,0 +1,133 @@
+{
+  "status": "passed",
+  "failed_count": 0,
+  "pilots": [
+    {
+      "pilot": "GR",
+      "equivalence_status": "passed",
+      "compile_status": "passed",
+      "posture": "domain-bounded-cert-close",
+      "expected_posture": "domain-bounded-cert-close",
+      "frontier_preserved": true,
+      "expected_frontier": "ob:GR.global-subcriticality",
+      "supersession_effect": "none; pilot shell only",
+      "hardening_status": "passed"
+    },
+    {
+      "pilot": "YM",
+      "equivalence_status": "passed",
+      "compile_status": "passed",
+      "posture": "conditional-cert-close",
+      "expected_posture": "conditional-cert-close",
+      "frontier_preserved": true,
+      "expected_frontier": "ob:YM.B3.A2",
+      "supersession_effect": "none; pilot shell only",
+      "hardening_status": "not-required-in-v22"
+    }
+  ],
+  "checks": [
+    {
+      "id": "GR.equivalence_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "GR.compiled",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "GR.posture_preserved",
+      "status": "pass",
+      "observed": "domain-bounded-cert-close",
+      "expected": "domain-bounded-cert-close"
+    },
+    {
+      "id": "GR.frontier_preserved",
+      "status": "pass",
+      "observed": [
+        "ob:GR.global-subcriticality"
+      ],
+      "expected": "ob:GR.global-subcriticality"
+    },
+    {
+      "id": "GR.no_supersession",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": "none; pilot shell only"
+    },
+    {
+      "id": "GR.l2_hardening_passed",
+      "status": "pass",
+      "observed": {
+        "status": "passed",
+        "failed_count": 0
+      },
+      "expected": {
+        "status": "passed",
+        "failed_count": 0
+      }
+    },
+    {
+      "id": "YM.equivalence_passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "YM.compiled",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed"
+    },
+    {
+      "id": "YM.posture_preserved",
+      "status": "pass",
+      "observed": "conditional-cert-close",
+      "expected": "conditional-cert-close"
+    },
+    {
+      "id": "YM.frontier_preserved",
+      "status": "pass",
+      "observed": [
+        "ob:YM.B3.A2"
+      ],
+      "expected": "ob:YM.B3.A2"
+    },
+    {
+      "id": "YM.no_supersession",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": "none; pilot shell only"
+    },
+    {
+      "id": "cross_pilot.distinct_closure_regimes",
+      "status": "pass",
+      "observed": {
+        "GR": "domain-bounded-cert-close",
+        "YM": "conditional-cert-close"
+      },
+      "expected": "GR and YM postures remain distinct"
+    },
+    {
+      "id": "cross_pilot.both_frontiers_in_computed_graph",
+      "status": "pass",
+      "observed": {
+        "ob:GR.global-subcriticality": true,
+        "ob:YM.B3.A2": true
+      },
+      "expected": "both active frontier IDs exist in computed status graph"
+    }
+  ],
+  "summary": {
+    "pilot_count": 2,
+    "checked_pilots": [
+      "GR",
+      "YM"
+    ],
+    "distinct_closure_regimes": true,
+    "full_supersession_effect": "none"
+  }
+}

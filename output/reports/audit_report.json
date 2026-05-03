@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.41.0",
+  "claims_count": 226,
+  "issues": [
+    {
+      "severity": "warning",
+      "type": "retired-alias-detected",
+      "id": "ob:GR.EFE1",
+      "path": "claims/branches/GR/ob_GR_EFE1.yaml",
+      "alias": "O-GR.EFE1-old",
+      "canonical_target": "ob:GR.EFE1"
+    },
+    {
+      "severity": "warning",
+      "type": "retired-alias-detected",
+      "id": "thm:NS.6.1",
+      "path": "claims/branches/NS/thm_NS_6_1.yaml",
+      "alias": "KPO3",
+      "canonical_target": "hyp:KPO-3"
+    },
+    {
+      "severity": "warning",
+      "type": "release-vs-computed-posture-mismatch",
+      "id": "status:NS",
+      "path": "claims/branches/NS/status_NS.yaml",
+      "branch": "NS",
+      "computed_posture": "domain-bounded-cert-close",
+      "release_posture": "frontier-blocked"
+    }
+  ]
+}

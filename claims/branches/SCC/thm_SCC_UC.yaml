@@ -1,0 +1,52 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/SCC/thm_SCC_UC.md
+book: SCC
+canonical_xref:
+  canonical_label: SCC Universality Condition Theorem [C]
+  canonical_section: SCC §UC
+  canonical_theorem: thm:SCC.UC
+  cross_check: Universal role-carrier universality; feeds downstream branches
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:SCC.MCS
+  - thm:VII.6.4
+discharges:
+- basis:
+  - thm:SCC.UC
+  kind: scoped
+  scope_relation: preserved
+  target: ob:SCC.UC
+  transfer_basis: []
+  transfer_required: false
+id: thm:SCC.UC
+imports:
+- items:
+  - thm:VII.6.4
+  source: book:VII
+kind: theorem
+number: SCC.UC
+proof_file: text/branches/SCC/proof_thm_SCC_UC.md
+scope:
+  certificate_scope: branch-wide
+  continuum_license: none
+  domain: SCC-branch
+  inherited_constraints:
+  - MCS
+  - UC
+  - TSI
+  promotion_ceiling: conditional-cert-close
+  regime: scc-branch-governance
+supersedes: []
+tags:
+- scc
+- conditional-cert-close
+- inference-basis
+title: SCC Branchwise Completion Packet
+track: branch

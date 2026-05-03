@@ -1,0 +1,1 @@
+The defect ledger is additive along concatenation: D(chi1 + chi2) = D(chi1) + D(chi2) for survivor chains chi1 and chi2 that concatenate. This follows from the additive definition of the defect along the chain. Consequence: the defect is a combinatorial measure, not a topological or analytic one; it is purely additive bookkeeping.

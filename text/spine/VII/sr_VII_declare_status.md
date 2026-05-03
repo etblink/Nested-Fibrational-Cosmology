@@ -1,0 +1,1 @@
+Every theorem, proposition, and corollary in the NFC canon must explicitly declare: (1) its status (unconditional [U], conditional [C], bridge [B], or open [O]); (2) its dependencies (all prior results it uses); (3) its scoped regime of force. A result whose status, dependencies, or scope are not declared is non-canonical regardless of its mathematical content.

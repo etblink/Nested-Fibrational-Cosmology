@@ -1,0 +1,1 @@
+The defect D(chi) is non-negative for every survivor chain chi: D(chi) >= 0. Proof: the one-step defect d_n(chi_n) >= 0 at every stage n (by the definition of the defect as a count of failed continuation options), and D(chi) is the sum of non-negative one-step defects.

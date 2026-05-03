@@ -1,0 +1,24 @@
+body_file: text/branches/NS/thm_NS_stage2b.md
+book: NS
+canonical_xref:
+  canonical_label: NS Stage-2b Nonlinear Term Identification [C]
+  canonical_section: NS §Source-Descended Obstruction
+  canonical_theorem: NS.Stage-2b
+  cross_check: Conditional on PASS screening from Book II
+declared_status: C
+dependencies:
+  requires:
+  - thm:NS.stage2a
+discharges: []
+id: thm:NS.stage2b
+kind: theorem
+number: NS.stage2b
+scope:
+  certificate_scope: conditional-PASS
+  domain: NS-branch
+  inherited_constraints:
+  - PASS-screening
+  promotion_ceiling: C
+  regime: NS-PASS-screened
+title: NS Stage-2b Nonlinear Term Identification
+track: branch

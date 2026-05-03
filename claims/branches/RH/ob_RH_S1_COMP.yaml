@@ -1,0 +1,24 @@
+body_file: text/branches/RH/ob_RH_S1_COMP.md
+book: RH
+canonical_xref:
+  canonical_label: S1-COMP — SCC-Minimal Faithful Package DISCHARGED via SCC-MCS [C]
+  canonical_section: RH §S1 Formal Packet
+  canonical_theorem: S1-COMP
+  cross_check: Discharged by thm:SCC.MCS; SCC-MCS provides minimal faithful carrier
+declared_status: C
+dependencies:
+  requires:
+  - thm:SCC.MCS
+discharges: []
+id: ob:RH.S1-COMP
+kind: obligation
+number: RH.S1-COMP
+scope:
+  certificate_scope: conditional-SCC-MCS
+  domain: RH-branch
+  inherited_constraints:
+  - SCC-MCS-discharged
+  promotion_ceiling: C
+  regime: RH-SCC-admissible
+title: S1-COMP — SCC-Minimal Faithful Witness Package (Discharged via SCC-MCS)
+track: branch

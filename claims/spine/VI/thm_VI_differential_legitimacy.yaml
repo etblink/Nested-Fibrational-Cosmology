@@ -1,0 +1,29 @@
+body_file: text/spine/VI/thm_VI_differential_legitimacy.md
+book: VI
+canonical_xref:
+  canonical_label: Differential Notation Legitimacy [C] — within a certified interface
+    regime
+  canonical_section: Book VI §Differential Legitimacy
+  canonical_theorem: thm:differential-legitimacy
+  cross_check: Within a certified interface regime, d/dx notation is lawful iff it
+    faithfully encodes scale-normalized increments; the canonical tool-licensing theorem
+    for derivatives
+declared_status: C
+dependencies:
+  requires:
+  - def:VI.continuum-interface-regime
+  - thm:VI.continuum-bridge-schema
+id: thm:VI.differential-legitimacy
+kind: theorem
+number: VI.T.4
+scope:
+  certificate_scope: conditional-certified-regime
+  domain: spine
+  inherited_constraints:
+  - certified-observable-family
+  - scoped-certificate
+  - continuum-bridge
+  promotion_ceiling: C
+  regime: certified-interface-regime
+title: Differential Notation Legitimacy Theorem
+track: spine

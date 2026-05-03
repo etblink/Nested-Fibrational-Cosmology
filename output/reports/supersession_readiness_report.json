@@ -1,0 +1,143 @@
+{
+  "schema_version": "0.41.0",
+  "policy_version": "0.24.0",
+  "current_level": "L2",
+  "recommended_next_level": "L2-generator-hardening",
+  "approved_for_full_supersession": false,
+  "l1_import_ready": true,
+  "l2_pilot_ready": true,
+  "l5_full_supersession_ready": false,
+  "checks": [
+    {
+      "id": "sup.audit.zero-errors",
+      "label": "Governance audit has zero errors",
+      "status": "pass",
+      "required_for": "L1+",
+      "evidence": {
+        "errors": 0,
+        "warnings": 3
+      }
+    },
+    {
+      "id": "sup.import.packet",
+      "label": "Canon-import appendix packet exists",
+      "status": "pass",
+      "required_for": "L1+",
+      "evidence": {
+        "schema_version": "0.41.0",
+        "purpose": "canon-import-pilot",
+        "files": [
+          "output/tex/canon_governance_appendix.tex",
+          "output/tex/canon_governance_appendix_standalone.tex"
+        ],
+        "required_latex_packages": [
+          "longtable",
+          "array",
+          "hyperref"
+        ],
+        "tables": {
+          "branch_postures": 16,
+          "active_open_items": 10,
+          "audit_issues": 3,
+          "release_diff_events": 5,
+          "quality_gates": 33
+        },
+        "status": "generated"
+      }
+    },
+    {
+      "id": "sup.compile.packet",
+      "label": "Standalone governance appendix compiles",
+      "status": "pass",
+      "required_for": "L1+",
+      "evidence": {
+        "status": "passed",
+        "pages": 6
+      }
+    },
+    {
+      "id": "sup.release.diff-basis",
+      "label": "Release-diff changes carry basis notes",
+      "status": "pass",
+      "required_for": "L1+",
+      "evidence": {
+        "changes": 5,
+        "missing_basis": 0
+      }
+    },
+    {
+      "id": "sup.regression",
+      "label": "Regression baseline passes",
+      "status": "pass",
+      "required_for": "L1+",
+      "evidence": {
+        "status": "passed",
+        "failed_count": 0
+      }
+    },
+    {
+      "id": "sup.gr.pilot",
+      "label": "GR pilot locally infers current posture",
+      "status": "pass",
+      "required_for": "L2+",
+      "evidence": {
+        "computed_posture": "domain-bounded-cert-close"
+      }
+    },
+    {
+      "id": "sup.ym.pilot",
+      "label": "YM pilot locally infers current posture",
+      "status": "pass",
+      "required_for": "L2+",
+      "evidence": {
+        "computed_posture": "conditional-cert-close"
+      }
+    },
+    {
+      "id": "sup.gr.successor-packet",
+      "label": "GR generated branch-successor shell passes equivalence and compile checks",
+      "status": "pass",
+      "required_for": "L2+",
+      "evidence": {
+        "status": "passed",
+        "computed_posture": "domain-bounded-cert-close",
+        "pages": 5
+      }
+    },
+    {
+      "id": "sup.full-claim-equivalence",
+      "label": "Full current-corpus claim catalog equivalence",
+      "status": "not-started",
+      "required_for": "L5",
+      "evidence": "No full spine/branch claim equivalence audit has been run."
+    },
+    {
+      "id": "sup.full-prose-migration",
+      "label": "Full theorem/proof prose migrated into structured source",
+      "status": "not-started",
+      "required_for": "L5",
+      "evidence": "Human-authored theorem bodies remain outside the generated successor corpus."
+    },
+    {
+      "id": "sup.full-pdf-corpus",
+      "label": "All successor books compile as generated PDFs",
+      "status": "not-started",
+      "required_for": "L5",
+      "evidence": "Only the governance appendix compiles in v18."
+    },
+    {
+      "id": "sup.human-release-approval",
+      "label": "Formal supersession decision recorded",
+      "status": "not-started",
+      "required_for": "L5",
+      "evidence": "No decision log entry approves full corpus supersession."
+    }
+  ],
+  "summary": {
+    "pass": 8,
+    "needs_work": 0,
+    "not_started": 4,
+    "fail": 0
+  },
+  "recommendation": "Harden the L2 GR branch-successor pilot and then decide whether to pilot YM. Do not supersede the full spine/branch corpus yet."
+}

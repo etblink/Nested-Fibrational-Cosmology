@@ -1,0 +1,33 @@
+body_file: text/branches/NS/thm_NS_SB2_discharged.md
+book: NS
+canonical_xref:
+  canonical_label: SB2 Conditionally Discharged via SCT.6b [C]
+  canonical_section: NS §Boundary Chain
+  canonical_theorem: NS.SB2-dis
+  cross_check: Full discharge of ob:NS.SB2 at Phase-A/K_0=7/PASS/SCT.6b scope
+declared_status: C
+dependencies:
+  requires:
+  - thm:NS.Ren5
+discharges:
+- basis:
+  - thm:NS.SB2-discharged
+  kind: full
+  scope_relation: preserved
+  target: ob:NS.SB2
+  transfer_required: false
+id: thm:NS.SB2-discharged
+kind: theorem
+number: NS.SB2-discharged
+scope:
+  certificate_scope: conditional-SCT6b
+  domain: NS-branch
+  inherited_constraints:
+  - Phase-A
+  - K0-7
+  - PASS
+  - SCT.6b-firing-conditions
+  promotion_ceiling: C
+  regime: NS-Phase-A-K0-7
+title: SB2 Conditionally Discharged via SCT.6b
+track: branch

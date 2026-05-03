@@ -1,0 +1,23 @@
+body_file: text/spine/I/thm_I_stabilization.md
+book: I
+canonical_xref:
+  canonical_label: Finite Stabilization Theorem [U]
+  canonical_section: Book I §Refinement and Stabilization
+  canonical_theorem: thm:stabilization
+  cross_check: Every refinement chain on a finite configuration space stabilizes after
+    finitely many steps to Sigma_inf
+declared_status: U
+dependencies:
+  requires:
+  - def:I.stabilization
+  - def:I.admissible-class
+id: thm:I.stabilization
+kind: theorem
+number: I.T.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Finite Stabilization Theorem
+track: spine

@@ -1,0 +1,39 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/ob_YM_O_GLOB.md
+book: YM
+canonical_xref:
+  canonical_label: YM Globalization Obligation
+  canonical_section: YM Obligations
+  canonical_theorem: ob:YM.O-GLOB
+  cross_check: Discharged by thm:YM.GLOB
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: ob:YM.O-GLOB
+imports: []
+kind: obligation
+number: YM.O-GLOB
+proof_file: null
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - global-coercivity
+  promotion_ceiling: C
+  regime: ym-bridge-stack
+supersedes: []
+tags:
+- discharged-conditionally
+- global-coercivity
+- obligation
+- ym
+title: Global Coercivity Obligation
+track: branch

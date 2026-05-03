@@ -1,0 +1,24 @@
+body_file: text/spine/II/thm_II_PASS.md
+book: II
+canonical_xref:
+  canonical_label: PASS as Derived Necessity [U] — was axiom; now theorem
+  canonical_section: Book II §Packing and Phase Structure
+  canonical_theorem: thm:PASS
+  cross_check: 'Protected Approximate Structural Symmetry: PASS violation is a collapse
+    condition; holds for all persistence-selected systems. Legacy axiom promoted to
+    proved theorem.'
+declared_status: U
+dependencies:
+  requires:
+  - def:II.structural-phases
+  - thm:II.covering-bound-K07
+id: thm:II.PASS
+kind: theorem
+number: II.T.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: persistence-selected
+title: PASS as Derived Necessity
+track: spine

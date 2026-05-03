@@ -1,0 +1,21 @@
+body_file: text/branches/SM/ob_SM_O_IDcont.md
+book: SM
+canonical_xref:
+  canonical_label: O-IDcont Continuum/Operator Identification Force Upgrade [O]
+  canonical_section: SM §Open Obligations
+  canonical_theorem: ob:O-IDcont
+  cross_check: ACTIVE FRONTIER; blocks promotion from conditional to unconditional
+    closure
+declared_status: O
+dependencies:
+  requires:
+  - prop:SM.intrinsic-closure
+id: ob:SM.O-IDcont
+kind: obligation
+number: SM.O-IDcont
+scope:
+  certificate_scope: branch
+  domain: SM-branch
+  regime: SM-super-sector
+title: Continuum/Operator Identification Force Upgrade
+track: branch

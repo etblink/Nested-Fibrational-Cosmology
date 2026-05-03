@@ -1,0 +1,21 @@
+body_file: text/spine/I/sr_I_cg_alphabet.md
+book: I
+canonical_xref:
+  canonical_label: Collar-Geometry Alphabet Rule
+  canonical_section: Book I §Collar Geometry
+  canonical_theorem: sr:cg-alphabet
+  cross_check: Collar alphabet K_0 is the primitive structural count; fixed by K_0-prime
+    theorem
+declared_status: D
+dependencies:
+  requires: []
+id: sr:I.cg-alphabet
+kind: standing_rule
+number: I.SR.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Collar-Geometry Alphabet Standing Rule
+track: spine

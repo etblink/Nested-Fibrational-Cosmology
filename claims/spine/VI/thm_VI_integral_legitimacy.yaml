@@ -1,0 +1,28 @@
+body_file: text/spine/VI/thm_VI_integral_legitimacy.md
+book: VI
+canonical_xref:
+  canonical_label: Integral Notation Legitimacy [C] — within a certified interface
+    regime
+  canonical_section: Book VI §Integral Legitimacy
+  canonical_theorem: thm:integral-legitimacy
+  cross_check: Within a certified interface regime, integral notation is lawful iff
+    it faithfully encodes certified accumulators
+declared_status: C
+dependencies:
+  requires:
+  - def:VI.continuum-interface-regime
+  - thm:VI.continuum-bridge-schema
+id: thm:VI.integral-legitimacy
+kind: theorem
+number: VI.T.5
+scope:
+  certificate_scope: conditional-certified-regime
+  domain: spine
+  inherited_constraints:
+  - certified-observable-family
+  - scoped-certificate
+  - continuum-bridge
+  promotion_ceiling: C
+  regime: certified-interface-regime
+title: Integral Notation Legitimacy Theorem
+track: spine

@@ -1,0 +1,1 @@
+Nondegeneracy of C_Bio^nd by definition provides the positive separation \delta{}_fid. The separation is certified by the Book III depth-sum convergence applied to the replication-carrier chain: the depth sum for replicating objects converges to a limit strictly separated from the depth sum for non-replicating objects.

@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "pilot_level": "L2",
+  "generated_claim_count": 7,
+  "generated_ids": [
+    "ob:SCC.MCS",
+    "thm:SCC.MCS",
+    "ob:SCC.UC",
+    "thm:SCC.UC",
+    "ob:SCC.TSI",
+    "thm:SCC.TSI",
+    "status:SCC"
+  ],
+  "missing_expected": [],
+  "unexpected_claims": [],
+  "active_frontiers": [],
+  "posture": "conditional-cert-close",
+  "basis_statuses": {
+    "thm:SCC.MCS": "C",
+    "thm:SCC.UC": "C",
+    "thm:SCC.TSI": "C"
+  },
+  "obligation_statuses": {
+    "ob:SCC.MCS": "C",
+    "ob:SCC.UC": "C",
+    "ob:SCC.TSI": "C"
+  },
+  "checks": [
+    {
+      "id": "scc.successor.expected-claim-list",
+      "status": "pass",
+      "observed": {
+        "missing": []
+      },
+      "expected": "All SCC_ORDER claims are present."
+    },
+    {
+      "id": "scc.successor.posture",
+      "status": "pass",
+      "observed": "conditional-cert-close",
+      "expected": "conditional-cert-close"
+    },
+    {
+      "id": "scc.successor.zero-frontier-profile",
+      "status": "pass",
+      "observed": [],
+      "expected": "No active SCC-local frontier in the MCS+UC+TSI successor pilot."
+    },
+    {
+      "id": "scc.successor.mcs-uc-tsi-basis",
+      "status": "pass",
+      "observed": {
+        "thm:SCC.MCS": "C",
+        "thm:SCC.UC": "C",
+        "thm:SCC.TSI": "C"
+      },
+      "expected": "MCS, UC, and TSI basis theorems have conditional or unconditional force."
+    },
+    {
+      "id": "scc.successor.obligations-conditionally-closed",
+      "status": "pass",
+      "observed": {
+        "ob:SCC.MCS": "C",
+        "ob:SCC.UC": "C",
+        "ob:SCC.TSI": "C"
+      },
+      "expected": "SCC MCS, UC, and TSI obligation records are conditionally closed."
+    },
+    {
+      "id": "scc.successor.no-unexpected-claims",
+      "status": "pass",
+      "observed": [],
+      "expected": "No branch-local SCC records outside the pilot order."
+    },
+    {
+      "id": "scc.successor.no-phenomenological-upgrade",
+      "status": "pass",
+      "observed": {
+        "posture": "conditional-cert-close",
+        "active_frontiers": []
+      },
+      "expected": "Closure remains structural counterfactual capacity only; no phenomenological/consciousness endpoint is inferred."
+    }
+  ],
+  "supersession_effect": "none; pilot shell only"
+}

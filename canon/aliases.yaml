@@ -1,0 +1,21 @@
+aliases:
+  - canonical_id: hyp:KPO-3
+    canonical_name: Weyl Encoding
+    retired_labels:
+      - KPO3
+      - KPO-3-old
+    active: true
+    notes: Early label overload retired; canonical usage is Weyl Encoding.
+
+  - canonical_id: ob:RH.S1
+    canonical_name: Witness Assembly
+    retired_labels:
+      - RH4
+      - witness-frontier-old
+    active: true
+
+  - canonical_id: ob:GR.EFE1
+    canonical_name: Einstein-Form Structural Compatibility Obligation 1
+    retired_labels:
+      - O-GR.EFE1-old
+    active: true

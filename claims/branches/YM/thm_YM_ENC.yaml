@@ -1,0 +1,48 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/thm_YM_ENC.md
+book: YM
+canonical_xref:
+  canonical_label: YM Weyl Encoding Theorem
+  canonical_section: YM Bridge Stack §3
+  canonical_theorem: YM.ENC
+  cross_check: Discharges ob:YM.O-ENC; Weyl encoding KPO-3 established
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VII.6.4
+  - thm:YM.RIG
+discharges:
+- basis:
+  - thm:YM.ENC
+  kind: full
+  scope_relation: preserved
+  target: ob:YM.O-ENC
+  transfer_basis: []
+  transfer_required: false
+id: thm:YM.ENC
+imports: []
+kind: theorem
+number: YM.ENC
+proof_file: text/branches/YM/proof_thm_YM_ENC.md
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - encoding-compatibility
+  - msc-normalized
+  promotion_ceiling: C
+  regime: ym-bridge-stack
+supersedes: []
+tags:
+- ym
+- bridge-stack
+- encoding-compatibility
+title: YM Encoding Compatibility Packet
+track: branch

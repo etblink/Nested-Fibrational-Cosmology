@@ -1,0 +1,49 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/thm_YM_7.md
+book: YM
+canonical_xref:
+  canonical_label: YM Endpoint — Mass-Gap, OS/Wightman, Action Uniqueness
+  canonical_section: YM Endpoint §7
+  canonical_theorem: YM.7
+  cross_check: Main conditional endpoint; MSC-normalized, persistence-selected scope
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:YM.ID
+  - thm:YM.RIG
+  - thm:YM.ENC
+  - thm:YM.GLOB
+  - thm:YM.CLU
+  - thm:VI.9.1
+  - thm:VII.6.4
+discharges: []
+id: thm:YM.7
+imports: []
+kind: theorem
+number: YM.7
+proof_file: text/branches/YM/proof_thm_YM_7.md
+scope:
+  certificate_scope: branch-wide
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - msc-normalized
+  - persistence-selected
+  - conditional-bridge-stack
+  promotion_ceiling: C
+  regime: ym-msc-normalized
+supersedes: []
+tags:
+- conditional-cert-close
+- mass-gap
+- os
+- wightman
+- ym
+title: Endpoint Mass-Gap and OS/Wightman Closure Packet
+track: branch

@@ -1,0 +1,31 @@
+body_file: text/branches/SM/thm_SM_coupling_transfer_full.md
+book: SM
+canonical_xref:
+  canonical_label: Structural Coupling Transfer Theorem [C]
+  canonical_section: SM §Coupling Transfer
+  canonical_theorem: thm:SM-coupling-transfer
+  cross_check: SCOPED discharge; structural seed only, not full coupling derivation
+declared_status: C
+dependencies:
+  requires:
+  - thm:SM.harmonization-partial
+  - thm:YM.7
+  - thm:GR.CP.1
+discharges:
+- basis:
+  - thm:SM.coupling-transfer-full
+  kind: scoped
+  scope_relation: restricted
+  target: ob:SM.coupling-transfer
+  transfer_required: false
+id: thm:SM.coupling-transfer-full
+kind: theorem
+number: SM.coupling-transfer-full
+proof_file: text/branches/SM/proof_thm_SM_coupling_transfer_full.md
+scope:
+  certificate_scope: structural-seed
+  domain: SM-branch
+  promotion_ceiling: C
+  regime: SM-super-sector
+title: Structural Coupling Transfer Theorem
+track: branch

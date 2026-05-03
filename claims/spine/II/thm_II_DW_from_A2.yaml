@@ -1,0 +1,22 @@
+body_file: text/spine/II/thm_II_DW_from_A2.md
+book: II
+canonical_xref:
+  canonical_label: DW from Axiom A2 [U]
+  canonical_section: Book II §LS-2 from Structural Conditions
+  canonical_theorem: thm:DW-from-A2
+  cross_check: Structural invariance (A2) implies the DW condition; unconditional
+declared_status: U
+dependencies:
+  requires:
+  - def:II.DW
+  - def:I.admissible-class
+id: thm:II.DW-from-A2
+kind: theorem
+number: II.T.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: DW from Structural Invariance (A2)
+track: spine

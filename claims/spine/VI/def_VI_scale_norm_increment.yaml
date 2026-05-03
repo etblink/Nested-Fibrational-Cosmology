@@ -1,0 +1,22 @@
+body_file: text/spine/VI/def_VI_scale_norm_increment.md
+book: VI
+canonical_xref:
+  canonical_label: Scale-Normalized Increment delta_h f
+  canonical_section: Book VI §Continuum Bridge Infrastructure
+  canonical_theorem: def:scale-norm-increment
+  cross_check: The canonical discrete approximation to the derivative; delta_h f(x)
+    = (f(x+h) - f(x))/h licensed by sr:no-derivative-without-increment
+declared_status: D
+dependencies:
+  requires:
+  - def:VI.cert-obs-family
+id: def:VI.scale-norm-increment
+kind: definition
+number: VI.D.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Scale-Normalized Increment
+track: spine

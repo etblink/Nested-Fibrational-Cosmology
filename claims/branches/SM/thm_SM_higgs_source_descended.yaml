@@ -1,0 +1,30 @@
+body_file: text/branches/SM/thm_SM_higgs_source_descended.md
+book: SM
+canonical_xref:
+  canonical_label: B0 Screening Projection Source-Descendedness [C]
+  canonical_section: SM §Matter Content
+  canonical_theorem: thm:SM-higgs-src
+  cross_check: SCOPED discharge of O-SM.Higgs; B0=ker(d_Sv) uniquely determined
+declared_status: C
+dependencies:
+  requires:
+  - thm:SM.gauge-chain
+  - thm:SM.three-gen
+discharges:
+- basis:
+  - thm:SM.higgs-source-descended
+  kind: scoped
+  scope_relation: restricted
+  target: ob:SM.higgs
+  transfer_required: false
+id: thm:SM.higgs-source-descended
+kind: theorem
+number: SM.higgs-source-descended
+proof_file: text/branches/SM/proof_thm_SM_higgs_source_descended.md
+scope:
+  certificate_scope: scoped-B0-screening
+  domain: SM-branch
+  promotion_ceiling: C
+  regime: SM-super-sector
+title: B0 Screening Projection Source-Descendedness
+track: branch

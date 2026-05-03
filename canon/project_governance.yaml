@@ -1,0 +1,159 @@
+active_release: L_plus_4
+comparison_release: L_plus_5_draft
+current_l2_pilots:
+- SM
+- NS
+- RH
+current_milestone: v27 CRYST Branch-Successor Pilot
+operating_principles:
+- Governance metadata is canon-facing theorem infrastructure, not formatting.
+- Errors block migration; warnings document drift; traces explain inference.
+- Expand canon coverage only when the validation model remains stable.
+- The generated corpus may supersede current books only by staged equivalence, audit,
+  and release approval; no silent replacement.
+- 'Branch-pilot expansion is portfolio-governed: the next pilot is selected by readiness,
+  risk, and canon value rather than momentum.'
+- SCC successor pilots preserve structural counterfactual capacity only; no phenomenological
+  or consciousness endpoint may be inferred.
+- CRYST successor pilots preserve conditional diffraction-periodicity-symmetry closure
+  while keeping the phase problem open; no phase recovery or full crystallographic
+  reconstruction may be inferred.
+project_name: NFC Governance Engine
+quality_gates:
+- description: The governance build must have zero error-severity audit findings.
+  id: gate.no_errors
+  severity: error
+- description: Computed branch postures must reconcile with the active release snapshot.
+  id: gate.release_reconciliation
+  severity: error
+- current_budget: 3
+  description: Known warning count may not increase beyond the accepted baseline without
+    an explicit decision-log entry. Budget raised to 3 in v31 to accommodate the intentional
+    NS stale-posture correction release-vs-computed mismatch warning (documented in
+    DECISION_LOG).
+  id: gate.warning_budget
+  severity: warning
+- description: Every active open item must appear in the computed status graph and
+    digest.
+  id: gate.active_frontier_trace
+  severity: error
+- description: Every detected release-diff event must have an explicit basis note
+    in the target release snapshot.
+  id: gate.release_diff_basis
+  severity: error
+- description: Regression test failures must be zero before the build is accepted.
+  id: gate.regression_tests
+  severity: error
+- description: Canon-import TeX packet and import manifest must be generated.
+  id: gate.canon_import_packet
+  required_outputs:
+  - output/tex/canon_governance_appendix.tex
+  - output/tex/canon_governance_appendix_standalone.tex
+  - output/reports/canon_import_manifest.json
+  - output/tables/canon_import_manifest.md
+  severity: error
+- description: Standalone canon-governance appendix must compile to PDF and render
+    to page images.
+  id: gate.compile_verification
+  required_outputs:
+  - output/pdf/canon_governance_appendix_standalone.pdf
+  - output/reports/compile_check_report.json
+  - output/tables/compile_check_report.md
+  severity: error
+- description: Supersession readiness report must be generated and must explicitly
+    distinguish import-ready status from full replacement readiness.
+  id: gate.supersession_readiness_report
+  required_outputs:
+  - output/reports/supersession_readiness_report.json
+  - output/tables/supersession_readiness_report.md
+  severity: error
+- description: GR branch-successor pilot artifacts must be generated, equivalent at
+    the migrated claim-list level, and compile to PDF.
+  id: gate.gr_successor_pilot
+  required_outputs:
+  - output/tex/gr_branch_successor_standalone.tex
+  - output/pdf/gr_branch_successor_standalone.pdf
+  - output/reports/gr_successor_equivalence_report.json
+  - output/tables/gr_successor_equivalence_report.md
+  severity: error
+- description: GR L2 hardening report must pass prose-preservation, checksum, frontier-preservation,
+    and no-supersession checks.
+  id: gate.gr_l2_hardening
+  required_outputs:
+  - output/reports/gr_l2_hardening_report.json
+  - output/tables/gr_l2_hardening_report.md
+  - output/reports/gr_prose_preservation_manifest.json
+  severity: error
+- description: YM branch-successor pilot artifacts must be generated, equivalent at
+    the migrated claim-list level, and compile to PDF while preserving the B3-A2 frontier.
+  id: gate.ym_successor_pilot
+  required_outputs:
+  - output/tex/ym_branch_successor_standalone.tex
+  - output/pdf/ym_branch_successor_standalone.pdf
+  - output/reports/ym_successor_equivalence_report.json
+  - output/tables/ym_successor_equivalence_report.md
+  severity: error
+- description: GR/YM L2 branch-successor pilots must pass side-by-side comparison
+    without posture/frontier regression.
+  id: gate.l2_pilot_comparison
+  required_outputs:
+  - output/reports/l2_pilot_comparison_report.json
+  - output/tables/l2_pilot_comparison_report.md
+  severity: error
+- description: SPEC branch-successor pilot artifacts must be generated, equivalent
+    at the migrated claim-list level, compile to PDF, and preserve gauge-response
+    CERT-CLOSE without adding a false live frontier.
+  id: gate.spec_successor_pilot
+  required_outputs:
+  - output/tex/spec_branch_successor_standalone.tex
+  - output/pdf/spec_branch_successor_standalone.pdf
+  - output/reports/spec_successor_equivalence_report.json
+  - output/tables/spec_successor_equivalence_report.md
+  severity: error
+- description: 'Every configured L2 branch-successor pilot must satisfy the reusable
+    L2 pilot standard: equivalence, compile, posture preservation, frontier preservation,
+    and no supersession.'
+  id: gate.l2_pilot_standard
+  required_outputs:
+  - output/reports/l2_pilot_standard_report.json
+  - output/tables/l2_pilot_standard_report.md
+  - output/tables/l2_pilot_standard_template.md
+  severity: error
+- description: The Project Lead pilot-intake report must exist, rank the branch migration
+    queue, and name one recommended next pilot with rationale.
+  id: gate.pilot_intake_queue
+  required_outputs:
+  - output/reports/pilot_intake_report.json
+  - output/tables/pilot_intake_report.md
+  severity: error
+- description: SCC branch-successor pilot artifacts must be generated, equivalent
+    at the migrated claim-list level, compile to PDF, and preserve MCS+UC+TSI structural
+    scope without phenomenological overclaim.
+  id: gate.scc_successor_pilot
+  required_outputs:
+  - output/tex/scc_branch_successor_standalone.tex
+  - output/pdf/scc_branch_successor_standalone.pdf
+  - output/reports/scc_successor_equivalence_report.json
+  - output/tables/scc_successor_equivalence_report.md
+  severity: error
+- description: CRYST branch-successor pilot artifacts must be generated, equivalent
+    at the migrated claim-list level, compile to PDF, and preserve the phase-problem
+    frontier.
+  id: gate.cryst_successor_pilot
+  required_outputs:
+  - output/tex/cryst_branch_successor_standalone.tex
+  - output/pdf/cryst_branch_successor_standalone.pdf
+  - output/reports/cryst_successor_equivalence_report.json
+  - output/tables/cryst_successor_equivalence_report.md
+  severity: error
+- description: LING branch-successor pilot artifacts must be generated, equivalent
+    at the migrated claim-list level, and compile to PDF while preserving the REF-INVIS/RECOV
+    frontier.
+  id: gate.ling_successor_pilot
+  required_outputs:
+  - output/tex/ling_branch_successor_standalone.tex
+  - output/pdf/ling_branch_successor_standalone.pdf
+  - output/reports/ling_successor_equivalence_report.json
+  - output/tables/ling_successor_equivalence_report.md
+  severity: error
+schema_version: 0.41.0

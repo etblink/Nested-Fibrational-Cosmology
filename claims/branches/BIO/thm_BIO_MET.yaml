@@ -1,0 +1,29 @@
+body_file: text/branches/BIO/thm_BIO_MET.md
+book: BIO
+canonical_xref:
+  canonical_label: Metabolic Ledger Theorem [C]
+  canonical_section: BIO §Metabolic
+  canonical_theorem: thm:BIO.MET
+  cross_check: Additivity from carrier-transport algebra
+declared_status: C
+dependencies:
+  requires:
+  - thm:BIO.REP
+discharges:
+- basis:
+  - thm:BIO.MET
+  kind: full
+  scope_relation: preserved
+  target: ob:BIO.MET
+  transfer_required: false
+id: thm:BIO.MET
+kind: theorem
+number: BIO.MET
+proof_file: text/branches/BIO/proof_thm_BIO_MET.md
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: Metabolic Ledger Theorem
+track: branch

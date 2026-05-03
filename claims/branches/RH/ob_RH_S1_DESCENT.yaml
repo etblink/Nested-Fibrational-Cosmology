@@ -1,0 +1,27 @@
+body_file: text/branches/RH/ob_RH_S1_DESCENT.md
+book: RH
+canonical_xref:
+  canonical_label: S1-DESCENT — Arithmetic Descent Without Hidden Import CONDITIONALLY
+    DISCHARGED [C]
+  canonical_section: RH §S1 Formal Packet
+  canonical_theorem: S1-DESCENT
+  cross_check: Transport-localization chain L1-L7; RH defect ledger
+declared_status: C
+dependencies:
+  requires:
+  - thm:RH.3
+discharges: []
+id: ob:RH.S1-DESCENT
+kind: obligation
+number: RH.S1-DESCENT
+scope:
+  certificate_scope: conditional-L1-L7
+  domain: RH-branch
+  inherited_constraints:
+  - transport-localization-chain-L1-L7
+  - RH-defect-ledger
+  promotion_ceiling: C
+  regime: RH-transport-localization
+title: S1-DESCENT — Arithmetic Content Descends Without Hidden Import (Conditionally
+  Discharged)
+track: branch

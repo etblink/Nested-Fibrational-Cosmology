@@ -1,0 +1,21 @@
+body_file: text/spine/V/sr_V_no_hidden_supplementation.md
+book: V
+canonical_xref:
+  canonical_label: No-Hidden-Supplementation Standing Rule
+  canonical_section: Book V §Branch Standing Rules
+  canonical_theorem: sr:no-hidden-supplementation
+  cross_check: No undeclared structure beyond F(U) and declared hypotheses; the anti-smuggling
+    rule for branch endpoints
+declared_status: D
+dependencies:
+  requires: []
+id: sr:V.no-hidden-supplementation
+kind: standing_rule
+number: V.SR.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: No-Hidden-Supplementation Rule
+track: spine

@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "book": "II",
+  "track": "spine",
+  "l4_level": "spine_release_candidate",
+  "schema_version": "0.38.0",
+  "claim_count": 21,
+  "xref_count": 21,
+  "prose_score": 100.0,
+  "u_layer_count": 8,
+  "c_layer_count": 7,
+  "ls2_status": "C",
+  "ls2_universal_status": "U",
+  "pass_status": "U",
+  "sct6b_present": true,
+  "supersession_effect": "none",
+  "two_layer_description": "Book II has a [U] layer (unconditional: DW/TC/covering/PASS/binary-rigidity/local-nuclear) and a [C] layer (conditional on LS-2 and/or Phase-A: ls2-from-conditions, boundary-det, boundary-capacity, SCT doctrine, governing). LS-2 is the principal conditional hinge.",
+  "checks": [
+    {
+      "id": "l4.ii.u-layer-complete",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all present",
+      "expected": "All [U] layer claims present"
+    },
+    {
+      "id": "l4.ii.c-layer-complete",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all present",
+      "expected": "All [C] layer claims present"
+    },
+    {
+      "id": "l4.ii.ls2-is-conditional",
+      "status": "pass",
+      "severity": "error",
+      "observed": "LS-2 status = C",
+      "expected": "LS-2 must be [C]: it is a hypothesis, not an unconditional result"
+    },
+    {
+      "id": "l4.ii.ls2-universal-is-u",
+      "status": "pass",
+      "severity": "error",
+      "observed": "cor:ls2-universal-K07 status = U",
+      "expected": "cor:ls2-universal-K07 must be [U]: it proves LS-2 holds for all K_0=7 Phase-A substrates"
+    },
+    {
+      "id": "l4.ii.PASS-is-unconditional",
+      "status": "pass",
+      "severity": "error",
+      "observed": "PASS status = U",
+      "expected": "thm:PASS must be [U]: PASS was a legacy axiom now proved as a theorem"
+    },
+    {
+      "id": "l4.ii.c-layer-has-constraints",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all have constraints",
+      "expected": "[C] results must carry inherited LS-2/Phase-A constraints in scope"
+    },
+    {
+      "id": "l4.ii.SCT6b-present",
+      "status": "pass",
+      "severity": "error",
+      "observed": "present",
+      "expected": "thm:II.SCT6b must be present \u2014 it discharges ob:NS.SB2 in the NS branch"
+    },
+    {
+      "id": "l4.ii.prose-completeness",
+      "status": "pass",
+      "severity": "warning",
+      "observed": "100.0% (21/21)",
+      "expected": ">= 90% prose completeness"
+    },
+    {
+      "id": "l4.ii.xref-annotations",
+      "status": "pass",
+      "severity": "error",
+      "observed": "21/21",
+      "expected": ">= 19 xref annotations"
+    }
+  ]
+}

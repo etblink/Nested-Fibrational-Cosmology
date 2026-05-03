@@ -1,0 +1,114 @@
+{
+  "status": "passed",
+  "l3_ready_branches": [
+    "GR",
+    "YM",
+    "NS",
+    "SM",
+    "RH",
+    "SPEC",
+    "SCC",
+    "BIO",
+    "LING",
+    "CRYST"
+  ],
+  "l3_candidate_branches": [],
+  "results": [
+    {
+      "branch": "GR",
+      "level": "l3_ready",
+      "level_description": "L3 ready \u2014 passes all L3 criteria, eligible for release candidate",
+      "l3_ready": true,
+      "l3_candidate": true,
+      "hard_failures": [],
+      "soft_failures": []
+    },
+    {
+      "branch": "YM",
+      "level": "l3_ready",
+      "level_description": "L3 ready \u2014 passes all L3 criteria, eligible for release candidate",
+      "l3_ready": true,
+      "l3_candidate": true,
+      "hard_failures": [],
+      "soft_failures": []
+    },
+    {
+      "branch": "NS",
+      "level": "l3_ready",
+      "level_description": "L3 ready \u2014 passes all L3 criteria, eligible for release candidate",
+      "l3_ready": true,
+      "l3_candidate": true,
+      "hard_failures": [],
+      "soft_failures": []
+    },
+    {
+      "branch": "SM",
+      "level": "l3_ready",
+      "level_description": "L3 ready \u2014 passes all L3 criteria, eligible for release candidate",
+      "l3_ready": true,
+      "l3_candidate": true,
+      "hard_failures": [],
+      "soft_failures": []
+    },
+    {
+      "branch": "RH",
+      "level": "l3_ready",
+      "level_description": "L3 ready \u2014 passes all L3 criteria, eligible for release candidate",
+      "l3_ready": true,
+      "l3_candidate": true,
+      "hard_failures": [],
+      "soft_failures": []
+    },
+    {
+      "branch": "SPEC",
+      "level": "l3_ready",
+      "level_description": "L3 ready \u2014 passes all L3 criteria, eligible for release candidate",
+      "l3_ready": true,
+      "l3_candidate": true,
+      "hard_failures": [],
+      "soft_failures": []
+    },
+    {
+      "branch": "SCC",
+      "level": "l3_ready",
+      "level_description": "L3 ready \u2014 passes all L3 criteria, eligible for release candidate",
+      "l3_ready": true,
+      "l3_candidate": true,
+      "hard_failures": [],
+      "soft_failures": []
+    },
+    {
+      "branch": "BIO",
+      "level": "l3_ready",
+      "level_description": "L3 ready \u2014 passes all L3 criteria, eligible for release candidate",
+      "l3_ready": true,
+      "l3_candidate": true,
+      "hard_failures": [],
+      "soft_failures": []
+    },
+    {
+      "branch": "LING",
+      "level": "l3_ready",
+      "level_description": "L3 ready \u2014 passes all L3 criteria, eligible for release candidate",
+      "l3_ready": true,
+      "l3_candidate": true,
+      "hard_failures": [],
+      "soft_failures": []
+    },
+    {
+      "branch": "CRYST",
+      "level": "l3_ready",
+      "level_description": "L3 ready \u2014 passes all L3 criteria, eligible for release candidate",
+      "l3_ready": true,
+      "l3_candidate": true,
+      "hard_failures": [],
+      "soft_failures": []
+    }
+  ],
+  "summary": {
+    "total_pilots": 10,
+    "l3_ready": 10,
+    "l3_candidate": 0,
+    "not_started": 0
+  }
+}

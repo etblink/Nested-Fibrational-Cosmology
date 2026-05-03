@@ -1,0 +1,45 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/GR/thm_GR_CP_1.md
+book: GR
+canonical_xref:
+  canonical_book: NFC_GR_Branch.tex
+  canonical_label: GR Coherence Packet — legacy compatibility bundle for downstream
+  canonical_section: GR Realization and Coherence Packet
+  canonical_theorem: GR.CP.1
+  cross_check: Bundles realization+deformation+compat for cross-branch citation
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:GR.realization
+  - thm:GR.deformation
+  - thm:GR.compat
+discharges: []
+id: thm:GR.CP.1
+imports:
+- items:
+  - thm:VI.9.1
+  source: book:VI
+kind: theorem
+number: GR.CP.1
+proof_file: text/branches/GR/proof_thm_GR_CP_1.md
+scope:
+  certificate_scope: domain-bounded
+  continuum_license: book-VI-certified
+  domain: GR-branch
+  inherited_constraints:
+  - realized-domain-D
+  promotion_ceiling: C
+  regime: declared-GR-target
+supersedes: []
+tags:
+- compatibility
+- gr
+- legacy-bundle
+title: GR Realization and Coherence Packet (legacy compatibility bundle)
+track: branch

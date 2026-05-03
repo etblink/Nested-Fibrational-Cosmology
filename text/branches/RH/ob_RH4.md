@@ -1,0 +1,3 @@
+RH4 (Operator Realization): construct an explicit operator H_RH satisfying at least one of three options: (i) Xi is the regularized spectral determinant det_reg(H_RH^2 - t^2); (ii) the trace formula reproduces the von Mangoldt explicit formula Tr_{G_sf}(h) = sum_{p,m} (log p) p^{-m/2} h(m log p); (iii) the admissible eigenmodes correspond exactly to zeros of zeta.
+
+Status: conditionally advanced by the scaling-flow candidate G_sf and the orbit grammar program. Option (ii) is the primary realized route; it is conditionally realized by the scaling-flow candidate and the log-derivative trace formula (conditional [C]). Remaining: full branch-internal operator realization at canonical theorem force — logdiff-channel Clause 2 and trace-pairing law at unconditional level.

@@ -1,0 +1,3 @@
+Book I status: all theorem-like objects are unconditional [U] or definitional [D] or remarks [R]. Book I proves: (1) observational quotient Sigma_n is well-defined; (2) every refinement chain stabilizes to Sigma_inf; (3) defect ledger D(chi) is well-defined, non-negative, and additive; (4) K_0 = 7 is the unique prime satisfying the structural self-consistency condition; (5) no-presentation-surplus rule for downstream books.
+
+Book I does NOT prove: local stability of observable outcomes, boundary determinacy, source universality, branch legitimacy, or continuum correspondence. Every one of those claims belongs to a later book and may not be silently imported from Book I.

@@ -1,0 +1,22 @@
+body_file: text/spine/VI/def_VI_continuum_interface_regime.md
+book: VI
+canonical_xref:
+  canonical_label: Continuum Interface Regime (C, S, F, R quadruple)
+  canonical_section: Book VI §Continuum Bridge Infrastructure
+  canonical_theorem: def:continuum-interface-regime
+  cross_check: The four-component structure (certified obs family C, scoped certificate
+    S, faithful rep F, declared regime R) licensing continuum notation within S
+declared_status: D
+dependencies:
+  requires:
+  - def:VI.continuum-bridge
+id: def:VI.continuum-interface-regime
+kind: definition
+number: VI.D.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Continuum Interface Regime
+track: spine

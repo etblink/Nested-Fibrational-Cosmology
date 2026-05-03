@@ -1,0 +1,1 @@
+Show that there is no undeclared hereditary channel: every hereditary pathway is visible in the declared replication kernel \Phi{}_Bio. No hidden pathway imports biological structure outside the carrier record.

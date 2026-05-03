@@ -1,0 +1,100 @@
+{
+  "status": "passed",
+  "book": "V",
+  "track": "spine",
+  "l4_level": "spine_release_candidate",
+  "schema_version": "0.39.0",
+  "claim_count": 19,
+  "xref_count": 19,
+  "prose_score": 100.0,
+  "ublt_status": "U",
+  "branch_projection_status": "U",
+  "all_primary_unconditional": true,
+  "open_branch_canonical": true,
+  "citing_branches": [
+    "GR",
+    "YM",
+    "NS",
+    "SM",
+    "BIO",
+    "LING",
+    "CRYST",
+    "SCC",
+    "SPEC",
+    "RH"
+  ],
+  "supersession_effect": "none",
+  "primary_contribution": "Closes the machine-readable dependency gap between the spine and the branch books. Branch books cite thm:V.UBLT (= Thm. V.8.1) and prop:V.branch-projection (= Prop. V.3.1). With Book V machine records, the governance engine can now trace the full branch-to-spine dependency chain.",
+  "checks": [
+    {
+      "id": "l4.v.UBLT-present-and-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:V.UBLT status = U",
+      "expected": "thm:V.UBLT must be present and [U] \u2014 it is the governing theorem cited by all branches"
+    },
+    {
+      "id": "l4.v.branch-projection-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "prop:V.branch-projection (Prop. V.3.1) status = U",
+      "expected": "prop:V.branch-projection must be [U] \u2014 canonical existence of branch endpoints"
+    },
+    {
+      "id": "l4.v.primary-results-unconditional",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all [U]",
+      "expected": "Primary Book V results must be [U] \u2014 branch legitimacy is unconditional"
+    },
+    {
+      "id": "l4.v.open-branch-canonical-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "cor:V.open-branch-still-canonical status = U",
+      "expected": "[U]: lawfulness is independent of completeness; NS/RH/YM/GR all have open obligations and are lawful"
+    },
+    {
+      "id": "l4.v.standing-rules-present",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all present",
+      "expected": "All four Book V standing rules present"
+    },
+    {
+      "id": "l4.v.screened-sector-conditional",
+      "status": "pass",
+      "severity": "error",
+      "observed": "status = C, constraints = ['PASS', 'LS-2', 'Phase-A', 'K0-7']",
+      "expected": "thm:V.screened-sector must be [C] with PASS/LS-2/Phase-A inherited constraints"
+    },
+    {
+      "id": "l4.v.mandatory-declarations",
+      "status": "pass",
+      "severity": "error",
+      "observed": "present",
+      "expected": "cor:V.mandatory-declarations must be present \u2014 it converts UBLT into the branch checklist"
+    },
+    {
+      "id": "l4.v.branch-spine-linkage",
+      "status": "pass",
+      "severity": "warning",
+      "observed": "thm:VII.6.4 canonical cross-reference documents the Book V dependency",
+      "expected": "Book V machine records make the branch-spine dependency chain traceable"
+    },
+    {
+      "id": "l4.v.prose-completeness",
+      "status": "pass",
+      "severity": "warning",
+      "observed": "100.0% (19/19)",
+      "expected": ">= 90% prose"
+    },
+    {
+      "id": "l4.v.xref-annotations",
+      "status": "pass",
+      "severity": "error",
+      "observed": "19/19",
+      "expected": ">= 17 xrefs"
+    }
+  ]
+}

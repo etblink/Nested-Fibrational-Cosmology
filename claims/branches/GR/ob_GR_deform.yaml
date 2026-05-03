@@ -1,0 +1,39 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/GR/ob_GR_deform.md
+book: GR
+canonical_xref:
+  canonical_book: NFC_GR_Branch.tex
+  canonical_label: GR Deformation Obligation — Stage 2
+  canonical_section: GR Obligation Register
+  canonical_theorem: ob:GR.deform
+  cross_check: Discharged by thm:GR.deformation
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - ob:GR.real
+discharges: []
+id: ob:GR.deform
+imports: []
+kind: obligation
+number: GR.deform
+scope:
+  certificate_scope: domain-bounded
+  continuum_license: book-VI-certified
+  domain: GR-branch
+  inherited_constraints:
+  - realized-domain-D
+  promotion_ceiling: C
+  regime: declared-GR-target
+supersedes: []
+tags:
+- gr
+- closure-stack
+- discharged
+title: Causal-Deformation Response Law
+track: branch

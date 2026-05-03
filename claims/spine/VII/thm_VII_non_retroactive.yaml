@@ -1,0 +1,22 @@
+body_file: text/spine/VII/thm_VII_non_retroactive.md
+book: VII
+canonical_xref:
+  canonical_label: Non-Retroactivity of Branch Certification [U]
+  canonical_section: Book VII §Import Discipline
+  canonical_theorem: thm:non-retroactive
+  cross_check: No newly admitted branch may retroactively alter force of previously
+    certified branches
+declared_status: U
+dependencies:
+  requires:
+  - thm:VII.6.4
+id: thm:VII.non-retroactive
+kind: theorem
+number: VII.T.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Non-Retroactivity of Branch Certification
+track: spine

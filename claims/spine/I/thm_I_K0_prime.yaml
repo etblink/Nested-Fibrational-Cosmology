@@ -1,0 +1,23 @@
+body_file: text/spine/I/thm_I_K0_prime.md
+book: I
+canonical_xref:
+  canonical_label: K_0 = 7 Primality and Uniqueness Theorem [U]
+  canonical_section: Book I §Collar Geometry
+  canonical_theorem: thm:K0-prime
+  cross_check: K_0 is prime; K_0=7 is the unique prime fixed point of F(p)=|Phi(g_color(p))|+1;
+    implies su(3)+su(2)+u(1)
+declared_status: U
+dependencies:
+  requires:
+  - sr:I.cg-alphabet
+  - def:I.admissible-class
+id: thm:I.K0-prime
+kind: theorem
+number: I.T.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Primality and Uniqueness of the Collar Alphabet (K_0 = 7)
+track: spine

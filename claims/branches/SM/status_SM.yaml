@@ -1,0 +1,24 @@
+audit:
+  local_label_hardened_in: v15
+body_file: text/branches/SM/status_SM.md
+book: SM
+canonical_xref:
+  canonical_label: SM Branch Status — intrinsic-structural-close
+  canonical_section: SM §Branch Status
+  canonical_theorem: status:SM
+  cross_check: Status(SM) <= Status(YM) AND Status(GR) AND Status(SM_intrinsic)
+declared_status: intrinsic-structural-close
+dependencies:
+  requires:
+  - prop:SM.intrinsic-closure
+  - prop:SM.status-reconciliation
+  - ob:SM.O-IDcont
+id: status:SM
+kind: status_note
+number: SM.status
+scope:
+  certificate_scope: branch
+  domain: SM-branch
+  regime: SM-super-sector
+title: SM Branch Posture
+track: branch

@@ -1,0 +1,32 @@
+body_file: text/branches/BIO/thm_BIO_BND.md
+book: BIO
+canonical_xref:
+  canonical_label: Boundary Self-Organization (Nondegenerate Regime) [C]
+  canonical_section: BIO §Boundary
+  canonical_theorem: thm:BIO.BND
+  cross_check: Book II capacity law; scoped to nondegenerate regime
+declared_status: C
+dependencies:
+  requires:
+  - thm:BIO.REP
+  - thm:VII.6.4
+discharges:
+- basis:
+  - thm:BIO.BND
+  kind: scoped
+  scope_relation: restricted
+  target: ob:BIO.BND
+  transfer_required: false
+id: thm:BIO.BND
+kind: theorem
+number: BIO.BND
+proof_file: text/branches/BIO/proof_thm_BIO_BND.md
+scope:
+  certificate_scope: scoped-nondegenerate
+  domain: BIO-branch
+  inherited_constraints:
+  - book:II-capacity-law
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: Boundary Self-Organization Theorem (Nondegenerate Regime)
+track: branch

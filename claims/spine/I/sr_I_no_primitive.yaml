@@ -1,0 +1,21 @@
+body_file: text/spine/I/sr_I_no_primitive.md
+book: I
+canonical_xref:
+  canonical_label: No-Primitive Rule
+  canonical_section: Book I §Source Architecture
+  canonical_theorem: sr:no-primitive
+  cross_check: No undefined primitive structure; every structural element must be
+    sourced
+declared_status: D
+dependencies:
+  requires: []
+id: sr:I.no-primitive
+kind: standing_rule
+number: I.SR.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: No-Primitive Rule
+track: spine

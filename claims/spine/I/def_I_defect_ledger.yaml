@@ -1,0 +1,22 @@
+body_file: text/spine/I/def_I_defect_ledger.md
+book: I
+canonical_xref:
+  canonical_label: Defect Ledger D(chi)
+  canonical_section: Book I §Defect Structure
+  canonical_theorem: def:defect-ledger
+  cross_check: Combinatorial invariant recording the defect accumulated along a survivor
+    chain
+declared_status: D
+dependencies:
+  requires:
+  - def:I.obs-quotient
+id: def:I.defect-ledger
+kind: definition
+number: I.D.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Defect Ledger
+track: spine

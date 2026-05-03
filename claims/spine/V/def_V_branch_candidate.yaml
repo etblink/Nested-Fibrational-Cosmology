@@ -1,0 +1,22 @@
+body_file: text/spine/V/def_V_branch_candidate.md
+book: V
+canonical_xref:
+  canonical_label: Branch Candidate (C, F) — licensed category with declared realization
+    functor
+  canonical_section: Book V §Branch Definitions
+  canonical_theorem: def:branch-candidate
+  cross_check: 'A licensed target category C plus a declared realization functor F:
+    POT -> C; must be licensed before any endpoint claim'
+declared_status: D
+dependencies:
+  requires: []
+id: def:V.branch-candidate
+kind: definition
+number: V.D.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Branch Candidate
+track: spine

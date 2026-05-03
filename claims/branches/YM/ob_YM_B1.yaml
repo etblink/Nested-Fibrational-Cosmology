@@ -1,0 +1,40 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/ob_YM_B1.md
+book: YM
+canonical_xref:
+  canonical_label: YM B1 Post-Program Obligation
+  canonical_section: YM Post-Program Obligations
+  canonical_theorem: ob:YM.B1
+  cross_check: Conditionally discharged by thm:YM.B1.bridge
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: ob:YM.B1
+imports: []
+kind: obligation
+number: YM.B1
+proof_file: null
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - quantization-bridge
+  promotion_ceiling: C
+  regime: ym-postprogram
+supersedes: []
+tags:
+- discharged-conditionally
+- obligation
+- postprogram
+- quantization-bridge
+- ym
+title: B1 Quantization Bridge Residual
+track: branch

@@ -1,0 +1,23 @@
+body_file: text/spine/I/cor_I_no_presentation_surplus.md
+book: I
+canonical_xref:
+  canonical_label: No-Presentation-Surplus Rule [U]
+  canonical_section: Book I §Governing Theorem
+  canonical_theorem: cor:no-presentation-surplus
+  cross_check: No later spine theorem may depend on presentation-level distinctions
+    invisible to Sigma_inf; primary downstream governance rule exported from Book
+    I
+declared_status: U
+dependencies:
+  requires:
+  - thm:I.governing
+id: cor:I.no-presentation-surplus
+kind: corollary
+number: I.C.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: No-Presentation-Surplus Rule
+track: spine

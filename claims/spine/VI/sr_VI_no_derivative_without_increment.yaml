@@ -1,0 +1,21 @@
+body_file: text/spine/VI/sr_VI_no_derivative_without_increment.md
+book: VI
+canonical_xref:
+  canonical_label: No-Derivative-Without-Increment Rule
+  canonical_section: Book VI §Standing Rules
+  canonical_theorem: sr:no-derivative-without-increment
+  cross_check: Differential d/dx notation requires a certified scale-normalized increment;
+    no import of real analysis primitives
+declared_status: D
+dependencies:
+  requires: []
+id: sr:VI.no-derivative-without-increment
+kind: standing_rule
+number: VI.SR.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: No-Derivative-Without-Increment Rule
+track: spine

@@ -1,0 +1,90 @@
+{
+  "source_release": "L+4",
+  "target_release": "L+5-draft",
+  "target_status": "draft-for-governance-testing",
+  "changes": [
+    {
+      "change_id": "branch-posture:update:NS",
+      "category": "branch-posture",
+      "item": "NS",
+      "before": "frontier-blocked",
+      "after": "domain-bounded-cert-close",
+      "has_basis": true,
+      "basis": [
+        "prop:NS.status",
+        "thm:NS.7.1",
+        "thm:NS.6.1"
+      ],
+      "change_type": "stale-posture-correction",
+      "scope_relation": "restricted",
+      "note": "NS posture corrected from frontier-blocked to domain-bounded-cert-close. Canonical NS branch book contains prop:NS-status [C], thm:NS71 [C], and cor:NS-both-give-endpoint [C] establishing domain-bounded conditional CERT-CLOSE. The NS preamble was stale. Correction surfaced by v31 pilot."
+    },
+    {
+      "change_id": "active-obligation:remove:ob:NS.SB2",
+      "category": "active-obligation",
+      "item": "ob:NS.SB2",
+      "before": "active",
+      "after": "absent",
+      "has_basis": true,
+      "basis": [
+        "thm:NS.SB2-discharged",
+        "thm:NS.Ren5"
+      ],
+      "change_type": "obligation-discharge",
+      "scope_relation": "preserved",
+      "note": "ob:NS.SB2 conditionally discharged via SCT.6b coercive-transport mechanism (thm:NS.SB2-discharged). Full discharge conditional on Phase-A/K_0=7/PASS/SCT.6b."
+    },
+    {
+      "change_id": "active-obligation:remove:ob:rh-s1-formal",
+      "category": "active-obligation",
+      "item": "ob:rh-s1-formal",
+      "before": "active",
+      "after": "absent",
+      "has_basis": true,
+      "basis": [
+        "aliases.yaml",
+        "thm:RH.S1.formal"
+      ],
+      "change_type": "alias-normalization",
+      "scope_relation": "preserved",
+      "note": "Retired/legacy RH active-obligation label is replaced by the local canonical S1 frontier record. No mathematical force changes."
+    },
+    {
+      "change_id": "active-obligation:add:front:NS.main",
+      "category": "active-obligation",
+      "item": "front:NS.main",
+      "before": "absent",
+      "after": "active",
+      "has_basis": true,
+      "basis": [
+        "front:NS.main",
+        "ob:NS.SB2"
+      ],
+      "change_type": "frontier-explicitness",
+      "scope_relation": "preserved",
+      "note": "The NS main frontier is listed explicitly while preserving the underlying SB2 obligation."
+    },
+    {
+      "change_id": "active-obligation:add:thm:RH.S1.formal",
+      "category": "active-obligation",
+      "item": "thm:RH.S1.formal",
+      "before": "absent",
+      "after": "active",
+      "has_basis": true,
+      "basis": [
+        "aliases.yaml",
+        "thm:RH.S1.formal"
+      ],
+      "change_type": "alias-normalization",
+      "scope_relation": "preserved",
+      "note": "Canonical local RH S1 record is surfaced in the active-obligation list."
+    }
+  ],
+  "change_count": 5,
+  "missing_basis_count": 0,
+  "category_counts": {
+    "branch-posture": 1,
+    "active-obligation": 4
+  },
+  "missing_basis": []
+}

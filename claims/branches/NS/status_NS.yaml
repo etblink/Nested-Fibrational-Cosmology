@@ -1,0 +1,38 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/NS/status_NS.md
+book: NS
+canonical_xref:
+  canonical_label: NS Branch Status — domain-bounded-cert-close
+  canonical_section: NS §Branch Status
+  canonical_theorem: status:NS
+  cross_check: Stale preamble corrected in v31; governed by prop:NS.status
+declared_posture: domain-bounded-cert-close
+declared_status: domain-bounded-cert-close
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - prop:NS.status
+discharges: []
+id: status:NS
+imports: []
+kind: status_note
+number: NS.status
+scope:
+  certificate_scope: branch-wide
+  continuum_license: pending
+  domain: NS-branch
+  inherited_constraints: []
+  promotion_ceiling: frontier-blocked
+  regime: ns-branch-governance
+supersedes: []
+tags:
+- ns
+- posture
+- governance
+title: NS Branch Posture Record
+track: branch

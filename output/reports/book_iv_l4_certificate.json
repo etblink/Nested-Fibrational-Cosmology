@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "book": "IV",
+  "track": "spine",
+  "l4_level": "spine_release_candidate",
+  "schema_version": "0.40.0",
+  "claim_count": 19,
+  "xref_count": 19,
+  "prose_score": 100.0,
+  "universal_completion_status": "U",
+  "source_uniqueness_status": "U",
+  "descendants_factor_status": "U",
+  "governing_status": "U",
+  "full_chain_traceable": true,
+  "supersession_effect": "none",
+  "primary_contribution": "Completes the full spine dependency chain. With Book IV records, every branch endpoint datum E = F(U) now has a machine-traceable path from E back through cor:IV.descendants-factor \u2192 thm:IV.universal-completion \u2192 def:IV.candidate-U \u2192 def:IV.POT-object \u2192 def:I.obs-quotient \u2192 thm:I.stabilization.",
+  "checks": [
+    {
+      "id": "l4.iv.universal-completion-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:IV.universal-completion status = U",
+      "expected": "thm:IV.universal-completion must be [U] \u2014 primary existence theorem for U"
+    },
+    {
+      "id": "l4.iv.source-uniqueness-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:IV.source-uniqueness status = U",
+      "expected": "thm:IV.source-uniqueness must be [U] \u2014 uniqueness by factorization role"
+    },
+    {
+      "id": "l4.iv.descendants-factor-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "cor:IV.descendants-factor status = U",
+      "expected": "[U]: every lawful realization factors through U \u2014 source of UBLT condition 2"
+    },
+    {
+      "id": "l4.iv.ORA-rungs-complete",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all 5 rungs [U]",
+      "expected": "All 5 ORA rung theorems present and [U]: ORA, CTM, normalization, AMCT, completion-ladder"
+    },
+    {
+      "id": "l4.iv.governing-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:IV.governing status = U",
+      "expected": "thm:IV.governing must be [U] \u2014 Universal Source Theorem (Book IV Governing)"
+    },
+    {
+      "id": "l4.iv.POT-definitions",
+      "status": "pass",
+      "severity": "error",
+      "observed": "POT-object, POT-category, candidate-U all present",
+      "expected": "Core POT definitions present \u2014 necessary for F(U) to be well-typed"
+    },
+    {
+      "id": "l4.iv.unified-emergence-conditional",
+      "status": "pass",
+      "severity": "error",
+      "observed": "status = C, constraints = ['K0-7', 'Phase-A', 'Books-I-III']",
+      "expected": "thm:IV.unified-emergence must be [C] with K_0=7+Phase-A constraints"
+    },
+    {
+      "id": "l4.iv.full-chain-traceable",
+      "status": "pass",
+      "severity": "error",
+      "observed": "IV: True, BookI: True, BookV: True, BookVII: True",
+      "expected": "Full branch-to-source chain (GR.domain \u2192 VII.6.4 \u2192 V.UBLT \u2192 IV.universal-completion \u2192 I.obs-quotient) machine-traceable"
+    },
+    {
+      "id": "l4.iv.prose-completeness",
+      "status": "pass",
+      "severity": "warning",
+      "observed": "100.0% (19/19)",
+      "expected": ">= 90% prose"
+    },
+    {
+      "id": "l4.iv.xref-annotations",
+      "status": "pass",
+      "severity": "error",
+      "observed": "19/19",
+      "expected": ">= 17 xrefs"
+    }
+  ]
+}

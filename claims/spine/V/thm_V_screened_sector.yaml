@@ -1,0 +1,29 @@
+body_file: text/spine/V/thm_V_screened_sector.md
+book: V
+canonical_xref:
+  canonical_label: Screened Sector Endpoint Datum [C] — conditional on PASS/LS-2/Phase-A/K_0=7
+  canonical_section: Book V §Screening Inevitability
+  canonical_theorem: thm:screened-sector-endpoint
+  cross_check: W_A = ker(T_partial - lambda_max I)^perp is source-descended, branch-visible,
+    sector-unique, UBLT-compliant. The screened observable sector for YM, NS, SM branches.
+declared_status: C
+dependencies:
+  requires:
+  - thm:V.UBLT
+  - thm:II.PASS
+  - hyp:II.LS2
+id: thm:V.screened-sector
+kind: theorem
+number: V.T.C.1
+scope:
+  certificate_scope: conditional-PASS-LS2-PhaseA
+  domain: spine
+  inherited_constraints:
+  - PASS
+  - LS-2
+  - Phase-A
+  - K0-7
+  promotion_ceiling: C
+  regime: PASS-LS2-PhaseA-K07
+title: Screened Sector as Canonical Branch-Visible Endpoint Datum
+track: spine

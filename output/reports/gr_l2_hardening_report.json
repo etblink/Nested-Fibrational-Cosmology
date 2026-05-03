@@ -1,0 +1,260 @@
+{
+  "status": "passed",
+  "pilot_level": "L2-hardened",
+  "claim_count": 15,
+  "prose_file_count": 20,
+  "failed_count": 0,
+  "checks": [
+    {
+      "id": "gr.l2.equivalence-report-passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed",
+      "message": "Base GR successor equivalence report must pass before L2 hardening can pass."
+    },
+    {
+      "id": "gr.l2.compile-passed",
+      "status": "pass",
+      "observed": "passed",
+      "expected": "passed",
+      "message": "GR successor pilot PDF must compile and render."
+    },
+    {
+      "id": "gr.l2.posture-preserved",
+      "status": "pass",
+      "observed": "domain-bounded-cert-close",
+      "expected": "domain-bounded-cert-close",
+      "message": "GR pilot posture must remain domain-bounded CERT-CLOSE."
+    },
+    {
+      "id": "gr.l2.frontier-preserved",
+      "status": "pass",
+      "observed": [
+        "ob:GR.global-subcriticality"
+      ],
+      "expected": [
+        "ob:GR.global-subcriticality"
+      ],
+      "message": "GR global-subcriticality frontier must remain active."
+    },
+    {
+      "id": "gr.l2.no-supersession",
+      "status": "pass",
+      "observed": "none; pilot shell only",
+      "expected": "none; pilot shell only",
+      "message": "L2 GR pilot must not supersede the canonical GR Branch Book."
+    },
+    {
+      "id": "gr.l2.prose-files-present",
+      "status": "pass",
+      "observed": 0,
+      "expected": 0,
+      "message": "Every generated GR pilot claim must have non-empty human-authored body text; proof files are checked when declared.",
+      "details": []
+    },
+    {
+      "id": "gr.render.contains.thm:VI.9.1",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.thm:GR.CP.1",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.ob:GR.real",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.thm:GR.realization",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.ob:GR.deform",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.thm:GR.deformation",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.ob:GR.compat",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.thm:GR.compat",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.ob:GR.EFE1",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.ob:GR.EFE2",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.ob:GR.EFE3",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.ob:GR.closure",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.thm:GR.domain",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.ob:GR.global-subcriticality",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.render.contains.status:GR",
+      "status": "pass",
+      "observed": true,
+      "expected": true,
+      "message": "Generated GR successor TeX should contain every pilot machine ID."
+    },
+    {
+      "id": "gr.scope.thm:GR.CP.1",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.ob:GR.real",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.thm:GR.realization",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.ob:GR.deform",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.thm:GR.deformation",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.ob:GR.compat",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.thm:GR.compat",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.ob:GR.EFE1",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.ob:GR.EFE2",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.ob:GR.EFE3",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.ob:GR.closure",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.thm:GR.domain",
+      "status": "pass",
+      "observed": "domain-bounded",
+      "expected": "domain-bounded or explicitly global for the terminal frontier",
+      "message": "GR pilot claims must carry explicit certificate scope."
+    },
+    {
+      "id": "gr.scope.global-frontier-remains-global-open",
+      "status": "pass",
+      "observed": {
+        "certificate_scope": "global",
+        "declared_status": "O"
+      },
+      "expected": {
+        "certificate_scope": "global",
+        "declared_status": "O"
+      },
+      "message": "The GR global frontier must remain open at global scope."
+    }
+  ],
+  "prose_issues": [],
+  "supersession_effect": "none; pilot shell only"
+}

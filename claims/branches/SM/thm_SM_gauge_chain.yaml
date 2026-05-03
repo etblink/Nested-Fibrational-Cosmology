@@ -1,0 +1,30 @@
+body_file: text/branches/SM/thm_SM_gauge_chain.md
+book: SM
+canonical_xref:
+  canonical_label: SM Gauge Algebra + Uniqueness Chain [C]
+  canonical_section: SM §Gauge Algebra and Uniqueness
+  canonical_theorem: thm:SM-gauge-chain
+  cross_check: su(3)+su(2)+u(1) identified from collar-local Lie theory; inherits
+    YM [C]
+declared_status: C
+dependencies:
+  requires:
+  - thm:YM.7
+  - thm:YM.ENC
+  - thm:YM.GLOB
+discharges: []
+id: thm:SM.gauge-chain
+kind: theorem
+number: SM.gauge-chain
+proof_file: text/branches/SM/proof_thm_SM_gauge_chain.md
+scope:
+  certificate_scope: branch
+  domain: SM-branch
+  inherited_constraints:
+  - YM-Phase-A
+  - YM-K0-7
+  - YM-O-ENC
+  promotion_ceiling: C
+  regime: SM-super-sector
+title: SM Gauge Algebra and Uniqueness Chain
+track: branch

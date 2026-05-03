@@ -1,0 +1,22 @@
+body_file: text/spine/IV/thm_IV_ORA.md
+book: IV
+canonical_xref:
+  canonical_label: ORA — Overlap Route-Agreement Theorem [U]
+  canonical_section: Book IV §Source-Side Ladder
+  canonical_theorem: thm:ORA
+  cross_check: Two different enlargement paths from the same source Q give canonically
+    equivalent fiber data; the descent seed for the POT fibration
+declared_status: U
+dependencies:
+  requires:
+  - def:IV.POT-category
+id: thm:IV.ORA
+kind: theorem
+number: IV.T.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Overlap Route-Agreement Theorem (ORA)
+track: spine

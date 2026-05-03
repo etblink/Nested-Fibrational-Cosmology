@@ -1,0 +1,3 @@
+Book IV status: primarily unconditional. [U] results: sr:source-not-branch, all core definitions, thm:ORA, thm:CTM, thm:normalization, thm:AMCT, thm:completion-ladder, thm:universal-completion (= Thm. IV.5.1), thm:source-uniqueness, cor:descendants-factor, thm:terminal-source, thm:governing, cor:all-branches-through-U. [C]: thm:unified-emergence (conditional on K_0=7 + Phase-A + Books I-III).
+
+Book IV proves: U exists (universal completion), U is unique (certified uniqueness), every lawful realization factors through U (descendants factoring), U is a unified terminal source for all declared branches (terminal source theorem). Book IV does NOT prove: the value of K_0 (Book I), LS-2 (Book II), the validity of any specific branch endpoint (branch books).

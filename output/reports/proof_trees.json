@@ -1,0 +1,156 @@
+[
+  {
+    "branch": "GR",
+    "status_id": "status:GR",
+    "posture": "domain-bounded-cert-close",
+    "narrative": "GR closure chain reaches the declared domain endpoint; global curvature-subcriticality remains the only surviving frontier.",
+    "active_frontiers": [
+      {
+        "id": "ob:GR.global-subcriticality",
+        "title": "Global Curvature-Subcriticality / BF-9 Extension Frontier"
+      }
+    ],
+    "basis_ids": [
+      "thm:GR.domain",
+      "ob:GR.global-subcriticality"
+    ]
+  },
+  {
+    "branch": "YM",
+    "status_id": "status:YM",
+    "posture": "conditional-cert-close",
+    "narrative": "YM bridge stack establishes conditional closure at MSC-normalized scope; B3-A2 is the surviving residual obligation.",
+    "active_frontiers": [
+      {
+        "id": "ob:YM.B3.A2",
+        "title": "Simple A2 Gap Restriction Without SM Gauge Dependence"
+      }
+    ],
+    "basis_ids": [
+      "thm:YM.7",
+      "thm:YM.B1.bridge",
+      "thm:YM.B2.bridge",
+      "thm:YM.B3.bridge",
+      "ob:YM.B3.A2"
+    ]
+  },
+  {
+    "branch": "NS",
+    "status_id": "status:NS",
+    "posture": "domain-bounded-cert-close",
+    "narrative": "NS.6.1+NS.7.1 chain gives domain-bounded conditional CERT-CLOSE; Stage-3 global unconditional regularity (Clay) is the external frontier.",
+    "active_frontiers": [
+      {
+        "id": "front:NS.main",
+        "title": "NS Main Frontier"
+      }
+    ],
+    "basis_ids": [
+      "thm:NS.7.1",
+      "thm:NS.6.1",
+      "front:NS.main"
+    ]
+  },
+  {
+    "branch": "SM",
+    "status_id": "status:SM",
+    "posture": "intrinsic-structural-close",
+    "narrative": "SM internal obligations conditionally discharged; O-IDcont force upgrade blocks unconditional closure; inherited YM/GR scope limits apply.",
+    "active_frontiers": [
+      {
+        "id": "ob:SM.O-IDcont",
+        "title": "Continuum/Operator Identification Force Upgrade"
+      }
+    ],
+    "basis_ids": [
+      "thm:SM.18.1",
+      "ob:SM.O-IDcont"
+    ]
+  },
+  {
+    "branch": "SPEC",
+    "status_id": "status:SPEC",
+    "posture": "cert-close",
+    "narrative": "SPEC gauge-response spectroscopy endpoint achieved unconditionally at declared scope; no active SPEC-local frontier.",
+    "active_frontiers": [],
+    "basis_ids": [
+      "thm:SPEC.10.1"
+    ]
+  },
+  {
+    "branch": "SCC",
+    "status_id": "status:SCC",
+    "posture": "conditional-cert-close",
+    "narrative": "SCC MCS+UC+TSI packet conditionally establishes structural counterfactual capacity; no active SCC-local frontier.",
+    "active_frontiers": [],
+    "basis_ids": [
+      "thm:SCC.MCS",
+      "thm:SCC.UC",
+      "thm:SCC.TSI"
+    ]
+  },
+  {
+    "branch": "BIO",
+    "status_id": "status:BIO",
+    "posture": "conditional-cert-close",
+    "narrative": "BIO endpoint reached on nondegenerate C_Bio^nd; BND for full replicator class remains the active structural frontier.",
+    "active_frontiers": [
+      {
+        "id": "ob:BIO.BND-open",
+        "title": "Boundary Self-Organization (Full Replicator Class)"
+      }
+    ],
+    "basis_ids": [
+      "thm:BIO.END",
+      "ob:BIO.BND-open"
+    ]
+  },
+  {
+    "branch": "LING",
+    "status_id": "status:LING",
+    "posture": "conditional-cert-close",
+    "narrative": "LING contrast/recursion/context-response structure conditionally closed; reference invisibility/recovery is the active frontier.",
+    "active_frontiers": [
+      {
+        "id": "ob:LING.REF-INVIS-RECOV",
+        "title": "Reference Invisibility / Recovery Frontier"
+      }
+    ],
+    "basis_ids": [
+      "thm:LING.END",
+      "ob:LING.REF-INVIS-RECOV"
+    ]
+  },
+  {
+    "branch": "CRYST",
+    "status_id": "status:CRYST",
+    "posture": "conditional-cert-close",
+    "narrative": "CRYST diffraction-periodicity-symmetry endpoint conditionally achieved; phase problem remains the active frontier.",
+    "active_frontiers": [
+      {
+        "id": "ob:CRYST.phase-problem",
+        "title": "Crystallographic Phase Problem"
+      }
+    ],
+    "basis_ids": [
+      "thm:CRYST.END",
+      "ob:CRYST.phase-problem"
+    ]
+  },
+  {
+    "branch": "RH",
+    "status_id": "status:RH",
+    "posture": "cert-proj",
+    "narrative": "RH architecture constituted through RH1-RH3; S1-TRACE/DESCENT/COMP conditionally discharged; S1-ARC is the irreducible arithmetic frontier.",
+    "active_frontiers": [
+      {
+        "id": "ob:RH.S1-ARC",
+        "title": "S1-ARC \u2014 Prove Q[psi]>=0 from Arithmetic Structure of Xi (IRREDUCIBLE FRONTIER)"
+      }
+    ],
+    "basis_ids": [
+      "thm:RH.3",
+      "ob:RH.S1-ARC"
+    ]
+  }
+]

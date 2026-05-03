@@ -1,0 +1,25 @@
+body_file: text/branches/RH/ob_RH4.md
+book: RH
+canonical_xref:
+  canonical_label: RH4 — Operator Realization (scaling-flow candidate) [C]
+  canonical_section: RH §Six-Step Ladder
+  canonical_theorem: ob:RH4
+  cross_check: Option (ii) conditionally realized; full operator realization pending
+declared_status: C
+dependencies:
+  requires:
+  - thm:RH.3
+discharges: []
+id: ob:RH.4
+kind: obligation
+number: RH.4
+scope:
+  certificate_scope: conditional-scaling-flow
+  domain: RH-branch
+  inherited_constraints:
+  - Phase-A
+  - scaling-flow-candidate-Gsf
+  promotion_ceiling: C
+  regime: RH-scaling-flow
+title: RH4 — Operator Realization (Scaling-Flow Candidate)
+track: branch

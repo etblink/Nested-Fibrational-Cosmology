@@ -1,0 +1,25 @@
+body_file: text/branches/BIO/thm_BIO_MULTI_twocell.md
+book: BIO
+canonical_xref:
+  canonical_label: Minimal Two-Unit Assembly A2 [C]
+  canonical_section: BIO §Assembly
+  canonical_theorem: thm:BIO.MULTI2
+  cross_check: BIO analogue of SPEC caesium calibration; not full multicellular biology
+declared_status: C
+dependencies:
+  requires:
+  - thm:BIO.END
+discharges: []
+id: thm:BIO.MULTI.twocell
+kind: theorem
+number: BIO.MULTI.twocell
+proof_file: text/branches/BIO/proof_thm_BIO_MULTI_twocell.md
+scope:
+  certificate_scope: branch
+  domain: BIO-branch
+  inherited_constraints:
+  - two-cell-calibration-analogue
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: Minimal Two-Unit Assembly Theorem
+track: branch

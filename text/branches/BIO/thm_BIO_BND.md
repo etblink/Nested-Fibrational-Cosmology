@@ -1,0 +1,1 @@
+On the nondegenerate regime C_Bio^nd, boundary self-organization is sourced from the Book II capacity law: the interface structure B_Bio is the image of the bounded observational channel capacity bound applied to the replication-carrier boundary. No membrane biophysics, Lipschitz geometry, or cell-biology structural primitives are introduced.

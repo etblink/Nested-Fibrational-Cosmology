@@ -1,0 +1,37 @@
+{
+  "branch": "GR",
+  "canonical_ref_count": 14,
+  "generated_claim_count": 15,
+  "covered_count": 14,
+  "missing_count": 0,
+  "extra_count": 1,
+  "coverage_pct": 100.0,
+  "prose_score": 100.0,
+  "scope_score": 100.0,
+  "discharge_score": 100.0,
+  "l3_ready": true,
+  "covered": [
+    "ob:GR.EFE1",
+    "ob:GR.EFE2",
+    "ob:GR.EFE3",
+    "ob:GR.closure",
+    "ob:GR.compat",
+    "ob:GR.deform",
+    "ob:GR.global-subcriticality",
+    "ob:GR.real",
+    "status:GR",
+    "thm:GR.CP.1",
+    "thm:GR.compat",
+    "thm:GR.deformation",
+    "thm:GR.domain",
+    "thm:GR.realization"
+  ],
+  "missing": [],
+  "extra": [
+    "thm:VI.9.1"
+  ],
+  "prose_issues": [],
+  "scope_issues": [],
+  "discharge_issues": [],
+  "l3_gaps": []
+}

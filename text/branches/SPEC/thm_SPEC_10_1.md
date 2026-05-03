@@ -1,0 +1,1 @@
+On the gauge-response spectroscopy regime, the SPEC branch reaches its declared closure endpoint.

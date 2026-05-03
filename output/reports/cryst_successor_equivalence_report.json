@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "pilot_level": "L2",
+  "generated_claim_count": 3,
+  "generated_ids": [
+    "thm:CRYST.END",
+    "ob:CRYST.phase-problem",
+    "status:CRYST"
+  ],
+  "missing_expected": [],
+  "unexpected_claims": [],
+  "active_frontiers": [
+    "ob:CRYST.phase-problem"
+  ],
+  "posture": "conditional-cert-close",
+  "checks": [
+    {
+      "id": "cryst.successor.expected-claim-list",
+      "status": "pass",
+      "observed": {
+        "missing": []
+      },
+      "expected": "All CRYST_ORDER claims are present."
+    },
+    {
+      "id": "cryst.successor.posture",
+      "status": "pass",
+      "observed": "conditional-cert-close",
+      "expected": "conditional-cert-close"
+    },
+    {
+      "id": "cryst.successor.frontier-profile",
+      "status": "pass",
+      "observed": [
+        "ob:CRYST.phase-problem"
+      ],
+      "expected": [
+        "ob:CRYST.phase-problem"
+      ]
+    },
+    {
+      "id": "cryst.successor.no-unexpected-claims",
+      "status": "pass",
+      "observed": [],
+      "expected": "No branch-local CRYST records outside the pilot order."
+    },
+    {
+      "id": "cryst.successor.no-phase-problem-erasure",
+      "status": "pass",
+      "observed": {
+        "posture": "conditional-cert-close",
+        "active_frontiers": [
+          "ob:CRYST.phase-problem"
+        ]
+      },
+      "expected": "Conditional closure is preserved while the phase-problem frontier remains active."
+    }
+  ],
+  "supersession_effect": "none; pilot shell only"
+}

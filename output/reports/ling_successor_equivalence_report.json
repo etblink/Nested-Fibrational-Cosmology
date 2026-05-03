@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "pilot_level": "L2",
+  "generated_claim_count": 3,
+  "generated_ids": [
+    "thm:LING.END",
+    "ob:LING.REF-INVIS-RECOV",
+    "status:LING"
+  ],
+  "missing_expected": [],
+  "unexpected_claims": [],
+  "active_frontiers": [
+    "ob:LING.REF-INVIS-RECOV"
+  ],
+  "posture": "conditional-cert-close",
+  "checks": [
+    {
+      "id": "ling.successor.expected-claim-list",
+      "status": "pass",
+      "observed": {
+        "missing": []
+      },
+      "expected": "All LING_ORDER claims are present."
+    },
+    {
+      "id": "ling.successor.posture",
+      "status": "pass",
+      "observed": "conditional-cert-close",
+      "expected": "conditional-cert-close"
+    },
+    {
+      "id": "ling.successor.frontier-profile",
+      "status": "pass",
+      "observed": [
+        "ob:LING.REF-INVIS-RECOV"
+      ],
+      "expected": [
+        "ob:LING.REF-INVIS-RECOV"
+      ]
+    },
+    {
+      "id": "ling.successor.no-unexpected-claims",
+      "status": "pass",
+      "observed": [],
+      "expected": "No branch-local LING records outside the pilot order."
+    },
+    {
+      "id": "ling.successor.no-reference-frontier-erasure",
+      "status": "pass",
+      "observed": {
+        "posture": "conditional-cert-close",
+        "active_frontiers": [
+          "ob:LING.REF-INVIS-RECOV"
+        ]
+      },
+      "expected": "Conditional linguistic closure is preserved while the reference invisibility/recovery frontier remains active."
+    }
+  ],
+  "supersession_effect": "none; pilot shell only"
+}

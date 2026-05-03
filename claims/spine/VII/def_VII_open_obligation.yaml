@@ -1,0 +1,21 @@
+body_file: text/spine/VII/def_VII_open_obligation.md
+book: VII
+canonical_xref:
+  canonical_label: Open Obligation Definition
+  canonical_section: Book VII §Status and Dependency Law
+  canonical_theorem: def:open-obligation
+  cross_check: Named burden not yet discharged; mathematical object constraining future
+    work
+declared_status: D
+dependencies:
+  requires: []
+id: def:VII.open-obligation
+kind: definition
+number: VII.D.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Open Obligation
+track: spine

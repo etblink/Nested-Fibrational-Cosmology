@@ -1,0 +1,49 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/GR/thm_GR_realization.md
+book: GR
+canonical_xref:
+  canonical_book: NFC_GR_Branch.tex
+  canonical_label: GR realization theorem (ob:GR.real discharge)
+  canonical_section: GR Five-Stage Closure Chain §1
+  canonical_theorem: GR.Realization
+  cross_check: Corresponds to Stage 1 of the five-stage GR closure chain
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:VI.9.1
+discharges:
+- basis:
+  - thm:GR.realization
+  kind: full
+  scope_relation: preserved
+  target: ob:GR.real
+  transfer_basis: []
+  transfer_required: false
+id: thm:GR.realization
+imports:
+- items:
+  - thm:VI.9.1
+  source: book:VI
+kind: theorem
+number: GR.R1
+proof_file: text/branches/GR/proof_thm_GR_realization.md
+scope:
+  certificate_scope: domain-bounded
+  continuum_license: book-VI-certified
+  domain: GR-branch
+  inherited_constraints:
+  - realized-domain-D
+  promotion_ceiling: C
+  regime: declared-GR-target
+supersedes: []
+tags:
+- gr
+- realization
+title: Controlled Causal-Geometric Realization Theorem
+track: branch

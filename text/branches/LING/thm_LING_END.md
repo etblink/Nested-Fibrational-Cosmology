@@ -1,0 +1,1 @@
+LING reaches contrast, compositional, and context-response closure at conditional branch force.

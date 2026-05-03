@@ -1,0 +1,23 @@
+body_file: text/spine/I/lem_I_behavioral_canonical.md
+book: I
+canonical_xref:
+  canonical_label: Behavioral Congruence Canonicity [U]
+  canonical_section: Book I §Observational Structure
+  canonical_theorem: lem:behavioral-canonical
+  cross_check: Sigma_n is the finest admissibility-consistent quotient; no smuggling
+    at the equivalence level
+declared_status: U
+dependencies:
+  requires:
+  - def:I.obs-equiv
+  - def:I.admissible-class
+id: lem:I.behavioral-canonical
+kind: theorem
+number: I.L.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Behavioral Congruence Canonicity
+track: spine

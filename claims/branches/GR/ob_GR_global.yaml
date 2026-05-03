@@ -1,0 +1,40 @@
+aliases:
+- O-GR.extension
+- BF-9
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/GR/ob_GR_global.md
+book: GR
+canonical_xref:
+  canonical_book: NFC_GR_Branch.tex
+  canonical_label: Global Curvature-Subcriticality Frontier (BF-9)
+  canonical_section: GR Frontier Statement
+  canonical_theorem: ob:GR.BF9
+  cross_check: ACTIVE FRONTIER — prevents promotion from domain-bounded to global
+    CERT-CLOSE
+declared_status: O
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:GR.domain
+id: ob:GR.global-subcriticality
+kind: obligation
+number: GR.GLOBAL
+scope:
+  certificate_scope: global
+  continuum_license: book-VI-certified
+  domain: GR-branch
+  inherited_constraints:
+  - realized-domain-D
+  - BF-9-extension-required
+  promotion_ceiling: C
+  regime: declared-GR-target
+tags:
+- bf-9
+- global-extension
+- named-frontier
+title: Global Curvature-Subcriticality / BF-9 Extension Frontier
+track: branch

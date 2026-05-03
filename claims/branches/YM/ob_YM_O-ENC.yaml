@@ -1,0 +1,39 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/ob_YM_O_ENC.md
+book: YM
+canonical_xref:
+  canonical_label: YM Encoding Obligation
+  canonical_section: YM Obligations
+  canonical_theorem: ob:YM.O-ENC
+  cross_check: Discharged by thm:YM.ENC
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: ob:YM.O-ENC
+imports: []
+kind: obligation
+number: YM.O-ENC
+proof_file: null
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - encoding-compatibility
+  promotion_ceiling: C
+  regime: ym-bridge-stack
+supersedes: []
+tags:
+- discharged-conditionally
+- encoding-compatibility
+- obligation
+- ym
+title: Encoding Compatibility Obligation
+track: branch

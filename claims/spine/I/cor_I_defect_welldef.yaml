@@ -1,0 +1,23 @@
+body_file: text/spine/I/cor_I_defect_welldef.md
+book: I
+canonical_xref:
+  canonical_label: Defect Ledger Well-Definedness [U]
+  canonical_section: Book I §Governing Theorem
+  canonical_theorem: cor:defect-welldef
+  cross_check: D(chi) is a well-defined combinatorial invariant; additive; vanishes
+    after global stabilization stage
+declared_status: U
+dependencies:
+  requires:
+  - prop:I.defect-nonneg
+  - prop:I.ledger-additivity
+id: cor:I.defect-welldef
+kind: corollary
+number: I.C.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Defect Ledger Well-Definedness
+track: spine

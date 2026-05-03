@@ -1,0 +1,40 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/ob_YM_B2.md
+book: YM
+canonical_xref:
+  canonical_label: YM B2 Post-Program Obligation
+  canonical_section: YM Post-Program Obligations
+  canonical_theorem: ob:YM.B2
+  cross_check: Conditionally discharged by thm:YM.B2.bridge
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: ob:YM.B2
+imports: []
+kind: obligation
+number: YM.B2
+proof_file: null
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - domain-bridge
+  promotion_ceiling: C
+  regime: ym-postprogram
+supersedes: []
+tags:
+- discharged-conditionally
+- domain-bridge
+- obligation
+- postprogram
+- ym
+title: B2 Domain Bridge Residual
+track: branch

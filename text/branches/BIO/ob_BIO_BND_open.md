@@ -1,0 +1,1 @@
+The boundary obligation for the full replicator class — beyond the nondegenerate regime C_Bio^nd — remains open. Whether every replicator (including those at or near the nondegeneracy boundary) admits source-descended boundary self-organization is a genuine force question whose resolution may require either a new ingredient or a Transfer Theorem from Book VI.

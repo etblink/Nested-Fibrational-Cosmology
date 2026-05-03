@@ -1,0 +1,1 @@
+Pre-canonical derivations (from pre-canonical program documents, earlier drafts, or informal arguments) have no canonical force, even if mathematically correct. Canonical force requires re-derivation within the canonical framework, with explicit status declaration, dependency declaration, and scope declaration per sr:declare-status.

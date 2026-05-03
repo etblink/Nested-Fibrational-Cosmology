@@ -1,0 +1,23 @@
+body_file: text/spine/VI/thm_VI_no_smuggling.md
+book: VI
+canonical_xref:
+  canonical_label: Continuum No-Smuggling Theorem [U]
+  canonical_section: Book VI §No-Smuggling
+  canonical_theorem: thm:no-smuggling
+  cross_check: Any use of differential, integral, field, manifold, or variational
+    language outside a certified interface regime is non-canonical and has no theorem-level
+    force
+declared_status: U
+dependencies:
+  requires:
+  - thm:VI.continuum-bridge-schema
+id: thm:VI.no-smuggling
+kind: theorem
+number: VI.T.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Continuum No-Smuggling Theorem
+track: spine

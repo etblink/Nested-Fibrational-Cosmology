@@ -1,0 +1,22 @@
+body_file: text/spine/V/cor_V_open_branch_still_canonical.md
+book: V
+canonical_xref:
+  canonical_label: Open Branch Still Canonical [U]
+  canonical_section: Book V §UBLT Corollaries
+  canonical_theorem: cor:open-branch-still-canonical
+  cross_check: A branch with open obligations is still lawful under UBLT; open obligations
+    record honest incomplete claims, not illegitimacy
+declared_status: U
+dependencies:
+  requires:
+  - thm:V.UBLT
+id: cor:V.open-branch-still-canonical
+kind: corollary
+number: V.C.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Open Branch Still Canonical Corollary
+track: spine

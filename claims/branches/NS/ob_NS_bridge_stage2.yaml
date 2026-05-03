@@ -1,0 +1,20 @@
+body_file: text/branches/NS/ob_NS_bridge_stage2.md
+book: NS
+canonical_xref:
+  canonical_label: NS Bridge Stack Stage 2 Obligation [O] — partial discharge
+  canonical_section: NS §Bridge Stack
+  canonical_theorem: ob:NS.bridge2
+  cross_check: Partially discharged by thm:NS.6.1; stage boundary progress recorded
+declared_status: O
+dependencies:
+  requires:
+  - thm:VII.4.3
+id: ob:NS.bridge-stage2
+kind: obligation
+number: NS.bridge-stage2
+scope:
+  certificate_scope: branch-local
+  domain: NS-branch
+  regime: declared-NS-target
+title: NS Bridge Stack Stage 2 Obligation
+track: branch

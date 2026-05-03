@@ -1,0 +1,1 @@
+Every hereditary pathway of a certified element of C_Bio^nd is visible in the declared replication kernel \Phi{}_Bio. There is no undeclared hereditary channel: the carrier record is complete with respect to hereditary structure on the nondegenerate regime.

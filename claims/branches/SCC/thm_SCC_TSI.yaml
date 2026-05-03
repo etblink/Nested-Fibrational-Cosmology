@@ -1,0 +1,53 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/SCC/thm_SCC_TSI.md
+book: SCC
+canonical_xref:
+  canonical_label: SCC Total Structural Integration Theorem [C]
+  canonical_section: SCC §TSI
+  canonical_theorem: thm:SCC.TSI
+  cross_check: MCS+UC+TSI packet gives conditional CERT-CLOSE; no phenomenological
+    overclaim
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:SCC.UC
+  - thm:VII.6.4
+discharges:
+- basis:
+  - thm:SCC.TSI
+  kind: scoped
+  scope_relation: preserved
+  target: ob:SCC.TSI
+  transfer_basis: []
+  transfer_required: false
+id: thm:SCC.TSI
+imports:
+- items:
+  - thm:VII.6.4
+  source: book:VII
+kind: theorem
+number: SCC.TSI
+proof_file: text/branches/SCC/proof_thm_SCC_TSI.md
+scope:
+  certificate_scope: branch-wide
+  continuum_license: none
+  domain: SCC-branch
+  inherited_constraints:
+  - MCS
+  - UC
+  - TSI
+  promotion_ceiling: conditional-cert-close
+  regime: scc-branch-governance
+supersedes: []
+tags:
+- scc
+- conditional-cert-close
+- inference-basis
+title: SCC Target/Structural Identification Packet
+track: branch

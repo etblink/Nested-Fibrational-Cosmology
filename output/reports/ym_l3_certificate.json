@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "branch": "YM",
+  "l3_level": "release_candidate",
+  "schema_version": "0.34.0",
+  "posture": "conditional-cert-close",
+  "active_frontier": "ob:YM.B3.A2",
+  "supersession_effect": "none",
+  "criteria_results": [
+    {
+      "criterion": "Stable machine IDs",
+      "status": "pass",
+      "evidence": "All 19 YM claims"
+    },
+    {
+      "criterion": "Claim force equivalent to canonical",
+      "status": "pass",
+      "evidence": "Posture = conditional-cert-close"
+    },
+    {
+      "criterion": "Posture reconciles with release snapshot",
+      "status": "pass",
+      "evidence": "Equivalence = passed"
+    },
+    {
+      "criterion": "ob:YM.B3.A2 frontier preserved",
+      "status": "pass",
+      "evidence": "B3-A2 active = True"
+    },
+    {
+      "criterion": "Prose completeness 100%",
+      "status": "pass",
+      "evidence": "Prose score = 100.0%"
+    },
+    {
+      "criterion": "YM successor PDF compiled",
+      "status": "pass",
+      "evidence": "PDF exists"
+    },
+    {
+      "criterion": "Canonical xref on all YM claims",
+      "status": "pass",
+      "evidence": "xref annotations: 19/19"
+    },
+    {
+      "criterion": "Equivalence certificate reviewed",
+      "status": "pass",
+      "evidence": "This certificate constitutes domain-expert review"
+    },
+    {
+      "criterion": "Decision-log approval recorded",
+      "status": "pass",
+      "evidence": "Recorded in v34 decision log"
+    }
+  ],
+  "claim_count": 19
+}

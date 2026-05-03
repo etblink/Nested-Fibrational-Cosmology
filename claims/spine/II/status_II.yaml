@@ -1,0 +1,24 @@
+body_file: text/spine/II/status_II.md
+book: II
+canonical_xref:
+  canonical_label: Book II Status — two-layer structure
+  canonical_section: Book II §Boundary
+  canonical_theorem: status:II
+  cross_check: '[U] layer: DW-from-A2, TC-from-sr, covering-bound-K07, LS2-universal-K07,
+    PASS, binary-rigidity, local-nuclear. [C] layer: everything requiring LS-2 or
+    Phase-A. LS-2 is the principal conditional hinge.'
+declared_status: R
+dependencies:
+  requires:
+  - thm:II.governing
+  - thm:II.PASS
+id: status:II
+kind: remark
+number: II.status
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: R
+  regime: universal
+title: Book II Status — [U] layer and [C] layer
+track: spine

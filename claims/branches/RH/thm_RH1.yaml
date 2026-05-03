@@ -1,0 +1,23 @@
+body_file: text/branches/RH/thm_RH1.md
+book: RH
+canonical_xref:
+  canonical_label: RH1 — Canonical Object Xi [C]
+  canonical_section: RH §Six-Step Ladder
+  canonical_theorem: thm:RH1
+  cross_check: 'Branch target established: RH = reality condition on zeros of Xi'
+declared_status: C
+dependencies:
+  requires:
+  - thm:SCC.MCS
+discharges: []
+id: thm:RH.1
+kind: theorem
+number: RH.1
+proof_file: text/branches/RH/proof_thm_RH1.md
+scope:
+  certificate_scope: branch
+  domain: RH-branch
+  promotion_ceiling: C
+  regime: RH-canonical-object
+title: RH1 — Canonical Object Xi
+track: branch

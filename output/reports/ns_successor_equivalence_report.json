@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "pilot_level": "L2",
+  "generated_claim_count": 16,
+  "generated_ids": [
+    "thm:NS.stage0",
+    "thm:NS.stage1",
+    "thm:NS.stage2a",
+    "thm:NS.stage2b",
+    "thm:NS.leray",
+    "thm:NS.window-uniformity",
+    "thm:NS.6.1",
+    "thm:NS.Ren5",
+    "thm:NS.SB2-discharged",
+    "ob:NS.SB2",
+    "ob:NS.bridge-stage2",
+    "thm:NS.7.1",
+    "cor:NS.domain-bounded-cert-close",
+    "prop:NS.status",
+    "front:NS.main",
+    "status:NS"
+  ],
+  "missing_expected": [],
+  "unexpected_claims": [
+    "thm:VI.8.1"
+  ],
+  "active_frontiers": [
+    "ob:NS.bridge-stage2",
+    "front:NS.main"
+  ],
+  "posture": "domain-bounded-cert-close",
+  "stale_posture_corrected_from": "frontier-blocked",
+  "stale_posture_corrected": true,
+  "sb2_discharged": true,
+  "stage3_frontier_preserved": true,
+  "domain_bounded_hypotheses": [
+    "Phase-A",
+    "K_0=7",
+    "PASS",
+    "LS-2"
+  ],
+  "checks": [
+    {
+      "id": "ns.successor.expected-claim-list",
+      "status": "pass",
+      "observed": {
+        "missing": []
+      },
+      "expected": "All NS_ORDER claims present."
+    },
+    {
+      "id": "ns.successor.posture-correction",
+      "status": "pass",
+      "observed": "domain-bounded-cert-close",
+      "expected": "domain-bounded-cert-close (correcting stale frontier-blocked)"
+    },
+    {
+      "id": "ns.successor.frontier-profile",
+      "status": "pass",
+      "observed": [
+        "ob:NS.bridge-stage2",
+        "front:NS.main"
+      ],
+      "expected": [
+        "front:NS.main"
+      ]
+    },
+    {
+      "id": "ns.successor.sb2-discharged",
+      "status": "pass",
+      "observed": {
+        "declared": "C"
+      },
+      "expected": "ob:NS.SB2 must be [C] \u2014 conditionally discharged via SCT.6b."
+    },
+    {
+      "id": "ns.successor.stage3-frontier-preserved",
+      "status": "pass",
+      "observed": {
+        "declared": "O"
+      },
+      "expected": "front:NS.main must remain [O] \u2014 Stage-3 global unconditional is external frontier."
+    },
+    {
+      "id": "ns.successor.no-unexpected-claims",
+      "status": "warn",
+      "observed": [
+        "thm:VI.8.1"
+      ],
+      "expected": "No NS records outside pilot order."
+    },
+    {
+      "id": "ns.successor.no-clay-prize-claim",
+      "status": "pass",
+      "observed": "domain-bounded-cert-close",
+      "expected": "Must not claim unconditional global regularity or Clay Prize solution."
+    }
+  ],
+  "supersession_effect": "none; pilot shell only",
+  "governance_finding": "STALE-POSTURE CORRECTION: NS preamble says frontier-blocked but canonical NS branch book (prop:NS-status, thm:NS71, cor:NS-both-give-endpoint) establishes domain-bounded conditional CERT-CLOSE. Pilot corrects the governance repo posture and documents the NS preamble as requiring a canon maintenance update."
+}

@@ -1,0 +1,41 @@
+aliases:
+- O-GR.EFE3-old
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/GR/ob_GR_EFE3.md
+book: GR
+canonical_xref:
+  canonical_book: NFC_GR_Branch.tex
+  canonical_label: EFE Structural Compatibility 3 — observable family scope
+  canonical_section: GR EFE Structural Compatibility Obligations
+  canonical_theorem: ob:GR.EFE3
+  cross_check: Discharged by thm:GR.compat (full discharge)
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:GR.compat
+discharges: []
+id: ob:GR.EFE3
+imports: []
+kind: obligation
+number: GR.EFE3
+scope:
+  certificate_scope: domain-bounded
+  continuum_license: book-VI-certified
+  domain: GR-branch
+  inherited_constraints:
+  - realized-domain-D
+  promotion_ceiling: C
+  regime: declared-GR-target
+supersedes: []
+tags:
+- gr
+- efe
+- discharged
+- diffeomorphism-invariance
+title: EFE Diffeomorphism Invariance Obligation
+track: branch

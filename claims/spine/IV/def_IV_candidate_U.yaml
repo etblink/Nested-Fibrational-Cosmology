@@ -1,0 +1,22 @@
+body_file: text/spine/IV/def_IV_candidate_U.md
+book: IV
+canonical_xref:
+  canonical_label: Candidate Universal Source U = T/~_pres
+  canonical_section: Book IV §Universal Completion
+  canonical_theorem: def:candidate-U
+  cross_check: U = quotient of the total fiber T by presentation equivalence ~_pres;
+    the colimit of the persistent diagram D_pers
+declared_status: D
+dependencies:
+  requires:
+  - def:IV.POT-category
+id: def:IV.candidate-U
+kind: definition
+number: IV.D.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Candidate Universal Source U
+track: spine

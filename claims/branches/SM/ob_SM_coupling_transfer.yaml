@@ -1,0 +1,23 @@
+body_file: text/branches/SM/ob_SM_coupling_transfer.md
+book: SM
+canonical_xref:
+  canonical_label: O-SM.CouplingTransfer — Structural Seed [C]
+  canonical_section: SM §Open Obligations
+  canonical_theorem: O-SM.CoupTr
+  cross_check: Structural-seed scope only; numerical coupling derivation pending
+declared_status: C
+dependencies:
+  requires:
+  - thm:SM.gauge-chain
+  - thm:SM.harmonization-partial
+discharges: []
+id: ob:SM.coupling-transfer
+kind: obligation
+number: SM.coupling-transfer
+scope:
+  certificate_scope: structural-seed
+  domain: SM-branch
+  promotion_ceiling: C
+  regime: SM-super-sector
+title: Coupling Transfer (O-SM.CouplingTransfer)
+track: branch

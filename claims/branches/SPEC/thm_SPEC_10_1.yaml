@@ -1,0 +1,28 @@
+body_file: text/branches/SPEC/thm_SPEC_10_1.md
+book: SPEC
+canonical_xref:
+  canonical_label: SPEC Gauge-Response Spectroscopy Endpoint [U]
+  canonical_section: SPEC §Endpoint
+  canonical_theorem: thm:SPEC.10.1
+  cross_check: CERT-CLOSE on gauge-response regime; matter-rich spectroscopy gated
+    on SM.matter
+declared_status: U
+dependencies:
+  requires:
+  - thm:VII.6.4
+discharges:
+- basis:
+  - thm:SPEC.10.1
+  kind: full
+  scope_relation: preserved
+  target: status:SPEC
+  transfer_required: false
+id: thm:SPEC.10.1
+kind: theorem
+number: '10.1'
+scope:
+  certificate_scope: branch
+  domain: SPEC-branch
+  regime: gauge-response-spectroscopy
+title: SPEC Branch Status Proposition
+track: branch

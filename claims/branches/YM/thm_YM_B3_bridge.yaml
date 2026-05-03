@@ -1,0 +1,48 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/thm_YM_B3_bridge.md
+book: YM
+canonical_xref:
+  canonical_label: YM B3 Post-Program Bridge (Gauge Group Generalization)
+  canonical_section: YM Post-Program Bridges
+  canonical_theorem: YM.B3
+  cross_check: Conditionally discharges ob:YM.B3; B3-A2 remains residual
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:YM.7
+  - ob:YM.B3.A2
+discharges:
+- basis:
+  - thm:YM.B3.bridge
+  kind: scoped
+  scope_relation: restricted
+  target: ob:YM.B3
+  transfer_basis: []
+  transfer_required: false
+id: thm:YM.B3.bridge
+imports: []
+kind: theorem
+number: YM.B3
+proof_file: text/branches/YM/proof_thm_YM_B3_bridge.md
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - compact-simple-su3-bridge
+  - conditional-postprogram
+  promotion_ceiling: C
+  regime: ym-postprogram
+supersedes: []
+tags:
+- ym
+- postprogram
+- compact-simple-su3-bridge
+title: B3 Compact Simple SU(3) Conditional Packet
+track: branch

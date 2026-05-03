@@ -1,0 +1,21 @@
+body_file: text/spine/VII/def_VII_discharge_modes.md
+book: VII
+canonical_xref:
+  canonical_label: 'Discharge Mode Taxonomy — four modes: full, partial, scoped, superseding'
+  canonical_section: Book VII §Status and Dependency Law
+  canonical_theorem: def:discharge-modes
+  cross_check: ADDED in Session L+6 from governance synthesis note; partial discharge
+    records progress but does NOT close obligation
+declared_status: D
+dependencies:
+  requires: []
+id: def:VII.discharge-modes
+kind: definition
+number: VII.D.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Discharge Mode Taxonomy
+track: spine

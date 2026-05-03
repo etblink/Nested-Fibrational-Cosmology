@@ -1,0 +1,30 @@
+body_file: text/spine/VI/thm_VI_NS_4B_sobolev.md
+book: VI
+canonical_xref:
+  canonical_label: NS-4B Sobolev Embedding Surrogate [C] — conditional on K_0=7, Phase-A,
+    BUO, ACA
+  canonical_section: Book VI §NS-4B Sobolev Surrogate
+  canonical_theorem: thm:NS-4B-sobolev
+  cross_check: '||f||_inf <= C_S(s)||f||_{H^s} with table-computable C_S(s); the discrete-native
+    Sobolev surrogate for NS and YM branch books; cites Book III via ACA chain'
+declared_status: C
+dependencies:
+  requires:
+  - thm:VI.differential-legitimacy
+  - thm:I.K0-prime
+  - hyp:II.LS2
+id: thm:VI.NS-4B-sobolev
+kind: theorem
+number: VI.T.6
+scope:
+  certificate_scope: conditional-K07-PhaseA
+  domain: spine
+  inherited_constraints:
+  - K0-7
+  - Phase-A
+  - BUO-delta
+  - ACA-coercivity-chain
+  promotion_ceiling: C
+  regime: K07-PhaseA-BUO-ACA
+title: NS-4B Sobolev Embedding Surrogate
+track: spine

@@ -1,0 +1,1 @@
+By the SCC-RH kernel positivity equivalence (SCC Branch): RH iff K(t,u) positive-definite iff Q[psi] >= 0 for all SCC-admissible psi. The SCC-admissible probe space is therefore the natural Hilbert space for the RH kernel test. The space H_RH with the L^2 inner product from SCC-M4 is the candidate Hilbert-Polya space consistent with necessary conditions RH-N1 through RH-N5.

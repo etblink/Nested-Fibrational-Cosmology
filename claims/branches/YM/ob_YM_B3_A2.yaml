@@ -1,0 +1,41 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/ob_YM_B3_A2.md
+book: YM
+canonical_xref:
+  canonical_label: YM B3-A2 Residual Frontier (Simple A2 Gap Restriction)
+  canonical_section: YM Residual Frontier
+  canonical_theorem: ob:YM.B3.A2
+  cross_check: ACTIVE FRONTIER — prevents promotion to unconditional Clay-grade result
+declared_status: O
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: ob:YM.B3.A2
+imports: []
+kind: obligation
+number: YM.B3-A2
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - standalone-a2-gap
+  - simple-a2-gap-without-sm-gauge-algebra-dependence
+  promotion_ceiling: C
+  regime: ym-postprogram
+supersedes: []
+tags:
+- a2
+- live-frontier
+- obligation
+- postprogram
+- reserve
+- ym
+title: Simple A2 Gap Restriction Without SM Gauge Dependence
+track: branch

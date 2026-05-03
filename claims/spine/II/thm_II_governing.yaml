@@ -1,0 +1,28 @@
+body_file: text/spine/II/thm_II_governing.md
+book: II
+canonical_xref:
+  canonical_label: Boundary Stabilization Theorem [C] — Book II governing result
+  canonical_section: Book II §Governing Theorem
+  canonical_theorem: thm:governing (Book II)
+  cross_check: 'Under LS-2+Phase-A: stabilized local outcome determined by collar
+    data; multiplicity bounded by boundary capacity; capacity-exceeding regimes excluded'
+declared_status: C
+dependencies:
+  requires:
+  - thm:II.boundary-det
+  - thm:II.boundary-capacity
+  - thm:II.PASS
+id: thm:II.governing
+kind: theorem
+number: II.T.12
+scope:
+  certificate_scope: conditional-LS2-PhaseA
+  domain: spine
+  inherited_constraints:
+  - LS-2
+  - Phase-A
+  - K0-7
+  promotion_ceiling: C
+  regime: LS2-Phase-A
+title: Boundary Stabilization Theorem (Book II Governing)
+track: spine

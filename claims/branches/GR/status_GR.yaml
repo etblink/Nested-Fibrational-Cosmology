@@ -1,0 +1,44 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/GR/status_GR.md
+book: GR
+canonical_xref:
+  canonical_book: NFC_GR_Branch.tex
+  canonical_label: GR Branch Status Proposition — domain-bounded conditional CERT-CLOSE
+  canonical_section: GR Branch Status
+  canonical_theorem: prop:GR-status
+  cross_check: Machine-generated analogue of the canonical branch status proposition
+declared_posture: domain-bounded-cert-close
+declared_status: domain-bounded-cert-close
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - ob:GR.global-subcriticality
+  - thm:GR.CP.1
+  - thm:GR.domain
+  - thm:VII.6.4
+discharges: []
+id: status:GR
+imports: []
+kind: status_note
+number: GR.status
+scope:
+  certificate_scope: branch-wide
+  continuum_license: book-VI-certified
+  domain: GR-branch
+  inherited_constraints:
+  - realized-domain-D
+  promotion_ceiling: domain-bounded-cert-close
+  regime: gr-branch-governance
+supersedes: []
+tags:
+- domain-bounded-cert-close
+- governance
+- gr
+- posture
+title: GR Branch Posture Record
+track: branch

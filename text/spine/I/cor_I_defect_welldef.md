@@ -1,0 +1,1 @@
+The defect ledger D(chi) is a well-defined combinatorial invariant of survivor chains: it is non-negative (prop:I.defect-nonneg), additive under concatenation (prop:I.ledger-additivity), and vanishes on every survivor chain after the global stabilization stage. Well-definedness follows from the unconditional proofs of these three properties.

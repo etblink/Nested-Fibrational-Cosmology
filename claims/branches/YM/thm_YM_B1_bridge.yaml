@@ -1,0 +1,47 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/YM/thm_YM_B1_bridge.md
+book: YM
+canonical_xref:
+  canonical_label: YM B1 Post-Program Bridge (Classical vs Quantum)
+  canonical_section: YM Post-Program Bridges
+  canonical_theorem: YM.B1
+  cross_check: Conditionally discharges ob:YM.B1
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires:
+  - thm:YM.7
+discharges:
+- basis:
+  - thm:YM.B1.bridge
+  kind: scoped
+  scope_relation: restricted
+  target: ob:YM.B1
+  transfer_basis: []
+  transfer_required: false
+id: thm:YM.B1.bridge
+imports: []
+kind: theorem
+number: YM.B1
+proof_file: text/branches/YM/proof_thm_YM_B1_bridge.md
+scope:
+  certificate_scope: branch-local
+  continuum_license: book-VI-certified
+  domain: YM-branch
+  inherited_constraints:
+  - quantization-bridge
+  - conditional-postprogram
+  promotion_ceiling: C
+  regime: ym-postprogram
+supersedes: []
+tags:
+- ym
+- postprogram
+- quantization-bridge
+title: B1 Quantization Bridge Conditional Packet
+track: branch

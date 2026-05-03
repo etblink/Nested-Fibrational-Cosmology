@@ -1,0 +1,23 @@
+body_file: text/spine/II/thm_II_covering_bound_K07.md
+book: II
+canonical_xref:
+  canonical_label: Covering Bound for K_0=7 [U]
+  canonical_section: Book II §Packing and Phase Structure
+  canonical_theorem: thm:covering-bound-K07
+  cross_check: Phase-A demand is satisfiable for K_0=7; unconditional from K_0-prime
+    + phase structure
+declared_status: U
+dependencies:
+  requires:
+  - thm:I.K0-prime
+  - def:II.structural-phases
+id: thm:II.covering-bound-K07
+kind: theorem
+number: II.T.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Covering Bound for K_0=7 (Phase-A Demand)
+track: spine

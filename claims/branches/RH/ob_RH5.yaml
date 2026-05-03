@@ -1,0 +1,25 @@
+body_file: text/branches/RH/ob_RH5.md
+book: RH
+canonical_xref:
+  canonical_label: RH5 — Selection Exclusion (SCC support-rigidity) [C]
+  canonical_section: RH §Six-Step Ladder
+  canonical_theorem: ob:RH5
+  cross_check: Conditionally hardened; SCC support-rigidity provides structural exclusion
+declared_status: C
+dependencies:
+  requires:
+  - thm:RH.3
+  - thm:SCC.MCS
+discharges: []
+id: ob:RH.5
+kind: obligation
+number: RH.5
+scope:
+  certificate_scope: conditional-SCC-admissibility
+  domain: RH-branch
+  inherited_constraints:
+  - SCC-support-rigidity
+  promotion_ceiling: C
+  regime: RH-SCC-admissible
+title: RH5 — Selection Exclusion (SCC Support-Rigidity)
+track: branch

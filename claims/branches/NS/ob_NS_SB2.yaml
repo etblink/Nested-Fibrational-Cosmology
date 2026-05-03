@@ -1,0 +1,36 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/branches/NS/ob_NS_SB2.md
+book: NS
+canonical_xref:
+  canonical_label: Positive Reserve on the Safe Tail — CONDITIONALLY DISCHARGED [C]
+  canonical_section: NS §Obligations
+  canonical_theorem: ob:NS.SB2
+  cross_check: Discharged by thm:NS.SB2-discharged via SCT.6b
+declared_status: C
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: ob:NS.SB2
+imports: []
+kind: obligation
+number: NS.SB2
+scope:
+  certificate_scope: branch-local
+  continuum_license: pending
+  domain: NS-branch
+  inherited_constraints: []
+  promotion_ceiling: C
+  regime: declared-NS-target
+supersedes: []
+tags:
+- ns
+- safe-tail
+- frontier
+title: Positive Reserve on the Safe Tail
+track: branch

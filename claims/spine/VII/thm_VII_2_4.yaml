@@ -1,0 +1,37 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/spine/VII/thm_VII_2_4.md
+book: VII
+canonical_xref:
+  canonical_label: Scoped Certificate Rule [U]
+  canonical_section: Book VII §Scoped Certificates
+  canonical_theorem: thm:scoped-cert-rule
+  cross_check: A scoped certificate cannot be cited at wider scope without a transfer
+    theorem
+declared_status: U
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: thm:VII.2.4
+imports: []
+kind: theorem
+number: VII.2.4
+proof_file: text/spine/VII/proof_thm_VII_2_4.md
+scope:
+  certificate_scope: global
+  continuum_license: none
+  domain: spine
+  inherited_constraints: []
+  promotion_ceiling: U
+  regime: governance
+supersedes: []
+tags:
+- governance
+- scope
+title: Scoped Certificate Rule
+track: spine

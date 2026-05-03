@@ -1,0 +1,36 @@
+aliases: []
+audit:
+  active: true
+  canonical: true
+  retired: false
+body_file: text/spine/VI/thm_VI_governing.md
+book: VI
+canonical_xref:
+  canonical_label: Effective Continuum Legitimacy Theorem [C] = Thm. VI.9.1
+  canonical_section: Book VI §Governing Theorem
+  canonical_theorem: thm:governing (Book VI)
+  cross_check: Cited as Thm. VI.9.1 in GR Branch Book import list; licenses H^1_x-norm
+    and differential notation in NS/GR/YM
+declared_status: U
+dependencies:
+  excludes: []
+  optional: []
+  requires: []
+discharges: []
+id: thm:VI.9.1
+imports: []
+kind: theorem
+number: VI.9.1
+scope:
+  certificate_scope: global
+  continuum_license: none
+  domain: spine
+  inherited_constraints: []
+  promotion_ceiling: U
+  regime: continuum-interface
+supersedes: []
+tags:
+- continuum
+- bridge
+title: Effective Continuum Legitimacy Theorem (Thm. VI.9.1)
+track: spine

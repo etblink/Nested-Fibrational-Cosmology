@@ -1,0 +1,1 @@
+Global curvature-subcriticality remains the GR frontier beyond realized-domain closure.

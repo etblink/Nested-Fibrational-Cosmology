@@ -1,0 +1,26 @@
+body_file: text/spine/VII/thm_VII_governing.md
+book: VII
+canonical_xref:
+  canonical_label: Governing Theorem of Book VII [U] — Constitutional Framework
+  canonical_section: Book VII §Governing Theorem
+  canonical_theorem: thm:governing
+  cross_check: Combines status discipline + promotion law + frontier stability + import
+    discipline + extensibility; full constitutional framework
+declared_status: U
+dependencies:
+  requires:
+  - prop:VII.cite-declared-force
+  - thm:VII.2.4
+  - thm:VII.2.5
+  - thm:VII.4.3
+  - thm:VII.6.4
+id: thm:VII.governing
+kind: theorem
+number: VII.T.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Governing Theorem of Book VII
+track: spine

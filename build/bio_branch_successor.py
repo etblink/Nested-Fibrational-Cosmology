@@ -1,0 +1,457 @@
+"""
+build/bio_branch_successor.py — v29 BIO Branch-Successor Pilot
+
+Generates the BIO L2 branch-pilot governance packet.
+
+Key governance constraints preserved:
+  - status:BIO = conditional-cert-close
+  - Endpoint scoped to nondegenerate C_Bio^nd
+  - ob:BIO.BND-open (BND for full replicator class) remains ACTIVE and OPEN
+  - No claim of full-class biology cert-close
+  - No evolutionary closure claimed
+  - No biological primitives imported (no genes, cells, fitness, membrane biophysics)
+"""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any, Dict, List
+
+import yaml
+
+ROOT = Path(__file__).resolve().parents[1]
+CLAIMS_DIR = ROOT / "claims" / "branches" / "BIO"
+REPORTS = ROOT / "output" / "reports"
+TABLES = ROOT / "output" / "tables"
+TEX = ROOT / "output" / "tex"
+
+REPORTS.mkdir(parents=True, exist_ok=True)
+TABLES.mkdir(parents=True, exist_ok=True)
+TEX.mkdir(parents=True, exist_ok=True)
+
+# Ordered claim list for the BIO pilot packet:
+# obligations first (discharge chain), theorems, endpoint, minimal assembly, frontier, status
+BIO_ORDER = [
+    "ob:BIO.REP",
+    "ob:BIO.MET",
+    "ob:BIO.FID",
+    "ob:BIO.NC",
+    "ob:BIO.HER",
+    "ob:BIO.BND",
+    "thm:BIO.REP",
+    "thm:BIO.MET",
+    "thm:BIO.FID",
+    "thm:BIO.NC",
+    "thm:BIO.HER",
+    "thm:BIO.BND",
+    "thm:BIO.END",
+    "thm:BIO.MULTI.twocell",
+    "ob:BIO.BND-open",
+    "status:BIO",
+]
+
+# Governance invariants that must hold for the pilot to pass
+EXPECTED_POSTURE = "conditional-cert-close"
+EXPECTED_ACTIVE_FRONTIERS: List[str] = ["ob:BIO.BND-open"]
+MUST_NOT_CLAIM = [
+    "full-class-biology-cert-close",
+    "evolutionary-cert-close",
+]
+
+
+def load_yaml(path: Path) -> Dict[str, Any]:
+    if not path.exists():
+        return {}
+    with path.open("r", encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
+
+
+def load_json(path: Path) -> Dict[str, Any]:
+    if not path.exists():
+        return {}
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_bio_claims() -> Dict[str, Dict[str, Any]]:
+    claims: Dict[str, Dict[str, Any]] = {}
+    for path in sorted(CLAIMS_DIR.glob("*.yaml")):
+        data = load_yaml(path)
+        cid = data.get("id")
+        if cid:
+            data["_path"] = str(path.relative_to(ROOT))
+            claims[cid] = data
+    return claims
+
+
+def tex_escape(value: Any) -> str:
+    s = "" if value is None else str(value)
+    replacements = {
+        "\\": r"\textbackslash{}",
+        "&": r"\&",
+        "%": r"\%",
+        "$": r"\$",
+        "#": r"\#",
+        "_": r"\_",
+        "{": r"\{",
+        "}": r"\}",
+        "~": r"\textasciitilde{}",
+        "^": r"\textasciicircum{}",
+    }
+    return "".join(replacements.get(ch, ch) for ch in s)
+
+
+def md_to_tex(md: str) -> str:
+    """Conservative Markdown-to-TeX converter for pilot stubs."""
+    lines: List[str] = []
+    for raw in md.splitlines():
+        line = raw.strip()
+        if not line:
+            lines.append("")
+            continue
+        if line.startswith("# "):
+            lines.append(r"\paragraph{" + tex_escape(line[2:].strip()) + "}")
+        elif line.startswith("## "):
+            lines.append(r"\subparagraph{" + tex_escape(line[3:].strip()) + "}")
+        elif line.startswith("- "):
+            lines.append(r"\noindent\textbullet{} " + tex_escape(line[2:].strip()) + r"\\")
+        else:
+            lines.append(tex_escape(line))
+    return "\n".join(lines)
+
+
+def scope_summary(claim: Dict[str, Any]) -> str:
+    scope = claim.get("scope", {}) or {}
+    bits = []
+    for key in ["regime", "domain", "certificate_scope", "continuum_license", "promotion_ceiling"]:
+        val = scope.get(key)
+        if val:
+            bits.append(f"{key}={val}")
+    constraints = scope.get("inherited_constraints") or []
+    if constraints:
+        bits.append("constraints=" + ",".join(str(x) for x in constraints))
+    return "; ".join(bits) if bits else "scope not declared"
+
+
+def claim_env_name(kind: str) -> str:
+    if kind == "obligation":
+        return "nfcobligation"
+    if kind == "frontier":
+        return "nfcfrontier"
+    if kind == "status_note":
+        return "nfcstatusnote"
+    return "nfctheorem"
+
+
+def render_claim(claim: Dict[str, Any], computed: Dict[str, Any]) -> str:
+    cid = claim["id"]
+    kind = claim.get("kind", "")
+    env = claim_env_name(kind)
+    title = claim.get("title", cid)
+    declared = claim.get("declared_status", "")
+    effective = computed.get(cid, {}).get("effective_status", declared)
+
+    body_path = claim.get("body_file")
+    body = ""
+    if body_path:
+        p = ROOT / body_path
+        body = p.read_text(encoding="utf-8") if p.exists() else ""
+    proof_path = claim.get("proof_file")
+    proof = ""
+    if proof_path:
+        p = ROOT / proof_path
+        if p.exists():
+            proof = p.read_text(encoding="utf-8")
+
+    deps_raw = claim.get("dependencies", {})
+    deps = deps_raw.get("requires", []) if isinstance(deps_raw, dict) else deps_raw or []
+    discharges = claim.get("discharges", []) or []
+
+    parts = [
+        rf"\begin{{{env}}}{{{tex_escape(title)}}}",
+        rf"\textbf{{Machine ID.}} \texttt{{{tex_escape(cid)}}}\\",
+        rf"\textbf{{Declared status.}} {tex_escape(declared)}\quad \textbf{{Computed status.}} {tex_escape(effective)}\\",
+        rf"\textbf{{Scope.}} {tex_escape(scope_summary(claim))}",
+        "",
+        md_to_tex(body or "No body text supplied in pilot source."),
+    ]
+    if deps:
+        parts += ["", r"\medskip", r"\noindent\textit{Dependencies.} " + tex_escape(", ".join(deps))]
+    if discharges:
+        targets = [d.get("target", "") for d in discharges]
+        modes = [d.get("kind", "") for d in discharges]
+        discharge_strs = [f"{t} ({m})" for t, m in zip(targets, modes)]
+        parts += ["", r"\medskip", r"\noindent\textit{Discharge edges.} " + tex_escape(", ".join(discharge_strs))]
+    if proof:
+        parts += ["", r"\medskip", r"\noindent\textit{Proof stub.} " + md_to_tex(proof)]
+    parts.append(rf"\end{{{env}}}")
+    return "\n".join(parts)
+
+
+def render_tex(claims: Dict[str, Dict[str, Any]], computed: Dict[str, Any]) -> None:
+    rows = []
+    for cid in BIO_ORDER:
+        claim = claims.get(cid)
+        if not claim:
+            continue
+        rows.append([
+            cid,
+            claim.get("kind", ""),
+            claim.get("declared_status", ""),
+            computed.get(cid, {}).get("effective_status", claim.get("declared_status", "")),
+            claim.get("scope", {}).get("certificate_scope", ""),
+        ])
+
+    lines = [
+        r"\begin{longtable}{p{0.32\linewidth}p{0.18\linewidth}p{0.12\linewidth}p{0.15\linewidth}p{0.13\linewidth}}",
+        r"\caption{BIO successor-pilot claim catalog}\label{tab:bio-successor-claims}\\",
+        r"\textbf{ID} & \textbf{Kind} & \textbf{Declared} & \textbf{Computed} & \textbf{Scope}\\",
+        r"\hline",
+        r"\endfirsthead",
+        r"\textbf{ID} & \textbf{Kind} & \textbf{Declared} & \textbf{Computed} & \textbf{Scope}\\",
+        r"\hline",
+        r"\endhead",
+    ]
+    for row in rows:
+        lines.append(" & ".join(tex_escape(x) for x in row) + r"\\")
+    lines.append(r"\end{longtable}")
+    table = "\n".join(lines)
+
+    # Compute status info for posture summary
+    posture_computed = computed.get("status:BIO", {}).get("effective_status", "unknown")
+
+    body_parts = [
+        "% Auto-generated by build/bio_branch_successor.py. Do not edit by hand.",
+        r"\section*{BIO Branch Successor Pilot}",
+        r"\addcontentsline{toc}{section}{BIO Branch Successor Pilot}",
+        "",
+        r"This generated packet is an L2 branch-pilot shell for the Biology branch. "
+        r"It is not a supersession of the canonical BIO Branch Book. "
+        r"The pilot preserves the nondegenerate C\textsubscript{Bio}\textsuperscript{nd} endpoint scope "
+        r"without claiming evolutionary closure or full-class biology certification. "
+        r"The no-smuggling boundary is maintained: all structure derives from role carriers "
+        r"and source descendants; no biological primitives are imported as assumptions.",
+        "",
+        r"\subsection*{Pilot posture and boundary conditions}",
+        rf"Computed BIO posture: \textbf{{{tex_escape(posture_computed)}}}. "
+        r"The endpoint is scoped to the nondegenerate certified biological class "
+        r"$\mathcal{{C}}_{{\mathrm{{Bio}}}}^{{\mathrm{{nd}}}}$. "
+        r"The boundary obligation \texttt{{ob:BIO.BND-open}} (BND for the full replicator class) "
+        r"remains active and is intentionally preserved in this pilot. "
+        r"Evolutionary dynamics (ob:BIO.EVO) and multicellular organization (ob:BIO.MULTI) "
+        r"are downstream of the endpoint and are not claimed here.",
+        "",
+        r"\subsection*{No-smuggling invariant}",
+        r"The following primitives are \emph{not} imported in this pilot: "
+        r"genes, cells, fitness functions, thermodynamic entropy, membrane biophysics, "
+        r"Lipschitz geometry, or any biological vocabulary not derivable from "
+        r"role carriers and NFC source-descendant structure.",
+        "",
+        table,
+        "",
+        r"\subsection*{Generated claim shells}",
+    ]
+
+    for cid in BIO_ORDER:
+        claim = claims.get(cid)
+        if claim:
+            body_parts.append(render_claim(claim, computed))
+            body_parts.append("")
+
+    packet = "\n\n".join(body_parts)
+    (TEX / "bio_branch_successor.tex").write_text(packet + "\n", encoding="utf-8")
+
+    standalone = r"""\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\newenvironment{nfctheorem}[1]{\par\medskip\noindent\textbf{Theorem-like claim: #1}\par\smallskip}{\par\medskip}
+\newenvironment{nfcobligation}[1]{\par\medskip\noindent\textbf{Obligation: #1}\par\smallskip}{\par\medskip}
+\newenvironment{nfcfrontier}[1]{\par\medskip\noindent\textbf{Frontier: #1}\par\smallskip}{\par\medskip}
+\newenvironment{nfcstatusnote}[1]{\par\medskip\noindent\textbf{Status note: #1}\par\smallskip}{\par\medskip}
+\title{NFC BIO Branch Successor Pilot\\[0.5ex]\large v29 --- L2 Generated Shell}
+\author{Generated governance shell}
+\date{}
+\begin{document}
+\maketitle
+\tableofcontents
+\bigskip
+\noindent\textbf{Governance notice.} This is a machine-generated L2 branch-pilot shell.
+It is \emph{not} a supersession of the canonical NFC Biology Branch Book.
+Full supersession requires L5 gate passage per the NFC supersession policy.
+\vspace{1em}
+\input{bio_branch_successor.tex}
+\end{document}
+"""
+    (TEX / "bio_branch_successor_standalone.tex").write_text(standalone, encoding="utf-8")
+
+
+def write_equivalence_report(
+    claims: Dict[str, Dict[str, Any]], computed: Dict[str, Any]
+) -> Dict[str, Any]:
+    generated_ids = [cid for cid in BIO_ORDER if cid in claims]
+    missing_expected = [cid for cid in BIO_ORDER if cid not in claims]
+    unexpected = sorted(set(claims) - set(BIO_ORDER))
+
+    active_frontiers = [
+        cid for cid in generated_ids
+        if computed.get(cid, {}).get("effective_status",
+            claims[cid].get("declared_status")) == "O"
+    ]
+    posture = computed.get("status:BIO", {}).get("effective_status")
+
+    # Verify the endpoint is scoped (not full-class)
+    endpoint_claim = claims.get("thm:BIO.END", {})
+    endpoint_scope = (endpoint_claim.get("scope", {}) or {}).get("regime", "")
+    endpoint_scoped_correctly = "nondegenerate" in endpoint_scope
+
+    # Verify the BND-open frontier is present and open
+    bnd_open = claims.get("ob:BIO.BND-open", {})
+    bnd_open_declared = bnd_open.get("declared_status", "")
+    bnd_open_effective = computed.get("ob:BIO.BND-open", {}).get("effective_status", bnd_open_declared)
+    bnd_frontier_preserved = bnd_open_effective == "O" or bnd_open_declared == "O"
+
+    checks = [
+        {
+            "id": "bio.successor.expected-claim-list",
+            "status": "pass" if not missing_expected else "fail",
+            "observed": {"missing": missing_expected},
+            "expected": "All BIO_ORDER claims are present.",
+        },
+        {
+            "id": "bio.successor.posture",
+            "status": "pass" if posture == EXPECTED_POSTURE else "fail",
+            "observed": posture,
+            "expected": EXPECTED_POSTURE,
+        },
+        {
+            "id": "bio.successor.frontier-profile",
+            "status": "pass" if sorted(active_frontiers) == sorted(EXPECTED_ACTIVE_FRONTIERS) else "fail",
+            "observed": active_frontiers,
+            "expected": EXPECTED_ACTIVE_FRONTIERS,
+        },
+        {
+            "id": "bio.successor.no-unexpected-claims",
+            "status": "pass" if not unexpected else "warn",
+            "observed": unexpected,
+            "expected": "No branch-local BIO records outside the pilot order.",
+        },
+        {
+            "id": "bio.successor.endpoint-scoped-to-nd",
+            "status": "pass" if endpoint_scoped_correctly else "fail",
+            "observed": endpoint_scope,
+            "expected": "Endpoint regime must be scoped to nondegenerate C_Bio^nd, not full class.",
+        },
+        {
+            "id": "bio.successor.bnd-frontier-preserved",
+            "status": "pass" if bnd_frontier_preserved else "fail",
+            "observed": {"declared": bnd_open_declared, "effective": bnd_open_effective},
+            "expected": "ob:BIO.BND-open must remain open: BND for the full replicator class is a live frontier.",
+        },
+        {
+            "id": "bio.successor.no-evolutionary-cert-close",
+            "status": "pass" if posture == EXPECTED_POSTURE else "fail",
+            "observed": posture,
+            "expected": "Must not claim evolutionary-cert-close or full-class-biology-cert-close.",
+        },
+    ]
+
+    status = (
+        "passed"
+        if all(c["status"] in {"pass", "warn"} for c in checks)
+        and not any(c["status"] == "fail" for c in checks)
+        else "failed"
+    )
+
+    report = {
+        "status": status,
+        "pilot_level": "L2",
+        "generated_claim_count": len(generated_ids),
+        "generated_ids": generated_ids,
+        "missing_expected": missing_expected,
+        "unexpected_claims": unexpected,
+        "active_frontiers": active_frontiers,
+        "posture": posture,
+        "endpoint_scope": endpoint_scope,
+        "bnd_frontier_preserved": bnd_frontier_preserved,
+        "checks": checks,
+        "supersession_effect": "none; pilot shell only",
+        "no_smuggling_invariant": (
+            "No genes, cells, fitness functions, thermodynamic entropy, "
+            "membrane biophysics, Lipschitz geometry, or biological vocabulary "
+            "outside role-carrier framework."
+        ),
+    }
+
+    (REPORTS / "bio_successor_equivalence_report.json").write_text(
+        json.dumps(report, indent=2), encoding="utf-8"
+    )
+
+    lines = [
+        "# BIO Branch Successor Equivalence Report",
+        "",
+        f"**Status:** {status}",
+        f"**Pilot level:** L2",
+        f"**Generated claim count:** {len(generated_ids)}",
+        f"**Computed BIO posture:** `{posture}`",
+        f"**Endpoint scope:** `{endpoint_scope}`",
+        f"**Active frontiers:** {', '.join(f'`{x}`' for x in active_frontiers) or 'none'}",
+        f"**BND frontier preserved:** {bnd_frontier_preserved}",
+        "",
+        "## Checks",
+        "",
+        "| Check | Status | Observed | Expected |",
+        "|---|---|---|---|",
+    ]
+    for c in checks:
+        lines.append(
+            "| "
+            + " | ".join([
+                str(c["id"]),
+                str(c["status"]),
+                str(c.get("observed", "")).replace("|", "\\|"),
+                str(c.get("expected", "")).replace("|", "\\|"),
+            ])
+            + " |"
+        )
+    lines += [
+        "",
+        "## Governance boundary conditions",
+        "",
+        "- Endpoint is scoped to nondegenerate C_Bio^nd: **not full-class**",
+        "- ob:BIO.BND-open (BND for full replicator class) is preserved as an active frontier",
+        "- Evolutionary closure (ob:BIO.EVO) is **not** claimed",
+        "- No biological primitives imported outside role-carrier framework",
+        "",
+        "## Supersession effect",
+        "",
+        "None. This packet is a branch-successor pilot shell, not a replacement "
+        "for the canonical NFC Biology Branch Book.",
+    ]
+    (TABLES / "bio_successor_equivalence_report.md").write_text(
+        "\n".join(lines) + "\n", encoding="utf-8"
+    )
+    return report
+
+
+def main() -> int:
+    claims = load_bio_claims()
+    computed = load_json(REPORTS / "computed_statuses.json")
+    render_tex(claims, computed)
+    report = write_equivalence_report(claims, computed)
+    print(json.dumps({
+        "status": report["status"],
+        "generated_claim_count": report["generated_claim_count"],
+        "posture": report["posture"],
+        "active_frontiers": report["active_frontiers"],
+        "endpoint_scope": report["endpoint_scope"],
+        "bnd_frontier_preserved": report["bnd_frontier_preserved"],
+    }, indent=2))
+    return 0 if report["status"] == "passed" else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,21 @@
+body_file: text/spine/I/def_I_obs_equiv.md
+book: I
+canonical_xref:
+  canonical_label: Observational Equivalence omega~_n omega'
+  canonical_section: Book I §Observational Structure
+  canonical_theorem: def:obs-equiv
+  cross_check: omega ~_n omega' iff no test in T_n separates them
+declared_status: D
+dependencies:
+  requires:
+  - def:I.admissible-class
+id: def:I.obs-equiv
+kind: definition
+number: I.D.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Observational Equivalence
+track: spine

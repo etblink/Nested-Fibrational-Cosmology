@@ -1,0 +1,23 @@
+body_file: text/branches/BIO/ob_BIO_BND.md
+book: BIO
+canonical_xref:
+  canonical_label: Boundary Self-Organization (Nondegenerate Regime) [C]
+  canonical_section: BIO §Obligations
+  canonical_theorem: ob:BIO.BND
+  cross_check: SCOPED discharge; nondegenerate regime only; BND-open remains
+declared_status: C
+dependencies:
+  requires:
+  - thm:BIO.REP
+  - thm:VII.6.4
+discharges: []
+id: ob:BIO.BND
+kind: obligation
+number: BIO.BND
+scope:
+  certificate_scope: scoped-nondegenerate
+  domain: BIO-branch
+  promotion_ceiling: C
+  regime: nondegenerate-bio
+title: Boundary Self-Organization (Nondegenerate Regime)
+track: branch
