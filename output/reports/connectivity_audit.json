@@ -1,0 +1,340 @@
+{
+  "status": "passed",
+  "schema_version": "0.43.0",
+  "total_claims": 243,
+  "spine_records": 135,
+  "branch_records": 108,
+  "branch_to_spine_edges": 42,
+  "spine_to_spine_inter_book_edges": 25,
+  "backward_spine_edges": 0,
+  "dangling_deps": 0,
+  "status_inheritance_violations": 0,
+  "xref_completeness_pct": 100.0,
+  "errors": 0,
+  "warnings": 0,
+  "passes": [
+    {
+      "id": "pass1.citation-coverage",
+      "status": "pass",
+      "observed": "10/10 branches fully cited",
+      "expected": "All 10 branch status records must cite thm:V.UBLT and thm:VII.6.4",
+      "details": [
+        {
+          "branch": "BIO",
+          "status_id": "status:BIO",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "CRYST",
+          "status_id": "status:CRYST",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "GR",
+          "status_id": "status:GR",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "LING",
+          "status_id": "status:LING",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "NS",
+          "status_id": "status:NS",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "RH",
+          "status_id": "status:RH",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "SCC",
+          "status_id": "status:SCC",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "SM",
+          "status_id": "status:SM",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "SPEC",
+          "status_id": "status:SPEC",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "YM",
+          "status_id": "status:YM",
+          "missing": [],
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "pass2.reachability",
+      "status": "pass",
+      "observed": "10/10 branches fully reach spine",
+      "expected": "Every branch must transitively reach Books I-II-III-IV-V-VII (+ VI for GR/NS/YM/SM)",
+      "details": [
+        {
+          "branch": "BIO",
+          "books_reached": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "expected": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "CRYST",
+          "books_reached": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "expected": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "GR",
+          "books_reached": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII"
+          ],
+          "expected": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII"
+          ],
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "LING",
+          "books_reached": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "expected": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "NS",
+          "books_reached": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII"
+          ],
+          "expected": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII"
+          ],
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "RH",
+          "books_reached": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "expected": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "SCC",
+          "books_reached": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "expected": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "SM",
+          "books_reached": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII"
+          ],
+          "expected": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII"
+          ],
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "SPEC",
+          "books_reached": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "expected": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "missing": [],
+          "ok": true
+        },
+        {
+          "branch": "YM",
+          "books_reached": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII"
+          ],
+          "expected": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII"
+          ],
+          "missing": [],
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "pass3.status-inheritance",
+      "status": "pass",
+      "observed": "0 violations",
+      "expected": "No [U] claim may depend on a [C] or [O] claim",
+      "details": []
+    },
+    {
+      "id": "pass4.dangling-deps",
+      "status": "pass",
+      "observed": "0 dangling",
+      "expected": "All dep_ids must resolve to a known claim",
+      "details": []
+    },
+    {
+      "id": "pass5.edge-direction",
+      "status": "pass",
+      "observed": "0 backward",
+      "expected": "All spine\u2192spine inter-book edges must go to an earlier book number",
+      "details": []
+    },
+    {
+      "id": "pass6.xref-completeness",
+      "status": "pass",
+      "observed": "100.0% (135/135 spine records)",
+      "expected": ">= 90% of spine records have canonical_xref annotations",
+      "details": []
+    }
+  ],
+  "issues": []
+}

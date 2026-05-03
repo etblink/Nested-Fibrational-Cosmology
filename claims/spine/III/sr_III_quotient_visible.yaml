@@ -1,0 +1,21 @@
+body_file: text/spine/III/sr_III_quotient_visible.md
+book: III
+canonical_xref:
+  canonical_label: Quotient-Visible Standing Rule
+  canonical_section: Book III §Transfer Structure
+  canonical_theorem: sr:quotient-visible
+  cross_check: Persistent observables must be invariant under the observational quotient;
+    no raw token identities
+declared_status: D
+dependencies:
+  requires: []
+id: sr:III.quotient-visible
+kind: standing_rule
+number: III.SR.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Quotient-Visible Standing Rule
+track: spine

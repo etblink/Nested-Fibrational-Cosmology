@@ -1,8 +1,8 @@
 # Quality Gate Report
 
 **Status:** passed
-**Schema version:** 0.41.0
-**Claims:** 226
+**Schema version:** 0.43.0
+**Claims:** 243
 **Warnings:** 3
 **Errors:** 0
 **Release-diff changes:** 5
@@ -17,7 +17,7 @@
 | `gate.release_diff_basis` | error | **pass** | 0 | 0 | Every release-diff event must have an explicit basis note in the target release snapshot. |
 | `gate.regression_tests` | error | **pass** | 0 | 0 | Regression test failures must be zero. |
 | `gate.canon_import_packet` | error | **pass** | 0 | 0 | Canon-import TeX packet and import manifest must be generated. |
-| `gate.compile_verification` | error | **pass** | {'compile_status': 'passed', 'pdf_pages': 6, 'rendered_pages': 2, 'missing_outputs': []} | compiled PDF with at least one rendered page and no missing required outputs | Canon-import standalone TeX packet must compile to PDF and render successfully. |
+| `gate.compile_verification` | error | **pass** | {'compile_status': 'passed', 'pdf_pages': 7, 'rendered_pages': 2, 'missing_outputs': []} | compiled PDF with at least one rendered page and no missing required outputs | Canon-import standalone TeX packet must compile to PDF and render successfully. |
 | `gate.supersession_readiness_report` | error | **pass** | {'missing_outputs': [], 'l1_import_ready': True, 'l5_full_supersession_ready': False, 'approved_for_full_supersession': False} | readiness report generated with explicit import-ready and full-supersession-ready fields | Supersession readiness must be reported explicitly before any generated-corpus replacement work. |
 | `gate.gr_successor_pilot` | error | **pass** | {'equivalence_status': 'passed', 'compile_status': 'passed', 'missing_outputs': [], 'posture': 'domain-bounded-cert-close', 'active_frontiers': ['ob:GR.global-subcriticality']} | GR successor pilot artifacts generated, equivalence report passed, and standalone PDF compiled/rendered. | GR branch-successor pilot must be generated, equivalence-checked, and compile verified. |
 | `gate.ym_successor_pilot` | error | **pass** | {'equivalence_status': 'passed', 'compile_status': 'passed', 'missing_outputs': [], 'posture': 'conditional-cert-close', 'active_frontiers': ['ob:YM.B3.A2']} | YM successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, conditional posture preserved, and B3-A2 remains open. | YM branch-successor pilot must be generated, equivalence-checked, compile verified, and must not upgrade to unconditional Clay-grade closure. |
@@ -40,6 +40,8 @@
 | `gate.book_v_l4_pilot` | error | **pass** | {'status': 'passed', 'l4_level': 'spine_release_candidate', 'ublt_status': 'U', 'branch_projection': 'U', 'all_unconditional': True} | Book V L4: spine_RC, UBLT=[U], branch-projection=[U], all primary [U]. | Book V L4 spine pilot: UBLT and Prop.V.3.1 must be [U]; closes branch-spine dependency gap. |
 | `gate.book_iv_l4_pilot` | error | **pass** | {'status': 'passed', 'l4_level': 'spine_release_candidate', 'universal_completion': 'U', 'source_uniqueness': 'U', 'descendants_factor': 'U', 'full_chain': True} | Book IV L4: spine_RC, Thm.IV.5.1=[U], uniqueness=[U], descendants=[U], chain traceable. | Book IV L4: universal completion, uniqueness, and factoring must all be [U]; full chain traceable. |
 | `gate.book_vi_l4_pilot` | error | **pass** | {'status': 'passed', 'l4_level': 'spine_release_candidate', 'VI91_conditional': 'C', 'bridge_schema_U': 'U', 'no_smuggling_U': 'U', 'gap_closed': True} | Book VI L4: spine_RC, VI.9.1=[C], bridge=[U], no-smug=[U], gap closed. | Book VI L4: Thm.VI.9.1 must be [C]; bridge schema and no-smuggling must be [U]. |
+| `gate.book_iii_l4_pilot` | error | **pass** | {'status': 'passed', 'l4_level': 'spine_release_candidate', 'unified_coercive': 'U', 'ACA_chain': 'C', 'governing': 'U', 'all_7_books': True} | Book III L4: spine_RC, unified-coercive=[U], ACA=[C], governing=[U], all 7 books present. | Book III L4 (FINAL SPINE): unified coercive inequality [U]; ACA chain [C]; all 7 spine books present. |
+| `gate.connectivity_audit` | error | **pass** | {'status': 'passed', 'errors': 0, 'backward_edges': 0, 'dangling': 0, 'inheritance_violations': 0, 'branch_to_spine_edges': 42, 'xref_completeness': None} | Connectivity audit: 0 errors, 0 backward edges, 0 dangling, 0 inheritance violations. | Six-pass connectivity audit must pass: citation coverage, reachability, inheritance, deps, direction, xref. |
 | `gate.gr_l2_hardening` | error | **pass** | {'hardening_status': 'passed', 'failed_count': 0, 'missing_outputs': []} | GR L2 hardening report passed, no failed checks, and required prose-preservation outputs generated. | GR L2 successor pilot must pass hardening before further successor-corpus expansion. |
 | `gate.l2_pilot_comparison` | error | **pass** | {'status': 'passed', 'failed_count': 0, 'missing_outputs': []} | L2 GR/YM pilot comparison report passed with no failed checks. | Generated branch-successor pilots must preserve distinct closure regimes, open frontiers, and no-supersession status. |
 | `gate.l2_pilot_standard` | error | **pass** | {'status': 'passed', 'failed_count': 0, 'missing_outputs': []} | Every configured L2 branch-successor pilot satisfies the reusable L2 pilot standard. | Configured L2 pilot records must preserve equivalence, compile status, scoped posture, live frontier, and no-supersession semantics. |

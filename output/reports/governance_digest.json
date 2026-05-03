@@ -1,8 +1,8 @@
 {
-  "schema_version": "0.41.0",
+  "schema_version": "0.43.0",
   "build_status": "passed-with-warnings",
-  "claims_count": 226,
-  "computed_statuses": 226,
+  "claims_count": 243,
+  "computed_statuses": 243,
   "errors": 0,
   "warnings": 3,
   "info": 0,

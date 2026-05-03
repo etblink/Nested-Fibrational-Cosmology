@@ -6,9 +6,9 @@
 
 | Test | Status | Observed | Expected |
 |---|---:|---|---|
-| `regression.schema_version` | pass | `"0.41.0"` | `"0.41.0"` |
-| `regression.claims` | pass | `226` | `226` |
-| `regression.computed_statuses` | pass | `226` | `226` |
+| `regression.schema_version` | pass | `"0.43.0"` | `"0.43.0"` |
+| `regression.claims` | pass | `243` | `243` |
+| `regression.computed_statuses` | pass | `243` | `243` |
 | `regression.errors` | pass | `0` | `0` |
 | `regression.release_diff_changes` | pass | `5` | `5` |
 | `regression.release_diff_missing_basis` | pass | `0` | `0` |

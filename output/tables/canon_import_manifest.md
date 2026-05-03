@@ -1,6 +1,6 @@
 # Canon Import Manifest
 
-**Schema version:** 0.41.0
+**Schema version:** 0.43.0
 **Status:** generated
 
 ## Generated files
@@ -18,8 +18,8 @@
 
 | Table | Rows |
 |---|---:|
-| `branch_postures` | 16 |
+| `branch_postures` | 17 |
 | `active_open_items` | 10 |
 | `audit_issues` | 3 |
 | `release_diff_events` | 5 |
-| `quality_gates` | 33 |
+| `quality_gates` | 36 |

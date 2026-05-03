@@ -11,6 +11,7 @@ dependencies:
   requires:
   - def:V.branch-candidate
   - def:V.endpoint-datum
+  - cor:IV.descendants-factor
 id: prop:V.branch-projection
 kind: proposition
 number: V.3.1

@@ -13,6 +13,8 @@ dependencies:
   - prop:SM.intrinsic-closure
   - prop:SM.status-reconciliation
   - ob:SM.O-IDcont
+  - thm:V.UBLT
+  - thm:VII.6.4
 id: status:SM
 kind: status_note
 number: SM.status

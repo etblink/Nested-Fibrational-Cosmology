@@ -24,6 +24,11 @@ def:II.LAR & definition & II & D & D\\
 def:II.TC & definition & II & D & D\\
 def:II.collar & definition & II & D & D\\
 def:II.structural-phases & definition & II & D & D\\
+def:III.BUO & definition & III & D & D\\
+def:III.conserved-charges & definition & III & D & D\\
+def:III.persistent-obs & definition & III & D & D\\
+def:III.stability-functional & definition & III & D & D\\
+def:III.transfer-map & definition & III & D & D\\
 def:IV.POT-category & definition & IV & D & D\\
 def:IV.POT-object & definition & IV & D & D\\
 def:IV.candidate-U & definition & IV & D & D\\
@@ -46,6 +51,8 @@ front:NS.main & frontier & NS & O & O\\
 hyp:II.LS2 & obligation & II & C & C\\
 lem:I.behavioral-canonical & theorem & I & U & U\\
 lem:I.obs-equiv-equiv & theorem & I & U & U\\
+lem:III.charge-conservation & theorem & III & U & U\\
+lem:III.cheeger-from-BUO & theorem & III & C & C\\
 ob:BIO.BND & obligation & BIO & C & C\\
 ob:BIO.BND-open & frontier & BIO & O & O\\
 ob:BIO.FID & obligation & BIO & C & C\\
@@ -107,6 +114,9 @@ sr:I.cg-alphabet & standing\_rule & I & D & D\\
 sr:I.no-primitive & standing\_rule & I & D & D\\
 sr:I.no-smuggling & standing\_rule & I & D & D\\
 sr:II.no-local-smuggling & standing\_rule & II & D & D\\
+sr:III.balance-before-interpretation & standing\_rule & III & D & D\\
+sr:III.comparison-through-maps & standing\_rule & III & D & D\\
+sr:III.quotient-visible & standing\_rule & III & D & D\\
 sr:IV.source-not-branch & standing\_rule & IV & D & D\\
 sr:V.endpoint-visibility & standing\_rule & V & D & D\\
 sr:V.legitimacy-before-closure & standing\_rule & V & D & D\\
@@ -124,6 +134,7 @@ status:CRYST & status\_note & CRYST & conditional-cert-close & conditional-cert-
 status:GR & status\_note & GR & domain-bounded-cert-close & domain-bounded-cert-close\\
 status:I & remark & I & R & R\\
 status:II & remark & II & R & R\\
+status:III & remark & III & R & R\\
 status:IV & remark & IV & R & R\\
 status:LING & status\_note & LING & conditional-cert-close & conditional-cert-close\\
 status:NS & status\_note & NS & domain-bounded-cert-close & domain-bounded-cert-close\\
@@ -167,6 +178,12 @@ thm:II.covering-bound-K07 & theorem & II & U & U\\
 thm:II.governing & theorem & II & C & C\\
 thm:II.local-nuclear & theorem & II & U & U\\
 thm:II.ls2-from-conditions & theorem & II & C & C\\
+thm:III.ACA-chain & theorem & III & C & C\\
+thm:III.balance-composable & theorem & III & U & U\\
+thm:III.coercive-inequality & theorem & III & C & C\\
+thm:III.depth-sum & theorem & III & U & U\\
+thm:III.governing & theorem & III & U & U\\
+thm:III.unified-coercive & theorem & III & U & U\\
 thm:IV.AMCT & theorem & IV & U & U\\
 thm:IV.CTM & theorem & IV & U & U\\
 thm:IV.ORA & theorem & IV & U & U\\
@@ -206,8 +223,8 @@ thm:V.UBLT & theorem & V & U & U\\
 thm:V.collapse & theorem & V & U & U\\
 thm:V.diamond & theorem & V & U & U\\
 thm:V.screened-sector & theorem & V & C & C\\
-thm:VI.8.1 & theorem & VI & U & U\\
-thm:VI.9.1 & theorem & VI & U & U\\
+thm:VI.8.1 & theorem & VI & C & C\\
+thm:VI.9.1 & theorem & VI & C & C\\
 thm:VI.NS-4B-sobolev & theorem & VI & C & C\\
 thm:VI.T-partial-stability & theorem & VI & U & U\\
 thm:VI.continuum-bridge-schema & theorem & VI & U & U\\

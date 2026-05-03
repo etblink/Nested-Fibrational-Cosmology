@@ -1,8 +1,8 @@
 {
   "status": "passed",
   "context": {
-    "schema_version": "0.41.0",
-    "claims_count": 226,
+    "schema_version": "0.43.0",
+    "claims_count": 243,
     "warnings": 3,
     "errors": 0,
     "active_open_items": [
@@ -87,7 +87,7 @@
       "severity": "error",
       "observed": {
         "compile_status": "passed",
-        "pdf_pages": 6,
+        "pdf_pages": 7,
         "rendered_pages": 2,
         "missing_outputs": []
       },
@@ -450,6 +450,39 @@
       },
       "expected": "Book VI L4: spine_RC, VI.9.1=[C], bridge=[U], no-smug=[U], gap closed.",
       "message": "Book VI L4: Thm.VI.9.1 must be [C]; bridge schema and no-smuggling must be [U].",
+      "details": []
+    },
+    {
+      "id": "gate.book_iii_l4_pilot",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "l4_level": "spine_release_candidate",
+        "unified_coercive": "U",
+        "ACA_chain": "C",
+        "governing": "U",
+        "all_7_books": true
+      },
+      "expected": "Book III L4: spine_RC, unified-coercive=[U], ACA=[C], governing=[U], all 7 books present.",
+      "message": "Book III L4 (FINAL SPINE): unified coercive inequality [U]; ACA chain [C]; all 7 spine books present.",
+      "details": []
+    },
+    {
+      "id": "gate.connectivity_audit",
+      "status": "pass",
+      "severity": "error",
+      "observed": {
+        "status": "passed",
+        "errors": 0,
+        "backward_edges": 0,
+        "dangling": 0,
+        "inheritance_violations": 0,
+        "branch_to_spine_edges": 42,
+        "xref_completeness": null
+      },
+      "expected": "Connectivity audit: 0 errors, 0 backward edges, 0 dangling, 0 inheritance violations.",
+      "message": "Six-pass connectivity audit must pass: citation coverage, reachability, inheritance, deps, direction, xref.",
       "details": []
     },
     {

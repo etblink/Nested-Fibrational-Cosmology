@@ -1,0 +1,25 @@
+body_file: text/spine/III/thm_III_governing.md
+book: III
+canonical_xref:
+  canonical_label: Observational Transfer Theorem [U] — Book III Governing
+  canonical_section: Book III §Governing Theorem
+  canonical_theorem: thm:governing (Book III)
+  cross_check: 'Four-part governing theorem: (a) persistent obs well-defined; (b)
+    transfer-compatible families define lawful comparison structure; (c) unified coercive-transport
+    inequality; (d) OT arena as precursor to POT category (Book IV)'
+declared_status: U
+dependencies:
+  requires:
+  - thm:III.unified-coercive
+  - thm:III.balance-composable
+  - thm:III.depth-sum
+id: thm:III.governing
+kind: theorem
+number: III.T.6
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Observational Transfer Theorem of the Spine (Book III Governing)
+track: spine

@@ -21,6 +21,7 @@ dependencies:
   - thm:GR.CP.1
   - thm:GR.domain
   - thm:VII.6.4
+  - thm:V.UBLT
 discharges: []
 id: status:GR
 imports: []

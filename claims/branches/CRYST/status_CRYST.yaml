@@ -12,6 +12,8 @@ dependencies:
   requires:
   - thm:CRYST.END
   - ob:CRYST.phase-problem
+  - thm:V.UBLT
+  - thm:VII.6.4
 id: status:CRYST
 kind: status_note
 number: CRYST.status

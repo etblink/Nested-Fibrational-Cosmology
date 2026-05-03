@@ -1,0 +1,23 @@
+body_file: text/spine/III/def_III_conserved_charges.md
+book: III
+canonical_xref:
+  canonical_label: Conserved Charges — quantities stable under transfer maps
+  canonical_section: Book III §Charges and Cheeger
+  canonical_theorem: def:conserved-charges
+  cross_check: Persistent observables that are exactly preserved (not just approximately)
+    under all admissible transfer maps; the canonical notion of a conservation law
+    in Book III
+declared_status: D
+dependencies:
+  requires:
+  - def:III.persistent-obs
+id: def:III.conserved-charges
+kind: definition
+number: III.D.5
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Conserved Charges
+track: spine

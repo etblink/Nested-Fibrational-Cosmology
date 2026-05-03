@@ -379,7 +379,7 @@
     ]
   },
   "thm:VI.9.1": {
-    "effective_status": "U",
+    "effective_status": "C",
     "source": "declared",
     "reason": "No stronger inference applied.",
     "basis": [],
@@ -580,7 +580,7 @@
     ]
   },
   "thm:VI.8.1": {
-    "effective_status": "U",
+    "effective_status": "C",
     "source": "declared",
     "reason": "No stronger inference applied.",
     "basis": [],
@@ -1564,6 +1564,159 @@
   },
   "thm:II.ls2-from-conditions": {
     "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:III.BUO": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:III.conserved-charges": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:III.persistent-obs": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:III.stability-functional": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "def:III.transfer-map": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "lem:III.charge-conservation": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "lem:III.cheeger-from-BUO": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:III.balance-before-interpretation": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:III.comparison-through-maps": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "sr:III.quotient-visible": {
+    "effective_status": "D",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "status:III": {
+    "effective_status": "R",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:III.ACA-chain": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:III.balance-composable": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:III.coercive-inequality": {
+    "effective_status": "C",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:III.depth-sum": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:III.governing": {
+    "effective_status": "U",
+    "source": "declared",
+    "reason": "No stronger inference applied.",
+    "basis": [],
+    "trace_steps": [
+      "Declared status/posture used as the initial effective value."
+    ]
+  },
+  "thm:III.unified-coercive": {
+    "effective_status": "U",
     "source": "declared",
     "reason": "No stronger inference applied.",
     "basis": [],

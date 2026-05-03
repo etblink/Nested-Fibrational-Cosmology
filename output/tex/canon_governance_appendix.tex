@@ -14,9 +14,9 @@ for canon import, not as a replacement for theorem prose.
 
 
 
-\paragraph{Schema.} Version 0.41.0.
+\paragraph{Schema.} Version 0.43.0.
 
-\paragraph{Build.} Claims: 226; computed statuses: 226; errors: 0; warnings: 3.
+\paragraph{Build.} Claims: 243; computed statuses: 243; errors: 0; warnings: 3.
 
 
 
@@ -33,6 +33,7 @@ CRYST & conditional-cert-close & conditional-cert-close & conditional-cert-close
 GR & domain-bounded-cert-close & domain-bounded-cert-close & domain-bounded-cert-close & match\\
 I & R & R &  & computed\\
 II & R & R &  & computed\\
+III & R & R &  & computed\\
 IV & R & R &  & computed\\
 LING & conditional-cert-close & conditional-cert-close & conditional-cert-close & match\\
 NS & domain-bounded-cert-close & domain-bounded-cert-close & frontier-blocked & mismatch\\
@@ -117,7 +118,7 @@ gate.active\_frontier\_trace & error & pass & 0 & 0\\
 gate.release\_diff\_basis & error & pass & 0 & 0\\
 gate.regression\_tests & error & pass & 0 & 0\\
 gate.canon\_import\_packet & error & pass & 0 & 0\\
-gate.compile\_verification & error & pass & \{'compile\_status': 'passed', 'pdf\_pages': 6, 'rendered\_pages': 2, 'missing\_outputs': []\} & compiled PDF with at least one rendered page and no missing required outputs\\
+gate.compile\_verification & error & pass & \{'compile\_status': 'passed', 'pdf\_pages': 7, 'rendered\_pages': 2, 'missing\_outputs': []\} & compiled PDF with at least one rendered page and no missing required outputs\\
 gate.supersession\_readiness\_report & error & pass & \{'missing\_outputs': [], 'l1\_import\_ready': True, 'l5\_full\_supersession\_ready': False, 'approved\_for\_full\_supersession': False\} & readiness report generated with explicit import-ready and full-supersession-ready fields\\
 gate.gr\_successor\_pilot & error & pass & \{'equivalence\_status': 'passed', 'compile\_status': 'passed', 'missing\_outputs': [], 'posture': 'domain-bounded-cert-close', 'active\_frontiers': ['ob:GR.global-subcriticality']\} & GR successor pilot artifacts generated, equivalence report passed, and standalone PDF compiled/rendered.\\
 gate.ym\_successor\_pilot & error & pass & \{'equivalence\_status': 'passed', 'compile\_status': 'passed', 'missing\_outputs': [], 'posture': 'conditional-cert-close', 'active\_frontiers': ['ob:YM.B3.A2']\} & YM successor pilot artifacts generated, equivalence report passed, standalone PDF compiled/rendered, conditional posture preserved, and B3-A2 remains open.\\
@@ -139,6 +140,9 @@ gate.book\_i\_l4\_pilot & error & pass & \{'status': 'passed', 'l4\_level': 'spi
 gate.book\_ii\_l4\_pilot & error & pass & \{'status': 'passed', 'l4\_level': 'spine\_release\_candidate', 'ls2\_status': 'C', 'ls2\_universal': 'U', 'pass\_status': 'U', 'sct6b\_present': True\} & Book II L4: spine\_RC, LS-2=[C], ls2-universal=[U], PASS=[U], SCT.6b present.\\
 gate.book\_v\_l4\_pilot & error & pass & \{'status': 'passed', 'l4\_level': 'spine\_release\_candidate', 'ublt\_status': 'U', 'branch\_projection': 'U', 'all\_unconditional': True\} & Book V L4: spine\_RC, UBLT=[U], branch-projection=[U], all primary [U].\\
 gate.book\_iv\_l4\_pilot & error & pass & \{'status': 'passed', 'l4\_level': 'spine\_release\_candidate', 'universal\_completion': 'U', 'source\_uniqueness': 'U', 'descendants\_factor': 'U', 'full\_chain': True\} & Book IV L4: spine\_RC, Thm.IV.5.1=[U], uniqueness=[U], descendants=[U], chain traceable.\\
+gate.book\_vi\_l4\_pilot & error & pass & \{'status': 'passed', 'l4\_level': 'spine\_release\_candidate', 'VI91\_conditional': 'C', 'bridge\_schema\_U': 'U', 'no\_smuggling\_U': 'U', 'gap\_closed': True\} & Book VI L4: spine\_RC, VI.9.1=[C], bridge=[U], no-smug=[U], gap closed.\\
+gate.book\_iii\_l4\_pilot & error & pass & \{'status': 'passed', 'l4\_level': 'spine\_release\_candidate', 'unified\_coercive': 'U', 'ACA\_chain': 'C', 'governing': 'U', 'all\_7\_books': True\} & Book III L4: spine\_RC, unified-coercive=[U], ACA=[C], governing=[U], all 7 books present.\\
+gate.connectivity\_audit & error & fail & \{'status': 'passed', 'errors': 0, 'backward\_edges': 0, 'dangling': None, 'inheritance\_violations': 0, 'branch\_to\_spine\_edges': 42, 'xref\_completeness': None\} & Connectivity audit: 0 errors, 0 backward edges, 0 dangling, 0 inheritance violations.\\
 gate.gr\_l2\_hardening & error & pass & \{'hardening\_status': 'passed', 'failed\_count': 0, 'missing\_outputs': []\} & GR L2 hardening report passed, no failed checks, and required prose-preservation outputs generated.\\
 gate.l2\_pilot\_comparison & error & pass & \{'status': 'passed', 'failed\_count': 0, 'missing\_outputs': []\} & L2 GR/YM pilot comparison report passed with no failed checks.\\
 gate.l2\_pilot\_standard & error & pass & \{'status': 'passed', 'failed\_count': 0, 'missing\_outputs': []\} & Every configured L2 branch-successor pilot satisfies the reusable L2 pilot standard.\\

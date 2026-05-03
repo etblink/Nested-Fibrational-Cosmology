@@ -11,6 +11,7 @@ declared_status: conditional-cert-close
 dependencies:
   requires:
   - thm:VII.6.4
+  - thm:V.UBLT
 id: status:SCC
 kind: status_note
 number: SCC.status

@@ -1,0 +1,22 @@
+body_file: text/spine/III/def_III_transfer_map.md
+book: III
+canonical_xref:
+  canonical_label: Transfer Map — licensed cross-context comparison morphism
+  canonical_section: Book III §Transfer Structure
+  canonical_theorem: def:transfer-map
+  cross_check: A structure-preserving map between persistent observables across different
+    regimes; must be certified by a compatibility declaration
+declared_status: D
+dependencies:
+  requires:
+  - def:III.persistent-obs
+id: def:III.transfer-map
+kind: definition
+number: III.D.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Transfer Map
+track: spine

@@ -10,6 +10,8 @@ dependencies:
   requires:
   - thm:LING.END
   - ob:LING.REF-INVIS-RECOV
+  - thm:V.UBLT
+  - thm:VII.6.4
 id: status:LING
 kind: status_note
 number: LING.status

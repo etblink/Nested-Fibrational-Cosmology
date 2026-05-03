@@ -1,0 +1,23 @@
+body_file: text/spine/III/lem_III_charge_conservation.md
+book: III
+canonical_xref:
+  canonical_label: Charge Conservation Lemma [U]
+  canonical_section: Book III §Charges and Cheeger
+  canonical_theorem: lem:charge-conservation
+  cross_check: Conserved charges are exactly preserved under admissible transfer maps;
+    no drift under the coercive-transport flow
+declared_status: U
+dependencies:
+  requires:
+  - def:III.conserved-charges
+  - thm:III.unified-coercive
+id: lem:III.charge-conservation
+kind: theorem
+number: III.L.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Charge Conservation Lemma
+track: spine

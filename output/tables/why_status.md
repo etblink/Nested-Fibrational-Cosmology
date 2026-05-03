@@ -180,6 +180,51 @@
   - Declared status/posture used as the initial effective value.
 - **Reason:** No stronger inference applied.
 
+## `def:III.BUO`
+
+- **Effective status/posture:** `D`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `def:III.conserved-charges`
+
+- **Effective status/posture:** `D`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `def:III.persistent-obs`
+
+- **Effective status/posture:** `D`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `def:III.stability-functional`
+
+- **Effective status/posture:** `D`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `def:III.transfer-map`
+
+- **Effective status/posture:** `D`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
 ## `def:IV.POT-category`
 
 - **Effective status/posture:** `D`
@@ -372,6 +417,24 @@
 ## `lem:I.obs-equiv-equiv`
 
 - **Effective status/posture:** `U`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `lem:III.charge-conservation`
+
+- **Effective status/posture:** `U`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `lem:III.cheeger-from-BUO`
+
+- **Effective status/posture:** `C`
 - **Source:** `declared`
 - **Basis:** _none_
 - **Trace:**
@@ -1017,6 +1080,33 @@
   - Declared status/posture used as the initial effective value.
 - **Reason:** No stronger inference applied.
 
+## `sr:III.balance-before-interpretation`
+
+- **Effective status/posture:** `D`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `sr:III.comparison-through-maps`
+
+- **Effective status/posture:** `D`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `sr:III.quotient-visible`
+
+- **Effective status/posture:** `D`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
 ## `sr:IV.source-not-branch`
 
 - **Effective status/posture:** `D`
@@ -1168,6 +1258,15 @@
 - **Reason:** No stronger inference applied.
 
 ## `status:II`
+
+- **Effective status/posture:** `R`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `status:III`
 
 - **Effective status/posture:** `R`
 - **Source:** `declared`
@@ -1577,6 +1676,60 @@
   - Declared status/posture used as the initial effective value.
 - **Reason:** No stronger inference applied.
 
+## `thm:III.ACA-chain`
+
+- **Effective status/posture:** `C`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `thm:III.balance-composable`
+
+- **Effective status/posture:** `U`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `thm:III.coercive-inequality`
+
+- **Effective status/posture:** `C`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `thm:III.depth-sum`
+
+- **Effective status/posture:** `U`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `thm:III.governing`
+
+- **Effective status/posture:** `U`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
+## `thm:III.unified-coercive`
+
+- **Effective status/posture:** `U`
+- **Source:** `declared`
+- **Basis:** _none_
+- **Trace:**
+  - Declared status/posture used as the initial effective value.
+- **Reason:** No stronger inference applied.
+
 ## `thm:IV.AMCT`
 
 - **Effective status/posture:** `U`
@@ -1930,7 +2083,7 @@
 
 ## `thm:VI.8.1`
 
-- **Effective status/posture:** `U`
+- **Effective status/posture:** `C`
 - **Source:** `declared`
 - **Basis:** _none_
 - **Trace:**
@@ -1939,7 +2092,7 @@
 
 ## `thm:VI.9.1`
 
-- **Effective status/posture:** `U`
+- **Effective status/posture:** `C`
 - **Source:** `declared`
 - **Basis:** _none_
 - **Trace:**

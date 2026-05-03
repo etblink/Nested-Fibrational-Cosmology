@@ -10,6 +10,7 @@ declared_status: D
 dependencies:
   requires:
   - def:V.branch-candidate
+  - thm:IV.universal-completion
 id: def:V.endpoint-datum
 kind: definition
 number: V.D.2

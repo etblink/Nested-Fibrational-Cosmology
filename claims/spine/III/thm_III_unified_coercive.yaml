@@ -1,0 +1,24 @@
+body_file: text/spine/III/thm_III_unified_coercive.md
+book: III
+canonical_xref:
+  canonical_label: Unified Coercive-Transport Inequality [U] — three-source decomposition
+  canonical_section: Book III §Unified Coercive-Transport Inequality
+  canonical_theorem: thm:unified-coercive
+  cross_check: C_{n+1} <= Theta_n * C_n + E_n + B_n; load-bearing core of Book III;
+    branch-agnostic; depends only on Book I defect ledger and Book II LS-2
+declared_status: U
+dependencies:
+  requires:
+  - def:III.stability-functional
+  - def:I.defect-ledger
+  - def:II.collar
+id: thm:III.unified-coercive
+kind: theorem
+number: III.T.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Unified Coercive-Transport Inequality
+track: spine

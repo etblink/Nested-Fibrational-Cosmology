@@ -1,6 +1,6 @@
 {
-  "schema_version": "0.41.0",
-  "claims_count": 226,
+  "schema_version": "0.43.0",
+  "claims_count": 243,
   "issues": [
     {
       "severity": "warning",

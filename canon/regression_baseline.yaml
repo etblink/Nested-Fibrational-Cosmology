@@ -1,5 +1,5 @@
-claim_count: 226
-computed_status_count: 226
+claim_count: 243
+computed_status_count: 243
 pilot_postures:
   BIO: conditional-cert-close
 protected_claim_statuses:
@@ -29,8 +29,8 @@ regression_baseline:
     SPEC: cert-close
     YM: conditional-cert-close
   expected_counts:
-    claims: 226
-    computed_statuses: 226
+    claims: 243
+    computed_statuses: 243
     errors: 0
     release_diff_changes: 5
     release_diff_missing_basis: 0
@@ -54,5 +54,5 @@ regression_baseline:
     thm:SCC.TSI: C
     thm:SCC.UC: C
     thm:YM.7: C
-  schema_version: 0.41.0
+  schema_version: 0.43.0
 schema_version: 0.29.0

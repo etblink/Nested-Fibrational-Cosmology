@@ -4,8 +4,8 @@
 
 | Target | Compile | Render | PDF | Pages | Rendered pages | LaTeX warnings | Overfull | Underfull | Undefined refs |
 |---|---|---|---|---:|---:|---:|---:|---:|---|
-| canon_governance_appendix | passed | passed | `output/pdf/canon_governance_appendix_standalone.pdf` | 6 | 2 | 0 | 60 | 297 | False |
-| gr_branch_successor | passed | passed | `output/pdf/gr_branch_successor_standalone.pdf` | 5 | 2 | 0 | 7 | 4 | False |
+| canon_governance_appendix | passed | passed | `output/pdf/canon_governance_appendix_standalone.pdf` | 7 | 2 | 0 | 66 | 332 | False |
+| gr_branch_successor | passed | passed | `output/pdf/gr_branch_successor_standalone.pdf` | 5 | 2 | 0 | 7 | 5 | False |
 | ym_branch_successor | passed | passed | `output/pdf/ym_branch_successor_standalone.pdf` | 7 | 2 | 0 | 30 | 2 | False |
 | spec_branch_successor | passed | passed | `output/pdf/spec_branch_successor_standalone.pdf` | 1 | 1 | 0 | 3 | 0 | False |
 | scc_branch_successor | passed | passed | `output/pdf/scc_branch_successor_standalone.pdf` | 3 | 2 | 0 | 3 | 2 | False |

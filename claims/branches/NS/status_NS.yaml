@@ -17,6 +17,8 @@ dependencies:
   optional: []
   requires:
   - prop:NS.status
+  - thm:V.UBLT
+  - thm:VII.6.4
 discharges: []
 id: status:NS
 imports: []

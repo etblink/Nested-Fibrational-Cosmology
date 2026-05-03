@@ -1,0 +1,23 @@
+body_file: text/spine/III/def_III_BUO.md
+book: III
+canonical_xref:
+  canonical_label: BUO(delta) — Boundary-Uniform Overlap Condition
+  canonical_section: Book III §Cheeger and ACA Chain
+  canonical_theorem: def:BUO
+  cross_check: The type-walk transition matrix T_w has uniform positive overlap delta
+    on adjacent collar types; the hypothesis feeding lem:III.cheeger-from-BUO and
+    thm:III.ACA-chain
+declared_status: D
+dependencies:
+  requires:
+  - def:II.collar
+id: def:III.BUO
+kind: definition
+number: III.D.4
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Boundary-Uniform Overlap Condition BUO(delta)
+track: spine

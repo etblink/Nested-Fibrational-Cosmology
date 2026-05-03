@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.4.18)  3 MAY 2026 00:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.4.18)  3 MAY 2026 01:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -557,7 +557,7 @@ public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb>
 Output written on /home/claude/nfc_gov/output/pdf/sm_branch_successor_standalon
-e.pdf (7 pages, 124360 bytes).
+e.pdf (7 pages, 124384 bytes).
 PDF statistics:
  363 PDF objects out of 1000 (max. 8388607)
  89 compressed objects within 1 object stream

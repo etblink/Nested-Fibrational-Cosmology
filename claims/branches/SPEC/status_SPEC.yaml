@@ -10,6 +10,8 @@ declared_status: cert-close
 dependencies:
   requires:
   - thm:SPEC.10.1
+  - thm:V.UBLT
+  - thm:VII.6.4
 id: status:SPEC
 kind: status_note
 number: SPEC.status

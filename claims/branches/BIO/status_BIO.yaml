@@ -9,6 +9,8 @@ declared_status: conditional-cert-close
 dependencies:
   requires:
   - thm:BIO.END
+  - thm:V.UBLT
+  - thm:VII.6.4
 id: status:BIO
 kind: status_note
 number: BIO.status

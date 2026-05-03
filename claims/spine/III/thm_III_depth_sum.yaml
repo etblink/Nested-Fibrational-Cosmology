@@ -1,0 +1,24 @@
+body_file: text/spine/III/thm_III_depth_sum.md
+book: III
+canonical_xref:
+  canonical_label: Depth-Sum Convergence Theorem [U]
+  canonical_section: Book III §Depth-Sum Convergence
+  canonical_theorem: thm:depth-sum
+  cross_check: For Van Hove exhaustions, sum_d |del_d U_n| e^{-mu d} / |U_n| -> 0;
+    branch-agnostic; provides convergence input for NS weighted-boundary transport
+    bounds
+declared_status: U
+dependencies:
+  requires:
+  - def:III.persistent-obs
+  - def:I.stabilization
+id: thm:III.depth-sum
+kind: theorem
+number: III.T.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: U
+  regime: universal
+title: Depth-Sum Convergence Theorem
+track: spine

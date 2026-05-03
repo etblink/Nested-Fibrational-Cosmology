@@ -1,0 +1,21 @@
+body_file: text/spine/III/sr_III_comparison_through_maps.md
+book: III
+canonical_xref:
+  canonical_label: Comparison-Through-Maps Rule
+  canonical_section: Book III §Transfer Structure
+  canonical_theorem: sr:comparison-through-maps
+  cross_check: Cross-context comparisons must be made through declared transfer maps;
+    no direct identification without a map
+declared_status: D
+dependencies:
+  requires: []
+id: sr:III.comparison-through-maps
+kind: standing_rule
+number: III.SR.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Comparison-Through-Maps Rule
+track: spine

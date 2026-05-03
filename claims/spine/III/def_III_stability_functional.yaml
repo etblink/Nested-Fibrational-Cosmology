@@ -1,0 +1,24 @@
+body_file: text/spine/III/def_III_stability_functional.md
+book: III
+canonical_xref:
+  canonical_label: Interface-Relative Stability Functional C_n
+  canonical_section: Book III §Stability Functional
+  canonical_theorem: def:stability-functional
+  cross_check: The canonical functional tracking how much certified content survives
+    transport across the boundary of U_n; the primary quantity in the coercive-transport
+    inequality
+declared_status: D
+dependencies:
+  requires:
+  - def:III.persistent-obs
+  - def:III.transfer-map
+id: def:III.stability-functional
+kind: definition
+number: III.D.3
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Interface-Relative Stability Functional C_n
+track: spine

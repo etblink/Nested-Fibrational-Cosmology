@@ -779,6 +779,65 @@ def collect_gate_results() -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
         "details": [],
     })
 
+    # v42 Book III L4 spine pilot gate — FINAL SPINE BOOK
+    book_iii_l4 = load_json(REPORTS / "book_iii_l4_certificate.json")
+    book_iii_pdf = (ROOT / "output" / "pdf" / "book_iii_l4_shell_standalone.pdf").exists()
+    all_7_books = book_iii_l4.get("all_7_books_present", False)
+    book_iii_failed = (
+        book_iii_l4.get("status") != "passed"
+        or book_iii_l4.get("unified_coercive_status") != "U"
+        or book_iii_l4.get("ACA_chain_status") != "C"
+        or book_iii_l4.get("governing_status") != "U"
+        or not all_7_books
+        or book_iii_l4.get("l4_level") != "spine_release_candidate"
+        or not book_iii_pdf
+    )
+    gates.append({
+        "id": "gate.book_iii_l4_pilot",
+        "status": "pass" if not book_iii_failed else "fail",
+        "severity": "error",
+        "observed": {
+            "status": book_iii_l4.get("status"),
+            "l4_level": book_iii_l4.get("l4_level"),
+            "unified_coercive": book_iii_l4.get("unified_coercive_status"),
+            "ACA_chain": book_iii_l4.get("ACA_chain_status"),
+            "governing": book_iii_l4.get("governing_status"),
+            "all_7_books": all_7_books,
+        },
+        "expected": "Book III L4: spine_RC, unified-coercive=[U], ACA=[C], governing=[U], all 7 books present.",
+        "message": "Book III L4 (FINAL SPINE): unified coercive inequality [U]; ACA chain [C]; all 7 spine books present.",
+        "details": [],
+    })
+
+    # v43 Connectivity Audit gate — six-pass structural verification
+    ca = load_json(REPORTS / "connectivity_audit.json")
+    ca_pdf = (ROOT / "output" / "pdf" / "connectivity_audit_standalone.pdf").exists()
+    ca_failed = (
+        ca.get("status") != "passed"
+        or ca.get("errors", 1) > 0
+        or ca.get("backward_spine_edges", 1) > 0
+        or ca.get("dangling_deps", 1) > 0
+        or ca.get("status_inheritance_violations", 1) > 0
+        or not ca_pdf
+    )
+    gates.append({
+        "id": "gate.connectivity_audit",
+        "status": "pass" if not ca_failed else "fail",
+        "severity": "error",
+        "observed": {
+            "status": ca.get("status"),
+            "errors": ca.get("errors"),
+            "backward_edges": ca.get("backward_spine_edges"),
+            "dangling": ca.get("dangling_deps"),
+            "inheritance_violations": ca.get("status_inheritance_violations"),
+            "branch_to_spine_edges": ca.get("branch_to_spine_edges"),
+            "xref_completeness": ca.get("xref_completeness"),
+        },
+        "expected": "Connectivity audit: 0 errors, 0 backward edges, 0 dangling, 0 inheritance violations.",
+        "message": "Six-pass connectivity audit must pass: citation coverage, reachability, inheritance, deps, direction, xref.",
+        "details": [],
+    })
+
     gr_l2_gate = next((g for g in config.get("quality_gates", []) if g.get("id") == "gate.gr_l2_hardening"), None)
     if gr_l2_gate:
         required_outputs = list(gr_l2_gate.get("required_outputs") or [])

@@ -10,6 +10,8 @@ declared_status: D
 dependencies:
   requires:
   - def:I.obs-quotient
+  - def:III.persistent-obs
+  - def:II.collar
 id: def:IV.POT-object
 kind: definition
 number: IV.D.1

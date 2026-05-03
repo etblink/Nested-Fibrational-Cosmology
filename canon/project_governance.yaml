@@ -156,4 +156,4 @@ quality_gates:
   - output/reports/ling_successor_equivalence_report.json
   - output/tables/ling_successor_equivalence_report.md
   severity: error
-schema_version: 0.41.0
+schema_version: 0.43.0

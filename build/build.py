@@ -239,6 +239,12 @@ def main() -> int:
     book_vi_l4_step = run_step("book_vi_l4_pilot", ROOT / "build" / "book_vi_l4_pilot.py")
     steps.append(book_vi_l4_step)
 
+    book_iii_l4_step = run_step("book_iii_l4_pilot", ROOT / "build" / "book_iii_l4_pilot.py")
+    steps.append(book_iii_l4_step)
+
+    connectivity_step = run_step("connectivity_audit", ROOT / "build" / "connectivity_audit.py")
+    steps.append(connectivity_step)
+
     compile_check_step = run_step("compile_check", ROOT / "build" / "compile_check.py")
     steps.append(compile_check_step)
 

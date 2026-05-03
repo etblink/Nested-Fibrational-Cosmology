@@ -1,0 +1,28 @@
+body_file: text/spine/III/thm_III_coercive_inequality.md
+book: III
+canonical_xref:
+  canonical_label: Finite Transfer Coercive Inequality [C] — conditional on uniform
+    coercivity
+  canonical_section: Book III §Finite Transfer Coercive Inequality
+  canonical_theorem: thm:coercive-inequality
+  cross_check: Under uniform coercivity (Theta_n < 1 uniformly), the iterated coercive
+    inequality gives geometric convergence; conditional — downstream branches must
+    declare which specialization they use
+declared_status: C
+dependencies:
+  requires:
+  - thm:III.unified-coercive
+  - def:III.BUO
+id: thm:III.coercive-inequality
+kind: theorem
+number: III.T.5
+scope:
+  certificate_scope: conditional-coercive
+  domain: spine
+  inherited_constraints:
+  - uniform-coercivity
+  - BUO-delta
+  promotion_ceiling: C
+  regime: coercive-regime
+title: Finite Transfer Coercive Inequality
+track: spine

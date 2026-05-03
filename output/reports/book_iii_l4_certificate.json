@@ -1,0 +1,96 @@
+{
+  "status": "passed",
+  "book": "III",
+  "track": "spine",
+  "l4_level": "spine_release_candidate",
+  "schema_version": "0.42.0",
+  "claim_count": 17,
+  "xref_count": 17,
+  "prose_score": 100.0,
+  "unified_coercive_status": "U",
+  "depth_sum_status": "U",
+  "ACA_chain_status": "C",
+  "governing_status": "U",
+  "all_7_books_present": true,
+  "supersession_effect": "none",
+  "primary_contribution": "Completes the seven-book spine. Provides: (1) the Unified Coercive-Transport Inequality [U], the branch-agnostic load-bearing core; (2) the ACA Coercivity Chain [C], feeding Book VI NS-4B Sobolev; (3) the OT arena as the immediate precursor to Book IV's POT category.",
+  "checks": [
+    {
+      "id": "l4.iii.unified-coercive-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:III.unified-coercive status = U",
+      "expected": "[U]: load-bearing core; branch-agnostic; depends only on Books I and II"
+    },
+    {
+      "id": "l4.iii.depth-sum-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:III.depth-sum status = U",
+      "expected": "[U]: Van Hove exhaustion convergence; branch-agnostic"
+    },
+    {
+      "id": "l4.iii.ACA-chain-C",
+      "status": "pass",
+      "severity": "error",
+      "observed": "status = C, constraints = ['K0-7', 'Phase-A', 'BUO-delta']",
+      "expected": "[C] with BUO+K_0=7+Phase-A constraints; feeds Book VI NS-4B Sobolev"
+    },
+    {
+      "id": "l4.iii.BUO-def-present",
+      "status": "pass",
+      "severity": "error",
+      "observed": "present",
+      "expected": "def:III.BUO must be present \u2014 it is the hypothesis for ACA chain and Book VI NS-4B"
+    },
+    {
+      "id": "l4.iii.governing-U",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:III.governing status = U",
+      "expected": "[U]: four-part governing theorem; feeds Book IV OT->POT transition"
+    },
+    {
+      "id": "l4.iii.U-layer-unconditional",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all [U]",
+      "expected": "All primary [U] Book III results are unconditional"
+    },
+    {
+      "id": "l4.iii.C-layer-conditioned",
+      "status": "pass",
+      "severity": "error",
+      "observed": "all conditioned",
+      "expected": "[C] results must carry BUO/K_0=7/Phase-A constraints"
+    },
+    {
+      "id": "l4.iii.III-IV-transition",
+      "status": "pass",
+      "severity": "error",
+      "observed": "def:IV.POT-object present: True",
+      "expected": "Book III OT arena feeds Book IV POT category; def:IV.POT-object must exist"
+    },
+    {
+      "id": "l4.iii.ACA-to-VI-linkage",
+      "status": "pass",
+      "severity": "error",
+      "observed": "thm:VI.NS-4B-sobolev present: True",
+      "expected": "thm:III.ACA-chain -> thm:VI.NS-4B-sobolev linkage must be closeable"
+    },
+    {
+      "id": "l4.iii.prose-completeness",
+      "status": "pass",
+      "severity": "warning",
+      "observed": "100.0% (17/17)",
+      "expected": ">= 90% prose"
+    },
+    {
+      "id": "l4.iii.xref-annotations",
+      "status": "pass",
+      "severity": "error",
+      "observed": "17/17",
+      "expected": ">= 15 xrefs"
+    }
+  ]
+}

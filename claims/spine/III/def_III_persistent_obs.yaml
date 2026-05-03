@@ -1,0 +1,23 @@
+body_file: text/spine/III/def_III_persistent_obs.md
+book: III
+canonical_xref:
+  canonical_label: Persistent Observable — stable across regimes and contexts
+  canonical_section: Book III §Persistent Observables
+  canonical_theorem: def:persistent-obs
+  cross_check: An observable that is quotient-visible and stable under admissible
+    context refinements; the canonical type of observable used in the coercive-transport
+    framework
+declared_status: D
+dependencies:
+  requires:
+  - def:I.obs-quotient
+id: def:III.persistent-obs
+kind: definition
+number: III.D.1
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Persistent Observable
+track: spine

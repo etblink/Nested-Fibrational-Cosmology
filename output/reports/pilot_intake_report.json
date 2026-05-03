@@ -139,7 +139,7 @@
       "blocked": false
     }
   ],
-  "quality_gate_status_observed": "passed",
+  "quality_gate_status_observed": "failed",
   "policy": {
     "avoid_next_pilot_if": [
       "requires full proof-prose migration before value is visible",

@@ -1,0 +1,28 @@
+body_file: text/spine/III/lem_III_cheeger_from_BUO.md
+book: III
+canonical_xref:
+  canonical_label: Cheeger Constant from BUO [C]
+  canonical_section: Book III §Cheeger and ACA Chain
+  canonical_theorem: lem:cheeger-from-BUO
+  cross_check: h(T_w) >= delta/2 under BUO(delta); spectral gap lambda_1 >= delta^2/8;
+    the spectral hinge feeding thm:ACA-chain
+declared_status: C
+dependencies:
+  requires:
+  - def:III.BUO
+  - thm:I.K0-prime
+  - hyp:II.LS2
+id: lem:III.cheeger-from-BUO
+kind: theorem
+number: III.L.2
+scope:
+  certificate_scope: conditional-K07-PhaseA-BUO
+  domain: spine
+  inherited_constraints:
+  - K0-7
+  - Phase-A
+  - BUO-delta
+  promotion_ceiling: C
+  regime: K07-PhaseA-BUO
+title: Cheeger Constant from BUO Condition
+track: spine

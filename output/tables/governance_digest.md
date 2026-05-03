@@ -1,9 +1,9 @@
 # Governance Build Digest
 
-**Schema version:** 0.41.0
+**Schema version:** 0.43.0
 **Build status:** passed-with-warnings
-**Claims:** 226
-**Computed statuses:** 226
+**Claims:** 243
+**Computed statuses:** 243
 **Errors:** 0
 **Warnings:** 3
 **Generated TeX files:** 5

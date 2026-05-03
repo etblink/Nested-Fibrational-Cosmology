@@ -39,7 +39,7 @@
 | `ob:GR.closure` | `ob:GR.closure` | `C` | `C` | Discharged by thm:GR.domain at domain-bounded scope |
 | `thm:GR.domain` | `GR.9.1` | `C` | `C` | Stage 4+5 — final domain-bounded closure; establishes CERT-C |
 | `thm:GR.CP.1` | `GR.CP.1` | `C` | `C` | Bundles realization+deformation+compat for cross-branch cita |
-| `thm:VI.9.1` | `thm:governing (Book VI)` | `U` | `U` | Cited as Thm. VI.9.1 in GR Branch Book import list; licenses |
+| `thm:VI.9.1` | `thm:governing (Book VI)` | `C` | `C` | Cited as Thm. VI.9.1 in GR Branch Book import list; licenses |
 | `ob:GR.global-subcriticality` | `ob:GR.BF9` | `O` | `O` | ACTIVE FRONTIER — prevents promotion from domain-bounded to  |
 | `status:GR` | `prop:GR-status` | `domain-bounded-cert-close` | `domain-bounded-cert-close` | Machine-generated analogue of the canonical branch status pr |
 

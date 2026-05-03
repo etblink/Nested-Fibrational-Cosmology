@@ -22,6 +22,7 @@ dependencies:
   - thm:YM.B2.bridge
   - thm:YM.B3.bridge
   - ob:YM.B3.A2
+  - thm:V.UBLT
 discharges: []
 id: status:YM
 imports: []

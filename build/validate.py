@@ -11,7 +11,7 @@ CANON_DIR = ROOT / "canon"
 OUTPUT_DIR = ROOT / "output" / "reports"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-SCHEMA_VERSION = "0.41.0"
+SCHEMA_VERSION = "0.43.0"
 SEVERITY_LEVELS = {"error", "warning", "info"}
 
 REQUIRED_FIELDS = ("id", "declared_status", "scope")

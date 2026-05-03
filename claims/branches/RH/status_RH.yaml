@@ -11,6 +11,8 @@ dependencies:
   - thm:RH.3
   - ob:RH.4
   - ob:RH.5
+  - thm:V.UBLT
+  - thm:VII.6.4
 id: status:RH
 kind: status_note
 number: RH.status

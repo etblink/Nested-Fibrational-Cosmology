@@ -7,22 +7,22 @@
       "id": "regression.schema_version",
       "status": "pass",
       "message": "schema_version must match the active regression baseline.",
-      "observed": "0.41.0",
-      "expected": "0.41.0"
+      "observed": "0.43.0",
+      "expected": "0.43.0"
     },
     {
       "id": "regression.claims",
       "status": "pass",
       "message": "claims must match the active regression baseline.",
-      "observed": 226,
-      "expected": 226
+      "observed": 243,
+      "expected": 243
     },
     {
       "id": "regression.computed_statuses",
       "status": "pass",
       "message": "computed_statuses must match the active regression baseline.",
-      "observed": 226,
-      "expected": 226
+      "observed": 243,
+      "expected": 243
     },
     {
       "id": "regression.errors",

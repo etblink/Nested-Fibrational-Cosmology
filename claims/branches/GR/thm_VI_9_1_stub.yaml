@@ -11,23 +11,26 @@ canonical_xref:
   canonical_theorem: thm:governing (Book VI)
   cross_check: Cited as Thm. VI.9.1 in GR Branch Book import list; licenses H^1_x-norm
     and differential notation in NS/GR/YM
-declared_status: U
+declared_status: C
 dependencies:
   excludes: []
   optional: []
-  requires: []
+  requires:
+  - thm:VI.governing
 discharges: []
 id: thm:VI.9.1
 imports: []
 kind: theorem
 number: VI.9.1
 scope:
-  certificate_scope: global
-  continuum_license: none
+  certificate_scope: conditional-certified-regime
   domain: spine
-  inherited_constraints: []
-  promotion_ceiling: U
-  regime: continuum-interface
+  inherited_constraints:
+  - certified-observable-family
+  - scoped-certificate
+  - continuum-bridge
+  promotion_ceiling: C
+  regime: certified-interface-regime
 supersedes: []
 tags:
 - continuum

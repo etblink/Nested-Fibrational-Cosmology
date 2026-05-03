@@ -24,7 +24,7 @@ Computed GR posture: \textbf{domain-bounded-cert-close}. The surviving global fr
 \textbf{ID} & \textbf{Kind} & \textbf{Declared} & \textbf{Computed} & \textbf{Scope}\\
 \hline
 \endhead
-thm:VI.9.1 & theorem & U & U & global\\
+thm:VI.9.1 & theorem & C & C & conditional-certified-regime\\
 thm:GR.CP.1 & theorem & C & C & domain-bounded\\
 ob:GR.real & obligation & C & C & domain-bounded\\
 thm:GR.realization & theorem & C & C & domain-bounded\\
@@ -47,10 +47,13 @@ status:GR & status\_note & domain-bounded-cert-close & domain-bounded-cert-close
 
 \begin{nfctheorem}{Effective Continuum Legitimacy Theorem (Thm. VI.9.1)}
 \textbf{Machine ID.} \texttt{thm:VI.9.1}\\
-\textbf{Declared status.} U\quad \textbf{Computed status.} U\\
-\textbf{Scope.} regime=continuum-interface; domain=spine; certificate\_scope=global; continuum\_license=none; promotion\_ceiling=U
+\textbf{Declared status.} C\quad \textbf{Computed status.} C\\
+\textbf{Scope.} regime=certified-interface-regime; domain=spine; certificate\_scope=conditional-certified-regime; promotion\_ceiling=C; constraints=certified-observable-family,scoped-certificate,continuum-bridge
 
 Effective Continuum Legitimacy Theorem (Thm. VI.9.1) [C]: for certified stabilized observables in a lawful continuum interface regime, differential and integral notation are lawful if and only if they faithfully encode the asymptotic behavior of scale-normalized increments and certified accumulators, respectively, within that declared regime. Proof: the differential direction is thm:VI.differential-legitimacy; the integral direction is thm:VI.integral-legitimacy. Together they give the full biconditional. This is the canonical theorem cited as Thm. VI.9.1 in the GR Branch Book (import list item 5) and referenced in the NS Branch Book (Section 7.7: H\textasciicircum{}1\_x-norm legitimacy). Conditional on: certified observable family, scoped certificate, continuum bridge for the relevant regime.
+
+\medskip
+\noindent\textit{Dependencies.} thm:VI.governing
 \end{nfctheorem}
 
 
@@ -286,7 +289,7 @@ Global curvature-subcriticality remains the GR frontier beyond realized-domain c
 Older local posture language still says CERT-PROJ although the branch has domain-bounded closure in the reconciled state sheet.
 
 \medskip
-\noindent\textit{Dependencies.} ob:GR.global-subcriticality, thm:GR.CP.1, thm:GR.domain, thm:VII.6.4
+\noindent\textit{Dependencies.} ob:GR.global-subcriticality, thm:GR.CP.1, thm:GR.domain, thm:VII.6.4, thm:V.UBLT
 \end{nfcstatusnote}
 
 

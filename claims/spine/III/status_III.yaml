@@ -1,0 +1,25 @@
+body_file: text/spine/III/status_III.md
+book: III
+canonical_xref:
+  canonical_label: Book III Status — unified coercive-transport inequality [U]; ACA
+    chain [C]
+  canonical_section: Book III §Honest Posture
+  canonical_theorem: status:III
+  cross_check: '[U]: depth-sum, unified coercive-transport, balance composable, charge
+    conservation, governing. [C]: Cheeger from BUO, ACA chain, finite transfer coercive.
+    Honest posture: Book III load-bearing core is unconditional.'
+declared_status: R
+dependencies:
+  requires:
+  - thm:III.governing
+id: status:III
+kind: remark
+number: III.status
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: R
+  regime: universal
+title: Book III Status — unified coercive-transport inequality unconditional; ACA
+  chain conditional
+track: spine

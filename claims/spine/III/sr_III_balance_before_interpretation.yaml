@@ -1,0 +1,21 @@
+body_file: text/spine/III/sr_III_balance_before_interpretation.md
+book: III
+canonical_xref:
+  canonical_label: Balance-Before-Interpretation Rule
+  canonical_section: Book III §Transfer Structure
+  canonical_theorem: sr:balance-before-interpretation
+  cross_check: The coercive-transport balance must be established before any physical
+    interpretation is attached to the inequality terms
+declared_status: D
+dependencies:
+  requires: []
+id: sr:III.balance-before-interpretation
+kind: standing_rule
+number: III.SR.2
+scope:
+  certificate_scope: global
+  domain: spine
+  promotion_ceiling: D
+  regime: universal
+title: Balance-Before-Interpretation Rule
+track: spine
