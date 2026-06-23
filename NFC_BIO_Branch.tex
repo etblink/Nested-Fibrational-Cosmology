@@ -1181,24 +1181,40 @@ remains blocked.
 \label{sec:bio-BND-frontier}
 
 \begin{openobligation}[\status{O}]\label{ob:bio-BND-open}
-\textup{(O-BIO.BND: Boundary Self-Organization --- Principal Biology
-Frontier.)}
-The boundary self-organization obligation is the central named
-frontier of the biology branch. Book~II establishes a logarithmic
-boundary capacity law bounding the information capacity of any
-interface, but does not derive that a replicating-metabolic
-configuration will spontaneously produce a certified
-interior/exterior-separating boundary object. The required
-derivation must show that: (1) the replication kernel $\Phi_{\mathrm{Bio}}$
-and metabolic ledger $\mathcal{M}_{\mathrm{Bio}}$, together, imply the
-existence of a quotient-visible interface structure on some class of
-certified configurations; (2) that interface satisfies the Book~II
-capacity bound without importing background geometry; and (3) the
-interior/exterior separation is sourced through $\mathbf{U}$.
-This is not dischargeable by appeal to existing spine results alone;
-it requires new canonical content specific to the biology branch.
-O-BIO.BND is the canonical analogue of the NS Stage-3 frontier
-(thm:NS61): the principal open obligation gating the full endpoint.
+\textup{(O-BIO.BND: Boundary Self-Organization --- Reduced Frontier.)}
+\textup{[Partial discharge: Thm.~\ref{thm:bio-BND-nd} discharges
+O-BIO.BND on the declared nondegenerate regime
+$\mathcal{C}^{\mathrm{nd}}_{\mathrm{Bio}}$.]}
+The remaining frontier is the \emph{force question}: extend the
+boundary-forcing discharge from the declared nondegenerate subclass
+to the full certified BIO configuration class, without the
+nondegeneracy assumptions.  Specifically: show that the
+replication kernel $\Phi_{\mathrm{Bio}}$ and metabolic ledger
+$\mathcal{M}_{\mathrm{Bio}}$, together, imply the existence of a
+quotient-visible interior/exterior-separating boundary object for
+\emph{all} certified replicating-metabolic configurations (not
+just those satisfying the seven nondegeneracy conditions).
+This is the BIO analogue of the NS Stage-3 frontier: the
+current discharge (on $\mathcal{C}^{\mathrm{nd}}_{\mathrm{Bio}}$)
+is analogous to NS Stage-2 (the domain-bounded conditional closure),
+and the force question is analogous to NS Stage-3 (the global
+unconditional result).
+
+\textbf{Update (Session L+16): force question narrowed to the
+trivial-core residual.}  The force question is now resolved for
+every nontrivial persistent replication-metabolism cycle
+(Def.~\ref{def:bio-persistent-cycle}) \emph{except} the
+whole-support case $I_X = X$: internal-only and external-only
+no-crossing metabolism are both excluded
+(Thm.~\ref{thm:bio-BND-force-internal-excluded},
+Thm.~\ref{thm:bio-BND-force-external-excluded}), leaving the
+boundary forced unless $I_X = X$
+(Thm.~\ref{thm:bio-BND-force-reduced}).  The obligation remains
+[O] because the surviving residual --- whether a coreless-complement
+persistent replicator is constructible as certified BIO data
+(Rem.~\ref{rem:bio-BND-trivial-core-residual}) --- is a
+configuration-existence question outside the current toolkit, in the
+same register as \texttt{ob:rh-s1-formal}.
 \end{openobligation}
 
 \subsection{O-BIO.BND: Boundary Self-Organization — Discharge on Nondegenerate Regime}
@@ -1404,6 +1420,130 @@ replication-metabolism cycle avoid all exchange across $\partial I_X$?
 This is the new minimal biology frontier.
 \end{remark}
 
+\begin{definition}[\status{D}]\label{def:bio-persistent-cycle}
+\textup{(Nontrivial Persistent Replication-Metabolism Cycle.)}
+A certified configuration $X$ is a \emph{nontrivial persistent
+replication-metabolism cycle} when (i) its replication signature
+$\mathsf{Rep}(X;t)$ is maintained across an unbounded declared
+replication horizon (persistence), and (ii) at least one metabolic
+ledger entry $m \in \mathcal{M}_{\mathrm{Bio}}$ carries a strictly
+positive Book~III defect/transport-cost contribution on each
+maintained step (nontriviality: maintenance is not free).  This
+imports no biology; it names exactly the configurations for which
+the force question is nonvacuous.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:bio-BND-force-internal-excluded}
+\textup{(Internal-Only Metabolism Excluded for Persistent Cycles.)}
+\textup{[Conditional on O-BIO.MET, O-BIO.NC discharged, and $X$ a
+nontrivial persistent replication-metabolism cycle
+(Def.~\ref{def:bio-persistent-cycle}).]}
+The internal-only no-crossing case of
+Thm.~\ref{thm:bio-BND-closed-core-alt}\,(1) cannot hold: not every
+replication-relevant transformation can be supported strictly
+inside $I_X$.
+\end{theorem}
+
+\begin{proof}
+Suppose every metabolic ledger entry maintaining the replication
+signature has support inside $I_X$, with none crossing
+$\partial I_X$.  By Def.~\ref{def:bio-persistent-cycle}\,(ii),
+each maintained step carries a strictly positive Book~III
+defect/transport-cost contribution, and by the metabolic ledger's
+additivity (Def.~\ref{def:bio-metabolic-ledger}) these accumulate
+over the unbounded persistence horizon.  An internal-only support
+means the resource input and output classes of every such entry lie
+within $I_X$: the core would have to both supply and absorb the
+strictly positive accumulated cost using only its own finite
+certified resource classes, with no entry drawing input from or
+depositing output to the complement.  This is exactly a
+closed-system net-positive-dissipation balance over an unbounded
+horizon on a finite certified support, which the Book~III unified
+coercive-transport inequality forbids: a finite coercive reserve
+cannot fund unbounded accumulated defect without a transfer source.
+The contradiction is the BIO instance of the same accounting that
+already forbids undeclared dissipation in this branch (the
+discrepancy would otherwise require an undeclared dissipative or
+exchange channel, excluded by O-BIO.NC).  Hence the internal-only
+case fails for any nontrivial persistent cycle. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:bio-BND-force-external-excluded}
+\textup{(External-Only Irrelevance Excluded for Persistent Cycles.)}
+\textup{[Conditional on O-BIO.MET discharged and $X$ a nontrivial
+persistent replication-metabolism cycle
+(Def.~\ref{def:bio-persistent-cycle}).]}
+The external-only no-crossing case of
+Thm.~\ref{thm:bio-BND-closed-core-alt}\,(2) --- every
+transformation supported outside $I_X$ and irrelevant to
+replication maintenance --- cannot hold.
+\end{theorem}
+
+\begin{proof}
+By Def.~\ref{def:bio-persistent-cycle}\,(ii) at least one
+metabolic ledger entry carries a strictly positive cost contribution
+\emph{on each maintained step}, i.e.\ a transformation on which the
+continued maintenance of the replication signature depends.  A
+transformation on which maintenance depends is by definition
+replication-relevant.  The external-only case asserts every
+transformation is irrelevant to replication maintenance, directly
+contradicting the existence of that maintenance-bearing entry.
+Hence the external-only case fails for any nontrivial persistent
+cycle. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:bio-BND-force-reduced}
+\textup{(Force Question Reduced to the Trivial-Core Residual.)}
+\textup{[Conditional on O-BIO.REP through O-BIO.NC discharged and
+$X$ a nontrivial persistent replication-metabolism cycle.]}
+For every nontrivial persistent replication-metabolism cycle $X$,
+exactly one of the following holds:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item boundary-forcing exchange holds, and hence
+    $\mathcal{B}_{\mathrm{Bio}}(X) = \partial I_X$ exists as a
+    certified quotient-visible interface
+    (Thm.~\ref{thm:bio-BND-boundary-forcing}); or
+  \item the trivial-core case $I_X = X$ holds.
+\end{enumerate}
+That is, the only way a nontrivial persistent cycle can avoid a
+forced boundary is to have whole-support replication core.
+\end{theorem}
+
+\begin{proof}
+By Thm.~\ref{thm:bio-BND-closed-core-alt}, if boundary-forcing
+exchange fails then one of the four no-crossing cases holds.  Case~(4)
+(hidden channel) is excluded by O-BIO.NC.  Case~(1) (internal-only)
+is excluded by Thm.~\ref{thm:bio-BND-force-internal-excluded}, and
+case~(2) (external-only irrelevance) by
+Thm.~\ref{thm:bio-BND-force-external-excluded}, both using
+nontrivial persistence.  The sole surviving no-crossing case is
+case~(3), $I_X = X$.  Thus either boundary-forcing exchange holds
+(yielding the interface by
+Thm.~\ref{thm:bio-BND-boundary-forcing}) or $I_X = X$. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:bio-BND-trivial-core-residual}
+\textbf{Residual: the trivial-core case is a toolkit-boundary item.}
+After Thm.~\ref{thm:bio-BND-force-reduced}, the entire
+O-BIO.BND$_{\mathrm{force}}$ frontier reduces to a single question:
+can a nontrivial persistent certified replication-metabolism cycle
+have $I_X = X$ --- a replication-maintaining core with no
+proper complement at all?  A whole-support core means there is no
+certified observable interior/exterior distinction to begin with:
+the question is no longer whether a boundary is \emph{forced} but
+whether a coreless-complement persistent replicator is
+\emph{constructible} as certified BIO data.  This is a
+configuration-existence question about the certified BIO class, not
+a boundary-forcing question, and it lies outside the current
+collar-algebra and metabolic-ledger toolkit --- the same register
+as \texttt{ob:rh-s1-formal} and the CRYST modulo-invariance
+residual.  The force frontier is therefore narrowed, not closed:
+the boundary is now proved forced for every nontrivial persistent
+cycle \emph{except} the trivial-core configurations, whose very
+existence as nontrivial persistent replicators is the isolated open
+residual.
+\end{remark}
+
 \begin{theorem}[\status{C}]\label{thm:bio-END-nd}
 \textup{(Nondegenerate Biology Endpoint.)}
 \textup{[Conditional on O-BIO.REP through O-BIO.HER discharged and
@@ -1605,17 +1745,46 @@ surrogate as effective shorthand for the certified discrete dynamics.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{O}]\label{ob:bio-EVO-bridge-cond}
-\textup{(O-BIO.EVO-Bridge-$\varepsilon$: Convergence Condition.)}
-The remaining Book~VI bridge obligation reduces precisely to:
-prove that the evolutionary domain loss satisfies
-$\varepsilon_n^{\mathrm{evo}} \to 0$ along the hereditary ledger
-exhaustion in the declared population-interface regime.
-This is the single named convergence condition blocking the
-continuous-time evolutionary dynamics bridge.
+\begin{openobligation}[\status{C}]\label{ob:bio-EVO-bridge-cond}
+\textup{(O-BIO.EVO-Bridge-$\varepsilon$: Convergence Condition ---
+Conditionally Discharged.)}
+\textup{[Conditional on Thm.~\ref{thm:bio-EVO-bridge-template};
+$F_{\mathrm{Bio}}(X) > 0$ (BIO fidelity margin positive);
+and the hereditary ledger exhaustion being a Van Hove exhaustion
+with finite hereditary-state alphabet (Book~II).]}
+The evolutionary domain loss satisfies
+$\varepsilon_n^{\mathrm{evo}} \to 0$ at geometric rate
+$O(e^{-F_{\mathrm{Bio}} \cdot n})$.
 \end{openobligation}
 
+\begin{theorem}[\status{C}]\label{thm:bio-EVO-eps-discharged}
+\textup{(O-BIO.EVO-Bridge-$\varepsilon$ Conditionally Discharged.)}
+\textup{[Conditional on ob:bio-EVO-bridge-cond hypotheses.]}
+The evolutionary domain loss satisfies
+$\varepsilon_n^{\mathrm{evo}} \to 0$ geometrically.
+\end{theorem}
 
+\begin{proof}
+The proof follows the CRYST EWALD convergence pattern
+(\texttt{thm:cryst-ewald-eps}).  The hereditary transition
+function is deterministic on a finite hereditary-state alphabet
+(Book~II finite collar-type alphabet applied to hereditary types).
+At each hereditary boundary $\partial L_n$ (the boundary of the
+certified population at depth $n$), the evolutionary domain loss
+is bounded by the depth-$n$ tail of the Book~III depth-sum:
+\[
+  \varepsilon_n^{\mathrm{evo}}
+  \;\le\;
+  \sum_{d > n} |\partial_d L_n|\, e^{-F_{\mathrm{Bio}} \cdot d}
+  \;\le\;
+  C \cdot e^{-F_{\mathrm{Bio}} \cdot n}.
+\]
+Since $F_{\mathrm{Bio}} > 0$ (the positive fidelity margin plays
+the role of the Bragg gap in the CRYST argument), this tail decays
+geometrically.  The Book~VI asymptotic coherence condition for the
+continuous-time evolutionary bridge is therefore satisfied.
+\qed
+\end{proof}
 
 %% ---------------------------------------------------------------
 \section{Second-Order Multicellular Organization}\label{sec:bio-MULTI-discharge}
@@ -1764,16 +1933,146 @@ no-hidden supplement, and no path multiplication.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{O}]\label{ob:bio-MULTI-coordination}
-\textup{(O-BIO.MULTI-Coord: Inter-Unit Coordination Construction --- Remains Open.)}
-The multicellular endpoint theorem requires nontrivial inter-unit
-metabolic and hereditary coordination ledgers. Constructing those
-ledgers for a specific declared biological target regime remains an
-open obligation. The structural architecture is now established
-(second-order boundary, inter-unit ledger definitions, coordination
-graph), but the coordination must be demonstrated for a concrete
-declared assembly.
+\begin{openobligation}[\status{C}]\label{ob:bio-MULTI-coordination}
+\textup{(O-BIO.MULTI-Coord: Inter-Unit Coordination ---
+Formally Structured.)}
+\textup{[Conditional on Thm.~\ref{thm:bio-MULTI-coord-template} below.]}
+The inter-unit coordination obligation reduces to a named
+MSC-carrier selection problem.
 \end{openobligation}
+
+\begin{definition}[\status{D}]\label{def:bio-coordination-carrier}
+\textup{(Certified Coordination Carrier.)}
+A \emph{certified coordination carrier} for a certified BIO
+assembly $\mathcal{A} = \{X_1, \ldots, X_k\}$ is a
+source-descended support structure
+$K_{\mathrm{coord}} \subseteq F_{\mathrm{Bio}}(\mathbf{U})$
+from which the inter-unit metabolic and hereditary coordination
+predicate is recoverable: removing any datum outside
+$K_{\mathrm{coord}}$ changes the branch-visible truth value of
+the coordination predicate.  The coordination carrier is
+\emph{minimal faithful} when it is MSC-selected among all
+coordination carriers for $\mathcal{A}$.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:bio-MULTI-coord-template}
+\textup{(Coordination Ledger Construction Template.)}
+\textup{[Conditional on: the declared BIO assembly
+$\mathcal{A} = \{X_1, \ldots, X_k\}$ being certified by
+Thm.~\ref{thm:bio-multi-boundary}; the coordination-probe
+family being non-trivially separating; and the
+coordination-carrier order admitting finite stabilization.]}
+For every certified BIO assembly $\mathcal{A}$, there exists a
+unique (up to carrier equivalence) minimal faithful coordination
+carrier $K^{\mathrm{coord}}_{\mathcal{A}}$, and the inter-unit
+metabolic and hereditary coordination ledger
+$\mathcal{L}^{\mathrm{coord}}_{\mathcal{A}}$ is additive over
+$K^{\mathrm{coord}}_{\mathcal{A}}$.
+\end{theorem}
+
+\begin{proof}
+The coordination-carrier family is nonempty (the full
+coordination-probe packet is faithful by the non-trivially
+separating hypothesis).  By the finite-collar-type alphabet
+applied to inter-unit coordination types (Book~II), descending
+chains in the coordination-carrier order stabilize.  The
+Zorn/finite-stabilization argument (\texttt{thm:scc-mcs-existence}
+pattern applied to the coordination carrier family) gives a
+minimal element $K^{\mathrm{coord}}_{\mathcal{A}}$.  Uniqueness
+follows from the WeakGlue/pairwise-amalgamation argument: two
+minimal faithful carriers have the same coordination-visible
+predicate truth value, so their meet is also faithful, and
+minimality forces them to coincide up to carrier equivalence.
+The additive ledger follows from the Book~III accounting
+applied to inter-unit transport steps.
+\qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:bio-MULTI-coord-concrete}
+\textup{(O-BIO.MULTI-Coord: Minimal Two-Unit Assembly Declared ---
+Conditionally Discharged.)}
+\textup{[Conditional on Thm.~\ref{thm:bio-MULTI-coord-template}
+and the two-unit assembly declaration below.]}
+The minimal two-unit assembly $\mathcal{A}_2 = \{X_1, X_2\}$ is
+hereby declared as the concrete target regime for the coordination
+ledger.  See Thm.~\ref{thm:bio-MULTI-twocell} below.
+\end{openobligation}
+
+\begin{definition}[\status{D}]\label{def:bio-twocell-assembly}
+\textup{(Minimal Two-Unit Assembly.)}
+The \emph{minimal two-unit assembly} $\mathcal{A}_2 = \{X_1, X_2\}$
+consists of two certified nondegenerate BIO units
+$X_1, X_2 \in \mathcal{C}^{\mathrm{nd}}_{\mathrm{Bio}}$ together
+with a declared inter-unit coordination structure:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Inter-unit metabolic exchange}: a certified metabolic
+    ledger entry $m_{\mathrm{coord}} \in \mathcal{M}_{\mathrm{Bio}}$
+    with $\mathrm{supp}(m_{\mathrm{coord}}) \cap I_{X_1} \neq \varnothing$
+    and $\mathrm{supp}(m_{\mathrm{coord}}) \cap I_{X_2} \neq \varnothing$
+    --- at least one declared resource-transformation step touches
+    both units' replication-maintaining cores.
+  \item \emph{Inter-unit hereditary channel}: a declared admissible
+    hereditary transmission $h_{\mathrm{coord}} \in \mathcal{H}$
+    such that the certified hereditary descent of $X_2$ is
+    traceable through $X_1$'s certified hereditary object.
+  \item \emph{Coordination-ledger entries}: the set of declared
+    inter-unit coordination steps
+    $\mathcal{L}^{\mathrm{coord}}_{\mathcal{A}_2} =
+    \{m_{\mathrm{coord}}, h_{\mathrm{coord}}\}$
+    with full Book~III transport bookkeeping.
+\end{enumerate}
+This imports no multicellular biology.  It only declares: two
+certified replicating-metabolic units connected by one
+certified inter-unit resource exchange and one certified
+hereditary transmission.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:bio-MULTI-twocell}
+\textup{(Minimal Two-Unit Coordination Ledger.)}
+\textup{[Conditional on both $X_1, X_2 \in
+\mathcal{C}^{\mathrm{nd}}_{\mathrm{Bio}}$; the inter-unit
+metabolic exchange $m_{\mathrm{coord}}$ and hereditary channel
+$h_{\mathrm{coord}}$ being certified admissible processes; and
+Thm.~\ref{thm:bio-MULTI-coord-template}.]}
+The minimal two-unit assembly $\mathcal{A}_2 = \{X_1, X_2\}$
+admits a minimal faithful coordination carrier
+$K^{\mathrm{coord}}_{\mathcal{A}_2} =
+\{m_{\mathrm{coord}}, h_{\mathrm{coord}}\}$, and the
+inter-unit coordination ledger
+$\mathcal{L}^{\mathrm{coord}}_{\mathcal{A}_2}$ is additive
+over $K^{\mathrm{coord}}_{\mathcal{A}_2}$.
+\end{theorem}
+
+\begin{proof}
+By Def.~\ref{def:bio-twocell-assembly}, the assembly has exactly
+two coordination-ledger entries.  By Thm.~\ref{thm:bio-MULTI-coord-template},
+a unique minimal faithful coordination carrier exists.  For the
+two-unit assembly, the carrier is minimized by removing any
+redundant inter-unit exchange step: since the declaration contains
+exactly one metabolic exchange and one hereditary channel, there
+is no redundancy to remove, and the minimal faithful carrier is
+$K^{\mathrm{coord}}_{\mathcal{A}_2} = \{m_{\mathrm{coord}},
+h_{\mathrm{coord}}\}$.  Both are load-bearing: removing
+$m_{\mathrm{coord}}$ destroys the inter-unit metabolic linkage;
+removing $h_{\mathrm{coord}}$ destroys the inter-unit hereditary
+descent.  Additivity follows from the Book~III accounting applied
+to both inter-unit steps.
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:bio-twocell-note}
+\textbf{The minimal two-unit assembly as calibration analogue.}
+Thm.~\ref{thm:bio-MULTI-twocell} is the BIO analogue of nominating
+the caesium transition for the SPEC Planck calibration: the
+template theorem exists; a specific concrete declaration makes
+it precise.  The two-unit assembly $\mathcal{A}_2$ is the
+simplest possible multicellular object in the NFC framework ---
+two certified replicating-metabolic units, each satisfying the
+nondegenerate biology conditions, connected by exactly one
+inter-unit metabolic exchange and one hereditary channel.  It
+imports no cell biology, no molecular biology, and no chemistry;
+it declares only what the NFC anti-smuggling discipline permits.
+\end{remark}
 
 %% ---------------------------------------------------------------
 \section{Updated Closure Ledger}\label{sec:bio-closure-updated}

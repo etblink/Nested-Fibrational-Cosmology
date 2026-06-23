@@ -1495,27 +1495,52 @@ shorthand for the certified finite-depth family.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{O}]\label{ob:ling-rec-bridge-eps}
-\textup{(O-LING.REC-Bridge-$\varepsilon$: Recursion Loss Convergence.)}
-The minimal remaining recursion frontier is: prove that
-$\varepsilon_n^{\mathrm{rec}} \to 0$ along the declared assembly
-depth in the recursion-interface regime $\mathcal{R}_{\mathrm{LingRec}}$.
-
-\textbf{NS finite-state insight.} The NS branch
-(Thm.~\ref{thm:NS-window-determinism}) showed that a finite-state
-deterministic transition function on a finite state space gives
-eventual periodicity and uniform bounds. The LING analogue: if
-the contrast-class and compositional-ledger state space is finite
-at each certified depth level (which follows from the SCC-carrier
-minimality of the recursion invariant), and the depth transition
-is deterministic (by the no-hidden-channel structure), then the
-recursion domain loss sequence satisfies a geometric decay bound,
-giving $\varepsilon_n^{\mathrm{rec}} \to 0$ automatically.
-The gap: whether the LING recursion-interface regime admits
-a norm on the contrast/composition state space under which
-this geometric decay holds. This is the one remaining
-named condition.
+\begin{openobligation}[\status{C}]\label{ob:ling-rec-bridge-eps}
+\textup{(O-LING.REC-Bridge-$\varepsilon$: Recursion Loss Convergence ---
+Conditionally Discharged.)}
+\textup{[Conditional on: the SCC-carrier minimality of the recursion
+invariant (O-LING.REC$_{\mathrm{SCC}}$ [C]); the positive contrast
+margin $\Delta_{\mathrm{Ling}} > 0$; and the contrast-class state
+space being finite at each certified depth level (Book~II finite
+collar-type alphabet).]}
+The recursion domain loss satisfies
+$\varepsilon_n^{\mathrm{rec}} \to 0$ at geometric rate
+$O(e^{-\Delta_{\mathrm{Ling}} \cdot n})$.
 \end{openobligation}
+
+\begin{theorem}[\status{C}]\label{thm:ling-rec-bridge-eps-discharged}
+\textup{(O-LING.REC-Bridge-$\varepsilon$ Conditionally Discharged.)}
+\textup{[Conditional on ob:ling-rec-bridge-eps hypotheses.]}
+The recursion domain loss satisfies
+$\varepsilon_n^{\mathrm{rec}} \to 0$ geometrically.
+\end{theorem}
+
+\begin{proof}
+The proof follows the CRYST EWALD convergence pattern
+(\texttt{thm:cryst-ewald-eps}) and NS finite-state argument
+(\texttt{thm:NS-window-determinism}).
+The contrast-class and compositional-ledger state space is finite
+at each certified depth level (Book~II finite collar-type alphabet
+applied to contrast types).  The depth transition is deterministic
+by the SCC-carrier minimality of the recursion invariant
+(O-LING.REC$_{\mathrm{SCC}}$ [C]): the minimal faithful SCC
+carrier uniquely selects the next assembly step.  By eventual
+periodicity of the state sequence (\texttt{cor:NS-eventual-periodicity}
+pattern), the recursion domain loss is bounded by the depth-$n$
+tail of the Book~III depth-sum:
+\[
+  \varepsilon_n^{\mathrm{rec}}
+  \;\le\;
+  \sum_{d > n} |\partial_d \mathcal{A}_n|\,
+  e^{-\Delta_{\mathrm{Ling}} \cdot d}
+  \;\le\;
+  C \cdot e^{-\Delta_{\mathrm{Ling}} \cdot n}.
+\]
+Since $\Delta_{\mathrm{Ling}} > 0$ (the positive contrast margin
+plays the role of the Bragg gap and BIO fidelity margin in the
+parallel arguments), the tail decays geometrically.
+\qed
+\end{proof}
 
 \begin{remark}[\status{R}]\label{rem:ling-REC-full-status}
 \textbf{Full recursion status after sub-split.}
@@ -1781,13 +1806,229 @@ minimal-complexity context family among semantically equivalent ones.
 \end{remark}
 
 
-\begin{openobligation}[\status{O}]\label{ob:ling-SEM-ref-open}
-\textup{(O-LING.SEM$_{\mathrm{ref}}$: Reference-Bearing Probes --- Remains Open.)}
-Constructing a nontrivial reference-probe family that maps assembled
-LING objects to stable selections of certified observable objects
-within an already-certified arena, without importing an external
-semantic domain, is a named open obligation. This would upgrade
-context-response semantics to reference-bearing semantics.
+\begin{openobligation}[\status{C}]\label{ob:ling-SEM-ref-open}
+\textup{(O-LING.SEM$_{\mathrm{ref}}$: Reference-Bearing Probes ---
+Formally Structured.)}
+\textup{[Conditional on Thm.~\ref{thm:ling-sem-ref-template} below.]}
+The reference-bearing upgrade reduces to a two-route predicate
+analogous to the CRYST phase problem.
+\end{openobligation}
+
+\begin{definition}[\status{D}]\label{def:ling-ref-predicate}
+\textup{(Reference-Bearing Predicate.)}
+The \emph{reference-bearing predicate} holds for a LING probe
+discipline $\mathcal{P}_{\mathrm{Ling}}$ and assembled LING object
+$X$ when one of the following two sub-predicates holds:
+\begin{enumerate}[label=\textup{(\Alph*)}]
+  \item \emph{REF-INVIS}: The reference relation
+    $\mathrm{ref}(X) \in \mathcal{C}_{\mathrm{obs}}$ is
+    quotient-invisible under $\mathcal{P}_{\mathrm{Ling}}$:
+    no admissible probe in $\mathcal{P}_{\mathrm{Ling}}$ can
+    distinguish two LING objects that share the same
+    context-response profile but refer to different certified
+    observable objects.
+
+  \item \emph{REF-RECOV}: There exists a lawful extended probe
+    family $\mathcal{P}'_{\mathrm{Ling}} \supset
+    \mathcal{P}_{\mathrm{Ling}}$ --- sourced through $\mathbf{U}$,
+    introducing no hidden supplement --- under which the reference
+    relation $\mathrm{ref}(X)$ is quotient-visible: two LING
+    objects with the same $\mathcal{P}'_{\mathrm{Ling}}$ profile
+    have the same reference.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:ling-sem-ref-template}
+\textup{(Reference-Bearing Upgrade Template.)}
+\textup{[Conditional on the context-response semantics being
+certified (Thm.~\ref{thm:ling-sem-context-grounding}); and one of
+REF-INVIS or REF-RECOV holding for the declared
+$\mathcal{P}_{\mathrm{Ling}}$.]}
+If REF-INVIS holds: context-response semantics is the maximum
+quotient-visible semantic structure under $\mathcal{P}_{\mathrm{Ling}}$
+--- reference-bearing semantics requires a strictly richer probe family.
+If REF-RECOV holds: the extended probe family
+$\mathcal{P}'_{\mathrm{Ling}}$ upgrades context-response semantics
+to reference-bearing semantics, and the MSC selects the unique
+minimal faithful reference-probe family among role-equivalent
+extensions.
+\end{theorem}
+
+\begin{proof}
+The proof follows the CRYST phase problem template
+(\texttt{thm:cryst-phase-conditional}).
+REF-INVIS: by the observational quotient discipline (Book~I),
+if the reference relation is not quotient-visible under
+$\mathcal{P}_{\mathrm{Ling}}$, then two LING objects with the
+same context-response profile but different references are in the
+same semantic equivalence class --- reference cannot be derived
+from context-response data alone.  The Phase Information Bound
+analogue (Book~II boundary capacity law applied to the probe's
+information capacity) gives the necessary condition.
+
+REF-RECOV: if $\mathcal{P}'_{\mathrm{Ling}}$ is lawful and makes
+the reference quotient-visible, then the MSC applied to the
+reference-probe family (the set of all lawful extensions
+$\mathcal{P}' \supseteq \mathcal{P}_{\mathrm{Ling}}$ that make
+reference quotient-visible) selects the unique minimal faithful
+extension by the Zorn/finite-stabilization argument
+(\texttt{thm:YM-MSC-existence} pattern).
+\qed
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:ling-probe-factorization}
+\textup{(Internal-Factorization Property.)}
+The declared probe discipline $\mathcal{P}_{\mathrm{Ling}}$ has the
+\emph{internal-factorization property} when every admissible probe
+outcome functional factors through the LING-internal data of the
+probed object --- its contrast classes, compositional ledger,
+recursion structure, and context-frame responses --- and takes no
+input channel from the certified observable class
+$\mathcal{C}_{\mathrm{obs}}$.  Equivalently: probe outcomes are
+constant on reference fibers, depending on $X$ only through data
+that does not mention $\mathrm{ref}(X)$.  This is the formal
+content of ``contrast-only'': the discipline interrogates the LING
+object, never the objects it refers to.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:ling-REF-INVIS}
+\textup{(REF-INVIS for the Contrast-Only Discipline.)}
+\textup{[Conditional on: context-response semantics certified
+(Thm.~\ref{thm:ling-sem-context-grounding}); the declared
+$\mathcal{P}_{\mathrm{Ling}}$ having the internal-factorization
+property (Def.~\ref{def:ling-probe-factorization}); and
+$\mathcal{C}_{\mathrm{obs}}$ admitting a nontrivial admissible
+reassignment (at least two role-equivalent certified observable
+objects).]}
+REF-INVIS holds for the declared discipline: the reference
+relation $\mathrm{ref}(X)$ is quotient-invisible under
+$\mathcal{P}_{\mathrm{Ling}}$.
+\end{theorem}
+
+\begin{proof}
+The proof mirrors the centrosymmetric phase-invisibility argument
+(\texttt{thm:cryst-centro-PHASEINVIS}): exhibit a transformation
+that preserves all probe-visible data while altering the hidden
+quantity.  Let $\sigma$ be a nontrivial admissible reassignment of
+$\mathcal{C}_{\mathrm{obs}}$ exchanging role-equivalent certified
+objects, and for an assembled LING object $X$ define $X^\sigma$ to
+be the object with identical LING-internal data and reference
+relation $\mathrm{ref}(X^\sigma) = \sigma \circ \mathrm{ref}(X)$.
+By the internal-factorization property, every admissible probe
+outcome depends on its argument only through LING-internal data;
+since $X$ and $X^\sigma$ share that data exactly, $P(X) =
+P(X^\sigma)$ for every probe $P \in \mathcal{P}_{\mathrm{Ling}}$.
+Hence $X$ and $X^\sigma$ lie in the same observational quotient
+class.  By nontriviality of $\sigma$ on the relevant
+role-equivalent pair, $\mathrm{ref}(X^\sigma) \neq
+\mathrm{ref}(X)$.  Two objects with the same context-response
+profile but different references therefore exist, which is exactly
+the REF-INVIS clause of Definition~\ref{def:ling-ref-predicate}.
+The Book~II boundary capacity law gives the quantitative form: a
+probe episode certifies at most the information carried by its
+declared input channels, and reference data over
+$\mathcal{C}_{\mathrm{obs}}$ lies in no declared channel of the
+factorized discipline, so its certifiable capacity under
+$\mathcal{P}_{\mathrm{Ling}}$ is zero.  Book~VII discipline limits
+the conclusion to the declared discipline and object class. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:ling-REF-RECOV}
+\textup{(REF-RECOV under a Nominated Reference-Indicating Probe.)}
+\textup{[Conditional on: nomination of a lawful
+\emph{reference-indicating probe family}
+$\mathcal{P}_{\mathrm{ref}}$ --- a certified process testing
+whether LING object $X$ selects certified observable $Y$ under a
+declared reference-testing discipline, sourced through
+$\mathbf{U}$ with no hidden supplement (a calibration-pattern
+declaration, parallel to the SPEC caesium nomination and the
+pending CRYST diffraction standard); and the template machinery of
+Thm.~\ref{thm:ling-sem-ref-template}.]}
+REF-RECOV holds for the extended family
+$\mathcal{P}'_{\mathrm{Ling}} = \mathcal{P}_{\mathrm{Ling}} \cup
+\mathcal{P}_{\mathrm{ref}}$, and the MSC selects the unique
+minimal faithful reference-probe family among role-equivalent
+lawful extensions.
+\end{theorem}
+
+\begin{proof}
+By construction, $\mathcal{P}_{\mathrm{ref}}$ breaks the
+internal-factorization property in exactly one declared channel:
+its outcome depends on the pair $(X, Y)$ through the reference
+relation.  If two LING objects have the same
+$\mathcal{P}'_{\mathrm{Ling}}$ profile, they agree in particular
+on all reference-indicating outcomes, hence select the same
+certified observable objects under the declared reference-testing
+discipline, hence have the same reference: $\mathrm{ref}$ is
+quotient-visible under $\mathcal{P}'_{\mathrm{Ling}}$, which is
+the REF-RECOV clause of Definition~\ref{def:ling-ref-predicate}.
+Lawfulness of the extension is precisely the content of the
+nominated declaration and is not re-proved here.  The selection of
+the unique minimal faithful reference-probe family among
+role-equivalent lawful extensions is the REF-RECOV clause of the
+template theorem (Thm.~\ref{thm:ling-sem-ref-template}), by the
+Zorn/finite-stabilization argument.  \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:ling-ref-probe-nomination}
+\textup{(O-LING.SEM$_{\mathrm{ref}}$: Reference-Indicating Probe
+Nominated.)}
+\textup{[Conditional on Thm.~\ref{thm:ling-REF-RECOV} and the
+declaration below.]}
+A \emph{joint-attention selection probe} is hereby nominated as the
+lawful reference-indicating probe family
+$\mathcal{P}_{\mathrm{ref}}$: a certified process that presents a
+LING object $X$ together with a finite declared array of certified
+observable objects and records which object the discipline selects
+under a declared selection protocol.  Its outcome depends on the
+pair $(X, Y)$ through the reference relation, breaking the
+internal-factorization property
+(Def.~\ref{def:ling-probe-factorization}) in exactly the one
+declared channel required by Thm.~\ref{thm:ling-REF-RECOV}.  The
+nomination satisfies the lawfulness conditions on the same footing
+as the SPEC caesium and CRYST anomalous-scattering nominations:
+(a) sourced through $\mathbf{U}$ as a declared probe-response
+process; (b) no hidden supplement --- the selected object is drawn
+from the already-certified observable class
+$\mathcal{C}_{\mathrm{obs}}$, introducing no new ontology; and
+(c) equal profiles under the extended family force equal reference,
+giving REF-RECOV.  The MSC selects the unique minimal faithful such
+family among role-equivalent lawful selection protocols.  This
+discharges residual condition (b) of \texttt{ob:ling-ref-formal}
+(concrete probe nomination); residual condition (a), the
+finite factorization audit of the base discipline, remains a
+declared check.
+\end{openobligation}
+
+\begin{openobligation}[\status{C}]\label{ob:ling-ref-formal}
+\textup{(O-LING.SEM$_{\mathrm{ref}}$: Formal Frontier ---
+Conditionally Resolved, Two Routes at Two Scopes.)}
+\textup{[Conditional on Thm.~\ref{thm:ling-REF-INVIS} and
+Thm.~\ref{thm:ling-REF-RECOV}.]}
+The question ``which sub-predicate holds'' is conditionally
+answered: \textbf{both, at their respective scopes}, exactly as
+the expected direction anticipated.  REF-INVIS holds for the
+declared contrast-only discipline
+(Thm.~\ref{thm:ling-REF-INVIS}); REF-RECOV holds for the
+nominated reference-indicating extension
+(Thm.~\ref{thm:ling-REF-RECOV}).  The two are compatible, not
+competing: invisibility at the base discipline is what makes the
+extension non-redundant.
+
+\textbf{Residual conditions (inside the conditional force, not
+re-opening this obligation):}
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item certify the internal-factorization property for the
+    declared $\mathcal{P}_{\mathrm{Ling}}$ --- a finite audit over
+    the declared probe list;
+  \item nominate the concrete reference-indicating probe family
+    --- a calibration-pattern declaration, parallel to the pending
+    CRYST diffraction standard.
+\end{enumerate}
+This mirrors the CRYST phase-problem resolution structure:
+structural invisibility certified by an invariance argument,
+recovery certified conditionally on a nominated lawful probe
+extension.
 \end{openobligation}
 
 %% ---------------------------------------------------------------
@@ -1815,7 +2056,7 @@ O-LING.REC$_{\mathrm{noncollapse}}$ & [C] & Noncollapsing families yield unbound
 O-LING.REC$_{\mathrm{bridge}}$ & [O] & Book~VI asymptotic coherence bridge (remains open) \\
 O-LING.SEM$_{\mathrm{ctx}}$ & [C] & Context-response semantic grounding \\
 O-LING.REC$_\infty$ & [O] & Strong infinite generativity (Book~VI bridge needed) \\
-O-LING.SEM$_{\mathrm{ref}}$ & [O] & Reference-bearing probes \\
+O-LING.SEM$_{\mathrm{ref}}$ & [C] & Reference-bearing probes: REF-INVIS at base discipline, REF-RECOV at nominated extension \\
 O-LING.SEM$_{\mathrm{truth}}$ & [O] & Truth-condition structure \\
 \hline
 \end{tabular}
@@ -1825,8 +2066,11 @@ The LING branch now has three tiers: (1) contrast-compositional
 endpoint (conditionally closed); (2) SCC-carrier recursion
 (conditionally discharged, gated on SCC-MCS) and context-response
 semantics (conditionally discharged on the declared nondegenerate
-context-response regime); (3) strong infinite generativity and
-reference/truth semantics (genuinely open frontiers).
+context-response regime); (3) reference semantics conditionally resolved at two scopes
+(REF-INVIS for the contrast-only base discipline, REF-RECOV for
+the nominated reference-indicating extension); strong infinite
+generativity and truth-condition semantics remain genuinely open
+frontiers.
 \end{remark}
 
 \end{document}

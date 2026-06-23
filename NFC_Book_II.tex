@@ -3052,9 +3052,16 @@ $\mathcal{D}_n$ in the declared obstruction ledger.
 
 \begin{proof}
 By Book~III lawful-transfer discipline, all admissible comparison is
-mediated through declared transfer maps and transport classes.
-Book~V excludes hidden-channel supplementation.  Therefore no
-unlisted degradation mechanism can operate. \qed
+mediated through declared transfer maps and transport classes, and
+the Unified Coercive-Transport Inequality decomposes every admissible
+enlargement step of the coercive quantity into exactly three sources:
+transported bulk, internal defect $\mathcal{E}_n$, and boundary
+defect $\mathcal{B}_n$.  The latter two constitute the declared
+ledger $\mathcal{D}_n = \mathcal{E}_n + \mathcal{B}_n$; the
+transported bulk carries certified structure without degradation.
+Book~V excludes hidden-channel supplementation, so no fourth source
+exists.  Therefore any decrease in $\mathcal{C}_n$ is attributable
+to the ledger terms and to nothing else. \qed
 \end{proof}
 
 \begin{theorem}[\status{C}]\label{thm:SCT2}
@@ -3067,20 +3074,31 @@ comparison level.
 \end{theorem}
 
 \begin{proof}
-From $\mathcal{C}_{n+1} \leq \Theta_n \mathcal{C}_n + \mathcal{D}_n
-\leq (\Theta_n + \lambda)\mathcal{C}_n$, strict subordination bounds
-the growth factor.  With transfer factors controlled (SCT.3), this
-yields persistence. \qed
+By SCT.1, the only degradation channel available to
+$\mathcal{C}_n$ at any step is the ledger $\mathcal{D}_n$.  Strict
+subordination $\mathcal{D}_n \leq \lambda\mathcal{C}_n$ with
+$\lambda < 1$ therefore bounds each step's certified loss by a
+proper fraction of the certified quantity: at no admissible step can
+the obstruction overtake or annihilate the certified structure, and
+the comparison $\mathcal{D}_n / \mathcal{C}_n \leq \lambda < 1$
+is maintained along the chain.  This is persistence at the
+comparison level.  (Durability of persistence on the late tail ---
+uniform control of the accumulated transfer factors --- is the
+separate content of SCT.3 and is not used here.) \qed
 \end{proof}
 
 \begin{theorem}[\status{C}]\label{thm:SCT3}
 \textup{(SCT.3 --- Stabilized Transfer Factors Give Durable
 Persistence.)}
-Assume SCT.1--2.  If the effective transfer factors satisfy
-$\Theta_n \leq \Theta^* < \infty$ and strict obstruction
+Assume SCT.1--2.  If the effective transfer factors are
+\emph{stabilized at or below unity},
+$\Theta_n \leq \Theta^* \leq 1$, and strict obstruction
 subordination holds with $\lambda < 1$, then
-$(1+\lambda)\Theta^* < 2$ and persistence is durable on the late
-tail.
+$(1+\lambda)\Theta^* \leq 1+\lambda < 2$ and persistence is
+durable on the late tail.  (The branch instances satisfy the
+unity bound by declaration: $\Theta_n = 1$ in the YM regime,
+$\Theta_n < 1$ in the NS quasi-decay regime, and the GR import
+operates at transport factor below one.)
 \end{theorem}
 
 \begin{proof}
@@ -3125,8 +3143,10 @@ Separation.)}
 Assume SCT.1--3.  Assume the \emph{dissipation bias condition}~(DB):
 there exists a branch-visible function $\Phi_n > 0$ and $\Psi_n$ with
 $\mathcal{D}_{n+1} \leq \mathcal{D}_n - \Phi_n + \Psi_n$ and
-$\limsup_n \Psi_n/\Phi_n < 1$.
-Then there exist $\varepsilon > 0$ and $N$ such that
+$\limsup_n \Psi_n/\Phi_n < 1$, together with the lower comparison
+$\Phi_n \geq c\,\mathcal{D}_n$ for some $c > 0$ on the late tail.
+Then (with tail positivity of $\mathcal{C}_n$, supplied by
+SCT.2--3) there exist $\varepsilon > 0$ and $N$ such that
 $\mathcal{D}_n \leq (1-\varepsilon)\mathcal{C}_n$ for all $n \geq N$.
 \end{theorem}
 

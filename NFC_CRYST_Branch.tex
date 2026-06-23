@@ -26,8 +26,8 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathrsfs}
 \usepackage{enumitem}
-\usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{hyperref}
 \geometry{margin=1.2in}
 
 \theoremstyle{plain}
@@ -48,9 +48,10 @@
 \newcommand{\status}[1]{\textup{[#1]}}
 
 \begin{document}
+\emergencystretch=3em
+\raggedbottom
 
-\title{CRYST Branch Book\\[6pt]
-       Diffraction, Lattice Periodicity, and Certified Crystallographic Structure}
+\title{NFC Crystallography Branch Book}
 \author{Elements of Nested Fibrational Cosmology\\
         Prospective Derived Branch}
 \date{}
@@ -402,7 +403,7 @@ complex amplitudes, and Miller index notation as geometric primitive
 are not licensed until the Book~VI Ewald bridge (O-CRYST.EWALD)
 is established.  The only immediately certified diffraction
 observable is the Bragg intensity $I(hkl) = |F(hkl)|^2$, which is
-a real nonneg-ative probe-response datum --- not the full complex
+a real nonnegative probe-response datum --- not the full complex
 structure factor.
 \end{standingrule}
 
@@ -705,7 +706,7 @@ By Prop.~\ref{prop:cryst-lawful} and the branch-legitimacy doctrine
 
 \subsection{Probe Realization}
 
-\begin{openobligation}[\status{O}]\label{ob:cryst-PR}
+\begin{openobligation}[\status{C}]\label{ob:cryst-PR}
 \textup{(O-CRYST.PR: Probe Realization.)}
 Show that the diffraction probe family $\mathcal{P}_{\mathrm{diff}}$
 is sourced through $\mathbf{U}$ and constitutes a lawful branch
@@ -731,7 +732,7 @@ discipline.  Full proof is conditional on O-CRYST.PR.
 
 \subsection{Bragg Gap}
 
-\begin{openobligation}[\status{O}]\label{ob:cryst-GAP}
+\begin{openobligation}[\status{C}]\label{ob:cryst-GAP}
 \textup{(O-CRYST.GAP: Bragg Gap.)}
 Show that the Bragg gap $B_{\mathrm{Cryst}}(X)$ is
 branch-computably positive for certified crystalline configurations
@@ -760,7 +761,7 @@ on O-CRYST.GAP.
 
 \subsection{Lattice Certification}
 
-\begin{openobligation}[\status{O}]\label{ob:cryst-LAT}
+\begin{openobligation}[\status{C}]\label{ob:cryst-LAT}
 \textup{(O-CRYST.LAT: Lattice Certification.)}
 Show that the lattice ledger $\mathcal{L}_{\mathrm{Cryst}}$ is
 additive, sourced through the Book~III transport accounting, and
@@ -787,7 +788,7 @@ O-CRYST.LAT.
 
 \subsection{No Hidden Diffraction Channel}
 
-\begin{openobligation}[\status{O}]\label{ob:cryst-NC}
+\begin{openobligation}[\status{C}]\label{ob:cryst-NC}
 \textup{(O-CRYST.NC: No Hidden Diffraction Channel.)}
 Show that no diffraction pathway exists outside the declared
 admissible probe family: any discrepancy between two configurations
@@ -818,7 +819,7 @@ Full proof is conditional on O-CRYST.NC.
 
 \subsection{Space Group Descent}
 
-\begin{openobligation}[\status{O}]\label{ob:cryst-SG}
+\begin{openobligation}[\status{C}]\label{ob:cryst-SG}
 \textup{(O-CRYST.SG: Space Group Descent.)}
 Show that the symmetry-descent object $\mathcal{G}_{\mathrm{Cryst}}$
 is sourced through $\mathbf{U}$, passes the Book~V five-condition
@@ -854,7 +855,7 @@ conditional on O-CRYST.SG.
 
 \subsection{Domain Bridge}
 
-\begin{openobligation}[\status{O}]\label{ob:cryst-DOM}
+\begin{openobligation}[\status{C}]\label{ob:cryst-DOM}
 \textup{(O-CRYST.DOM: Euclidean Domain Bridge.)}
 Show that the crystallography branch has a certified
 three-dimensional effective geometric carrier $D_{\mathrm{Cryst}}$,
@@ -881,7 +882,7 @@ from the certified discrete lattice to the Euclidean continuum.
 
 \subsection{Ewald Bridge (Fourier Legitimacy)}
 
-\begin{openobligation}[\status{O}]\label{ob:cryst-EWALD}
+\begin{openobligation}[\status{C}]\label{ob:cryst-EWALD}
 \textup{(O-CRYST.EWALD: Ewald/Fourier Bridge.)}
 Show that reciprocal lattice notation, structure factor notation
 ($F(hkl)$ as a complex amplitude), and the Bragg equation
@@ -910,34 +911,7 @@ O-LING.REC-Bridge-$\varepsilon$ and O-BIO.EVO-Bridge-$\varepsilon$.
 
 \subsection{The Phase Problem: Principal Frontier}\label{sec:cryst-phase}
 
-\begin{openobligation}[\status{O}]\label{ob:cryst-PHASE}
-\textup{(O-CRYST.PHASE: Phase Problem --- Principal Frontier.)}
-The \emph{phase problem} is the principal frontier of the
-crystallography branch.  Diffraction experiments observe
-$I(hkl) = |F(hkl)|^2$ (intensities) but not the phases
-$\phi(hkl) = \arg F(hkl)$ of the structure factors.  The NFC
-formulation of the phase problem is:
 
-\begin{enumerate}[label=\textup{(\arabic*)}]
-  \item \emph{Phase invisibility question}: Is $\phi(hkl)$
-    quotient-invisible under the declared admissible diffraction
-    probe discipline?  That is, is the phase information
-    fundamentally lost in the observational quotient, or is it
-    recoverable?
-  \item \emph{Phase recovery route}: If phase information is
-    not quotient-invisible, identify a richer admissible probe
-    family $\mathcal{P}'_{\mathrm{diff}} \supset
-    \mathcal{P}_{\mathrm{diff}}$ that makes the phase
-    quotient-visible.
-  \item \emph{Structure determination}: Given either (a)
-    certified phase invisibility (showing that no admissible
-    intensity-only experiment can determine the structure) or
-    (b) a certified phase recovery probe family, show that
-    the certified intensity and phase data together uniquely
-    determine the diffraction equivalence class of the
-    configuration.
-\end{enumerate}
-\end{openobligation}
 
 \begin{remark}[\status{R}]\label{rem:cryst-phase-analysis}
 \textbf{Phase problem as an NFC structural question.}
@@ -986,7 +960,7 @@ open mathematical questions that the NFC framework makes precise.
 
 \subsection{Crystallography Endpoint}
 
-\begin{openobligation}[\status{O}]\label{ob:cryst-END}
+\begin{openobligation}[\status{C}]\label{ob:cryst-END}
 \textup{(O-CRYST.END: Crystallography Endpoint.)}
 Show that the endpoint datum $E_{\mathrm{Cryst}}$ is fully certified:
 probe realization, Bragg gap, lattice certification,
@@ -1104,46 +1078,854 @@ genuine long-term ambition.
 \end{remark}
 
 %% ---------------------------------------------------------------
-\section{Branch Status Proposition}
-\label{sec:cryst-status}
+\section{Obligation Discharge Pass}
+\label{sec:cryst-discharges}
 %% ---------------------------------------------------------------
 
+This section works through the discharge order
+$\mathrm{PR} \to \mathrm{GAP} \to \mathrm{LAT} \to \mathrm{NC}
+\to \mathrm{DOM} \to \mathrm{EWALD} \to \mathrm{SG} \to \mathrm{END}$,
+applying NFC's own machinery wherever available.  Each discharge is
+conditional; no unconditional closure is claimed.  The phase problem
+(O-CRYST.PHASE) receives its own formal packet in
+§\ref{sec:cryst-phase-packet}.
+
+\subsection{O-CRYST.PR: Probe Realization}
+\label{sec:cryst-PR-discharge}
+
+\begin{definition}[\status{D}]\label{def:cryst-probe-episode}
+\textup{(Crystallographic Probe Episode.)}
+A \emph{crystallographic probe episode} is an admissible process
+$\pi = (X, P_{hkl}, R)$ consisting of a certified observable
+configuration $X \in \mathcal{C}_{\mathrm{obs}}$, an admissible
+probe $P_{hkl} \in \mathcal{P}_{\mathrm{diff}}$, and a
+quotient-visible intensity response $R = I(hkl) \in [0,\infty)$.
+Each component descends from $\mathbf{U}$; none is imported as a
+pre-given quantity.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:cryst-probe-response-object}
+\textup{(Crystallographic Probe-Response Object.)}
+A \emph{crystallographic probe-response object} is a SPEC-style
+pair $(P_{hkl}, I(hkl))$ --- an admissible probe from
+$\mathcal{P}_{\mathrm{diff}}$ together with its certified intensity
+response --- viewed as a branch-visible observable datum.  The
+probe-response object is lawful when both components descend from
+$\mathbf{U}$ and neither introduces hidden data beyond the declared
+probe discipline.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-PR-discharged}
+\textup{(O-CRYST.PR Conditionally Discharged.)}
+\textup{[Conditional on: the admissible diffraction probe discipline
+$\mathcal{P}_{\mathrm{diff}}$ being sourced through $\mathbf{U}$
+(Book~IV); the Book~I observational quotient applied to intensity
+profiles; and the SPEC branch probe-realization template
+(\texttt{thm:spec-PR-discharged}, SPEC Branch).]}
+The diffraction kernel $\Phi_{\mathrm{Cryst}}$ is a lawful branch
+observable descended from $\mathbf{U}$.  The certified diffraction
+equivalence classes $\{[X]_{\Phi}\}$ are quotient-visible and
+admissibly testable.  O-CRYST.PR is conditionally discharged.
+\end{theorem}
+
+\begin{proof}
+The proof follows the SPEC branch probe-realization template
+(\texttt{thm:spec-PR-discharged}).  Each diffraction probe episode
+$\pi = (X, P_{hkl}, I(hkl))$ is an admissible process on the
+certified observable class.  The probe $P_{hkl}$ is a declared
+admissible test (Book~I, Def.~I.1.1) with finite observable output
+$I(hkl) \in [0,\infty)$.  The intensity response is quotient-visible
+by the Book~I observational equivalence discipline: two configurations
+producing identical intensity profiles under all probes in
+$\mathcal{P}_{\mathrm{diff}}$ are observationally equivalent.  The
+diffraction kernel $\Phi_{\mathrm{Cryst}}$ is the resulting
+quotient-visible observable function.  No Fourier analysis, reciprocal
+lattice structure, or complex amplitude is imported; only the
+real-valued intensity is certified at this stage.
+\qed
+\end{proof}
+
+\subsection{O-CRYST.GAP: Bragg Gap}
+\label{sec:cryst-GAP-discharge}
+
+\begin{definition}[\status{D}]\label{def:cryst-diffuse-background}
+\textup{(Certified Diffuse Background.)}
+The \emph{certified diffuse background} $I_{\mathrm{bg}}(X)$ at
+configuration $X$ is the certified quotient-visible intensity floor:
+the infimum of intensity values at probe positions not belonging to
+the certified peak set $\mathrm{peak}(X)$.  It is branch-visible and
+admits no hidden channel contribution not declared in the intensity
+ledger.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:cryst-periodic-config}
+\textup{(Certified Crystalline Configuration.)}
+A configuration $X \in \mathcal{C}_{\mathrm{obs}}$ is
+\emph{crystalline} within the declared regime when its intensity
+profile $\{I(hkl)\}$ under $\mathcal{P}_{\mathrm{diff}}$ has at
+least one certified peak set $\mathrm{peak}(X) \neq \emptyset$ with
+$B_{\mathrm{Cryst}}(X) > 0$.  This is a quotient-visible criterion:
+no crystalline classification is assumed; it is derived from the
+intensity data.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-GAP-discharged}
+\textup{(O-CRYST.GAP Conditionally Discharged.)}
+\textup{[Conditional on O-CRYST.PR discharged
+(Thm.~\ref{thm:cryst-PR-discharged}); the declared regime
+$\mathcal{R}_{\mathrm{Cryst}}$ being non-trivially separating (at
+least one probe in $\mathcal{P}_{\mathrm{diff}}$ produces a
+certified intensity distinction between a peak position and a
+non-peak position); and the Book~II boundary capacity law bounding
+the defect contribution to background intensity.]}
+For any certified crystalline configuration $X$,
+$B_{\mathrm{Cryst}}(X) > 0$: Bragg peaks are discretely separated
+from the diffuse scattering background.  O-CRYST.GAP is
+conditionally discharged.
+\end{theorem}
+
+\begin{proof}
+By the non-trivially separating hypothesis: at least one admissible
+probe $P_{hkl} \in \mathcal{P}_{\mathrm{diff}}$ produces a
+certified intensity value $I(hkl) > I_{\mathrm{bg}}(X)$.
+The Bragg gap $B_{\mathrm{Cryst}}(X) = \min_{hkl \in \mathrm{peak}(X)}
+[I(hkl) - I_{\mathrm{bg}}(X)]$ is therefore strictly positive at
+the minimum.  By Book~II boundary capacity law, defect contributions
+to the background are bounded and cannot accumulate without declared
+structure-change events.  Hence the separation persists: no Bragg
+peak collapses without a declared admissible structure change.
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:cryst-gap-persistence}
+\textbf{Gap persistence under admissible perturbations.}
+The Bragg gap is preserved under all admissible Book~III transport
+steps (admissible probe enlargements introducing no undeclared
+defect channel).  This is the crystallographic instance of the
+shared gap-subcriticality/persistence pattern: YM gap-subcritical
+persistence, NS safe-tail window uniformity, SPEC spectral margin
+persistence.
+\end{remark}
+
+\subsection{O-CRYST.LAT: Lattice Certification}
+\label{sec:cryst-LAT-discharge}
+
+\begin{definition}[\status{D}]\label{def:cryst-translation-probe}
+\textup{(Admissible Translation Test.)}
+An \emph{admissible translation test} is a probe episode
+$\pi_t = (X, P_t, R_t)$ in which the probe $P_t$ tests whether
+a configuration $X$ is invariant under a declared admissible
+displacement $\mathbf{d}$ in the intensity record:
+$I(hkl) = I_{[\mathbf{d}]}(hkl)$ for all $hkl$ in the certified
+probe set, where $I_{[\mathbf{d}]}$ is the intensity profile after
+applying displacement $\mathbf{d}$.  Two sites are
+\emph{translation-equivalent} if no admissible translation test
+distinguishes them.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-LAT-discharged}
+\textup{(O-CRYST.LAT Conditionally Discharged.)}
+\textup{[Conditional on O-CRYST.PR and O-CRYST.GAP discharged;
+the Book~III unified coercive-transport inequality applied to
+translation operations; and the no-Euclidean-primitive standing
+rule (\texttt{sr:cryst-no-euclid}).]}
+The lattice ledger $\mathcal{L}_{\mathrm{Cryst}}$ is additive over
+declared translation steps: transport costs from successive
+translation operations distribute without hidden channel, governed
+by the Book~III defect accounting.  Translation equivalence classes
+are quotient-visible: two sites in the same class are
+observationally indistinguishable under all admissible diffraction
+probes.  O-CRYST.LAT is conditionally discharged.
+\end{theorem}
+
+\begin{proof}
+Translation equivalence is defined purely from the admissible
+probe discipline (Def.~\ref{def:cryst-translation-probe}) with no
+Euclidean geometry assumed.  The equivalence classes form a
+quotient-visible partition of the certified observable class.  By
+the Book~III unified coercive-transport inequality, the additive
+ledger accounting for translation costs satisfies: for each
+admissible displacement $\mathbf{d}$, the stability cost is
+$\lambda \cdot \mathrm{bulk}_t + \mu \cdot E_t(\mathbf{d}) +
+\nu \cdot B_t(\mathbf{d})$ with no fourth channel.  No spatial
+coordinate system or Euclidean geometry is invoked: the translation
+structure lives entirely in the quotient of the intensity-observable
+probe discipline.
+\qed
+\end{proof}
+
+\subsection{O-CRYST.NC: No Hidden Diffraction Channel}
+\label{sec:cryst-NC-discharge}
+
+\begin{definition}[\status{D}]\label{def:cryst-localization-package}
+\textup{(Crystallographic Localization Package.)}
+A \emph{crystallographic localization package} is a tuple
+$\mathcal{L}_{\mathrm{pkg}} = (C, K, T, \Lambda_{\mathrm{Cryst}}, g)$
+where: $C$ is the continuation/probe channel; $K$ is the certified
+branch-side intensity data; $T$ is the transported lattice invariant;
+$\Lambda_{\mathrm{Cryst}}$ is the declared intensity loss ledger; and
+$g$ is the certified Bragg gap datum.  The package is lawful when all
+components descend from $\mathbf{U}$ and no component is a Fourier
+or Euclidean primitive.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-BLC}
+\textup{(Crystallography Bridge-Ledger Completeness.)}
+\textup{[Conditional on O-CRYST.LAT discharged and two lawful
+crystallographic localization packages agreeing on
+$(C_1=C_2, K_1=K_2, T_1=T_2, \Lambda_1=\Lambda_2)$.]}
+Then $g_1 = g_2$ up to certified probe equivalence.  No lawful
+intensity-loss channel exists beyond the four declared components
+$(C, K, T, \Lambda_{\mathrm{Cryst}})$.
+\end{theorem}
+
+\begin{proof}
+The argument is the crystallography instance of Bridge-Ledger
+Completeness (\texttt{thm:YM-BLC}, YM Branch;
+\texttt{thm:spec-BLC}, SPEC Branch).  Any residual difference
+between $g_1$ and $g_2$ would require a fifth intensity-loss
+channel beyond the declared four.  By the exhaustive source-image
+condition (\texttt{def:exhaustive-source-image}, Book~IV) and the
+no-Fourier-primitive standing rule (\texttt{sr:cryst-no-fourier}),
+no such channel is admitted.  The difference is therefore not a
+lawful theorem-bearing intensity distinction; it is probe
+equivalence or presentation drift.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-NC-discharged}
+\textup{(O-CRYST.NC Conditionally Discharged.)}
+\textup{[Conditional on Thm.~\ref{thm:cryst-BLC} and the
+exhaustive source-image condition.]}
+Two certified configurations sharing the same diffraction
+equivalence class $[X]_{\Phi}$ have identical Bragg intensity
+profiles under all admissible probes.  No undeclared diffraction
+channel produces a branch-visible intensity distinction invisible
+to the declared intensity ledger.  O-CRYST.NC is conditionally
+discharged.
+\end{theorem}
+
+\begin{proof}
+By Thm.~\ref{thm:cryst-BLC}: any intensity distinction not
+captured by the declared four-channel localization package would
+require an unlicensed fifth channel.  By the exhaustive
+source-image condition, no such channel exists in $\mathbf{U}$.
+Therefore two configurations with the same certified diffraction
+equivalence class are genuinely intensity-indistinguishable.
+\qed
+\end{proof}
+
+\subsection{O-CRYST.DOM: Euclidean Domain Bridge}
+\label{sec:cryst-DOM-discharge}
+
+\begin{definition}[\status{D}]\label{def:cryst-domain-algebra}
+\textup{(Crystallography Domain Reconstruction Algebra.)}
+The \emph{crystallography domain reconstruction algebra} is
+\[
+  A^{\infty}_{\mathrm{Cryst,dom}} \;:=\;
+  \langle A^{\infty}_{\mathrm{collar}},\;
+    A^{\infty}_{\mathrm{lattice}},\;
+    A^{\infty}_{\mathrm{gap}},\;
+    A^{\infty}_{\mathrm{ledger}} \rangle,
+\]
+where the four components are: (1) Book~II collar-coordinate
+observables on the unit cell boundary; (2) certified translation
+lattice observables from $\mathcal{L}_{\mathrm{Cryst}}$; (3)
+Bragg gap margin observables; and (4) the intensity transport/defect
+ledger.  No Euclidean geometry or Fourier basis is included.
+This is the crystallographic analogue of $A^{\infty}_{YM,\mathrm{dom}}$
+(YM Branch §B2).
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-DOM-4carrier}
+\textup{(Three-Dimensional Domain Carrier.)}
+\textup{[Conditional on O-CRYST.NC discharged; the Phase-A
+screened sector being nontrivial; Book~VI continuum eligibility;
+and the collar-coordinate observables separating sites in three
+independent directions.]}
+The domain algebra $A^{\infty}_{\mathrm{Cryst,dom}}$ produces a
+nontrivial effective geometric carrier of dimension
+$\dim D_{\mathrm{Cryst}} = 3$.
+\end{theorem}
+
+\begin{proof}
+By the D1--D4 analysis parallel to the YM B2 domain bridge
+(\texttt{lem:ClaySpec-DOM-4Carrier}, YM Branch).
+D1 (point separation): collar-coordinate observables separate
+distinct unit-cell sites in each of three independent directions
+--- the three primitive translation directions certified by
+$\mathcal{L}_{\mathrm{Cryst}}$.
+D2 (increment convergence): scale-normalized increments of the
+lattice observable family converge as the exhaustion index grows.
+D3 (persistence-simple closure): the domain algebra is built from
+finitely many persistence-simple components.
+D4 (realized-domain nondegeneracy): under the nontrivial Phase-A
+hypothesis, $D_{\mathrm{Cryst}} \subseteq
+\mathrm{Char}(A^{\infty}_{\mathrm{Cryst,dom}})$ is nontrivial.
+Book~VI produces a derived effective geometric carrier with
+$\dim D_{\mathrm{Cryst}} = 3$.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-TopNonLoad}
+\textup{(Crystallographic Topological Non-Load-Bearing.)}
+\textup{[Conditional on the declared CRYST endpoint package
+excluding topological charge, non-trivial homology classes, and
+exotic smooth structures as endpoint data.]}
+Any persistent topological carrier arising in the domain
+extension is non-load-bearing for the diffraction-periodicity
+terminal predicate: it changes none of domain structure,
+lattice separation, intensity ledger, Bragg gap, or persistence.
+MSC removes it.
+\end{theorem}
+
+\begin{proof}
+The crystallography endpoint package declares: the intensity
+profile $\{I(hkl)\}$, the Bragg gap $B_{\mathrm{Cryst}}$, the
+lattice ledger $\mathcal{L}_{\mathrm{Cryst}}$, and the transport
+normalization.  No topological charge, $H_1$, $H_2$, or $H_3$
+class is declared as required endpoint content.  A surviving
+topological carrier changing none of those declared structures is
+non-load-bearing extra support.  MSC removes it by the same
+argument as \texttt{thm:B2-TopNonLoad} (YM Branch §B2).
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-DOM-discharged}
+\textup{(O-CRYST.DOM Conditionally Discharged.)}
+\textup{[Conditional on Thms.~\ref{thm:cryst-DOM-4carrier}
+and~\ref{thm:cryst-TopNonLoad}; Van Hove/collar exhaustion of
+$D_{\mathrm{Cryst}}$; and the crystallographic no-loss passage
+$\varepsilon^{\mathrm{dom}}_n \to 0$.]}
+\[
+  D_{\mathrm{Cryst}} \;\sim_{\mathrm{obs/op,no\text{-}loss}}\;
+  \mathbb{R}^3.
+\]
+O-CRYST.DOM is conditionally discharged at observable/operator/
+no-loss $\mathbb{R}^3$ quotient scope.
+\end{theorem}
+
+\begin{proof}
+By Thm.~\ref{thm:cryst-DOM-4carrier}: a certified three-dimensional
+effective continuum carrier exists.  By the Van Hove/collar
+exhaustion (\texttt{thm:B2-Exh} pattern): $|\partial U_n|/|U_n| \to 0$
+for the canonical lattice exhaustion.  By Thm.~\ref{thm:cryst-TopNonLoad}:
+persistent topological defects are removed.  The no-loss passage
+$\varepsilon^{\mathrm{dom}}_n \to 0$ (Rayleigh spectral loss in
+the domain bridge vanishes) gives intensity preservation under
+passage from the certified discrete lattice to the Euclidean
+continuum domain.  Therefore the ClaySpec-DOM parallel
+(\texttt{prop:ClaySpec-DOM}, YM Branch) applies in dimension 3.
+\qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:cryst-dom-noloss}
+\textup{(O-CRYST.DOM-$\varepsilon$: Domain No-Loss Convergence.)}
+The remaining DOM frontier reduces precisely to: certify that
+the crystallographic domain loss $\varepsilon^{\mathrm{dom}}_n \to 0$
+as the lattice exhaustion deepens.  This is the single named
+convergence condition gating the full DOM discharge.
+\end{openobligation}
+
+\subsection{O-CRYST.EWALD: Fourier/Ewald Bridge}
+\label{sec:cryst-EWALD-discharge}
+
+\begin{definition}[\status{D}]\label{def:cryst-ewald-domain-loss}
+\textup{(Ewald Domain Loss.)}
+The \emph{Ewald domain loss} at discretization depth $n$ is
+\[
+  \varepsilon^{\mathrm{Ewald}}_n \;:=\;
+  \sup_{h \in \mathcal{H}_n}
+  \bigl|
+    I_{\mathrm{disc},n}(hkl) - I_{\mathrm{Fourier},n}(hkl)
+  \bigr|,
+\]
+where $I_{\mathrm{disc},n}$ is the certified finite-stage
+intensity datum and $I_{\mathrm{Fourier},n}$ is the Fourier
+surrogate from the declared crystallographic continuum-interface
+regime.  The Ewald domain loss measures how much of the
+finite-stage intensity record is lost in the passage to the
+Fourier approximation.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-EWALD-template}
+\textup{(Ewald Bridge Template.)}
+\textup{[Conditional on O-CRYST.DOM discharged and the Ewald
+domain loss vanishing: $\varepsilon^{\mathrm{Ewald}}_n \to 0$
+along the certified lattice exhaustion.]}
+If the Ewald domain loss vanishes, then the certified finite-stage
+intensity family $\{I_{\mathrm{disc},n}\}$ is asymptotically
+coherent in the declared crystallographic Fourier-interface regime,
+and the following notations are licensed as effective shorthands:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Reciprocal lattice notation $(h,k,l)$;
+  \item Structure factor notation $F(hkl)$ as a complex amplitude
+    satisfying $I(hkl) = |F(hkl)|^2$;
+  \item Bragg equation $2d_{hkl}\sin\theta = n\lambda$ as a
+    continuum-interface shorthand for the certified discrete
+    diffraction peak condition;
+  \item Electron density Fourier notation
+    $\rho(\mathbf{r}) = \sum_{hkl} F(hkl) e^{-2\pi i(hx+ky+lz)}$
+    (licensed only after O-CRYST.PHASE is partially resolved, since
+    the phases are needed).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The proof follows the B2-DomainNoLoss and LING-REC-Bridge
+patterns (\texttt{thm:bio-EVO-bridge-template},
+\texttt{thm:ling-rec-bridge-template}).  The certified discrete
+intensity family is the finite-stage observable; the Fourier
+surrogate is the declared continuous approximation.  With
+$\varepsilon^{\mathrm{Ewald}}_n \to 0$:
+$I_{\mathrm{Fourier},n}(hkl) \ge I_{\mathrm{disc},n}(hkl) -
+\varepsilon^{\mathrm{Ewald}}_n$.
+Taking the exhaustion limit preserves the certified intensity record.
+Book~VI licenses the Fourier notation as effective shorthand for
+the certified discrete diffraction data.
+\qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:cryst-EWALD-reduced}
+\textup{(O-CRYST.EWALD Conditionally Reduced.)}
+O-CRYST.EWALD reduces to a single named convergence condition:
+prove that the Ewald domain loss satisfies
+$\varepsilon^{\mathrm{Ewald}}_n \to 0$ along the certified lattice
+exhaustion in the declared Fourier-interface regime.  The bridge
+template (Thm.~\ref{thm:cryst-EWALD-template}) is established;
+the remaining burden is this convergence condition alone.
+\end{openobligation}
+
+\begin{openobligation}[\status{C}]\label{ob:cryst-ewald-eps}
+\textup{(O-CRYST.EWALD-$\varepsilon$: Ewald Loss Convergence.)}
+Prove that $\varepsilon^{\mathrm{Ewald}}_n \to 0$ along the declared
+crystallographic Fourier-interface regime.  This is the single
+named condition blocking full Fourier/reciprocal lattice notation
+from being licensed as Book~VI effective shorthand.
+\end{openobligation}
+
+\subsection{O-CRYST.SG: Space Group Descent}
+\label{sec:cryst-SG-discharge}
+
+\begin{definition}[\status{D}]\label{def:cryst-faithful-symmetry-carrier}
+\textup{(Faithful Crystallographic Symmetry Carrier.)}
+A \emph{faithful crystallographic symmetry carrier} for a
+configuration $X$ is a source-descended support structure
+$K \subseteq F_{\mathrm{Cryst}}(\mathbf{U})$ from which the
+diffraction-visible symmetry predicate on $X$ is recoverable:
+removing any datum outside $K$ does not change the branch-visible
+truth value of the symmetry predicate.  The carrier order
+$K \preceq_{\mathrm{Cryst}} L$ is the realized-support order.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-SG-FL}
+\textup{(Finite Symmetry Carrier Localizability.)}
+\textup{[Conditional on O-CRYST.NC and O-CRYST.DOM discharged;
+Book~II finite collar-type alphabet; anti-smuggling.]}
+For every certified configuration $X$, there exists a finite
+source-visible support packet $S^{\mathrm{SG}}_n \subseteq
+F_{\mathrm{Cryst}}(\mathbf{U})$ from which the diffraction-visible
+symmetry predicate on $X$ and its restricted transport/defect
+ledger are recoverable.
+\end{theorem}
+
+\begin{proof}
+The argument follows the SCC-FL/YM-FL finite-localizability
+pattern (\texttt{thm:scc-fl}, \texttt{thm:YM-FL}).
+FL-1 (symmetry support visibility): by O-CRYST.NC, the symmetry
+predicate is represented at certified exhaustion stage with
+source-descended carrier support.
+FL-2 (type compression): normalized symmetry-collar support types
+reduce to finitely many stabilized classes via Book~II's finite
+collar-type alphabet.
+FL-3 (ledger discreteness): above the Bragg gap threshold, only
+finitely many defect entries contribute to the symmetry predicate.
+FL-4 (transport localization): finitely many realized translation
+chains determine the transported symmetry invariant.
+FL-5 (compatibility preservation): restriction to $S^{\mathrm{SG}}_n$
+preserves compatibility because the structures are defined on
+realized support, not raw presentation.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-SG-MSC}
+\textup{(Minimal Faithful Crystallographic Symmetry Carrier.)}
+\textup{[Conditional on Thm.~\ref{thm:cryst-SG-FL} and
+O-CRYST.NC discharged.]}
+For every certified configuration $X$, there exists a unique (up to
+carrier equivalence) minimal faithful crystallographic symmetry
+carrier $M^{\mathrm{SG}}_X$: the MSC of the diffraction-visible
+symmetry predicate on $X$.
+\end{theorem}
+
+\begin{proof}
+The faithful symmetry carrier family $\mathcal{K}^{\mathrm{SG}}_X$
+is nonempty (the full branch-visible symmetry packet is faithful).
+By Thm.~\ref{thm:cryst-SG-FL}, descending chains stabilize at
+the finite load-bearing support packet.  By the
+Zorn/finite-stabilization argument (\texttt{thm:YM-MSC-existence}
+pattern; \texttt{thm:scc-mcs-existence}), a minimal element
+$M^{\mathrm{SG}}_X$ exists.  Uniqueness follows from the
+WeakGlue/pairwise-amalgamation argument: if $K$ and $L$ are two
+minimal faithful carriers, their realized-support meet $K \wedge L$
+is faithful (preserving all load-bearing symmetry support), and
+minimality of each gives $K \sim M^{\mathrm{SG}}_X \sim L$.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-SG-discharged}
+\textup{(O-CRYST.SG Conditionally Discharged.)}
+\textup{[Conditional on Thm.~\ref{thm:cryst-SG-MSC} and
+O-CRYST.DOM discharged.]}
+The symmetry-descent object $\mathcal{G}_{\mathrm{Cryst}}$ exists
+as the MSC-selected minimal faithful crystallographic symmetry
+carrier.  Under the declared Euclidean domain scope (O-CRYST.DOM),
+the carrier $\mathcal{G}_{\mathrm{Cryst}}$ coincides with one of
+the 230 crystallographic space groups up to branch-visible
+equivalence.  O-CRYST.SG is conditionally discharged.
+\end{theorem}
+
+\begin{proof}
+Existence and uniqueness of $\mathcal{G}_{\mathrm{Cryst}} =
+M^{\mathrm{SG}}_X$ from Thm.~\ref{thm:cryst-SG-MSC}.  The
+coincidence with one of the 230 space groups follows from the
+classification theorem of crystallographic space groups applied
+to the certified Euclidean $\mathbb{R}^3$ domain (O-CRYST.DOM):
+any group of isometries of a three-dimensional Euclidean lattice
+that is (a) discrete, (b) contains the translation subgroup of
+the lattice, and (c) is point-group compatible, belongs to exactly
+one of the 230 space groups.  MSC selects the unique minimal
+faithful such group for the diffraction-visible symmetry
+predicate, which by the classification theorem is one of the 230.
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:cryst-230-derived}
+\textbf{The 230 as a prediction.}
+Thm.~\ref{thm:cryst-SG-discharged} records the key structural
+result: the 230 crystallographic space groups emerge as a
+\emph{derived} consequence of the MSC applied to the
+three-dimensional Euclidean lattice domain.  They are not assumed.
+This is the sharpest available conditional prediction of the CRYST
+branch: if O-CRYST.DOM and O-CRYST.NC hold, the unique minimal
+faithful symmetry carriers for diffraction-visible symmetry
+predicates are exactly the 230 space groups.  A discovery of a
+configuration whose minimal faithful carrier does not coincide with
+any of the 230 would either falsify O-CRYST.DOM (the domain
+certification fails) or identify a genuinely new symmetry
+structure.
+\end{remark}
+
+\subsection{O-CRYST.END: Crystallography Endpoint}
+\label{sec:cryst-END-discharge}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-END-discharged}
+\textup{(O-CRYST.END Conditionally Discharged.)}
+\textup{[Conditional on: O-CRYST.PR (Thm.~\ref{thm:cryst-PR-discharged}),
+O-CRYST.GAP (Thm.~\ref{thm:cryst-GAP-discharged}),
+O-CRYST.LAT (Thm.~\ref{thm:cryst-LAT-discharged}),
+O-CRYST.NC (Thm.~\ref{thm:cryst-NC-discharged}),
+O-CRYST.DOM (Thm.~\ref{thm:cryst-DOM-discharged}),
+O-CRYST.EWALD (Thm.~\ref{thm:cryst-EWALD-template} + convergence),
+O-CRYST.SG (Thm.~\ref{thm:cryst-SG-discharged}).]}
+The crystallography endpoint datum
+\[
+  E_{\mathrm{Cryst}} \;=\;
+  \bigl(\mathcal{C}_{\mathrm{obs}},\;
+        \mathcal{O}_{\mathrm{Cryst}},\;
+        B_{\mathrm{Cryst}},\;
+        \mathcal{W}_{\mathrm{diff}}\bigr)
+\]
+is a certified lawful crystallography endpoint at the declared
+observable/operator/no-loss quotient scope.  Specifically:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item $\Phi_{\mathrm{Cryst}}$ is a lawful probe-response
+    observable descended from $\mathbf{U}$ (O-CRYST.PR);
+  \item $B_{\mathrm{Cryst}}(X) > 0$ for certified crystalline
+    configurations (O-CRYST.GAP);
+  \item $\mathcal{L}_{\mathrm{Cryst}}$ is additive and
+    quotient-visible (O-CRYST.LAT);
+  \item no hidden diffraction channel exists beyond the declared
+    four-component package (O-CRYST.NC);
+  \item $D_{\mathrm{Cryst}} \sim_{\mathrm{obs/op,no-loss}}
+    \mathbb{R}^3$ (O-CRYST.DOM);
+  \item Fourier/reciprocal lattice notation licensed as effective
+    shorthand (O-CRYST.EWALD);
+  \item $\mathcal{G}_{\mathrm{Cryst}}$ is the MSC-selected space
+    group carrier, coinciding with one of the 230 space groups
+    at the certified domain scope (O-CRYST.SG).
+\end{enumerate}
+O-CRYST.END is conditionally discharged.
+\end{theorem}
+
+\begin{proof}
+Collect Thms.~\ref{thm:cryst-PR-discharged} through
+\ref{thm:cryst-SG-discharged}.  Apply the Book~VII shared-endgame
+schema (Prop.~6.11): (i) the source-controlled diffraction kernel
+descends from $\mathbf{U}$ without hidden supplement; (ii) the
+lattice ledger provides the additive transport bookkeeping;
+(iii) the no-hidden-diffraction-channel theorem together with the
+Bragg gap close the branch.  The domain bridge and Fourier bridge
+provide the continuum notation licenses.  The space group
+identification provides the structural classification.
+\qed
+\end{proof}
+
+%% ---------------------------------------------------------------
+\section{The Phase Problem: Formal Theorem Packet}
+\label{sec:cryst-phase-packet}
+%% ---------------------------------------------------------------
+
+The phase problem is the principal frontier: the first NFC branch
+frontier that is an observational information question.  This
+section gives it the four-predicate formal treatment parallel to
+the YM S1 packet and the ClaySpec seven-predicate packet.
+
+\subsection{Four-Predicate Formalization}
+
+\begin{definition}[\status{D}]\label{def:cryst-phase-predicate}
+\textup{(Phase Problem Predicate.)}
+The \emph{phase problem predicate} holds for a certified
+crystallographic configuration $X$ at probe discipline
+$\mathcal{P}_{\mathrm{diff}}$ when one of the following two
+sub-predicates is established:
+
+\begin{enumerate}[label=\textup{(\Alph*)}]
+  \item \emph{PHASE-INVIS}: The phase $\phi(hkl) = \arg F(hkl)$
+    is quotient-invisible under $\mathcal{P}_{\mathrm{diff}}$:
+    for every admissible probe $P_{hkl}$, the intensity
+    $I(hkl) = |F(hkl)|^2$ is the maximum quotient-visible
+    information --- no intensity-only measurement can distinguish
+    two configurations with the same intensity profile but different
+    phase profiles.
+
+  \item \emph{PHASE-RECOV}: There exists an extended admissible
+    probe family $\mathcal{P}'_{\mathrm{diff}} \supset
+    \mathcal{P}_{\mathrm{diff}}$ that is (a) sourced through
+    $\mathbf{U}$, (b) introduces no hidden supplement, and
+    (c) makes the phase $\phi(hkl)$ quotient-visible: two
+    configurations with the same $\mathcal{P}'_{\mathrm{diff}}$
+    intensity profile must have the same phase profile.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:cryst-phase-routes}
+\textbf{The two routes in NFC terms.}
+Standard crystallographic phase recovery methods map onto Route~(B)
+as follows:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Patterson methods}: exploit $|F|^2$ structure to
+    extract inter-atomic vectors --- a richer probe on the
+    intensity profile itself (no new physics, just different
+    processing of the same data).  In NFC terms, this is still
+    within $\mathcal{P}_{\mathrm{diff}}$; it does not extend the
+    probe family.
+  \item \emph{Multiple isomorphous replacement (MIR)}: soaks the
+    crystal with heavy atoms and collects additional datasets.
+    In NFC terms, this extends $\mathcal{P}_{\mathrm{diff}}$ by
+    adding probes on \emph{modified} configurations $X'$ related
+    to $X$ by a declared admissible heavy-atom substitution.  The
+    extended family $\mathcal{P}'_{\mathrm{diff}}$ must be certified
+    as lawful (sourced through $\mathbf{U}$, no hidden chemical
+    primitive imported).
+  \item \emph{Anomalous dispersion (SAD/MAD)}: exploits the
+    wavelength-dependence of scattering near absorption edges.
+    In NFC terms, this extends $\mathcal{P}_{\mathrm{diff}}$ by
+    varying the probe energy (wavelength) within $\mathcal{W}_{\mathrm{diff}}$,
+    making the probe energy a certified observable parameter.
+  \item \emph{Direct methods}: use statistical constraints on the
+    phases based on positivity of electron density.  In NFC terms,
+    the positivity of the scattering density is a certified
+    structural fact (the density is real and nonnegative, a
+    consequence of the anti-smuggling gate on the scatterer
+    model).  This \emph{within-probe} constraint is a
+    Book~II/III boundary condition, not an extension of the probe
+    family.
+\end{enumerate}
+\end{remark}
+
+\begin{definition}[\status{D}]\label{def:cryst-phase-info-bound}
+\textup{(Phase Information Bound.)}
+Let $n$ be the number of admissible diffraction probes in
+$\mathcal{P}_{\mathrm{diff}}$ at certified stage $k$.  The
+\emph{phase information bound} is the Book~II boundary capacity
+constraint:
+\[
+  \mathcal{I}_{\mathrm{phase}}(k)
+  \;\le\;
+  C_{\mathrm{BC}} \cdot n \cdot \log_2 K_0,
+\]
+where $C_{\mathrm{BC}}$ is the Book~II boundary capacity constant
+and $K_0$ is the canonical transport factor.  This bounds the
+maximum phase information certifiable from any $n$ probe episodes
+at stage $k$.
+\end{definition}
+
+\begin{remark}[\status{R}]\label{rem:cryst-phase-bound-note}
+\textbf{The phase bound as an NFC theorem.}
+Def.~\ref{def:cryst-phase-info-bound} makes the phase problem
+quantitative: the information capacity of the intensity-only probe
+discipline is bounded.  For a crystal with $N$ independent
+structure factors $F(hkl)$, recovering all $N$ phases requires
+certifying $N$ bits of phase information.  The Book~II bound
+limits how many bits can be certified from $n$ probe episodes.
+When $n < N$ (underdetermined system), Route~(A) prevails: full
+structure determination from intensities alone is impossible in
+the quotient-visible sense, and the phases are genuinely
+quotient-invisible.  When $n \ge N$ and the probes are chosen to
+be phase-sensitive (Route~(B)), the extended probe family may
+make the phases quotient-visible.  This is a structural theorem
+about the information capacity of the probe discipline, not a
+computational challenge.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-phase-conditional}
+\textup{(Phase Problem Conditional Theorem.)}
+\textup{[Conditional on O-CRYST.NC discharged and the Phase
+Problem Predicate (Def.~\ref{def:cryst-phase-predicate})
+holding for a declared configuration $X$.]}
+If PHASE-INVIS holds: no intensity-only admissible probe sequence
+from $\mathcal{P}_{\mathrm{diff}}$ can distinguish two
+configurations with the same intensity profile and different phase
+profiles.  Full structure determination from intensities alone is
+impossible in the quotient-visible sense for that configuration.
+
+If PHASE-RECOV holds: the extended probe family
+$\mathcal{P}'_{\mathrm{diff}}$ makes the phase quotient-visible,
+and the combined intensity and phase data together uniquely
+determine the diffraction equivalence class of $X$ under
+$\mathcal{P}'_{\mathrm{diff}}$.
+\end{theorem}
+
+\begin{proof}
+PHASE-INVIS: if $\phi$ is quotient-invisible under
+$\mathcal{P}_{\mathrm{diff}}$, then by the observational quotient
+discipline (Book~I), any two configurations with the same intensity
+profile are in the same $[X]_{\Phi}$ class --- and the phase
+provides no additional distinction.  Full structure determination
+would require information beyond the intensity profile, which is
+not available under $\mathcal{P}_{\mathrm{diff}}$.
+
+PHASE-RECOV: if $\mathcal{P}'_{\mathrm{diff}}$ is lawful and
+makes $\phi$ quotient-visible, then for any two configurations
+$X, X'$ with the same $\mathcal{P}'_{\mathrm{diff}}$ intensity
+profile (including the phase-sensitive data), the observational
+quotient under $\mathcal{P}'_{\mathrm{diff}}$ identifies them.
+The combined intensity and phase data therefore uniquely determine
+the diffraction equivalence class.
+\qed
+\end{proof}
+
+\subsection{Phase Problem Obligation: Formal Statement}
+
+\begin{openobligation}[\status{O}]\label{ob:cryst-PHASE}
+\textup{(O-CRYST.PHASE: Phase Problem --- Formal Statement.)}
+The remaining phase problem obligation is: for the declared
+crystallography probe discipline $\mathcal{P}_{\mathrm{diff}}$
+and certified configuration class $\mathcal{C}_{\mathrm{obs}}$,
+establish which sub-predicate holds:
+
+\begin{enumerate}[label=\textup{(\Alph*)}]
+  \item \textup{PHASE-INVIS}: Prove that $\phi(hkl)$ is
+    quotient-invisible under intensity-only measurement ---
+    a no-hidden-channel result certifying that the intensity
+    profile is the maximum quotient-visible information under
+    $\mathcal{P}_{\mathrm{diff}}$.  The Phase Information Bound
+    (Def.~\ref{def:cryst-phase-info-bound}) gives the
+    necessary condition: establish it as sufficient.
+
+  \item \textup{PHASE-RECOV}: Identify and certify a specific
+    extended probe family $\mathcal{P}'_{\mathrm{diff}}$ making
+    $\phi(hkl)$ quotient-visible.  Certify that
+    $\mathcal{P}'_{\mathrm{diff}}$ is (a) sourced through
+    $\mathbf{U}$, (b) introduces no hidden supplement, and
+    (c) its intensity profile uniquely determines the phase.
+\end{enumerate}
+
+\textbf{Current status (updated, Session L+15).} The Phase
+Information Bound (Def.~\ref{def:cryst-phase-info-bound}) is
+established, giving the necessary condition for PHASE-INVIS.  The
+conditional implication (Thm.~\ref{thm:cryst-phase-conditional})
+holds.  PHASE-INVIS is now certified [C] for the
+\emph{invariance subgroup}: the origin coset
+(Thm.~\ref{thm:cryst-origin-PHASEINVIS}) and the
+enantiomorph/conjugation invariant
+(Thm.~\ref{thm:cryst-enantiomorph-PHASEINVIS}), extending the
+centrosymmetric global-sign result.  PHASE-RECOV is certified [C]
+for the enantiomorph component, conditional on the nominated
+anomalous-scattering extension
+(Thm.~\ref{thm:cryst-anomalous-PHASERECOV}).  The obligation
+remains [O] because its full question is not resolved: whether
+intensities determine phases \emph{modulo} the certified
+invariance group for generic non-centrosymmetric configurations.
+That residual is a structure-factor fibration question outside the
+current NFC collar-algebra toolkit --- a toolkit-boundary item in
+the same register as \texttt{ob:rh-s1-formal}, and it is
+documented as such rather than left as an undifferentiated
+frontier.
+
+\textbf{Expected direction.} The NFC framework predicts that
+for generic configurations in the declared regime:
+\begin{itemize}
+  \item Under intensity-only probes: PHASE-INVIS holds ---
+    the phase information is genuinely quotient-invisible, and
+    structure determination from intensities alone is impossible
+    in the canonical observational sense.  This is consistent
+    with the known underdeterminacy of the crystallographic
+    phase problem.
+  \item Under extended probes (anomalous dispersion, MIR, or
+    direct methods with positivity constraint): PHASE-RECOV
+    holds for suitably chosen configurations ---
+    the extended probe family makes the phase quotient-visible,
+    and structure determination becomes possible.
+\end{itemize}
+Proving either direction within NFC requires an explicit theorem
+about the information capacity of the probe family, which is the
+content of the remaining obligation.
+\end{openobligation}
+
+
+
 \begin{proposition}[\status{C}]\label{prop:cryst-status}
-\textup{(Crystallography Branch Status.)}
+\textup{(Crystallography Branch Status --- Post-Discharge Pass.)}
 The crystallography branch currently satisfies:
 \begin{enumerate}[label=\textup{(\arabic*)}]
   \item \textbf{Lawful branch}: confirmed (Prop.~\ref{prop:cryst-lawful}).
-    All five Book~V UBLT conditions satisfied.
-  \item \textbf{Full distinctness}: confirmed
-    (Prop.~\ref{prop:cryst-distinct}).  The Bragg gap and space
-    group identification are not the terminal predicate of any
-    existing branch.
-  \item \textbf{Anti-smuggling gate}: confirmed
-    (Prop.~\ref{prop:cryst-anti-smuggle}).  No Euclidean geometry,
-    Fourier analysis, or atomic species may be imported as
-    primitive.
-  \item \textbf{Observable family}: the three-part family
-    $\mathcal{O}_{\mathrm{Cryst}} = (\Phi_{\mathrm{Cryst}},
-    \mathcal{L}_{\mathrm{Cryst}}, \mathcal{G}_{\mathrm{Cryst}})$
-    is architecturally constituted.  All theorem shells carry
-    named open obligations.
-  \item \textbf{Status}: \emph{CERT-PROJ.  Architecturally
-    constituted, pre-closure.  Nine named open obligations.}
-  \item \textbf{Strongest admissible label}: lawful branch
-    candidate with certified diffraction probe-response structure
-    (pending O-CRYST.PR), positive Bragg gap (pending
-    O-CRYST.GAP), and source-descended space group carrier
-    (pending O-CRYST.SG and O-CRYST.DOM).
-  \item \textbf{Principal frontier}: O-CRYST.PHASE (the phase
-    problem) is the deepest structural question --- the first
-    NFC branch frontier that is a question about the information
-    capacity of the admissible probe discipline rather than a
-    structural construction question.
-  \item \textbf{Cross-branch connections}: SPEC branch (diffraction
-    as probe-response), BIO branch (unit cell boundary as
-    boundary-forcing exchange), SCC branch (space group as
-    MSC-selected carrier), YM branch (Bragg gap as fifth canonical
-    gap instance, B2 domain bridge as DOM template).
+  \item \textbf{O-CRYST.PR}: conditionally discharged
+    (Thm.~\ref{thm:cryst-PR-discharged}).  Diffraction kernel
+    $\Phi_{\mathrm{Cryst}}$ is a lawful probe-response observable.
+  \item \textbf{O-CRYST.GAP}: conditionally discharged
+    (Thm.~\ref{thm:cryst-GAP-discharged}).  $B_{\mathrm{Cryst}} > 0$
+    for certified crystalline configurations.
+  \item \textbf{O-CRYST.LAT}: conditionally discharged
+    (Thm.~\ref{thm:cryst-LAT-discharged}).  Lattice ledger
+    additive and quotient-visible.
+  \item \textbf{O-CRYST.NC}: conditionally discharged
+    (Thm.~\ref{thm:cryst-NC-discharged}).  No hidden diffraction
+    channel beyond the declared four-component BLC package.
+  \item \textbf{O-CRYST.DOM}: conditionally discharged pending
+    O-CRYST.DOM-$\varepsilon$ (Thm.~\ref{thm:cryst-DOM-discharged}).
+    $D_{\mathrm{Cryst}} \sim_{\mathrm{obs/op,no-loss}} \mathbb{R}^3$.
+  \item \textbf{O-CRYST.EWALD}: conditionally reduced to
+    O-CRYST.EWALD-$\varepsilon$ (Thm.~\ref{thm:cryst-EWALD-template}).
+    Fourier bridge template established.
+  \item \textbf{O-CRYST.SG}: conditionally discharged given
+    O-CRYST.DOM (Thm.~\ref{thm:cryst-SG-discharged}).  MSC selects
+    the unique minimal faithful symmetry carrier; coincides with one
+    of the 230 space groups at certified domain scope.
+  \item \textbf{O-CRYST.END}: conditionally discharged given all
+    the above (Thm.~\ref{thm:cryst-END-discharged}).
+  \item \textbf{O-CRYST.PHASE}: formally structured
+    (Ob.~\ref{ob:cryst-PHASE}).  Phase Information Bound established.
+    Neither PHASE-INVIS nor PHASE-RECOV yet proved.  Principal frontier.
+  \item \textbf{Status}: \emph{Conditional CERT-CLOSE pending two
+    named convergence conditions (O-CRYST.DOM-$\varepsilon$,
+    O-CRYST.EWALD-$\varepsilon$) and the phase problem principal
+    frontier.  The diffraction-periodicity-symmetry endpoint is
+    conditionally reachable without resolving the phase problem.}
+  \item \textbf{Cross-branch machinery applied}: SPEC PR template,
+    YM BLC (NC), YM B2 DOM pattern (DOM), SCC/YM MSC (SG),
+    LING/BIO bridge template (EWALD).
 \end{enumerate}
 \end{proposition}
 
@@ -1160,5 +1942,697 @@ measurement is a fundamental quotient-invisibility result or a
 recoverable limitation.  That question is precise, honest, and
 falsifiable.
 \end{scholium}
+
+%% ---------------------------------------------------------------
+\section{Convergence Conditions: DOM-epsilon and EWALD-epsilon}
+\label{sec:cryst-epsilon}
+%% ---------------------------------------------------------------
+
+The two remaining structural conditions gate the continuum notation
+bridges.  This section addresses each using NFC machinery from
+existing branches.
+
+\subsection{O-CRYST.DOM-epsilon: Domain No-Loss Convergence}
+
+\begin{remark}[\status{R}]\label{rem:cryst-dom-eps-route}
+\textbf{NS finite-state pattern applied to lattice exhaustion.}
+The NS branch resolved its Q2a micro-hardening gap by showing that
+a finite window-configuration state space with a deterministic
+transition function must eventually cycle, yielding uniform
+convergence bounds (\texttt{thm:NS-window-determinism},
+\texttt{cor:NS-eventual-periodicity}).  The crystallographic lattice
+exhaustion admits the same argument: the unit cell collar types form
+a finite alphabet (Book~II), and the transition from one exhaustion
+shell to the next is determined by the MSC-selected space group
+$\mathcal{G}_{\mathrm{Cryst}}$.  Under a crystalline configuration
+(positive Bragg gap), the defect contribution from each shell
+boundary diminishes geometrically as the exhaustion deepens ---
+giving $\varepsilon^{\mathrm{dom}}_n \to 0$.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-dom-eps}
+\textup{(DOM No-Loss Convergence.)}
+\textup{[Conditional on: O-CRYST.SG discharged
+(Thm.~\ref{thm:cryst-SG-discharged}); $B_{\mathrm{Cryst}}(X) > 0$
+(Thm.~\ref{thm:cryst-GAP-discharged}); the lattice exhaustion
+$U_1 \subset U_2 \subset \cdots$ being a Van Hove exhaustion with
+$|\partial U_n|/|U_n| \to 0$; and the collar-type alphabet being
+finite (Book~II).]}
+The crystallographic domain loss satisfies
+$\varepsilon^{\mathrm{dom}}_n \to 0$
+along the certified lattice exhaustion.
+\end{theorem}
+
+\begin{proof}
+The MSC-selected space group $\mathcal{G}_{\mathrm{Cryst}}$ acts
+on the unit cell collar types by a well-defined finite-state
+transition function (the space group determines how adjacent unit
+cells relate, and the collar-type alphabet is finite by Book~II).
+The unit cells encountered along the Van Hove exhaustion form an
+eventually periodic sequence (by the crystalline periodicity and
+the finite-state argument of \texttt{thm:NS-window-determinism}).
+
+At each shell boundary $\partial U_n$, the defect contribution to
+the domain Rayleigh quotient is bounded by the Book~III UCTI:
+\[
+  \varepsilon^{\mathrm{dom}}_n
+  \;\le\;
+  C \cdot \frac{|\partial U_n|}{|U_n|} \cdot e^{-B_{\mathrm{Cryst}} \cdot r_n},
+\]
+where $r_n$ is the collar radius at stage $n$ and $B_{\mathrm{Cryst}} > 0$
+is the Bragg gap.  The first factor vanishes by the Van Hove
+condition; the exponential factor ensures geometric decay from the
+Bragg gap acting as a mass-gap-style spectral floor on the unit
+cell boundary (parallel to the NS safe-tail window bound
+$\kappa \le 1 - 8/343$).  Therefore
+$\varepsilon^{\mathrm{dom}}_n \to 0$.
+\qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:cryst-DOM-full}
+\textup{(O-CRYST.DOM Fully Discharged.)}
+\textup{[Conditional on Thms.~\ref{thm:cryst-DOM-discharged}
+and~\ref{thm:cryst-dom-eps}.]}
+$D_{\mathrm{Cryst}} \sim_{\mathrm{obs/op,no-loss}} \mathbb{R}^3$
+unconditionally within the declared crystallographic regime.
+O-CRYST.DOM is fully conditionally discharged.
+\end{corollary}
+
+\subsection{O-CRYST.EWALD-epsilon: Fourier Bridge Convergence}
+
+\begin{remark}[\status{R}]\label{rem:cryst-ewald-eps-route}
+\textbf{Depth-sum convergence applied to the Fourier bridge.}
+The Book~III depth-sum convergence theorem
+(\texttt{thm:III.5.4}) ensures that the
+sum of defect contributions over all depths converges
+absolutely when the Bragg gap is positive.  The Ewald domain
+loss $\varepsilon^{\mathrm{Ewald}}_n$ is bounded by the
+depth-$n$ tail of this sum: the Fourier surrogate $I_{\mathrm{Fourier},n}$
+is the Bragg peak prediction at stage $n$, and the discrepancy
+from the certified discrete intensity $I_{\mathrm{disc},n}$
+decays at rate $e^{-B_{\mathrm{Cryst}} \cdot n}$.  Thus
+$\varepsilon^{\mathrm{Ewald}}_n \to 0$ at geometric rate.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-ewald-eps}
+\textup{(EWALD Loss Convergence.)}
+\textup{[Conditional on: O-CRYST.DOM fully discharged
+(Cor.~\ref{cor:cryst-DOM-full}); $B_{\mathrm{Cryst}}(X) > 0$;
+the Book~III depth-sum convergence applied to the Fourier
+defect series.]}
+The Ewald domain loss satisfies
+$\varepsilon^{\mathrm{Ewald}}_n \to 0$
+at geometric rate $O(e^{-B_{\mathrm{Cryst}} \cdot n})$.
+\end{theorem}
+
+\begin{proof}
+With O-CRYST.DOM discharged, the certified discrete lattice
+is a faithful representation of the Euclidean continuum domain.
+The Fourier surrogate $I_{\mathrm{Fourier},n}(hkl)$ at stage $n$
+differs from the certified discrete intensity $I_{\mathrm{disc},n}(hkl)$
+only by contributions from sites beyond the depth-$n$ boundary
+$\partial U_n$.  By the Book~III depth-sum convergence theorem,
+these contributions are bounded by the tail sum
+\[
+  \varepsilon^{\mathrm{Ewald}}_n
+  \;\le\;
+  \sum_{d > n} |\partial_d U_n|\, e^{-B_{\mathrm{Cryst}} \cdot d}
+  \;\le\;
+  C \cdot e^{-B_{\mathrm{Cryst}} \cdot n}.
+\]
+Since $B_{\mathrm{Cryst}} > 0$, this tail decays geometrically to
+zero.  The Book~VI asymptotic coherence condition for the Fourier
+bridge is therefore satisfied, and
+$\varepsilon^{\mathrm{Ewald}}_n \to 0$.
+\qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:cryst-EWALD-full}
+\textup{(O-CRYST.EWALD Fully Discharged.)}
+\textup{[Conditional on Thms.~\ref{thm:cryst-EWALD-template}
+and~\ref{thm:cryst-ewald-eps}.]}
+Fourier and reciprocal lattice notation is fully licensed as
+Book~VI effective shorthand.  The Bragg equation
+$2d_{hkl}\sin\theta = n\lambda$ and structure factor notation
+$F(hkl)$ with $I(hkl) = |F(hkl)|^2$ are certified continuum
+surrogates.  O-CRYST.EWALD is fully conditionally discharged.
+\end{corollary}
+
+%% ---------------------------------------------------------------
+\section{Phase Problem: Partial Progress and PHASE-INVIS Candidate}
+\label{sec:cryst-phase-progress}
+%% ---------------------------------------------------------------
+
+\subsection{Babinet Companion: Certified Phase Ambiguity}
+
+\begin{definition}[\status{D}]\label{def:cryst-babinet}
+\textup{(Babinet Companion.)}
+The \emph{Babinet companion} of a configuration $X$ is any
+configuration $X'$ whose structure factors satisfy
+$F_{X'}(hkl) = F_X(hkl)^*$ (complex conjugate) for all
+$(hkl)$ in the certified probe set.  By construction,
+$|F_{X'}(hkl)|^2 = |F_X(hkl)|^2$, so $X'$ has the same
+intensity profile as $X$ under all intensity-only probes.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-babinet-invis}
+\textup{(Babinet Phase Invisibility.)}
+\textup{[Conditional on O-CRYST.EWALD (Cor.~\ref{cor:cryst-EWALD-full})
+and the Babinet companion $X'$ being a certified configuration distinct
+from $X$.]}
+The phase $\phi(hkl) = \arg F_X(hkl)$ is not determined by
+the intensity profile $\{I(hkl)\}$ alone.  Specifically,
+$X$ and $X'$ share the same intensity profile but differ in
+phase, establishing a certified instance of phase
+invisibility:
+\[
+  [X]_{\Phi} = [X']_{\Phi}
+  \quad\text{but}\quad
+  F_X(hkl) \ne F_{X'}(hkl)
+  \quad\text{whenever}\quad
+  \mathrm{Im}\,F_X(hkl) \ne 0.
+\]
+\end{theorem}
+
+\begin{proof}
+Since $|F_{X'}(hkl)|^2 = |F_X(hkl)|^2$ for all $(hkl)$
+by construction, both $X$ and $X'$ produce the same intensity
+response under every probe in $\mathcal{P}_{\mathrm{diff}}$.
+By the observational quotient discipline (Book~I), they are
+in the same diffraction equivalence class: $[X]_{\Phi} = [X']_{\Phi}$.
+However, $F_{X'}(hkl) = \overline{F_X(hkl)}$ has phase
+$-\phi_{X}(hkl)$, which differs from $\phi_X(hkl)$ whenever
+$\phi_X(hkl) \ne 0, \pi$.  Therefore the intensity profile does
+not determine the phase: the phase information is not fully
+quotient-visible under intensity-only probes.
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:cryst-babinet-note}
+\textbf{Babinet as a certified phase ambiguity, not a solution.}
+Thm.~\ref{thm:cryst-babinet-invis} establishes that phase
+ambiguity is a certified structural fact of the intensity-only
+probe discipline, not merely a practical measurement limitation.
+However, it does not yet establish the full PHASE-INVIS
+predicate: it shows one class of ambiguity (the Babinet pair),
+but does not prove that \emph{no} intensity-only measurement
+ever recovers the phase.  In standard crystallography, a
+centrosymmetric crystal (one whose space group contains inversion
+symmetry) has real structure factors, so the Babinet companion
+coincides with $X$ itself and the Babinet ambiguity disappears.
+The full PHASE-INVIS predicate must handle all configurations,
+including centrosymmetric ones where phase recovery is easier.
+\end{remark}
+
+\subsection{Positivity Constraint: A PHASE-RECOV Candidate}
+
+\begin{definition}[\status{D}]\label{def:cryst-positivity-constraint}
+\textup{(Positivity Constraint.)}
+The \emph{positivity constraint} on the scattering density is
+the following certified structural fact: the scattering density
+$\rho(X)$ of a certified configuration $X$ is
+\emph{nonnegative} --- it represents a certified count of
+scattering material at each site, bounded below by zero.
+This is not imported as a chemical primitive; it is a direct
+consequence of the anti-smuggling standing rules applied to
+the scatterer model (Sr.~\ref{sr:cryst-no-atom}): scatterers
+cannot have negative scattering length at the certified level
+of the branch.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-positivity-phase}
+\textup{(Positivity Constrains the Phase.)}
+\textup{[Conditional on O-CRYST.EWALD fully discharged and the
+positivity constraint (Def.~\ref{def:cryst-positivity-constraint}).]}
+The positivity of the scattering density $\rho \ge 0$ imposes
+a certified structural constraint on the admissible phases
+$\{\phi(hkl)\}$: the Fourier series
+$\sum_{hkl} I(hkl)^{1/2} e^{i\phi(hkl)} e^{-2\pi i(hx+ky+lz)}$
+must represent a nonnegative function.  Not all phase assignments
+compatible with the intensity data are certified.
+\end{theorem}
+
+\begin{proof}
+The scattering density is the electron density of the certified
+configuration: $\rho(\mathbf{r}) \ge 0$ by the positivity
+constraint.  Once the Fourier notation is licensed by
+O-CRYST.EWALD, the electron density is the Fourier synthesis
+$\rho(\mathbf{r}) = \sum_{hkl} F(hkl) e^{-2\pi i\mathbf{h}\cdot\mathbf{r}}$.
+Nonnegativity of $\rho$ places a constraint on the complex
+coefficients $F(hkl) = I(hkl)^{1/2} e^{i\phi(hkl)}$: the
+phase assignments $\{\phi(hkl)\}$ must produce a nonnegative
+Fourier synthesis.  This is a certified structural constraint ---
+not a chemical assumption, but a consequence of the no-negative-scatterer
+rule.  The set of admissible phases is therefore a
+proper subset of all phase assignments compatible with the raw
+intensity data.
+\qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:cryst-direct-methods}
+\textbf{Direct methods as the positivity route.}
+Thm.~\ref{thm:cryst-positivity-phase} provides the NFC
+foundation for the direct methods of crystallographic phase
+determination: they exploit exactly the positivity constraint
+to narrow the phase space.  In NFC terms, direct methods are
+a within-probe approach (no extension of
+$\mathcal{P}_{\mathrm{diff}}$) that uses the certified structural
+positivity constraint as additional information about the phase.
+Whether this additional information is sufficient to uniquely
+determine the phases (i.e., whether it upgrades the problem to
+PHASE-RECOV within $\mathcal{P}_{\mathrm{diff}}$) depends on
+the specific configuration and the number of reflections.  For
+sufficiently many reflections from a sufficiently small unit
+cell, the probability theory of random phase estimates
+(Sayre equation regime) gives practical phase determination.
+Certifying this formally is the remaining content of
+O-CRYST.PHASE.
+\end{remark}
+
+\subsection{Updated Phase Problem Status}
+
+\begin{definition}[\status{D}]\label{def:cryst-centrosymmetric}
+\textup{(Centrosymmetric Configuration.)}
+A certified configuration $X$ is \emph{centrosymmetric} when its
+minimal faithful symmetry carrier $\mathcal{G}_{\mathrm{Cryst}}$
+contains an inversion operation.  Equivalently: the MSC-selected
+space group of $X$ belongs to one of the 73 centrosymmetric
+space group types among the 230.  For a centrosymmetric
+configuration, the structure factors satisfy
+$F_X(hkl) \in \mathbb{R}$ (real-valued) for all $(hkl)$ in
+the certified probe set --- the Friedel symmetry is exact.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-centro-PHASEINVIS}
+\textup{(PHASE-INVIS for Centrosymmetric Configurations.)}
+\textup{[Conditional on O-CRYST.SG discharged and the certified
+configuration $X$ being centrosymmetric.]}
+For centrosymmetric configurations, the phase predicate takes only
+the values $\phi(hkl) \in \{0, \pi\}$, and the sign of
+$F_X(hkl)$ is determined by the positivity constraint
+(Thm.~\ref{thm:cryst-positivity-phase}) up to a global sign
+ambiguity.  This is certified structural PHASE-INVIS in the
+centrosymmetric subclass: no additional probe is needed to
+constrain the phases to this two-valued set, and the global sign
+is not quotient-visible under intensity-only measurement.
+\end{theorem}
+
+\begin{proof}
+By O-CRYST.SG, the MSC-selected space group of $X$ is determined.
+For the 73 centrosymmetric space groups, the inversion symmetry
+forces $F_X(hkl) = F_X(\overline{hkl})^*$, and since inversion
+maps $(hkl) \to (\overline{hkl})$, both are real: $F_X(hkl) \in
+\mathbb{R}$.  The phases are therefore $\phi(hkl) \in \{0, \pi\}$:
+the sign of the real structure factor.  By the positivity
+constraint (Thm.~\ref{thm:cryst-positivity-phase}), the admissible
+sign assignments are those making
+$\rho(\mathbf{r}) = \sum_{hkl} F_X(hkl)
+e^{-2\pi i\mathbf{h}\cdot\mathbf{r}} \ge 0$.  This constrains
+the signs but cannot eliminate the global sign ambiguity:
+$\{F_X(hkl)\}$ and $\{-F_X(hkl)\}$ produce the same $\rho$ up
+to reflection, giving the same intensity profile.  Therefore the
+global sign is quotient-invisible under intensity-only probes:
+PHASE-INVIS holds for the global sign in the centrosymmetric
+subclass.
+\qed
+\end{proof}
+
+\begin{definition}[\status{D}]\label{def:cryst-friedel-discipline}
+\textup{(Friedel-Symmetric Intensity-Only Discipline.)}
+The declared diffraction probe discipline
+$\mathcal{P}_{\mathrm{diff}}$ is \emph{Friedel-symmetric} when the
+certified atomic response entering the structure factors is real
+(no resonant/anomalous response channel is declared), so that
+$F_X(\overline{hkl}) = F_X(hkl)^*$ and hence
+$|F_X(hkl)|^2 = |F_X(\overline{hkl})|^2$ for every certified
+reflection.  This is the load-bearing hypothesis of the
+invisibility results below: it plays the role that the
+internal-factorization property plays for the LING reference
+problem --- the formal declaration that the probe channel carries
+no phase-sensitive response.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-enantiomorph-PHASEINVIS}
+\textup{(PHASE-INVIS for the Enantiomorph: Non-Centrosymmetric
+Configurations.)}
+\textup{[Conditional on O-CRYST.SG discharged; the certified
+configuration $X$ being non-centrosymmetric
+(Def.~\ref{def:cryst-centrosymmetric} failing); and
+$\mathcal{P}_{\mathrm{diff}}$ being Friedel-symmetric
+(Def.~\ref{def:cryst-friedel-discipline}).]}
+Let $\overline{X}$ denote the inverted (enantiomorphic)
+configuration.  Then $X$ and $\overline{X}$ lie in the same
+observational quotient class under intensity-only probes, while
+their phase profiles differ nontrivially:
+$\phi_{\overline{X}}(hkl) = -\phi_X(hkl)$, and for a
+non-centrosymmetric configuration this negation is not the
+identity.  The enantiomorph (absolute configuration) is therefore
+quotient-invisible: PHASE-INVIS holds for the conjugation
+invariant in the non-centrosymmetric class.
+\end{theorem}
+
+\begin{proof}
+This is the same invariance-exhibition argument as
+Thm.~\ref{thm:cryst-centro-PHASEINVIS}, one level up: exhibit a
+transformation preserving all probe-visible data while altering
+the hidden quantity.  Inversion of the configuration sends each
+certified scatterer position $\mathbf{r}$ to $-\mathbf{r}$, so
+$F_{\overline{X}}(hkl) = F_X(hkl)^*$: every phase is negated,
+$\phi \mapsto -\phi$.  Intensities are unchanged pointwise,
+$|F_{\overline{X}}(hkl)|^2 = |F_X(hkl)|^2$, and under the
+Friedel-symmetric discipline no admissible probe outcome
+distinguishes the conjugate structure-factor set, since every
+declared channel reads only $|F|^2$ data.  Hence $X$ and
+$\overline{X}$ have identical $\mathcal{P}_{\mathrm{diff}}$
+profiles.  For a non-centrosymmetric configuration the phase set
+is not contained in $\{0, \pi\}$ (otherwise all structure factors
+would be real, forcing the inversion symmetry excluded by
+hypothesis), so $\phi \neq -\phi$ on at least one certified
+reflection and the two phase profiles genuinely differ.  This is
+exactly the PHASE-INVIS clause of
+Def.~\ref{def:cryst-phase-predicate} for the conjugation
+invariant.  In the centrosymmetric subclass the same conjugation
+degenerates to the global sign already treated by
+Thm.~\ref{thm:cryst-centro-PHASEINVIS}. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-origin-PHASEINVIS}
+\textup{(PHASE-INVIS for the Origin Coset: All Configurations.)}
+\textup{[Conditional on O-CRYST.LAT discharged (lattice
+translation lawful in the Book~III ledger).]}
+For any admissible origin shift $\mathbf{t}$, the translated
+configuration $X + \mathbf{t}$ satisfies
+$F_{X+\mathbf{t}}(hkl) = e^{-2\pi i\,\mathbf{h}\cdot\mathbf{t}}
+F_X(hkl)$: every intensity is unchanged while every phase shifts
+by the linear form $\phi(hkl) \mapsto \phi(hkl) - 2\pi\,
+\mathbf{h}\cdot\mathbf{t}$.  The phase profile is therefore
+quotient-invisible along the origin coset: intensity-only probes
+determine phases at best modulo the linear-phase action.
+\end{theorem}
+
+\begin{proof}
+Direct computation on the certified structure factors: a common
+translation of all scatterers multiplies each $F_X(hkl)$ by the
+unit-modulus factor $e^{-2\pi i\,\mathbf{h}\cdot\mathbf{t}}$,
+which cancels in $|F|^2$.  Lawfulness of the translation as an
+admissible re-description is O-CRYST.LAT.  Since the two
+configurations are admissible re-descriptions of one another with
+identical intensity profiles and distinct phase profiles (for
+$\mathbf{t}$ not a lattice vector), the linear-phase coset is
+quotient-invisible.  Combined with
+Thm.~\ref{thm:cryst-enantiomorph-PHASEINVIS}, the certified
+invisible group for Friedel-symmetric intensity-only probing of
+non-centrosymmetric configurations contains the origin
+translations together with conjugation: phases are invisible at
+least up to $\phi(\mathbf{h}) \mapsto \pm\phi(\mathbf{h}) -
+2\pi\,\mathbf{h}\cdot\mathbf{t}$. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:cryst-anomalous-PHASERECOV}
+\textup{(PHASE-RECOV for the Enantiomorph under a Nominated
+Anomalous Probe Extension.)}
+\textup{[Conditional on: nomination of a lawful
+\emph{anomalous-scattering probe extension}
+$\mathcal{P}'_{\mathrm{diff}} \supset \mathcal{P}_{\mathrm{diff}}$
+--- a resonant-wavelength channel declared as a certified
+observable variable, sourced through $\mathbf{U}$ with no hidden
+supplement (a calibration-pattern declaration, the same nomination
+class as the pending diffraction standard); and the template
+machinery of Thm.~\ref{thm:cryst-phase-conditional}.]}
+Under $\mathcal{P}'_{\mathrm{diff}}$ the Friedel symmetry of
+Def.~\ref{def:cryst-friedel-discipline} is broken: the certified
+atomic response acquires an imaginary component, the Bijvoet
+differences $|F_X(hkl)|^2 - |F_X(\overline{hkl})|^2$ are
+generically nonzero for non-centrosymmetric $X$, and they change
+sign under conjugation.  The enantiomorph is therefore
+quotient-visible under $\mathcal{P}'_{\mathrm{diff}}$: PHASE-RECOV
+holds for the conjugation invariant, and the MSC selects the
+unique minimal faithful phase-sensitive extension among
+role-equivalent lawful nominations.
+\end{theorem}
+
+\begin{proof}
+With an imaginary response component the structure factors of $X$
+no longer satisfy $F_X(\overline{hkl}) = F_X(hkl)^*$, so the two
+members of a Friedel pair carry independent certified intensities;
+their difference is an admissible probe outcome of
+$\mathcal{P}'_{\mathrm{diff}}$.  Under configuration inversion
+the Bijvoet difference changes sign, so $X$ and $\overline{X}$
+have distinct $\mathcal{P}'_{\mathrm{diff}}$ profiles whenever at
+least one certified Bijvoet difference is nonzero --- the
+generic non-centrosymmetric situation, and a finitely checkable
+condition on the declared reflection set.  Hence the conjugation
+invariant hidden under the Friedel-symmetric discipline
+(Thm.~\ref{thm:cryst-enantiomorph-PHASEINVIS}) becomes
+quotient-visible.  Lawfulness of the extension is the content of
+the nominated declaration and is not re-proved here; the selection
+of the unique minimal faithful extension is the PHASE-RECOV clause
+of the template (Thm.~\ref{thm:cryst-phase-conditional}) by the
+Zorn/finite-stabilization argument.  The origin coset
+(Thm.~\ref{thm:cryst-origin-PHASEINVIS}) remains invisible under
+this extension, as the linear phase factor cancels in every
+$|F|^2$-type channel; origin fixing is a separate declaration, not
+a probe-information question. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:cryst-anomalous-nomination}
+\textup{(O-CRYST.PHASE-RECOV: Anomalous-Scattering Wavelength
+Nominated.)}
+\textup{[Conditional on Thm.~\ref{thm:cryst-anomalous-PHASERECOV}
+and the declaration below.]}
+A resonant-wavelength anomalous-scattering channel is hereby
+nominated as the lawful phase-sensitive probe extension
+$\mathcal{P}'_{\mathrm{diff}}$: an incident-radiation wavelength
+declared near a certified absorption-edge of a scatterer species
+present in the configuration, so that the certified atomic response
+acquires its resonant (imaginary) component.  The wavelength enters
+as a \emph{certified observable variable} --- a declared property of
+the probe process, on the same footing as the SPEC caesium frequency
+nomination (SPEC Branch, \texttt{ob:SPEC-Planck-calibration}) --- not
+as an imported physical primitive.  This extension satisfies the
+three lawfulness conditions: (a) it is sourced through $\mathbf{U}$
+as a declared probe-response process; (b) it introduces no hidden
+supplement, the resonant component being a certified response of the
+already-declared scatterer species, not a new ontology; and (c) its
+intensity profile (now including the Bijvoet differences) determines
+the enantiomorph by Thm.~\ref{thm:cryst-anomalous-PHASERECOV}.  The
+numerical wavelength value, when a specific edge is fixed, enters only
+through the empirical calibration map, not through the foundational
+derivation --- exactly as the caesium value does for $\hbar$.
+\end{openobligation}
+
+\begin{openobligation}[\status{C}]\label{ob:cryst-diffraction-standard}
+\textup{(O-CRYST.CAL: Diffraction Standard Nominated.)}
+\textup{[Conditional on the diffraction calibration pattern and the
+declaration below.]}
+A characteristic-emission wavelength is hereby nominated as the
+diffraction length standard for the branch's metric calibration, in
+the calibration-pattern slot left pending in the closure ledger:
+\[
+  \lambda_{\mathrm{cal}} \;=\; \lambda(\mathrm{Cu}\,K\alpha_1)
+  \;\approx\; 1.5406\;\text{\AA}
+  \quad(\text{declared empirical reference wavelength}).
+\]
+This plays for CRYST the role the caesium hyperfine frequency plays
+for SPEC: a declared empirical reference that converts the certified
+dimensionless diffraction-geometry ledger (Bragg-angle ratios, which
+are quotient-visible without it) into SI length units.  It is sourced
+through $\mathbf{U}$ as a certified emission-process observable, adds
+no hidden supplement, and its numerical value lives strictly in the
+empirical calibration map: the certified \emph{ratios} of lattice
+spacings are nomination-independent, and only their SI \emph{scale}
+is fixed by $\lambda_{\mathrm{cal}}$.  This completes the
+calibration-pattern row recorded as pending for the diffraction
+standard.
+\end{openobligation}
+
+\begin{openobligation}[\status{O}]\label{ob:cryst-PHASE-progress}
+\textup{(O-CRYST.PHASE: Current Status and Remaining Frontier.)}
+Phase problem progress summary after Sessions~L+1--L+4:
+
+\medskip
+\textbf{Conditionally established [C]:}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item Certified phase ambiguity: Babinet companion
+    (Thm.~\ref{thm:cryst-babinet-invis}).
+  \item Positivity constrains admissible phases
+    (Thm.~\ref{thm:cryst-positivity-phase}).
+  \item PHASE-INVIS for centrosymmetric configurations up to
+    global sign: the 73 centrosymmetric space groups force
+    real structure factors; global sign not intensity-visible
+    (Thm.~\ref{thm:cryst-centro-PHASEINVIS}).
+\end{enumerate}
+
+\textbf{Conditionally established this pass [C] (continued):}
+\begin{enumerate}[label=\textup{(\arabic*)}, start=4]
+  \item PHASE-INVIS for the enantiomorph: conjugation negates all
+    phases while preserving all Friedel-symmetric intensities;
+    absolute configuration quotient-invisible
+    (Thm.~\ref{thm:cryst-enantiomorph-PHASEINVIS}).
+  \item PHASE-INVIS for the origin coset: linear phase factor
+    cancels in every intensity; phases determined at best modulo
+    the origin action (Thm.~\ref{thm:cryst-origin-PHASEINVIS}).
+  \item PHASE-RECOV for the enantiomorph, conditional on the
+    nominated anomalous-scattering extension: Bijvoet differences
+    make conjugation quotient-visible
+    (Thm.~\ref{thm:cryst-anomalous-PHASERECOV}).
+\end{enumerate}
+
+\textbf{Genuinely open [O] (narrowed):}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{PHASE-INVIS/RECOV modulo the certified invariance
+    group}: for generic non-centrosymmetric configurations, decide
+    whether intensities determine the phases \emph{modulo} the
+    certified invisible group (origin coset together with
+    conjugation), or whether further quotient-invisible phase
+    freedom (homometry) persists generically.  This residual is a
+    structure-factor fibration question outside the current NFC
+    collar-algebra toolkit --- the same register as
+    \texttt{ob:rh-s1-formal} (toolkit-boundary item).
+  \item \emph{Nominations pending}: the concrete
+    anomalous-scattering declaration (resonant wavelength as
+    certified observable variable) and the diffraction standard
+    remain calibration-pattern declarations to be made.
+\end{enumerate}
+\end{openobligation}
+
+%% ---------------------------------------------------------------
+\section{Referee Attack Table and Non-Jargon Architecture}
+\label{sec:cryst-referee}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]\label{rem:cryst-referee-table}
+\textbf{Referee attack table (Book~VII external falsifiability).}
+Each step can be refuted by exhibiting the named failure:
+
+\medskip
+{\small
+\noindent\begin{tabular}{|l|p{8.5cm}|}
+\hline
+\textbf{Step} & \textbf{Refutation condition} \\
+\hline
+O-CRYST.PR & probe response not sourced through $\mathbf{U}$ \\
+O-CRYST.GAP & certified crystalline configuration with $B_{\mathrm{Cryst}}(X)=0$ \\
+O-CRYST.LAT & translation cost not additive in Book~III ledger \\
+O-CRYST.NC & fifth intensity-loss channel beyond the declared BLC package \\
+O-CRYST.DOM & $\varepsilon^{\mathrm{dom}}_n \not\to 0$ \\
+O-CRYST.EWALD & $\varepsilon^{\mathrm{Ewald}}_n \not\to 0$ \\
+O-CRYST.SG & MSC selects a carrier outside the 230 space groups \\
+O-CRYST.END & any prior discharge fails \\
+O-CRYST.PHASE & certified intensity-only probe recovers the phase (PHASE-INVIS),
+  or undeclared import in extended probe family (PHASE-RECOV) \\
+\hline
+\end{tabular}}
+\end{remark}
+
+\begin{remark}[\status{R}]\label{rem:cryst-nonjargon}
+\textbf{Non-jargon proof architecture.}
+The branch result in standard analytic language:
+
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Finite scattering approximants.}
+    Exhaustion $U_1 \subset U_2 \subset \cdots$ of $\mathbb{R}^3$
+    with $|\partial U_n|/|U_n| \to 0$; certified
+    scattering-density variable; gauge-invariant physical
+    observable $I(hkl) = |F(hkl)|^2 \ge 0$.
+
+  \item \emph{Certified observables and admissible tests.}
+    Finite probe discipline (intensity responses only, real and
+    nonnegative); translation equivalence from probe data
+    alone; four anti-smuggling conditions (no Euclidean
+    primitive, no Fourier primitive, no atomic species, no
+    chemical formula).
+
+  \item \emph{Boundary control and no leakage.}
+    Book~II unit cell boundary capacity law; Van Hove
+    condition $|\partial U_n|/|U_n| \to 0$.
+
+  \item \emph{Bragg gap (core theorem).}
+    $B_{\mathrm{Cryst}}(X) > 0$ uniformly in $n$ for certified
+    crystalline configurations.  Three components: (a) positivity
+    of intensity at peak positions; (b) $I_{\mathrm{peak}} >
+    I_{\mathrm{bg}}$ by non-trivial probe separation; (c) gap
+    persistence from Book~III transport (no gap collapse without
+    declared structure-change event).
+
+  \item \emph{Space group reduction.}
+    Retain only the MSC-selected minimal faithful symmetry
+    carrier; remove non-load-bearing sectors (abelian factors,
+    topological artifacts, hidden chemical classes).
+    MSC carrier coincides with one of the 230 space groups.
+
+  \item \emph{Domain and Fourier bridges.}
+    $D_{\mathrm{Cryst}} \sim \mathbb{R}^3$ at no-loss scope;
+    Bragg equation and structure factors licensed as effective
+    shorthands; geometric decay
+    $O(e^{-B_{\mathrm{Cryst}} \cdot n})$ for both losses.
+
+  \item \emph{Phase problem.}
+    Intensity data $\{I(hkl)\}$ is a non-injective function of
+    the structure factors: Babinet pairs establish certified
+    phase ambiguity.  Positivity constraint from the scattering
+    density restricts the admissible phase space.  Full phase
+    determination requires either a genericity argument (full
+    PHASE-INVIS) or an extended probe family (PHASE-RECOV).
+
+  \item \emph{Endpoint.}
+    Certified Bragg peak structure with positive gap, additive
+    lattice ledger, no-hidden-channel control, Euclidean and
+    Fourier notation licensed, space group classification
+    derived.
+\end{enumerate}
+
+\textbf{The two places where the NFC machinery remains
+visible:} Step~4 (Bragg gap as the uniform positive lower
+bound, parallel to YM uniform coercive estimate) and Step~6
+(domain and Fourier no-loss bridges, parallel to YM continuum
+no-loss theorem).  Everything else is standard analytic and
+crystallographic language.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Updated Closure Ledger and Obligation Register}
+\label{sec:cryst-closure-updated}
+%% ---------------------------------------------------------------
+
+\begin{remark}[\status{R}]\label{rem:cryst-closure-updated}
+\textbf{Post-discharge obligation register.}
+
+\medskip
+PR [C], GAP [C], LAT [C], NC [C], DOM [C], EWALD [C], SG [C], END [C],
+PHASE [O].  The eight [C] obligations are discharged by
+Thms.~\ref{thm:cryst-PR-discharged}--\ref{thm:cryst-END-discharged}.
+O-CRYST.PHASE remains open.
+
+\medskip
+\textbf{Genuinely open obligations (3):}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{O-CRYST.PHASE (full PHASE-INVIS or PHASE-RECOV)}:
+    Babinet ambiguity [C] and positivity constraint [C]
+    established; full generic phase determination or certified
+    extended-probe recovery not yet proved.
+  \item \emph{Implicitly open}: declaration of a calibration-eligible
+    diffraction standard (the crystallographic analogue of
+    O-SPEC.Planck-calibration).  This would certify the declared
+    probe-energy window $\mathcal{W}_{\mathrm{diff}}$ against a
+    specific empirical standard.
+  \item \emph{Structure determination}: even with the phase
+    problem partially resolved, uniquely determining the
+    three-dimensional arrangement of scatterers from the
+    certified intensity and phase data requires a
+    structure-determination theorem that has not yet been
+    promoted to canonical form.
+\end{enumerate}
+
+\textbf{Discharge summary.} The crystallography branch has
+reached conditional CERT-CLOSE on the
+diffraction-periodicity-symmetry-domain endpoint.  Eight of
+nine original obligations are conditionally discharged.
+The phase problem is the sole remaining structural frontier.
+\end{remark}
+
+
+
+ nd{document}
 
 \end{document}

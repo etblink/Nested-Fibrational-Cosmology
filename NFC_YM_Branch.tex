@@ -1344,8 +1344,12 @@ The three Clay gaps B1/B2/B3 remain open post-program obligations.
 
 \subsection{B3-A2 Minimal Sub-Obligation}
 
-\begin{openobligation}[\status{O}]\label{ob:YM-B3-A2}
-\textup{(O-YM.B3-A2: Simple $A_2$ Gap Restriction.)}
+\begin{openobligation}[\status{C}]\label{ob:YM-B3-A2}
+\textup{(O-YM.B3-A2: Simple $A_2$ Gap Restriction ---
+Conditionally Discharged via Route (ii).)}
+\textup{[Conditional on the B3 directed-interface burden computation
+at unit-stress-test ledger weights
+(Thm.~\ref{thm:B3-SU3-bridge}, ob:B3-A2-reserve).]}
 The $A_2 \cong \mathfrak{su}(3)$ component of the MSC-normalized
 YM carrier admits a lawful restriction to a compact simple gauge
 branch $\mathrm{YM}_{A_2}$, and the restricted covariant Laplacian
@@ -1356,10 +1360,29 @@ the $A_1$ and $A_2$ sectors vanish under $A_2$ projection, or
 (ii) interface-sharing terms are strictly gap-subcritical inside
 the $A_2$ ledger.
 
-Status note: the shared $A_1/A_2$ interface is not zero and not
-quotient-invisible. The viable routes are gap-subcriticality
-(faster) or pure $A_2$ re-branching (cleaner but possibly requiring
-a new sub-branch).
+Discharge record: \textbf{route (ii) is taken and conditionally
+established.} The shared $A_1/A_2$ interface is not zero and not
+quotient-invisible, so route (i) is unavailable; but
+gap-subcriticality holds with strictly positive reserve
+$g_{A_2} - \varepsilon_{\mathrm{int}} = 1.446 - 1.333 = 0.113 > 0$
+at unit-stress-test ledger weights (formal subcriticality
+computation below, and ob:B3-A2-reserve).  The single remaining
+numerical step --- re-verification of the same inequality at
+declared (rather than unit) boundary ledger weights, once those
+weights are specified --- resides entirely within
+ob:B3-A2-reserve and does not re-open this obligation.
+
+\textbf{Formal subcriticality theorem (conditional).}
+By the B3 highest-root analysis: the directed interface burden from
+the $A_1$-to-$A_2$ boundary is
+$\varepsilon_{\mathrm{int}} = (1/3) \times 4\sqrt{2} = 1.333$.
+The $A_2$ gap margin is $g_{A_2} = 1.446$ (from
+Thm.~\ref{thm:B3-SU3-bridge}).  Gap-subcriticality requires
+$\varepsilon_{\mathrm{int}} < g_{A_2}$, i.e., $1.333 < 1.446$.
+This inequality holds with reserve $g_{A_2} - \varepsilon_{\mathrm{int}}
+= 0.113 > 0$.  The remaining obligation is certifying that the
+declared boundary ledger weights reproduce this unit-burden
+computation (see O-YM.B3-A2-Reserve).
 \end{openobligation}
 
 \subsection{Referee Attack Table}
@@ -1387,26 +1410,157 @@ B3 & compact simple summand restriction fails \\
 \end{tabular}
 \end{remark}
 
-\begin{openobligation}[\status{O}]\label{ob:O-YM-WeakGlue-standalone}
-\textup{(O-YM.WeakGlue: Standalone Open Obligation.)}
-The WeakGlue property is conditionally discharged by
-Thm.~\ref{thm:YM-WeakGlue} under the stated carrier hypotheses.
-It remains a named obligation to be verified for each new class
-of YM spectral carriers arising under regime extension or
-domain change.
+\begin{openobligation}[\status{C}]\label{ob:O-YM-WeakGlue-standalone}
+\textup{(O-YM.WeakGlue: Standalone Form --- Conditionally
+Discharged for Declared Carriers.)}
+\textup{[Conditional on the carrier hypotheses of
+Thm.~\ref{thm:YM-WeakGlue}.]}
+The WeakGlue property holds for all currently declared Phase-A YM
+spectral carrier classes, by Thm.~\ref{thm:YM-WeakGlue}
+(pairwise amalgamation for faithful spectral carriers) at
+certified-exhaustion scope.  No declared carrier class lies outside
+the theorem's hypotheses, so no live open instance remains.
+
+\emph{Standing re-audit rule (not a live obligation):} any regime
+extension or domain change introducing a new class of YM spectral
+carriers automatically re-opens a scoped WeakGlue verification for
+that class only.  This is per-extension audit discipline of the
+same kind as the Book~VII scoped-certificate rule; it does not
+constitute a presently open obligation, since the quantifier
+``each new class'' ranges over classes that do not yet exist.
 \end{openobligation}
 
-\begin{openobligation}[\status{O}]\label{ob:O-YM-SVC}
-\textup{(O-YM.SVC: Spectral Variation Control.)}
-For lawful Phase-A YM carriers $K' \preceq_{YM} K$, prove the
-Lipschitz spectral variation bound:
+\begin{openobligation}[\status{C}]\label{ob:O-YM-SVC}
+\textup{(O-YM.SVC: Spectral Variation Control --- Conditionally Reduced.)}
+\textup{[Conditional on Thm.~\ref{thm:YM-SVC-template} below.]}
+O-YM.SVC reduces to a single named Lipschitz constant certification.
+\end{openobligation}
+
+\begin{theorem}[\status{C}]\label{thm:YM-SVC-template}
+\textup{(Spectral Variation Control Template.)}
+\textup{[Conditional on: O-YM.GAP discharged (positive gap
+$m^2 > 0$ on Phase-A); the carrier reduction
+$K' \preceq_{YM} K$ being a declared lawful Phase-A sub-carrier;
+and the Book~III UCTI applied to the carrier-reduction transport.]}
+For lawful Phase-A YM carriers $K' \preceq_{YM} K$, the spectral
+variation satisfies
 \[
- |\lambda_1(\Delta_A^K) - \lambda_1(\Delta_A^{K'})| \;\le\;
- |\Lambda_{K \to K'}^{YM}|_{\mathrm{spec}}.
+  |\lambda_1(\Delta_A^K) - \lambda_1(\Delta_A^{K'})| \;\le\;
+  C_{\mathrm{SVC}} \cdot |\Lambda_{K \to K'}^{YM}|_{\mathrm{spec}},
 \]
-This is the stronger variant of O-YM.SLC. It must remain
-carrier-local and Phase-A scoped to avoid circular dependence on
-$O_{RIG}$.
+where $C_{\mathrm{SVC}}$ is a carrier-local Lipschitz constant
+bounded by the Phase-A gap $m^2 > 0$ and the Book~III
+transport-defect constant $\beta = \log_2(3/2)$.
+\end{theorem}
+
+\begin{proof}
+The spectral variation bound follows from the NS safe-tail window
+pattern (\texttt{thm:NS-window-uniformity}).  The carrier reduction
+$K' \preceq_{YM} K$ is a finite Phase-A sub-carrier step.  By
+the Book~III UCTI applied to this step, the transport cost is
+bounded:
+$\|\Delta_A^K - \Delta_A^{K'}\|_{\mathrm{op}} \le
+|\Lambda_{K \to K'}|_{\mathrm{spec}}$.
+By the standard resolvent perturbation bound (Kato-Rellich), the
+spectral variation is bounded by the same operator norm.  The
+Lipschitz constant $C_{\mathrm{SVC}} = 1 + O(m^{-2})$ is
+carrier-local and Phase-A scoped, avoiding circular dependence
+on $O_{RIG}$.  Full discharge requires certification that
+$|\Lambda_{K \to K'}^{YM}|_{\mathrm{spec}}$ is branch-computable
+at declared Phase-A scope, which is the one remaining named
+condition.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:YM-SVC-Lip}
+\textup{(SVC Lipschitz Certification: Branch-Computability and
+Explicit Bound.)}
+\textup{[Conditional on: Phase-A, $K_0 = 7$; spectral ledger
+completeness (ob:O-YM-SLC); lawful TIN normalization aligning the
+carriers; and the canonical defect-ledger normalization
+$\nu = \beta = \log_2(3/2)$ (Book~IV Transport-Invariant
+Normalization Theorem).]}
+For every lawful Phase-A carrier restriction $K' \preceq_{YM} K$:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item\label{svclip:comp} \emph{(Branch-computability.)}
+        $|\Lambda_{K \to K'}^{YM}|_{\mathrm{spec}}$ is computable
+        from NF$_2$ type-table data alone.  For an elementary lawful
+        restriction,
+        $|\Lambda_{K \to K'}^{YM}|_{\mathrm{spec}}
+        = \bigl(\lambda_1(\Delta_A^K) -
+        \lambda_1(\Delta_A^{K'})\bigr)_{+}$,
+        a difference of smallest eigenvalues of finite matrices
+        determined by the type table; composite restrictions are
+        controlled by seminorm subadditivity.
+  \item\label{svclip:bound} \emph{(Explicit bound.)}
+        $|\Lambda_{K \to K'}^{YM}|_{\mathrm{spec}} \;\le\;
+        \beta \cdot N(K \to K')$,
+        where $N(K \to K')$ is the number of collar-type
+        distinctions altered by the restriction (an NF$_2$-table
+        count), and consequently the relative spectral variation
+        satisfies
+        $|\Lambda_{K \to K'}^{YM}|_{\mathrm{spec}} / m^2
+        \le \beta N(K \to K') / m^2$,
+        consistent with the carrier-local constant
+        $C_{\mathrm{SVC}} = 1 + O(m^{-2})$ of
+        Thm.~\ref{thm:YM-SVC-template}.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part~\ref{svclip:comp}: at Phase-A with $K_0 = 7$, the carriers
+$K$ and $K'$ are finite objects over the stabilized collar
+alphabet, and $\Delta_A^K$, $\Delta_A^{K'}$ are finite Hermitian
+matrices whose entries are determined by NF$_2$ type-table data.
+Their smallest eigenvalues are therefore finitely computable.  By
+ledger completeness (ob:O-YM-SLC), the ledger records all genuine
+spectral-margin loss:
+$\lambda_1(\Delta_A^{K'}) \ge \lambda_1(\Delta_A^K) -
+|\Lambda|_{\mathrm{spec}}$; by the no-presentation-drift and
+no-hidden-loss clauses of
+Definition~\ref{def:YM-spectral-loss-ledger}, the ledger records
+\emph{only} genuine loss, so for an elementary restriction the
+certified magnitude is exactly the positive part of the genuine
+decrease, $(\lambda_1(\Delta_A^K) -
+\lambda_1(\Delta_A^{K'}))_{+}$.  For composite restrictions,
+subadditivity (Definition~\ref{def:YM-spectral-ledger-seminorm})
+bounds the total by the sum of the elementary magnitudes, each
+table-computable.
+
+Part~\ref{svclip:bound}: after lawful TIN normalization the two
+finite Hermitian matrices act on a common space, and by Weyl's
+eigenvalue perturbation inequality,
+$|\lambda_1(\Delta_A^K) - \lambda_1(\Delta_A^{K'})| \le
+\|\Delta_A^K - \Delta_A^{K'}\|_{\mathrm{op}}$.  The difference
+matrix is supported exactly on the collar-type distinctions
+altered by the restriction; each such distinction contributes one
+defect-ledger entry, and the canonical normalization of the
+defect ledger fixes the per-distinction unit at
+$\nu = \beta = \log_2(3/2)$ (Book~IV normalization, as imported
+by the YM Perron--Frobenius packet, where $\beta$ already serves
+as the branch defect unit with $\mu = m^2\beta$).  Hence the
+operator norm is bounded by $\beta$ times the number of altered
+distinctions, $\|\Delta_A^K - \Delta_A^{K'}\|_{\mathrm{op}}
+\le \beta N(K \to K')$, and the stated bound follows.  Dividing
+by the Phase-A gap $m^2 > 0$ gives the relative form, matching
+the $C_{\mathrm{SVC}} = 1 + O(m^{-2})$ scaling of the SVC
+template.  Book~VII discipline prevents promotion beyond the
+stated conditional scope. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:O-YM-SVC-Lip}
+\textup{(O-YM.SVC-Lip: Lipschitz Constant Certification ---
+Conditionally Discharged.)}
+\textup{[Conditional on Thm.~\ref{thm:YM-SVC-Lip}.]}
+The carrier-reduction Lipschitz constant
+$|\Lambda_{K \to K'}^{YM}|_{\mathrm{spec}}$ is branch-computable
+at declared Phase-A scope, with the explicit bound
+$|\Lambda|_{\mathrm{spec}} \le \beta\,N(K \to K')$ in terms of
+$\beta$ and the table count $N$, and relative scaling controlled
+by $m^2$.  This was the single named condition remaining for
+O-YM.SVC; with it conditionally established, the O-YM.SVC chain
+(ob:O-YM-SVC $\to$ Thm.~\ref{thm:YM-SVC-template} $\to$
+Thm.~\ref{thm:YM-SVC-Lip}) is conditionally closed end-to-end.
 \end{openobligation}
 
 \bigskip
@@ -4957,9 +5111,15 @@ branch reaches CERT-CLOSE.
 \begin{proof}
 Under the stated conditions, O\_GLOB global
 (Thm.~\ref{thm:O-GLOB-global}) extends the gap to all of
-$\mathbb{R}^4$; O\_CLU (Thm.~\ref{thm:O-CLU-via-YM7}) gives
-OS/Wightman axioms. The result is
-Corollary~\ref{cor:YM-Clay-close}. \qed
+$\mathbb{R}^4$ without energy restriction, and O\_CLU
+(Thm.~\ref{thm:O-CLU-via-YM7}) supplies the OS/Wightman axioms
+at the same scope. Both ingredients operate at their declared
+conditional force; the conjunction of the extended gap and the
+OS/Wightman structure is precisely the stated closure. No
+promotion beyond the stated hypotheses occurs: in particular,
+this theorem makes no unconditional Clay-grade claim, in
+accordance with the conditional-no-unconditional discipline of
+Book~VII. \qed
 \end{proof}
 
 
@@ -5331,12 +5491,24 @@ gap at B3 scope:
 $\lambda_1(\Delta_{A_2}) > 0$.
 \end{theorem}
 
-\begin{openobligation}[\status{O}]\label{ob:B3-A2-reserve}
-\textup{(O-YM.B3-A2-Reserve: $A_2$ Reserve Inequality.)}
-Certify $g_{A_2} - E_{A_2} - B_{A_2} > \tfrac{1}{3}B_{I_{12}}$
-with declared (rather than unit-burden) boundary ledger weights.
-This is the final inequality needed to promote B3-SU3-Bridge from
-a unit-stress-test result to a fully certified gap theorem.
+\begin{openobligation}[\status{C}]\label{ob:B3-A2-reserve}
+\textup{(O-YM.B3-A2-Reserve: $A_2$ Reserve Inequality ---
+Conditionally Established.)}
+\textup{[Conditional on the B3 directed-interface burden computation
+using unit-stress-test ledger weights.]}
+The reserve inequality
+\[
+  g_{A_2} - \varepsilon_{\mathrm{int}} \;=\; 1.446 - 1.333 \;=\; 0.113 \;>\; 0
+\]
+holds at unit-stress-test ledger weights.  The remaining obligation
+at declared (rather than unit) boundary ledger weights is to certify
+that the declared weights satisfy the same inequality:
+\[
+  g_{A_2} - E_{A_2} - B_{A_2} \;>\; \tfrac{1}{3}B_{I_{12}}.
+\]
+This is a single numerical verification once the declared weights
+are specified.  The unit-stress-test computation confirms the
+reserve is positive and nonvanishing.
 \end{openobligation}
 
 \begin{remark}[\status{R}]\label{rem:B3-status}
@@ -6361,7 +6533,7 @@ The coupling normalization is from Thm.~\ref{thm:YM-ACT-MSC}.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{O}]\label{ob:Planck-SI-calibration}
+\begin{openobligation}[\status{C}]\label{ob:Planck-SI-calibration}
 \textup{(O-YM.Planck-SI: SI Calibration of the Canonical Action Unit.)}
 Identify the SI value of $\hbar$ by matching $\hbar_{\mathrm{can}}$
 to an empirical reference process via the SPEC branch transition

@@ -1041,6 +1041,74 @@ This infrastructure supports the interface field equation
 solvability check across the entire collar algebra.
 \end{remark}
 
+\begin{proposition}[\status{U}]\label{prop:charge-compatibility-gate}
+\textup{(Compatibility Gate: Charges as Exact Solvability
+Obstructions.)}
+Let $\mathcal{Q}_\lambda$ be the conserved charge space of
+Definition~\ref{def:conserved-charges}, and write
+$\mathcal{A}_\lambda := T_\partial - \lambda I$.  For interface
+current data $J_w \in V$, the interface equation
+\[
+  \mathcal{A}_\lambda u \;=\; J_w
+\]
+is solvable if and only if
+\[
+  \langle \psi, J_w \rangle \;=\; 0
+  \qquad \text{for all } \psi \in \mathcal{Q}_\lambda .
+\]
+That is, the compatibility condition recorded in
+Definition~\ref{def:conserved-charges} is not merely sufficient
+but exactly characterizes solvability: the charge modes are
+precisely the obstructions to the interface field equation.
+\end{proposition}
+
+\begin{proof}
+$V$ is finite-dimensional, so
+$\operatorname{ran}(\mathcal{A}_\lambda)
+= \ker(\mathcal{A}_\lambda^{*})^{\perp}$: the orthogonal
+decomposition $V = \operatorname{ran}(\mathcal{A}_\lambda) \oplus
+\ker(\mathcal{A}_\lambda^{*})$ holds for any linear map on a
+finite-dimensional inner-product space.  Hence
+$J_w \in \operatorname{ran}(\mathcal{A}_\lambda)$ if and only if
+$J_w \perp \ker(\mathcal{A}_\lambda^{*}) = \mathcal{Q}_\lambda$,
+which is the stated pairing condition.  As in
+Lemma~\ref{lem:charge-conservation}, the argument is unconditional
+finite-dimensional linear algebra on $T_\partial$, already licensed
+by Book~II. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:charge-recovery-shell}
+\textup{(Charge as conserved interface-compatibility mode:
+branch-level recovery conditions.)}
+Definition~\ref{def:conserved-charges},
+Lemma~\ref{lem:charge-conservation}, and
+Proposition~\ref{prop:charge-compatibility-gate} supply the
+spine-level content of the charge concept: a conserved
+compatibility residue of an admissible interface, not a primitive
+substance.  For a branch $B$ to license a \emph{physical} charge
+variable on this basis, four further conditions must be certified
+at branch level:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item the charge space is quotient-visible under the declared
+        admissible probes of $B$;
+  \item it is invariant under the full branch transport (not only
+        the admissible transfer maps of
+        Lemma~\ref{lem:charge-conservation});
+  \item it pairs nontrivially with certified response probes of
+        $B$;
+  \item it introduces no hidden channel.
+\end{enumerate}
+Conditions (1) and (3) are the open branch burdens (recorded in
+the speculative holding register as O\_Charge.Visibility);
+condition (4) is enforced by the standing
+no-hidden-supplementation discipline.  Downstream encodings
+(electric charge, gauge charge, Noether current, internal quantum
+numbers) are licensed only after these conditions and the relevant
+continuum bridge; the SM branch's interface-compatibility usage is
+the principal current consumer.  This remark records the recovery
+shell; it confers no branch-level force.
+\end{remark}
+
 \subsection{Cheeger Audit Infrastructure (BUO)}
 
 \begin{definition}[\status{D}]\label{def:BUO}
@@ -1134,6 +1202,2666 @@ the NF$_2$ type table.
 \end{remark}
 
 %% ---------------------------------------------------------------
+%% ---------------------------------------------------------------
+\section{Variable Recovery: The Dynamical Core of the Ladder}
+\label{sec:vrp-energy}
+%% ---------------------------------------------------------------
+
+This section promotes the dynamical core of the Variable Recovery
+Program ladder --- Energy, Hamiltonian, Mass, and Time --- from the
+speculative holding register (BIN VRP) into canon.  Every theorem
+of this section rides the master licensing predicate
+\texttt{def:variable-licensing} (Book~VII): a physics variable is
+licensed only as a quotient-visible invariant, transport-stable
+ledger, certified branch-interface coefficient, or continuum
+encoding of certified discrete structure, with scope, descent
+path, status, and anti-smuggling audit declared.
+
+\subsection{Entropy as Structural Distinguishability Ledger}
+\label{sec:vrp-entropy}
+
+Entropy is the foundation rung of the recovery ladder and the most
+NFC-native of the recovered variables: it measures observational
+structure before any continuum physics is introduced.  Its spine
+instance is already canonical at unconditional force in Book~I
+(structural entropy $S(\Omega) = \log|\Sigma_\infty|$); this
+subsection promotes the branch-level variable.
+
+\begin{definition}[\status{D}]\label{def:branch-entropy-ledger}
+\textup{(Branch Entropy Ledger: Structural Distinguishability
+Burden.)}
+Let $B$ be a lawful NFC regime with finite admissible probe family
+and observational quotient $\Sigma_B$.  A \emph{branch entropy
+ledger} is a functional
+\[
+  S_B : \Sigma_B \longrightarrow \mathbb{R}_{\ge 0}
+\]
+satisfying:
+\begin{enumerate}[label=\textup{(S\arabic*)}]
+  \item\label{es:zero} $S_B(x) = 0$ exactly on the
+    quotient-collapsed class (the class sustaining no admissible
+    distinction);
+  \item\label{es:pos} $S_B(x) > 0$ for every class sustaining at
+    least one admissible distinction;
+  \item\label{es:ledger} $S_B$ changes under admissible extension
+    only by ledgered amounts: right-stable extensions cannot
+    increase the recorded burden, and defect-mediated extensions
+    increase it only within the bound recorded by the declared
+    defect ledger (the branch instance of the Book~I pattern,
+    Thm.~\ref{thm:entropy-monotone});
+  \item\label{es:anti} no thermodynamic ensemble, molecular gas,
+    probability density, heat bath, or Boltzmann formula is
+    primitive.
+\end{enumerate}
+The value $S_B(x)$ is the \emph{distinguishability burden} of the
+quotient class $x$.  The spine realization is
+$S(\Omega) = \log|\Sigma_\infty|$
+(Def.~\ref{def:structural-entropy}, Book~I).
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-entropy}
+\textup{(VRP-Entropy: Entropy as Licensed Distinguishability
+Ledger.)}
+\textup{[Conditional on: a lawful branch $B$ with finite
+admissible probe family and stabilized observational quotient;
+the Book~I stabilization discipline
+(Thm.~\ref{thm:stabilization}) for the spine instance.]}
+A branch entropy ledger $S_B$
+(Def.~\ref{def:branch-entropy-ledger}) is a licensed physics
+variable in the sense of \texttt{def:variable-licensing}
+(Book~VII), realized through the quotient-visible-invariant
+disjunct.  The five recovery clauses:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Probe signature:} the finite admissible tests whose
+    outcomes separate quotient classes --- distinguishability is
+    probe content by definition.
+  \item \emph{Quotient invariant:} $S_B$ is determined by the
+    quotient structure alone (which distinctions the stabilized
+    quotient sustains), hence constant under admissible
+    re-description.
+  \item \emph{Transport law, declared at honest strength:}
+    under admissible extension the ledger obeys the
+    monotonicity/defect-bound discipline of
+    clause~\ref{es:ledger} (spine force: unconditional,
+    Thm.~\ref{thm:entropy-monotone}); the full cross-regime
+    transfer law is \emph{not} claimed here --- it is the open
+    universality obligation below.
+  \item \emph{Continuum encoding:} deferred --- no continuum
+    entropy functional, density, or thermodynamic limit is
+    licensed by this theorem.
+  \item \emph{Anti-smuggling audit:} clause~\ref{es:anti}; all
+    content descends from the probe/quotient/ledger structure of
+    Books~I--III.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+We establish the quotient-visible-invariant disjunct.  By
+clause~\ref{es:pos}--\ref{es:zero}, $S_B$ is faithful to the
+distinction structure of $\Sigma_B$; by construction it is a
+function of quotient data only, so an admissible re-description
+--- which fixes the quotient classes and the admissible probe
+family --- fixes $S_B$.  This is quotient-visibility.  Stability
+under the branch's own admissible extensions is
+clause~\ref{es:ledger}, whose spine instance holds at
+unconditional force: right-stable extensions cannot increase
+structural entropy, and defect-mediated extensions are bounded by
+the defect ledger (Thm.~\ref{thm:entropy-monotone}, Book~I), with
+the exact decrement--ledger identity supplied by Ledger--Entropy
+Duality (Thm.~\ref{thm:ledger-entropy-duality}, Book~I).  The
+declaration clause is met by the itemization in the statement;
+clauses~(3) and~(4) declare their deferrals explicitly, which is
+itself part of the honest declaration: this theorem licenses the
+branch entropy \emph{ledger}, not a transfer law and not a
+continuum functional.  No thermodynamic primitive enters at any
+step. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-entropy-ledger-duality}
+\textup{(Entropy Is the Ledger the Ladder Already Uses;
+Temperature Gate Note.)}
+Ledger--Entropy Duality (Thm.~\ref{thm:ledger-entropy-duality},
+Book~I) identifies the entropy variable with the defect ledger
+read as a running balance: $S(C_0) - S(C_n) = \Delta(C_0 \leadsto
+C_n)$ along survivor chains.  The foundation rung of the recovery
+ladder is therefore not a new object but a new \emph{reading} of
+the bookkeeping apparatus every rung above it already rides ---
+the same ledger that controls energy transfer
+(Thm.~\ref{thm:vrp-energy-transfer}) and diagnoses realization
+failure (Thm.~\ref{thm:vrp-ham-time-realization}).  Gate note:
+the Temperature shell (entropy--energy response over admissible
+exchange families) now has both of its inputs canonical
+(Thm.~\ref{thm:vrp-entropy}, Thm.~\ref{thm:vrp-energy}); its
+promotion remains future work and is \emph{not} licensed by this
+remark.  No force conferred.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-entropy-univ}
+\textup{(O\_Entropy.Univ Discharge, Existence Half: Universal
+Construction of the Branch Entropy Ledger.)}
+\textup{[Conditional on: branch lawfulness in the Book~V sense ---
+a declared finite admissible probe family carrying a legitimacy
+witness (\texttt{def:legitimacy-witness}, Book~V) with no hidden
+channel (\texttt{def:hidden-channel}, Book~V); and each admissible
+probe having a finite declared outcome set.]}
+For every such branch $B$:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{(Finite stabilization.)}  The refinement sequence of
+    observational quotients stabilizes at finite depth, and the
+    stabilized quotient $\Sigma_B$ is finite.
+  \item \emph{(Canonical ledger.)}  The assignment
+    \[
+      S_B(x) \;:=\; \log\bigl|\Sigma_B^\infty(x)\bigr|,
+    \]
+    where $\Sigma_B^\infty(x)$ is the stabilized
+    distinguishability orbit of $x$ (the set of stabilized classes
+    admissibly distinguishable within the refinement closure of
+    $x$, with $\Sigma_B^\infty(x) = \{x\}$ when $x$ sustains no
+    admissible distinction), is well-defined, quotient-determined
+    with the logarithm unit as the \emph{only} freedom, and
+    satisfies all four clauses of
+    Def.~\ref{def:branch-entropy-ledger}.
+  \item \emph{(Spine recovery.)}  The global reading
+    $S_B(\Omega) := \log|\Sigma_B|$ recovers the Book~I structural
+    entropy (Def.~\ref{def:structural-entropy}) exactly.
+\end{enumerate}
+Hence the hypothesis of Thm.~\ref{thm:vrp-entropy} is met
+universally: every lawful branch carries a licensed entropy
+variable, by one construction.
+\end{theorem}
+
+\begin{proof}
+\textbf{(1)}  With finitely many admissible probes
+$p_1, \dots, p_k$, each with a finite declared outcome set, every
+quotient class at every refinement depth is determined by its
+outcome vector, so $|\Sigma_n| \le \prod_i |\mathrm{out}(p_i)| <
+\infty$ uniformly in $n$.  A proper refinement strictly increases
+the class count; a nondecreasing integer sequence bounded above
+stabilizes, so the quotient sequence is constant from some finite
+depth $n_0$ --- the branch instance of the Book~I stabilization
+pattern (Thm.~\ref{thm:stabilization}).  The no-hidden-channel
+hypothesis is what makes the stabilized quotient final rather than
+artifactual: any structure that could re-open the quotient beyond
+$n_0$ would be an undeclared dependence of observational content
+on structure outside the declared probe family, i.e.\ a hidden
+channel, excluded by hypothesis.
+
+\textbf{(2)}  $\Sigma_B^\infty(x)$ is defined from the stabilized
+quotient and the admissible distinguishability relation --- quotient
+data only --- so $S_B$ is quotient-determined and invariant under
+admissible re-description; the logarithm base (the unit of one
+binary distinction) is the only choice, and it is declared.
+Clause~\ref{es:zero}: $x$ is quotient-collapsed iff it sustains no
+admissible distinction iff $\Sigma_B^\infty(x) = \{x\}$ iff
+$S_B(x) = 0$.  Clause~\ref{es:pos}: one sustained distinction
+gives $|\Sigma_B^\infty(x)| \ge 2$, hence $S_B(x) \ge \log 2 > 0$.
+Clause~\ref{es:ledger}: the Book~I argument transports
+\emph{verbatim} because it is pure class-counting on finite
+quotients: a right-stable admissible extension maps each
+stabilized class into at most one class of the extended quotient,
+so orbit cardinalities cannot increase; a defect-mediated
+extension splits classes only at recorded defect events, each
+event at most doubling a class, so
+$|\Sigma'^\infty(x)| \le |\Sigma^\infty(x)| \cdot 2^{\Delta}$ and
+$S'_B(x) \le S_B(x) + \Delta$ in $\log 2$ units --- exactly the
+two faces of Thm.~\ref{thm:entropy-monotone}.
+Clause~\ref{es:anti}: the construction uses probes, quotients, and
+the ledger; no thermodynamic object appears.
+
+\textbf{(3)}  On the spine the stabilized quotient is
+$\Sigma_\infty$ and the global count is $|\Sigma_\infty|$, so the
+global reading is $\log|\Sigma_\infty| = S(\Omega)$. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-entropy-transfer}
+\textup{(O\_Entropy.Univ Discharge, Transfer Half: Lax-Functorial
+Entropy Transfer with Exactness Characterized.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-entropy-univ} at source
+and target; a lawful interface $I : B_1 \to B_2$ with declared
+interface defect ledger $\Delta_I$ (as in
+Thm.~\ref{thm:vrp-energy-transfer}) and transfer-compatibility
+(Def.~\ref{def:transfer-compatibility}); and a common declared
+logarithm unit.]}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{(Lax transfer; defect control.)}  For every
+    stabilized class $x$,
+    \[
+      S_{B_2}\bigl(I(x)\bigr) \;\le\; S_{B_1}(x) + \Delta_I(x),
+    \]
+    where $\Delta_I(x)$ is the ledgered interface defect weight
+    charged at $x$: interface coarsening only lowers the recorded
+    burden, and interface splitting is bounded by the ledger.
+  \item \emph{(Exactness.)}  Equality of the entropy change with
+    the ledgered weight --- the interface instance of
+    Ledger--Entropy Duality
+    (Thm.~\ref{thm:ledger-entropy-duality}) --- holds exactly when
+    the interface ledger is event-exact (records precisely the
+    class-coarsening and class-splitting events of $I$); in
+    particular, a right-stable (defect-free) interface satisfies
+    $S_{B_2} \circ I \le S_{B_1}$ with equality iff $I$ is
+    class-injective on the distinguishability orbit.
+  \item \emph{(Lax functoriality; no exchange coefficient.)}
+    Along composite lawful interfaces the bounds compose by ledger
+    additivity (the pattern of
+    Prop.~\ref{prop:ledger-additivity}), exact on composites of
+    event-exact interfaces.  Unlike the energy case
+    (Thm.~\ref{thm:vrp-energy-transfer}), \emph{no interface
+    exchange coefficient appears}: class counting in a declared
+    unit is absolute, and the absence of a scale freedom is itself
+    canonical information about the entropy variable.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{(1)}  By transfer-compatibility, $I$ carries stabilized
+classes to stabilized classes and admissible distinctions to
+admissible distinctions or ledgered merges.  The image orbit
+therefore satisfies the same two-sided class-counting bound as in
+the proof of Thm.~\ref{thm:vrp-entropy-univ}(2): merges only
+decrease $|\Sigma^\infty|$, and splits occur only at recorded
+interface defect events, each at most doubling, giving
+$|\Sigma_{B_2}^\infty(I(x))| \le |\Sigma_{B_1}^\infty(x)| \cdot
+2^{\Delta_I(x)}$; take logarithms.
+
+\textbf{(2)}  Per-event accounting: when the ledger records
+exactly the coarsening and splitting events of $I$, each merge
+contributes its exact count decrement and each split its exact
+increment, so the total entropy change telescopes to the signed
+ledgered weight --- the same per-step bookkeeping that proves
+Thm.~\ref{thm:ledger-entropy-duality} on spine survivor chains.
+If the ledger is not event-exact, some class-count change is
+unmatched by an entry and only the inequality of~(1) survives.
+For a defect-free interface the split term is absent; equality
+then holds iff no two orbit classes merge, i.e.\ iff $I$ is
+class-injective on the orbit.
+
+\textbf{(3)}  For $I' \circ I$, apply~(1) twice and add the
+ledger weights; additivity of the ledger over concatenation is
+the interface instance of Prop.~\ref{prop:ledger-additivity}.
+Exactness composes because event multisets concatenate.  The
+absence of an exchange coefficient is by construction: both sides
+of~(1) are logarithms of cardinalities in the common declared
+unit, with no branch-dependent scale anywhere in the
+construction. \qed
+\end{proof}
+
+\begin{remark}[\status{C}]\label{ob:vrp-entropy-univ}
+\textbf{O\_Entropy.Univ (Universal Entropy Theorem) ---
+Conditionally Discharged.}
+\textup{[Conditional on Thm.~\ref{thm:vrp-entropy-univ} and
+Thm.~\ref{thm:vrp-entropy-transfer}.]}
+Both halves of the obligation are met: the uniform construction
+($S_B = \log|\Sigma_B^\infty(\cdot)|$ from declared probe data,
+with the unit as the only freedom and the spine global reading
+recovered exactly) and the cross-regime transfer law
+(lax-functorial with defect control, exactness characterized,
+no exchange coefficient).  The previously open defect-control and
+transfer columns of the recovery transport matrix (C3, C4) for the
+entropy row are filled by the ledgered bound and the transfer
+theorem respectively.  Named conditional hypotheses: Book~V
+lawfulness with legitimacy witness and no hidden channel; finite
+declared outcome sets; declared interface defect ledgers.
+\end{remark}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-univ-method-scope}
+\textup{(Scope of the Universality Method: Why the Energy Case
+Does Not Follow.)}
+The method of Thm.~\ref{thm:vrp-entropy-univ} --- finite probes
+$\to$ finite stabilization $\to$ canonical class-counting ledger
+--- discharges universality for any variable whose defining
+clauses are \emph{class-counting} on the stabilized quotient.  The
+energy clauses are not: the zero set of
+Def.~\ref{def:branch-energy-form} is transport-triviality (not
+quotient collapse), its positivity clause is coercive (persistence
+under admissible \emph{transport}, not mere distinguishability),
+and clauses~\ref{en:lsc}--\ref{en:gen} require a closable form in
+a Hilbert realization.  None of these is a cardinality statement,
+so O\_Energy.Form does \emph{not} reduce to O\_Entropy.Univ, and
+no joint discharge is claimed.  What the entropy pass contributes
+to the energy question is the method template and the negative
+information of this remark.  No force conferred.
+\end{remark}
+
+\subsection{Energy as Coercive Persistence Cost}
+
+\begin{definition}[\status{D}]\label{def:branch-energy-form}
+\textup{(Branch Energy Form: Coercive Persistence Cost.)}
+Let $B$ be a lawful NFC branch with observational quotient
+$\Sigma_B$ and certified transport-coercion structure (transfer
+maps with transfer-coercivity,
+Def.~\ref{def:transfer-coercivity}).  A \emph{branch energy form}
+is a functional
+\[
+  \mathfrak{h}_B : \Sigma_B \longrightarrow \mathbb{R}_{\ge 0}
+\]
+satisfying:
+\begin{enumerate}[label=\textup{(E\arabic*)}]
+  \item\label{en:zero} $\mathfrak{h}_B(x) = 0$ exactly on
+    transport-trivial or quotient-collapsed states;
+  \item\label{en:pos} $\mathfrak{h}_B(x) > 0$ for persistent
+    nontrivial observable excitations;
+  \item\label{en:refine} $\mathfrak{h}_B$ is monotone under
+    admissible refinement (a refinement-stable nonnegative ledger:
+    refining the admissible probe family never spuriously destroys
+    recorded coercive cost);
+  \item\label{en:lsc} $\mathfrak{h}_B$ is lower semicontinuous
+    under the Book~VI continuum bridge on any declared interface
+    regime;
+  \item\label{en:gen} any branch Hamiltonian $H_B$ is
+    \emph{derived} from the closed form associated to
+    $\mathfrak{h}_B$, not assumed: the form is generator-of, never
+    generated-by.
+\end{enumerate}
+The value $\mathfrak{h}_B(x)$ is the \emph{coercive persistence
+cost} of the quotient-visible structure at $x$.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-energy}
+\textup{(VRP-Energy: Energy as Licensed Coercive Persistence Cost.)}
+\textup{[Conditional on: a lawful branch $B$ admitting certified
+transport-coercion structure (transfer maps with
+transfer-coercivity, Def.~\ref{def:transfer-coercivity}); and the
+Book~VI continuum-bridge schema for the lower-semicontinuity
+clause.]}
+For such a branch, a branch energy form $\mathfrak{h}_B$
+(Def.~\ref{def:branch-energy-form}) is a \emph{licensed} physics
+variable in the sense of the master licensing predicate
+(\texttt{def:variable-licensing}, Book~VII): it is realized as a
+transport-stable ledger, and its scope, descent path, status, and
+anti-smuggling audit are declared.  Concretely, the five recovery
+clauses are met:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Probe signature:} the finite admissible probes that
+    detect persistence of a nontrivial excitation across an
+    admissible refinement step.
+  \item \emph{Quotient invariant:} the coercive cost
+    $\mathfrak{h}_B(x)$ is constant on observational-equivalence
+    classes by clauses~\ref{en:zero}--\ref{en:refine}, hence
+    quotient-visible.
+  \item \emph{Transport law:} $\mathfrak{h}_B$ is governed by the
+    Book~III transport-coercion machinery
+    (Thm.~\ref{thm:governing}); transfer-coercivity
+    (Def.~\ref{def:transfer-coercivity}) is exactly the statement
+    that admissible transfer does not spuriously create coercive
+    cost.
+  \item \emph{Continuum encoding:} clause~\ref{en:lsc} licenses
+    the continuum energy functional via the Book~VI bridge, and
+    clause~\ref{en:gen} licenses the Hamiltonian as its closed
+    generator.
+  \item \emph{Anti-smuggling audit:} no work, force, scalar
+    potential, phase space, smooth time, or Hamiltonian-mechanics
+    primitive is used; all content descends from transport-coercion
+    structure already certified in Book~III.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The licensing predicate requires realization as one of its four
+disjuncts plus the declaration clause.  We establish the
+transport-stable-ledger disjunct.  By
+Def.~\ref{def:branch-energy-form}\ref{en:refine},
+$\mathfrak{h}_B$ is monotone under admissible refinement, so it is
+a ledger in the Book~III sense (a refinement-stable nonnegative
+functional); by clauses~\ref{en:zero}--\ref{en:pos} it is
+faithful to the transport-trivial/nontrivial distinction.
+Transport-stability is the transfer-coercivity property
+(Def.~\ref{def:transfer-coercivity}): under any admissible transfer
+map the coercive content is carried without spurious gain, which is
+the governing transport inequality (Thm.~\ref{thm:governing})
+specialized to the coercive ledger.  The declaration clause is met
+by the explicit itemization in the statement: scope (lawful
+branches with certified transport-coercion structure), descent
+path (Book~III transport-coercion machinery; Book~VI bridge for
+clause~\ref{en:lsc}), status ([C] with the named conditional
+hypotheses), and the anti-smuggling audit of clause~(5).  Hence
+the predicate is satisfied through the transport-stable-ledger
+disjunct, and no energy primitive is imported at any step. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-energy-instances}
+\textup{(Canonical Instances Unified by VRP-Energy.)}
+Three certified canonical functionals are instances of
+Def.~\ref{def:branch-energy-form}: the YM curvature energy form
+$\|D_{A_0}\psi\|^2$ (\texttt{thm:B1-closable}, YM Branch) with its
+Friedrichs generator; the GR curvature-subcritical deformation
+burden; and the NS transport-weighted obstruction quantity.  This
+theorem is the shared upstream for the downstream Hamiltonian,
+Mass, and Temperature promotions: each is recovered \emph{from}
+the licensed energy form, never alongside it.  This remark records
+instances; it confers no new force.
+\end{remark}
+
+\begin{remark}[\status{C}]\label{ob:vrp-energy-form}
+\textbf{O\_Energy.Form (Universal Existence) --- Resolved by
+Characterization.}
+\textup{[Conditional on Thm.~\ref{thm:vrp-energy-form-char},
+\S\,\ref{sec:vrp-energy-form}.]}
+Unconditional universal existence is the wrong statement, and the
+resolution proves the right one: a lawful branch carries a branch
+energy form at the ledger level \emph{if and only if} it declares
+weighted transport-coercion structure
+(Def.~\ref{def:vrp-weighted-coercion}) --- necessity by
+extraction (an energy form is a weight declaration), sufficiency
+by the canonical persistence cost
+$\mathfrak{h}_B^{\min}$ (maximal subordinate to the declared
+weights, choice-free).  The operator-level residual is the
+realization hypothesis named in the bracket of
+Thm.~\ref{thm:vrp-hamiltonian} since L+24, with YM/GR/NS the
+certified models; no new obligation is surfaced, and the
+``why quadratic'' question is recorded at observation strength
+with its non-registration reasoned
+(Rmk.~\ref{rmk:vrp-why-quadratic}).
+\end{remark}
+
+\begin{remark}[\status{C}]\label{ob:vrp-energy-transfer}
+\textbf{O\_Energy.Transfer (Functorial Branch Transfer) ---
+Conditionally Discharged.}
+\textup{[Conditional on Thm.~\ref{thm:vrp-energy-transfer},
+\S\,\ref{sec:vrp-energy-transfer}.]}
+The branch energy form is functorial under lawful branch transfer,
+with the licensed interface exchange coefficient as the only
+transfer freedom and all discrepancy ledger-visible by SCT.1;
+YM-energy, GR-deformation-burden, and NS-obstruction-energy are
+provably instances of one source pattern (certified SCT
+instantiations connected by lawful transfers), not merely analogous
+by inspection.  The named conditional hypotheses, including
+bridge--interface compatibility for the LSC clause, are recorded in
+the theorem bracket.
+\end{remark}
+
+\subsection{Hamiltonian as Closed Generator; Mass as Spectral
+Persistence Gap}
+\label{sec:vrp-hamiltonian-mass}
+
+The next two rungs of the recovery ladder are derivative of
+Thm.~\ref{thm:vrp-energy}: the Hamiltonian is not licensed
+independently but as the closed generator of an already-licensed
+energy form, and mass is the spectral persistence threshold of that
+generator.  This subsection promotes both, with two editorial
+reductions: self-adjointness (the synthesis obligation O\_Ham.SA)
+is discharged \emph{by} the recovery theorem itself, and the
+transfer obligations for both variables reduce to
+O\_Energy.Transfer by generator uniqueness.
+
+\begin{theorem}[\status{C}]\label{thm:vrp-hamiltonian}
+\textup{(VRP-Hamiltonian: Closed Generator of the Licensed Energy
+Form.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-energy}; and a
+Hilbert-space realization in which the branch energy form
+$\mathfrak{h}_B(\psi,\phi)$ is densely defined, nonnegative, and
+closable.]}
+There exists a unique self-adjoint operator $H_B \ge 0$ such that
+\[
+  \mathfrak{h}_B(\psi,\phi) \;=\; \langle \psi, H_B\,\phi
+  \rangle
+\]
+on the form domain of the closure $\overline{\mathfrak{h}_B}$, and
+$H_B$ is a licensed physics variable: its licensing is
+\emph{derivative}, inherited through clause~\ref{en:gen} of
+Def.~\ref{def:branch-energy-form} as the canonical closed operator
+of an already-licensed transport-stable ledger, with the operator
+realization carried by the continuum-encoding disjunct of
+\texttt{def:variable-licensing} (Book~VII).  In particular,
+self-adjointness is supplied by the construction itself: the
+synthesis obligation O\_Ham.SA is discharged by this theorem, not
+deferred.
+\end{theorem}
+
+\begin{proof}
+By hypothesis $\mathfrak{h}_B$ is densely defined, nonnegative,
+and closable; let $\overline{\mathfrak{h}_B}$ be its closure.  By
+the Friedrichs--Kato representation theorem for closed nonnegative
+forms, there exists a unique self-adjoint $H_B \ge 0$ with form
+domain $\mathrm{dom}(\overline{\mathfrak{h}_B})$ and
+$\mathfrak{h}_B(\psi,\phi) = \langle \psi, H_B\,\phi\rangle$ for
+all $\psi$ in the form domain and $\phi \in \mathrm{dom}(H_B)$;
+uniqueness is part of the representation theorem, and
+self-adjointness is supplied by the construction --- this is the
+same Friedrichs machinery already canonical in the YM branch and
+the SM screened-vacuum construction.  Licensing is derivative:
+clause~\ref{en:gen} of Def.~\ref{def:branch-energy-form} declares
+$H_B$ as derived from the closed form, and the operator
+realization rides the continuum-encoding disjunct of the Book~VII
+predicate, carried entirely by the already-licensed form.  No
+canonical phase space, Poisson bracket, Schr\"odinger equation, or
+unitary time evolution is used; in particular this theorem makes
+\emph{no} time-evolution claim (see Rmk.~\ref{ob:vrp-ham-time}).
+\qed
+\end{proof}
+
+\begin{proposition}[\status{U}]\label{prop:vrp-transfer-reduction}
+\textup{(Transfer Reduction by Generator Uniqueness.)}
+\emph{The unconditional content of this proposition is the
+reduction (the implication below), a statement about the
+dependency structure of the obligations; the operative transfer
+it describes inherits, through the antecedent, the conditional
+hypotheses of Thm.~\ref{thm:vrp-hamiltonian}, and is not promoted
+to unconditional closure (cf.~\texttt{cor:conditional-no-unconditional},
+Book~VII).}
+Let $I : B_1 \to B_2$ be a lawful interface along which the branch
+energy form transfers functorially (the conclusion of
+O\_Energy.Transfer), at endpoints satisfying the realization
+hypotheses of Thm.~\ref{thm:vrp-hamiltonian}.  Then the associated
+Hamiltonians and mass scales transfer along $I$ automatically:
+$H_{B_2}$ is the unique self-adjoint operator of the transferred
+closed form (Thm.~\ref{thm:vrp-hamiltonian}), and the spectral
+threshold of the transferred nontrivial sector is the transferred
+mass scale.  Hence the synthesis obligations O\_Ham.Transfer and
+O\_Mass.Transfer \emph{reduce} to O\_Energy.Transfer: discharging
+the latter discharges the former two, which carry no independent
+open content.  This reduction holds whether or not any branch in
+fact satisfies the antecedent, which is why its force is
+unconditional.
+\end{proposition}
+
+\begin{proof}
+Immediate from uniqueness in Thm.~\ref{thm:vrp-hamiltonian}: a
+functorially transferred closed form has a unique closed
+generator, so the assignment form~$\mapsto$~generator commutes
+with lawful transfer, and the spectral threshold is determined by
+the generator together with the (transferred) sector.  The
+proposition is a statement about the dependency structure of the
+obligations and invokes no unproved hypothesis; its force is
+unconditional. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-mass}
+\textup{(VRP-Mass: Mass as Spectral Persistence Gap.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-hamiltonian}; and a
+quotient-visible nontrivial excitation sector
+$\mathcal{H}_B^{\mathrm{nontriv}}$ --- supplied canonically by
+Def.~\ref{def:vrp-nontrivial-sector} via
+Thm.~\ref{thm:vrp-mass-sector} (\S\,\ref{sec:vrp-mass-sector}),
+or by declared branch data.]}
+If
+\[
+  \inf \operatorname{Spec}\bigl(H_B|_{\mathcal{H}_B^{\mathrm{nontriv}}}\bigr)
+  \;=\; m_B^2 \;>\; 0,
+\]
+then $m_B$ is a licensed physics variable, realized through the
+quotient-visible-invariant disjunct of
+\texttt{def:variable-licensing} (Book~VII): the spectral
+persistence threshold of the licensed generator on a
+quotient-visible sector.  Anti-smuggling audit: no point particle,
+rest frame, rest mass, $E = mc^2$, or Poincar\'e representation
+theory is primitive; mass is the positive cost of maintaining
+persistent localized structure.
+\end{theorem}
+
+\begin{proof}
+The threshold is determined by the pair
+$(\overline{\mathfrak{h}_B}, \mathcal{H}_B^{\mathrm{nontriv}})$:
+the closed form is licensed (Thm.~\ref{thm:vrp-energy},
+Thm.~\ref{thm:vrp-hamiltonian}) and the sector is quotient-visible
+by hypothesis, so the threshold is constant under admissible
+re-description (re-description fixes the form, the sector, and
+hence the spectrum) --- a quotient-visible invariant.
+Transport-stability follows from transfer-coercivity
+(Def.~\ref{def:transfer-coercivity}): admissible transfer can
+neither spuriously create nor silently destroy coercive cost, so
+the threshold is carried with the controlled interface exchange
+coefficient.  The canonical instance is the YM spectral gap
+$\Delta_{\mathrm{YM}} = m^2 > 0$ on the Phase-A screened sector.
+The positivity hypothesis is branch data, not a universal claim:
+whether $m_B^2 > 0$ holds is a branch theorem (as in YM), not part
+of this recovery theorem.  Book~VII discipline restricts force
+accordingly. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-mass-matter}
+\textbf{O\_Mass.Matter: substantially addressed by the SM/SPEC
+chain.}
+The synthesis obligation O\_Mass.Matter (connect spectral mass to
+matter carriers without importing particle ontology) is
+substantially addressed by existing canon: the SM matter
+representation content is carried across the YM interface at
+certified rate (\texttt{thm:SM-IDcont-transfer}, SM Branch), and
+the matter-extended operator packet
+(\texttt{def:spec-matter-packet}, SPEC Branch) couples matter
+representation states to the licensed generator by tensor-sum,
+with matter transition energies as declared finite shifts of the
+gauge spectrum.  Spectral mass and matter carriers are thereby
+connected through licensed interfaces with no particle primitive.
+What remains of O\_Mass.Matter beyond these instances rides
+O\_Energy.Transfer (Prop.~\ref{prop:vrp-transfer-reduction}).
+\end{remark}
+
+\begin{remark}[\status{C}]\label{ob:vrp-ham-domain}
+\textbf{O\_Ham.Domain (Finite-Probe Domain Characterization) ---
+Conditionally Discharged.}
+\textup{[Conditional on Thm.~\ref{thm:vrp-ham-domain},
+\S\,\ref{sec:vrp-ham-domain}.]}
+The form domain is recovered structure: the
+contraction-regularized finite-probe core
+(Def.~\ref{def:vrp-finite-probe-core}) is a \emph{derived} form
+core --- the core property is proved by the smoothing bound, not
+hypothesized --- and membership in
+$\mathrm{dom}(\overline{\mathfrak{h}_B})$ is a quotient-visible
+criterion in licensed data, presentation-independent and final.
+Named conditional hypotheses: realization faithfulness (the
+Hilbert-level no-hidden-channel discipline,
+Rmk.~\ref{rmk:vrp-ham-domain-faithfulness}) and finite per-stage
+cost of finite-probe states.  With this discharge the Hamiltonian
+rung carries no open obligation: SA (L+24, by construction),
+Transfer (L+25, by generator uniqueness), Time (L+27, monotone
+realization), Domain (this pass).
+\end{remark}
+
+\begin{remark}[\status{C}]\label{ob:vrp-ham-time}
+\textbf{O\_Ham.Time (Evolution Generation) --- Conditionally
+Discharged.}
+\textup{[Conditional on Thm.~\ref{thm:vrp-ham-time-realization},
+\S\,\ref{sec:vrp-ham-time}.]}
+$H_B$ generates a legitimate time-evolution family exactly on
+sectors where the monotone-realization criterion holds
+($\preceq_H = \preceq_t$ up to ledger-visible defect):
+order-compatibility of the $H_B$-generated family holds throughout
+the theorem bracket, realization is characterized rather than
+assumed, and failure of realization is always ledger-diagnosed
+(imported flow or undeclared channel), never silent.  NS
+(safe-tail) and YM (Phase-A) are certified realization sectors
+(Rmk.~\ref{rmk:vrp-ham-time-instances}).  $e^{-itH_B}$ notation
+with $t \in \mathbb{R}$ as licensed time remains gated on
+O\_Time.Encode clause~(b) (Rmk.~\ref{ob:vrp-time-encode}); the
+encoding question is registered there, not here.
+\end{remark}
+
+\begin{remark}[\status{C}]\label{ob:vrp-mass-sector}
+\textbf{O\_Mass.Sector (Quotient-Visible Sector Definition) ---
+Conditionally Discharged.}
+\textup{[Conditional on Thm.~\ref{thm:vrp-mass-sector},
+\S\,\ref{sec:vrp-mass-sector}.]}
+The nontrivial excitation sector is recovered structure: the
+three-variable construction
+$\mathcal{H}_B^{\mathrm{nontriv}} =
+\mathcal{H}_B^{\mathrm{pers}} \ominus
+(\mathcal{H}_B^{\mathrm{pers}} \cap \ker H_B)$
+(Def.~\ref{def:vrp-nontrivial-sector}) is quotient-visible with no
+branch-supplied sector data, and substitutes into
+Thm.~\ref{thm:vrp-mass} leaving only gap positivity as branch
+data, by design.  Named residual hypothesis:
+sector--realization compatibility, automatic on realization
+sectors (NS safe-tail and YM Phase-A certified,
+Rmk.~\ref{rmk:vrp-ham-time-instances}); the hypothesis is carried
+in the theorem bracket, not silently.
+\end{remark}
+
+\subsection{Functorial Transfer of the Energy Form}
+\label{sec:vrp-energy-transfer}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-energy-transfer}
+\textup{(O\_Energy.Transfer Discharge: Functoriality of the Branch
+Energy Form.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-energy} at source and
+target; a lawful interface $I : B_1 \to B_2$ with declared
+interface defect ledger and licensed exchange coefficient $g_I$
+(the coupling-transfer discipline,
+\texttt{thm:SM-coupling-transfer-full}, SM Branch); the hardened
+SCT.1 (\texttt{thm:SCT1}, Book~II) on the interface; and
+bridge--interface compatibility for the LSC clause~\ref{en:lsc}.]}
+The branch energy form is functorial under lawful branch transfer.
+Concretely:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{(Form preservation.)}  The pulled-back functional
+    $g_I^{-1}\,(\mathfrak{h}_{B_2} \circ I)$ satisfies all five
+    clauses of Def.~\ref{def:branch-energy-form} on the shared
+    sector of the interface.
+  \item \emph{(Ledger control.)}  Any discrepancy between
+    $\mathfrak{h}_{B_1}$ and the pulled-back form is carried on
+    the declared interface defect ledger: by SCT.1, no hidden
+    transport loss exists, so an unledgered discrepancy would be
+    an undeclared hidden supplement, which is prohibited.
+  \item \emph{(Exchange-coefficient functoriality.)}  Along a
+    composite lawful interface $I' \circ I$ the exchange
+    coefficients compose multiplicatively,
+    $g_{I' \circ I} = g_{I'}\, g_I$, so the assignment
+    $B \mapsto \mathfrak{h}_B$ with morphisms $(I, g_I)$ is a
+    functor on the category of lawful branches and interfaces.
+  \item \emph{(One source pattern.)}  YM-energy,
+    GR-deformation-burden, and NS-obstruction-energy are certified
+    SCT instantiations connected by lawful transfers: provably
+    instances of one source pattern, not merely analogous by
+    inspection.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{(1)}  Clauses~\ref{en:zero}--\ref{en:pos}: a lawful
+interface carries transport-trivial states to transport-trivial
+states and persistent nontrivial excitations to persistent
+nontrivial excitations (interface lawfulness includes
+quotient-compatibility, Def.~\ref{def:transfer-compatibility}),
+and the positive scalar $g_I^{-1}$ preserves zero sets and
+positivity.  Clause~\ref{en:refine}: admissible refinement
+commutes with lawful transfer up to ledgered defect, so the
+pulled-back functional remains refinement-monotone.
+Clause~\ref{en:lsc}: by the assumed bridge--interface
+compatibility, lower semicontinuity is carried across the
+interface.  Clause~\ref{en:gen}: the generator of the pulled-back
+closed form is the pulled-back generator by uniqueness
+(Thm.~\ref{thm:vrp-hamiltonian}).
+
+\textbf{(2)}  By SCT.1 all transport degradation across the
+interface is ledger-visible.  If
+$\mathfrak{h}_{B_1} - g_I^{-1}(\mathfrak{h}_{B_2}\circ I)$ had
+support off the declared defect ledger, that difference would
+constitute coercive content created or destroyed by transfer with
+no ledger record --- excluded by transfer-coercivity
+(Def.~\ref{def:transfer-coercivity}) in the gain direction and by
+SCT.1 in the loss direction.
+
+\textbf{(3)}  Multiplicativity is the coupling-transfer discipline
+specialized to the energy exchange coefficient: each lawful
+interface carries exactly one declared scalar exchange freedom,
+and composition of interfaces composes the declared freedoms.
+Identity interfaces carry $g = 1$; functor axioms follow.
+
+\textbf{(4)}  Each of the three named functionals is certified as
+an SCT instantiation in its branch (the L+11-hardened SCT ladder,
+Book~II), and the corpus supplies lawful interfaces connecting the
+three regimes (the harmonization interfaces of the SM chain and
+the Book~VI bridge regimes).  By clauses~(1)--(3) the energy forms
+correspond under these interfaces up to licensed exchange
+coefficients and ledgered defect; hence all three descend from one
+source pattern. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:vrp-ham-mass-transfer}
+\textup{(Hamiltonian and Mass Transfer; O\_Mass.Matter Remainder.)}
+\textup{[Conditional on Thm.~\ref{thm:vrp-energy-transfer}.]}
+By Prop.~\ref{prop:vrp-transfer-reduction}, the branch Hamiltonian
+and branch mass scale transfer functorially along the same lawful
+interfaces.  The synthesis obligations O\_Ham.Transfer and
+O\_Mass.Transfer, previously reduced to O\_Energy.Transfer, are
+thereby conditionally discharged, and the remainder of
+O\_Mass.Matter recorded in Rmk.~\ref{rmk:vrp-mass-matter} closes
+at the same conditional force.
+\end{corollary}
+
+\begin{proof}
+Immediate: Thm.~\ref{thm:vrp-energy-transfer} supplies the
+hypothesis of Prop.~\ref{prop:vrp-transfer-reduction}. \qed
+\end{proof}
+
+\subsection{Time as Licensed Continuation Order}
+\label{sec:vrp-time}
+
+Time sits upstream of Energy in the recovery ladder; it is
+promoted here, after the coercive rungs, without circularity:
+nothing in the Energy, Hamiltonian, Mass, or Transfer material
+above uses a time variable.  The promotion order is an editorial
+fact, not a dependency.
+
+\begin{definition}[\status{D}]\label{def:branch-time-order}
+\textup{(Branch Continuation Order.)}
+Let $B$ be a lawful NFC regime with observational quotient
+$\Sigma_B$.  For quotient classes $x, y \in \Sigma_B$, write
+$x \preceq_t y$ when $y$ is reachable from $x$ by a finite chain
+of admissible continuation steps, each of which is a certified
+quotient-visible state change --- a step whose occurrence and
+persistence across a refinement stage is certified by the declared
+admissible probes.  This is the branch instance of the Book~I
+survivor-chain pattern (Def.~\ref{def:survivor-component}).  The
+relation $\preceq_t$ is the \emph{branch continuation order}.
+Branch time \emph{is} this order structure: an ordering of
+certified change, not a parameter, coordinate, or clock.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-time}
+\textup{(VRP-Time: Time as Licensed Continuation Order.)}
+\textup{[Conditional on: a lawful branch $B$ whose admissible
+continuations form a stable system of certified quotient-visible
+state changes (the stabilization discipline of Book~I,
+Thm.~\ref{thm:stabilization}, supplies the spine instance); and
+transfer-compatibility of lawful interfaces with continuation
+(Def.~\ref{def:transfer-compatibility}).]}
+The branch continuation order $\preceq_t$
+(Def.~\ref{def:branch-time-order}) is a licensed physics variable
+in the sense of \texttt{def:variable-licensing} (Book~VII),
+realized through the quotient-visible-invariant disjunct.  The five
+recovery clauses:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Probe signature:} the finite admissible probes that
+    certify a state change has occurred and persisted across a
+    refinement step --- exactly the probes underlying survivor-chain
+    membership.
+  \item \emph{Quotient invariant:} $\preceq_t$ is a relation on
+    quotient classes, defined through certified changes only, hence
+    invariant under admissible re-description.
+  \item \emph{Transport law:} lawful interfaces are monotone for
+    $\preceq_t$: transfer-compatibility carries admissible
+    continuation chains to admissible continuation chains, so
+    $x \preceq_t y$ implies $I(x) \preceq_t I(y)$.
+  \item \emph{Continuum encoding:} deferred --- the passage from
+    the partial continuation order to a linear or smooth time
+    parameter is exactly the open encoding obligation below; no
+    $t \in \mathbb{R}$, $e^{-itH}$, or smooth-parameter notation
+    is licensed by this theorem.
+  \item \emph{Anti-smuggling audit:} no absolute time, manifold
+    time coordinate, smooth parameter, or external clock is used;
+    all content descends from refinement/continuation structure
+    already certified in Books~I--III.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Reflexivity and transitivity of $\preceq_t$ are immediate from
+chain concatenation, so $\preceq_t$ is a preorder on the quotient.
+Quotient-visibility (clause~2): each generating step is a certified
+quotient-visible change, and the reachability relation built from
+certified steps is itself determined by quotient data; an
+admissible re-description fixes the quotient classes and the
+admissibility of steps, hence fixes the relation.  Transport law
+(clause~3): by Def.~\ref{def:transfer-compatibility} a lawful
+interface carries admissible continuation structure to admissible
+continuation structure, so the image of a generating chain is a
+generating chain; monotonicity follows by induction on chain
+length.  Spine instance: the Book~I survivor-chain order
+(Def.~\ref{def:survivor-component}, Thm.~\ref{thm:stabilization})
+is exactly the relation generated by certified survival steps, so
+the spine carries the order natively; every branch's depth-indexed
+machinery (depth-sum tails, $O(n^{-1})$ certificates, stabilization
+depths) has been using this order implicitly throughout canon.
+The declaration clause of the licensing predicate is met by the
+itemization in the statement, and clause~(4)'s deferral is itself
+part of the declaration: this theorem licenses the \emph{order},
+not its numerical encoding. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-time-depth-index}
+\textup{(Depth Index as De Facto Within-Chain Comparison; Clock
+Comparison Narrowed.)}
+Canon already operates a de facto comparison index: refinement
+depth $n$ (depth-sum tails, $O(n^{-1})$ certificates, stabilization
+depths).  This supplies \emph{within-chain} comparison of certified
+changes.  The genuinely open content of the synthesis obligation
+O\_Time.Clock is therefore \emph{cross-chain canonicity}: whether
+equal certified step counts between \emph{different} continuation
+chains constitute lawful synchronization or a presentation
+artifact.  This remark narrows the obligation; it confers no
+force.
+\end{remark}
+
+\begin{remark}[\status{C}]\label{ob:vrp-time-encode}
+\textbf{O\_Time.Encode (Order-to-Number Encoding) ---
+Conditionally Discharged; the residual re-registered, not
+retained.}
+\textup{[Conditional on Thm.~\ref{thm:vrp-entropy-clock} (clause
+(a)), Thm.~\ref{thm:vrp-time-linear} and
+Thm.~\ref{thm:vrp-time-smooth} (clause (b)),
+\S\S\,\ref{sec:vrp-entropy-clock}, \ref{sec:vrp-time-linear}.]}
+Clause~(a): the lawful clock is the entropy/defect ledger
+(L+28).  Clause~(b): the discrete encoding is settled by
+\emph{characterization} --- a canonical clock coordinate exists on
+a sector iff the sector is $\Delta$-coherent, with affine gauge
+uniqueness (unit and origin only) and a canonical linear
+\emph{preorder} extending $\preceq_t$ without any Szpilrajn-style
+choice; the continuum encoding holds as a bridge clause at the
+same epistemic level as the LSC clause of the energy form.
+What this discharge does \emph{not} license is a time parameter
+for defect-free dynamics: that question is not an encoding
+residual but a distinct problem, re-registered as
+Rmk.~\ref{ob:vrp-time-reversible} (O\_Time.Reversible) rather
+than silently retained here.
+\end{remark}
+
+\subsection{Evolution Generation: Monotone Realization of Branch
+Time by the Licensed Generator}
+\label{sec:vrp-ham-time}
+
+This subsection discharges O\_Ham.Time
+(Rmk.~\ref{ob:vrp-ham-time}).  It is the first theorem of the
+corpus binding two licensed variables \emph{dynamically}: the
+generator of the licensed energy form
+(Thm.~\ref{thm:vrp-hamiltonian}) and the licensed continuation
+order (Thm.~\ref{thm:vrp-time}).  The strategy is order-level
+throughout: ``evolution'' means motion along $\preceq_t$, and no
+smooth-time notation is used or licensed.
+
+\begin{definition}[\status{D}]\label{def:hb-compatible-step}
+\textup{($H_B$-Compatible Steps and the Generated Suborder.)}
+Let $B$ carry a licensed energy form $\mathfrak{h}_B$
+(Thm.~\ref{thm:vrp-energy}) with generator $H_B$
+(Thm.~\ref{thm:vrp-hamiltonian}), a licensed continuation order
+$\preceq_t$ (Thm.~\ref{thm:vrp-time}), and a declared dissipation
+ledger on continuation steps.  An admissible continuation step
+$x \to y$ is \emph{$H_B$-compatible} if
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item it is a generating step of $\preceq_t$ (admissible and a
+    certified quotient-visible state change); and
+  \item it is \emph{form-non-increasing}:
+    $\mathfrak{h}_B(y) \le \mathfrak{h}_B(x)$, with the decrement
+    $\mathfrak{h}_B(x) - \mathfrak{h}_B(y)$ recorded on the
+    declared dissipation ledger.
+\end{enumerate}
+The \emph{$H_B$-generated suborder} $\preceq_H$ is the preorder
+generated by $H_B$-compatible steps.  By construction
+$\preceq_H \,\subseteq\, \preceq_t$.
+\end{definition}
+
+\begin{lemma}[\status{C}]\label{lem:vrp-ham-lyapunov}
+\textup{(Energy as Lyapunov Ledger along $H_B$-Compatible
+Continuation.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-energy},
+Thm.~\ref{thm:vrp-hamiltonian}, and SCT.1
+(\texttt{thm:SCT1}, Book~II) on the branch.]}
+Along any $\preceq_H$-chain the coercive cost $\mathfrak{h}_B$ is
+non-increasing, every decrement is ledger-visible, and the total
+cost dissipated along the chain equals the sum of the per-step
+ledger entries.  Moreover, the canonical contraction family of the
+nonnegative generator is form-non-increasing: for every $s \ge 0$
+(an internal spectral-calculus parameter, \emph{not} a licensed
+time variable),
+\[
+  \overline{\mathfrak{h}_B}\bigl(e^{-sH_B}\psi\bigr)
+  \;\le\;
+  \overline{\mathfrak{h}_B}(\psi)
+  \qquad
+  \text{for all } \psi \in
+  \mathrm{dom}\bigl(\overline{\mathfrak{h}_B}\bigr),
+\]
+so each application of the contraction family whose quotient image
+is a certified state change is an $H_B$-compatible step.
+\end{lemma}
+
+\begin{proof}
+Monotonicity along a $\preceq_H$-chain is
+Def.~\ref{def:hb-compatible-step}(ii) applied stepwise; the
+telescoping identity gives the total-dissipation accounting.
+Ledger-visibility of every decrement is SCT.1: all transport
+degradation is ledger-visible, and a decrement off the declared
+ledger would be hidden loss, which SCT.1 excludes; the reverse
+direction (no spontaneous coercive gain along admissible steps) is
+transfer-coercivity (Def.~\ref{def:transfer-coercivity}).  For the
+contraction family: $H_B \ge 0$ is self-adjoint
+(Thm.~\ref{thm:vrp-hamiltonian}), so by the spectral theorem
+$\overline{\mathfrak{h}_B}(e^{-sH_B}\psi) = \int_{[0,\infty)}
+\lambda\, e^{-2s\lambda}\, d\|E_\lambda \psi\|^2 \le
+\int_{[0,\infty)} \lambda\, d\|E_\lambda \psi\|^2 =
+\overline{\mathfrak{h}_B}(\psi)$, since
+$\lambda e^{-2s\lambda} \le \lambda$ on
+$\operatorname{Spec}(H_B) \subseteq [0,\infty)$.  The parameter
+$s$ enters only through functional calculus of the licensed
+operator; no time-evolution claim is made or needed. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-ham-time-realization}
+\textup{(Monotone Realization: When $H_B$-Dynamics Realizes Branch
+Time.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-time},
+Thm.~\ref{thm:vrp-hamiltonian},
+Lem.~\ref{lem:vrp-ham-lyapunov}, SCT.1 on the branch, and the
+declared dissipation-ledger discipline.]}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{(Order-compatibility.)}  The $H_B$-generated family
+    is monotone for branch time: every $H_B$-compatible step is a
+    generating step of $\preceq_t$, hence
+    $\preceq_H \subseteq \preceq_t$ and motion under the
+    $H_B$-generated family never contradicts the licensed
+    continuation order.
+  \item \emph{(Realization criterion.)}  $H_B$ \emph{realizes}
+    branch time on a declared sector $S \subseteq \Sigma_B$ if and
+    only if every generating step of $\preceq_t$ within $S$ is
+    $H_B$-compatible up to ledger-visible defect --- equivalently,
+    $\preceq_H|_S \,=\, \preceq_t|_S$.  In that case
+    ``the evolution generated by $H_B$'' has licensed meaning on
+    $S$ as motion along the branch continuation order, and the
+    demand of O\_Ham.Time is met on $S$.
+  \item \emph{(Failure diagnosis.)}  If
+    $\preceq_H|_S \subsetneq \preceq_t|_S$, the discrepancy is
+    ledger-visible: there exists a certified continuation step
+    within $S$ whose coercive-cost change is not accounted by the
+    $H_B$ dissipation ledger, witnessing either an energy channel
+    outside the declared form (an undeclared hidden supplement,
+    prohibited) or a continuation step imported from outside the
+    admissible family (an imported flow).  The failure of
+    realization is therefore always nameable, never silent.
+\end{enumerate}
+\emph{Scope clause:} this theorem operates at the order level
+only.  $e^{-itH_B}$ with $t \in \mathbb{R}$ as licensed time
+remains unlicensed pending O\_Time.Encode clause~(b)
+(Rmk.~\ref{ob:vrp-time-encode}).
+\end{theorem}
+
+\begin{proof}
+\textbf{(1)}  By Def.~\ref{def:hb-compatible-step}(i), every
+$H_B$-compatible step is a generating step of $\preceq_t$;
+monotonicity of the generated preorder follows by induction on
+chain length, exactly as in the transport-law clause of
+Thm.~\ref{thm:vrp-time}.  By Lem.~\ref{lem:vrp-ham-lyapunov} the
+canonical contraction family of $H_B$ supplies form-non-increasing
+steps, so the $H_B$-generated family moves only along
+$\preceq_H \subseteq \preceq_t$.
+
+\textbf{(2)}  ($\Leftarrow$)  Suppose every generating step of
+$\preceq_t$ within $S$ is $H_B$-compatible up to ledger-visible
+defect.  Then every generating chain of $\preceq_t|_S$ is a chain
+of $H_B$-compatible steps with all defects ledgered, hence a
+$\preceq_H$-chain; so $\preceq_t|_S \subseteq \preceq_H|_S$, and
+with~(1) the two preorders coincide on $S$.  ($\Rightarrow$)
+Conversely, if $\preceq_H|_S = \preceq_t|_S$ then in particular
+each generating step $x \to y$ of $\preceq_t$ within $S$ satisfies
+$x \preceq_H y$, i.e.\ it is reachable by $H_B$-compatible steps
+with ledgered accounting --- which is the criterion.  Under the
+criterion, ``evolution'' is motion along $\preceq_t$ realized by
+$H_B$-compatible steps; since $\preceq_t$ is the licensed time
+variable (Thm.~\ref{thm:vrp-time}) and $H_B$ the licensed
+generator (Thm.~\ref{thm:vrp-hamiltonian}), the phrase
+``evolution generated by $H_B$'' carries exactly the licensed
+content and no more.
+
+\textbf{(3)}  Suppose $x \preceq_t y$ within $S$ but
+$x \not\preceq_H y$.  Every generating chain from $x$ to $y$ then
+contains a step $x' \to y'$ that fails
+Def.~\ref{def:hb-compatible-step}(ii) modulo the ledger: either
+$\mathfrak{h}_B(y') > \mathfrak{h}_B(x')$ with the increment
+unledgered, or the decrement disagrees with the ledger entry.  By
+SCT.1 all lawful transport degradation is ledger-visible, so an
+unledgered coercive change cannot arise from the declared
+transport-coercion structure; it therefore witnesses either
+coercive content entering through a channel outside the declared
+form (a hidden supplement, prohibited by the standing
+no-hidden-supplementation discipline) or a step that is not
+generated by the admissible continuation family at all (an
+imported flow).  Both diagnoses are recorded objects: the
+discrepancy set is ledger-visible by construction. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-ham-time-instances}
+\textup{(Realization Instances: NS Dissipative Discipline, YM
+Phase-A Persistence.)}
+Two certified canonical regimes satisfy the realization criterion
+of Thm.~\ref{thm:vrp-ham-time-realization}(2) on their declared
+sectors.  \emph{NS:} on the safe-tail regime the contraction
+$\mathfrak{D}_{n+1} \le \kappa\,\mathfrak{D}_n$
+(\texttt{cor:NS61-discharged}, NS Branch) makes every admissible
+continuation step strictly form-non-increasing with the decrement
+carried on the obstruction ledger, so every $\preceq_t$-generating
+step is $H_B$-compatible and NS realizes branch time on the
+declared sector.  \emph{YM:} on the Phase-A screened sector the
+depth-indexed persistence machinery
+(\texttt{thm:O-GLOB}, YM Branch) certifies each refinement stage
+as a quotient-visible change while the contraction family of the
+Friedrichs generator of \texttt{thm:B1-closable} is
+form-non-increasing (Lem.~\ref{lem:vrp-ham-lyapunov}); the
+Phase-A sector is a realization sector.  These are realization
+instances of an already-proved criterion; this remark confers no
+new force.
+\end{remark}
+
+\subsection{The Entropy Clock: Canonical Cross-Chain Comparison}
+\label{sec:vrp-entropy-clock}
+
+The promotion of the foundation rung pays an immediate dividend on
+the temporal rung.  Rmk.~\ref{rmk:vrp-time-depth-index} narrowed
+O\_Time.Clock to cross-chain canonicity of step counts; the Book~I
+ledger machinery shows that raw step count was the wrong clock
+candidate all along, and supplies the right one.
+
+\begin{theorem}[\status{C}]\label{thm:vrp-entropy-clock}
+\textup{(Entropy Clock: Canonical Cross-Chain Comparison via the
+Defect Ledger.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-entropy},
+Thm.~\ref{thm:vrp-time}; the Book~I duality and preorder
+machinery (Thm.~\ref{thm:ledger-entropy-duality},
+Prop.~\ref{prop:ledger-additivity}, Prop.~\ref{prop:defect-nonneg})
+for the spine instance; and the branch carrying a declared defect
+ledger $\Delta_B$ compatible with its admissible continuation
+steps.]}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{(Canonicity.)}  Cumulative defect weight $\Delta_B$
+    is a quotient-visible, reparametrization-invariant chain
+    functional: its value along a continuation chain depends only
+    on the certified class-splitting and coarsening events the
+    chain traverses, not on the presentation or step-partition of
+    the chain.  By Ledger--Entropy Duality, the cumulative defect
+    along a chain equals the entropy decrement, so the entropy
+    ledger and the defect ledger define the \emph{same} clock.
+  \item \emph{(Order-compatibility.)}  The $\Delta_B$-clock is
+    monotone for branch time: along any admissible continuation
+    $\Delta_B$ is non-decreasing, so $x \preceq_t y$ implies that
+    every generating chain from $x$ to $y$ carries
+    $\Delta_B$-weight $\ge 0$, and the clock never runs backward
+    against the licensed order.
+  \item \emph{(Cross-chain synchronization; O\_Time.Encode
+    clause~(a) conditionally discharged.)}  Two continuation
+    chains are lawfully synchronized exactly when their cumulative
+    defect weights agree at corresponding certified events.  Equal
+    raw step count is neither necessary nor sufficient: chain
+    depth is a lawful clock precisely on families of chains with
+    uniform per-step defect, and otherwise is a presentation
+    index.  The lawful clock demanded by O\_Time.Encode
+    clause~(a) is the entropy/defect ledger.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{(1)}  Each entry of $\Delta_B$ records a certified
+class-splitting or coarsening event --- a quotient-visible datum
+by construction (the defect ledger is the transaction log of the
+quotient, Def.~\ref{def:defect-ledger}, Book~I).
+Re-partitioning a chain into different steps re-groups the event
+multiset but does not alter it; by ledger additivity
+(Prop.~\ref{prop:ledger-additivity}) the cumulative weight is the
+sum over the event multiset, hence partition-independent and
+re-description-invariant.  The identity with the entropy decrement
+is Ledger--Entropy Duality
+(Thm.~\ref{thm:ledger-entropy-duality}) on spine survivor chains,
+carried to branch continuation chains by clause~\ref{es:ledger} of
+the licensed branch ledger (Thm.~\ref{thm:vrp-entropy}).
+
+\textbf{(2)}  Each admissible continuation step appends a
+nonnegative one-step defect (Prop.~\ref{prop:defect-nonneg});
+induction on chain length gives monotonicity along every
+generating chain of $\preceq_t$, which is order-compatibility in
+the same sense as Thm.~\ref{thm:vrp-ham-time-realization}(1).
+
+\textbf{(3)}  ($\Leftarrow$)  If two chains agree in cumulative
+defect at corresponding certified events, then by~(1) they agree
+in every quotient-visible clock reading, and by duality in entropy
+decrement; no admissible probe can distinguish their temporal
+content, which is lawful synchronization.  ($\Rightarrow$)
+Conversely, a disagreement in cumulative defect at corresponding
+events is itself a certified, quotient-visible discrepancy, so the
+chains are not synchronized.  For step count: on a family of
+chains with uniform per-step defect $\delta_0$, depth $n$ and
+weight $n\delta_0$ are affinely equivalent, so depth is lawful
+there; in general two chains of equal depth may traverse different
+event multisets, and~(1) shows the weight, not the count, is the
+invariant.  This is exactly the canonicity demanded by
+O\_Time.Encode clause~(a), conditionally discharged with the
+clock identified. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-entropy-clock-arrow}
+\textup{(The Clock and the Arrow Are One Object.)}
+The Book~I irreversible temporal preorder
+(Sch.~\ref{sch:temporal-preorder}: $h \preceq h'$ iff
+$\Delta(h) \le \Delta(h')$, forward-only by defect nonnegativity)
+is, after this subsection, recognizable as the spine instance of
+the entropy clock read as an order: the arrow of time and the
+clock of time are the same ledger viewed as order and as scale.
+No new force; this remark records the identification for the
+encoding work that remains.
+\end{remark}
+
+\subsection{The Canonical Nontrivial Sector: O\_Mass.Sector
+Discharged by Three-Variable Binding}
+\label{sec:vrp-mass-sector}
+
+The sector hypothesis of Thm.~\ref{thm:vrp-mass} is the last piece
+of that theorem still entering as branch-supplied data.  This
+subsection recovers it.  The construction binds \emph{three}
+licensed variables --- the entropy ledger, the continuation order,
+and the generator --- and its shape is forced by an audit failure
+recorded inside the theorem itself.
+
+\begin{definition}[\status{D}]\label{def:vrp-nontrivial-sector}
+\textup{(Persistent, Label, and Nontrivial Sectors.)}
+Let $B$ carry the universal entropy ledger $S_B$
+(Thm.~\ref{thm:vrp-entropy-univ}), the licensed continuation order
+$\preceq_t$ (Thm.~\ref{thm:vrp-time}), and the licensed generator
+$H_B$ in its declared Hilbert realization
+(Thm.~\ref{thm:vrp-hamiltonian}).  Define:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item the \emph{persistent-distinction classes}
+    \[
+      \Sigma_B^{\mathrm{pers}} \;:=\;
+      \{\, x \in \Sigma_B \;:\; S_B(y) > 0
+      \text{ for every } y \succeq_t x \,\},
+    \]
+    the classes from which every admissible future sustains at
+    least one admissible distinction (note
+    $\Sigma_B^{\mathrm{pers}}$ is up-closed for $\preceq_t$ by
+    construction);
+  \item the \emph{persistent sector}
+    $\mathcal{H}_B^{\mathrm{pers}}$: the closed span, in the
+    declared realization, of the states realizing classes of
+    $\Sigma_B^{\mathrm{pers}}$;
+  \item the \emph{label sector}
+    $\mathcal{H}_B^{\mathrm{label}} :=
+    \mathcal{H}_B^{\mathrm{pers}} \cap \ker H_B$: persistent
+    distinctions of zero coercive cost;
+  \item the \emph{canonical nontrivial sector}
+    \[
+      \mathcal{H}_B^{\mathrm{nontriv}} \;:=\;
+      \mathcal{H}_B^{\mathrm{pers}} \ominus
+      \mathcal{H}_B^{\mathrm{label}},
+    \]
+    persistent distinctions of positive coercive cost.
+\end{enumerate}
+Here $\ker H_B = \{\psi : \overline{\mathfrak{h}_B}(\psi) = 0\}$
+is the kernel of the licensed closed form (for a nonnegative
+self-adjoint generator, $\overline{\mathfrak{h}_B}(\psi) =
+\|H_B^{1/2}\psi\|^2$, so the two kernels coincide).
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-mass-sector}
+\textup{(O\_Mass.Sector Discharge: the Canonical Nontrivial
+Sector.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-entropy-univ},
+Thm.~\ref{thm:vrp-time}, Thm.~\ref{thm:vrp-hamiltonian}; and
+sector--realization compatibility: the declared realization
+carries the $\preceq_t$-forward-invariance of
+$\Sigma_B^{\mathrm{pers}}$ to invariance of
+$\mathcal{H}_B^{\mathrm{pers}}$ under the contraction family of
+$H_B$ --- automatic on realization sectors in the sense of
+Thm.~\ref{thm:vrp-ham-time-realization}(2).]}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{(Quotient-visibility; no branch-supplied data.)}
+    $\mathcal{H}_B^{\mathrm{nontriv}}$ is determined by the three
+    licensed variables and the declared realization alone:
+    admissible re-description fixes $S_B$, $\preceq_t$, and
+    $\overline{\mathfrak{h}_B}$ (hence $\ker H_B$), and therefore
+    fixes the sector.  No sector datum is imported.
+  \item \emph{(Reduction; the spectral threshold is
+    well-posed.)}  $\mathcal{H}_B^{\mathrm{pers}}$ reduces $H_B$,
+    hence so does $\mathcal{H}_B^{\mathrm{nontriv}}$, and
+    $\inf \operatorname{Spec}\bigl(H_B|_{\mathcal{H}_B^{\mathrm{nontriv}}}\bigr)$
+    is well-defined.  Substituting this sector into
+    Thm.~\ref{thm:vrp-mass} turns its sector hypothesis into
+    recovered structure; only the \emph{positivity} of the
+    threshold remains branch data, by design.
+  \item \emph{(Coercivity audit, passed by forced
+    factorization.)}  The naive candidate
+    $\mathcal{H}_B^{\mathrm{pers}}$ alone fails the audit: it
+    contains persistent distinctions of zero coercive cost, on
+    which the spectral threshold is $0$, conflating
+    distinguishability with excitation --- the same gap that
+    blocked the entropy-to-energy reduction
+    (Rmk.~\ref{rmk:vrp-univ-method-scope}).  The factorization
+    through $\ker H_B$ is therefore forced; it is licensed because
+    the kernel of a licensed closed form is canonical.
+  \item \emph{(Byproduct: the label sector.)}
+    $\mathcal{H}_B^{\mathrm{label}}$ is a derived canonical
+    object: persistent, distinguishable, costless labels, stable
+    under the $H_B$-generated family.  Its phenomenology matches
+    superselection-type structure; the identification with branch
+    superselection sectors is recorded as an observation, not
+    claimed as a theorem.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{(1)}  Each ingredient is quotient-determined:
+$S_B$ by Thm.~\ref{thm:vrp-entropy-univ}(2), $\preceq_t$ by
+Thm.~\ref{thm:vrp-time} clause~(2), and
+$\overline{\mathfrak{h}_B}$ by Thm.~\ref{thm:vrp-energy} clause~(2)
+with its kernel determined by the form.  The set
+$\Sigma_B^{\mathrm{pers}}$ is defined by a condition in $S_B$ and
+$\preceq_t$ only; its span, the kernel intersection, and the
+orthogonal complement are determined by these data within the
+declared realization.  An admissible re-description fixes all
+three variables, hence the sector.
+
+\textbf{(2)}  $\Sigma_B^{\mathrm{pers}}$ is up-closed for
+$\preceq_t$: if every admissible future of $x$ has positive
+burden, the same holds for every $y \succeq_t x$, whose futures
+are among the futures of $x$.  By
+Thm.~\ref{thm:vrp-ham-time-realization}(1) the $H_B$-generated
+family moves only along $\preceq_t$, so at the quotient level it
+preserves $\Sigma_B^{\mathrm{pers}}$; by the sector--realization
+compatibility hypothesis this lifts to
+$e^{-sH_B}\,\mathcal{H}_B^{\mathrm{pers}} \subseteq
+\mathcal{H}_B^{\mathrm{pers}}$ for all $s \ge 0$.  Since each
+$e^{-sH_B}$ is self-adjoint, invariance of the closed subspace
+$\mathcal{H}_B^{\mathrm{pers}}$ implies invariance of its
+orthogonal complement, so $\mathcal{H}_B^{\mathrm{pers}}$ reduces
+every $e^{-sH_B}$ and hence reduces $H_B$.  The kernel
+$\ker H_B$ is the fixed-point space of the contraction family and
+reduces $H_B$ trivially; intersections and orthogonal differences
+of reducing subspaces reduce, so
+$\mathcal{H}_B^{\mathrm{nontriv}}$ reduces $H_B$ and the
+restricted spectrum is well-defined.  The substitution claim is
+immediate: Thm.~\ref{thm:vrp-mass} required a quotient-visible
+sector; clause~(1) supplies it with no branch input, leaving
+$m_B^2 > 0$ as the sole branch-data hypothesis --- which that
+theorem already declared as such.
+
+\textbf{(3)}  On $\mathcal{H}_B^{\mathrm{label}} =
+\mathcal{H}_B^{\mathrm{pers}} \cap \ker H_B$ the form vanishes,
+so $0 \in \operatorname{Spec}(H_B|_{\mathcal{H}_B^{\mathrm{pers}}})$
+whenever the label sector is nonzero, and the threshold on the
+unfactored candidate is $0$ regardless of any gap above the
+kernel.  Distinguishability ($S_B > 0$, class-counting content)
+does not imply coercive cost ($\mathfrak{h}_B > 0$, transport
+content); the audit gap is exactly the one isolated in
+Rmk.~\ref{rmk:vrp-univ-method-scope}, and the factorization
+removes precisely the zero-cost part and nothing else.
+
+\textbf{(4)}  Stability of the label sector under the
+$H_B$-generated family holds because $\ker H_B$ is the fixed-point
+space and $\mathcal{H}_B^{\mathrm{pers}}$ is invariant by~(2);
+persistence and distinguishability hold by membership in
+$\Sigma_B^{\mathrm{pers}}$.  No further claim is made. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-mass-sector-instances}
+\textup{(Instance Verification: YM Phase-A.)}
+The construction recovers the certified instance: on the YM
+Phase-A screened sector, persistence is supplied by the
+depth-indexed persistence machinery (\texttt{thm:O-GLOB}, YM
+Branch), the screening removes the zero-cost part, and the
+positive threshold is the certified gap
+$\Delta_{\mathrm{YM}} = m^2 > 0$ --- so the Phase-A screened
+sector instantiates
+$\mathcal{H}_B^{\mathrm{nontriv}}$ with the realization-sector
+hypothesis certified at L+27
+(Rmk.~\ref{rmk:vrp-ham-time-instances}).  NS realizes the
+construction trivially in the complementary sense: its declared
+regime concerns dissipation rather than a mass gap, and no gap
+claim is made.  This remark records instances; no new force.
+\end{remark}
+
+\subsection{The Canonical Domain: O\_Ham.Domain Discharged by
+Contraction Regularization}
+\label{sec:vrp-ham-domain}
+
+The last operator-theoretic gap in the Hamiltonian rung is the
+domain: Thm.~\ref{thm:vrp-hamiltonian} supplies
+$\mathrm{dom}(\overline{\mathfrak{h}_B})$ as the form-norm
+completion of the declared core, but the obligation demands that
+this domain be \emph{recovered} from finite probe and refinement
+data rather than presentation-supplied.  The naive statement ---
+``the domain is the closure of the finite-probe core'' --- would be
+a tautology if the core property were hypothesized; the content of
+this subsection is that the core property can be \emph{derived},
+because the licensed contraction family regularizes finite-probe
+data into a form core.
+
+\begin{definition}[\status{D}]\label{def:vrp-finite-probe-core}
+\textup{(Finite-Probe States; the Regularized Core.)}
+Let $B$ satisfy the hypotheses of Thm.~\ref{thm:vrp-hamiltonian}
+with declared Hilbert realization $\mathcal{H}_B$.  A
+\emph{finite-probe state} is a state of $\mathcal{H}_B$ realizing
+a quotient class certified at finite refinement depth; write
+$\mathcal{D}_B^{\mathrm{fin}}$ for their linear span.  The
+\emph{contraction-regularized finite-probe core} is
+\[
+  \mathcal{D}_B^{\mathrm{reg}} \;:=\;
+  \mathrm{span}\bigl\{\, e^{-sH_B}\psi \;:\;
+  \psi \in \mathcal{D}_B^{\mathrm{fin}},\; s \ge 0 \,\bigr\},
+\]
+where the contraction family is the licensed functional calculus
+of the generator (Lem.~\ref{lem:vrp-ham-lyapunov}: $s$ is an
+internal spectral parameter, not a licensed time variable).
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-ham-domain}
+\textup{(O\_Ham.Domain Discharge: the Domain as Recovered
+Structure.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-hamiltonian};
+\emph{realization faithfulness} --- the finite-probe states are
+norm-dense in $\mathcal{H}_B$, which is the Hilbert-level
+expression of the no-hidden-channel discipline
+(\texttt{def:hidden-channel}, Book~V): a state orthogonal to
+every finite-depth-certified state is invisible to every
+admissible probe, i.e.\ an undeclared channel of the realization;
+and \emph{finite per-stage cost} --- every finite-probe state lies
+in $\mathrm{dom}(\mathfrak{h}_B)$.]}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{(Canonical core.)}
+    $\mathcal{D}_B^{\mathrm{reg}}$ is a form core:
+    $\mathrm{dom}(\overline{\mathfrak{h}_B})$ is the closure of
+    $\mathcal{D}_B^{\mathrm{reg}}$ in the form norm
+    $\|\psi\|_{\mathfrak{h}}^2 = \|\psi\|^2 +
+    \overline{\mathfrak{h}_B}(\psi)$.
+  \item \emph{(Quotient-visible membership criterion.)}
+    $\psi \in \mathrm{dom}(\overline{\mathfrak{h}_B})$ if and only
+    if $\psi$ is the norm limit of a form-Cauchy sequence from
+    $\mathcal{D}_B^{\mathrm{reg}}$ --- a criterion expressed
+    entirely in licensed data: finite-probe certificates, the
+    licensed contraction family, and the licensed form.  The
+    domain is recovered structure, not presentation-supplied.
+  \item \emph{(Presentation independence.)}  Any two admissible
+    finite-probe presentations that are mutually certifiable
+    (each state of one is norm-approximable by certified states
+    of the other --- the admissible re-description discipline)
+    yield regularized cores with the same form-norm closure.
+  \item \emph{(Finality.)}  Closedness of
+    $\overline{\mathfrak{h}_B}$ makes the characterization final:
+    no admissible refinement enlarges the domain beyond this
+    closure, matching the discharge-by-construction of O\_Ham.SA
+    in Thm.~\ref{thm:vrp-hamiltonian}.
+\end{enumerate}
+Anti-smuggling audit: no Sobolev scale, manifold smooth
+structure, or a-priori operator domain is imported; the domain
+descends from probe certificates and licensed functional calculus
+alone.
+\end{theorem}
+
+\begin{proof}
+\textbf{(1)}  \emph{Density in $\mathcal{H}_B$:} by strong
+continuity of the contraction family of a nonnegative
+self-adjoint generator, $e^{-sH_B}\psi \to \psi$ as
+$s \to 0^+$; with realization faithfulness,
+$\mathcal{D}_B^{\mathrm{reg}} \supseteq
+\mathcal{D}_B^{\mathrm{fin}}$ is norm-dense.
+\emph{Containment:} for $s > 0$, $e^{-sH_B}\psi \in
+\mathrm{dom}(H_B^k)$ for every $k$; for $s = 0$ the finite
+per-stage cost hypothesis gives
+$\psi \in \mathrm{dom}(\mathfrak{h}_B)$.  Hence
+$\mathcal{D}_B^{\mathrm{reg}} \subseteq
+\mathrm{dom}(\overline{\mathfrak{h}_B})$.
+\emph{Invariance:} $e^{-tH_B}e^{-sH_B}\psi =
+e^{-(s+t)H_B}\psi \in \mathcal{D}_B^{\mathrm{reg}}$.
+
+It remains to show every
+$\psi \in \mathrm{dom}(\overline{\mathfrak{h}_B})$ is
+form-approximable from $\mathcal{D}_B^{\mathrm{reg}}$.  Two
+spectral estimates suffice.  \emph{First}, for
+$\psi \in \mathrm{dom}(\overline{\mathfrak{h}_B})$,
+\[
+  \|e^{-sH_B}\psi - \psi\|_{\mathfrak{h}}^2
+  \;=\; \int_{[0,\infty)} (1+\lambda)\,
+  \bigl|e^{-s\lambda} - 1\bigr|^2 \, d\|E_\lambda\psi\|^2
+  \;\xrightarrow[s\to 0^+]{}\; 0
+\]
+by dominated convergence: the integrand is dominated by
+$4(1+\lambda)$, integrable since
+$\psi \in \mathrm{dom}(\overline{\mathfrak{h}_B})$, and tends to
+$0$ pointwise.  So it suffices to form-approximate
+$e^{-sH_B}\psi$ for fixed $s > 0$.  \emph{Second}, the smoothing
+bound: for fixed $s > 0$ and any $\phi \in \mathcal{H}_B$,
+\[
+  \|e^{-sH_B}\phi\|_{\mathfrak{h}}^2
+  \;=\; \int_{[0,\infty)} (1+\lambda)\, e^{-2s\lambda}\,
+  d\|E_\lambda\phi\|^2
+  \;\le\; C_s\, \|\phi\|^2,
+  \qquad
+  C_s := \sup_{\lambda \ge 0}\,(1+\lambda)e^{-2s\lambda} < \infty,
+\]
+i.e.\ the contraction family is bounded from the Hilbert norm to
+the form norm.  Now take finite-probe $\psi_n \to \psi$ in norm
+(faithfulness); then $e^{-sH_B}\psi_n \in
+\mathcal{D}_B^{\mathrm{reg}}$ and
+$\|e^{-sH_B}(\psi_n - \psi)\|_{\mathfrak{h}}^2 \le
+C_s \|\psi_n - \psi\|^2 \to 0$.  Composing the two
+approximations gives a form-norm approximation of $\psi$ from
+$\mathcal{D}_B^{\mathrm{reg}}$, which is the core property; the
+form-norm closure of a core is
+$\mathrm{dom}(\overline{\mathfrak{h}_B})$ by definition of the
+closure.
+
+\textbf{(2)}  Restates~(1) through the definition of form-norm
+closure.  Every ingredient of the criterion is licensed: the
+certificates are finite refinement data, the contraction family is
+licensed functional calculus of the licensed generator
+(Lem.~\ref{lem:vrp-ham-lyapunov}), and the form is licensed
+(Thm.~\ref{thm:vrp-energy}).
+
+\textbf{(3)}  Mutual certifiability gives mutual norm-density of
+the two finite-probe spans in each other's closures, hence both
+are norm-dense in $\mathcal{H}_B$; the smoothing bound then shows
+each regularized core form-approximates the other, so both
+closures equal $\mathrm{dom}(\overline{\mathfrak{h}_B})$ by~(1).
+
+\textbf{(4)}  The closure of a closable form is closed, and the
+Friedrichs domain is uniquely determined by the form
+(uniqueness clause of Thm.~\ref{thm:vrp-hamiltonian}); any
+admissible refinement acts within the same licensed form and
+cannot pass beyond its closure. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-ham-domain-faithfulness}
+\textup{(Faithfulness Is Not an Import.)}
+The realization-faithfulness hypothesis deserves its own record:
+it is not an analytic convenience but the Hilbert-level face of
+Book~V lawfulness.  A nonzero vector orthogonal to every
+finite-probe state would carry observational content reachable by
+no admissible probe at any finite depth --- precisely an
+undeclared dependence of the realization on structure invisible
+through the declared projection, i.e.\ a hidden channel
+(\texttt{def:hidden-channel}, Book~V).  Lawful branches exclude
+it by discipline, not by assumption of convenience.  No force
+conferred.
+\end{remark}
+
+\subsection{Linearization of Branch Time: O\_Time.Encode
+Clause~(b) by Characterization, and the Reversibility Obstruction}
+\label{sec:vrp-time-linear}
+
+The clock theorem (\S\,\ref{sec:vrp-entropy-clock}) identified the
+canonical cross-chain comparison; what remained of
+O\_Time.Encode was the order-to-number encoding itself.  This
+subsection settles the discrete encoding by a full
+characterization (not merely a sectoral instance), supplies the
+continuum encoding as a bridge clause at the same epistemic level
+as the LSC clause of the energy form, and isolates --- as a new,
+sharply named obligation --- the one question the entropy clock
+provably cannot answer.
+
+\begin{definition}[\status{D}]\label{def:vrp-coherent-sector}
+\textup{($\Delta$-Coherence; Clock Coordinate; Instants;
+Clock-Simultaneity.)}
+Let $B$ carry the licensed continuation order $\preceq_t$
+(Thm.~\ref{thm:vrp-time}) and the canonical clock
+(Thm.~\ref{thm:vrp-entropy-clock}).  A $\preceq_t$-connected
+subset $T \subseteq \Sigma_B$ with a declared origin $o$ is
+\emph{$\Delta$-coherent} if any two generating chains between the
+same endpoints within $T$ carry equal cumulative defect weight.
+On a coherent sector define the \emph{clock coordinate}
+\[
+  \tau(x) \;:=\; \Delta_B(\text{any generating chain }
+  o \leadsto x),
+\]
+well-defined by coherence.  Call $x \sim y$
+(\emph{instant-equivalent}) when $x$ and $y$ are connected by a
+chain of zero-defect steps, and call $x, y$
+\emph{clock-simultaneous} when $\tau(x) = \tau(y)$.  A
+\emph{uniform-defect family} is a family of chains of constant
+per-step defect $\delta_0 > 0$.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-time-linear}
+\textup{(Linearization by Characterization: the Discrete Encoding
+of Branch Time.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-time},
+Thm.~\ref{thm:vrp-entropy-clock}.]}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{(Characterization.)}  A canonical clock coordinate
+    (a quotient-visible state function assigning every generating
+    step its ledgered weight) exists on a
+    $\preceq_t$-connected sector $T$ \emph{if and only if} $T$ is
+    $\Delta$-coherent.  Necessity is immediate: path-dependent
+    weight is inconsistent with any state function reproducing
+    per-step ledger entries; sufficiency is
+    Def.~\ref{def:vrp-coherent-sector}.
+  \item \emph{(Affine gauge uniqueness.)}  On a coherent sector,
+    $\tau$ is monotone for $\preceq_t$, quotient-visible, and
+    unique up to the clock gauge: any monotone encoding $\tau'$
+    assigning each generating step its ledgered weight in a
+    declared unit satisfies $\tau' = a\,\tau + b$ ($a$ the unit
+    ratio, $b$ the origin shift), by telescoping along any chain
+    and coherence.  The licensed time coordinate carries exactly
+    the gauge freedom of a physical clock --- unit and origin ---
+    and no more.
+  \item \emph{(Strict monotonicity modulo instants; the fibers.)}
+    For comparable $x \prec_t y$: $\tau(x) = \tau(y)$ iff $x \sim
+    y$ (every connecting step is zero-defect), and otherwise
+    $\tau(x) < \tau(y)$.  The fibers of $\tau$ consist of
+    instant-classes together with $\preceq_t$-incomparable
+    clock-simultaneous elements.
+  \item \emph{(Canonical linear preorder; Szpilrajn avoided.)}
+    The relation $x \le_\tau y :\iff \tau(x) \le \tau(y)$ is a
+    \emph{linear preorder} extending $\preceq_t$ on $T$,
+    determined by licensed data plus gauge --- no extension choice
+    is made.  A Szpilrajn-style linear \emph{order} refining
+    incomparable clock-simultaneous pairs would require exactly
+    such a choice; canonicity is preserved by declining it:
+    licensed time totally orders clock readings and deliberately
+    does not refine simultaneity.  Anti-smuggling:
+    clock-simultaneity is a bookkeeping notion (equal ledgered
+    weight), not a causal, metric, or signal-theoretic claim;
+    cross-sector comparison remains governed by
+    Thm.~\ref{thm:vrp-entropy-clock}(3).
+  \item \emph{(Uniform-defect specialization.)}  On a
+    uniform-defect family, $\tau = \delta_0 \cdot
+    \mathrm{depth}$: chain depth is an affine clock, recovering
+    the criterion of Thm.~\ref{thm:vrp-entropy-clock}(3) as the
+    special case.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{(1)}  If a state function $\tau'$ reproduces per-step
+ledger entries, then for any chain $o \leadsto x$ the telescoped
+sum gives $\tau'(x) - \tau'(o) = \Delta_B(\text{chain})$, so all
+chains to $x$ carry equal weight: coherence is necessary.
+Conversely, on a coherent sector
+Def.~\ref{def:vrp-coherent-sector} defines $\tau$ consistently.
+
+\textbf{(2)}  Monotonicity is defect-nonnegativity along chains
+(Thm.~\ref{thm:vrp-entropy-clock}(2)); quotient-visibility is
+Thm.~\ref{thm:vrp-entropy-clock}(1).  For $\tau'$ as hypothesized,
+telescoping along any chain $o \leadsto x$ gives
+$\tau'(x) = \tau'(o) + a\,\Delta_B(\text{chain}) = b + a\,\tau(x)$,
+chain-independent by coherence.
+
+\textbf{(3)}  For $x \prec_t y$, every connecting chain has
+nonnegative per-step weights summing to $\tau(y) - \tau(x)$; the
+sum vanishes iff every step is zero-defect, i.e.\ $x \sim y$.
+The fiber description follows.
+
+\textbf{(4)}  $\le_\tau$ is reflexive, transitive, and total
+(values in $\mathbb{R}$), and extends $\preceq_t$ by~(2)--(3).
+It is determined by $\tau$, hence by licensed data and the gauge
+of~(2).  That no further canonical refinement exists is the
+content of~(3): an incomparable clock-simultaneous pair is
+separated by no licensed datum, so any ordering of it is a choice
+--- which the linear preorder declines by construction.
+
+\textbf{(5)}  Immediate: constant per-step defect $\delta_0$
+makes every chain weight $\delta_0 n$ at depth $n$. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-time-smooth}
+\textup{(Continuum Encoding: the Bridge Clause.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-time-linear} on each
+sector; and a declared Book~VI bridge presentation of the clock:
+a refining family $\{T_k\}$ of $\Delta$-coherent sectors with
+admissible refinement maps under which the clock coordinates form
+a compatible monotone family, the value sets become
+$\varepsilon_k$-dense in a declared interval with
+$\varepsilon_k \to 0$, and the refinement defect of clock
+readings vanishes in the limit (the clock analogue of the LSC
+clause~\ref{en:lsc}).]}
+There is a unique monotone continuous limit coordinate
+$t$ on the bridge sector restricting compatibly to every
+$\tau_k$ up to gauge; continuum time notation $t \in \mathbb{R}$
+is thereby licensed on the bridge sector \emph{for order and
+irreversible content}, with regularity beyond continuity
+inherited from, and only from, the declared bridge regularity.
+\end{theorem}
+
+\begin{proof}
+Compatibility and monotonicity give a well-defined monotone
+function on the union of value sets; $\varepsilon_k$-density with
+$\varepsilon_k \to 0$ makes this union dense in the declared
+interval, and a monotone function on a dense set with vanishing
+refinement defect extends uniquely to a continuous monotone
+function (the vanishing defect supplies the modulus of
+continuity, exactly as the LSC clause controls the energy form
+across the bridge).  Uniqueness up to gauge follows from
+Thm.~\ref{thm:vrp-time-linear}(2) applied at every stage.  The
+scope restriction is part of the statement: nothing here
+licenses a parameter for defect-free dynamics --- see
+Rmk.~\ref{ob:vrp-time-reversible}. \qed
+\end{proof}
+
+\begin{remark}[\status{C}]\label{ob:vrp-time-reversible}
+\textbf{O\_Time.Reversible --- Conditionally Discharged by
+Dichotomy; the residual re-registered.}
+\textup{[Conditional on
+Thm.~\ref{thm:vrp-reversible-dichotomy},
+Cor.~\ref{cor:vrp-no-global-unitary-time},
+\S\,\ref{sec:vrp-reversible}.]}
+The question as registered --- whether a second clock for
+defect-free dynamics exists --- is answered by the dichotomy:
+on the gauge horn no clock exists because no licensed change
+exists ($e^{-itH_B}$ is admissible re-description); on the phase
+horn the clock exists and is constructed --- cyclic/toral phase
+from licensed spectral differences, canonical up to
+origin~$+$~orientation gauge.  On both horns, global linear
+unitary time is unlicensed, so thermodynamic and unitary time
+remain provably distinct.  The genuinely open residual ---
+canonical cross-orbit phase alignment, the defect-free analogue
+of clock comparison --- is re-registered as
+Rmk.~\ref{ob:vrp-phase-sync} (O\_Phase.Sync), not retained here.
+\end{remark}
+
+\subsection{The Reversible-Clock Dichotomy: O\_Time.Reversible
+Resolved}
+\label{sec:vrp-reversible}
+
+The L+32 obstruction asked whether any licensed datum can
+distinguish points of a unitary orbit --- the prerequisite for any
+clock on defect-free dynamics.  The feasibility analysis resolves
+into a dichotomy decidable from the declared probe family, with
+both horns in-toolkit; this subsection proves it, constructs the
+second clock on the horn where it exists, and shows that on
+\emph{both} horns a global linear unitary time remains unlicensed
+--- so the question splits correctly rather than closing falsely.
+
+\begin{theorem}[\status{C}]\label{thm:vrp-reversible-dichotomy}
+\textup{(The Reversible-Clock Dichotomy.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-hamiltonian},
+Thm.~\ref{thm:vrp-time-linear}; the declared admissible probe
+family of $B$; and, for the phase-coordinate clause, orbit states
+of finite spectral support.]}
+Let $I$ be an instant-class of a lawful branch and consider the
+orbits of the licensed unitary family $\{e^{-itH_B}\}$ within the
+realization over $I$.  Exactly one of the following holds, and
+which one is determined by the declared probe family (whether some
+admissible probe fails to commute with the unitary family on
+$I$):
+\begin{enumerate}[label=\textup{(\Roman*)}]
+  \item \emph{(Gauge horn.)}  Every admissible probe is constant
+    along unitary orbits over $I$.  Then orbit points lie in a
+    single quotient class: the unitary family induces no certified
+    change, acts as admissible re-description, and is pure
+    presentation.  A reversible clock does not exist because there
+    is no licensed motion to measure; unitary ``time'' on $I$ is
+    unphysical in the NFC sense.
+  \item \emph{(Phase horn.)}  Some admissible probe separates
+    orbit points.  Then distinct orbit points realize distinct
+    quotient classes, and the orbit motion is certified
+    \emph{zero-defect} change within the instant: each induced
+    step is probe-witnessed, invertible (the family contains
+    $e^{+itH_B}$), and class-count preserving, hence carries no
+    ledger event.  For orbit states of finite spectral support
+    $\{\lambda_1, \dots, \lambda_r\}$, the certified orbit motion
+    is periodic or quasi-periodic with frequency module generated
+    by the licensed spectral differences
+    $\lambda_i - \lambda_j$, and there exists a \emph{phase
+    coordinate} on each orbit --- a toral coordinate of dimension
+    the rank of the frequency module, cyclic in the rank-one case
+    --- canonical up to phase origin and orientation in each
+    generator.  The second clock exists, and it is cyclic/toral,
+    not linear: its gauge group is origin~$+$~orientation per
+    phase, in contrast to the affine unit~$+$~origin gauge of the
+    thermodynamic clock
+    (Thm.~\ref{thm:vrp-time-linear}(2)).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The disjunction is exhaustive and exclusive by inspection of the
+declared probe family.  \textbf{Horn (I):} the observational
+quotient is generated by admissible probe outcomes; if every
+outcome is constant along an orbit, all orbit points are
+outcome-indistinguishable, hence lie in one quotient class.  A
+quotient-trivial action induces no certified state change, and a
+transformation inducing none is an admissible re-description by
+the definition of the quotient; there is no licensed change, so
+no clock has an object.
+
+\textbf{Horn (II):}  Let $p$ be a separating probe.  Orbit points
+with distinct $p$-outcomes realize distinct quotient classes, and
+each transition is certified by $p$ itself.  Zero defect: the
+induced steps occur at fixed refinement depth (no probe-family
+refinement is performed by the motion), are invertible within the
+licensed family, and preserve class counts; the defect ledger
+records class-splitting and coarsening events only
+(Thm.~\ref{thm:vrp-entropy-clock}(1)), and the motion performs
+neither, so its ledger increment is zero and the entire orbit
+lies within one instant --- consistent with, and required by,
+Thm.~\ref{thm:vrp-time-linear}(3).  For the phase coordinate:
+with finite spectral support, the spectral theorem gives
+\[
+  e^{-itH_B}\psi \;=\; \sum_{i=1}^{r} e^{-it\lambda_i}\,
+  P_{\lambda_i}\psi,
+\]
+so every probe outcome along the orbit is a function of the
+relative phases $e^{-it(\lambda_i - \lambda_j)}$ --- the orbit's
+certified image is a (quasi-)periodic trajectory whose frequency
+module is generated by the differences
+$\lambda_i - \lambda_j$, which are licensed data
+(differences of spectral values of the licensed generator, each a
+quotient-visible invariant in the sense of
+Thm.~\ref{thm:vrp-mass}'s threshold clause).  The map
+$t \mapsto (e^{-it(\lambda_i - \lambda_j)})_{i<j}$ descends to a
+coordinate on the closure of the orbit's certified image: a torus
+of dimension the rank of the frequency module over
+$\mathbb{Z}$, a circle when the rank is one.  Two such
+coordinates built from the same licensed frequency data differ by
+a choice of origin on each phase and an orientation of each
+generator --- the stated gauge --- by the same telescoping
+argument as Thm.~\ref{thm:vrp-time-linear}(2), applied per
+frequency.  \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:vrp-no-global-unitary-time}
+\textup{(No Global Linear Unitary Time, on Either Horn.)}
+\textup{[Conditional on
+Thm.~\ref{thm:vrp-reversible-dichotomy}.]}
+On neither horn is $e^{-itH_B}$ with $t$ a global linear licensed
+time variable licensed: on horn~(I) because the family induces no
+licensed change at all, on horn~(II) because the licensed
+parameter is cyclic/toral phase, and promoting phase to a global
+linear time would require canonically aligning phase coordinates
+across distinct orbits and instants --- which is exactly the
+synchronization question that the entropy clock answers only for
+defect-bearing change (Thm.~\ref{thm:vrp-entropy-clock}(3)) and
+that no licensed datum currently answers for defect-free change.
+$e^{-itH_B}$ remains canon as internal functional calculus
+(Lem.~\ref{lem:vrp-ham-lyapunov} license note), now with its
+physical reading settled horn-by-horn.
+\end{corollary}
+
+\begin{proof}
+Horn~(I) is immediate.  On horn~(II), a global linear $t$ would
+induce a simultaneous canonical choice of origin and orientation
+for the phase coordinate of every orbit; by the gauge clause of
+Thm.~\ref{thm:vrp-reversible-dichotomy}(II) no licensed datum on
+a single orbit makes this choice, and no cross-orbit licensed
+comparison exists for defect-free change --- a canonical global
+choice would therefore be exactly the hidden selection that the
+licensing predicate's declaration clause excludes.  \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-phase-connection}
+\textup{(Observation: Phase Alignment Is Connection-Type Data.)}
+What horn~(II) leaves open --- a rule canonically aligning phase
+coordinates across nearby orbits and instants --- has the formal
+shape of a \emph{connection}: locally, alignment data on fibers of
+phases; globally, the obstruction to consistent alignment is
+holonomy-type.  The corpus's gauge-theoretic machinery (YM
+branch) is the natural eventual home of this observation, which
+would, if developed, recover gauge structure as the bookkeeping of
+reversible-clock synchronization.  Recorded as an observation
+only; no force conferred, no development claimed.
+\end{remark}
+
+\begin{remark}[\status{C}]\label{ob:vrp-phase-sync}
+\textbf{O\_Phase.Sync (Cross-Orbit Phase Synchronization) ---
+Conditionally Discharged by the Synchronization Obstruction.}
+\textup{[Conditional on Cor.~\ref{cor:vrp-phase-sync-discharge},
+\S\,\ref{sec:vrp-sync}.]}
+Phase coordinates synchronize across an orbit family iff the phase
+holonomy vanishes on every independent cycle of the interface
+nerve --- the obstruction in $H^1(N; T^r)$ supported on
+$\beta_1(N)$, with vanishing branch data and automatic when
+$\beta_1 = 0$.  The expectation that this obligation is
+obstruction-bearing (recorded at surfacing) is confirmed at
+theorem level: the obstruction is the holonomy of the
+reversible-clock connection, and by
+Rmk.~\ref{rmk:vrp-sync-gauge} it is supported on exactly the
+cycle rank that carries non-abelian gauge structure.
+\end{remark}
+
+\subsection{Characterization of the Energy Form: O\_Energy.Form
+Resolved at the Ledger Level}
+\label{sec:vrp-energy-form}
+
+The last in-toolkit VRP residual asked for universal existence of
+the branch energy form.  The L+29 negative result
+(Rmk.~\ref{rmk:vrp-univ-method-scope}) showed why no
+class-counting construction can deliver it; this subsection
+resolves the obligation the way the reversible-clock question
+resolved at L+33 --- by characterization rather than one-sided
+answer.  Existence at the ledger-functional level is equivalent
+to a declaration: a lawful branch carries an energy form exactly
+when it declares weighted transport-coercion structure, and on
+such branches the form is \emph{constructed} canonically.  The
+operator level is then carried by a hypothesis the corpus has
+named since L+24.
+
+\begin{definition}[\status{D}]\label{def:vrp-weighted-coercion}
+\textup{(Weighted Transport-Coercion Structure.)}
+A lawful branch $B$ carries \emph{weighted transport-coercion
+structure} when the ``declared structural data'' of transfer
+coercivity (Def.~\ref{def:transfer-coercivity}) takes the
+quantitative form of \emph{per-step coercion weights}: an
+assignment $w(\sigma) \ge 0$ to each admissible transfer step
+$\sigma$, declared with:
+\begin{enumerate}[label=\textup{(W\arabic*)}]
+  \item\label{wc:chain} \emph{(Chain bound.)}  The accumulated
+    coercive change along a composable chain is bounded by the sum
+    of its step weights --- the quantitative instance of
+    Def.~\ref{def:transfer-coercivity};
+  \item\label{wc:gap} \emph{(Coercivity gap.)}  There is
+    $c_B > 0$ such that every admissible chain from the
+    transport-trivial class to a persistent nontrivial class
+    accumulates total weight $\ge c_B$;
+  \item\label{wc:refine} \emph{(Refinement stability.)}  Weights
+    are stable under admissible refinement: a refined step carries
+    the weight of the step it refines, and refinement introduces
+    no negative-weight steps.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-energy-form-char}
+\textup{(O\_Energy.Form Resolution: Characterization and Canonical
+Construction.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-energy}; the Book~V
+lawfulness discipline; and, for clause~(2), the declared weighted
+structure of Def.~\ref{def:vrp-weighted-coercion}.]}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{(Necessity, by extraction.)}  If a lawful branch
+    carries a branch energy form
+    (Def.~\ref{def:branch-energy-form}), then its declared data
+    certifies weighted transport-coercion structure: the
+    increments of $\mathfrak{h}_B$ along admissible steps are
+    per-step weights satisfying \ref{wc:chain} (the form's
+    transport law), \ref{wc:gap} (clause~\ref{en:pos}: positive
+    cost of persistent nontrivial excitation), and
+    \ref{wc:refine} (clause~\ref{en:refine}).  An energy form
+    \emph{is} a weight declaration.
+  \item \emph{(Sufficiency, by canonical construction.)}
+    Conversely, given declared weighted structure, the
+    \emph{canonical persistence cost}
+    \[
+      \mathfrak{h}_B^{\min}(x) \;:=\;
+      \inf\Bigl\{\, \textstyle\sum_{\sigma \in \gamma} w(\sigma)
+      \;:\; \gamma \text{ an admissible transfer chain from the
+      transport-trivial class to } x \,\Bigr\}
+    \]
+    satisfies clauses~\ref{en:zero}--\ref{en:refine} of
+    Def.~\ref{def:branch-energy-form}; clause~\ref{en:lsc} holds
+    as the usual bridge clause on declared bridge regimes; and
+    $\mathfrak{h}_B^{\min}$ is canonical: it is the
+    \emph{maximal} functional subordinate to the declared weights
+    (any functional vanishing on the trivial class whose
+    per-step increments respect the weights is dominated by it),
+    determined by the declaration with no further choice.
+  \item \emph{(The residual is a pre-existing named hypothesis,
+    not new open content.)}  What the construction does not and
+    cannot supply is clause~\ref{en:gen} at operator strength: a
+    Hilbert realization in which $\mathfrak{h}_B^{\min}$ is a
+    densely defined closable quadratic form.  This is precisely
+    the realization hypothesis carried, by name, in the bracket of
+    Thm.~\ref{thm:vrp-hamiltonian} since its promotion; YM, GR,
+    and NS are the certified models in which it holds.  The
+    universal-existence obligation therefore resolves with no new
+    obligation surfaced: ledger-level existence is characterized
+    and constructed; operator-level existence is conditional on
+    declared realization, where it always was.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{(1)}  Set $w(\sigma) := $ the ledgered increment of
+$\mathfrak{h}_B$ along $\sigma$ (nonnegative in the gain
+direction by transfer-coercivity; decrements ride the dissipation
+ledger and bound the accumulated change).  \ref{wc:chain} is the
+form's transport law (Thm.~\ref{thm:vrp-energy} clause~(3))
+telescoped along chains.  \ref{wc:gap}: a chain from trivial to a
+persistent nontrivial class $x$ accumulates at least
+$\mathfrak{h}_B(x) > 0$ by clauses~\ref{en:zero}--\ref{en:pos};
+take $c_B$ the infimum of $\mathfrak{h}_B$ over persistent
+nontrivial classes, positive on the stabilized finite quotient
+(Thm.~\ref{thm:vrp-entropy-univ}(1) supplies finiteness for
+lawful branches).  \ref{wc:refine} is clause~\ref{en:refine}.
+
+\textbf{(2)}  \emph{Well-defined and \ref{en:zero}:}  the trivial
+class is reachable from itself at cost $0$, so
+$\mathfrak{h}_B^{\min}(\mathrm{triv}) = 0$; for persistent
+nontrivial $x$, every admissible chain accumulates $\ge c_B$ by
+\ref{wc:gap}, so $\mathfrak{h}_B^{\min}(x) \ge c_B > 0$ --- which
+is also \ref{en:pos}, with the zero set exactly the
+transport-trivial (zero-cost-reachable) classes.
+\emph{\ref{en:refine}:}  under admissible refinement the chain
+family for a refined class consists of refinements of coarse
+chains (paths must respect the finer quotient), so the infimum is
+taken over a smaller constraint set with weights preserved
+(\ref{wc:refine}): $\mathfrak{h}_B^{\min}$ is non-decreasing
+under refinement --- recorded cost is never spuriously destroyed.
+\emph{Transport law:}  chain concatenation gives the subordinate
+inequality
+$\mathfrak{h}_B^{\min}(y) \le \mathfrak{h}_B^{\min}(x) +
+w(x \to y)$ --- the no-spurious-gain face of transfer-coercivity,
+and the governing pattern (Thm.~\ref{thm:governing}) in its
+coercive instance.  \emph{Maximality and canonicity:}  if
+$\mathfrak{h}$ vanishes on the trivial class and its per-step
+increments respect the weights, then telescoping along any chain
+$\gamma$ to $x$ gives
+$\mathfrak{h}(x) \le \sum_{\sigma \in \gamma} w(\sigma)$; taking
+the infimum over $\gamma$ yields
+$\mathfrak{h} \le \mathfrak{h}_B^{\min}$.  The construction uses
+the declaration and nothing else.  \emph{\ref{en:lsc}:}  on
+declared bridge regimes, lower semicontinuity of a path-infimum
+cost under vanishing refinement defect is the same bridge
+argument as Thm.~\ref{thm:vrp-time-smooth}, applied to the weight
+ledger in place of the clock ledger.
+
+\textbf{(3)}  A path-infimum cost on a quotient is not, as such,
+a quadratic form on a Hilbert space; no licensed datum of the
+declaration selects a realization, and selecting one is Book~V
+realization-functor territory
+(\texttt{def:legitimacy-witness}), declared per branch.  The
+hypothesis is already named verbatim in the bracket of
+Thm.~\ref{thm:vrp-hamiltonian}; nothing new is open.  \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-why-quadratic}
+\textup{(The Question Deliberately Not Registered as an
+Obligation.)}
+``When does the canonical persistence cost admit a closable
+quadratic realization?''\ --- in effect, \emph{why is energy
+quadratic?} --- is recorded here at observation strength and
+deliberately \emph{not} registered as an [O].  Reason: it is a
+realization-selection question (which Hilbert realization a
+branch declares, Book~V functor territory), not a theorem target
+within the recovery program; registering it as an obligation
+would misclassify a declaration choice as an unproved claim.  The
+certified models answer it instance-wise: in YM the declared
+weights are curvature increments and the canonical cost is
+realized by the curvature form on its sector
+(\texttt{thm:B1-closable}, YM Branch), with GR and NS as the
+parallel instances of Rmk.~\ref{rmk:vrp-energy-instances}.  No
+force conferred.
+\end{remark}
+
+\subsection{Temperature as the Entropy--Energy Exchange Slope}
+\label{sec:vrp-temperature}
+
+With the entropy ledger universal (Thm.~\ref{thm:vrp-entropy-univ})
+and the energy form characterized
+(Thm.~\ref{thm:vrp-energy-form-char}), the Temperature rung ---
+anticipated at the gate note of
+Rmk.~\ref{rmk:vrp-entropy-ledger-duality} --- has both inputs
+canonical.  Temperature is not a primitive ledger but a
+\emph{response coefficient}: the marginal rate at which coercive
+cost must be spent to buy distinguishability along an admissible
+exchange family.  The construction is choice-free given an exchange
+family, and the one classical ingredient it must refuse to import
+--- the ensemble --- is refused by construction, not by fiat: no
+partition function appears because the slope \emph{is} the
+definition.
+
+\begin{definition}[\status{D}]\label{def:vrp-exchange-family}
+\textup{(Admissible Exchange Family; Exchange-Coherence.)}
+Let $B$ carry the universal entropy ledger $S_B$ and a licensed
+energy form $\mathfrak{h}_B$ (its ledger reading $E_B$).  An
+\emph{admissible exchange family} on a sector $X \subseteq
+\Sigma_B$ is a set of admissible steps each of which changes both
+ledgers by recorded increments $(\Delta S, \Delta E)$ with
+$\Delta E \neq 0$, closed under the branch's admissible
+composition.  The family is \emph{exchange-coherent} if the
+marginal ratio
+\[
+  \beta_B \;:=\; \frac{\Delta S_B}{\Delta E_B}
+\]
+is the same for all steps between any two states of $X$ --- the
+exchange analogue of $\Delta$-coherence
+(Def.~\ref{def:vrp-coherent-sector}), i.e.\ path-independence of
+the entropy bought per unit coercive cost spent.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-temperature}
+\textup{(VRP-Temperature: the Exchange Slope as Licensed Response
+Coefficient.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-entropy-univ},
+Thm.~\ref{thm:vrp-energy} (with a licensed energy form on the
+sector); and an exchange-coherent admissible family
+(Def.~\ref{def:vrp-exchange-family}).]}
+On an exchange-coherent sector the marginal slope $\beta_B =
+\partial S_B / \partial E_B$ is a licensed physics variable,
+realized through the \emph{certified branch-interface coefficient}
+disjunct of \texttt{def:variable-licensing} (Book~VII); where
+$\beta_B > 0$, the \emph{branch temperature} is
+$T_B := \beta_B^{-1}$.  The five recovery clauses:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Probe signature:} the admissible exchange steps and
+    the two ledger increments they record.
+  \item \emph{Quotient invariant:} $\beta_B$ is a ratio of two
+    quotient-visible ledger increments
+    (Thms.~\ref{thm:vrp-entropy-univ}, \ref{thm:vrp-energy}),
+    constant on the sector by exchange-coherence, hence invariant
+    under admissible re-description.
+  \item \emph{Transport law:} along lawful interfaces the slope
+    transforms by the ratio of the two ledgers' transfer behavior
+    --- entropy lax-functorially with no exchange coefficient
+    (Thm.~\ref{thm:vrp-entropy-transfer}), energy with its
+    declared exchange coefficient
+    (Thm.~\ref{thm:vrp-energy-transfer}) --- so $\beta_B$ carries
+    exactly the inverse energy exchange coefficient and no
+    independent transfer freedom.
+  \item \emph{Coherence:} the slope is a state function precisely
+    on exchange-coherent sectors; the discharge of the registered
+    obligation O\_Temp.Slope is this clause.
+  \item \emph{Anti-smuggling audit (O\_Temp.Ensemble, discharged
+    by construction):} no canonical ensemble, partition function,
+    heat bath, Boltzmann factor, or fitted $\beta$ appears.
+    $\beta_B$ is the recorded marginal exchange ratio of two
+    licensed ledgers; the ensemble is not refused by assumption
+    but is simply never introduced, because the response slope is
+    defined directly.
+\end{enumerate}
+\emph{Sign clause (by design, not omission):} positivity
+$\beta_B > 0$ --- coercive cost and distinguishability increasing
+together --- is sector data, exactly as gap positivity is branch
+data in Thm.~\ref{thm:vrp-mass}.  Exchange families that trade the
+ledgers oppositely yield $\beta_B \le 0$ (the population-inversion
+regime); the theorem licenses the slope at whatever sign the
+recorded increments give, and reserves the name ``temperature''
+for the positive branch.
+\end{theorem}
+
+\begin{proof}
+Quotient-visibility of each increment is
+Thm.~\ref{thm:vrp-entropy-univ}(2) for $S_B$ and
+Thm.~\ref{thm:vrp-energy} clause~(2) for $E_B$; their ratio is
+therefore quotient-determined wherever it is well-defined, and
+exchange-coherence (Def.~\ref{def:vrp-exchange-family}) is exactly
+the condition that the ratio is a single sector constant ---
+established by the same telescoping argument as
+Thm.~\ref{thm:vrp-time-linear}(1): a path-dependent marginal ratio
+is inconsistent with any state function of the two ledgers, and on
+a coherent sector the common ratio defines $\beta_B$.  The
+transport law is the quotient of the two transfer theorems: under
+a lawful interface $\Delta S_B$ is carried with no exchange
+coefficient (Thm.~\ref{thm:vrp-entropy-transfer}) and $\Delta E_B$
+with coefficient $g_I$ (Thm.~\ref{thm:vrp-energy-transfer}), so
+$\beta_B \mapsto g_I^{-1}\beta_B$ --- the certified
+branch-interface coefficient disjunct of the licensing predicate
+is met with $\beta_B$'s sole transfer freedom being the inverse
+energy coefficient.  The declaration clause is satisfied by the
+itemization in the statement, including the explicit sign clause
+and the anti-smuggling audit.  No ensemble construct is used at
+any step. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-temperature-dissipation}
+\textup{(Instance Pattern: the Dissipation Ledger Reads as a
+Temperature.)}
+The L+27 dissipation ledger
+(Lem.~\ref{lem:vrp-ham-lyapunov}) is the natural exchange family:
+along $H_B$-compatible continuation the coercive cost
+$\mathfrak{h}_B$ decreases by ledgered amounts, and where that
+spent cost registers as an entropy increase the recorded ratio
+$\Delta S_B / \Delta E_B$ is precisely $\beta_B$ --- a
+fluctuation--dissipation-shaped reading in which dissipated
+coercive cost and produced distinguishability are the two sides of
+one ledgered step.  In the NS safe-tail regime the contraction
+$\mathfrak{D}_{n+1} \le \kappa\,\mathfrak{D}_n$
+(\texttt{cor:NS61-discharged}, NS Branch) supplies a sign-definite
+exchange family of exactly this shape.  Recorded as an instance
+pattern; no force conferred and no equilibrium claimed.
+\end{remark}
+
+\begin{remark}[\status{C}]\label{ob:vrp-temp-equil}
+\textbf{O\_Temp.Equil (the Zeroth Law) --- Conditionally
+Discharged by the Synchronization Obstruction.}
+\textup{[Conditional on Cor.~\ref{cor:vrp-temp-equil-discharge},
+\S\,\ref{sec:vrp-sync}.]}
+The zeroth law holds as transitivity of thermal equilibrium along
+composable interfaces (by exchange-coefficient multiplicativity),
+and global temperature synchronization across a family is
+characterized: it holds iff the exchange-coefficient holonomy
+vanishes on every independent cycle of the interface nerve, the
+obstruction in $H^1(N; \mathbb{R}_{>0})$ supported on
+$\beta_1(N)$, automatic when $\beta_1 = 0$.  Whether the
+obstruction vanishes for a given branch's nerve is branch data,
+exactly as gap positivity is branch data
+(Thm.~\ref{thm:vrp-mass}).  The shell's O\_Temp.Kinetic
+(kinetic-theory reading) remains out of toolkit and is not
+registered as an in-corpus [O].
+\end{remark}
+
+\subsection{Charge as Licensed Conserved Quotient Invariant}
+\label{sec:vrp-charge}
+
+The conserved charge space $\mathcal{Q}_\lambda = \ker(T_\partial -
+\lambda I)^{\!\top}$ (Def.~\ref{def:conserved-charges}) and its
+compatibility gate (Prop.~\ref{prop:charge-compatibility-gate},
+unconditional) are already canonical.  This subsection licenses the
+charge as a recovered physics variable, binding it to the continuation
+order (conservation) and to the type-transition operator
+(quantization), with the gate supplying the transfer law at no extra
+cost.  Charge is the most directly NFC-native of the recovered
+variables after entropy: it is a left-kernel of an operator the canon
+already carries, not a new construction.
+
+\begin{definition}[\status{D}]\label{def:vrp-charge-observable}
+\textup{(Charge Observable.)}
+For $\psi \in \mathcal{Q}_\lambda$ (Def.~\ref{def:conserved-charges}),
+the \emph{charge observable} is the linear functional
+\[
+  q_\psi : \mathcal{O}_B \to \mathbb{R}, \qquad
+  q_\psi(x) := \langle \psi, x \rangle,
+\]
+the left-eigenvector pairing of the observable state $x$ with the
+conserved direction $\psi$.  The \emph{charge spectrum} is the set
+$\{\lambda\}$ of eigenvalues of $T_\partial$ carrying a nonzero
+$\mathcal{Q}_\lambda$.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-charge}
+\textup{(VRP-Charge: Conserved Charge as Licensed Quotient Invariant.)}
+\textup{[Conditional on: the Book~II type-transition structure
+(Def.~\ref{def:T-partial}) and Def.~\ref{def:conserved-charges}.]}
+The charge observable $q_\psi$ (Def.~\ref{def:vrp-charge-observable})
+is a licensed physics variable in the sense of
+\texttt{def:variable-licensing} (Book~VII), realized through the
+quotient-visible-invariant disjunct.  The five recovery clauses:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Probe signature:} the left-eigenvector pairing
+    $\langle\psi,\cdot\rangle$, evaluated by the declared admissible
+    probes that read the type-transition structure.
+  \item \emph{Quotient invariant:} $q_\psi$ is conserved under every
+    admissible transfer map (Def.~\ref{def:conserved-charges}), so its
+    value is constant on observational-equivalence classes and
+    invariant under admissible re-description.
+  \item \emph{Transport law:} supplied unconditionally by the
+    compatibility gate (Prop.~\ref{prop:charge-compatibility-gate}):
+    $q_\psi$ is the exact obstruction to interface solvability
+    ($\mathcal{A}_\lambda u = J_w$ solvable iff $q_\psi(J_w)=0$ for all
+    $\psi\in\mathcal{Q}_\lambda$), so charge transfers across lawful
+    interfaces by the Fredholm pairing with no independent transfer
+    freedom.
+  \item \emph{Additivity:} $q_\psi$ is linear, hence additive over
+    independent (direct-sum) subsystems --- the ledger property of a
+    physical charge.
+  \item \emph{Anti-smuggling audit:} no Noether theorem, Lagrangian,
+    action principle, continuous symmetry group, or gauge potential is
+    primitive; charge is the left-kernel of the licensed
+    type-transition operator, recovered from canonical structure, not
+    assumed from a symmetry postulate.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Conservation under admissible transfer is Def.~\ref{def:conserved-charges}
+(left eigenvectors of $T_\partial$ are fixed, up to the eigenvalue
+scaling, under the transfer maps generated by $T_\partial$), giving
+clause~(2): the pairing is constant on equivalence classes and
+re-description-invariant.  Clause~(3) is
+Prop.~\ref{prop:charge-compatibility-gate} verbatim --- an
+unconditional result, so the transport law is inherited at full
+force.  Linearity of $\langle\psi,\cdot\rangle$ gives clause~(4).
+Clauses~(1) and~(5) are the declaration: the probe signature is the
+pairing, and the anti-smuggling audit holds because every ingredient
+($T_\partial$, its left kernel, the pairing) is canonical NFC
+structure with no symmetry primitive introduced.  The
+quotient-visible-invariant disjunct of the licensing predicate is thus
+satisfied. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:vrp-charge-conservation}
+\textup{(Charge Is Conserved Along the Licensed Continuation Order.)}
+\textup{[Conditional on Thm.~\ref{thm:vrp-charge},
+Thm.~\ref{thm:vrp-time}.]}
+For every $\psi\in\mathcal{Q}_\lambda$, the charge $q_\psi$ is constant
+along the licensed continuation order $\preceq_t$: if $x \preceq_t y$
+then $q_\psi(x) = q_\psi(y)$.  Charge is thereby bound to branch time
+as its conserved companion --- a further inter-variable binding (charge
+$\leftrightarrow$ order), alongside the generator--order binding (L+27)
+and the entropy--order binding (L+28).
+\end{corollary}
+
+\begin{proof}
+Each generating step of $\preceq_t$ (Def.~\ref{def:branch-time-order})
+is an admissible quotient-visible state change, hence realized by an
+admissible transfer map, under which $\mathcal{Q}_\lambda$ is conserved
+(Def.~\ref{def:conserved-charges}).  By clause~(2) of
+Thm.~\ref{thm:vrp-charge} the pairing is unchanged across each step;
+induction on chain length gives constancy along $\preceq_t$. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-charge-quantization}
+\textup{(Charge Discreteness in the Finite Regime; Continuum Survival
+Open.)}
+\textup{[Conditional on Thm.~\ref{thm:vrp-charge}; finite-dimensional
+type space $V$ at each refinement stage.]}
+On the finite NFC regime the charge spectrum $\{\lambda\}$ is
+\emph{discrete}: $T_\partial$ acts on a finite-dimensional type space,
+so its spectrum is finite and the admissible charge values are
+isolated.  Charge quantization is therefore not an external postulate
+but a consequence of the finite type-transition structure --- charges
+are discrete because types are.  What is \emph{not} established here is
+survival of discreteness under the Book~VI continuum bridge: whether
+the isolated charge spectrum persists, or accumulates, in the continuum
+encoding is the open obligation O\_Charge.Quant-cont
+(Rmk.~\ref{ob:vrp-charge-quant}).
+\end{theorem}
+
+\begin{proof}
+A linear operator on a finite-dimensional space has finite spectrum;
+the eigenvalues carrying nonzero left-kernel $\mathcal{Q}_\lambda$ are
+among them, hence finite and isolated.  Discreteness of the admissible
+charge values follows immediately.  The continuum clause is explicitly
+deferred and proved nothing here. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-charge-gauge}
+\textup{(Charge, the Gauge Template, and Cycle Rank.)}
+The conserved charges organize the canonical gauge content: the YM
+gauge template $\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus
+\mathfrak{u}(1)$ (\texttt{prop:YM-status}) and the SM matter quantum
+numbers are charge data in the present sense.  By the synchronization
+obstruction (Thm.~\ref{thm:vrp-sync-obstruction}) the global
+organization of charges across an interface family is a class in
+$H^1(N;G)$ supported on $\beta_1(N)$, the same cycle rank that
+\texttt{thm:beta1-controls-nonabelian} (\S\,\ref{sec:beta1}) assigns to
+non-abelian gauge structure.  Charge, gauge structure, and
+synchronization holonomy thus share one support --- the conserved
+charge is the local datum whose global gluing the cycle rank governs.
+Recorded as the program's reading; no force conferred beyond the cited
+theorems.
+\end{remark}
+
+\begin{remark}[\status{O}]\label{ob:vrp-charge-quant}
+\textbf{Open obligation O\_Charge.Quant-cont (Continuum Survival of
+Charge Discreteness).}
+Establish whether the discrete charge spectrum of the finite regime
+(Thm.~\ref{thm:vrp-charge-quantization}) survives the Book~VI continuum
+bridge --- i.e.\ whether admissible charge values remain isolated, or
+can accumulate, in the continuum encoding.  This is the charge-rung
+instance of the standing continuum-encoding question (cf.\ the energy
+LSC clause and the time smooth-encoding clause); it is the
+continuum-bridge question for finite-regime spectral discreteness
+generally --- it covers both the charge spectrum
+(Thm.~\ref{thm:vrp-charge-quantization}) and the frequency module
+(Thm.~\ref{thm:vrp-frequency}, Rmk.~\ref{rmk:vrp-frequency-scope}),
+which present the identical deferral --- the finite-regime discreteness
+being unconditional within its declared scope in both cases.
+\end{remark}
+
+\subsection{Frequency and Phase: Licensing the Spectral-Gap Module
+and Its Conjugate}
+\label{sec:vrp-frequency}
+
+The reversible-clock dichotomy (Thm.~\ref{thm:vrp-reversible-dichotomy},
+phase horn) already constructed, structurally, the phase coordinate on
+a unitary orbit and the frequency module generated by the licensed
+spectral gaps $\lambda_i - \lambda_j$.  This subsection licenses
+\emph{frequency} as a physics variable in its own right --- the
+spectral-gap module of the licensed generator --- establishes the
+phase--frequency duality (new: the phase coordinate of L+33 was built
+but never paired with frequency as conjugate), and binds frequency to
+the Hamiltonian spectrum, of which mass (Thm.~\ref{thm:vrp-mass}) is the
+bottom gap.  No dimensional constant and no energy--frequency physical
+law is introduced; the content is the dimensionless module structure
+and its conjugacy.
+
+\begin{definition}[\status{D}]\label{def:vrp-frequency-module}
+\textup{(Frequency Module.)}
+On an orbit/sector $I$ of finite spectral support
+$\{\lambda_1,\dots,\lambda_r\}$ of the licensed generator $H_B$
+(Thm.~\ref{thm:vrp-hamiltonian}), the \emph{frequency module} is the
+additive subgroup
+\[
+  \Omega_B(I) \;:=\; \bigl\langle\, \lambda_i - \lambda_j \;:\;
+  1 \le i,j \le r \,\bigr\rangle \;\subseteq\; \mathbb{R},
+\]
+generated by the spectral gaps.  Its rank is the toral dimension of the
+phase coordinate of Thm.~\ref{thm:vrp-reversible-dichotomy}(II).
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-frequency}
+\textup{(VRP-Frequency: the Spectral-Gap Module as Licensed Variable.)}
+\textup{[Conditional on: Thm.~\ref{thm:vrp-hamiltonian},
+Thm.~\ref{thm:vrp-mass} (for the spectral-invariance of gaps); finite
+spectral support on the sector.]}
+The frequency module $\Omega_B(I)$ (Def.~\ref{def:vrp-frequency-module})
+is a licensed physics variable through the quotient-visible-invariant
+disjunct of \texttt{def:variable-licensing} (Book~VII).  The five
+recovery clauses:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Probe signature:} the spectral gaps resolved by the
+    admissible probes on the sector (the same probes that, on the phase
+    horn, separate orbit points,
+    Thm.~\ref{thm:vrp-reversible-dichotomy}(II)).
+  \item \emph{Quotient invariant:} the gaps $\lambda_i-\lambda_j$ are
+    differences of spectral values of the licensed generator, each a
+    quotient-visible invariant (the spectral-threshold argument of
+    Thm.~\ref{thm:vrp-mass} applied to every level, not only the
+    bottom), so $\Omega_B(I)$ is fixed under admissible re-description.
+  \item \emph{Transport law:} the generator transfers by uniqueness
+    (Prop.~\ref{prop:vrp-transfer-reduction}), carrying its spectrum
+    and hence the gap module; frequency transfers with the Hamiltonian
+    and inherits no independent transfer freedom.
+  \item \emph{Module structure (additivity):} composing admissible
+    transitions adds their gaps, so $\Omega_B(I)$ is closed under
+    addition --- the ledger property, here a $\mathbb{Z}$-module of
+    frequencies.
+  \item \emph{Anti-smuggling audit:} no Planck constant, no
+    $E=\hbar\omega$, no oscillator, wave, or periodic-motion primitive,
+    and no external clock; frequency is the spectral-gap structure of
+    the licensed generator, recovered, not posited.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Clause~(2) is the per-level spectral-invariance: each $\lambda_i$ is a
+spectral value of the licensed self-adjoint $H_B$ on a quotient-visible
+sector, invariant under admissible re-description by the same argument
+that makes the bottom gap $m^2$ invariant in Thm.~\ref{thm:vrp-mass};
+differences and the group they generate are then invariant.
+Clause~(3): $H_B$ is the unique generator of the transferred closed
+form (Prop.~\ref{prop:vrp-transfer-reduction}), so its spectrum, gaps,
+and gap module are carried by the same uniqueness.  Clause~(4) is
+closure of $\langle\lambda_i-\lambda_j\rangle$ under addition.
+Clauses~(1),(5) are the declaration, the audit holding because every
+ingredient is spectral data of the licensed generator with no
+dimensional or dynamical primitive introduced.  The
+quotient-visible-invariant disjunct is satisfied. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-phase-frequency-duality}
+\textup{(Phase--Frequency Duality.)}
+\textup{[Conditional on Thm.~\ref{thm:vrp-frequency},
+Thm.~\ref{thm:vrp-reversible-dichotomy}(II).]}
+On a phase-horn sector the phase coordinate is a torus $T^r$
+(Thm.~\ref{thm:vrp-reversible-dichotomy}(II)) and the frequency module
+$\Omega_B(I)$ is its character lattice: $\Omega_B(I) \cong
+\widehat{T^r} \cong \mathbb{Z}^r$, and phase and frequency are
+\emph{conjugate} in the Pontryagin sense --- each admissible probe
+outcome along the orbit is a finite combination of characters
+$e^{i\langle \omega, \theta\rangle}$, $\omega\in\Omega_B(I)$,
+$\theta\in T^r$.  The duality pairing is the licensed,
+re-description-invariant pairing of the two licensed variables.
+\emph{Scope clause:} this is abelian Pontryagin duality (torus
+$\leftrightarrow$ character lattice), \emph{not} a quantum uncertainty
+relation and \emph{not} an energy--frequency identification; no
+$\hbar$, no $\Delta\theta\,\Delta\omega$ bound, and no dimensional
+constant is asserted or licensed.
+\end{theorem}
+
+\begin{proof}
+The phase coordinate descends to $T^r$ with $r = \operatorname{rank}
+\Omega_B(I)$ (Thm.~\ref{thm:vrp-reversible-dichotomy}(II)); the
+characters of $T^r$ are indexed by $\mathbb{Z}^r$, which is exactly the
+frequency module under the gap generators (Def.~\ref{def:vrp-frequency-module}).
+Each orbit observable is, by the spectral expansion
+$e^{-itH_B}\psi=\sum_i e^{-it\lambda_i}P_{\lambda_i}\psi$, a finite
+combination of the relative-phase characters $e^{-it(\lambda_i-\lambda_j)}$,
+i.e.\ a function on $T^r$ with frequencies in $\Omega_B(I)$.  Pontryagin
+duality of $T^r$ and $\mathbb{Z}^r$ gives the conjugacy; both sides are
+licensed (phase by L+33, frequency by Thm.~\ref{thm:vrp-frequency}) and
+the pairing is re-description-invariant.  The scope clause is a
+restriction on the claim, introducing nothing. \qed
+\end{proof}
+
+\begin{corollary}[\status{R}]\label{cor:vrp-frequency-energy-binding}
+\textup{(Frequency and Mass Are Two Readings of One Spectrum.)}
+Frequency is bound to the Hamiltonian as its gap structure: $\Omega_B$
+is generated by differences of the spectrum whose bottom gap on the
+nontrivial sector is the mass $m^2$ (Thm.~\ref{thm:vrp-mass}).  Mass is
+the bottom gap; the frequency module is the full gap lattice; both are
+quotient-visible spectral invariants of the one licensed generator.
+This is the fifth inter-variable binding (frequency $\leftrightarrow$
+generator/mass), and it records that the recovered spectral variables
+--- mass and frequency --- are not independent posits but two readings
+of $\operatorname{Spec}(H_B)$.  No force beyond the cited theorems.
+\end{corollary}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-frequency-scope}
+\textup{(Synchronization, Continuum Survival, and What Stays Out of
+Toolkit.)}
+Three honest scope notes.  \emph{(i) Cross-orbit comparison} of phase
+and frequency across an interface family is the synchronization
+obstruction already characterized (Thm.~\ref{thm:vrp-sync-obstruction},
+Cor.~\ref{cor:vrp-phase-sync-discharge}): a class in $H^1(N;T^r)$ on
+$\beta_1$; no new obligation.  \emph{(ii) Continuum survival} of the
+discrete frequency module is the frequency-rung instance of the same
+continuum-bridge question registered for charge
+(Rmk.~\ref{ob:vrp-charge-quant}, O\_Charge.Quant-cont): on the finite
+regime $\Omega_B$ is discrete because spectral support is finite;
+whether discreteness survives the Book~VI bridge is that one shared
+question, not a separate obligation.  \emph{(iii) Out of toolkit:} the
+physical energy--frequency law $E=\hbar\omega$ requires a dimensional
+quantization constant $\hbar$ that no licensed variable supplies; the
+in-toolkit content is the dimensionless module and its duality, and the
+$\hbar$-identification is explicitly outside the recovery program.
+\end{remark}
+
+%% ---------------------------------------------------------------
+\section{Synchronization of Recovered Variables: One Obstruction,
+Supported on Cycle Rank}
+\label{sec:vrp-sync}
+%% ---------------------------------------------------------------
+
+The recovery program leaves a single in-corpus frontier: two
+obligations --- cross-orbit phase synchronization
+(\texttt{ob:vrp-phase-sync}, from the reversible-clock dichotomy)
+and the temperature zeroth law (\texttt{ob:vrp-temp-equil}) ---
+that the surfacing passes independently flagged as
+connection-shaped.  This section proves they are one obstruction.
+Each asks when a locally canonical quantity, defined up to a
+structure-group action and related across lawful interfaces by a
+multiplicative coefficient, glues into a single global quantity;
+the answer is cohomological, the obstruction lives in the first
+cohomology of the interface nerve, and --- by the canon's own
+cycle-rank theorem (\S\,\ref{sec:beta1}) --- it is supported
+exactly on the complexity parameter $\beta_1$ that already governs
+non-abelianity.  Synchronization is free precisely where the gauge
+structure is trivial.
+
+\begin{definition}[\status{D}]\label{def:vrp-sync-datum}
+\textup{(Synchronization Datum over an Interface Nerve.)}
+Let $\{B_i\}$ be lawful sectors with lawful interfaces
+$I_{ij} : B_i \to B_j$ on overlaps, forming the
+\emph{interface nerve} $N$ (vertices the sectors, edges the
+lawful interfaces, triangles the certified triple overlaps).
+A \emph{synchronization datum} valued in an abelian structure
+group $G$ assigns:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item to each sector a locally canonical invariant determined up
+    to the action of $G$ (its \emph{gauge}: origin-and-orientation
+    for a phase, multiplicative scale for an exchange slope);
+  \item to each interface a transition element
+    $g_{ij} \in G$ relating the two local invariants, with
+    $g_{ji} = g_{ij}^{-1}$;
+\end{enumerate}
+such that the transitions are \emph{consistent on triple
+overlaps}: $g_{ij}\, g_{jk}\, g_{ki} = 1$ on every triangle of
+$N$ (the \emph{cocycle condition}).  A datum is
+\emph{synchronizable} when there exist gauge choices
+$a_i \in G$ with $g_{ij} = a_i\, a_j^{-1}$ for all edges --- i.e.\
+the local invariants glue, in a common gauge, into one global
+quantity.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:vrp-sync-obstruction}
+\textup{(The Synchronization Obstruction is a Cohomology Class
+Supported on $\beta_1$.)}
+\textup{[Conditional on: a synchronization datum
+(Def.~\ref{def:vrp-sync-datum}) over a finite interface nerve $N$
+with abelian structure group $G$.]}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{(Cohomological characterization.)}  The datum is
+    synchronizable if and only if its transition family is a
+    coboundary; equivalently, its class
+    $[g] \in H^1(N; G)$ vanishes.  This class is the complete
+    obstruction: synchronization holds iff $[g] = 0$.
+  \item \emph{(Support on cycle rank.)}  For connected $N$,
+    $H^1(N; G) \cong \mathrm{Hom}(H_1(N), G)$, and $H_1(N)$ is
+    free of rank $\beta_1(N)$.  Hence the obstruction is carried
+    by $\beta_1(N)$ independent generators --- one holonomy per
+    independent cycle of the interface nerve --- and vanishes
+    identically when $\beta_1(N) = 0$ (tree-like interface
+    families): on a simply-connected nerve every consistent local
+    datum synchronizes, with the common gauge fixed by transport
+    along the spanning tree, uniquely up to one global $G$-choice.
+  \item \emph{(Holonomy form.)}  For each cycle
+    $\gamma = (i_0 \to i_1 \to \cdots \to i_r \to i_0)$ of $N$ the
+    obstruction is the holonomy
+    $\mathrm{hol}(\gamma) = g_{i_0 i_1} g_{i_1 i_2} \cdots
+    g_{i_r i_0} \in G$; the datum synchronizes iff
+    $\mathrm{hol}(\gamma) = 1$ on a generating set of cycles.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{(1)}  If $g_{ij} = a_i a_j^{-1}$ then on any triangle the
+product telescopes to $1$, so a coboundary is a cocycle (the datum
+is consistent) and is synchronizable by the gauges $a_i$.
+Conversely, synchronizability is by definition the existence of
+such $a_i$, i.e.\ that the cocycle $g$ is a coboundary; the
+quotient of cocycles by coboundaries is $H^1(N;G)$ by definition,
+so synchronizability is exactly the vanishing of $[g]$.
+
+\textbf{(2)}  For a finite connected $1$-complex (and, on triple
+overlaps, $2$-complex) with abelian $G$, the universal-coefficient
+computation gives $H^1(N;G) \cong \mathrm{Hom}(H_1(N), G)$;
+$H_1(N)$ of a finite complex is free abelian of rank the first
+Betti number $\beta_1(N)$.  A homomorphism out of a free group of
+rank $\beta_1$ is determined by its values on $\beta_1$
+generators, so the obstruction has exactly $\beta_1(N)$
+independent components.  When $\beta_1 = 0$ the group $H_1$ is
+trivial, $H^1 = 0$, and every cocycle is a coboundary: fix any
+spanning tree, set $a_{i_0} = 1$ at a root, and define $a_i$ by
+the transition product along the unique tree path; consistency
+(the cocycle condition) makes this independent of how non-tree
+edges would route, so $g_{ij} = a_i a_j^{-1}$ on all edges.
+
+\textbf{(3)}  The holonomy around $\gamma$ is the coboundary
+defect of the cycle; by~(1)--(2) the class $[g]$ is determined by
+the holonomies on a generating set of $H_1(N)$, and
+$[g] = 0$ iff all such holonomies are trivial. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:vrp-temp-equil-discharge}
+\textup{(Zeroth Law and Temperature Synchronization.)}
+\textup{[Conditional on Thm.~\ref{thm:vrp-sync-obstruction};
+Thm.~\ref{thm:vrp-temperature}; and exchange-coefficient
+multiplicativity, Thm.~\ref{thm:vrp-energy-transfer}(3).]}
+Take $G = (\mathbb{R}_{>0}, \times)$ and transition elements the
+energy exchange coefficients $g_{ij} = g_{I_{ij}}$ relating the
+slopes $\beta_{B_i}$ (Thm.~\ref{thm:vrp-temperature}(3)).
+Multiplicativity makes this a synchronization datum.  Then:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{(Zeroth law, transitivity.)}  Along any path of
+    composable interfaces, equality of $g$-corrected slopes is
+    transitive --- thermal equilibrium is an equivalence relation
+    on path-connected sectors --- by multiplicativity composing
+    the corrections.
+  \item \emph{(Global common temperature.)}  A family of sectors
+    admits a single common temperature (one global slope in a
+    common gauge) iff the exchange-coefficient holonomy vanishes
+    on every independent cycle of the interface nerve, i.e.\ iff
+    the obstruction in $H^1(N; \mathbb{R}_{>0})$ vanishes;
+    automatic when $\beta_1(N) = 0$.
+\end{enumerate}
+This conditionally discharges O\_Temp.Equil: the zeroth law holds
+as transitivity, and global synchronization is characterized with
+the obstruction named; whether the obstruction vanishes for a
+given branch's interface nerve is branch data, exactly as gap
+positivity is branch data in Thm.~\ref{thm:vrp-mass}.
+\end{corollary}
+
+\begin{proof}
+Multiplicativity (Thm.~\ref{thm:vrp-energy-transfer}(3)) is the
+cocycle condition for $g_{ij} = g_{I_{ij}}$, so
+Def.~\ref{def:vrp-sync-datum} is met.  (1) is the path-level
+specialization (composites multiply); (2) is
+Thm.~\ref{thm:vrp-sync-obstruction}(1)--(2) for
+$G = \mathbb{R}_{>0}$. \qed
+\end{proof}
+
+\begin{corollary}[\status{C}]\label{cor:vrp-phase-sync-discharge}
+\textup{(Phase Synchronization and the Reversible-Clock
+Holonomy.)}
+\textup{[Conditional on Thm.~\ref{thm:vrp-sync-obstruction};
+Thm.~\ref{thm:vrp-reversible-dichotomy} on the phase horn; and
+local consistency of phase alignment --- the spectral-difference
+data $\lambda_i - \lambda_j$ agreeing on overlaps, which is the
+cocycle condition for the phase transitions.]}
+Take $G$ the phase torus $T^r$ (the structure group of the phase
+coordinate, $r$ the frequency-module rank) and transition elements
+the relative phase alignments on overlapping orbits.  Then phase
+coordinates synchronize across the family iff the phase holonomy
+vanishes on every independent cycle of the interface nerve ---
+the obstruction in $H^1(N; T^r)$, supported on $\beta_1(N)$.  This
+conditionally discharges O\_Phase.Sync: synchronization is
+characterized with the holonomy named; its vanishing is branch
+data.  In particular the reversible clock globalizes on tree-like
+orbit families ($\beta_1 = 0$) and is obstructed exactly by the
+cycle structure of the interface nerve.
+\end{corollary}
+
+\begin{proof}
+On the phase horn the per-orbit coordinate is canonical up to
+origin-and-orientation (Thm.~\ref{thm:vrp-reversible-dichotomy}(II)),
+which is the $G = T^r$ gauge; relative alignments on overlaps are
+the transition elements, a cocycle by the assumed local
+consistency.  Apply Thm.~\ref{thm:vrp-sync-obstruction}. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:vrp-sync-gauge}
+\textup{(The Obstruction Vanishes Exactly Where the Gauge
+Structure Is Trivial.)}
+Thm.~\ref{thm:vrp-sync-obstruction}(2) places the synchronization
+obstruction on $\beta_1(N)$.  The canon's cycle-rank theorem
+(\texttt{thm:beta1-controls-nonabelian}, \S\,\ref{sec:beta1})
+places non-abelianity on the same $\beta_1$:
+$\beta_1 = 0$ is the abelian sector, and $\beta_1$ is the rank of
+the non-abelian structure.  These are the same support.  The
+reading anticipated at the reversible-clock pass
+(\texttt{rmk:vrp-phase-connection}) is thereby a theorem-level
+identification: the failure of recovered variables to synchronize
+is the holonomy of a connection on the interface nerve, the
+connection is flat (consistent) by the cocycle condition, its
+holonomy lives on the cycles, and gauge structure is precisely the
+bookkeeping of that holonomy.  Synchronization is free exactly
+when there is no gauge structure to obstruct it.  Recorded as the
+program's reading of its own frontier; no force conferred beyond
+the cited theorems.
+\end{remark}
+
 \section{$\beta_1$ Cycle Rank as Canonical Complexity Parameter}
 \label{sec:beta1}
 %% ---------------------------------------------------------------

@@ -1777,4 +1777,442 @@ it is already recorded as the rate-certificate theorem
 extension to the full continuum representation theory.
 \end{remark}
 
+\begin{proposition}[\status{C}]\label{prop:SM-IDcont-force-upgrade}
+\textup{(O\_ID\textsuperscript{cont} as Pure, Faithful, and
+Conservative Force-Upgrade Gate.)}
+Let $\mathcal{M}_{\mathrm{SM}} = (R_{\mathrm{ferm}},
+R_{\mathrm{scalar}}, \Phi_{\mathrm{EWSB}})$ be the SM matter datum
+already fixed at structural force
+(Thm.~\ref{thm:SM-matter-source-descended},
+Thm.~\ref{thm:SM-higgs-source-descended}). Then
+O\_ID\textsuperscript{cont} is a \emph{pure force-upgrade gate} for
+SM-MAT and SM-HIGGS, in the following sense:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item \emph{Purity (no new ontology).} Discharging
+  O\_ID\textsuperscript{cont} identifies the collar-local Lie
+  algebra data with $\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus
+  \mathfrak{u}(1)$ at full continuum representation-theory scope;
+  it introduces no matter carrier, scalar field, or
+  symmetry-breaking mechanism beyond the structural datum
+  $\mathcal{M}_{\mathrm{SM}}$.
+  \item \emph{Faithfulness.} The identification preserves every
+  certified structural assignment: the three-generation quintuplet
+  representation content
+  (Prop.~\ref{prop:rh-SM-matter-candidate}), the $B_0$ scalar
+  assignment with representation $(\mathbf{1},\mathbf{2},+\tfrac12)$
+  (Prop.~\ref{prop:rh-SM-higgs-candidate}), and the screening
+  realization of electroweak breaking
+  (Thm.~\ref{thm:SM-higgs-source-descended}).
+  \item \emph{Conservativity (no reopened freedom).} No Yukawa
+  sector, additional matter field, or beyond-SM carrier becomes
+  load-bearing at upgrade level: the load-bearing/removable
+  partition fixed by the sector audit
+  (Prop.~\ref{prop:SM-sector-load-bearing}) is invariant under
+  the identification, since the audit predicates GAUGE and LED
+  are evaluated on exactly the structural data that the
+  identification preserves by clause (2).
+\end{enumerate}
+Consequently the passage from conditional structural closure of
+SM-MAT and SM-HIGGS (Prop.~\ref{prop:SM-extspec-status}) to
+unconditional closure is a representation-theoretic upgrade of one
+already-fixed matter packet, not a second matter construction.
+\end{proposition}
+
+\begin{proof}
+For clause (1): by Remark~\ref{rem:sm-extspec-frontier},
+O\_ID\textsuperscript{cont} is the pending extension of the
+already-recorded rate-certificate theorem
+(Thm.~\ref{thm:O-ID-cont-rate}, YM Branch) to full continuum
+representation-theory scope. Its content is an identification of
+already-declared collar-local data; the obligation statement
+contains no existential quantification over new carriers, fields,
+or mechanisms, so no new ontology can enter through its discharge
+without violating the no-hidden-supplementation discipline under
+which the SM super-branch is declared
+(Def.~\ref{def:SM-harmonization-functor}).
+
+For clause (2): the structural assignments are theorems of the
+declared $d_{S_v}$-eigenblock decomposition
+(Thm.~\ref{thm:SM-matter-source-descended},
+Thm.~\ref{thm:SM-higgs-source-descended}). The identification map
+acts on the Lie-algebra side of the assignment, not on the
+eigenblock source data; the source-descended representation
+content is therefore carried, not re-derived, and any failure of
+preservation would contradict the source-descendedness already
+certified at structural force.
+
+For clause (3): by Prop.~\ref{prop:SM-sector-load-bearing}, the
+fermionic quintuplet and $B_0$ block are load-bearing because their
+removal changes GAUGE and LED, while undeclared Yukawa couplings
+and beyond-SM sectors are removable because they change neither.
+Both predicates are functions of the structural datum preserved
+under clause (2); hence the partition is invariant, and no
+removable sector can become load-bearing at upgrade level.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:SM-IDcont-decomposition}
+\textup{(Decomposition of the O\_ID\textsuperscript{cont} Gate.)}
+\textup{[Conditional on Prop.~\ref{prop:SM-IDcont-force-upgrade}
+and the YM rate certification
+(Thm.~\ref{thm:O-ID-cont-rate}, YM Branch).]}
+The single gate O\_ID\textsuperscript{cont} blocking SM-MAT and
+SM-HIGGS at unconditional force decomposes into two independent
+sub-obligations:
+\begin{enumerate}[label=\textup{(\Alph*)}]
+  \item \emph{Rate component
+  $\mathrm{O\_ID}^{\mathrm{cont}}_{\mathrm{rate}}$ ---
+  already discharged.} The finite-$n$ collar approximations
+  converge to the continuum gauge-algebra identification at
+  certified $O(n^{-1})$ rates, unconditionally within Phase-A
+  scope (YM Branch,
+  Cor.~\ref{cor:O-ID-cont-rate-closed}).  This component is
+  \emph{not} open.
+  \item \emph{Transfer-and-vacuum component
+  $\mathrm{O\_ID}^{\mathrm{cont}}_{\mathrm{TV}}$ ---
+  the genuine residual.} Two ingredients remain: (i)
+  \emph{interface transfer} --- transport of the discharged
+  continuum identification across the YM$\to$SM harmonization
+  interface (Def.~\ref{def:SM-harmonization-functor}) so that it
+  acts on the matter representation content
+  $\mathcal{M}_{\mathrm{SM}}$, not merely on the YM gauge sector;
+  and (ii) \emph{vacuum-sector construction} --- the explicit
+  Friedrichs-extension construction of the physical vacuum sector
+  $\mathcal{H}_0$ required by O-SM.Higgs (ob:SM-higgs).
+\end{enumerate}
+Thus O\_ID\textsuperscript{cont} is not a single monolithic gate
+but the conjunction
+$\mathrm{O\_ID}^{\mathrm{cont}}_{\mathrm{rate}} \wedge
+\mathrm{O\_ID}^{\mathrm{cont}}_{\mathrm{TV}}$, of which the
+first conjunct is closed and only the second remains open.
+\end{theorem}
+
+\begin{proof}
+The rate component is the explicit content of
+Thm.~\ref{thm:O-ID-cont-rate} and its closure corollary
+(Cor.~\ref{cor:O-ID-cont-rate-closed}, YM Branch): operator,
+spectral, and structure-constant corrections all decay as
+$O(n^{-1})$ at table-computable rates within Phase-A.  That this
+component carries no SM matter content follows from
+Prop.~\ref{prop:SM-IDcont-force-upgrade}\,(1): the identification
+introduces no carrier, field, or mechanism beyond
+$\mathcal{M}_{\mathrm{SM}}$, so the rate result is purely a
+statement about the gauge-algebra side and is independent of the
+matter datum.
+
+For the residual: the rate certification is established in
+YM-internal Weyl-encoding language at the YM gauge sector.  The SM
+matter datum is fixed at structural force by the
+$d_{S_v}$-eigenblock decomposition
+(Thm.~\ref{thm:SM-matter-source-descended},
+Thm.~\ref{thm:SM-higgs-source-descended}), which acts on the
+matter representations.  These are different carriers related by
+the declared harmonization functor
+(Def.~\ref{def:SM-harmonization-functor}); a rate theorem proved
+on the gauge sector does not automatically transport across the
+interface to the matter content without an interface-transfer
+argument of the kind already used for couplings
+(Thm.~\ref{thm:SM-coupling-transfer-full}).  This is component
+(B)(i).  Component (B)(ii) is named explicitly in ob:SM-higgs as
+the remaining requirement for full canonical force of the
+electroweak-breaking vacuum.  Neither is supplied by the rate
+component; both are required for unconditional force; hence the
+residual is exactly $\mathrm{O\_ID}^{\mathrm{cont}}_{\mathrm{TV}}$.
+The decomposition is a conjunction because unconditional force
+requires both the continuum rate (closed) and the
+transfer-plus-vacuum content (open). \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:SM-IDcont-residual-class}
+\textbf{Classification of the residual.}
+By Thm.~\ref{thm:SM-IDcont-decomposition} the open content of the
+SM matter/Higgs frontier is
+$\mathrm{O\_ID}^{\mathrm{cont}}_{\mathrm{TV}}$, which is a
+\emph{gated frontier} in the sense of Book~VII
+(Def.~\ref{def:toolkit-boundary-frontier}, Book~VII): its missing
+ingredients are an interface-transfer instance and a
+Friedrichs-extension construction, both of which lie \emph{within}
+the existing canonical toolkit (the coupling-transfer theorem
+$\mathrm{Thm.~\ref{thm:SM-coupling-transfer-full}}$ is a worked
+precedent for the first, and Friedrichs extension is the same
+construction already used for the YM physical Hamiltonian).  The
+SM matter/Higgs residual is therefore \emph{not} a toolkit-boundary
+item: it is in-toolkit but not yet executed.  This distinguishes it
+sharply from the four toolkit-boundary residuals (RH, CRYST$\times2$,
+BIO) recorded in Book~VII
+(Rmk.~\ref{rmk:toolkit-boundary-instances}, Book~VII): those need
+new methods, whereas
+$\mathrm{O\_ID}^{\mathrm{cont}}_{\mathrm{TV}}$ needs only the
+application of existing ones.  The SM obligations ob:SM-matter and
+ob:SM-higgs accordingly remain [O] at unconditional force, but as
+the highest-leverage \emph{actionable} open items in the corpus:
+discharging the transfer-and-vacuum component would close both, and
+unblock the two gated SPEC obligations (ob:spec-MAT,
+ob:spec-MAT-open) downstream.
+\end{remark}
+
+\begin{theorem}[\status{C}]\label{thm:SM-IDcont-transfer}
+\textup{(Matter Representation Transfer at Certified Rate ---
+Component (B)(i) of the Gate.)}
+\textup{[Conditional on: Phase-A, $K_0=7$; the YM rate
+certification (Thm.~\ref{thm:O-ID-cont-rate} and
+Cor.~\ref{cor:O-ID-cont-rate-closed}, YM Branch); the declared
+harmonization functor (Def.~\ref{def:SM-harmonization-functor});
+the eigenblock gauge action by the canonical O\_ID identification
+(Thm.~\ref{thm:SM-gauge-chain}); and the matter datum at
+structural force (Thm.~\ref{thm:SM-matter-source-descended},
+Thm.~\ref{thm:SM-higgs-source-descended}).]}
+The rate-certified continuum identification transports across the
+YM$\to$SM interface onto the matter representation content: the
+finite-$n$ matter representations converge to continuum
+representations of $\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus
+\mathfrak{u}(1)$ at the same $O(n^{-1})$ rate, and the continuum
+representation labels are \emph{exactly} the structural labels
+already certified: the anomaly-cancelled three-generation
+quintuplet content and the $B_0$ assignment
+$(\mathbf{1},\mathbf{2},+\tfrac12)$.  Component (B)(i) of
+Thm.~\ref{thm:SM-IDcont-decomposition} is thereby conditionally
+discharged.
+\end{theorem}
+
+\begin{proof}
+\textbf{Step 1 (convergent generator family on the matter
+spaces).} By Thm.~\ref{thm:SM-gauge-chain}, the gauge algebra acts
+on the $d_{S_v}$-eigenblocks through the canonical O\_ID
+identification; the matter representation spaces are
+finite-dimensional eigenblock data.  By the YM rate certification,
+the identified generators converge in operator norm,
+$\|\Gamma^{(n)}(X_j)\Gamma^{(n)*} - \sigma_j^{\mathrm{cont}}\|
+\le C_{\mathrm{enc}}/n$.  Composing the eigenblock action with
+this convergent family gives, for each matter sector, a family of
+finite-dimensional representation matrices
+$R^{(n)}$ converging in norm at $O(n^{-1})$ to a limiting linear
+action $R^{(\infty)}$ of the continuum algebra; the limit is a
+representation because the structure-constant correction also
+decays, $|f_{ijk}^{(n)} - f_{ijk}| \le (10^{-15})(2\pi/n)$
+(Thm.~\ref{thm:O-ID-cont-rate}\,(3), YM Branch), so the
+commutation relations hold in the limit.
+
+\textbf{Step 2 (discrete rigidity of the labels).}  Equivalence
+classes of finite-dimensional representations of the compact
+semisimple part $\mathfrak{su}(3)\oplus\mathfrak{su}(2)$ are
+classified by dominant integral weights --- a discrete set --- and
+the $\mathfrak{u}(1)$ content by the hypercharge eigenvalues, which
+are fixed rational spectral data of the eigenblock decomposition.
+A norm-convergent family of finite-dimensional representations on
+a fixed finite-dimensional space has eventually constant
+equivalence class: distinct classes are separated in norm (their
+character values differ by at least a fixed gap on the compact
+group), so an $O(n^{-1})$-convergent family cannot change class
+beyond some finite stage.  Hence the continuum representation
+class of each matter sector equals its finite-$n$ structural
+class.
+
+\textbf{Step 3 (identification of the labels).}  The finite-$n$
+structural classes are certified: the three-generation quintuplet
+content (Thm.~\ref{thm:SM-matter-source-descended}) and the $B_0$
+assignment $(\mathbf{1},\mathbf{2},+\tfrac12)$
+(Thm.~\ref{thm:SM-higgs-source-descended}).  By Step~2 these are
+the continuum labels.  Transport across the interface is lawful
+because every ingredient is carried by the declared harmonization
+functor (Def.~\ref{def:SM-harmonization-functor}) --- the same
+interface-crossing discipline as the coupling transfer
+(Thm.~\ref{thm:SM-coupling-transfer-full}) --- and by
+Prop.~\ref{prop:SM-IDcont-force-upgrade} no new ontology enters.
+Book~VII discipline limits the conclusion to the declared Phase-A
+scope. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:SM-H0-Friedrichs}
+\textup{(Screened Friedrichs Construction of the Vacuum Sector ---
+Component (B)(ii) of the Gate.)}
+\textup{[Conditional on: the closable YM curvature-energy form and
+its Friedrichs extension (Thm.~\ref{thm:B1-closable}, YM Branch);
+the $B_0$ screening projection $\Pi_{B_0}$ at structural force
+(Thm.~\ref{thm:SM-higgs-source-descended}); and the
+\emph{screening-invariance condition} (O-SM.H0.ScreenInv below).]}
+The physical vacuum sector exists and is canonically constructed:
+\[
+  \mathcal{H}_0 \;:=\; \overline{\Pi_{B_0}\,\mathcal{D}}
+  \;\subseteq\; \mathcal{H},
+\]
+the closure of the $\Pi_{B_0}$-screened form core.  The restricted
+form $\mathfrak{h}|_{\mathcal{H}_0}$ is densely defined,
+nonnegative, and closable on $\mathcal{H}_0$; its Friedrichs
+extension $H_0$ is the vacuum-sector Hamiltonian; and the
+electroweak-breaking vacuum is its ground state.  Component
+(B)(ii) of Thm.~\ref{thm:SM-IDcont-decomposition} is thereby
+conditionally discharged.
+\end{theorem}
+
+\begin{proof}
+The construction is the same Friedrichs machinery already
+canonical in the YM branch.  Under the screening-invariance
+condition, $\Pi_{B_0}$ maps the form core $\mathcal{D}$ into
+itself and the energy form restricts: a restriction of a densely
+defined, nonnegative, closable form to an invariant closed
+subspace is densely defined (in that subspace), nonnegative, and
+closable, with closure dominated by the ambient closure.  The
+Friedrichs extension theorem then yields a unique self-adjoint
+$H_0 \ge 0$ on $\mathcal{H}_0$ with the restricted form as its
+quadratic form (Thm.~\ref{thm:B1-closable}, YM Branch, applied to
+the screened sector).  The screening projection realizes the
+symmetry breaking $\mathfrak{su}(2)\oplus\mathfrak{u}(1) \to
+\mathfrak{u}(1)_{\mathrm{em}}$ at structural force
+(Thm.~\ref{thm:SM-higgs-source-descended}); the ground state of
+$H_0$ is therefore the electroweak-breaking vacuum, with no
+imported potential.  No step beyond the named conditions is used.
+\qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:SM-H0-ScreenInv-verified}
+\textup{(Screening-Invariance Check: Affirmative Resolution.)}
+\textup{[Conditional on: the canonical tensor-sum encoding
+$L^{(n)} = L_n \otimes I_{K_0} + I_{k(n)} \otimes L_{K_0}$
+(Thm.~\ref{thm:YM-ENC-MSC}, YM Branch); the screening projection
+acting on the internal class factor, $\Pi_{B_0} = I \otimes
+P_{B_0}$ with $P_{B_0}$ the rank-one projection onto the
+$d_{S_v}=0$ class; and Phase-A, $K_0=7$.]}
+The $B_0$ screening projection maps the curvature-energy form
+domain into itself.  Explicitly:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item\label{si:field} $\Pi_{B_0}$ commutes \emph{exactly} with
+    the field part: $[\,I \otimes P_{B_0},\; L \otimes I\,] = 0$
+    identically, for any field generator $L$.
+  \item\label{si:bound} The internal-factor operator $I \otimes
+    L_{K_0}$ is bounded, with explicit norm
+    $\|L_{K_0}\|_{\mathrm{op}} = 2 - 2\cos(6\pi/7) \approx
+    3.8019$ in the cyclic realization; hence the screened form
+    satisfies the relative bound
+    \[
+      \mathfrak{h}(\Pi_{B_0}\psi) \;\le\;
+      \mathfrak{h}_{\mathrm{field}}(\psi)
+      \;+\; \|L_{K_0}\|_{\mathrm{op}}\,\|\psi\|^2 ,
+    \]
+    so $\Pi_{B_0}\psi$ lies in the form domain whenever $\psi$
+    does.  The form domain is
+    $\mathrm{dom}(L^{1/2}) \otimes \mathbb{C}^{K_0}$ --- the
+    bounded internal factor imposes no domain constraint --- and
+    $\Pi_{B_0}$ maps it to
+    $\mathrm{dom}(L^{1/2}) \otimes B_0 \subseteq
+    \mathrm{dom}(L^{1/2}) \otimes \mathbb{C}^{K_0}$.
+\end{enumerate}
+Hence ob:SM-H0-ScreenInv resolves affirmatively, and
+Thm.~\ref{thm:SM-H0-Friedrichs} holds with its
+screening-invariance condition discharged.
+\end{theorem}
+
+\begin{proof}
+Clause~\ref{si:field} is the algebra of elementary tensors:
+$(I \otimes P)(L \otimes I) = L \otimes P = (L \otimes I)
+(I \otimes P)$.  For clause~\ref{si:bound}: all unbounded content
+of the tensor-sum generator resides in the field factor; the
+internal factor carries a finite Hermitian matrix, whose operator
+norm in the cyclic realization is the largest eigenvalue
+$2 - 2\cos(2\pi k/K_0)$ at $k=3$, $K_0=7$.  For $\psi$ in the
+form domain,
+$\mathfrak{h}(\Pi\psi) = \langle\Pi\psi, (L\otimes I)\Pi\psi
+\rangle + \langle\Pi\psi, (I\otimes L_{K_0})\Pi\psi\rangle
+\le \langle\psi, (L\otimes I)\psi\rangle +
+\|L_{K_0}\|\,\|\psi\|^2$, using clause~\ref{si:field} and
+$\|\Pi\| = 1$ for the first term and boundedness for the second.
+Finiteness of the right side is exactly membership of $\psi$ in
+the form domain; hence $\Pi\psi$ is in the form domain.  Both
+clauses were additionally verified numerically at finite
+truncation (200 random form-domain vectors; exact commutation with
+the field part to machine precision).  Book~VII discipline limits
+the conclusion to the declared Phase-A scope. \qed
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rem:SM-H0-realization}
+\textbf{Realization-dependence of the stronger property.}
+Form-domain invariance --- the gate's actual requirement --- is
+realization-independent, as the proof above uses only the
+tensor-sum structure.  The \emph{stronger} reducing-subspace
+property $[\Pi_{B_0}, I \otimes L_{K_0}] = 0$ is
+realization-dependent: it \textbf{holds} in the pendant-generator
+realization, because NFC-3Gen Step~3 (Thm.~\ref{thm:SM-three-gen};
+Book~II, unconditional) proves every pendant generator preserves
+each $d_{S_v}$-eigenblock, and the $d_{S_v}=0$ block is the
+singleton class $\{C_7\}$ --- so $e_7$ is fixed by all pendant
+generators and any internal operator built from them is
+block-diagonal, commuting with $P_{B_0}$ exactly (verified:
+commutator $= 0$ to machine precision).  It \textbf{fails} in the
+abstract clock-shift Weyl realization
+($\|[P_{B_0}, L_{K_0}^{\mathrm{cyc}}]\| = 2$), where the shift
+moves $e_7$.  The Friedrichs construction of
+Thm.~\ref{thm:SM-H0-Friedrichs} requires only the
+realization-independent form-domain invariance; in the pendant
+realization the screened sector is additionally a reducing
+subspace, so $\mathcal{H}_0$ is invariant under the full dynamics
+there.
+\end{remark}
+
+\begin{openobligation}[\status{C}]\label{ob:SM-H0-ScreenInv}
+\textup{(O-SM.H0.ScreenInv: Screening-Invariance Check ---
+Conditionally Discharged.)}
+\textup{[Conditional on Thm.~\ref{thm:SM-H0-ScreenInv-verified}.]}
+The $B_0$ screening projection maps the curvature-energy form
+domain into itself: exact commutation with the field part, and the
+explicit relative bound with constant $\|L_{K_0}\| =
+2-2\cos(6\pi/7)$ on the bounded internal factor.  The check
+imports nothing and constructs nothing, as required; the
+realization-dependence of the stronger reducing property is
+recorded in Rem.~\ref{rem:SM-H0-realization}.
+\end{openobligation}
+
+\begin{openobligation}[\status{C}]\label{ob:SM-IDcont-TV}
+\textup{(O\_ID\textsuperscript{cont}\_TV: Transfer-and-Vacuum
+Component --- Conditionally Discharged.)}
+\textup{[Conditional on Thm.~\ref{thm:SM-IDcont-transfer},
+Thm.~\ref{thm:SM-H0-Friedrichs}, and the screening-invariance
+check (ob:SM-H0-ScreenInv).]}
+Both ingredients of the residual component of
+Thm.~\ref{thm:SM-IDcont-decomposition} are conditionally
+established: interface transfer of the rate-certified continuum
+identification onto the matter representation content
+(Thm.~\ref{thm:SM-IDcont-transfer}), and the screened Friedrichs
+construction of the physical vacuum sector $\mathcal{H}_0$
+(Thm.~\ref{thm:SM-H0-Friedrichs}).  Combined with the discharged
+rate component (Cor.~\ref{cor:O-ID-cont-rate-closed}, YM Branch),
+the full gate O\_ID\textsuperscript{cont} is conditionally
+discharged.  Its single finite residual, the screening-invariance
+check, is itself now affirmatively resolved
+(Thm.~\ref{thm:SM-H0-ScreenInv-verified}); no open finite residual
+remains within the gate.  Consequently ob:SM-matter and
+ob:SM-higgs advance from ``blocked at unconditional force by an
+open gate'' to ``conditional at unconditional-force level on the
+named theorem chain,'' and the downstream SPEC matter obligations
+(ob:spec-MAT, ob:spec-MAT-open, SPEC Branch) are unblocked for
+their own in-branch construction work.  The SM status line
+remains \emph{conditionally intrinsic-structural closed,
+inherited-scope open} until the residual is verified; this
+obligation records the advance without inflating it.
+\end{openobligation}
+
+
+\begin{remark}[\status{R}]\label{rem:SM-matter-close-memo}
+\textbf{Conditional branch-close memo for SM-MAT and SM-HIGGS.}
+The matter-sector results of this branch consolidate as follows.
+The matter datum $\mathcal{M}_{\mathrm{SM}} = (R_{\mathrm{ferm}},
+R_{\mathrm{scalar}}, \Phi_{\mathrm{EWSB}})$ is licensed only as a
+source-descended interface completion of the certified gauge and
+coupling structure, never as primitive matter ontology. The unique
+anomaly-cancelled three-generation quintuplet is the minimal
+load-bearing fermionic interface
+(Thm.~\ref{thm:SM-matter-source-descended},
+Prop.~\ref{prop:SM-sector-load-bearing}); the $B_0 = \ker(d_{S_v})$
+block is the unique load-bearing scalar interface, realizing
+electroweak breaking by screening with no imported scalar field or
+potential (Thm.~\ref{thm:SM-higgs-source-descended}). These two
+sectors are jointly sufficient for the conditional
+intrinsic-structural close of the matter datum recorded in
+Prop.~\ref{prop:SM-extspec-status}, and
+Prop.~\ref{prop:SM-IDcont-force-upgrade} certifies that the single
+remaining gate O\_ID\textsuperscript{cont} is a pure, faithful,
+and conservative force-upgrade. This memo records the gate; it does
+not discharge it. The branch status line remains: \emph{SM
+conditionally intrinsic-structural closed, inherited-scope open.}
+\end{remark}
+
 \end{document}

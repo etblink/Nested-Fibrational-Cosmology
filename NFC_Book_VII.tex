@@ -447,6 +447,94 @@ Rephrasing is not progress unless the named obstruction has been
 discharged.
 \end{corollary}
 
+\begin{definition}[\status{D}]\label{def:toolkit-boundary-frontier}
+\textup{(Toolkit-Boundary Frontier.)}
+A named failure frontier (Def.~\ref{def:named-frontier}) is a
+\emph{toolkit-boundary frontier} when its missing ingredient is not
+a gap in the branch's own construction but a class of question lying
+outside the current canonical methods --- the collar-algebra,
+transport-ledger, MSC/quotient-visibility, and continuum-bridge
+machinery.  A toolkit-boundary frontier is distinguished from an
+\emph{in-toolkit frontier}, whose missing ingredient is in
+principle supplied by an instance of an existing canonical method,
+and from a \emph{gated frontier}, whose discharge waits on a
+specific named obligation already located in another branch.
+\end{definition}
+
+\begin{definition}[\status{D}]\label{def:frontier-residual-isolation}
+\textup{(Residual Isolation.)}
+A frontier is \emph{residual-isolated} when the branch has certified
+every part of the original obligation that its methods reach, and
+has reduced the remaining burden to an explicitly characterized
+residual together with a proof that the residual is the unique
+surviving case.  Residual isolation converts a broad frontier into a
+sharply bounded one without flipping the obligation's status.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:toolkit-boundary-no-inflation}
+Certifying the in-toolkit portion of an obligation and isolating a
+toolkit-boundary residual does not discharge the obligation: the
+obligation retains [O] status until the residual itself is supplied.
+\end{proposition}
+
+\begin{proof}
+By Def.~\ref{def:open-obligation} an obligation is discharged only
+when its full closure claim is established at the declared force.
+Residual isolation (Def.~\ref{def:frontier-residual-isolation})
+establishes the closure claim on all cases except the isolated
+residual; by Prop.~\ref{prop:frontier-valuable} the certified
+portion and the sharpened frontier are positive contributions, but
+the closure claim as a whole remains unproved while the residual
+stands.  By the no-inflation standing rule
+(Standing Rule~\ref{sr:no-inflation}), partial establishment may
+not be recorded as full closure.  Hence the obligation retains [O].
+The status tag therefore carries, for a residual-isolated
+toolkit-boundary frontier, a different operational meaning than a
+fresh undifferentiated frontier: not ``the branch has not yet
+worked on this'' but ``the branch has reduced this to a
+characterized residual outside current methods.''  The distinction
+is recorded in the obligation text, not in the status tag, which
+remains [O] in both cases.
+\end{proof}
+
+\begin{standingrule}[\status{D}]\label{sr:toolkit-boundary-honesty}
+\textup{(Toolkit-Boundary Honesty.)}
+When a branch reduces an open obligation to a toolkit-boundary
+residual, it must (i) state the residual precisely, (ii) prove it is
+the unique surviving case (residual isolation), and (iii) name the
+class of method the residual would require, so that the frontier is
+not mistaken for either an in-toolkit gap (which would invite a
+spurious near-term discharge claim) or a vague incompletion.  A
+toolkit-boundary frontier so recorded satisfies the named-failure
+discipline of this section at the highest available precision.
+\end{standingrule}
+
+\begin{remark}[\status{R}]\label{rmk:toolkit-boundary-instances}
+The current corpus carries four residual-isolated toolkit-boundary
+frontiers, each reduced to a characterized residual by its branch
+and retained at [O] under
+Prop.~\ref{prop:toolkit-boundary-no-inflation}: the RH arithmetic
+positivity frontier (\texttt{ob:rh-s1-formal}, residual: $Q[\psi]
+\ge 0$ from the arithmetic structure of $\Xi$); the crystallographic
+phase frontier (\texttt{ob:cryst-PHASE}, residual: phase uniqueness
+modulo the certified invariance group for generic non-centrosymmetric
+configurations); and the biological boundary-forcing frontier
+(\texttt{ob:bio-BND-open}, residual: constructibility of a
+coreless-complement persistent replicator).  Each names a residual
+of structure-factor-fibration, arithmetic-positivity, or
+configuration-existence character that the collar-algebra and
+transport-ledger toolkit does not reach.  Distinct from these are
+the \emph{gated} frontiers
+(Def.~\ref{def:toolkit-boundary-frontier}): the SPEC matter-coupling
+obligations, blocked not by method but by the named YM-side gate
+O\_ID\textsuperscript{cont}.  This stratification --- toolkit-boundary
+versus gated --- is itself governance information: it tells the
+reader that no presently open obligation is both in-toolkit and
+actionable by existing discharge methods, so further progress
+requires either new methods (the toolkit-boundary residuals) or
+discharge of the upstream gate (the gated obligations).
+\end{remark}
+
 \begin{remark}[\status{R}]\label{rmk:frontier-not-embarrassment}
 A named failure frontier is not an embarrassment to be hidden or
 minimized.  It is a mathematically valuable constitutional object.
@@ -546,6 +634,97 @@ A \emph{prohibited import} is any undeclared assumption, heuristic
 gloss, or external structure used as though it had theorem-level force
 without being listed in the branch's declared import ledger.
 \end{definition}
+
+\begin{definition}[\status{D}]\label{def:variable-licensing}
+\textup{(Variable Licensing Predicate.)}
+A \emph{physics variable} $X$ (energy, mass, charge, time,
+temperature, distance, and the like) is \emph{licensed} within a
+declared regime when both of the following hold:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item\label{vl:form} $X$ is realized as at least one of:
+  \begin{enumerate}[label=\textup{(\roman*)}]
+    \item a quotient-visible invariant of the declared
+          observational quotient;
+    \item a transport-stable ledger in the sense of Book~III;
+    \item a certified branch-interface coefficient with declared
+          dependency conditions;
+    \item a continuum encoding, via a separately proved Book~VI
+          bridge, of certified discrete structure;
+  \end{enumerate}
+  \item\label{vl:decl} its scope, descent path, status tag, and
+        anti-smuggling audit (the standard structures explicitly
+        \emph{not} assumed) are declared.
+\end{enumerate}
+Use of a physics variable as a primitive --- outside
+clauses~\ref{vl:form} and \ref{vl:decl} --- is a prohibited import
+in the sense of Definition~\ref{def:prohibited-import}.  No physics
+variable is fundamental by default.
+\end{definition}
+
+\begin{proposition}[\status{U}]\label{prop:variable-licensing-conservative}
+\textup{(Conservativity of the Variable Licensing Predicate.)}
+Definition~\ref{def:variable-licensing} introduces no new licensing
+power and no new restriction: it is a consolidating restatement of
+discipline already in force.  Specifically:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item every use of a variable satisfying the predicate was
+        already admissible under the standing rules; and
+  \item every use of a variable violating the predicate was
+        already inadmissible.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For (1), each disjunct of clause~\ref{vl:form} is individually
+governed by an existing canonical instrument, and clause~\ref{vl:decl}
+adds only declarations already required.  Quotient-visible invariants
+are admissible exactly as observable content of the declared quotient;
+transport-stable ledgers are governed by the Book~III transfer
+machinery (the Observational Transfer Theorem of the Spine,
+Book~III); branch-interface
+coefficients with declared dependencies are admissible imports under
+Definition~\ref{def:admissible-import} together with the Dependency
+Declaration Theorem (Thm.~\ref{thm:dependency-declaration}); and
+continuum encodings are licensed exactly by the Book~VI bridge schema
+(Thm.~\ref{thm:continuum-bridge-schema}, Book~VI), which already
+requires a separately proved bridge.  The declaration requirements of
+clause~\ref{vl:decl} restate Standing
+Rule~\ref{sr:declare-status} and
+Thm.~\ref{thm:dependency-declaration}.  Hence the predicate licenses
+nothing new.
+
+For (2), suppose a variable is used in a manner violating the
+predicate.  If it fails clause~\ref{vl:form}, then it enters as a
+structure that is neither quotient-derived, transport-governed,
+dependency-declared, nor bridge-encoded --- that is, as an undeclared
+external structure carrying theorem-level force, which is a
+prohibited import by Definition~\ref{def:prohibited-import}.  If it
+fails clause~\ref{vl:decl}, the use violates Standing
+Rule~\ref{sr:declare-status} or
+Thm.~\ref{thm:dependency-declaration} directly.  Hence the predicate
+forbids nothing that was previously permitted.
+
+Both directions hold by case analysis over already-canonical
+instruments; the predicate is therefore conservative.
+\end{proof}
+
+\begin{remark}[\status{R}]\label{rmk:variable-licensing-usage}
+\textup{(Usage note.)}
+Definition~\ref{def:variable-licensing} supplies the single citable
+predicate underlying the variable-recovery shells maintained in the
+speculative holding register (entropy, time, energy, Hamiltonian,
+mass, charge, phase/frequency, metric/distance, curvature, momentum,
+spin, temperature, couplings).  Spine-level instances already in
+canon include the charge recovery shell
+(Book~III, Rmk.~\ref{rmk:charge-recovery-shell}) and the SM matter
+datum discipline (SM Branch).  Working-maturity vocabulary attached
+to such shells in the holding register (\emph{theorem-shell},
+\emph{conditional close}, \emph{template-backed},
+\emph{near-closed}) is holding-internal and carries no canonical
+force; no recovery shell may be cited at [U] or [C] except through
+formal promotion (Standing Rule~\ref{sr:precanonical-force},
+Thm.~\ref{thm:promotion-requires-transfer}).
+\end{remark}
 
 \begin{theorem}[\status{U}]\label{thm:dependency-declaration}
 \textup{(Dependency Declaration Theorem.)}  Every descendant theorem
@@ -1220,6 +1399,67 @@ The 13 canonical `[O]' items are the correct governance document for
 auditing the program.  The four-item reduced frontier above is the
 correct document for assessing the genuine mathematical distance to
 completion.  Both are needed; neither replaces the other.
+\end{remark}
+
+\begin{remark}[\status{R}]\label{rem:obligation-conventions}
+\textbf{Counting conventions and the authoritative live record
+(governance hardening).}
+Two syntactic conventions for recording obligations coexist in the
+canon, and they must be read together, not mechanically summed:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item \emph{Status-tagged remarks.}  An obligation written as a
+    remark or declaration carrying the $[\mathrm{O}]$ status tag.
+    This is the Book~I--III and branch-frontier convention; a
+    syntactic scan for $[\mathrm{O}]$ finds exactly these.
+  \item \emph{The \texttt{openobligation} environment.}  The YM
+    branch (and any branch adopting its convention) records
+    obligations in a dedicated \texttt{openobligation} environment
+    that is \emph{status-tagged} $[\mathrm{C}]$ when the obligation
+    is conditionally discharged at a named scope --- e.g.\ the YM
+    Clay gaps ob:YM-B1/B2/B3, conditionally discharged at NFC
+    scope with the residual to full quantum field theory named.
+    A syntactic scan for $[\mathrm{O}]$ does \emph{not} find these,
+    because they are honestly $[\mathrm{C}]$, not open-unproved.
+\end{enumerate}
+\textbf{Consequence for census hygiene.}  A raw $[\mathrm{O}]$-tag
+count (the syntactic census) and the curated \emph{named-obligation}
+count of this section (the semantic governance count) measure
+different things and need not coincide; likewise the curated
+\emph{reduced irreducible frontier} is a mathematical-distance
+assessment on a third basis again.  None of the three is wrong, but
+none is a substitute for another, and a reader who reports a single
+``frontier size'' without naming the basis will mislead.
+\textbf{Snapshot lag is expected.}  The curated counts in this
+section are periodic snapshots requiring manual update; they may lag
+the syntactic state after an active arc.  The current known lag: the
+Variable Recovery Program arc (Book~III, recorded in the Canon
+Ledger) opened and then discharged or characterized its full
+dynamical-core obligation set, which this section's ``13-item''
+snapshot predates and does not yet reflect.  \textbf{Authoritative
+record.}  The Canon Ledger is the authoritative live record of
+obligation state, session by session; the snapshots here are
+governance summaries reconciled to it only at dedicated
+reconciliation passes.  A reconciliation pass --- recomputing the
+named-obligation roster and the reduced frontier against the current
+syntactic state across all books --- is itself a registered
+governance task, distinct from the per-session ledger discipline,
+and is not performed implicitly by branch work.  This remark records
+the convention and the standing reconciliation task; it changes no
+count, since responsible recounting requires the dedicated pass.
+\emph{Status update:} that reconciliation pass was carried out and is
+recorded in the external governance document
+\texttt{NFC\_OBLIGATION\_ROSTER} --- the authoritative partition of all
+109 corpus \texttt{ob:} labels (open / conditionally-discharged /
+bridge-discharged / fully-discharged / base-declaration), with the
+reduced four-item frontier re-verified against current live labels and
+four tracking conventions catalogued.  The roster supersedes the
+``13-item'' figure of Rmk.~\ref{rem:named-vs-frontier} as the current
+snapshot, while that remark's \emph{distinction} between named
+obligations and the reduced irreducible frontier stands unchanged: the
+four-item reduced frontier was re-verified and remains correct, with
+the GR item noted to be tracked as \texttt{def:curv-subcrit-global}
+rather than an \texttt{ob:} label.  The Canon Ledger remains the live
+record between snapshots.
 \end{remark}
 
 \section{Boundary of Book VII}

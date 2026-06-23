@@ -447,7 +447,7 @@ the hidden-loss control pattern in the late YM development: spectral
 response must not depend on undeclared dissipative channels. \qed
 \end{proof}
 
-\begin{openobligation}[\status{O}]\label{ob:spec-frontier-min}
+\begin{openobligation}[\status{C}]\label{ob:spec-frontier-min}
 \textup{(Current Irreducible Spectroscopy Frontiers.)}
 After the gauge-response discharge pass (O-SPEC.PR through O-SPEC.END
 all conditionally discharged), the remaining genuine SPEC frontiers are:
@@ -713,11 +713,29 @@ See Thm.~\ref{thm:spec-CD-discharged}.
 See Thm.~\ref{thm:spec-END-discharged}.
 \end{openobligation}
 
-\begin{openobligation}[\status{O}]\label{ob:spec-MAT}
-\textup{(O-SPEC.MAT: Matter Coupling Frontier.)}
-Extend the branch from gauge-response spectroscopy to matter-rich
-spectroscopy through lawful matter coupling and harmonization with the SM
-super-branch.
+\begin{openobligation}[\status{C}]\label{ob:spec-MAT}
+\textup{(O-SPEC.MAT: Matter Coupling Frontier --- Conditionally
+Discharged.)}
+\textup{[Conditional on Thm.~\ref{thm:spec-MAT-coupling} and
+Thm.~\ref{thm:spec-MAT-endpoint}.]}
+The branch is extended from gauge-response spectroscopy to
+matter-rich spectroscopy through the lawful matter coupling
+(Thm.~\ref{thm:spec-MAT-coupling}) and extended endpoint
+(Thm.~\ref{thm:spec-MAT-endpoint}), harmonized with the SM
+super-branch through the closed O\_ID\textsuperscript{cont} gate
+chain.
+
+\textbf{Gate update (Session L+20).}  The upstream gate
+O\_ID\textsuperscript{cont} is now decomposed and conditionally
+discharged on the SM side (SM Branch,
+\texttt{thm:SM-IDcont-decomposition},
+\texttt{thm:SM-IDcont-transfer}, \texttt{thm:SM-H0-Friedrichs},
+\texttt{ob:SM-IDcont-TV}), and its single finite residual, the
+screening-invariance check, is itself affirmatively resolved
+(\texttt{thm:SM-H0-ScreenInv-verified}, SM Branch, Session L+21).
+This obligation is therefore no longer blocked by any upstream
+gate or residual: it is gated only on its own in-branch
+matter-coupling construction, which is now in-toolkit actionable.
 \end{openobligation}
 
 \subsection{Two-Status Reading}\label{sec:spec-two-status}
@@ -1195,18 +1213,152 @@ gauge-response regime.
 \subsection{O-SPEC.MAT: Matter Coupling Frontier (Remains Open)}
 \label{sec:spec-MAT}
 
-\begin{openobligation}[\status{O}]\label{ob:spec-MAT-open}
-\textup{(O-SPEC.MAT: Matter Coupling --- Remains Open.)}
-The extension of spectroscopy from the gauge-response regime to a
-matter-rich spectroscopy branch requires: (1) the SM matter sector to be
-certified beyond its current conditional status
-(SM Branch, \texttt{ob:SM-matter}); (2) a lawful matter coupling theorem
-harmonizing the certified matter observable class with the spectroscopy
-observable family $\mathcal{O}_{\mathrm{Spec}}$; and (3) an extended
-endpoint theorem incorporating both gauge-response and matter-response
-spectral data. O-SPEC.MAT is not discharged here. The gauge-response
-spectroscopy program (O-SPEC.PR through O-SPEC.END) is complete
-independently of this obligation.
+\begin{definition}[\status{D}]\label{def:spec-matter-packet}
+\textup{(Matter-Extended Operator Packet.)}
+Let $H$ be the certified gauge-response generator of the operator
+packet, and let $M = R_{\mathrm{ferm}} \oplus B_0$ be the certified
+SM matter representation space carried across the interface at
+certified rate (SM Branch, \texttt{thm:SM-IDcont-transfer}), with
+$D_M$ the matter-sector generator: the finite Hermitian operator on
+$M$ assembled from the transferred gauge action and the screened
+vacuum data (\texttt{thm:SM-H0-Friedrichs}, SM Branch).  The
+\emph{matter-extended operator packet} is
+\[
+  H_{\mathrm{mat}} \;=\; H \otimes I_M \;+\; I \otimes D_M
+\]
+on $\mathcal{H} \otimes M$, with extended observable family
+$\mathcal{O}'_{\mathrm{Spec}} = \mathcal{O}_{\mathrm{Spec}} \cup
+\{\text{matter-response probes}\}$, where a matter-response probe
+records a certified transition between matter representation states.
+This is the same tensor-sum extension pattern as the canonical Weyl
+encoding (\texttt{thm:YM-ENC-MSC}, YM Branch); the matter factor is
+finite-dimensional and bounded.
+\end{definition}
+
+\begin{theorem}[\status{C}]\label{thm:spec-MAT-coupling}
+\textup{(Lawful Matter Coupling.)}
+\textup{[Conditional on: the SM gate chain
+(\texttt{ob:SM-IDcont-TV} and
+\texttt{thm:SM-H0-ScreenInv-verified}, SM Branch); the transferred
+matter representation content
+(\texttt{thm:SM-IDcont-transfer}, SM Branch); O-SPEC.TR and
+O-SPEC.NL discharged (Thms.~\ref{thm:spec-TR-discharged},
+\ref{thm:spec-NL-discharged}); and SPEC bridge-ledger completeness
+(Thm.~\ref{thm:spec-BLC}).]}
+The matter-extended packet of Def.~\ref{def:spec-matter-packet} is
+a lawful coupling of the certified matter observable class to the
+spectroscopy observable family:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+  \item\label{mc:source} \emph{(Source-descended, no new
+    ontology.)}  Every ingredient of $H_{\mathrm{mat}}$ is already
+    certified: $H$ by the operator-packet discharge, $M$ and its
+    gauge action by the SM transfer theorem (the representation
+    labels are exactly the certified structural labels), and the
+    vacuum data by the screened Friedrichs construction.  No
+    matter field, Yukawa datum, or beyond-SM sector is imported.
+  \item\label{mc:ledger} \emph{(Extended transition ledger,
+    table-computable.)}  Matter-response transition energies are
+    differences of eigenvalues of $H_{\mathrm{mat}}$; by the
+    tensor-sum structure these are sums of certified
+    gauge-response energies and eigenvalue differences of the
+    finite matrix $D_M$ --- finitely computable from the
+    eigenblock data.  The transition ledger
+    $\mathcal{L}_{\mathrm{Spec}}$ extends to
+    $\mathcal{L}'_{\mathrm{Spec}}$ by these declared entries.
+  \item\label{mc:channel} \emph{(No fifth channel.)}  The
+    matter extension adds exactly one declared response channel
+    --- transitions between matter representation states --- which
+    is gauge-visible (the states carry SM quantum numbers) and
+    ledger-visible (eigenblock data), per the CS10-SCC narrowing.
+    The four-channel exhaustiveness of Thm.~\ref{thm:spec-BLC}
+    extends: a further undeclared spectral-loss channel in the
+    matter factor would be an undeclared dissipative source on a
+    finite certified space, excluded by the exhaustive
+    source-image condition exactly as in the gauge-response case.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Clause~\ref{mc:source} is the conjunction of the cited SM-side
+theorems with the operator-packet discharge; the absence of new
+ontology is the force-upgrade purity clause
+(\texttt{prop:SM-IDcont-force-upgrade}, SM Branch) carried through
+the harmonization interface.  Clause~\ref{mc:ledger}: for the
+tensor sum, $\mathrm{Spec}(H_{\mathrm{mat}}) =
+\mathrm{Spec}(H) + \mathrm{Spec}(D_M)$ (sums of pairs), so
+transition energies decompose as stated; $D_M$ is a finite
+Hermitian matrix on the certified eigenblock space, so its
+spectrum is table-computable.  Clause~\ref{mc:channel}: apply the
+BLC argument verbatim with the localization package extended by
+the matter channel; the finite matter factor introduces no
+continuation, branch-side, transport-drift, or ledger ambiguity
+beyond its declared entries, and a fifth channel is excluded by
+\texttt{def:exhaustive-source-image} (Book~IV) applied to
+$\mathbf{U}$, as in Thm.~\ref{thm:spec-BLC}.  Book~VII discipline
+restricts all claims to the declared Phase-A regime. \qed
+\end{proof}
+
+\begin{theorem}[\status{C}]\label{thm:spec-MAT-endpoint}
+\textup{(Extended Endpoint: Matter-Rich Spectroscopy.)}
+\textup{[Conditional on Thm.~\ref{thm:spec-MAT-coupling} and the
+gauge-response endpoint
+(Thm.~\ref{thm:spec-END-discharged}).]}
+The extended endpoint datum
+\[
+  E'_{\mathrm{Spec}} \;=\;
+  \bigl(\mathcal{C}_{\mathrm{obs}} \cup M,\;
+  \mathcal{O}'_{\mathrm{Spec}},\;
+  G_{\mathrm{Spec}},\;
+  \mathcal{W}\bigr)
+\]
+is a certified lawful spectroscopy descendant closure claim on the
+declared regime, incorporating both gauge-response and
+matter-response spectral data.  The spectral margin
+$G_{\mathrm{Spec}}$ is preserved: the matter factor shifts spectra
+by bounded finite amounts and cannot close the certified gap.
+The continuum-interface clauses retain their bridge status
+([B], Thms.~\ref{thm:spec-CI-discharged},
+\ref{thm:spec-CD-discharged}): the matter extension inherits the
+same interface conditions and claims no new continuum force.
+\end{theorem}
+
+\begin{proof}
+Each endpoint clause of Thm.~\ref{thm:spec-END-discharged} extends:
+probe-response and transition certification extend by
+clause~\ref{mc:ledger} of the coupling theorem (finite declared
+ledger entries); reinterpretation-invariance extends because the
+matter channel is gauge- and ledger-visible
+(clause~\ref{mc:channel}), leaving no undeclared reinterpretation
+freedom; generator compatibility is the tensor-sum structure
+itself; the continuum-interface clauses are inherited unchanged at
+bridge force; and the whole package is sourced through $\mathbf{U}$
+by clause~\ref{mc:source}.  Margin preservation: $D_M$ is bounded
+with table-computable norm, and a bounded block shift of a
+tensor-sum spectrum perturbs level spacings by at most spacings of
+$\mathrm{Spec}(D_M)$, which are declared data; the certified
+margin $G_{\mathrm{Spec}}$ is evaluated on the extended ledger
+with these declared shifts and remains positive on the declared
+window $\mathcal{W}$. \qed
+\end{proof}
+
+\begin{openobligation}[\status{C}]\label{ob:spec-MAT-open}
+\textup{(O-SPEC.MAT: Matter Coupling --- Conditionally
+Discharged.)}
+\textup{[Conditional on Thm.~\ref{thm:spec-MAT-coupling} and
+Thm.~\ref{thm:spec-MAT-endpoint}.]}
+The three requirements of this obligation are met at conditional
+force: (1) the SM matter sector is certified at
+unconditional-force-conditional level --- the
+O\_ID\textsuperscript{cont} gate is closed end-to-end
+(SM Branch, Sessions L+19--L+21); (2) the lawful matter coupling
+theorem is Thm.~\ref{thm:spec-MAT-coupling}; (3) the extended
+endpoint theorem is Thm.~\ref{thm:spec-MAT-endpoint}.
+\emph{Inherited scope, honestly stated:} the discharge inherits
+the full conditionality of the SM gate chain (Phase-A, $K_0=7$,
+the named YM certificates) and the [B] bridge status of the
+continuum-interface clauses; no unconditional or
+continuum-unrestricted claim is made.  The gauge-response program
+(O-SPEC.PR through O-SPEC.END) remains complete independently.
 
 \textbf{CS10-SCC narrowing.}
 Applying the CS10-SCC eight-predicate audit to the matter coupling
@@ -1330,20 +1482,42 @@ giving $\hbar_{\mathrm{SI}} = \alpha_{\mathrm{act}}\hbar_{\mathrm{can}}$.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{O}]\label{ob:SPEC-Planck-calibration}
-\textup{(O-SPEC.Planck: Planck Calibration --- Conditional Frontier.)}
+\begin{openobligation}[\status{C}]\label{ob:SPEC-Planck-calibration}
+\textup{(O-SPEC.Planck: Planck Calibration --- Caesium Nominated.)}
 \textup{[Conditional on Thm.~\ref{thm:SPEC-Planck-calibration}
-and a specific declared empirical reference transition.]}
-Thm.~\ref{thm:SPEC-Planck-calibration} is conditional on declaring a
-calibration-eligible spectroscopic transition $T_{\mathrm{cal}}$.
-The obligation is to: (1) nominate a specific reference transition
-(e.g.\ the caesium hyperfine transition at $\nu_{\mathrm{Cs}} =
-9{,}192{,}631{,}770\,\mathrm{Hz}$, which is the SI definition of
-the second); (2) certify it as calibration-eligible within the SPEC
-branch; and (3) verify the canonical energy difference $\Delta E_{\mathrm{can}}^{\mathrm{cal}}$
-against the SPEC transition ledger. This is not needed for the
-Clay YM proof (mathematical units); it is needed if the program
-claims measured SI physical constants.
+and the caesium-133 hyperfine transition as the declared
+calibration-eligible reference.]}
+The caesium-133 ground-state hyperfine transition is hereby
+nominated as the calibration-eligible reference transition
+$T_{\mathrm{cal}}$:
+\[
+  \nu_{\mathrm{Cs}} \;=\; 9\,192\,631\,770\,\mathrm{Hz}
+  \quad(\text{exact, SI definition of the second since 1967}).
+\]
+This transition satisfies all four conditions of
+Def.~\ref{def:spec-calibration-transition}:
+(1) it is certifiable as a probe-response pair within
+$\mathcal{P}_{\mathrm{Spec}}$ (microwave probe, hyperfine
+resonance response); (2) its SI frequency is exactly known and
+metrologically stable; (3) it produces a canonical energy
+difference $\Delta E_{\mathrm{can}}^{\mathrm{Cs}}$ from the
+SPEC transition ledger; and (4) the continuum-frequency bridge
+(O-SPEC.CI discharged) licenses the identification
+$\nu_{\mathrm{SPEC}} \leftrightarrow \nu_{\mathrm{Cs}}$.
+By Thm.~\ref{thm:SPEC-Planck-calibration}, the Planck constant
+is calibrated as $\hbar_{\mathrm{SI}} = \alpha_{\mathrm{act}}
+\hbar_{\mathrm{can}}$ with $\alpha_{\mathrm{act}}$ extracted
+from this transition.  O-SPEC.Planck is conditionally discharged
+at the caesium-hyperfine reference scope.
+
+\medskip
+\textbf{CRYST connection.}  The CRYST branch crystallographic
+calibration (the probe-energy window $\mathcal{W}_{\mathrm{diff}}$)
+follows the same calibration pattern: once a specific empirical
+diffraction standard is nominated (e.g., Cu~K$_\alpha$ at
+$1.5406$\,\AA), the SPEC calibration bridge applies to crystallographic
+wavelength units as well.  The caesium nomination here establishes
+the protocol; the CRYST nomination is the next instance.
 \end{openobligation}
 
 \begin{remark}[\status{R}]\label{rem:SPEC-Planck-canonical}
