@@ -15,3 +15,4 @@ Authority tiers refer to `CANON_AUTHORITY_MODEL.md`. Ruling IDs refer to the Jul
 | MIG-001 | 1 scaffold | NFC_CANON_LEDGER.md | PART 4 SM entry | SUPERSEDED (F-1) | A1 `prop:SM-status-reconciliation` | none (scaffold .md) | none | validate pass; no canon .tex touched |
 | MIG-002 | 1 scaffold | NFC_CANON_LEDGER.md | PART 4 YM obligation block | SUPERSEDED (F-2) | A3 branch body tags + `prop:YM-status` | none (scaffold .md) | none | validate pass; no canon .tex touched |
 | MIG-003 | 1 scaffold | NFC_STATE_OF_CANON.md | corpus overview count table + counting note | SUPERSEDED (F-3) | review ruling F-3 + `metadata/census.json` | none (scaffold .md) | none | validate pass; census unchanged |
+| MIG-004 | 2 canon-comment | all 17 NFC_*.tex | `%%` status legend block | SUPERSEDED (F-4) | Canon Ledger PART 1 6-code vocabulary | none | none (comment only) | validate pass; census unchanged; compile pass (spot-checked Book I, SPEC) |
