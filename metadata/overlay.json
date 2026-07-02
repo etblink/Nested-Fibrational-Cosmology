@@ -1,0 +1,42 @@
+{
+  "_comment": "Human-judgment overlay. The extractor merges these fields onto the auto-extracted claim records by claim_id (label). This is where reviewer rulings, supersession links, historical flags, and review-needed markers live, so they survive re-extraction. Seeded from the July 2 2026 review adjudication.",
+  "prop:spec-current-status": {
+    "historical": true,
+    "authority_level": "D1_constitutional_intake",
+    "superseded_by": "prop:SPEC-status",
+    "reviewer_note": "Review ruling B-1: preserve label and [C]; retitle to 'Initial Constitution Status'; reword to constitution-time; add pointer to prop:SPEC-status. Not a mis-tag when written.",
+    "last_reviewed": "2026-07-02"
+  },
+  "prop:SM-status": {
+    "historical": true,
+    "superseded_by": "prop:SM-status-reconciliation",
+    "reviewer_note": "PRESERVE as baseline referenced by prop:SM-status-reconciliation (SM-Old). Do not edit or delete.",
+    "last_reviewed": "2026-07-02"
+  },
+  "prop:SM-status-reconciliation": {
+    "supersedes": "prop:SM-status",
+    "authority_level": "A1_branch_status_proposition",
+    "reviewer_note": "Current SM status: conditionally intrinsic-structural closed, inherited-scope open.",
+    "last_reviewed": "2026-07-02"
+  },
+  "prop:scc-status": {
+    "reviewer_note": "Review ruling C-2: currently conditional CERT-CLOSE; status tag to be changed [U]->[C] (weakening/correction, migration-tracked). Boundary + Remark 1.6 + dep-ledger also corrected.",
+    "review_needed": false,
+    "last_reviewed": "2026-07-02"
+  },
+  "thm:scc-r1": {
+    "reviewer_note": "Review ruling C-2: resolve internal contradiction (cannot be [C] + proof + 'Reserved-no present theorem force'). Reconcile to the completed conditional proof.",
+    "last_reviewed": "2026-07-02"
+  },
+  "prop:NS-status": {
+    "reviewer_note": "Review ruling D-3: anticipated advance HAS occurred at conditional force; future-tense language to become backward-looking (Cor 13.9, Thm 7.1, Cor 7.3, Prop 15.1). Unconditional global regularity remains external.",
+    "last_reviewed": "2026-07-02"
+  },
+  "ob:vrp-charge-quant": {
+    "discharge_basis": "scoped to residual b2 (numeric isolation of Omega_B in R); a/b1 conditionally discharged (thm:vrp-charge-continuum-survival, cor:vrp-frequency-lattice-survival).",
+    "last_reviewed": "2026-07-02"
+  },
+  "ob:bio-BND-open": { "discharge_basis": "toolkit-boundary residual; BND forced except trivial-core.", "last_reviewed": "2026-07-02" },
+  "ob:cryst-PHASE": { "discharge_basis": "phase problem modulo certified invariance group; toolkit-boundary.", "last_reviewed": "2026-07-02" },
+  "ob:rh-s1-formal": { "discharge_basis": "Q[psi]>=0 from arithmetic structure of Xi; out-of-toolkit.", "last_reviewed": "2026-07-02" }
+}

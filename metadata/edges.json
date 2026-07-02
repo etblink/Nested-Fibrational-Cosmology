@@ -1,0 +1,6560 @@
+[
+  {
+    "from": "cor:bio-BND-nondegenerate-necessity",
+    "to": "thm:bio-BND-boundary-forcing",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:bio-BND-nondegenerate-necessity",
+    "to": "thm:bio-BND-closed-core-alt",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-BND-force-external-excluded",
+    "to": "def:bio-persistent-cycle",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-BND-force-internal-excluded",
+    "to": "def:bio-metabolic-ledger",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-BND-force-internal-excluded",
+    "to": "def:bio-persistent-cycle",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-BND-force-reduced",
+    "to": "thm:bio-BND-boundary-forcing",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-BND-force-reduced",
+    "to": "thm:bio-BND-closed-core-alt",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-BND-force-reduced",
+    "to": "thm:bio-BND-force-external-excluded",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-BND-force-reduced",
+    "to": "thm:bio-BND-force-internal-excluded",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-BND-nd",
+    "to": "cor:bio-BND-nondegenerate-necessity",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-BND-nd",
+    "to": "thm:bio-BND-boundary-forcing",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-END-nd",
+    "to": "thm:bio-BND-nd",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-EVO-bridge-template",
+    "to": "thm:bio-EVO-discrete-dynamics",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-EVO-fitness-as-rate",
+    "to": "sr:bio-no-fitness-primitive",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-EVO-fitness-as-rate",
+    "to": "thm:bio-EVO-discrete-selection",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-FID-discharged",
+    "to": "def:bio-fidelity-margin",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-HER-discharged",
+    "to": "sr:bio-no-hidden-gene",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-MET-discharged",
+    "to": "sr:bio-no-hidden-probe",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-MULTI-twocell",
+    "to": "def:bio-twocell-assembly",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-MULTI-twocell",
+    "to": "thm:bio-MULTI-coord-template",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-REP-discharged",
+    "to": "sr:bio-no-smuggling",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-boundary",
+    "to": "thm:bio-metabolic-ledger",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-boundary",
+    "to": "thm:bio-rep-certification",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-dev-endpoint",
+    "to": "thm:bio-dev-trajectory-legitimacy",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-dev-endpoint",
+    "to": "thm:bio-no-celltype-import",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-dev-endpoint",
+    "to": "thm:bio-role-MCS",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-dev-endpoint",
+    "to": "thm:bio-role-visibility",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-dev-trajectory-legitimacy",
+    "to": "thm:bio-no-celltype-import",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-dev-trajectory-legitimacy",
+    "to": "thm:bio-role-MCS",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-dev-trajectory-legitimacy",
+    "to": "thm:bio-role-visibility",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-endpoint",
+    "to": "thm:bio-boundary",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-endpoint",
+    "to": "thm:bio-fidelity-margin",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-endpoint",
+    "to": "thm:bio-hereditary-descent",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-endpoint",
+    "to": "thm:bio-metabolic-ledger",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-endpoint",
+    "to": "thm:bio-no-hidden-channel",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-endpoint",
+    "to": "thm:bio-rep-certification",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-metabolic-ledger",
+    "to": "sr:bio-no-hidden-probe",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-multi-boundary",
+    "to": "thm:bio-BND-nd",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-multi-endpoint",
+    "to": "thm:bio-multi-boundary",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-no-hidden-channel",
+    "to": "sr:bio-no-hidden-gene",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bio-role-MCS",
+    "to": "def:bio-scc-role-carrier",
+    "file": "NFC_BIO_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:defect-welldef",
+    "to": "prop:defect-nonneg",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:defect-welldef",
+    "to": "prop:ledger-additivity",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:defect-welldef",
+    "to": "prop:stabilizer-after-stab",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:no-presentation-surplus",
+    "to": "thm:gov-a",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:no-presentation-surplus",
+    "to": "thm:governing",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:quotient-welldef",
+    "to": "lem:obs-equiv-equiv",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:stabilized-welldef",
+    "to": "thm:stabilization",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "cor:quotient-welldef",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:gov-a",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:gov-b",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:stabilization",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ledger-entropy-duality",
+    "to": "prop:ledger-additivity",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ledger-entropy-duality",
+    "to": "thm:entropy-monotone",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:stabilization",
+    "to": "prop:monotone",
+    "file": "NFC_Book_I.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:9-5g-i-chain",
+    "to": "cor:residual-instability-upgraded",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:9-5g-i-chain",
+    "to": "thm:9-5g-balanced-residual-sep",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:9-5g-i-chain",
+    "to": "thm:9-5i-non-absorption",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:9-5x-to-9-5l",
+    "to": "prop:cancellation-breaks-datum",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:9-5x-to-9-5l",
+    "to": "prop:family-sector-quotient-faithful",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:C3-witness-table",
+    "to": "lem:C3-witness-cert",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:C4-four-class",
+    "to": "lem:C3-witness-cert",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:C4-four-class",
+    "to": "lem:C4-inequiv",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:C4-four-class",
+    "to": "lem:S0",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:C5-promo",
+    "to": "cor:residual-instability-upgraded",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:C5-promo",
+    "to": "def:balanced-residual",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:C5-promo",
+    "to": "def:persistence-simple",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:C5-promo",
+    "to": "def:transport-invariant",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:C5-promo",
+    "to": "prop:common-shift-nonvisible",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:C5-promo",
+    "to": "prop:distinct-collar-distinct-class",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:C5-promo",
+    "to": "prop:internal-mode-unique",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:O-B2-discharged",
+    "to": "thm:G9-non-absorption",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:chi-transfer-compat-vv",
+    "to": "prop:induced-transfer-vv",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:exclusion-corollary",
+    "to": "cor:local-exclusion",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:finite-collar-finite-outcomes",
+    "to": "prop:collar-alphabet-bound",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:finite-collar-finite-outcomes",
+    "to": "thm:outcome-count",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:ls2-universal-K07",
+    "to": "sr:toggle-complete",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:ls2-universal-K07",
+    "to": "thm:DW-from-A2",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:ls2-universal-K07",
+    "to": "thm:LAR-from-DW-PhA",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:ls2-universal-K07",
+    "to": "thm:TC-from-sr",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:ls2-universal-K07",
+    "to": "thm:ls2-from-conditions",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:no-silent-erasure-vv",
+    "to": "prop:induced-transfer-vv",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:phase-a-universal-K07",
+    "to": "cor:ls2-universal-K07",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:phase-a-universal-K07",
+    "to": "def:T-partial",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:phase-a-universal-K07",
+    "to": "thm:covering-bound-K07",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vcs-generators-exist",
+    "to": "prop:vcs-pattern-exists",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vcs-triple-from-three-types",
+    "to": "prop:minimal-family-sector-directions",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vcs-triple-from-three-types",
+    "to": "prop:vcs-pattern-exists",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:C4-inequiv",
+    "to": "lem:C3-witness-cert",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:S0",
+    "to": "lem:S0a",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:S0",
+    "to": "lem:S0b",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:S0b",
+    "to": "lem:S0a",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:datum-change-collar-visible",
+    "to": "prop:distinct-collar-distinct-class",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:null-carries-no-datum",
+    "to": "prop:distinct-collar-distinct-class",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:persistence-simple-quotient-clean",
+    "to": "def:transport-invariant",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:persistence-simple-separation",
+    "to": "cor:residual-instability-upgraded",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:persistence-simple-separation",
+    "to": "def:balanced-residual",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:persistence-simple-separation",
+    "to": "def:persistence-simple",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:persistence-simple-separation",
+    "to": "def:transport-invariant",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:persistence-simple-separation",
+    "to": "prop:common-shift-nonvisible",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:persistence-simple-separation",
+    "to": "prop:distinct-collar-distinct-class",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:persistence-simple-separation",
+    "to": "prop:internal-mode-unique",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:HC2-ls2",
+    "to": "thm:ls2-from-conditions",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:book2-book3-bridge",
+    "to": "def:transfer-system",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:cancellation-breaks-datum",
+    "to": "def:imbalance-map",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:cancellation-breaks-datum",
+    "to": "prop:internal-mode-unique",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:chi-factors-vu",
+    "to": "constr:comparison-target",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:chi-factors-vu",
+    "to": "def:comparison-source",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:chi-factors-vu",
+    "to": "def:imbalance-map",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:chi-factors-vu",
+    "to": "prop:common-shift-nonvisible",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:chi-factors-vu",
+    "to": "prop:distinct-collar-distinct-class",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:distinct-collar-distinct-class",
+    "to": "prop:injection",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:distinct-collar-distinct-class",
+    "to": "thm:boundary-det",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:family-sector-faithfulness-lv",
+    "to": "prop:chi-well-defined",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:family-sector-quotient-faithful",
+    "to": "lem:datum-change-collar-visible",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:family-sector-quotient-faithful",
+    "to": "lem:null-carries-no-datum",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:family-sector-quotient-faithful",
+    "to": "prop:chi-well-defined",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:induced-transfer-vv",
+    "to": "prop:common-shift-nonvisible",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:minimal-family-sector-directions",
+    "to": "prop:distinct-collar-distinct-class",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:minimal-family-sector-directions",
+    "to": "prop:internal-mode-unique",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:vcs-pattern-exists",
+    "to": "def:vcs-pattern-triple",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:9-5i-non-absorption",
+    "to": "cor:no-silent-erasure-vv",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:9-5i-non-absorption",
+    "to": "lem:null-carries-no-datum",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:C5-noncollapse",
+    "to": "lem:C3-witness-cert",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:C5-noncollapse",
+    "to": "lem:C4-inequiv",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:C5-noncollapse",
+    "to": "lem:S0",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:DW-from-A2",
+    "to": "def:stab-collar-type",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:G9-non-absorption",
+    "to": "prop:cancellation-breaks-datum",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:G9-non-absorption",
+    "to": "prop:induced-transfer-vv",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:G9-non-absorption",
+    "to": "thm:9-5i-non-absorption",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:G9-non-absorption",
+    "to": "thm:spine-native-absorption",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:LAR-from-DW-PhA",
+    "to": "def:stab-collar-type",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:LAR-from-DW-PhA",
+    "to": "thm:DW-from-A2",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:PASS",
+    "to": "thm:packing-contradiction",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:TC-from-sr",
+    "to": "def:TC",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:TC-from-sr",
+    "to": "sr:toggle-complete",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:binary-rigidity",
+    "to": "lem:minimal-irreversibility",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:bit-budget",
+    "to": "lem:ls2-selectivity",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:covering-bound-K07",
+    "to": "prop:monotone",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:covering-bound-K07",
+    "to": "thm:K0-prime",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:covering-bound-K07",
+    "to": "thm:stabilization",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:dSv-block-decomp",
+    "to": "def:dsv-coord",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:global-spectral-phase",
+    "to": "cor:phase-a-universal-K07",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "prop:injection",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:boundary-capacity",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:boundary-det",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:ls2-from-conditions",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:packing-contradiction",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:local-nuclear",
+    "to": "ln:local",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:local-nuclear",
+    "to": "ln:nuclear",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:local-nuclear",
+    "to": "thm:OC-gate",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ls2-from-conditions",
+    "to": "lem:DW-propagation",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ls2-from-conditions",
+    "to": "lem:LAR-separation",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:outcome-count",
+    "to": "prop:injection",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:residual-separation-under-transfer",
+    "to": "lem:null-distance-quotient",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:residual-separation-under-transfer",
+    "to": "lem:transport-equiv-null",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spine-native-absorption",
+    "to": "lem:S0",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:tau4-saturation",
+    "to": "cor:log-interface",
+    "file": "NFC_Book_II.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:obstruction-blocks-source",
+    "to": "cor:compatible-for-source",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:obstruction-blocks-source",
+    "to": "prop:obstruction-blocks-persistence",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:terminal-observable-projection",
+    "to": "def:stability-functional",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:terminal-observable-projection",
+    "to": "thm:balance-composable",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:terminal-observable-projection",
+    "to": "thm:depth-sum",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-charge-conservation",
+    "to": "def:branch-time-order",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-charge-conservation",
+    "to": "def:conserved-charges",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-charge-conservation",
+    "to": "thm:vrp-charge",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-frequency-lattice-survival",
+    "to": "ob:vrp-charge-quant",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-frequency-lattice-survival",
+    "to": "thm:vrp-phase-frequency-duality",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-ham-mass-transfer",
+    "to": "prop:vrp-transfer-reduction",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-ham-mass-transfer",
+    "to": "thm:vrp-energy-transfer",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-no-global-unitary-time",
+    "to": "thm:vrp-reversible-dichotomy",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-phase-sync-discharge",
+    "to": "thm:vrp-reversible-dichotomy",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-phase-sync-discharge",
+    "to": "thm:vrp-sync-obstruction",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-temp-equil-discharge",
+    "to": "def:vrp-sync-datum",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-temp-equil-discharge",
+    "to": "thm:vrp-energy-transfer",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:vrp-temp-equil-discharge",
+    "to": "thm:vrp-sync-obstruction",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:composition-welldef",
+    "to": "def:composable-chain",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:drift-welldef",
+    "to": "def:transfer-map",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:obstructions-quotient-visible",
+    "to": "def:persistent-obs",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:obstructions-quotient-visible",
+    "to": "def:transfer-compatibility",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:obstructions-quotient-visible",
+    "to": "def:transfer-map",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:persistent-quotient-visible",
+    "to": "sr:quotient-visible",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:transfer-preserves-compat",
+    "to": "def:transfer-map",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:vrp-ham-lyapunov",
+    "to": "def:hb-compatible-step",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:vrp-ham-lyapunov",
+    "to": "def:transfer-coercivity",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:vrp-ham-lyapunov",
+    "to": "thm:vrp-hamiltonian",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:OT-arena",
+    "to": "prop:OT-from-compat",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:OT-arena",
+    "to": "prop:OT-morphisms",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:OT-arena",
+    "to": "prop:OT-welldef",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:OT-from-compat",
+    "to": "def:OT-object",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:OT-from-compat",
+    "to": "def:persistent-obs",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:OT-from-compat",
+    "to": "def:transfer-compatibility",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:OT-morphisms",
+    "to": "lem:composition-welldef",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:OT-welldef",
+    "to": "def:OT-object",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:OT-welldef",
+    "to": "def:transfer-map",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:OT-welldef",
+    "to": "lem:composition-welldef",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:charge-compatibility-gate",
+    "to": "lem:charge-conservation",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:compat-preserved-refinement",
+    "to": "lem:compat-invariant-refinement",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:compatible-comparison-structure",
+    "to": "def:transfer-compatibility",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:compatible-comparison-structure",
+    "to": "lem:composition-welldef",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:compatible-transport-class",
+    "to": "def:transport-class",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:obstruction-blocks-persistence",
+    "to": "def:persistent-obs",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:obstruction-blocks-persistence",
+    "to": "def:transport-obstruction",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:persistent-obs-arena",
+    "to": "lem:persistent-quotient-visible",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:vrp-transfer-reduction",
+    "to": "thm:vrp-hamiltonian",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:balance-composable",
+    "to": "thm:unified-coercive",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:beta1-controls-nonabelian",
+    "to": "def:NF2-blocks",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:beta1-controls-nonabelian",
+    "to": "thm:sm-collar-lie-chain",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:coercive-inequality",
+    "to": "thm:balance-composable",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "lem:persistent-quotient-visible",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "prop:OT-arena",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "prop:compat-preserved-refinement",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "prop:compatible-comparison-structure",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "prop:compatible-transport-class",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "prop:persistent-obs-arena",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:balance-composable",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:gov-OT",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:gov-ineq",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:gov-persist",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:gov-transfer",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:unified-coercive",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-charge",
+    "to": "def:conserved-charges",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-charge",
+    "to": "prop:charge-compatibility-gate",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-charge-continuum-survival",
+    "to": "thm:vrp-charge-quantization",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy",
+    "to": "def:branch-energy-form",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy",
+    "to": "def:transfer-coercivity",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy",
+    "to": "en:lsc",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy",
+    "to": "en:pos",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy",
+    "to": "en:refine",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy",
+    "to": "en:zero",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy",
+    "to": "thm:governing",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "en:lsc",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "en:pos",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "en:refine",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "en:zero",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "thm:governing",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "thm:vrp-energy",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "thm:vrp-entropy-univ",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "thm:vrp-hamiltonian",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "thm:vrp-time-smooth",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "wc:chain",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "wc:gap",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-form-char",
+    "to": "wc:refine",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-transfer",
+    "to": "def:transfer-coercivity",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-transfer",
+    "to": "def:transfer-compatibility",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-transfer",
+    "to": "en:gen",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-transfer",
+    "to": "en:lsc",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-transfer",
+    "to": "en:pos",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-transfer",
+    "to": "en:refine",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-transfer",
+    "to": "en:zero",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-energy-transfer",
+    "to": "thm:vrp-hamiltonian",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy",
+    "to": "es:ledger",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy",
+    "to": "es:pos",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy",
+    "to": "es:zero",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy",
+    "to": "thm:entropy-monotone",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy",
+    "to": "thm:ledger-entropy-duality",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-clock",
+    "to": "def:defect-ledger",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-clock",
+    "to": "es:ledger",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-clock",
+    "to": "prop:defect-nonneg",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-clock",
+    "to": "prop:ledger-additivity",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-clock",
+    "to": "thm:ledger-entropy-duality",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-clock",
+    "to": "thm:vrp-entropy",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-clock",
+    "to": "thm:vrp-ham-time-realization",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-transfer",
+    "to": "prop:ledger-additivity",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-transfer",
+    "to": "thm:ledger-entropy-duality",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-transfer",
+    "to": "thm:vrp-entropy-univ",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-univ",
+    "to": "es:anti",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-univ",
+    "to": "es:ledger",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-univ",
+    "to": "es:pos",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-univ",
+    "to": "es:zero",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-univ",
+    "to": "thm:entropy-monotone",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-entropy-univ",
+    "to": "thm:stabilization",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-frequency",
+    "to": "prop:vrp-transfer-reduction",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-frequency",
+    "to": "thm:vrp-mass",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-ham-domain",
+    "to": "lem:vrp-ham-lyapunov",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-ham-domain",
+    "to": "thm:vrp-energy",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-ham-domain",
+    "to": "thm:vrp-hamiltonian",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-ham-time-realization",
+    "to": "def:hb-compatible-step",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-ham-time-realization",
+    "to": "lem:vrp-ham-lyapunov",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-ham-time-realization",
+    "to": "thm:vrp-hamiltonian",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-ham-time-realization",
+    "to": "thm:vrp-time",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-hamiltonian",
+    "to": "def:branch-energy-form",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-hamiltonian",
+    "to": "en:gen",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-hamiltonian",
+    "to": "ob:vrp-ham-time",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-mass",
+    "to": "def:transfer-coercivity",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-mass",
+    "to": "thm:vrp-energy",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-mass",
+    "to": "thm:vrp-hamiltonian",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-mass-sector",
+    "to": "rmk:vrp-univ-method-scope",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-mass-sector",
+    "to": "thm:vrp-energy",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-mass-sector",
+    "to": "thm:vrp-entropy-univ",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-mass-sector",
+    "to": "thm:vrp-ham-time-realization",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-mass-sector",
+    "to": "thm:vrp-mass",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-mass-sector",
+    "to": "thm:vrp-time",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-phase-frequency-duality",
+    "to": "def:vrp-frequency-module",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-phase-frequency-duality",
+    "to": "thm:vrp-frequency",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-phase-frequency-duality",
+    "to": "thm:vrp-reversible-dichotomy",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-reversible-dichotomy",
+    "to": "thm:vrp-entropy-clock",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-reversible-dichotomy",
+    "to": "thm:vrp-mass",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-reversible-dichotomy",
+    "to": "thm:vrp-time-linear",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-temperature",
+    "to": "def:vrp-exchange-family",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-temperature",
+    "to": "thm:vrp-energy",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-temperature",
+    "to": "thm:vrp-energy-transfer",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-temperature",
+    "to": "thm:vrp-entropy-transfer",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-temperature",
+    "to": "thm:vrp-entropy-univ",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-temperature",
+    "to": "thm:vrp-time-linear",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-time",
+    "to": "def:survivor-component",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-time",
+    "to": "def:transfer-compatibility",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-time",
+    "to": "thm:stabilization",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-time-linear",
+    "to": "def:vrp-coherent-sector",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-time-linear",
+    "to": "thm:vrp-entropy-clock",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-time-smooth",
+    "to": "ob:vrp-time-reversible",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:vrp-time-smooth",
+    "to": "thm:vrp-time-linear",
+    "file": "NFC_Book_III.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:all-branches-through-U",
+    "to": "cor:descendants-factor",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:all-branches-through-U",
+    "to": "thm:source-uniqueness",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:beta-canonical",
+    "to": "thm:normalization",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:biU",
+    "to": "thm:universal-completion",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:descendants-factor",
+    "to": "cor:biU",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:no-competing-source",
+    "to": "thm:uc-e",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:no-competing-source",
+    "to": "thm:universal-completion",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:candidate-POT-object",
+    "to": "lem:pres-equiv-welldef",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:candidate-POT-object",
+    "to": "thm:CTM",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:inclusion-cocone",
+    "to": "def:pres-equiv",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:pres-equiv-welldef",
+    "to": "thm:CTM",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:K-star-exists",
+    "to": "thm:AMCT",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:AMCT",
+    "to": "thm:normalization",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:CTM",
+    "to": "def:POT-category",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:CTM",
+    "to": "thm:ORA",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:canonical-projection",
+    "to": "lem:pres-equiv-welldef",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:canonical-projection",
+    "to": "thm:ORA",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:completion-ladder",
+    "to": "thm:AMCT",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:completion-ladder",
+    "to": "thm:CTM",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:completion-ladder",
+    "to": "thm:ORA",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:completion-ladder",
+    "to": "thm:normalization",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "cor:descendants-factor",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "cor:layered-structure",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:source-uniqueness",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:universal-completion",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:shared-source-comparison",
+    "to": "prop:local-cap-vs-meta",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:source-uniqueness",
+    "to": "thm:uc-e",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:source-uniqueness",
+    "to": "thm:universal-completion",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:unified-emergence",
+    "to": "cor:all-branches-through-U",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:unified-emergence",
+    "to": "cor:descendants-factor",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:universal-completion",
+    "to": "lem:inclusion-cocone",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:universal-completion",
+    "to": "thm:uc-a",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:universal-completion",
+    "to": "thm:uc-b",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:universal-completion",
+    "to": "thm:uc-c",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:universal-completion",
+    "to": "thm:uc-d",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:universal-completion",
+    "to": "thm:uc-e",
+    "file": "NFC_Book_IV.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:mandatory-declarations",
+    "to": "thm:UBLT",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:open-branch-still-canonical",
+    "to": "thm:UBLT",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:no-hidden-resonances",
+    "to": "prop:tau-channel-ceiling",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:no-hidden-resonances",
+    "to": "thm:PASS-derived",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:hidden-channel-exclusion",
+    "to": "def:hidden-channel",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:hidden-channel-exclusion",
+    "to": "def:legitimacy-witness",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:legitimacy-witness-required",
+    "to": "def:legitimacy-witness",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:legitimacy-witness-required",
+    "to": "sr:source-descent-only",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:BR-source",
+    "to": "thm:continuum-bridge-schema",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:BR-source",
+    "to": "thm:universal-completion",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:UBLT",
+    "to": "cond:descent",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:UBLT",
+    "to": "cond:intake",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:UBLT",
+    "to": "cond:no-channel",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:UBLT",
+    "to": "cond:visibility",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:UBLT",
+    "to": "cond:witness",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:UBLT",
+    "to": "def:branch-candidate",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:UBLT",
+    "to": "prop:hidden-channel-exclusion",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:UBLT",
+    "to": "prop:legitimacy-witness-required",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:UBLT",
+    "to": "sr:endpoint-visibility",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:collapse",
+    "to": "sr:distinctness-by-endpoint",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:screened-sector-endpoint",
+    "to": "lem:no-hidden-resonances",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:screened-sector-endpoint",
+    "to": "prop:tau-channel-ceiling",
+    "file": "NFC_Book_V.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:conditional-no-unconditional",
+    "to": "thm:continuum-bridge-schema",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:conditional-no-unconditional",
+    "to": "thm:differential-legitimacy",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:conditional-no-unconditional",
+    "to": "thm:integral-legitimacy",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:heuristic-marking",
+    "to": "thm:no-smuggling",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:y-series-upgrade",
+    "to": "thm:coherent-increment-regularity",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:y-series-upgrade",
+    "to": "thm:derived-continuum-eligibility",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:y-series-upgrade",
+    "to": "thm:effective-rep-existence",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:y-series-upgrade",
+    "to": "thm:effective-rep-uniqueness",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:incoherence-blocks",
+    "to": "def:effective-smooth",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:increment-welldef",
+    "to": "lem:cert-fam-quotient-inv",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:differential-shorthand",
+    "to": "def:effective-smooth",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:integral-shorthand",
+    "to": "def:effective-smooth",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:integral-shorthand",
+    "to": "lem:accumulator-inv",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-4B-sobolev",
+    "to": "thm:ACA-chain",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:coherent-increment-regularity",
+    "to": "def:persistence-simple",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:coherent-increment-regularity",
+    "to": "lem:absorbed-mode-elimination",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:coherent-increment-regularity",
+    "to": "thm:derived-continuum-eligibility",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:coherent-increment-regularity",
+    "to": "thm:refinement-stability",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:continuum-bridge-schema",
+    "to": "def:continuum-bridge",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:continuum-bridge-schema",
+    "to": "sr:no-asymptotic-promotion",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:differential-legitimacy",
+    "to": "def:effective-smooth",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:differential-legitimacy",
+    "to": "thm:effective-rep-existence",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:effective-rep-existence",
+    "to": "def:asymptotic-coherence",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:effective-rep-existence",
+    "to": "def:effective-smooth",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:effective-rep-uniqueness",
+    "to": "def:effective-smooth",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:differential-legitimacy",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:integral-legitimacy",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:integral-legitimacy",
+    "to": "thm:differential-legitimacy",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:lorentzian-signature",
+    "to": "thm:O-ACT",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:lorentzian-signature",
+    "to": "thm:PASS-derived",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:no-smuggling",
+    "to": "thm:continuum-bridge-schema",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:no-smuggling",
+    "to": "thm:differential-legitimacy",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:no-smuggling",
+    "to": "thm:integral-legitimacy",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:refinement-coherence",
+    "to": "def:asymptotic-coherence",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:refinement-coherence",
+    "to": "lem:refinement-consistent-stable",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:refinement-stability",
+    "to": "def:persistence-simple",
+    "file": "NFC_Book_VI.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:failed-bridge-reopens",
+    "to": "prop:downstream-force",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:finite-no-continuum",
+    "to": "thm:promotion-requires-transfer",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:finite-no-continuum",
+    "to": "thm:scoped-cert-rule",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:undeclared-noncanonicalnical",
+    "to": "thm:dependency-declaration",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:cert-catalog",
+    "to": "thm:dependency-declaration",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:evolution-replayable",
+    "to": "def:delta-visibility",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:evolution-replayable",
+    "to": "def:replayability",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:no-hidden-upgrade",
+    "to": "nhu:eliminable",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:no-hidden-upgrade",
+    "to": "nhu:no-enlargement",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:no-hidden-upgrade",
+    "to": "nhu:no-ontology",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:no-hidden-upgrade",
+    "to": "nhu:no-scope",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:no-hidden-upgrade",
+    "to": "thm:closure-schema",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:no-hidden-upgrade",
+    "to": "thm:dependency-declaration",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:shared-endgame",
+    "to": "thm:closure-schema",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:status-correction",
+    "to": "prop:cite-declared-force",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:toolkit-boundary-no-inflation",
+    "to": "def:frontier-residual-isolation",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:toolkit-boundary-no-inflation",
+    "to": "def:open-obligation",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:toolkit-boundary-no-inflation",
+    "to": "prop:frontier-valuable",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:toolkit-boundary-no-inflation",
+    "to": "sr:no-inflation",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:variable-licensing-conservative",
+    "to": "def:admissible-import",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:variable-licensing-conservative",
+    "to": "def:prohibited-import",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:variable-licensing-conservative",
+    "to": "sr:declare-status",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:variable-licensing-conservative",
+    "to": "thm:continuum-bridge-schema",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:variable-licensing-conservative",
+    "to": "thm:dependency-declaration",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:variable-licensing-conservative",
+    "to": "vl:decl",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:variable-licensing-conservative",
+    "to": "vl:form",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:anti-smuggling-boundary",
+    "to": "def:scoped-certificate",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:anti-smuggling-boundary",
+    "to": "thm:continuum-bridge-schema",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:closure-schema",
+    "to": "prop:cite-declared-force",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:closure-schema",
+    "to": "thm:dependency-declaration",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "cor:no-unconditional-by-proximity",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "prop:cite-declared-force",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "sec:extensibility",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "sec:frontiers",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "sec:promotion",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "sec:status",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:closure-schema",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:dependency-declaration",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:external-falsifiability",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:frontier-stability",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:promotion-requires-transfer",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:scoped-cert-rule",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:governing",
+    "to": "thm:stable-extensibility",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:non-retroactive",
+    "to": "thm:stable-extensibility",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:promotion-requires-transfer",
+    "to": "thm:scoped-cert-rule",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scoped-cert-rule",
+    "to": "def:scoped-cert",
+    "file": "NFC_Book_VII.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:cryst-branch-candidate",
+    "to": "prop:cryst-lawful",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:cryst-distinct",
+    "to": "rem:cryst-ublt-analysis",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:cryst-lawful",
+    "to": "rem:cryst-ublt-analysis",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:cryst-lawful",
+    "to": "sec:cryst-closure",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:cryst-lawful",
+    "to": "sec:cryst-purpose",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-DOM-discharged",
+    "to": "thm:cryst-DOM-4carrier",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-DOM-discharged",
+    "to": "thm:cryst-TopNonLoad",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-END",
+    "to": "thm:cryst-GAP",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-END",
+    "to": "thm:cryst-LAT",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-END",
+    "to": "thm:cryst-NC",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-END",
+    "to": "thm:cryst-PR",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-END",
+    "to": "thm:cryst-SG",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-END-discharged",
+    "to": "thm:cryst-PR-discharged",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-END-discharged",
+    "to": "thm:cryst-SG-discharged",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-LAT",
+    "to": "sr:cryst-no-euclid",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-LAT-discharged",
+    "to": "def:cryst-translation-probe",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-NC",
+    "to": "sr:cryst-no-fourier",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-NC-discharged",
+    "to": "thm:cryst-BLC",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-SG-MSC",
+    "to": "thm:cryst-SG-FL",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-SG-discharged",
+    "to": "thm:cryst-SG-MSC",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-anomalous-PHASERECOV",
+    "to": "thm:cryst-enantiomorph-PHASEINVIS",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-anomalous-PHASERECOV",
+    "to": "thm:cryst-origin-PHASEINVIS",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-anomalous-PHASERECOV",
+    "to": "thm:cryst-phase-conditional",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-centro-PHASEINVIS",
+    "to": "thm:cryst-positivity-phase",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-enantiomorph-PHASEINVIS",
+    "to": "def:cryst-phase-predicate",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-enantiomorph-PHASEINVIS",
+    "to": "thm:cryst-centro-PHASEINVIS",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cryst-origin-PHASEINVIS",
+    "to": "thm:cryst-enantiomorph-PHASEINVIS",
+    "file": "NFC_CRYST_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:gr-near-close",
+    "to": "thm:gr-bf9-partial",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:EFE3-class-level",
+    "to": "thm:PASS",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:GR-CL3",
+    "to": "prop:GR-CP1",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:GR-CL3",
+    "to": "thm:refinement-coherence",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:GR-CP1",
+    "to": "prop:gr-lawful",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:GR-R1a",
+    "to": "thm:effective-rep-existence",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:GR-R1a",
+    "to": "thm:effective-rep-uniqueness",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:GR-R1a",
+    "to": "thm:gr-domain-bounded",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:gr-ck-corner-extension",
+    "to": "prop:GR-CP1",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:gr-ck-corner-extension",
+    "to": "rmk:ck-gr-stability-bridge",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:gr-ck-corner-extension",
+    "to": "thm:gr-efe-limit",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:gr-formation",
+    "to": "sec:arena",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:gr-formation",
+    "to": "sec:ledger",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:gr-label",
+    "to": "sec:transfer",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:gr-lawful",
+    "to": "sec:ledger",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:gr-lovelock",
+    "to": "cor:cgb-zero",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:gr-subcrit-sufficient",
+    "to": "thm:gr-bf9-partial",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:gr-topo-nonload",
+    "to": "prop:gr-lovelock",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:PASS-derived",
+    "to": "cor:phase-a-universal-K07",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:PASS-derived",
+    "to": "thm:K0-prime",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:PASS-derived",
+    "to": "thm:dSv-block-decomp",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-bf9-partial",
+    "to": "prop:EFE1-class-level",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-bf9-partial",
+    "to": "prop:EFE3-class-level",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-bf9-partial",
+    "to": "thm:gr-icdc",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-bf9-partial",
+    "to": "thm:nfc6",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-bf9-partial",
+    "to": "thm:nfc7",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-diff-invisible",
+    "to": "thm:nfc7",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-domain-bounded",
+    "to": "prop:EFE1-class-level",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-domain-bounded",
+    "to": "prop:EFE3-class-level",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-domain-bounded",
+    "to": "thm:nfc5",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-domain-bounded",
+    "to": "thm:nfc7",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-efe-limit",
+    "to": "hyp:KPO3",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-efe-limit",
+    "to": "prop:GR-CL3",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-efe-limit",
+    "to": "thm:nfc6",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-flat-gauge",
+    "to": "prop:EFE1-class-level",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-flat-gauge",
+    "to": "prop:EFE3-class-level",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gr-flat-gauge",
+    "to": "prop:gr-topo-nonload",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:nfc5",
+    "to": "hyp:KPO3",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:nfc5",
+    "to": "thm:O-ENC",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:nfc5",
+    "to": "thm:O-GLOB",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:nfc5",
+    "to": "thm:continuum-bridge-schema",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:nfc6",
+    "to": "thm:O-CLU",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:nfc6",
+    "to": "thm:O-ENC",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:nfc6",
+    "to": "thm:O-GLOB",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:nfc7",
+    "to": "thm:O-ENC",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:nfc7",
+    "to": "thm:PASS",
+    "file": "NFC_GR_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-CL-discharged",
+    "to": "sr:ling-no-hidden-probe",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-CM-discharged",
+    "to": "def:ling-contrast-margin",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-CR-discharged",
+    "to": "sr:ling-no-smuggling",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-GD-discharged",
+    "to": "sr:ling-no-hidden-symbol",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-REF-INVIS",
+    "to": "def:ling-ref-predicate",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-REF-RECOV",
+    "to": "def:ling-ref-predicate",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-REF-RECOV",
+    "to": "thm:ling-sem-ref-template",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-comp-ledger",
+    "to": "sr:ling-no-hidden-probe",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-endpoint",
+    "to": "thm:ling-comp-ledger",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-endpoint",
+    "to": "thm:ling-contrast-margin",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-endpoint",
+    "to": "thm:ling-contrast-realization",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-endpoint",
+    "to": "thm:ling-grammar-descent",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-endpoint",
+    "to": "thm:ling-no-hidden-channel",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-no-hidden-channel",
+    "to": "sr:ling-no-hidden-symbol",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-rec-bridge-template",
+    "to": "thm:ling-rec-noncollapse-criterion",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-rec-scc-carrier",
+    "to": "def:ling-rec-invariant",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-rec-scc-carrier",
+    "to": "thm:ling-rec-finite-localizability",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-rec-scc-carrier",
+    "to": "thm:ling-rec-finite-stages-visible",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-rec-scc-carrier",
+    "to": "thm:ling-rec-support-sufficiency",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-sem-MSC-context",
+    "to": "sr:ling-no-hidden-probe",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-sem-context-grounding",
+    "to": "sr:ling-no-semantic-primitive",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-sem-context-grounding",
+    "to": "thm:ling-sem-ctx-congruence",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-sem-context-grounding",
+    "to": "thm:ling-sem-ctx-existence",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-sem-context-grounding",
+    "to": "thm:ling-sem-ctx-extension",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-sem-context-grounding",
+    "to": "thm:ling-sem-source-descended",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-sem-ctx-congruence",
+    "to": "thm:ling-sem-ctx-extension",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ling-sem-source-descended",
+    "to": "sr:ling-no-semantic-primitive",
+    "file": "NFC_LING_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:NS-both-give-endpoint",
+    "to": "cor:NS61-discharged",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:NS-both-give-endpoint",
+    "to": "thm:NS71",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:NS-eventual-periodicity",
+    "to": "thm:NS-window-determinism",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:NS-eventual-periodicity",
+    "to": "thm:NS-window-uniformity",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:NS-stage3-conditional",
+    "to": "thm:NS-H-CODIM2",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:NS61-discharged",
+    "to": "thm:NS-SB2-discharged",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:NS61-discharged",
+    "to": "thm:NS61",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:NS61-discharged",
+    "to": "thm:NS61-global",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:window-uniform-coeffs",
+    "to": "prop:NS-quantitative-c1",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:window-uniform-coeffs",
+    "to": "prop:NS-quantitative-eta",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:window-uniform-coeffs",
+    "to": "thm:NS-window-uniformity",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:NS-E-discharged",
+    "to": "thm:NS-4B-sobolev",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:NS-inherits",
+    "to": "prop:NS-lawful",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:NS-quantitative-eta",
+    "to": "thm:PASS-derived",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:NS-status",
+    "to": "cor:NS-both-give-endpoint",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:NS-status",
+    "to": "cor:NS61-discharged",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:NS-status",
+    "to": "prop:NS-lawful",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:NS-status",
+    "to": "thm:NS-frontier",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:NS-status",
+    "to": "thm:NS-window-determinism",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:NS-status",
+    "to": "thm:NS71",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-H-LR",
+    "to": "thm:O-CLU-via-YM7",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-H-LR",
+    "to": "thm:PASS-derived",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-H-LR",
+    "to": "thm:screened-sector-endpoint",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-SB2-discharged",
+    "to": "thm:NS-H1-quotient-loss",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-SB2-discharged",
+    "to": "thm:NS-H2-collar-mixing",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-SB2-discharged",
+    "to": "thm:NS-H3-PASS-incoherent",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-SB2-discharged",
+    "to": "thm:NSSB2",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-SB2-discharged",
+    "to": "thm:SCT6b",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-frontier",
+    "to": "prop:NS-criterion-required",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-frontier",
+    "to": "prop:NS-lawful",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-frontier",
+    "to": "thm:NS61",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-leray",
+    "to": "def:NS-candidate",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-leray",
+    "to": "def:NS-observable-family",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-leray",
+    "to": "thm:NS-stage2a",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-leray",
+    "to": "thm:PASS",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-obstruction-exists",
+    "to": "def:NS-averaging-op",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-obstruction-exists",
+    "to": "def:NS-window",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-obstruction-exists",
+    "to": "prop:NS-witness",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-stage0",
+    "to": "cor:phase-a-universal-K07",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-stage1",
+    "to": "prop:NS-lawful",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-stage1",
+    "to": "thm:NS-stage0",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-stage2a",
+    "to": "def:NS-observable-family",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-stage2a",
+    "to": "prop:NS-lawful",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-stage2b",
+    "to": "thm:PASS",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61",
+    "to": "sec:ns61-global",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61",
+    "to": "thm:NS-SB2-discharged",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61",
+    "to": "thm:NS-kappa-explicit",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61",
+    "to": "thm:NS-window-uniformity",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61",
+    "to": "thm:NS61-global",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61-global",
+    "to": "prop:NS-quantitative-c1",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61-global",
+    "to": "prop:NS-quantitative-c2",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61-global",
+    "to": "prop:NS-quantitative-eta",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61-global",
+    "to": "thm:PASS-derived",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61-partial",
+    "to": "thm:NS-SB2-discharged",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61-partial",
+    "to": "thm:NS61",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS71",
+    "to": "cor:NS61-discharged",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS71",
+    "to": "def:continuum-interface-regime",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSDI2",
+    "to": "def:NSSF",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSG1plus",
+    "to": "thm:NSL1",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSL1",
+    "to": "thm:NS-kappa-explicit",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSL1",
+    "to": "thm:NSL1a",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSL1",
+    "to": "thm:NSL1b",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSL1a",
+    "to": "prop:NS-quantitative-c1",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSL1b",
+    "to": "prop:NS-quantitative-c2",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSL1b",
+    "to": "sec:ns-hlr",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSL1b",
+    "to": "thm:NS-H-CODIM2",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSL1b",
+    "to": "thm:NS-H-LR",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSP1",
+    "to": "def:NS-contraction-profile",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSP1b",
+    "to": "prop:NS-quantitative-c1",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSP1b",
+    "to": "prop:NS-quantitative-c2",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSP1b",
+    "to": "thm:NS-SB2-discharged",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSP1c",
+    "to": "thm:NSG1plus",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSP1c",
+    "to": "thm:NSP1b",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSRen5",
+    "to": "rmk:Ren5-proof-record",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSSB2",
+    "to": "sec:sct-doctrine",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSSB2",
+    "to": "thm:NSRen5",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-d1-6-1",
+    "to": "thm:rh-d1-6",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-d1-7-1",
+    "to": "lem:rh-d1-7",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-d1-8-1",
+    "to": "thm:rh-d1-8",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-f4-1",
+    "to": "thm:rh-d1-8",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-f4-1",
+    "to": "thm:rh-wc1bb",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "def:rh-tloc-template",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "prop:rh-tloc-L1",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "prop:rh-tloc-L2",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "prop:rh-tloc-L4-structural",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "prop:rh-tloc-L4-uniform",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "prop:rh-tloc-L5-structural",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "prop:rh-tloc-L5-uniform",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "prop:rh-tloc-L6-structural",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "prop:rh-tloc-L6-uniform",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "prop:rh-tloc-L7-structural",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "prop:rh-tloc-L7-uniform",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-second-hard-block-cleared",
+    "to": "thm:rh-wc1bb",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-sf-first-hard-block-cleared",
+    "to": "thm:rh-og-5",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-sf-first-hard-block-cleared",
+    "to": "thm:rh-sf-local-d2-checks",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-sf-logroute-ready",
+    "to": "lem:rh-d2-reduction",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-sf-logroute-ready",
+    "to": "prop:rh-sf-logderiv-d2-ready",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-sf-logroute-ready",
+    "to": "thm:rh-sf-local-d2-checks",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-wc1-s1",
+    "to": "thm:rh-wc1",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-wc1ba1",
+    "to": "prop:rh-wc1ba",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-wp5",
+    "to": "lem:rh-wp4",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:rh-wp5",
+    "to": "thm:rh-wc1",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-as3",
+    "to": "sr:precanonical-force",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-as4",
+    "to": "def:rh-arith-descent-datum",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-as6",
+    "to": "def:rh-zero-datum",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-as7",
+    "to": "def:rh-support-extractor",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-as7",
+    "to": "def:scc-admissible-probes",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-og-separation",
+    "to": "lem:rh-d1-7",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-sf-half-density-weight",
+    "to": "prop:rh-sf-period-law",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-sf-logdiff-amplitude",
+    "to": "def:rh-logdiff-channel",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-sf-logdiff-amplitude",
+    "to": "prop:rh-sf-determinant-origin",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-sf-primepower-logderiv",
+    "to": "prop:rh-sf-det-euler",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-sf-trace-uniformity",
+    "to": "def:rh-logderiv-trace-pairing",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-sf-trace-uniformity",
+    "to": "def:rh-trace-test-subfamily",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rh-wp3",
+    "to": "thm:scc-tsifirewall",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-observable-existence",
+    "to": "prop:rh-tloc-L1",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-observable-existence",
+    "to": "prop:rh-tloc-L2",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-observable-existence",
+    "to": "prop:rh-wc1am",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-template-clean",
+    "to": "def:rh-tloc-template",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-template-clean",
+    "to": "prop:rh-L3-observable-existence",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-template-clean",
+    "to": "prop:rh-L3-threshold",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-template-clean",
+    "to": "prop:rh-L3-uniformity",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-threshold",
+    "to": "prop:rh-tloc-L2",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-uniformity",
+    "to": "prop:rh-L3-observable-existence",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-uniformity",
+    "to": "prop:rh-tloc-L1",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-uniformity",
+    "to": "prop:rh-tloc-L2",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-L3-uniformity",
+    "to": "thm:rh-d1-8",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-critical-line-structural",
+    "to": "thm:scc-rh-equivalence",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-og-2",
+    "to": "prop:RH-architecture-elimination",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-og-candidate-filter",
+    "to": "def:RH-necessary-conditions",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-determinant-origin",
+    "to": "def:rh-det-channel-local",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-determinant-origin",
+    "to": "prop:rh-sf-operator-origin",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-logderiv-d2-ready",
+    "to": "lem:rh-d2-reduction",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-operator-origin",
+    "to": "def:rh-sf-aggregation-channel",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-operator-origin",
+    "to": "def:rh-sf-probe-subfamily",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-package-landing",
+    "to": "def:rh-primepower-package",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-package-landing",
+    "to": "prop:rh-sf-primepower-pairing",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-period-law",
+    "to": "def:rh-og-scaling-candidate",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-primepower-pairing",
+    "to": "def:rh-logderiv-trace-pairing",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-primepower-pairing",
+    "to": "lem:rh-sf-half-density-weight",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-primepower-pairing",
+    "to": "lem:rh-sf-logdiff-amplitude",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-primepower-pairing",
+    "to": "lem:rh-sf-trace-uniformity",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-primepower-pairing",
+    "to": "prop:rh-sf-period-law",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-trace-test-origin",
+    "to": "def:rh-trace-test-subfamily",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-trace-test-origin",
+    "to": "lem:rh-sf-logdiff-amplitude",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-trace-test-origin",
+    "to": "prop:rh-sf-determinant-origin",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-sf-trace-test-origin",
+    "to": "prop:rh-sf-operator-origin",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L1",
+    "to": "def:rh-tloc-template",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L1",
+    "to": "lem:rh-wc1al",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L1",
+    "to": "thm:rh-d1-8",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L2",
+    "to": "prop:rh-tloc-L1",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L2",
+    "to": "prop:rh-wc1am",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L4-structural",
+    "to": "lem:rh-wc1al",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L4-structural",
+    "to": "prop:rh-wc1am",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L4-uniform",
+    "to": "prop:rh-tloc-L1",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L4-uniform",
+    "to": "prop:rh-tloc-L2",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L4-uniform",
+    "to": "prop:rh-tloc-L4-structural",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L5-structural",
+    "to": "prop:rh-wc1ba",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L5-uniform",
+    "to": "def:rh-gram-matrix",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L5-uniform",
+    "to": "prop:rh-tloc-L4-uniform",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L5-uniform",
+    "to": "thm:rh-d1-8",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L6-structural",
+    "to": "prop:rh-tloc-L5-structural",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L6-uniform",
+    "to": "prop:rh-tloc-L5-uniform",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L7-structural",
+    "to": "prop:rh-tloc-L6-structural",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L7-uniform",
+    "to": "def:rh-phase-threshold",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L7-uniform",
+    "to": "prop:rh-L3-threshold",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L7-uniform",
+    "to": "prop:rh-L3-uniformity",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-tloc-L7-uniform",
+    "to": "prop:rh-tloc-L2",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-wc1bb-L12-partial",
+    "to": "def:rh-tloc-template",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-wc1bb-L12-partial",
+    "to": "prop:rh-tloc-L1",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-wc1bb-L12-partial",
+    "to": "prop:rh-tloc-L2",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-wc1bb-L12-partial",
+    "to": "thm:rh-wc1bb",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:RH1",
+    "to": "def:rh-canonical-object",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:RH2",
+    "to": "thm:rh-spine-reduction",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:RH3",
+    "to": "def:RH-necessary-conditions",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:RH3",
+    "to": "thm:scc-rh-equivalence",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-as5",
+    "to": "cor:rh-wp5",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-as5",
+    "to": "def:rh-pre-witness-packet",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-as5",
+    "to": "lem:rh-as4",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-d1-8",
+    "to": "lem:rh-d1-7",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-f3",
+    "to": "cor:rh-d1-6-1",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-f3",
+    "to": "prop:rh-wc1ba",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-f3",
+    "to": "thm:rh-d1-6",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-f3",
+    "to": "thm:rh-d1-8",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-f3",
+    "to": "thm:rh-wc1",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-f3",
+    "to": "thm:rh-wc1bb",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-og-1",
+    "to": "def:rh-orbit-grammar",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-og-1",
+    "to": "thm:rh-d1-8",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-og-5",
+    "to": "lem:rh-sf-half-density-weight",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-og-5",
+    "to": "prop:RH-architecture-elimination",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-og-5",
+    "to": "prop:rh-sf-det-euler",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-og-5",
+    "to": "prop:rh-sf-period-law",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-s1-conditional",
+    "to": "thm:scc-rh-equivalence",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-sf-local-d2-checks",
+    "to": "lem:rh-d2-reduction",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-sf-local-d2-checks",
+    "to": "lem:rh-sf-trace-uniformity",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-sf-local-d2-checks",
+    "to": "prop:rh-sf-determinant-origin",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-sf-local-d2-checks",
+    "to": "prop:rh-sf-operator-origin",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-sf-local-d2-checks",
+    "to": "prop:rh-sf-package-landing",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-sf-local-d2-checks",
+    "to": "prop:rh-sf-trace-test-origin",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-sf-local-d2-checks",
+    "to": "rem:rh-logdiff-attribution-discipline",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-sf-local-d2-checks",
+    "to": "rem:rh-logdiff-interface-lawfulness",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-wc1",
+    "to": "thm:rh-ac-a1",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-wc1",
+    "to": "thm:rh-ac-a3",
+    "file": "NFC_RH_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:scc-sv-l1",
+    "to": "sec:arena",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:scc-sv-l2",
+    "to": "prop:collar-alphabet-bound",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-d1-structure",
+    "to": "thm:O-ID-cont-partial",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-d1-structure",
+    "to": "thm:scc-mcs-full",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:scc-antismuggle",
+    "to": "sr:scc-no-smuggling",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:scc-formation",
+    "to": "sec:arena",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:scc-formation",
+    "to": "sec:ledger",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:scc-lawful",
+    "to": "sec:ledger",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-ac-a1",
+    "to": "lem:no-hidden-resonances",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-ac-a1",
+    "to": "thm:O-ID-cont-partial",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-ac-a1",
+    "to": "thm:screened-sector-endpoint",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-ac-a3",
+    "to": "thm:scc-mcs-full",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-ac-a3",
+    "to": "thm:scc-ssf",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-ac-a4",
+    "to": "thm:rh-ac-a3",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-ac-a4",
+    "to": "thm:scc-mcs-uniqueness",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:rh-ac-a4",
+    "to": "thm:scc-ssf",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-fl",
+    "to": "lem:scc-sv-l1",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-fl",
+    "to": "thm:scc-tl",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-lb",
+    "to": "thm:scc-fl",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-mcs",
+    "to": "thm:scc-mcs-existence",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-mcs",
+    "to": "thm:scc-mcs-uniqueness",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-mcs-existence",
+    "to": "thm:scc-lb",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-mcs-full",
+    "to": "thm:scc-mcs-exists",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-mcs-full",
+    "to": "thm:scc-mcs-uniqueness",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-mcs-uniqueness",
+    "to": "thm:scc-weakglue",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-r1",
+    "to": "thm:scc-mcs-full",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-r1",
+    "to": "thm:scc-tsi",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-r1",
+    "to": "thm:scc-uc",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-rh-equivalence",
+    "to": "prop:rh-kernel-positivity",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-ssf",
+    "to": "thm:scc-weakglue",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-sv",
+    "to": "lem:scc-sv-l1",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-sv",
+    "to": "lem:scc-sv-l4",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-tl",
+    "to": "thm:scc-sv",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-tsi",
+    "to": "thm:scc-fl",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-tsi",
+    "to": "thm:scc-mcs-uniqueness",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-tsi",
+    "to": "thm:scc-uc",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-tsifirewall",
+    "to": "prop:scc-label",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-uc",
+    "to": "thm:scc-mcs-full",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-uc",
+    "to": "thm:scc-weakglue",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-weakglue",
+    "to": "thm:scc-w1",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:scc-weakglue",
+    "to": "thm:scc-w4",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:sm-sector-structure",
+    "to": "thm:sm-collar-lie-chain",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:three-family-asymmetry",
+    "to": "thm:depth2-ecology",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-IDcont-force-upgrade",
+    "to": "def:SM-harmonization-functor",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-IDcont-force-upgrade",
+    "to": "prop:SM-sector-load-bearing",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-IDcont-force-upgrade",
+    "to": "rem:sm-extspec-frontier",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-IDcont-force-upgrade",
+    "to": "thm:O-ID-cont-rate",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-IDcont-force-upgrade",
+    "to": "thm:SM-higgs-source-descended",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-IDcont-force-upgrade",
+    "to": "thm:SM-matter-source-descended",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-coupling-seed",
+    "to": "prop:SM-interface-coupling",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-extspec-status",
+    "to": "prop:SM-intrinsic-closure",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-interface-compat",
+    "to": "hyp:KPO3",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-interface-compat",
+    "to": "thm:O-ENC",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-intrinsic-closure",
+    "to": "prop:rh-SM-higgs-candidate",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-intrinsic-closure",
+    "to": "prop:rh-SM-matter-candidate",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-intrinsic-closure",
+    "to": "thm:F-SM-POT-morphism",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-intrinsic-closure",
+    "to": "thm:SM-coupling-transfer-full",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-intrinsic-closure",
+    "to": "thm:SM-harmonization-partial",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-intrinsic-closure",
+    "to": "thm:SM-higgs-source-descended",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-intrinsic-closure",
+    "to": "thm:SM-matter-source-descended",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-matter-constraint",
+    "to": "thm:SM-gauge-chain",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-matter-constraint",
+    "to": "thm:SM-three-gen",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-sector-load-bearing",
+    "to": "rem:SM-sector-audit",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SM-status-reconciliation",
+    "to": "prop:SM-intrinsic-closure",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-SM-higgs-candidate",
+    "to": "thm:SM-three-gen",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-SM-matter-candidate",
+    "to": "thm:SM-gauge-chain",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-SM-matter-candidate",
+    "to": "thm:SM-three-gen",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:rh-SM-matter-candidate",
+    "to": "thm:depth2-ecology",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:F-SM-POT-morphism",
+    "to": "cor:beta-canonical",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:F-SM-POT-morphism",
+    "to": "thm:normalization",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-H0-Friedrichs",
+    "to": "thm:B1-closable",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-H0-Friedrichs",
+    "to": "thm:SM-higgs-source-descended",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-H0-ScreenInv-verified",
+    "to": "si:bound",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-H0-ScreenInv-verified",
+    "to": "si:field",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-decomposition",
+    "to": "cor:O-ID-cont-rate-closed",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-decomposition",
+    "to": "def:SM-harmonization-functor",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-decomposition",
+    "to": "prop:SM-IDcont-force-upgrade",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-decomposition",
+    "to": "thm:O-ID-cont-rate",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-decomposition",
+    "to": "thm:SM-coupling-transfer-full",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-decomposition",
+    "to": "thm:SM-higgs-source-descended",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-decomposition",
+    "to": "thm:SM-matter-source-descended",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-transfer",
+    "to": "def:SM-harmonization-functor",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-transfer",
+    "to": "prop:SM-IDcont-force-upgrade",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-transfer",
+    "to": "thm:O-ID-cont-rate",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-transfer",
+    "to": "thm:SM-coupling-transfer-full",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-transfer",
+    "to": "thm:SM-gauge-chain",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-transfer",
+    "to": "thm:SM-higgs-source-descended",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-IDcont-transfer",
+    "to": "thm:SM-matter-source-descended",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-KPO-consistency",
+    "to": "cor:beta-canonical",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-KPO-consistency",
+    "to": "hyp:KPO3",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-KPO-consistency",
+    "to": "thm:O-ENC",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-KPO-consistency",
+    "to": "thm:dSv-block-decomp",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-KPO-consistency",
+    "to": "thm:nfc6",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-coupling-transfer-full",
+    "to": "prop:SM-coupling-seed",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-coupling-transfer-full",
+    "to": "thm:O-ACT",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-discrete-YM",
+    "to": "thm:O-ACT",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-gauge-chain",
+    "to": "prop:SM-gauge-unique",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-gauge-chain",
+    "to": "thm:PASS-derived",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-harmonization-partial",
+    "to": "thm:SM-KPO-consistency",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-higgs-source-descended",
+    "to": "prop:rh-SM-higgs-candidate",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-higgs-source-descended",
+    "to": "thm:SM-three-gen",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-higgs-source-descended",
+    "to": "thm:screened-sector-endpoint",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-matter-source-descended",
+    "to": "prop:rh-SM-matter-candidate",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-matter-source-descended",
+    "to": "thm:SM-gauge-chain",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-matter-source-descended",
+    "to": "thm:SM-three-gen",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-matter-source-descended",
+    "to": "thm:depth2-ecology",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SM-three-gen",
+    "to": "thm:dSv-block-decomp",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gauge-template-unique",
+    "to": "prop:SM-gauge-unique",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:sm-collar-lie-chain",
+    "to": "thm:ls2-from-conditions",
+    "file": "NFC_SM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SPEC-status",
+    "to": "sec:spec-NL",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SPEC-status",
+    "to": "sec:spec-discharges",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SPEC-status",
+    "to": "thm:SPEC-Planck-calibration",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:SPEC-status",
+    "to": "thm:spec-END-discharged",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:spec-current-status",
+    "to": "def:spec-closure-ledger",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SPEC-Planck-calibration",
+    "to": "lem:SPEC-transition-calibration",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:SPEC-Planck-calibration",
+    "to": "thm:YM-ACT-MSC",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:continuum-response-density",
+    "to": "thm:continuum-frequency-surrogate",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-CI-discharged",
+    "to": "thm:continuum-bridge-schema",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-END-discharged",
+    "to": "thm:BR-source",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-END-discharged",
+    "to": "thm:ICDC",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-GC-discharged",
+    "to": "thm:governing",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-MAT-coupling",
+    "to": "mc:channel",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-MAT-coupling",
+    "to": "mc:ledger",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-MAT-coupling",
+    "to": "mc:source",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-MAT-coupling",
+    "to": "thm:spec-BLC",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-MAT-endpoint",
+    "to": "mc:channel",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-MAT-endpoint",
+    "to": "mc:ledger",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-MAT-endpoint",
+    "to": "mc:source",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-MAT-endpoint",
+    "to": "thm:spec-END-discharged",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-NL-discharged",
+    "to": "def:exhaustive-source-image",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-OP-discharged",
+    "to": "def:transport-compatible-bilinear",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-OP-discharged",
+    "to": "thm:governing",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-PR-discharged",
+    "to": "sr:spec-no-smuggling",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-TR-discharged",
+    "to": "lem:transport-equiv-null",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-TR-discharged",
+    "to": "prop:transition-ledger-additivity",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-TR-discharged",
+    "to": "sr:spec-no-hidden-probe",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spec-probe-realization",
+    "to": "def:spec-closure-ledger",
+    "file": "NFC_SPEC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:ClaySpec-HILB-NullID",
+    "to": "cor:B1-NullID",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:ClaySpec-HILB-NullID",
+    "to": "lem:ClaySpec-HILB-FlatGauge",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:ClaySpec-HILB-NullID",
+    "to": "lem:ClaySpec-HILB-GaussInvisible",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:YM-Clay-close",
+    "to": "thm:O-ACT",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:YM-Clay-close",
+    "to": "thm:YM-full-closure",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:YM-ClaySpec-conditional-close",
+    "to": "thm:B1-ClaySpec-match",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:YM-ClaySpec-conditional-close",
+    "to": "thm:YM-NC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:YM-MSC-uniqueness",
+    "to": "cor:YM-SSF",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:YM-phase-A-CERT-CLOSE",
+    "to": "thm:O-CLU-via-YM7",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:YM-phase-A-CERT-CLOSE",
+    "to": "thm:O-ENC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:YM-phase-A-CERT-CLOSE",
+    "to": "thm:O-GLOB",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:YM-phase-A-CERT-CLOSE",
+    "to": "thm:O-ID-cont-partial",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:YM-phase-A-CERT-CLOSE",
+    "to": "thm:O-RIG",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:YM-phase-A-CERT-CLOSE",
+    "to": "thm:Outcome-I-discharged",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:jacobi-holds",
+    "to": "lem:collar-assoc",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:A2-gap-restriction-ClaySpec",
+    "to": "lem:ClaySpec-G-A2",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:A2-gap-restriction-ClaySpec",
+    "to": "thm:B1-ClayBridge",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:A2-gap-restriction-ClaySpec",
+    "to": "thm:B1-FormID",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:A2-gap-restriction-ClaySpec",
+    "to": "thm:B2-DomainNoLoss",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-DOM-4Carrier",
+    "to": "thm:B2-D1",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-DOM-4Carrier",
+    "to": "thm:B2-D2",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-DOM-4Carrier",
+    "to": "thm:B2-D3",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-DOM-4Carrier",
+    "to": "thm:B2-D4",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-DOM-R4Quotient",
+    "to": "lem:ClaySpec-DOM-4Carrier",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-DOM-R4Quotient",
+    "to": "lem:ClaySpec-DOM-exhaustion",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-DOM-R4Quotient",
+    "to": "lem:ClaySpec-DOM-top-clean",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-DOM-R4Quotient",
+    "to": "thm:B2-DomainNoLoss",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-DOM-exhaustion",
+    "to": "thm:B2-Exh",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-DOM-top-clean",
+    "to": "thm:B2-TopNonLoad",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-FORM-core-equality",
+    "to": "thm:B1-FormID",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-FORM-zero-loss",
+    "to": "thm:B1-FormID",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-G-A2",
+    "to": "thm:B3-A2-Poincare",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-G-A2",
+    "to": "thm:B3-HR-select",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-G-A2",
+    "to": "thm:B3-L-bound",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-G-A2",
+    "to": "thm:B3-SU3-bridge",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-G-A2",
+    "to": "thm:B3-Z-removal",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-G-A2",
+    "to": "thm:B3-c-residue",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-G-A2",
+    "to": "thm:CS10-SCC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-GAP-QYM-transfer",
+    "to": "thm:B1-ClayBridge",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-GAP-global-floor",
+    "to": "cor:YM-GLOB-MSC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-HAM-QYM-ID",
+    "to": "thm:B1-ClayBridge",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-HAM-form-closed",
+    "to": "thm:B1-closable",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-HILB-FlatGauge",
+    "to": "lem:ClaySpec-DOM-top-clean",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-HILB-FlatGauge",
+    "to": "thm:B1-flat-gauge",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-HILB-GaussInvisible",
+    "to": "thm:B1-gauge-invisible",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-HILB-OSAlignment",
+    "to": "thm:B1-GaugeOS",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-OSW-assembly",
+    "to": "prop:ClaySpec-HILB",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-OSW-clustering",
+    "to": "prop:ClaySpec-DOM",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-OSW-clustering",
+    "to": "prop:ClaySpec-G",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-OSW-clustering",
+    "to": "prop:ClaySpec-HILB",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-OSW-clustering",
+    "to": "thm:YM-CLU-MSC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-OSW-vacuum",
+    "to": "prop:ClaySpec-HAM",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-OSW-vacuum",
+    "to": "prop:ClaySpec-HILB",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:ClaySpec-OSW-vacuum",
+    "to": "thm:YM-CLU-MSC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:E8-graph-reduction",
+    "to": "lem:absorbed-mode-elimination",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:E8-unit-coupling",
+    "to": "def:NF2-blocks",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:E8-unit-coupling",
+    "to": "thm:dSv-block-decomp",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:E8-unit-coupling",
+    "to": "thm:triality-quotient",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:S1a-pendant-T-commute",
+    "to": "def:T-partial",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:S1a-pendant-T-commute",
+    "to": "lem:L1c",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:S1a-pendant-T-commute",
+    "to": "thm:dSv-block-decomp",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:absorbed-mode-elimination",
+    "to": "cor:residual-instability-upgraded",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:absorbed-mode-elimination",
+    "to": "def:balanced-residual",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:absorbed-mode-elimination",
+    "to": "lem:persistence-simple-separation",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:absorbed-mode-elimination",
+    "to": "thm:9-5g-balanced-residual-sep",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:collar-assoc",
+    "to": "def:admissible-class",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:diagonal-normalization",
+    "to": "lem:equal-length-roots",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:equal-length-roots",
+    "to": "def:transport-compatible-bilinear",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:equal-length-roots",
+    "to": "lem:E8-graph-reduction",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:family-difference-reduction",
+    "to": "lem:absorbed-mode-elimination",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:family-difference-reduction",
+    "to": "lem:diagonal-normalization",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:family-difference-reduction",
+    "to": "lem:equal-length-roots",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:family-difference-reduction",
+    "to": "thm:dSv-block-decomp",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:hbar-formal-license",
+    "to": "thm:YM-ACT-MSC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:pendant-basis",
+    "to": "def:elem-collar-ops",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:pendant-basis",
+    "to": "thm:dSv-block-decomp",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rayleigh-transfer",
+    "to": "thm:O-ENC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "lem:rayleigh-transfer",
+    "to": "thm:O-GLOB",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-DOM",
+    "to": "lem:ClaySpec-DOM-4Carrier",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-DOM",
+    "to": "lem:ClaySpec-DOM-R4Quotient",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-FORM",
+    "to": "lem:ClaySpec-FORM-closure",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-FORM",
+    "to": "lem:ClaySpec-FORM-common-core",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-G",
+    "to": "lem:ClaySpec-G-A2",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-GAP",
+    "to": "lem:ClaySpec-GAP-QYM-transfer",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-GAP",
+    "to": "lem:ClaySpec-GAP-global-floor",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-HAM",
+    "to": "lem:ClaySpec-HAM-QYM-ID",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-HAM",
+    "to": "lem:ClaySpec-HAM-form-closed",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-HILB",
+    "to": "lem:ClaySpec-HILB-GaussInvisible",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-HILB",
+    "to": "lem:ClaySpec-HILB-OSAlignment",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-OSW",
+    "to": "lem:ClaySpec-OSW-assembly",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:ClaySpec-OSW",
+    "to": "lem:ClaySpec-OSW-clustering",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:Planck-action-license",
+    "to": "lem:hbar-formal-license",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:Planck-action-license",
+    "to": "thm:YM-ACT-MSC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:T0-non-identity",
+    "to": "def:g-obs",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:T0-non-identity",
+    "to": "def:g-struct",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:YM-book-VI-legit",
+    "to": "lem:rayleigh-transfer",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:YM-book-VI-legit",
+    "to": "thm:O-GLOB",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:YM-book-VI-legit",
+    "to": "thm:O-RIG",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:YM-lawful",
+    "to": "sec:closure-ledger",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:YM6e",
+    "to": "prop:YM6d",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:YM6i",
+    "to": "prop:YM6h",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:YM7a",
+    "to": "prop:YM6f",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:YM7b",
+    "to": "prop:YM6i",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:YM7c",
+    "to": "prop:YM7a",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:B1-ClaySpec-match",
+    "to": "prop:ClaySpec-DOM",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:B1-ClaySpec-match",
+    "to": "prop:ClaySpec-FORM",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:B1-ClaySpec-match",
+    "to": "prop:ClaySpec-G",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:B1-ClaySpec-match",
+    "to": "prop:ClaySpec-GAP",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:B1-ClaySpec-match",
+    "to": "prop:ClaySpec-HAM",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:B1-ClaySpec-match",
+    "to": "prop:ClaySpec-HILB",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:B1-ClaySpec-match",
+    "to": "prop:ClaySpec-OSW",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ACT",
+    "to": "cor:beta-canonical",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-CLU",
+    "to": "sr:toggle-complete",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-CLU-via-YM7",
+    "to": "prop:YM7b",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-CLU-via-YM7",
+    "to": "prop:YM7d",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-CLU-via-YM7",
+    "to": "thm:O-CLU",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ENC",
+    "to": "def:T-partial",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ENC",
+    "to": "hyp:KPO3",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ENC",
+    "to": "thm:K0-prime",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ENC",
+    "to": "thm:O-ID",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ENC",
+    "to": "thm:PASS",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-GLOB",
+    "to": "cor:ls2-universal-K07",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-GLOB",
+    "to": "def:structural-phases",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-GLOB",
+    "to": "sr:cg-alphabet",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-GLOB",
+    "to": "sr:cg-valence",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-GLOB",
+    "to": "thm:YM-covariant-gap",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-GLOB",
+    "to": "thm:covering-bound-K07",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-GLOB-global",
+    "to": "def:YM-gap-subcritical",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-GLOB-global",
+    "to": "thm:O-GLOB",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ID",
+    "to": "cor:ls2-universal-K07",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ID",
+    "to": "cor:phase-a-universal-K07",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ID",
+    "to": "prop:YM-gauge-unique",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ID",
+    "to": "thm:K0-prime",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ID-cont-partial",
+    "to": "lem:rayleigh-transfer",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ID-cont-partial",
+    "to": "thm:O-ENC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ID-cont-partial",
+    "to": "thm:chev-serre-spine",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-ID-cont-rate",
+    "to": "thm:NS-4B-sobolev",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:O-RIG",
+    "to": "thm:O-ID",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:Outcome-I-discharged",
+    "to": "lem:L1e",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:Outcome-I-discharged",
+    "to": "lem:S1a-pendant-T-commute",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:Outcome-I-discharged",
+    "to": "lem:T3-1d",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:Outcome-I-discharged",
+    "to": "thm:L2-generator-discharge",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:Outcome-I-discharged",
+    "to": "thm:S1b-closure",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:Outcome-I-discharged",
+    "to": "thm:T6-dichotomy",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:Outcome-I-discharged",
+    "to": "thm:cartan-realization",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:S1b-closure",
+    "to": "thm:dSv-block-decomp",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-CLU-MSC",
+    "to": "thm:O-CLU-via-YM7",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-CSC",
+    "to": "cor:YM-spectral-no-loss",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-ID-MSC",
+    "to": "prop:YM-gauge-unique",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-MSC",
+    "to": "cor:YM-MSC-uniqueness",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-MSC",
+    "to": "thm:YM-MSC-existence",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-NC",
+    "to": "thm:YM-ACT-MSC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-NC",
+    "to": "thm:YM-BLC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-SVC-Lip",
+    "to": "def:YM-spectral-ledger-seminorm",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-SVC-Lip",
+    "to": "def:YM-spectral-loss-ledger",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-SVC-Lip",
+    "to": "svclip:bound",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-SVC-Lip",
+    "to": "svclip:comp",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-cond-mass-gap",
+    "to": "cor:YM-phase-A-CERT-CLOSE",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-cond-mass-gap",
+    "to": "thm:O-ENC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-cond-mass-gap",
+    "to": "thm:O-GLOB",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-cond-mass-gap",
+    "to": "thm:O-RIG",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-cond-mass-gap",
+    "to": "thm:Outcome-I-discharged",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-full-closure",
+    "to": "thm:O-CLU-via-YM7",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:YM-full-closure",
+    "to": "thm:O-GLOB-global",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization",
+    "to": "cor:jacobi-holds",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization",
+    "to": "lem:E8-graph-reduction",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization",
+    "to": "lem:E8-non-edge-vanishing",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization",
+    "to": "lem:diagonal-normalization",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization",
+    "to": "lem:equal-length-roots",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization-full",
+    "to": "cor:jacobi-holds",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization-full",
+    "to": "lem:E8-graph-reduction",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization-full",
+    "to": "lem:E8-non-edge-vanishing",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization-full",
+    "to": "lem:diagonal-balance",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization-full",
+    "to": "lem:diagonal-normalization",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization-full",
+    "to": "lem:equal-length-roots",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization-full",
+    "to": "lem:family-difference-reduction",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:cartan-realization-full",
+    "to": "lem:site-quotient-collapse",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:chev-serre-spine",
+    "to": "cor:jacobi-holds",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:chev-serre-spine",
+    "to": "lem:E8-non-edge-vanishing",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:chev-serre-spine",
+    "to": "lem:collar-assoc",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:coercive-stability",
+    "to": "lem:ym-weak-curvature-continuity",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:coercive-stability",
+    "to": "thm:O-GLOB",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:collar-commutator-closure",
+    "to": "cor:jacobi-holds",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:density-transport-stable",
+    "to": "thm:coercive-stability",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:density-transport-stable",
+    "to": "thm:refinement-collapse-nullity",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:gauge-precursor-realization",
+    "to": "thm:screened-sector-endpoint",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:quotient-collapse",
+    "to": "def:dsv-coord",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:quotient-collapse",
+    "to": "thm:PASS-derived",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:quotient-collapse",
+    "to": "thm:ls2-from-conditions",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:quotient-collapse",
+    "to": "thm:unified-coercive",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:refinement-collapse-nullity",
+    "to": "thm:O-ENC",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spectral-mass-gap",
+    "to": "thm:coercive-stability",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spectral-mass-gap",
+    "to": "thm:density-transport-stable",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:spectral-mass-gap",
+    "to": "thm:refinement-collapse-nullity",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:three-family-non-A-type",
+    "to": "lem:E8-non-edge-vanishing",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:triality-quotient",
+    "to": "lem:absorbed-mode-elimination",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:triality-quotient",
+    "to": "thm:unified-coercive",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:variational-emergence",
+    "to": "thm:O-ACT",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:variational-emergence",
+    "to": "thm:gauge-transformation-emergence",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ym1-audit-sufficiency",
+    "to": "lem:S1a-pendant-T-commute",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:ym1-audit-sufficiency",
+    "to": "thm:chev-serre-spine",
+    "file": "NFC_YM_Branch.tex",
+    "kind": "proof-cite"
+  }
+]

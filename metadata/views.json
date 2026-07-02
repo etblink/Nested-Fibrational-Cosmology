@@ -1,0 +1,78 @@
+{
+  "formal_tag_view": {
+    "D": 461,
+    "U": 211,
+    "C": 739,
+    "B": 8,
+    "O": 5,
+    "R": 349,
+    "_other": {}
+  },
+  "branch_posture_view": {
+    "YM": "Conditional CERT-CLOSE (MSC-normalized NFC scope); B1/B2/B3 post-program",
+    "NS": "Domain-bounded conditional CERT-CLOSE; unconditional global regularity external",
+    "SCC": "Conditional CERT-CLOSE at declared structural endpoint (UCTI/depth-sum/threshold-stability + source-descent)",
+    "GR": "Domain-bounded conditional CERT-CLOSE + CK-corner extension; global curvature-subcriticality open",
+    "SM": "Conditionally intrinsic-structural closed, inherited-scope open",
+    "BIO": "Replication-heredity endpoint discharged; EVO/MULTI conditional; BND residual toolkit-boundary",
+    "LING": "Contrast+recursion+context-response closed; reference semantics conditional at two scopes",
+    "CRYST": "Conditional CERT-CLOSE (diffraction-periodicity-symmetry); phase problem frontier",
+    "SPEC": "CERT-CLOSE on gauge-response regime; matter-rich regime open (SM-gated)",
+    "RH": "CERT-PROJ; S1 arithmetic + RH4-6 frontier"
+  },
+  "obligation_roster_view": {
+    "total_ob_labels": 99,
+    "by_tag": {
+      "B": 2,
+      "C": 103,
+      "O": 5
+    }
+  },
+  "reduced_frontier_view": [
+    {
+      "item": "RH arithmetic orbit grammar",
+      "labels": [
+        "ob:rh-sf-logderiv-legality",
+        "ob:rh-sf-trace-pairing-law",
+        "ob:rh-sf-d2-audit"
+      ]
+    },
+    {
+      "item": "RH packet-local synthesis",
+      "labels": [
+        "ob:rh-tloc-L3",
+        "ob:rh-tloc-L4",
+        "ob:rh-tloc-L5",
+        "ob:rh-tloc-L6",
+        "ob:rh-tloc-L7"
+      ]
+    },
+    {
+      "item": "SM matter content",
+      "labels": [
+        "ob:SM-matter",
+        "ob:SM-IDcont-TV",
+        "ob:O-ID-cont"
+      ]
+    },
+    {
+      "item": "GR global curvature-subcriticality",
+      "labels": [
+        "def:curv-subcrit-global"
+      ]
+    }
+  ],
+  "release_snapshot_view": {
+    "generated": "2026-07-02T22:26:30.581575+00:00",
+    "census_commit": "fb3e1ae",
+    "total_claims": 1773,
+    "census": {
+      "D": 461,
+      "U": 211,
+      "C": 739,
+      "B": 8,
+      "O": 5,
+      "R": 349
+    }
+  }
+}

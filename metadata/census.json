@@ -1,0 +1,192 @@
+{
+  "environment_census": {
+    "D": 461,
+    "U": 211,
+    "C": 739,
+    "B": 8,
+    "O": 5,
+    "R": 349
+  },
+  "environment_census_other": {},
+  "total_status_tagged_environments": 1773,
+  "raw_grep_census": {
+    "D": 461,
+    "R": 349,
+    "U": 212,
+    "C": 748,
+    "O": 5,
+    "B": 9
+  },
+  "prose_mention_delta": {
+    "D": 0,
+    "R": 0,
+    "U": 1,
+    "C": 9,
+    "O": 0,
+    "B": 1
+  },
+  "reconciliation_note": "raw_grep_census is the review-endorsed F-3 figure (counts every \\status{X}). environment_census counts only status-tagged environment declarations (the claim records). The delta is prose status mentions (e.g. GR narrative 'is \\status{C}', NS inline sub-lemma tags) that are not standalone declarations. Both are authoritative for their own question.",
+  "census_commit": "fb3e1ae",
+  "generated": "2026-07-02T22:26:30.620945+00:00",
+  "frontier_accountings": {
+    "I_syntactic_O_census": {
+      "count": 5,
+      "labels": [
+        "ob:bio-BND-open",
+        "ob:cryst-PHASE",
+        "ob:cryst-PHASE-progress",
+        "ob:rh-s1-formal",
+        "ob:vrp-charge-quant"
+      ],
+      "measures": "environments literally tagged \\status{O}"
+    },
+    "II_named_obligation_roster": {
+      "count": 99,
+      "labels": [
+        "ob:B1-ClaySpec",
+        "ob:B3-A2-reserve",
+        "ob:O-CLU",
+        "ob:O-ENC",
+        "ob:O-GLOB",
+        "ob:O-ID",
+        "ob:O-ID-cont",
+        "ob:O-RIG",
+        "ob:O-YM-SLC",
+        "ob:O-YM-SVC",
+        "ob:O-YM-SVC-Lip",
+        "ob:O-YM-WeakGlue",
+        "ob:O-YM-WeakGlue-standalone",
+        "ob:Planck-SI-calibration",
+        "ob:RH4",
+        "ob:RH5",
+        "ob:RH6",
+        "ob:SM-H0-ScreenInv",
+        "ob:SM-IDcont-TV",
+        "ob:SM-coupling-transfer",
+        "ob:SM-coupling-transfer-full",
+        "ob:SM-harmonization",
+        "ob:SM-higgs",
+        "ob:SM-matter",
+        "ob:SPEC-Planck-calibration",
+        "ob:YM-B1",
+        "ob:YM-B2",
+        "ob:YM-B3",
+        "ob:YM-B3-A2",
+        "ob:bio-BND",
+        "ob:bio-BND-open",
+        "ob:bio-DEV-scc-dep",
+        "ob:bio-END",
+        "ob:bio-EVO",
+        "ob:bio-EVO-bridge-cond",
+        "ob:bio-EVO-pop-bridge",
+        "ob:bio-FID",
+        "ob:bio-HER",
+        "ob:bio-MET",
+        "ob:bio-MULTI",
+        "ob:bio-MULTI-coord-concrete",
+        "ob:bio-MULTI-coordination",
+        "ob:bio-NC",
+        "ob:bio-REP",
+        "ob:cryst-DOM",
+        "ob:cryst-END",
+        "ob:cryst-EWALD",
+        "ob:cryst-EWALD-reduced",
+        "ob:cryst-GAP",
+        "ob:cryst-LAT",
+        "ob:cryst-NC",
+        "ob:cryst-PHASE",
+        "ob:cryst-PHASE-progress",
+        "ob:cryst-PR",
+        "ob:cryst-SG",
+        "ob:cryst-anomalous-nomination",
+        "ob:cryst-diffraction-standard",
+        "ob:cryst-dom-noloss",
+        "ob:cryst-ewald-eps",
+        "ob:ling-CL",
+        "ob:ling-CM",
+        "ob:ling-CR",
+        "ob:ling-END",
+        "ob:ling-GD",
+        "ob:ling-NC",
+        "ob:ling-REC",
+        "ob:ling-REC-open",
+        "ob:ling-SEM",
+        "ob:ling-SEM-open",
+        "ob:ling-SEM-ref-open",
+        "ob:ling-rec-bridge-eps",
+        "ob:ling-rec-infty",
+        "ob:ling-rec-infty-bridge",
+        "ob:ling-ref-formal",
+        "ob:ling-ref-probe-nomination",
+        "ob:rh-d1-full",
+        "ob:rh-s1-formal",
+        "ob:rh-sf-d2-audit",
+        "ob:rh-sf-logderiv-legality",
+        "ob:rh-sf-trace-pairing-law",
+        "ob:rh-tloc-L3",
+        "ob:rh-tloc-L4",
+        "ob:rh-tloc-L5",
+        "ob:rh-tloc-L6",
+        "ob:rh-tloc-L7",
+        "ob:scc-mcs",
+        "ob:scc-tsi",
+        "ob:scc-uc",
+        "ob:scc-weakglue",
+        "ob:spec-CD",
+        "ob:spec-CI",
+        "ob:spec-END",
+        "ob:spec-GC",
+        "ob:spec-MAT",
+        "ob:spec-MAT-open",
+        "ob:spec-NL",
+        "ob:spec-OP",
+        "ob:spec-TR",
+        "ob:spec-frontier-min"
+      ],
+      "measures": "all ob:-labelled obligation environments regardless of tag"
+    },
+    "III_reduced_irreducible_frontier": {
+      "count": 4,
+      "items": [
+        {
+          "item": "RH arithmetic orbit grammar",
+          "labels": [
+            "ob:rh-sf-logderiv-legality",
+            "ob:rh-sf-trace-pairing-law",
+            "ob:rh-sf-d2-audit"
+          ]
+        },
+        {
+          "item": "RH packet-local synthesis",
+          "labels": [
+            "ob:rh-tloc-L3",
+            "ob:rh-tloc-L4",
+            "ob:rh-tloc-L5",
+            "ob:rh-tloc-L6",
+            "ob:rh-tloc-L7"
+          ]
+        },
+        {
+          "item": "SM matter content",
+          "labels": [
+            "ob:SM-matter",
+            "ob:SM-IDcont-TV",
+            "ob:O-ID-cont"
+          ]
+        },
+        {
+          "item": "GR global curvature-subcriticality",
+          "labels": [
+            "def:curv-subcrit-global"
+          ]
+        }
+      ],
+      "measures": "genuinely open deep mathematics after all reductions"
+    },
+    "IV_branch_posture": {
+      "source": "per-branch A1 status proposition",
+      "measures": "closure ladder position per branch (see views.branch_posture)"
+    },
+    "_warning": "These four accountings measure different things and MUST NOT be summed."
+  }
+}
