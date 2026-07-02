@@ -1272,14 +1272,24 @@ Book VII (Governance) & [U]/[D] Stable & --- \\
 \hline
 YM Branch & Cond.\ CERT-CLOSE & B1/B2/B3 post-program \\
 NS Branch & Cond.\ CERT-CLOSE & LR-weighted global \\
-SCC Branch & Cond.\ CERT-CLOSE & UCTI certification \\
+SCC Branch & Cond.\ CERT-CLOSE & UCTI/depth-sum conditions \\
 GR Branch & Cond.\ CERT-CLOSE & Global curv.-subcrit. \\
+CRYST Branch & Cond.\ CERT-CLOSE & Phase problem (toolkit-bdry) \\
+SPEC Branch & CERT-CLOSE (gauge-resp.) & Matter-rich regime (SM-gated) \\
+BIO Branch & Repl.-heredity endpoint & BND residual; EVO/MULTI \\
+LING Branch & Contrast+rec.+ctx closed & Truth-cond.\ semantics \\
 \hline
-SM Branch & CERT-PROJ & O-SM.Matter, CouplingTransfer \\
+SM Branch & Cond.\ intrinsic-struct.\ closed & SM matter/external-spec.\ frontier \\
 RH Branch & CERT-PROJ & RH4--6, S1 (arithmetic) \\
 \hline
 \end{tabular}
 \end{center}
+
+\emph{(Table reconciled --- migration \texttt{MIG-011}. SM: coupling-transfer
+RG refinement is conditionally discharged and non-blocking (review ruling
+F-6); the live SM deep frontier is matter content / external specification.
+Four branches (CRYST, SPEC, BIO, LING) constituted after this table's first
+authorship are now included (F-9).)}
 
 \textbf{Irreducible open frontier} (outside the canonical toolkit):
 \begin{itemize}
@@ -1287,9 +1297,8 @@ RH Branch & CERT-PROJ & RH4--6, S1 (arithmetic) \\
     descent from $\Xi$) --- pure number theory.
   \item \textbf{GR global curvature-subcriticality}: Nonlinear
     stability of the maximal EFE Cauchy development.
-  \item \textbf{SM O-SM.Matter}: Quarks, leptons, Higgs field content.
-  \item \textbf{SM O-SM.CouplingTransfer}: Coupling constant derivation
-    from archetype interface sharing (highest-value open obligation).
+  \item \textbf{SM O-SM.Matter}: Quarks, leptons, Higgs field content
+    (at full canonical force, gated on O\_ID\textsuperscript{cont}).
 \end{itemize}
 
 \textbf{Post-program} (explicitly out of NFC scope):
@@ -1317,7 +1326,10 @@ conflated:
     declarations inside canonical files with named labels, stating
     exactly what remains unproved at the current canonical stage.
     These are the governance document.  Every named obligation in the
-    canonical files (currently 13 items) has a label, a declared
+    canonical files (13 items at the time of this snapshot; see
+    \texttt{NFC\_OBLIGATION\_ROSTER.md} for the current reconciled
+    partition of all \texttt{ob:} labels and the live syntactic~[O]
+    census) has a label, a declared
     scope, and an auditable discharge criterion.
 
   \item \textbf{Reduced irreducible frontier} --- the smallest
