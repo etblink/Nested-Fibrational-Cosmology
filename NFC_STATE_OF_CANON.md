@@ -11,14 +11,16 @@
 | Total lines | ~36,900 |
 | Approximate pages | ~510 |
 | Compile status | **All 17 files clean (full-corpus audit L+19); 0 citation cycles (711 nodes); 0 dangling refs corpus-wide** |
-| [U]-tagged environments | 209 |
-| [C]-tagged environments | 685 |
-| [D]-tagged definitions | 443 |
+| [D]-tagged | **461** |
+| [U]-tagged | **212** |
+| [C]-tagged | **748** |
+| [B]-tagged | **9** |
+| [R]-tagged | **349** |
 | [O] open obligations | **5 (post L+56) — 4 toolkit-boundary + 1 sharpened continuum-bridge residual (O_Charge.Quant-cont.b2, numeric isolation of the frequency module in ℝ; charge + abstract-frequency halves now [C]-discharged)** |
 | [C] discharged obligations | **93 (census-verified)** |
 | Proof citation cycles | **0 (corpus-wide audit L+19, 711 statement-proof nodes; includes textual-citation check of SCT doctrine)** |
 
-*Counting note (L+12 refresh): status-tag figures are now produced by direct census over `\status{...}` occurrences rather than the per-environment estimates of earlier reports; the earlier "[C] theorems ~325" figure counted theorem environments only and is superseded.*
+*Counting note (regenerated; migration `MIG-003`): status-tag figures are the raw direct census over `\status{...}` occurrences corpus-wide, now produced mechanically by `scripts/extract_metadata.py` (see `metadata/census.json`, field `raw_grep_census`) rather than typed by hand. The previously-shown figures ([U]=209, [C]=685, [D]=443, no [B]/[R] row) were retained from the L+12/L+13 refresh and had gone stale as the corpus grew; they are superseded by the current census above (review ruling F-3: stale, not a narrower convention). The `[O]=5` headline was already current. Run `make metadata` to regenerate; the environment-declaration census (a second, slightly lower set of figures that excludes 11 inline prose status-mentions) is also in `metadata/census.json`.*
 
 ---
 

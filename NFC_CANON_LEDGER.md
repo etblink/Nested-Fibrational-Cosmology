@@ -729,23 +729,31 @@ SU(K₀) with K₀=7 default) as lawful branch of NFC.
 
 **Open Obligations — Canonical Book Status:**
 
-> ⚠️ **CANONICAL/PRE-CANONICAL SPLIT:** The five obligations below are
-> marked [O] in the *canonical YM branch book* as written. However, all
-> five were discharged in the pre-canonical v8.41 development cycle (see
-> Part 6 and the v8.41 intake log). The canonical book was written to
-> present these as open obligations to be proved; the proofs exist in
-> the pre-canonical record and need to be imported into the canonical
-> text in a future revision. This is not a logical error — it is a
-> documentation lag.
+> ✅ **CANONICAL STATUS (reconciled; migration `MIG-002`):** The five
+> obligations below are tagged **`[C]`** in the *canonical YM branch
+> book as currently written* — conditionally discharged at
+> MSC-normalized, persistence-selected NFC scope, confirmed by
+> `prop:YM-status` (verified L+37). They were first discharged in the
+> pre-canonical v8.41 development cycle and have since been carried
+> into the canonical text at conditional force. The residual to a full
+> Clay claim is the separate B1/B2/B3 post-program stack, not these
+> five.
+>
+> *Superseded description (retained for provenance):* an earlier version
+> of this block stated the five were "marked [O] in the canonical YM
+> branch book as written … a documentation lag." Direct inspection of
+> `NFC_YM_Branch.tex` shows all five carry `\status{C}`, not `[O]`
+> (Authority Model finding F-2). The "documentation lag" has closed;
+> the description is corrected here.
 
 - `ob:O-ID` — Discrete Gauge Algebra Identification: identify
-  collar-local Lie algebra with su(3)⊕su(2)⊕u(1) **[O in canon; discharged in v8.41]**
-- `ob:O-RIG` — Lipschitz Rigidity: L ≤ (K₀−1)π/K₀ = 6π/7 for K₀=7 **[O in canon; discharged in v8.41]**
+  collar-local Lie algebra with su(3)⊕su(2)⊕u(1) **[C at MSC-normalized NFC scope]**
+- `ob:O-RIG` — Lipschitz Rigidity: L ≤ (K₀−1)π/K₀ = 6π/7 for K₀=7 **[C at MSC-normalized NFC scope]**
 - `ob:O-ENC` — Encoding Compatibility: 5-predicate checklist for Weyl
-  encoding map Γ^(n) (FINITE, WELLTYPED, KCOMP, ND, C2) **[O in canon; discharged in v8.41]**
+  encoding map Γ^(n) (FINITE, WELLTYPED, KCOMP, ND, C2) **[C at MSC-normalized NFC scope]**
 - `ob:O-GLOB` — Global Coercivity: λ₁(Δ_A) ≥ m² without small-energy
-  restriction; Gribov boundary issue **[O in canon; discharged in v8.41]**
-- `ob:O-CLU` — Cluster Decomposition + Vacuum Uniqueness **[O in canon; discharged in v8.41]**
+  restriction; Gribov boundary issue **[C at MSC-normalized NFC scope]**
+- `ob:O-CLU` — Cluster Decomposition + Vacuum Uniqueness **[C at MSC-normalized NFC scope]**
 
 **Key Theorems:**
 - `def:YM-gap-subcritical` [D] *(NEW)* — Gap-subcriticality: E_n+B_n < g_∞; named closure condition for `thm:YM-covariant-gap`
@@ -863,14 +871,33 @@ depends on both a YM conditional and a GR conditional carries the
 to unconditional status requires Transfer Theorems for every inherited
 conditional, from both parent branches.
 
-**Current Status:** Prospective. No SM Branch book exists yet. The
-branch cannot be formally constituted until the YM and GR structures
-are canonically certified. Note: YM's five principal obligations (O-ID
-through O-CLU) were discharged in v8.41's pre-canonical record; GR's
-EFE obligations (EFE1–3) were similarly discharged pre-canonically.
-O-GR.extension (BF-9) remains open. The SM branch remains prospective
-pending canonical import of these discharge proofs. Material bearing on SM
-formation is collected in the Speculative Holding Document (BIN SM).
+**Current Status:** *Conditionally intrinsic-structural closed,
+inherited-scope open* — governed by `prop:SM-status-reconciliation`
+and `rem:sm-status-current` in `NFC_SM_Branch.tex`. The SM Super-Branch
+book **exists** (2,219 lines): the SM gauge algebra
+su(3)⊕su(2)⊕u(1), gauge-template uniqueness, YM–GR interface
+compatibility, the coupling seed, and three matter generations are
+conditionally established `[C]`; the four SM-internal obligations
+(Harmonization, Matter, Higgs, CouplingTransfer) are conditionally
+discharged at structural level. It inherits all open YM/GR obligations
+and makes no unconditional or empirical Standard-Model claim. The live
+SM deep frontier is **matter content / external specification**
+(`ob:SM-matter`, `ob:SM-IDcont-TV`, gated on O_ID^cont at full
+canonical force); coupling-transfer RG refinement is conditional and
+non-blocking (review ruling F-6). `prop:SM-status` (the earlier
+CERT-PROJ baseline) is **retained** in the branch as the reference
+point that `prop:SM-status-reconciliation` supersedes.
+
+> *Superseded description (as recorded before this entry was reconciled;
+> retained for provenance — migration `MIG-001`):* "Prospective. No SM
+> Branch book exists yet. The branch cannot be formally constituted
+> until the YM and GR structures are canonically certified… The SM
+> branch remains prospective pending canonical import of these
+> discharge proofs." This predated the authorship of
+> `NFC_SM_Branch.tex` and was never revised; it is contradicted by the
+> existing branch body (Authority Model finding F-1). Material bearing
+> on SM formation is collected in the Speculative Holding Document
+> (BIN SM).
 
 **Pre-canonical Three Generations result (Paper BM, Cond K₀=7):**
 R⁹ = B₁ ⊕ B₂ ⊕ B₃ — three dSv-blocks, pendant algebra gl(3,R) acts identically on each block.
