@@ -5,29 +5,29 @@
     "C": 739,
     "B": 8,
     "O": 5,
-    "R": 349
+    "R": 366
   },
   "environment_census_other": {},
-  "total_status_tagged_environments": 1773,
+  "total_status_tagged_environments": 1790,
   "raw_grep_census": {
+    "R": 366,
     "D": 461,
-    "R": 349,
     "U": 212,
     "C": 748,
     "O": 5,
     "B": 9
   },
   "prose_mention_delta": {
-    "D": 0,
     "R": 0,
+    "D": 0,
     "U": 1,
     "C": 9,
     "O": 0,
     "B": 1
   },
   "reconciliation_note": "raw_grep_census is the review-endorsed F-3 figure (counts every \\status{X}). environment_census counts only status-tagged environment declarations (the claim records). The delta is prose status mentions (e.g. GR narrative 'is \\status{C}', NS inline sub-lemma tags) that are not standalone declarations. Both are authoritative for their own question.",
-  "census_commit": "fb3e1ae",
-  "generated": "2026-07-02T22:26:30.620945+00:00",
+  "census_commit": "755d5c7",
+  "generated": "2026-07-02T22:36:08.059380+00:00",
   "frontier_accountings": {
     "I_syntactic_O_census": {
       "count": 5,

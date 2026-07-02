@@ -1,5 +1,28 @@
 [
   {
+    "claim_id": "cap:BIO-status",
+    "source_file": "NFC_BIO_Branch.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "BIO",
+    "dependencies": [
+      "rem:bio-two-status"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
     "claim_id": "cor:bio-BND-nondegenerate-necessity",
     "source_file": "NFC_BIO_Branch.tex",
     "source_section": "O-BIO.BND: Boundary Self-Organization — Discharge on Nondegenerate Regime",
@@ -2573,7 +2596,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@10267",
+    "claim_id": "NFC_Book_I:remark@10842",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Admissible Processes, Tests, and Observational Equivalence",
     "claim_type": "remark",
@@ -2596,7 +2619,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@10686",
+    "claim_id": "NFC_Book_I:remark@11261",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Admissible Processes, Tests, and Observational Equivalence",
     "claim_type": "remark",
@@ -2619,7 +2642,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@11117",
+    "claim_id": "NFC_Book_I:remark@11692",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Admissible Processes, Tests, and Observational Equivalence",
     "claim_type": "remark",
@@ -2642,7 +2665,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@16365",
+    "claim_id": "NFC_Book_I:remark@16940",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Admissible Processes, Tests, and Observational Equivalence",
     "claim_type": "remark",
@@ -2665,7 +2688,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@17875",
+    "claim_id": "NFC_Book_I:remark@18450",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Admissible Processes, Tests, and Observational Equivalence",
     "claim_type": "remark",
@@ -2688,7 +2711,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@20504",
+    "claim_id": "NFC_Book_I:remark@21079",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Admissible Processes, Tests, and Observational Equivalence",
     "claim_type": "remark",
@@ -2709,7 +2732,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@22066",
+    "claim_id": "NFC_Book_I:remark@22641",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Refinement and Stabilization",
     "claim_type": "remark",
@@ -2732,7 +2755,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@28698",
+    "claim_id": "NFC_Book_I:remark@29273",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Survivor Chains and Defect Bookkeeping",
     "claim_type": "remark",
@@ -2755,7 +2778,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@29513",
+    "claim_id": "NFC_Book_I:remark@30088",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Survivor Chains and Defect Bookkeeping",
     "claim_type": "remark",
@@ -2779,7 +2802,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@32174",
+    "claim_id": "NFC_Book_I:remark@32749",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Survivor Chains and Defect Bookkeeping",
     "claim_type": "remark",
@@ -2802,7 +2825,30 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@4408",
+    "claim_id": "NFC_Book_I:remark@46135",
+    "source_file": "NFC_Book_I.tex",
+    "source_section": "Dependency Ledger",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SPINE",
+    "dependencies": [
+      "cor:holographic-sparsity"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "NFC_Book_I:remark@4983",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Primitive Stance",
     "claim_type": "remark",
@@ -2826,30 +2872,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_I:remark@45560",
-    "source_file": "NFC_Book_I.tex",
-    "source_section": "Dependency Ledger",
-    "claim_type": "remark",
-    "environment": "remark",
-    "status_tag": "R",
-    "status_force": "remark (non-load-bearing)",
-    "branch": "SPINE",
-    "dependencies": [
-      "cor:holographic-sparsity"
-    ],
-    "discharge_basis": null,
-    "supersedes": null,
-    "superseded_by": null,
-    "historical": false,
-    "authority_level": "body_claim",
-    "frontier_accounting": [],
-    "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
-  },
-  {
-    "claim_id": "NFC_Book_I:remark@6871",
+    "claim_id": "NFC_Book_I:remark@7446",
     "source_file": "NFC_Book_I.tex",
     "source_section": "Primitive Stance",
     "claim_type": "remark",
@@ -2866,6 +2889,27 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:book1-status",
+    "source_file": "NFC_Book_I.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SPINE",
+    "dependencies": [],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -4097,7 +4141,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@146568",
+    "claim_id": "NFC_Book_II:remark@147146",
     "source_file": "NFC_Book_II.tex",
     "source_section": "Shared Coercive-Transport Doctrine (SCT Series)",
     "claim_type": "remark",
@@ -4118,7 +4162,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@22425",
+    "claim_id": "NFC_Book_II:remark@23003",
     "source_file": "NFC_Book_II.tex",
     "source_section": "LS-2 from Three Structural Conditions",
     "claim_type": "remark",
@@ -4143,7 +4187,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@23823",
+    "claim_id": "NFC_Book_II:remark@24401",
     "source_file": "NFC_Book_II.tex",
     "source_section": "LS-2 from Three Structural Conditions",
     "claim_type": "remark",
@@ -4166,7 +4210,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@29691",
+    "claim_id": "NFC_Book_II:remark@30269",
     "source_file": "NFC_Book_II.tex",
     "source_section": "Collar Alphabets and Boundary Capacity",
     "claim_type": "remark",
@@ -4189,7 +4233,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@37449",
+    "claim_id": "NFC_Book_II:remark@38027",
     "source_file": "NFC_Book_II.tex",
     "source_section": "Phase-A Packing Consequences",
     "claim_type": "remark",
@@ -4213,7 +4257,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@38457",
+    "claim_id": "NFC_Book_II:remark@39035",
     "source_file": "NFC_Book_II.tex",
     "source_section": "Phase-A Packing Consequences",
     "claim_type": "remark",
@@ -4234,7 +4278,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@40681",
+    "claim_id": "NFC_Book_II:remark@41259",
     "source_file": "NFC_Book_II.tex",
     "source_section": "Phase-A Packing Consequences",
     "claim_type": "remark",
@@ -4255,7 +4299,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@44500",
+    "claim_id": "NFC_Book_II:remark@45078",
     "source_file": "NFC_Book_II.tex",
     "source_section": "Phase-A Packing Consequences",
     "claim_type": "remark",
@@ -4279,7 +4323,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@51237",
+    "claim_id": "NFC_Book_II:remark@51815",
     "source_file": "NFC_Book_II.tex",
     "source_section": "Phase-A Packing Consequences",
     "claim_type": "remark",
@@ -4304,7 +4348,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@61388",
+    "claim_id": "NFC_Book_II:remark@61966",
     "source_file": "NFC_Book_II.tex",
     "source_section": "Global Spectral Phase Diagram",
     "claim_type": "remark",
@@ -4325,7 +4369,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@64124",
+    "claim_id": "NFC_Book_II:remark@64702",
     "source_file": "NFC_Book_II.tex",
     "source_section": "D9 Requirement Inequality as Dimensional Diagnostic",
     "claim_type": "remark",
@@ -4346,7 +4390,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@66053",
+    "claim_id": "NFC_Book_II:remark@66631",
     "source_file": "NFC_Book_II.tex",
     "source_section": "HC\\textsubscript{2} Alternative Derivation of LS-2",
     "claim_type": "remark",
@@ -4367,7 +4411,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:remark@68418",
+    "claim_id": "NFC_Book_II:remark@68996",
     "source_file": "NFC_Book_II.tex",
     "source_section": "$\\tau=4$ Saturation with Explicit Gadget Construction",
     "claim_type": "remark",
@@ -4391,7 +4435,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_II:scholium@151374",
+    "claim_id": "NFC_Book_II:scholium@151952",
     "source_file": "NFC_Book_II.tex",
     "source_section": "Dependency Ledger",
     "claim_type": "remark",
@@ -4413,6 +4457,27 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:book2-status",
+    "source_file": "NFC_Book_II.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SPINE",
+    "dependencies": [],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -7636,7 +7701,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_III:remark@190788",
+    "claim_id": "NFC_Book_III:remark@191464",
     "source_file": "NFC_Book_III.tex",
     "source_section": "$\\beta_1$ Cycle Rank as Canonical Complexity Parameter",
     "claim_type": "remark",
@@ -7657,7 +7722,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_III:remark@27307",
+    "claim_id": "NFC_Book_III:remark@27983",
     "source_file": "NFC_Book_III.tex",
     "source_section": "Finite Balance and the Unified Coercive-Transport Inequality",
     "claim_type": "remark",
@@ -7680,7 +7745,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_III:remark@33795",
+    "claim_id": "NFC_Book_III:remark@34471",
     "source_file": "NFC_Book_III.tex",
     "source_section": "Observational-Transfer Objects and POT Preparation",
     "claim_type": "remark",
@@ -7703,7 +7768,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_III:remark@44742",
+    "claim_id": "NFC_Book_III:remark@45418",
     "source_file": "NFC_Book_III.tex",
     "source_section": "Conserved Charges $\\ker(\\mathcal{A}_\\lambda^*)$",
     "claim_type": "remark",
@@ -7724,7 +7789,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_III:remark@51828",
+    "claim_id": "NFC_Book_III:remark@52504",
     "source_file": "NFC_Book_III.tex",
     "source_section": "Cheeger Audit Infrastructure (BUO)",
     "claim_type": "remark",
@@ -7740,6 +7805,27 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:book3-status",
+    "source_file": "NFC_Book_III.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SPINE",
+    "dependencies": [],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -10979,7 +11065,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_IV:remark@48874",
+    "claim_id": "NFC_Book_IV:remark@49442",
     "source_file": "NFC_Book_IV.tex",
     "source_section": "Governing Theorem of Book IV",
     "claim_type": "remark",
@@ -11000,7 +11086,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_IV:remark@49493",
+    "claim_id": "NFC_Book_IV:remark@50061",
     "source_file": "NFC_Book_IV.tex",
     "source_section": "Boundary of Book IV",
     "claim_type": "remark",
@@ -11017,6 +11103,27 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:book4-status",
+    "source_file": "NFC_Book_IV.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SPINE",
+    "dependencies": [],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -12258,7 +12365,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_V:remark@28036",
+    "claim_id": "NFC_Book_V:remark@28627",
     "source_file": "NFC_Book_V.tex",
     "source_section": "Screened Sector as Canonical Endpoint Datum",
     "claim_type": "remark",
@@ -12274,6 +12381,27 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:book5-status",
+    "source_file": "NFC_Book_V.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SPINE",
+    "dependencies": [],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -13271,7 +13399,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_VI:remark@29149",
+    "claim_id": "NFC_Book_VI:remark@29722",
     "source_file": "NFC_Book_VI.tex",
     "source_section": "Governing Theorem of Book VI",
     "claim_type": "remark",
@@ -13295,7 +13423,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_VI:remark@32440",
+    "claim_id": "NFC_Book_VI:remark@33013",
     "source_file": "NFC_Book_VI.tex",
     "source_section": "NS-4B: Discrete Sobolev Embedding Surrogate",
     "claim_type": "remark",
@@ -13320,7 +13448,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_VI:remark@37899",
+    "claim_id": "NFC_Book_VI:remark@38472",
     "source_file": "NFC_Book_VI.tex",
     "source_section": "E-CONT Bridge and Book VI Gate",
     "claim_type": "remark",
@@ -13343,7 +13471,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_VI:remark@40333",
+    "claim_id": "NFC_Book_VI:remark@40906",
     "source_file": "NFC_Book_VI.tex",
     "source_section": "Derived Continuum Eligibility: Y-Series",
     "claim_type": "remark",
@@ -13361,6 +13489,27 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:book6-status",
+    "source_file": "NFC_Book_VI.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SPINE",
+    "dependencies": [],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -14527,7 +14676,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_VII:remark@37098",
+    "claim_id": "NFC_Book_VII:remark@37801",
     "source_file": "NFC_Book_VII.tex",
     "source_section": "Import Discipline and the Canonical Closure Schema",
     "claim_type": "remark",
@@ -14548,7 +14697,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_VII:remark@37521",
+    "claim_id": "NFC_Book_VII:remark@38224",
     "source_file": "NFC_Book_VII.tex",
     "source_section": "Import Discipline and the Canonical Closure Schema",
     "claim_type": "remark",
@@ -14572,7 +14721,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_VII:remark@39341",
+    "claim_id": "NFC_Book_VII:remark@40044",
     "source_file": "NFC_Book_VII.tex",
     "source_section": "Import Discipline and the Canonical Closure Schema",
     "claim_type": "remark",
@@ -14593,7 +14742,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_Book_VII:remark@56261",
+    "claim_id": "NFC_Book_VII:remark@56964",
     "source_file": "NFC_Book_VII.tex",
     "source_section": "Branch Status Table",
     "claim_type": "remark",
@@ -14607,6 +14756,27 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:book7-status",
+    "source_file": "NFC_Book_VII.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SPINE",
+    "dependencies": [],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -16454,7 +16624,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_CRYST_Branch:scholium@88478",
+    "claim_id": "NFC_CRYST_Branch:scholium@89826",
     "source_file": "NFC_CRYST_Branch.tex",
     "source_section": "Phase Problem Obligation: Formal Statement",
     "claim_type": "remark",
@@ -16468,6 +16638,29 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:CRYST-status",
+    "source_file": "NFC_CRYST_Branch.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "CRYST",
+    "dependencies": [
+      "prop:cryst-status"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -18798,7 +18991,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_GR_Branch:remark@17492",
+    "claim_id": "NFC_GR_Branch:remark@18607",
     "source_file": "NFC_GR_Branch.tex",
     "source_section": "Lawful Descent",
     "claim_type": "remark",
@@ -18821,7 +19014,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_GR_Branch:remark@40345",
+    "claim_id": "NFC_GR_Branch:remark@41460",
     "source_file": "NFC_GR_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -18842,7 +19035,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_GR_Branch:remark@45393",
+    "claim_id": "NFC_GR_Branch:remark@46508",
     "source_file": "NFC_GR_Branch.tex",
     "source_section": "Two-Status Reading",
     "claim_type": "remark",
@@ -18863,7 +19056,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_GR_Branch:remark@53698",
+    "claim_id": "NFC_GR_Branch:remark@54813",
     "source_file": "NFC_GR_Branch.tex",
     "source_section": "O-GR.extension: BF-9 Global Extension",
     "claim_type": "remark",
@@ -18887,7 +19080,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_GR_Branch:remark@57749",
+    "claim_id": "NFC_GR_Branch:remark@58864",
     "source_file": "NFC_GR_Branch.tex",
     "source_section": "GR Global Nonlinear Stability Framework",
     "claim_type": "remark",
@@ -18912,7 +19105,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_GR_Branch:scholium@69488",
+    "claim_id": "NFC_GR_Branch:scholium@70603",
     "source_file": "NFC_GR_Branch.tex",
     "source_section": "Dependency Ledger",
     "claim_type": "remark",
@@ -18926,6 +19119,30 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:GR-status",
+    "source_file": "NFC_GR_Branch.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "GR",
+    "dependencies": [
+      "prop:gr-ck-corner-extension",
+      "prop:gr-status"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -20267,6 +20484,29 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:LING-status",
+    "source_file": "NFC_LING_Branch.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "LING",
+    "dependencies": [
+      "rem:ling-two-status"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -22570,7 +22810,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@103493",
+    "claim_id": "NFC_NS_Branch:remark@104446",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "H-LR: Lieb--Robinson Bound and NS Stage-3 Canonical Import",
     "claim_type": "remark",
@@ -22594,7 +22834,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@105790",
+    "claim_id": "NFC_NS_Branch:remark@106743",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22619,7 +22859,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@107318",
+    "claim_id": "NFC_NS_Branch:remark@108271",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22647,7 +22887,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@109687",
+    "claim_id": "NFC_NS_Branch:remark@110640",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Boundary of the NS Branch Book",
     "claim_type": "remark",
@@ -22671,7 +22911,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@113183",
+    "claim_id": "NFC_NS_Branch:remark@114136",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Dependency Ledger",
     "claim_type": "remark",
@@ -22695,7 +22935,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@27343",
+    "claim_id": "NFC_NS_Branch:remark@28296",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Source-Descended Obstruction Quantity",
     "claim_type": "remark",
@@ -22720,7 +22960,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@41088",
+    "claim_id": "NFC_NS_Branch:remark@42041",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Frontier Statement",
     "claim_type": "remark",
@@ -22741,7 +22981,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@41777",
+    "claim_id": "NFC_NS_Branch:remark@42730",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Frontier Statement",
     "claim_type": "remark",
@@ -22762,7 +23002,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@44813",
+    "claim_id": "NFC_NS_Branch:remark@45766",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Subtheorem decomposition",
     "claim_type": "remark",
@@ -22785,7 +23025,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@48506",
+    "claim_id": "NFC_NS_Branch:remark@49459",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -22806,7 +23046,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@50042",
+    "claim_id": "NFC_NS_Branch:remark@50995",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -22827,7 +23067,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@51965",
+    "claim_id": "NFC_NS_Branch:remark@52918",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -22848,7 +23088,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@68915",
+    "claim_id": "NFC_NS_Branch:remark@69868",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The gap theorem",
     "claim_type": "remark",
@@ -22869,7 +23109,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@87073",
+    "claim_id": "NFC_NS_Branch:remark@88026",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS.6.1 Partial Discharge via SB2",
     "claim_type": "remark",
@@ -22890,7 +23130,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@90784",
+    "claim_id": "NFC_NS_Branch:remark@91737",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS Window-Uniformity Verification",
     "claim_type": "remark",
@@ -22908,6 +23148,29 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:NS-status",
+    "source_file": "NFC_NS_Branch.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "NS",
+    "dependencies": [
+      "prop:NS-status"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -25085,7 +25348,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_RH_Branch:remark@11894",
+    "claim_id": "NFC_RH_Branch:remark@12904",
     "source_file": "NFC_RH_Branch.tex",
     "source_section": "RH AC Obstruction Ledger (Imported from SCC Branch)",
     "claim_type": "remark",
@@ -25108,28 +25371,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_RH_Branch:remark@1273",
-    "source_file": "NFC_RH_Branch.tex",
-    "source_section": "Branch Architecture and Governance",
-    "claim_type": "remark",
-    "environment": "remark",
-    "status_tag": "R",
-    "status_force": "remark (non-load-bearing)",
-    "branch": "RH",
-    "dependencies": [],
-    "discharge_basis": null,
-    "supersedes": null,
-    "superseded_by": null,
-    "historical": false,
-    "authority_level": "body_claim",
-    "frontier_accounting": [],
-    "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
-  },
-  {
-    "claim_id": "NFC_RH_Branch:remark@12921",
+    "claim_id": "NFC_RH_Branch:remark@13931",
     "source_file": "NFC_RH_Branch.tex",
     "source_section": "RH Necessary Conditions (Imported from SCC Branch)",
     "claim_type": "remark",
@@ -25153,7 +25395,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_RH_Branch:remark@2490",
+    "claim_id": "NFC_RH_Branch:remark@2283",
     "source_file": "NFC_RH_Branch.tex",
     "source_section": "Branch Architecture and Governance",
     "claim_type": "remark",
@@ -25174,7 +25416,28 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_RH_Branch:remark@5204",
+    "claim_id": "NFC_RH_Branch:remark@3500",
+    "source_file": "NFC_RH_Branch.tex",
+    "source_section": "Branch Architecture and Governance",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "RH",
+    "dependencies": [],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "NFC_RH_Branch:remark@6214",
     "source_file": "NFC_RH_Branch.tex",
     "source_section": "Six-Step RH Branch Theorem Ladder",
     "claim_type": "remark",
@@ -25188,6 +25451,29 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:RH-status",
+    "source_file": "NFC_RH_Branch.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "RH",
+    "dependencies": [
+      "prop:RH-status"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -28091,7 +28377,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@13722",
+    "claim_id": "NFC_SCC_Branch:remark@15024",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "Branch-Specific Arena",
     "claim_type": "remark",
@@ -28112,7 +28398,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@20093",
+    "claim_id": "NFC_SCC_Branch:remark@21395",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28138,7 +28424,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@26445",
+    "claim_id": "NFC_SCC_Branch:remark@27747",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28163,7 +28449,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@31075",
+    "claim_id": "NFC_SCC_Branch:remark@32377",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28184,7 +28470,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@52022",
+    "claim_id": "NFC_SCC_Branch:remark@53324",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "O-SCC.UC: Branchwise SCC Universal Completion",
     "claim_type": "remark",
@@ -28205,7 +28491,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@58362",
+    "claim_id": "NFC_SCC_Branch:remark@59664",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "O-SCC.TSI: Target/Structural Identification",
     "claim_type": "remark",
@@ -28226,7 +28512,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@77012",
+    "claim_id": "NFC_SCC_Branch:remark@78314",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "RH Operator Pre-Construction Screening: RH-N1 through RH-N5",
     "claim_type": "remark",
@@ -28247,7 +28533,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:scholium@92065",
+    "claim_id": "NFC_SCC_Branch:scholium@93367",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "Dependency Ledger",
     "claim_type": "remark",
@@ -28261,6 +28547,29 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:SCC-status",
+    "source_file": "NFC_SCC_Branch.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SCC",
+    "dependencies": [
+      "prop:scc-status"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -29920,7 +30229,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SM_Branch:remark@22684",
+    "claim_id": "NFC_SM_Branch:remark@23997",
     "source_file": "NFC_SM_Branch.tex",
     "source_section": "Discrete YM Structure (R3.1--R3.5)",
     "claim_type": "remark",
@@ -29944,28 +30253,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SM_Branch:remark@2289",
-    "source_file": "NFC_SM_Branch.tex",
-    "source_section": "Super-Branch Governance Preamble",
-    "claim_type": "remark",
-    "environment": "remark",
-    "status_tag": "R",
-    "status_force": "remark (non-load-bearing)",
-    "branch": "SM",
-    "dependencies": [],
-    "discharge_basis": null,
-    "supersedes": null,
-    "superseded_by": null,
-    "historical": false,
-    "authority_level": "body_claim",
-    "frontier_accounting": [],
-    "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
-  },
-  {
-    "claim_id": "NFC_SM_Branch:remark@24103",
+    "claim_id": "NFC_SM_Branch:remark@25416",
     "source_file": "NFC_SM_Branch.tex",
     "source_section": "NF/RBA Axiom Declarations",
     "claim_type": "remark",
@@ -29988,7 +30276,28 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SM_Branch:remark@37040",
+    "claim_id": "NFC_SM_Branch:remark@3602",
+    "source_file": "NFC_SM_Branch.tex",
+    "source_section": "Super-Branch Governance Preamble",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SM",
+    "dependencies": [],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "NFC_SM_Branch:remark@38353",
     "source_file": "NFC_SM_Branch.tex",
     "source_section": "Matter Content Framework",
     "claim_type": "remark",
@@ -30012,7 +30321,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SM_Branch:remark@42302",
+    "claim_id": "NFC_SM_Branch:remark@43615",
     "source_file": "NFC_SM_Branch.tex",
     "source_section": "Coupling Transfer: Archetype Interface to Coupling Constraint",
     "claim_type": "remark",
@@ -30035,7 +30344,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SM_Branch:remark@46095",
+    "claim_id": "NFC_SM_Branch:remark@47408",
     "source_file": "NFC_SM_Branch.tex",
     "source_section": "SM Gauge Template Uniqueness and Interface Interdependence",
     "claim_type": "remark",
@@ -30059,7 +30368,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SM_Branch:remark@68174",
+    "claim_id": "NFC_SM_Branch:remark@69487",
     "source_file": "NFC_SM_Branch.tex",
     "source_section": "Open Obligations of the SM Super-Branch",
     "claim_type": "remark",
@@ -30083,7 +30392,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SM_Branch:remark@7631",
+    "claim_id": "NFC_SM_Branch:remark@8944",
     "source_file": "NFC_SM_Branch.tex",
     "source_section": "Imported Spine and Sub-Branch Structure",
     "claim_type": "remark",
@@ -30097,6 +30406,30 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:SM-status",
+    "source_file": "NFC_SM_Branch.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SM",
+    "dependencies": [
+      "prop:SM-status",
+      "prop:SM-status-reconciliation"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -31511,6 +31844,30 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:SPEC-status",
+    "source_file": "NFC_SPEC_Branch.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "SPEC",
+    "dependencies": [
+      "prop:SPEC-status",
+      "prop:spec-current-status"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -33446,7 +33803,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@100460",
+    "claim_id": "NFC_YM_Branch:remark@101632",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Source-Side Gauge Algebra: $\\mathbb{K}_{\\mathrm{YM}}(R)$ and\nCanonical Lie Bracket",
     "claim_type": "remark",
@@ -33469,7 +33826,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@104381",
+    "claim_id": "NFC_YM_Branch:remark@105553",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Source-Side Gauge Algebra: $\\mathbb{K}_{\\mathrm{YM}}(R)$ and\nCanonical Lie Bracket",
     "claim_type": "remark",
@@ -33493,7 +33850,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@105552",
+    "claim_id": "NFC_YM_Branch:remark@106724",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Source-Side Gauge Algebra Object",
     "claim_type": "remark",
@@ -33517,7 +33874,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@112814",
+    "claim_id": "NFC_YM_Branch:remark@113986",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Three-Family Generator Structure and Triality Quotient",
     "claim_type": "remark",
@@ -33541,30 +33898,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@11814",
-    "source_file": "NFC_YM_Branch.tex",
-    "source_section": "Branch Governance Preamble",
-    "claim_type": "remark",
-    "environment": "remark",
-    "status_tag": "R",
-    "status_force": "remark (non-load-bearing)",
-    "branch": "YM",
-    "dependencies": [
-      "thm:readability"
-    ],
-    "discharge_basis": null,
-    "supersedes": null,
-    "superseded_by": null,
-    "historical": false,
-    "authority_level": "body_claim",
-    "frontier_accounting": [],
-    "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
-  },
-  {
-    "claim_id": "NFC_YM_Branch:remark@118707",
+    "claim_id": "NFC_YM_Branch:remark@119879",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Associativity, Commutator Closure, and Cartan Realization",
     "claim_type": "remark",
@@ -33589,7 +33923,30 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@153313",
+    "claim_id": "NFC_YM_Branch:remark@12986",
+    "source_file": "NFC_YM_Branch.tex",
+    "source_section": "Branch Governance Preamble",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "YM",
+    "dependencies": [
+      "thm:readability"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "NFC_YM_Branch:remark@154485",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "TM14 Partition Map and Block-Constant Lift Realization",
     "claim_type": "remark",
@@ -33612,7 +33969,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@214216",
+    "claim_id": "NFC_YM_Branch:remark@215388",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "NFC-YM-1 Three-Predicate Audit Path",
     "claim_type": "remark",
@@ -33635,7 +33992,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@22093",
+    "claim_id": "NFC_YM_Branch:remark@23265",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Lawful Descent and Gap-Subcritical Persistence",
     "claim_type": "remark",
@@ -33658,7 +34015,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@231578",
+    "claim_id": "NFC_YM_Branch:remark@232750",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Conditional Near-Closure Modes",
     "claim_type": "remark",
@@ -33682,7 +34039,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@234916",
+    "claim_id": "NFC_YM_Branch:remark@236088",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Three Clay Gaps: Post-Program Obligations B1/B2/B3",
     "claim_type": "remark",
@@ -33703,7 +34060,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@237026",
+    "claim_id": "NFC_YM_Branch:remark@238198",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -33727,7 +34084,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@24324",
+    "claim_id": "NFC_YM_Branch:remark@25496",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -33750,7 +34107,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@68901",
+    "claim_id": "NFC_YM_Branch:remark@70073",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Referee Attack Table",
     "claim_type": "remark",
@@ -33771,7 +34128,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@71809",
+    "claim_id": "NFC_YM_Branch:remark@72981",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Referee Attack Table",
     "claim_type": "remark",
@@ -33795,7 +34152,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@72977",
+    "claim_id": "NFC_YM_Branch:remark@74149",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Referee Attack Table",
     "claim_type": "remark",
@@ -33816,7 +34173,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@74676",
+    "claim_id": "NFC_YM_Branch:remark@75848",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Referee Attack Table",
     "claim_type": "remark",
@@ -33839,7 +34196,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@75512",
+    "claim_id": "NFC_YM_Branch:remark@76684",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Referee Attack Table",
     "claim_type": "remark",
@@ -33860,7 +34217,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@79898",
+    "claim_id": "NFC_YM_Branch:remark@81070",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Referee Attack Table",
     "claim_type": "remark",
@@ -33884,7 +34241,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@80912",
+    "claim_id": "NFC_YM_Branch:remark@82084",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Referee Attack Table",
     "claim_type": "remark",
@@ -33905,7 +34262,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@83727",
+    "claim_id": "NFC_YM_Branch:remark@84899",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Referee Attack Table",
     "claim_type": "remark",
@@ -33926,7 +34283,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@84922",
+    "claim_id": "NFC_YM_Branch:remark@86094",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Referee Attack Table",
     "claim_type": "remark",
@@ -33947,7 +34304,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@86769",
+    "claim_id": "NFC_YM_Branch:remark@87941",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Referee Attack Table",
     "claim_type": "remark",
@@ -33970,7 +34327,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@89203",
+    "claim_id": "NFC_YM_Branch:remark@90375",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Branch Transfer Machinery",
     "claim_type": "remark",
@@ -33993,7 +34350,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:remark@96556",
+    "claim_id": "NFC_YM_Branch:remark@97728",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "Target-Side Identification Hardening (YM.4a--4b)",
     "claim_type": "remark",
@@ -34014,7 +34371,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:scholium@289875",
+    "claim_id": "NFC_YM_Branch:scholium@291047",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "CS-10: Hidden Topological Sectors",
     "claim_type": "remark",
@@ -34028,6 +34385,29 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "cap:YM-status",
+    "source_file": "NFC_YM_Branch.tex",
+    "source_section": "(front matter)",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "YM",
+    "dependencies": [
+      "prop:YM-status"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A1_branch_status_proposition",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,

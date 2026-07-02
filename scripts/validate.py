@@ -26,8 +26,9 @@ BENIGN_DUP={
  "sec:frontier","sec:governance","sec:imports","sec:ledger","sec:rh-screening","sec:status",
  "sec:transfer","thm:governing",
 }
-# Pinned expected raw \status census (review-endorsed F-3 baseline). Update ONLY via migration.
-EXPECTED_CENSUS={"D":461,"U":212,"C":748,"B":9,"O":5,"R":349}
+# Pinned expected raw \status census. Update ONLY via migration.
+# MIG-007: R 349->366 (+17) for the 17 Current Status Capsules (Phase 7). No D/U/C/B/O change.
+EXPECTED_CENSUS={"D":461,"U":212,"C":748,"B":9,"O":5,"R":366}
 
 def brace_body(text,env,start):
     m=re.search(r'\\end\{'+re.escape(env)+r'\}',text[start:])

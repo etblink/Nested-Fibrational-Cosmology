@@ -5,7 +5,7 @@
     "C": 739,
     "B": 8,
     "O": 5,
-    "R": 349,
+    "R": 366,
     "_other": {}
   },
   "branch_posture_view": {
@@ -63,16 +63,16 @@
     }
   ],
   "release_snapshot_view": {
-    "generated": "2026-07-02T22:26:30.581575+00:00",
-    "census_commit": "fb3e1ae",
-    "total_claims": 1773,
+    "generated": "2026-07-02T22:36:08.016009+00:00",
+    "census_commit": "755d5c7",
+    "total_claims": 1790,
     "census": {
       "D": 461,
       "U": 211,
       "C": 739,
       "B": 8,
       "O": 5,
-      "R": 349
+      "R": 366
     }
   }
 }
