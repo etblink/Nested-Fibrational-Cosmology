@@ -122,8 +122,11 @@
  \item The SCC dependency spine: ORA $\Rightarrow$ CTM
  $\Rightarrow$ TIN $\Rightarrow$ MCS $\Rightarrow$
  WeakGlue $\Rightarrow$ UC $\Rightarrow$ TSI.
- \item Four open obligations: O-SCC.MCS (main frontier),
- O-SCC.WeakGlue (prerequisite to MCS), O-SCC.UC, O-SCC.TSI.
+ \item Four named obligations, each now conditionally discharged
+ (see the Closure Ledger, \S\ref{sec:ledger}, and
+ Thm.~\ref{thm:scc-frontier} for the residuals): O-SCC.MCS
+ (primary), O-SCC.WeakGlue (prerequisite to MCS), O-SCC.UC,
+ O-SCC.TSI.
 \end{enumerate}
 
 \paragraph{Endpoint target.}
@@ -139,7 +142,9 @@ experiential content is asserted.
  \item Licensed source-descended realization via
  $F_{\mathrm{SCC}}$ (ORA--UC rungs from Book~IV).
  \item SCC Minimal Structural Carrier Selection (O-SCC.MCS):
- the main open burden.
+ the principal named burden, conditionally discharged
+ (Thm.~\ref{thm:scc-mcs-full}); residual per
+ Thm.~\ref{thm:scc-frontier}(i).
  \item SCC Branch-Local Pairwise Amalgamation (O-SCC.WeakGlue):
  prerequisite to MCS discharge.
  \item Branchwise SCC completion $\mathcal{U}_{\mathrm{SCC}}$
@@ -504,15 +509,15 @@ O-SCC.WeakGlue & SCC Branch-Local Pairwise Amalgamation:
  O-SCC.MCS (prerequisite) \\
 O-SCC.MCS & SCC Minimal Structural Carrier Theorem:
  existence and uniqueness of the minimal faithful support
- family for $\mathcal{T}_X$ & [O] &
- O-SCC.UC; CERT-PROJ upgrade \\
+ family for $\mathcal{T}_X$ & [C] &
+ O-SCC.UC; residual to unconditional CERT-CLOSE \\
 O-SCC.UC & Branchwise SCC Universal Completion:
  local SCC realizations factor through a single
- $\mathcal{U}_{\mathrm{SCC}}$ & [O] &
+ $\mathcal{U}_{\mathrm{SCC}}$ & [C] &
  O-SCC.TSI \\
 O-SCC.TSI & SCC Target/Structural Identification:
  full endpoint admissibility beyond structural-label form;
- counterfactual capacity certified at full TSI scope & [O] &
+ counterfactual capacity certified at full TSI scope & [C] &
  CERT-CLOSE \\
 \hline
 \end{tabular}
@@ -524,14 +529,21 @@ O-SCC.TSI & SCC Target/Structural Identification:
 The dependency chain is:
 $\mathrm{WeakGlue} \Rightarrow \mathrm{MCS} \Rightarrow
 \mathrm{UC} \Rightarrow \mathrm{TSI} \Rightarrow \mathrm{CERT\text{-}CLOSE}$.
-O-SCC.MCS is the primary failure frontier. O-SCC.WeakGlue has been
-conditionally discharged (see
-Theorems~\ref{thm:scc-w1}--\ref{thm:scc-weakglue} below): its proof
-is conditional on the frozen Support Sufficiency Schema and the
-SCC object definitions, both of which are established in this book.
-O-SCC.MCS-Uniqueness follows (Theorem~\ref{thm:scc-mcs-uniqueness});
-O-SCC.MCS-Existence remains open and reduces to
-SCC-MinExist~(\ref{ob:scc-mcs}).
+Every link is now conditionally discharged in this book:
+O-SCC.WeakGlue (Theorems~\ref{thm:scc-w1}--\ref{thm:scc-weakglue},
+conditional on the frozen Support Sufficiency Schema and the SCC
+object definitions, both established here);
+O-SCC.MCS-Uniqueness (Theorem~\ref{thm:scc-mcs-uniqueness});
+O-SCC.MCS in full, including existence
+(Theorem~\ref{thm:scc-mcs-full}, conditional on the stated UCTI /
+depth-sum / threshold-stability conditions --- the existence residual
+SCC-MinExist~(\ref{ob:scc-mcs}) is carried inside those conditions);
+O-SCC.UC (Theorem~\ref{thm:scc-uc}); and structural O-SCC.TSI
+(Theorem~\ref{thm:scc-tsi}). The chain therefore reaches
+\emph{conditional} CERT-CLOSE (Prop.~\ref{prop:scc-status}); the
+residual to \emph{unconditional} closure is exactly the named
+conditions, per the Failure Frontier
+(Thm.~\ref{thm:scc-frontier}).
 \end{remark}
 
 %% --- WeakGlue proof package ---
@@ -1056,8 +1068,9 @@ open conditions for upgrading to~[U] are:
  declared arena axioms.
 \end{enumerate}
 These three are the \emph{only} remaining open burdens for
-O-SCC.MCS. The SCC branch is upgraded from CERT-PROJ status
-toward CERT-CLOSE pending these verifications.
+O-SCC.MCS. With the conditional discharges of this book, the SCC
+branch has reached conditional CERT-CLOSE; the listed verifications
+remain necessary for \emph{unconditional} closure.
 
 The closure chain is now:
 $\mathrm{SCC\text{-}SV} \Rightarrow \mathrm{SCC\text{-}TL}
@@ -1992,31 +2005,43 @@ verifying $Q[\psi] \geq 0$ for all members.
 
 \begin{theorem}[\status{U}]\label{thm:scc-frontier}
 \textup{(SCC Failure Frontier.)} The SCC branch has a precisely
-named failure frontier:
+named failure frontier. Each item below is conditionally discharged
+in this book; the frontier's unconditional content is the
+\emph{residual}: what remains between each conditional discharge and
+unconditional force.
 \begin{enumerate}[label=\textup{(\roman*)}]
  \item \textbf{Primary frontier (O-SCC.MCS):} the Minimal
- Structural Carrier Theorem. It is conditionally discharged
+ Structural Carrier Theorem. Conditionally discharged
  (Thm.~\ref{thm:scc-mcs-full}) at the declared structural scope;
- until it is proved \emph{unconditionally} (canonically, without the
- stated conditions), the SCC branch cannot advance beyond conditional
- CERT-CLOSE to unconditional closure. Silent carrier inflation remains
- a structural risk.
+ the residual is UCTI / depth-sum / threshold-stability
+ certification \emph{without} the stated conditions. Until that
+ residual is closed, the SCC branch cannot advance beyond
+ conditional CERT-CLOSE to unconditional closure. Silent carrier
+ inflation remains a structural risk.
  \item \textbf{Prerequisite frontier (O-SCC.WeakGlue):}
- the SCC branch-local pairwise amalgamation lemma. Must
- be discharged before MCS can be addressed.
+ the SCC branch-local pairwise amalgamation lemma. Conditionally
+ discharged (Thm.~\ref{thm:scc-weakglue}); the residual is removal
+ of its named conditions.
  \item \textbf{Completion frontier (O-SCC.UC):} branchwise
- SCC universal completion. Blocked by MCS.
- \item \textbf{Identification frontier (O-SCC.TSI):} full
- endpoint TSI certification. Blocked by UC.
+ SCC universal completion. Conditionally discharged
+ (Thm.~\ref{thm:scc-uc}); the residual is unconditional
+ source-descent/universal-completion force.
+ \item \textbf{Identification frontier (O-SCC.TSI):} endpoint TSI
+ certification. Conditionally discharged at structural-label scope
+ (Thm.~\ref{thm:scc-tsi}); the residual is unconditional endpoint
+ identification beyond structural-label form.
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
 The Frontier Stability Theorem (Book~VII, Thm.~VII.4.3) requires
-a positive named failure frontier. The four items above are the
-SCC branch's frontier: each is a precise mathematical statement,
-currently unresolved in canonical papers, blocking a specific
-step in the closure chain.
+a positive named failure frontier. The four labels above are the
+SCC branch's frontier and remain the stable governance ledger for
+the residual-to-unconditional program: each names a precise
+mathematical statement, records its conditional discharge in this
+book, and identifies exactly what separates that discharge from
+unconditional force. The frontier is not dissolved by the
+conditional discharges; it is sharpened to the stated residuals.
 \qed
 \end{proof}
 
@@ -2202,7 +2227,7 @@ by UC, and being uniquely canonically defined by TSI). \qed
 
 \ref{thm:scc-frontier}\ Failure Frontier
  & [U] & All obligations named
- & External scrutiny; CERT-PROJ posture \\
+ & External scrutiny; residual-to-unconditional-closure audit \\
 
 \ref{thm:scc-icdc}\ SCC-ICDC
  & [C] & O-SCC.MCS + WeakGlue; Bk.~III Sch.~III.8.1

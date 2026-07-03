@@ -63,8 +63,8 @@
     }
   ],
   "release_snapshot_view": {
-    "generated": "2026-07-02T22:41:16.650029+00:00",
-    "census_commit": "c240040",
+    "generated": "2026-07-03T02:23:52.517129+00:00",
+    "census_commit": "8b99ea8",
     "total_claims": 1790,
     "census": {
       "D": 461,

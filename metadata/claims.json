@@ -22810,7 +22810,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@104446",
+    "claim_id": "NFC_NS_Branch:remark@105194",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "H-LR: Lieb--Robinson Bound and NS Stage-3 Canonical Import",
     "claim_type": "remark",
@@ -22834,7 +22834,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@106743",
+    "claim_id": "NFC_NS_Branch:remark@107920",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22859,7 +22859,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@108271",
+    "claim_id": "NFC_NS_Branch:remark@109448",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22887,7 +22887,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@110640",
+    "claim_id": "NFC_NS_Branch:remark@111817",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Boundary of the NS Branch Book",
     "claim_type": "remark",
@@ -22898,34 +22898,6 @@
     "dependencies": [
       "sec:NS-conditional-package",
       "sec:NS-near-closure-modes"
-    ],
-    "discharge_basis": null,
-    "supersedes": null,
-    "superseded_by": null,
-    "historical": false,
-    "authority_level": "body_claim",
-    "frontier_accounting": [],
-    "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
-  },
-  {
-    "claim_id": "NFC_NS_Branch:remark@114136",
-    "source_file": "NFC_NS_Branch.tex",
-    "source_section": "Dependency Ledger",
-    "claim_type": "remark",
-    "environment": "remark",
-    "status_tag": "R",
-    "status_force": "remark (non-load-bearing)",
-    "branch": "NS",
-    "dependencies": [
-      "cor:NS-both-give-endpoint",
-      "cor:NS61-discharged",
-      "def:NS-strong-ba",
-      "prop:NS-status",
-      "thm:NS61",
-      "thm:NS71"
     ],
     "discharge_basis": null,
     "supersedes": null,
@@ -23113,7 +23085,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@88026",
+    "claim_id": "NFC_NS_Branch:remark@88532",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS.6.1 Partial Discharge via SB2",
     "claim_type": "remark",
@@ -23134,7 +23106,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@91737",
+    "claim_id": "NFC_NS_Branch:remark@92243",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS Window-Uniformity Verification",
     "claim_type": "remark",
@@ -23214,7 +23186,12 @@
     "status_tag": "U",
     "status_force": "unconditional",
     "branch": "NS",
-    "dependencies": [],
+    "dependencies": [
+      "cor:NS-both-give-endpoint",
+      "cor:NS61-discharged",
+      "prop:NS-status",
+      "thm:NS71"
+    ],
     "discharge_basis": null,
     "supersedes": null,
     "superseded_by": null,
@@ -24184,6 +24161,10 @@
     "status_force": "remark (non-load-bearing)",
     "branch": "NS",
     "dependencies": [
+      "cor:NS-both-give-endpoint",
+      "cor:NS61-discharged",
+      "prop:NS-status",
+      "thm:NS71",
       "thm:PASS-derived"
     ],
     "discharge_basis": null,
@@ -24191,6 +24172,35 @@
     "superseded_by": null,
     "historical": false,
     "authority_level": "A1_branch_status_proposition",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "rem:NS-precanonical-completeness",
+    "source_file": "NFC_NS_Branch.tex",
+    "source_section": "Dependency Ledger",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "NS",
+    "dependencies": [
+      "cor:NS-both-give-endpoint",
+      "cor:NS61-discharged",
+      "def:NS-strong-ba",
+      "prop:NS-status",
+      "sch:NS-final",
+      "thm:NS61",
+      "thm:NS71"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "body_claim",
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": null,
@@ -24229,7 +24239,11 @@
     "status_tag": "R",
     "status_force": "remark (non-load-bearing)",
     "branch": "NS",
-    "dependencies": [],
+    "dependencies": [
+      "cor:NS-both-give-endpoint",
+      "prop:NS-status",
+      "thm:NS71"
+    ],
     "discharge_basis": null,
     "supersedes": null,
     "superseded_by": null,
@@ -24565,7 +24579,9 @@
     "status_tag": "R",
     "status_force": "remark (non-load-bearing)",
     "branch": "NS",
-    "dependencies": [],
+    "dependencies": [
+      "prop:NS-status"
+    ],
     "discharge_basis": null,
     "supersedes": null,
     "superseded_by": null,
@@ -28381,7 +28397,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@15727",
+    "claim_id": "NFC_SCC_Branch:remark@15965",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "Branch-Specific Arena",
     "claim_type": "remark",
@@ -28402,7 +28418,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@22177",
+    "claim_id": "NFC_SCC_Branch:remark@22434",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28412,7 +28428,12 @@
     "branch": "SCC",
     "dependencies": [
       "ob:scc-mcs",
+      "prop:scc-status",
+      "thm:scc-frontier",
+      "thm:scc-mcs-full",
       "thm:scc-mcs-uniqueness",
+      "thm:scc-tsi",
+      "thm:scc-uc",
       "thm:scc-w1",
       "thm:scc-weakglue"
     ],
@@ -28428,7 +28449,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@28529",
+    "claim_id": "NFC_SCC_Branch:remark@29191",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28453,7 +28474,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@33159",
+    "claim_id": "NFC_SCC_Branch:remark@33821",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28474,7 +28495,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@54106",
+    "claim_id": "NFC_SCC_Branch:remark@54845",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "O-SCC.UC: Branchwise SCC Universal Completion",
     "claim_type": "remark",
@@ -28495,7 +28516,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@60446",
+    "claim_id": "NFC_SCC_Branch:remark@61185",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "O-SCC.TSI: Target/Structural Identification",
     "claim_type": "remark",
@@ -28516,7 +28537,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@79096",
+    "claim_id": "NFC_SCC_Branch:remark@79835",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "RH Operator Pre-Construction Screening: RH-N1 through RH-N5",
     "claim_type": "remark",
@@ -28537,7 +28558,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:scholium@95580",
+    "claim_id": "NFC_SCC_Branch:scholium@97114",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "Dependency Ledger",
     "claim_type": "remark",
@@ -29764,7 +29785,10 @@
     "status_force": "unconditional",
     "branch": "SCC",
     "dependencies": [
-      "thm:scc-mcs-full"
+      "thm:scc-mcs-full",
+      "thm:scc-tsi",
+      "thm:scc-uc",
+      "thm:scc-weakglue"
     ],
     "discharge_basis": null,
     "supersedes": null,
@@ -34383,7 +34407,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_YM_Branch:scholium@291047",
+    "claim_id": "NFC_YM_Branch:scholium@291037",
     "source_file": "NFC_YM_Branch.tex",
     "source_section": "CS-10: Hidden Topological Sectors",
     "claim_type": "remark",

@@ -74,6 +74,31 @@ def main():
         diff={k:(cen.get(k,0),EXPECTED_CENSUS.get(k,0)) for k in set(cen)|set(EXPECTED_CENSUS) if cen.get(k,0)!=EXPECTED_CENSUS.get(k,0)}
         fails.append(f"census drift (got,expected): {diff}  -- if intentional, update EXPECTED_CENSUS via migration")
 
+    # 6. no non-comment content after \end{document}
+    tail_offenders={}
+    for fn in CANON:
+        t=open(fn,encoding="utf-8",errors="replace").read()
+        if "\\end{document}" in t:
+            tail=t.split("\\end{document}",1)[1]
+            live=[l for l in tail.splitlines() if l.strip() and not l.strip().startswith("%")]
+            if live: tail_offenders[fn]=live[:3]
+    if tail_offenders: fails.append(f"non-comment content after \\end{{document}}: {tail_offenders}")
+
+    # 7. ledger display-status cells must match the declared \status of the referenced label.
+    # Declarations are resolved PER FILE (LaTeX \ref resolves within the compiled file;
+    # the known benign duplicate labels otherwise cause cross-file false positives).
+    ledger_mismatch=[]
+    envdecl=re.compile(r'\\begin\{\w+\}\[\\status\{([A-Z])\}\]\\label\{([^}]*)\}')
+    rowpat=re.compile(r'\\ref\{([^}]*)\}[^\n]*\n?[^\n&]*&\s*\[([DUCBOR])\]\s*&')
+    for fn in CANON:
+        t=open(fn,encoding="utf-8",errors="replace").read()
+        declared={m.group(2):m.group(1) for m in envdecl.finditer(t)}
+        for m in rowpat.finditer(t):
+            lbl,cell=m.group(1),m.group(2)
+            if lbl in declared and declared[lbl]!=cell:
+                ledger_mismatch.append(f"{fn}: row \\ref{{{lbl}}} shows [{cell}] but declaration is [{declared[lbl]}]")
+    if ledger_mismatch: fails.append("ledger display-status mismatches:\n    "+"\n    ".join(ledger_mismatch))
+
     report={"labels":sum(len(v) for v in defs.values()),"unique_labels":len(defs),
             "benign_dups_present":sorted(k for k in defs if len(defs[k])>1 and k in BENIGN_DUP),
             "dangling":len(dangling),"cycles":len(cyc),"census":cen,"pass":not fails}

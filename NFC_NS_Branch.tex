@@ -1887,8 +1887,8 @@ Item~(2) is the remaining structural burden of NS.6.1.
 \end{corollary}
 
 \begin{remark}[\status{R}]\label{rem:NS-chain-status}
-\textbf{Updated NS closure chain status.}
-The full NS discharge chain now stands as:
+\textbf{NS closure chain status (current).}
+The full NS discharge chain now stands, at conditional force, as:
 \[
  \underbrace{\mathrm{Ren.5}\,[C]}_{\text{Ren.5a--e}}
  \Rightarrow \mathrm{Ren.4}\,[C]
@@ -1897,14 +1897,22 @@ The full NS discharge chain now stands as:
 \]
 \[
  \mathrm{SB2}\,[C] \Rightarrow \mathrm{NS.6.1\ (partial)}\,[C]
- \Rightarrow \mathrm{NS.6.1\ (full)}\,[O]
- \Rightarrow \mathrm{NS.7.1}\,[O]
+ \Rightarrow \mathrm{NS.6.1\ (full)}\,[C]
+ \Rightarrow \mathrm{NS.7.1}\,[C]
 \]
-The NS branch is no longer entirely frontier-blocked at SB2.
-All conditional proofs from Ren.5 through SB2 and the
-multiplicative-contraction clause of NS.6.1 are in place.
-The remaining open items are: quantitative $c_1,c_2,\eta$
-certification; full-scope promotion of NS.6.1; and NS.7.1.
+Every link in the chain is conditionally discharged: NS.6.1 at full
+scope (Cor.~\ref{cor:NS61-discharged}) and NS.7.1
+(Thm.~\ref{thm:NS71}, Cor.~\ref{cor:NS-both-give-endpoint}), yielding
+the domain-bounded conditional CERT-CLOSE recorded in
+Prop.~\ref{prop:NS-status}. The residual to \emph{unconditional} force
+is the external Stage-3 question (unconditional global regularity),
+not any link of this chain.
+\emph{Transition snapshot (as recorded when this remark was first
+written; retained as intake --- migration \texttt{MIG-014}):} at that
+stage NS.6.1 (full) and NS.7.1 were still open, and the remaining
+items were quantitative $c_1,c_2,\eta$ certification, full-scope
+promotion of NS.6.1, and NS.7.1; the quantitative certification is
+supplied immediately below.
 
 
 %%----------------------------------------------------------------
@@ -2268,21 +2276,26 @@ follows. \qed
 \end{proof}
 
 \begin{remark}[\status{R}]\label{rem:NS7-now-accessible}
-\textbf{NS.7.1 is now the final open frontier.}
-With NS.6.1 conditionally discharged, the NS continuation
-criterion holds. The NS branch closure chain is:
+\textbf{NS.7.1: from final open frontier to conditional discharge
+(transition snapshot).}
+\emph{As recorded at the time this remark was first written
+(retained as a dated transition snapshot --- migration
+\texttt{MIG-014}):} with NS.6.1 conditionally discharged, NS.7.1 (the
+branch convergence/endpoint theorem) was the only remaining open
+obligation before domain-bounded CERT-CLOSE --- a structural theorem
+about the NS endpoint functional, not a new quantitative obligation.
+\emph{Current status:} that step has since been taken. NS.7.1 is
+conditionally proved (Thm.~\ref{thm:NS71},
+Cor.~\ref{cor:NS-both-give-endpoint}), and the closure chain is
+complete at conditional force:
 \[
  \mathrm{Ren.5}\,[C] \Rightarrow \cdots \Rightarrow
  \mathrm{SB2}\,[C] \Rightarrow \mathrm{NS.6.1}\,[C]
- \Rightarrow \mathrm{NS.7.1}\,[O].
+ \Rightarrow \mathrm{NS.7.1}\,[C],
 \]
-NS.7.1 (the branch convergence/endpoint theorem) is the only
-remaining open obligation before the NS branch reaches
-domain-bounded CERT-CLOSE. Its precise statement requires:
-the continuation criterion (NS.6.1, now conditional [C]) must
-imply a propagating gap estimate that matches the form required
-by the NS endpoint package. This is a structural theorem about
-the NS endpoint functional, not a new quantitative obligation.
+yielding the domain-bounded conditional CERT-CLOSE of
+Prop.~\ref{prop:NS-status}. The residual is the external
+unconditional Stage-3 question.
 \end{remark}
 
 %% ---------------------------------------------------------------
@@ -2431,11 +2444,19 @@ The NS branch may claim:
  \item lawful source descent from $\mathbf{U}$,
  \item lawful branch admissibility under Book~V,
  \item a well-defined source-descended obstruction quantity,
- \item a lawful bridge-stack formulation with named open
- theorem, and
- \item an explicit named failure frontier (Ren.5 and SB2).
+ \item a lawful bridge-stack formulation whose named theorems
+ (NS.6.1, NS.7.1) are conditionally discharged
+ (Cor.~\ref{cor:NS61-discharged}, Thm.~\ref{thm:NS71},
+ Cor.~\ref{cor:NS-both-give-endpoint}),
+ \item domain-bounded conditional CERT-CLOSE at the declared
+ scope (Prop.~\ref{prop:NS-status}), and
+ \item an explicit named failure frontier: originally Ren.5 and
+ SB2, both now conditionally discharged; the residual frontier is
+ the \emph{external unconditional} Stage-3 question
+ (unconditional global regularity).
 \end{enumerate}
-The NS branch may not claim unconditional endpoint closure.
+The NS branch may not claim unconditional endpoint closure or
+unconditional global regularity.
 \end{corollary}
 
 \begin{remark}[\status{R}]
@@ -2554,44 +2575,44 @@ For the branch's operative conditional theorem package, see Section~\ref{sec:NS-
  & \ref{thm:NSP1b} \\
 
 \ref{thm:NSP1b}\ Successor Decomp.
- & [O] & \ref{thm:NSP1}, Bk.~III three-source
+ & [C] & \ref{thm:NSP1}, Bk.~III three-source
  & \ref{thm:NSP1c} \\
 
 \ref{thm:NSL1a}\ Internal Defect Subord.
- & [O] & \ref{thm:NSP1b}, Phase-A floor
+ & [C] & \ref{thm:NSP1b}, Phase-A floor
  & \ref{thm:NSL1} \\
 
 \ref{thm:NSRen5}\ Late Align.-to-Dissip.
- & [O] & Active architecture
+ & [C] & Active architecture
  & SB1 chain $\Rightarrow$ \ref{thm:NSL1b} \\
 
 \ref{thm:NSSB2}\ Positive Reserve
- & [O] & Spike-free architecture
+ & [C] & Spike-free architecture
  & \ref{thm:NSG1plus} \\
 
 \ref{thm:NSL1b}\ Spike-Res.\ Bdry Subord.
- & [O] & \ref{thm:NSRen5}, \ref{thm:NSSB2}
+ & [C] & \ref{thm:NSRen5}, \ref{thm:NSSB2}
  & \ref{thm:NSL1} \\
 
 \ref{thm:NSL1}\ Split-Defect Subord.
- & [O] & \ref{thm:NSL1a}, \ref{thm:NSL1b}
+ & [C] & \ref{thm:NSL1a}, \ref{thm:NSL1b}
  & \ref{thm:NSP1c} \\
 
 \ref{thm:NSG1plus}\ Strict Gap Est.
- & [O] & \ref{thm:NSL1}, transport ceiling
+ & [C] & \ref{thm:NSL1}, transport ceiling
  & \ref{thm:NSP1c} \\
 
 \ref{thm:NSP1c}\ Above-Threshold Contr.
- & [O] & \ref{thm:NSP1b}, \ref{thm:NSL1}
+ & [C] & \ref{thm:NSP1b}, \ref{thm:NSL1}
  & \ref{thm:NS61} \\
 
 \ref{thm:NS61}\ Obstr.-to-Criterion Thm.
- & [O] & \ref{thm:NSP1}--\ref{thm:NSP1c},
+ & [C] & \ref{thm:NSP1}--\ref{thm:NSP1c},
  Def.~\ref{def:NS-active-criterion}
  & \ref{cor:NS61-consequence}, \ref{cor:NS-both-give-endpoint} \\
 
 \ref{thm:NS71}\ Criterion-to-Endpoint
- & [B] & Def.~\ref{def:NS-active-criterion}, Bk.~VI
+ & [C] & Def.~\ref{def:NS-active-criterion}, Bk.~VI
  & \ref{cor:NS-both-give-endpoint} \\
 
 \ref{thm:NS-frontier}\ NS Frontier Thm.
@@ -2600,7 +2621,7 @@ For the branch's operative conditional theorem package, see Section~\ref{sec:NS-
  & \ref{cor:NS-rephrasing-useless}, \ref{cor:NS-no-unconditional} \\
 
 \ref{prop:NS-status}\ NS Status Prop.
- & [U] & \ref{prop:NS-lawful}, \ref{thm:NS-frontier}
+ & [C] & \ref{prop:NS-lawful}, \ref{thm:NS-frontier}
  & Branch summary; external status statement \\
 \hline
 \end{tabular}
@@ -2610,21 +2631,26 @@ For the branch's operative conditional theorem package, see Section~\ref{sec:NS-
 
 \begin{scholium}[\status{R}]\label{sch:NS-final}
 The NS branch is lawful, structurally serious, and precisely
-organized. It is not blocked by a vague missing bridge. It is
-blocked by two small, explicit, separated frontier items ---
-UH.3 on the proof-program side and SB2 on the reserve-side
-structural side --- each of which has a precise mathematical
-statement, a clear logical role in the proof graph, and an
-explicit anti-circularity argument separating it from the
-conclusion it is trying to support. That precision is the
-discipline Book~VII mandates, and the NS branch book satisfies
-it.
+organized. It is not blocked by a vague missing bridge. The
+frontier items that once blocked it --- UH.3 on the proof-program
+side and SB2 on the reserve-side structural side, each with a
+precise mathematical statement, a clear logical role in the proof
+graph, and an explicit anti-circularity argument --- have been
+conditionally discharged, and the branch has reached domain-bounded
+conditional CERT-CLOSE (Prop.~\ref{prop:NS-status}). What remains
+is the single \emph{external unconditional} frontier: unconditional
+global regularity (the Stage-3 Clay question), which lies outside
+the declared conditional scope and is claimed nowhere in this book.
+That precision --- named items, named conditions, named residual ---
+is the discipline Book~VII mandates, and the NS branch book
+satisfies it.
 \end{scholium}
 
-\end{document}
-
-\begin{remark}[\status{R}]
-\textup{(Structural completeness of the pre-canonical record.)}
+\begin{remark}[\status{R}]\label{rem:NS-precanonical-completeness}
+\textup{(Note on the pre-canonical record.)} This note concerns the
+\emph{pre-canonical} v8.41 record and its relation to the canonical
+body; the closing assessment of the canonical branch itself is
+Scholium~\ref{sch:NS-final} above.
 The pre-canonical program has recorded derivation sketches for
 every structural sub-obligation except NS Stage-3 (the Clay Prize
 question). These derivation sketches have no canonical force;
@@ -2641,3 +2667,5 @@ branch has reached domain-bounded conditional CERT-CLOSE
 (Prop.~\ref{prop:NS-status}). Unconditional global regularity (NS
 Stage-3, the Clay Prize question) remains the external frontier.
 \end{remark}
+
+\end{document}
