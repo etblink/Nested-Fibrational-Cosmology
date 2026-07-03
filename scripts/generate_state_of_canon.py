@@ -11,7 +11,25 @@ Contract:
     the timestamp line, which carries the census commit for provenance.
 Run via `make state` (wired in Makefile). Requires `make metadata` first.
 """
-import json, subprocess, datetime, sys, collections
+import json, subprocess, datetime, sys, os, collections
+
+def build_timestamp():
+    sde = os.environ.get("SOURCE_DATE_EPOCH")
+    if sde:
+        return datetime.datetime.fromtimestamp(int(sde), datetime.timezone.utc)
+    try:
+        ct = subprocess.check_output(["git","log","-1","--format=%ct"],
+                                     stderr=subprocess.DEVNULL).decode().strip()
+        return datetime.datetime.fromtimestamp(int(ct), datetime.timezone.utc)
+    except Exception:
+        return datetime.datetime.now(datetime.timezone.utc)
+
+def resolve_commit(census):
+    # explicit CLI arg > env > census.json value
+    for i, a in enumerate(sys.argv):
+        if a == "--commit" and i + 1 < len(sys.argv):
+            return sys.argv[i + 1]
+    return os.environ.get("NFC_CENSUS_COMMIT") or census.get("census_commit", "unknown")
 
 MARKER = "<!-- ===== HISTORICAL HAND-MAINTAINED RECORD BELOW: GENERATOR PRESERVES VERBATIM ===== -->"
 TARGET = "NFC_STATE_OF_CANON.md"
@@ -41,7 +59,7 @@ def main():
     A("# NFC Canon: State of the Canon")
     A("")
     A(f"> **GENERATED SNAPSHOT** — produced by `scripts/generate_state_of_canon.py` from the")
-    A(f"> metadata layer (census commit `{census['census_commit']}`, generated {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%MZ')}).")
+    A(f"> metadata layer (census commit `{resolve_commit(census)}`, generated {build_timestamp().strftime('%Y-%m-%d %H:%MZ')}).")
     A(f"> Do not hand-edit above the historical marker; run `make state` to refresh.")
     A(f"> Historical session material is preserved verbatim below the marker.")
     A("")

@@ -26853,8 +26853,8 @@
       "II_named_roster"
     ],
     "generated_from": null,
-    "last_reviewed": "2026-07-02",
-    "reviewer_note": null,
+    "last_reviewed": "2026-07-03",
+    "reviewer_note": "S1-ARC-0 attempt PAUSED (2026-07-03): F4 probe-space-degeneracy criterion fired. Prerequisite program: RESEARCH_PACKET_RH_P0.md (probe-space nontriviality + separation audit).",
     "review_needed": false
   },
   {
@@ -28294,8 +28294,8 @@
     "authority_level": "body_claim",
     "frontier_accounting": [],
     "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
+    "last_reviewed": "2026-07-03",
+    "reviewer_note": "Inherits the F4 gate via thm:scc-rh-equivalence: formally intact [C] implication, but its hypothesis set is currently satisfiable only trivially. Gated on RH-P0.",
     "review_needed": false
   },
   {
@@ -28809,9 +28809,9 @@
     "authority_level": "body_claim",
     "frontier_accounting": [],
     "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
+    "last_reviewed": "2026-07-03",
+    "reviewer_note": "F4 GATE (2026-07-03): SCC-M3 (f(qx)=f(x), all q in Q^x) + SCC-M4 (f in L^2(R_+,dx/x)) jointly force f=0 a.e. (g(t)=f(e^t) is log2-periodic with finite L^2(R) norm). Probe space is trivial as written. [D]-level re-declaration required; research program RH-P0 opened. No canon edit authorized yet.",
+    "review_needed": true
   },
   {
     "claim_id": "def:scc-functor",
@@ -30004,9 +30004,9 @@
     "authority_level": "body_claim",
     "frontier_accounting": [],
     "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
+    "last_reviewed": "2026-07-03",
+    "reviewer_note": "F4 GATE (2026-07-03): (a) probe space trivial under current Def (see def:scc-admissible-probes note), making the RHS vacuous; (b) proof's second step supplies only RH => Q>=0 on the subclass; the converse needs a separation/density theorem (subclass must detect every negative direction). See RESEARCH_PACKET_RH_P0.md item 4. [C] tag formally intact as a conditional statement; its usable force is gated on the P0 repairs.",
+    "review_needed": true
   },
   {
     "claim_id": "thm:scc-ssf",

@@ -95,11 +95,30 @@ def load_overlay():
     return {}
 
 def git_commit():
+    """Census commit for provenance. Resolution order:
+    (1) NFC_CENSUS_COMMIT env var (for distributed archives without .git);
+    (2) git rev-parse; (3) "unknown"."""
+    if os.environ.get("NFC_CENSUS_COMMIT"):
+        return os.environ["NFC_CENSUS_COMMIT"]
     try:
         return subprocess.check_output(["git","rev-parse","--short","HEAD"],
-                                       cwd=".").decode().strip()
+                                       cwd=".", stderr=subprocess.DEVNULL).decode().strip()
     except Exception:
         return "unknown"
+
+def build_timestamp():
+    """Reproducible timestamp. Resolution order:
+    (1) SOURCE_DATE_EPOCH (reproducible-builds.org convention);
+    (2) git HEAD commit time; (3) current UTC time."""
+    sde = os.environ.get("SOURCE_DATE_EPOCH")
+    if sde:
+        return datetime.datetime.fromtimestamp(int(sde), datetime.timezone.utc)
+    try:
+        ct = subprocess.check_output(["git","log","-1","--format=%ct"],
+                                     cwd=".", stderr=subprocess.DEVNULL).decode().strip()
+        return datetime.datetime.fromtimestamp(int(ct), datetime.timezone.utc)
+    except Exception:
+        return datetime.datetime.now(datetime.timezone.utc)
 
 def main():
     overlay=load_overlay()
@@ -197,7 +216,7 @@ def main():
         },
         "reduced_frontier_view": reduced_frontier,
         "release_snapshot_view":{
-            "generated": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "generated": build_timestamp().isoformat(),
             "census_commit": git_commit(),
             "total_claims": len(claims),
             "census": census,
@@ -223,7 +242,7 @@ def main():
               "mentions (e.g. GR narrative 'is \\status{C}', NS inline sub-lemma tags) that "
               "are not standalone declarations. Both are authoritative for their own question."),
           "census_commit":git_commit(),
-          "generated":datetime.datetime.now(datetime.timezone.utc).isoformat(),
+          "generated":build_timestamp().isoformat(),
           "frontier_accountings":accountings})
     print(f"claims={len(claims)} edges={len(edges)} census={census} other={census_other}")
 

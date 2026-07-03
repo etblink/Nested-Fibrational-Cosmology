@@ -1,5 +1,20 @@
 # Research Packet — RH Witness Assembly S1 (S1-ARC residual)
 
+> ## ⚠ GATE NOTICE (2026-07-03): S1-ARC-0 IS PAUSED — F4 HAS FIRED
+> This packet's own falsification criterion **F4 (probe-space degeneracy)** was triggered by
+> independent review and verified against the canon text: `def:scc-admissible-probes`
+> (SCC Branch) makes the admissible probe space **trivial** — SCC-M3's pointwise
+> ℚ×-invariance plus SCC-M4's L²(dx/x) membership force f = 0 a.e. Additionally,
+> the converse direction of `thm:scc-rh-equivalence` rests on an unproved separation
+> assumption. **Do not attempt S1-ARC-0 (§6) under the current definitions**: every
+> truncation W_RH^sf(N) inheriting SCC-M3/M4 is trivial, and positivity on it is vacuous.
+> The prerequisite program is **`RESEARCH_PACKET_RH_P0.md`** (probe-space nontriviality
+> and separation audit). Both affected canon claims are flagged `review_needed` in the
+> metadata/dashboard. This is a pre-existing canon issue reached *through* this packet's
+> discipline — the falsification machinery worked as designed. No canon edit has been
+> made; re-declaration of the probe space is a [D]-level, migration-gated change pending
+> the P0 results.
+
 **Class:** scaffold planning document. **This packet is not canon and asserts no new mathematics.** It assembles the canon's own authoritative statements about the S1 frontier so that research can begin without contaminating any branch status. Every promotion out of this packet must pass the standing edit gate (`make check`) and the governance rules quoted in §5.
 
 **Why this frontier first (selection rationale):** S1 is already isolated by the canon itself as a sharply named arithmetic residual — `rem:rh-s1-reduction` compresses the four-predicate Witness Assembly bundle to a single predicate, S1-ARC — and it sits in exactly one branch (RH), one syntactic `[O]` (`ob:rh-s1-formal`), and one reduced-frontier item, so work here cannot silently alter YM/GR/SM/NS/SCC postures.
@@ -29,7 +44,7 @@ The governing texts, in authority order (Canon Authority Model tiers):
 
 ## 3. Dependency subgraph
 
-Machine-extracted from `metadata/edges.json`: 86 proof-citation edges touch the S1 / scaling-flow / transport-localization family; the full edge list is reproduced in Appendix A (also queryable live in the dashboard's dependency panel). Structure at a glance: the two "hard-block-cleared" corollaries sit at the top (`cor:rh-sf-first-hard-block-cleared` over the orbit-grammar package; `cor:rh-second-hard-block-cleared` over the L1–L7 chain); the sf-lemma layer (`lem:rh-sf-*`) feeds the pairing/determinant propositions (`prop:rh-sf-*`); `thm:rh-s1-conditional` consumes the whole assembly via `def:rh-s1-predicate` and `thm:scc-rh-equivalence`. **S1-ARC has no incoming discharge edge — that absence is the frontier.**
+Machine-extracted from `metadata/edges.json`. **Selection rule:** all distinct directed proof-citation edges with at least one endpoint whose label contains `rh-s1`, `rh-sf`, `rh-tloc`, or `rh-L3` (the L3-observable family is part of the S1-DESCENT neighborhood). Under this rule there are **87 distinct edges** (81 without the `rh-L3` family); the full list is reproduced in Appendix A (also queryable live in the dashboard's dependency panel). Structure at a glance: the two "hard-block-cleared" corollaries sit at the top (`cor:rh-sf-first-hard-block-cleared` over the orbit-grammar package; `cor:rh-second-hard-block-cleared` over the L1–L7 chain); the sf-lemma layer (`lem:rh-sf-*`) feeds the pairing/determinant propositions (`prop:rh-sf-*`); `thm:rh-s1-conditional` consumes the whole assembly via `def:rh-s1-predicate` and `thm:scc-rh-equivalence`. **S1-ARC has no incoming discharge edge — that absence is the frontier.**
 
 ## 4. Prohibited promotion paths (binding, from Book VII governance + rewrite policy)
 
@@ -86,10 +101,16 @@ Why this is the smallest admissible step: it quantifies over a finite, canon-dec
 | `lem:rh-sf-trace-uniformity` | → | `def:rh-trace-test-subfamily` |
 | `prop:rh-L3-observable-existence` | → | `prop:rh-tloc-L1` |
 | `prop:rh-L3-observable-existence` | → | `prop:rh-tloc-L2` |
+| `prop:rh-L3-observable-existence` | → | `prop:rh-wc1am` |
 | `prop:rh-L3-template-clean` | → | `def:rh-tloc-template` |
+| `prop:rh-L3-template-clean` | → | `prop:rh-L3-observable-existence` |
+| `prop:rh-L3-template-clean` | → | `prop:rh-L3-threshold` |
+| `prop:rh-L3-template-clean` | → | `prop:rh-L3-uniformity` |
 | `prop:rh-L3-threshold` | → | `prop:rh-tloc-L2` |
+| `prop:rh-L3-uniformity` | → | `prop:rh-L3-observable-existence` |
 | `prop:rh-L3-uniformity` | → | `prop:rh-tloc-L1` |
 | `prop:rh-L3-uniformity` | → | `prop:rh-tloc-L2` |
+| `prop:rh-L3-uniformity` | → | `thm:rh-d1-8` |
 | `prop:rh-sf-determinant-origin` | → | `def:rh-det-channel-local` |
 | `prop:rh-sf-determinant-origin` | → | `prop:rh-sf-operator-origin` |
 | `prop:rh-sf-logderiv-d2-ready` | → | `lem:rh-d2-reduction` |
