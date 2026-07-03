@@ -22920,8 +22920,12 @@
     "status_force": "remark (non-load-bearing)",
     "branch": "NS",
     "dependencies": [
+      "cor:NS-both-give-endpoint",
+      "cor:NS61-discharged",
       "def:NS-strong-ba",
-      "thm:NS61"
+      "prop:NS-status",
+      "thm:NS61",
+      "thm:NS71"
     ],
     "discharge_basis": null,
     "supersedes": null,
@@ -28377,7 +28381,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@15024",
+    "claim_id": "NFC_SCC_Branch:remark@15727",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "Branch-Specific Arena",
     "claim_type": "remark",
@@ -28398,7 +28402,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@21395",
+    "claim_id": "NFC_SCC_Branch:remark@22177",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28424,7 +28428,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@27747",
+    "claim_id": "NFC_SCC_Branch:remark@28529",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28449,7 +28453,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@32377",
+    "claim_id": "NFC_SCC_Branch:remark@33159",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28470,7 +28474,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@53324",
+    "claim_id": "NFC_SCC_Branch:remark@54106",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "O-SCC.UC: Branchwise SCC Universal Completion",
     "claim_type": "remark",
@@ -28491,7 +28495,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@59664",
+    "claim_id": "NFC_SCC_Branch:remark@60446",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "O-SCC.TSI: Target/Structural Identification",
     "claim_type": "remark",
@@ -28512,7 +28516,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@78314",
+    "claim_id": "NFC_SCC_Branch:remark@79096",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "RH Operator Pre-Construction Screening: RH-N1 through RH-N5",
     "claim_type": "remark",
@@ -28533,7 +28537,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:scholium@93367",
+    "claim_id": "NFC_SCC_Branch:scholium@95580",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "Dependency Ledger",
     "claim_type": "remark",
@@ -29281,6 +29285,7 @@
     "status_force": "unconditional",
     "branch": "SCC",
     "dependencies": [
+      "prop:scc-status",
       "sec:ledger"
     ],
     "discharge_basis": null,
@@ -29300,13 +29305,16 @@
     "source_section": "Final Status Proposition",
     "claim_type": "proposition",
     "environment": "proposition",
-    "status_tag": "U",
-    "status_force": "unconditional",
+    "status_tag": "C",
+    "status_force": "conditional",
     "branch": "SCC",
     "dependencies": [
       "prop:scc-lawful",
       "sr:scc-no-smuggling",
-      "thm:scc-tsifirewall"
+      "thm:scc-mcs-full",
+      "thm:scc-tsi",
+      "thm:scc-tsifirewall",
+      "thm:scc-uc"
     ],
     "discharge_basis": null,
     "supersedes": null,
@@ -29569,7 +29577,9 @@
     "status_tag": "D",
     "status_force": "definitional/standing",
     "branch": "SCC",
-    "dependencies": [],
+    "dependencies": [
+      "prop:scc-status"
+    ],
     "discharge_basis": null,
     "supersedes": null,
     "superseded_by": null,
@@ -29753,7 +29763,9 @@
     "status_tag": "U",
     "status_force": "unconditional",
     "branch": "SCC",
-    "dependencies": [],
+    "dependencies": [
+      "thm:scc-mcs-full"
+    ],
     "discharge_basis": null,
     "supersedes": null,
     "superseded_by": null,
@@ -32921,7 +32933,7 @@
   {
     "claim_id": "prop:spec-current-status",
     "source_file": "NFC_SPEC_Branch.tex",
-    "source_section": "Current Status Proposition",
+    "source_section": "Initial Constitution Status (superseded)",
     "claim_type": "proposition",
     "environment": "proposition",
     "status_tag": "C",

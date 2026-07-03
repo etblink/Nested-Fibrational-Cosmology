@@ -4573,6 +4573,12 @@
   },
   {
     "from": "prop:scc-lawful",
+    "to": "prop:scc-status",
+    "file": "NFC_SCC_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:scc-lawful",
     "to": "sec:ledger",
     "file": "NFC_SCC_Branch.tex",
     "kind": "proof-cite"
