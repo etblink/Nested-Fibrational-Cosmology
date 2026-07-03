@@ -67,3 +67,13 @@ Commit `486455c` (MIG-014…017), applied after the acceptance review, reconcile
 **Validator (MIG-017):** two new rules per the review — check 6 fails on non-comment content after `\end{document}`; check 7 compares every ledger display-status cell against the in-file declared `\status` of its referenced label (per-file resolution, avoiding duplicate-label false positives). **Check 7 immediately caught five further mismatches in Book I, Book III, GR, and YM** (MIG-016), all corrected to their declarations — including one cell that *understated* a `[U]` corollary as `[C]`. Both checks pass on the final corpus.
 
 **Integrity after this commit:** census unchanged (`D461/U211/C749/B9/O5/R366` — every edit was table-cell or `[R]`/prose text); label delta = +1 authorized (`rem:NS-precanonical-completeness`), 0 removed; 0 dangling; 0 cycles; all touched files compile clean; all six affected PDFs regenerated from source; metadata and dashboard rebuilt. Every rendered contradiction enumerated in the acceptance review is verified absent from the regenerated PDFs (`pdftotext` checks: no "[O]" ledger rows against `[C]` declarations, no "blocked by two small… UH.3 and SB2," no "must be discharged / Blocked by / currently unresolved" in SCC).
+
+---
+
+## Addendum 2 — MIG-018 and the definitive release tag
+
+Final rulings on items 10–11 applied (commit tagged as the definitive completed rewrite):
+- **Item 10:** the SCC legitimacy-proof intake-survival sentence now timestamps its embedded status report ("at constitution, the ORA–CTM–TIN rungs were proposed or partial, and MCS was the main open burden"), pointing to the conditional-discharge chain (§`sec:ledger`, `prop:scc-status`). This was a **narrowly scoped, individually authorized** proof-body annotation — the only proof-body edit in the entire program — changing no hypothesis, inference, status, label, or proof force.
+- **Item 11:** the `%%` MCS glossary line updated to the reviewer's wording; the source now contains no knowingly stale present-tense status language, rendered or not.
+
+**Closure verification:** census delta zero (`D461/U211/C749/B9/O5/R366`), label delta zero, `make check` passes in full (validation incl. checks 6–7; all 17 files compile twice with 0 fatal errors), SCC PDF regenerated (31→32 pp from the added annotation), metadata and dashboard rebuilt. Per the reviewer: **the program is fully accepted with no remaining semantic-consistency exception inside the edited scope.**

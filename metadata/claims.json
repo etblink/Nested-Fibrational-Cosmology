@@ -28397,7 +28397,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@15965",
+    "claim_id": "NFC_SCC_Branch:remark@16128",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "Branch-Specific Arena",
     "claim_type": "remark",
@@ -28418,7 +28418,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@22434",
+    "claim_id": "NFC_SCC_Branch:remark@22746",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28449,7 +28449,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@29191",
+    "claim_id": "NFC_SCC_Branch:remark@29503",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28474,7 +28474,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@33821",
+    "claim_id": "NFC_SCC_Branch:remark@34133",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "The Closure Ledger",
     "claim_type": "remark",
@@ -28495,7 +28495,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@54845",
+    "claim_id": "NFC_SCC_Branch:remark@55157",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "O-SCC.UC: Branchwise SCC Universal Completion",
     "claim_type": "remark",
@@ -28516,7 +28516,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@61185",
+    "claim_id": "NFC_SCC_Branch:remark@61497",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "O-SCC.TSI: Target/Structural Identification",
     "claim_type": "remark",
@@ -28537,7 +28537,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:remark@79835",
+    "claim_id": "NFC_SCC_Branch:remark@80147",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "RH Operator Pre-Construction Screening: RH-N1 through RH-N5",
     "claim_type": "remark",
@@ -28558,7 +28558,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_SCC_Branch:scholium@97114",
+    "claim_id": "NFC_SCC_Branch:scholium@97426",
     "source_file": "NFC_SCC_Branch.tex",
     "source_section": "Dependency Ledger",
     "claim_type": "remark",
