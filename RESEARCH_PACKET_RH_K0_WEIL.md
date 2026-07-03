@@ -44,9 +44,15 @@ with the zero sum taken in the **prescribed symmetric limit** Σ*_ρ := lim_{T�
 
 ## 4. The Weil quadratic form and the imported equivalence
 
-For g, h ∈ 𝒲₀ define the Hermitian form
+Define first the **ambient form** on the full test class (domain correction, MIG-024):
 
-> 𝔅_W(g,h) := −ℰ(g∗h⋆),  𝔔_W(g) := 𝔅_W(g,g) = −ℰ(g∗g⋆).
+> 𝔅̂_W(g,h) := −ℰ(g∗h⋆) for g, h ∈ 𝒲, whenever g∗h⋆ ∈ 𝒲,
+
+and then the Weil form proper as its restriction:
+
+> 𝔅_W := 𝔅̂_W |_{𝒲₀×𝒲₀},  𝔔_W(g) := 𝔅_W(g,g) = −ℰ(g∗g⋆).
+
+The distinction matters because the finite-truncation matrices (§7) are built from **raw** probes U_qf₀ ∉ 𝒲₀: their unrestricted entries live in the ambient form, and only the V_N-compression lands in 𝒲₀.
 
 Because both moments vanish on 𝒲₀, the explicit formula gives
 
@@ -88,7 +94,7 @@ For a finite ordered scale set Q_N = {q₁, …, q_N} let
 
 > A_N = [ 1 ⋯ 1 ; q₁^{−1} ⋯ q_N^{−1} ]  (2×N),  V_N = a chosen matrix whose columns form a basis of ker A_N.
 
-Form the unrestricted Hermitian matrix H_N(j,k) := 𝔅_W(U_{q_j} f₀, U_{q_k} f₀), then compress to the moment-null subspace:
+Form the unrestricted Hermitian matrix **H_N(j,k) := 𝔅̂_W(U_{q_j} f₀, U_{q_k} f₀)** (the *ambient* form — the raw probes are not in 𝒲₀, so 𝔅_W itself is undefined on them; MIG-024 correction), then compress to the moment-null subspace:
 
 > M_N := V_N* H_N V_N.  **The finite Weil test is M_N ⪰ 0.**
 

@@ -1,0 +1,17 @@
+{
+  "scales": [
+    1,
+    2,
+    3
+  ],
+  "basis_b3": [
+    -1,
+    4,
+    -3
+  ],
+  "M3_mid": 5.0834527285304506e-17,
+  "M3_rad": 6.31718692041973e-63,
+  "M3_sign_certified_positive": true,
+  "zero_side_diagnostic": 5.0834527285304506e-17,
+  "classification": "restricted finite Weil test (K0-W1 \u00a77); no RH-progress claim"
+}
