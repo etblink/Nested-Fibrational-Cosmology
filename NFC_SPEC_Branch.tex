@@ -28,6 +28,9 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{obligation}[theorem]{Open Obligation}
+%% DEPRECATED (v1.1, MIG-019): `openobligation` is retained below as a
+%% compatibility alias only; new obligation declarations use `obligation`.
 \newtheorem{openobligation}[theorem]{Open Obligation}
 
 \theoremstyle{remark}
@@ -464,7 +467,7 @@ the hidden-loss control pattern in the late YM development: spectral
 response must not depend on undeclared dissipative channels. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:spec-frontier-min}
+\begin{obligation}[\status{C}]\label{ob:spec-frontier-min}
 \textup{(Current Irreducible Spectroscopy Frontiers.)}
 After the gauge-response discharge pass (O-SPEC.PR through O-SPEC.END
 all conditionally discharged), the remaining genuine SPEC frontiers are:
@@ -479,7 +482,7 @@ all conditionally discharged), the remaining genuine SPEC frontiers are:
 \end{enumerate}
 These are the only remaining frontiers: neither TR nor NL gate
 the gauge-response endpoint, both having been discharged.
-\end{openobligation}
+\end{obligation}
 
 %% ---------------------------------------------------------------
 \section{Operator/Generator Packet and Spectral Classes}
@@ -692,45 +695,45 @@ Item~(9) is needed only for matter-rich spectroscopy.
 
 \subsection{Named Open Obligations}\label{sec:spec-obligations}
 
-\begin{openobligation}[\status{C}]\label{ob:spec-OP}
+\begin{obligation}[\status{C}]\label{ob:spec-OP}
 \textup{(O-SPEC.OP: Operator / Generator Identification --- Discharged.)}
 See Thm.~\ref{thm:spec-OP-discharged}.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:spec-TR}
+\begin{obligation}[\status{C}]\label{ob:spec-TR}
 \textup{(O-SPEC.TR: Transition Certification --- Discharged.)}
 See Thm.~\ref{thm:spec-TR-discharged}.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:spec-NL}
+\begin{obligation}[\status{C}]\label{ob:spec-NL}
 \textup{(O-SPEC.NL: no-hidden Spectral Loss --- Discharged.)}
 See Thm.~\ref{thm:spec-NL-discharged}. BLC-enhanced discharge note:
 no lawful spectral-loss channel exists beyond the four declared channels
 (continuation, branch-side spectral data, transport invariants, bridge-loss ledger);
 this is the SPEC instance of Bridge-Ledger Completeness.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:spec-GC}
+\begin{obligation}[\status{C}]\label{ob:spec-GC}
 \textup{(O-SPEC.GC: Generator Compatibility --- Discharged.)}
 See Thm.~\ref{thm:spec-GC-discharged}.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{B}]\label{ob:spec-CI}
+\begin{obligation}[\status{B}]\label{ob:spec-CI}
 \textup{(O-SPEC.CI: Continuum Frequency Interface --- Discharged [B].)}
 See Thm.~\ref{thm:spec-CI-discharged}.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{B}]\label{ob:spec-CD}
+\begin{obligation}[\status{B}]\label{ob:spec-CD}
 \textup{(O-SPEC.CD: Continuum Response-Density Interface --- Discharged [B].)}
 See Thm.~\ref{thm:spec-CD-discharged}.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:spec-END}
+\begin{obligation}[\status{C}]\label{ob:spec-END}
 \textup{(O-SPEC.END: Endpoint Packaging --- Discharged.)}
 See Thm.~\ref{thm:spec-END-discharged}.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:spec-MAT}
+\begin{obligation}[\status{C}]\label{ob:spec-MAT}
 \textup{(O-SPEC.MAT: Matter Coupling Frontier --- Conditionally
 Discharged.)}
 \textup{[Conditional on Thm.~\ref{thm:spec-MAT-coupling} and
@@ -753,7 +756,7 @@ screening-invariance check, is itself affirmatively resolved
 This obligation is therefore no longer blocked by any upstream
 gate or residual: it is gated only on its own in-branch
 matter-coupling construction, which is now in-toolkit actionable.
-\end{openobligation}
+\end{obligation}
 
 \subsection{Two-Status Reading}\label{sec:spec-two-status}
 
@@ -1366,7 +1369,7 @@ with these declared shifts and remains positive on the declared
 window $\mathcal{W}$. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:spec-MAT-open}
+\begin{obligation}[\status{C}]\label{ob:spec-MAT-open}
 \textup{(O-SPEC.MAT: Matter Coupling --- Conditionally
 Discharged.)}
 \textup{[Conditional on Thm.~\ref{thm:spec-MAT-coupling} and
@@ -1405,7 +1408,7 @@ question:
 The remaining gap at unconditional force is the same as SM Branch
 ob:SM-matter: the O\_ID\textsuperscript{cont} identification providing
 the full continuum representation theory at canonical force.
-\end{openobligation}
+\end{obligation}
 
 %% ---------------------------------------------------------------
 \section{Planck Calibration Bridge}\label{sec:spec-planck}
@@ -1507,7 +1510,7 @@ giving $\hbar_{\mathrm{SI}} = \alpha_{\mathrm{act}}\hbar_{\mathrm{can}}$.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:SPEC-Planck-calibration}
+\begin{obligation}[\status{C}]\label{ob:SPEC-Planck-calibration}
 \textup{(O-SPEC.Planck: Planck Calibration --- Caesium Nominated.)}
 \textup{[Conditional on Thm.~\ref{thm:SPEC-Planck-calibration}
 and the caesium-133 hyperfine transition as the declared
@@ -1543,7 +1546,7 @@ diffraction standard is nominated (e.g., Cu~K$_\alpha$ at
 $1.5406$\,\AA), the SPEC calibration bridge applies to crystallographic
 wavelength units as well.  The caesium nomination here establishes
 the protocol; the CRYST nomination is the next instance.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]\label{rem:SPEC-Planck-canonical}
 \textbf{Clean separation of roles.}

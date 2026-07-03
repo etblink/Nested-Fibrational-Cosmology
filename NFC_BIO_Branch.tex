@@ -28,6 +28,9 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{obligation}[theorem]{Open Obligation}
+%% DEPRECATED (v1.1, MIG-019): `openobligation` is retained below as a
+%% compatibility alias only; new obligation declarations use `obligation`.
 \newtheorem{openobligation}[theorem]{Open Obligation}
 
 \theoremstyle{remark}
@@ -599,13 +602,13 @@ are named explicitly as branch frontiers.
 
 \subsection{Replication Certification}\label{sec:bio-REP}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-REP}
+\begin{obligation}[\status{C}]\label{ob:bio-REP}
 \textup{(O-BIO.REP: Replication Certification.)}
 Show that the replication kernel $\Phi_{\mathrm{Bio}}$ is sourced
 through $\mathbf{U}$ and constitutes a lawful branch observable within
 the declared regime, with all probe declarations inherited from the
 Book~I admissible-test discipline.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:bio-rep-certification}
 \textup{(Replication Certification Theorem.)}
@@ -625,13 +628,13 @@ discipline. Full proof is conditional on O-BIO.REP.
 
 \subsection{Metabolic Ledger Theorem}\label{sec:bio-MET}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-MET}
+\begin{obligation}[\status{C}]\label{ob:bio-MET}
 \textup{(O-BIO.MET: Metabolic Bookkeeping.)}
 Show that the metabolic ledger $\mathcal{M}_{\mathrm{Bio}}$ is
 additive, sourced through the Book~III transport accounting, and that
 all resource-transformation operations preserve transport bookkeeping
 without hidden defect.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:bio-metabolic-ledger}
 \textup{(Metabolic Ledger Theorem.)}
@@ -651,13 +654,13 @@ conditional on O-BIO.MET.
 
 \subsection{Replication Fidelity Margin Theorem}\label{sec:bio-FID}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-FID}
+\begin{obligation}[\status{C}]\label{ob:bio-FID}
 \textup{(O-BIO.FID: Replication Fidelity Margin.)}
 Show that the replication fidelity margin $F_{\mathrm{Bio}}$ is
 branch-computably positive for certified replicating configurations
 within the declared regime, and that no fidelity collapse occurs
 without a declared admissible error event.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:bio-fidelity-margin}
 \textup{(Replication Fidelity Margin Theorem.)}
@@ -680,14 +683,14 @@ O-BIO.FID.
 
 \subsection{No-Hidden-Channel Theorem}\label{sec:bio-NC}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-NC}
+\begin{obligation}[\status{C}]\label{ob:bio-NC}
 \textup{(O-BIO.NC: no-hidden Hereditary Channel.)}
 Show that no hereditary transport pathway exists outside the declared
 one-step hereditary ledger: any discrepancy between two descendant
 configurations sharing the same certified parent would require an
 undeclared hereditary channel, ruled out by the exhaustive
 source-image condition.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:bio-no-hidden-channel}
 \textup{(No-Hidden-Hereditary-Channel Theorem.)}
@@ -711,7 +714,7 @@ Full proof is conditional on O-BIO.NC.
 
 \subsection{Boundary Self-Organization Theorem}\label{sec:bio-BND}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-BND}
+\begin{obligation}[\status{C}]\label{ob:bio-BND}
 \textup{(O-BIO.BND: Boundary Self-Organization.)}
 Show that the biological boundary object $\mathcal{B}_{\mathrm{Bio}}(X)$
 can emerge from the replication kernel and metabolic ledger without
@@ -719,7 +722,7 @@ importing a background spatial geometry: that a certified
 configuration can develop a quotient-visible interior/exterior
 separation satisfying the Book~II boundary capacity law, as a derived
 consequence of replication and metabolic structure.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:bio-boundary}
 \textup{(Boundary Self-Organization Theorem.)}
@@ -752,14 +755,14 @@ assumption.
 
 \subsection{Hereditary Descent Theorem}\label{sec:bio-HER}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-HER}
+\begin{obligation}[\status{C}]\label{ob:bio-HER}
 \textup{(O-BIO.HER: Hereditary Descent.)}
 Show that the heredity-descent object $\mathcal{H}_{\mathrm{Bio}}$ is
 sourced through $\mathbf{U}$, passes the five-condition Book~V
 branch-legitimacy test, and transmits observable properties across
 certified replication steps without hidden channel and within the
 declared fidelity margin.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:bio-hereditary-descent}
 \textup{(Hereditary Descent Theorem.)}
@@ -780,7 +783,7 @@ no-smuggling standing rules. Full proof is conditional on O-BIO.HER.
 
 \subsection{Evolutionary Dynamics}\label{sec:bio-EVO}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-EVO}
+\begin{obligation}[\status{C}]\label{ob:bio-EVO}
 \textup{(O-BIO.EVO: Evolutionary Dynamics.)}
 Show that differential replication rates across equivalence classes
 of replicating configurations --- a derived quotient-visible quantity
@@ -789,7 +792,7 @@ regime. Fitness is to emerge as a replication-rate differential, not
 as an imported adaptive value. This obligation is expected to require
 an iterated hereditary ledger and a Book~VI bridge theorem for
 continuous-time population dynamics.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]\label{rem:bio-evo-posture}
 \textbf{Posture on evolution.}
@@ -806,7 +809,7 @@ be proved within the NFC framework is a genuine open question.
 
 \subsection{Multicellular Organization}\label{sec:bio-MULTI}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-MULTI}
+\begin{obligation}[\status{C}]\label{ob:bio-MULTI}
 \textup{(O-BIO.MULTI: Multicellular Organization.)}
 Show, or certify the impossibility of showing within the NFC
 framework at the current level, that certified boundary-enclosed
@@ -816,7 +819,7 @@ $\mathcal{B}_{\mathrm{Bio}}$ and $\mathcal{H}_{\mathrm{Bio}}$ can
 give rise to certified second-order boundary and hereditary objects.
 This obligation is deeply downstream of O-BIO.BND and O-BIO.HER and
 is not anticipated at the current architectural stage.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]\label{rem:bio-multi-posture}
 \textbf{Posture on multicellularity.}
@@ -831,14 +834,14 @@ question, not a currently certified result.
 
 \subsection{Biology Endpoint}\label{sec:bio-END}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-END}
+\begin{obligation}[\status{C}]\label{ob:bio-END}
 \textup{(O-BIO.END: Biology Endpoint --- Conditionally Discharged on Nondegenerate Regime $\mathcal{C}^{\mathrm{nd}}_{\mathrm{Bio}}$.)}
 Show that the endpoint datum $E_{\mathrm{Bio}}$ is fully certified:
 replication certification, metabolic bookkeeping, fidelity margin,
 no-hidden-channel, boundary self-organization, and hereditary descent
 all discharged. The endpoint is reached when the biology branch
 satisfies the shared-endgame schema of Book~VII.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:bio-endpoint}
 \textup{(Biology Endpoint Theorem.)}
@@ -1197,7 +1200,7 @@ remains blocked.
 \subsection{O-BIO.BND: Principal Biology Frontier (Remains Open)}
 \label{sec:bio-BND-frontier}
 
-\begin{openobligation}[\status{O}]\label{ob:bio-BND-open}
+\begin{obligation}[\status{O}]\label{ob:bio-BND-open}
 \textup{(O-BIO.BND: Boundary Self-Organization --- Reduced Frontier.)}
 \textup{[Partial discharge: Thm.~\ref{thm:bio-BND-nd} discharges
 O-BIO.BND on the declared nondegenerate regime
@@ -1232,7 +1235,7 @@ persistent replicator is constructible as certified BIO data
 (Rem.~\ref{rem:bio-BND-trivial-core-residual}) --- is a
 configuration-existence question outside the current toolkit, in the
 same register as \texttt{ob:rh-s1-formal}.
-\end{openobligation}
+\end{obligation}
 
 \subsection{O-BIO.BND: Boundary Self-Organization — Discharge on Nondegenerate Regime}
 \label{sec:bio-BND-discharge}
@@ -1702,14 +1705,14 @@ summary of certified replication outcomes.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-EVO-pop-bridge}
+\begin{obligation}[\status{C}]\label{ob:bio-EVO-pop-bridge}
 \textup{(O-BIO.EVO-Bridge: Population Dynamics Book~VI Bridge.)}
 \textup{[Conditional on Thm.~\ref{thm:bio-EVO-discrete-dynamics}
 and the B2-DomainNoLoss template below.]}
 Continuous-time selection dynamics require a Book~VI bridge theorem.
 The following theorem reduces the bridge to a single named
 convergence condition.
-\end{openobligation}
+\end{obligation}
 
 \begin{definition}[\status{D}]\label{def:bio-EVO-domain-loss}
 \textup{(Evolutionary Domain Loss.)}
@@ -1762,7 +1765,7 @@ surrogate as effective shorthand for the certified discrete dynamics.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-EVO-bridge-cond}
+\begin{obligation}[\status{C}]\label{ob:bio-EVO-bridge-cond}
 \textup{(O-BIO.EVO-Bridge-$\varepsilon$: Convergence Condition ---
 Conditionally Discharged.)}
 \textup{[Conditional on Thm.~\ref{thm:bio-EVO-bridge-template};
@@ -1772,7 +1775,7 @@ with finite hereditary-state alphabet (Book~II).]}
 The evolutionary domain loss satisfies
 $\varepsilon_n^{\mathrm{evo}} \to 0$ at geometric rate
 $O(e^{-F_{\mathrm{Bio}} \cdot n})$.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:bio-EVO-eps-discharged}
 \textup{(O-BIO.EVO-Bridge-$\varepsilon$ Conditionally Discharged.)}
@@ -1950,13 +1953,13 @@ no-hidden supplement, and no path multiplication.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-MULTI-coordination}
+\begin{obligation}[\status{C}]\label{ob:bio-MULTI-coordination}
 \textup{(O-BIO.MULTI-Coord: Inter-Unit Coordination ---
 Formally Structured.)}
 \textup{[Conditional on Thm.~\ref{thm:bio-MULTI-coord-template} below.]}
 The inter-unit coordination obligation reduces to a named
 MSC-carrier selection problem.
-\end{openobligation}
+\end{obligation}
 
 \begin{definition}[\status{D}]\label{def:bio-coordination-carrier}
 \textup{(Certified Coordination Carrier.)}
@@ -2005,7 +2008,7 @@ applied to inter-unit transport steps.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-MULTI-coord-concrete}
+\begin{obligation}[\status{C}]\label{ob:bio-MULTI-coord-concrete}
 \textup{(O-BIO.MULTI-Coord: Minimal Two-Unit Assembly Declared ---
 Conditionally Discharged.)}
 \textup{[Conditional on Thm.~\ref{thm:bio-MULTI-coord-template}
@@ -2013,7 +2016,7 @@ and the two-unit assembly declaration below.]}
 The minimal two-unit assembly $\mathcal{A}_2 = \{X_1, X_2\}$ is
 hereby declared as the concrete target regime for the coordination
 ledger.  See Thm.~\ref{thm:bio-MULTI-twocell} below.
-\end{openobligation}
+\end{obligation}
 
 \begin{definition}[\status{D}]\label{def:bio-twocell-assembly}
 \textup{(Minimal Two-Unit Assembly.)}
@@ -2350,7 +2353,7 @@ as a consciousness or endpoint-label mechanism here; its sole
 structural contribution is anti-plasticity for role carriers.
 \end{remark}
 
-\begin{openobligation}[\status{C}]\label{ob:bio-DEV-scc-dep}
+\begin{obligation}[\status{C}]\label{ob:bio-DEV-scc-dep}
 \textup{(O-BIO.DEV-SCC: SCC Role-Carrier Dependency --- Conditionally Resolved.)}
 \textup{[Cascade from SCC-MCS discharge (Session~XLII,
 \texttt{thm:scc-mcs}).]}
@@ -2373,6 +2376,6 @@ is finite at the certified BIO unit scope. Therefore the
 SCC-MCS conditions hold for BIO role observables, and
 O-BIO.DEV-SCC is conditionally discharged as a cascade from the
 SCC-MCS discharge.
-\end{openobligation}
+\end{obligation}
 
 \end{document}

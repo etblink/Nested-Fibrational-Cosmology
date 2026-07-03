@@ -1,7 +1,7 @@
 # NFC Canon: State of the Canon
 
 > **GENERATED SNAPSHOT** — produced by `scripts/generate_state_of_canon.py` from the
-> metadata layer (census commit `d708136`, generated 2026-07-03 07:07Z).
+> metadata layer (census commit `d1fba73`, generated 2026-07-03 07:09Z).
 > Do not hand-edit above the historical marker; run `make state` to refresh.
 > Historical session material is preserved verbatim below the marker.
 

@@ -28,6 +28,9 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{obligation}[theorem]{Open Obligation}
+%% DEPRECATED (v1.1, MIG-019): `openobligation` is retained below as a
+%% compatibility alias only; new obligation declarations use `obligation`.
 \newtheorem{openobligation}[theorem]{Open Obligation}
 
 \theoremstyle{remark}
@@ -536,13 +539,13 @@ obligations are named explicitly as branch frontiers.
 
 \subsection{Contrast Realization}\label{sec:ling-CR}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-CR}
+\begin{obligation}[\status{C}]\label{ob:ling-CR}
 \textup{(O-LING.CR: Contrast Realization.)}
 Show that the contrast kernel $K_{\mathrm{Ling}}$ is sourced through
 $\mathbf{U}$ and constitutes a lawful branch observable within the
 declared regime, with all probe declarations inherited from the
 Book~I admissible-test discipline.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:ling-contrast-realization}
 \textup{(Contrast Realization Theorem.)}
@@ -561,13 +564,13 @@ discipline. The full proof is conditional on O-LING.CR.
 
 \subsection{Compositional Ledger Theorem}\label{sec:ling-CL}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-CL}
+\begin{obligation}[\status{C}]\label{ob:ling-CL}
 \textup{(O-LING.CL: Compositional Ledger.)}
 Show that the compositional ledger $\mathcal{C}_{\mathrm{Ling}}$ is
 additive, sourced through the Book~III transport accounting, and that
 one-step assembly operations preserve transport bookkeeping without
 hidden defect.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:ling-comp-ledger}
 \textup{(Compositional Ledger Theorem.)}
@@ -587,13 +590,13 @@ O-LING.CL.
 
 \subsection{Contrast Margin Theorem}\label{sec:ling-CM}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-CM}
+\begin{obligation}[\status{C}]\label{ob:ling-CM}
 \textup{(O-LING.CM: Contrast Margin.)}
 Show that the contrast margin $\Delta_{\mathrm{Ling}}$ is
 branch-computably positive across distinct contrast equivalence classes
 within the declared regime, and that no equivalence class collapse
 occurs without a declared admissible merger.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:ling-contrast-margin}
 \textup{(Contrast Margin Theorem.)}
@@ -623,14 +626,14 @@ contrast equivalence classes.
 
 \subsection{No-Hidden-Channel Theorem}\label{sec:ling-NC}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-NC}
+\begin{obligation}[\status{C}]\label{ob:ling-NC}
 \textup{(O-LING.NC: no-hidden Channel.)}
 Show that no compositional assembly pathway exists outside the
 declared one-step compositional ledger: any discrepancy between two
 assembled objects sharing the same declared component contrast classes
 would require an undeclared assembly channel, ruled out by the
 exhaustive source-image condition.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:ling-no-hidden-channel}
 \textup{(No-Hidden-Channel Theorem.)}
@@ -653,13 +656,13 @@ Full proof is conditional on O-LING.NC.
 
 \subsection{Grammar Descent Theorem}\label{sec:ling-GD}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-GD}
+\begin{obligation}[\status{C}]\label{ob:ling-GD}
 \textup{(O-LING.GD: Grammar Descent.)}
 Show that the grammar-descent object $\Gamma_{\mathrm{Ling}}$ is
 sourced through $\mathbf{U}$, passes the five-condition Book~V
 branch-legitimacy test, and produces only quotient-visible distinctions
 among assembled objects within the declared compositional window.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:ling-grammar-descent}
 \textup{(Grammar Descent Theorem.)}
@@ -679,7 +682,7 @@ no-smuggling standing rules. Full proof is conditional on O-LING.GD.
 
 \subsection{Recursion and Infinite Generativity}\label{sec:ling-REC}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-REC}
+\begin{obligation}[\status{C}]\label{ob:ling-REC}
 \textup{(O-LING.REC: Recursion.)}
 Show, or certify the impossibility of showing within the NFC framework,
 that the compositional ledger $\mathcal{C}_{\mathrm{Ling}}$ supports
@@ -688,7 +691,7 @@ linguistic recursion. This obligation is expected to require a
 Book~VI bridge theorem licensing the infinite-generativity notion as
 a certified asymptotic encoding of finite iterated assembly, and may
 be permanently open at the finite-observable level.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]\label{rem:ling-rec-posture}
 \textbf{Posture on recursion.}
@@ -704,7 +707,7 @@ of the branch architecture.
 
 \subsection{Semantic Grounding}\label{sec:ling-SEM}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-SEM}
+\begin{obligation}[\status{C}]\label{ob:ling-SEM}
 \textup{(O-LING.SEM: Semantic Grounding.)}
 Show that a semantic assignment --- a quotient-visible branch object
 playing the role of meaning for contrast-class sequences --- can be
@@ -712,7 +715,7 @@ sourced through $\mathbf{U}$, without importing a background semantic
 domain, truth-value space, or model-theoretic universe. Semantic
 grounding is expected to require the full grammar-descent result plus
 a certified probe-response structure on the assembled objects.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]\label{rem:ling-sem-posture}
 \textbf{Posture on semantics.}
@@ -726,14 +729,14 @@ obligation, not a currently certified result.
 
 \subsection{Linguistics Endpoint}\label{sec:ling-END}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-END}
+\begin{obligation}[\status{C}]\label{ob:ling-END}
 \textup{(O-LING.END: Linguistics Endpoint.)}
 Show that the endpoint datum $E_{\mathrm{Ling}}$ is fully certified:
 contrast realization, compositional ledger, contrast margin, no-hidden
 channel, and grammar descent all discharged. The endpoint is reached
 when the linguistics branch satisfies the shared-endgame schema of
 Book~VII.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:ling-endpoint}
 \textup{(Linguistics Endpoint Theorem.)}
@@ -1136,7 +1139,7 @@ contrast-compositionality endpoint.
 \subsection{O-LING.REC and O-LING.SEM: Remaining Frontiers}
 \label{sec:ling-frontiers}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-REC-open}
+\begin{obligation}[\status{C}]\label{ob:ling-REC-open}
 \textup{(O-LING.REC: Recursion --- SCC-carrier and finite generativity discharged; bridge [O].)}
 The extension of the contrast-compositionality endpoint to infinite
 generativity requires: (1) a certified iterated-assembly family
@@ -1146,9 +1149,9 @@ faithful asymptotic limit of a certified sequence of finite assembly
 operations. No such bridge theorem is available in the current
 canon. O-LING.REC is not discharged here and is expected to remain
 permanently open at the finite-observable level.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-SEM-open}
+\begin{obligation}[\status{C}]\label{ob:ling-SEM-open}
 \textup{(O-LING.SEM: Semantic Grounding --- Context-response [C]; reference and truth [O].)}
 The extension of the contrast-compositionality endpoint to semantic
 grounding requires: (1) a quotient-visible meaning assignment sourced
@@ -1158,7 +1161,7 @@ structure on assembled objects supporting the meaning assignment.
 No such structure is available in the current canon. O-LING.SEM is
 not discharged here. It is the deepest downstream obligation in the
 linguistics branch.
-\end{openobligation}
+\end{obligation}
 
 %% ---------------------------------------------------------------
 \section{SCC-Mediated Recursion}\label{sec:ling-REC-SCC}
@@ -1334,7 +1337,7 @@ minimal SCC carrier, not as an imported actually-infinite grammar.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-rec-infty}
+\begin{obligation}[\status{C}]\label{ob:ling-rec-infty}
 \textup{(O-LING.REC$_\infty$: Strong Infinite Generativity --- fam+noncollapse [C]; bridge [O].)}
 Strong infinite generativity is split into three sub-obligations:
 \begin{enumerate}[label=\textup{(\arabic*)}]
@@ -1346,7 +1349,7 @@ Strong infinite generativity is split into three sub-obligations:
  \item \emph{O-LING.REC$_{\mathrm{bridge}}$}: prove the Book~VI
  asymptotic coherence bridge --- \emph{remains open}.
 \end{enumerate}
-\end{openobligation}
+\end{obligation}
 
 %% ---------------------------------------------------------------
 \section{Strong Recursion Sub-Obligations}\label{sec:ling-REC-infty}
@@ -1460,12 +1463,12 @@ noncollapsing finite-stage family.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-rec-infty-bridge}
+\begin{obligation}[\status{C}]\label{ob:ling-rec-infty-bridge}
 \textup{(O-LING.REC$_{\mathrm{bridge}}$: Asymptotic Coherence.)}
 \textup{[Conditional on Thm.~\ref{thm:ling-rec-bridge-template} below.]}
 The asymptotic coherence bridge reduces to a single named
 convergence condition.
-\end{openobligation}
+\end{obligation}
 
 \begin{definition}[\status{D}]\label{def:ling-recursion-domain-loss}
 \textup{(Recursion Domain Loss.)}
@@ -1512,7 +1515,7 @@ shorthand for the certified finite-depth family.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-rec-bridge-eps}
+\begin{obligation}[\status{C}]\label{ob:ling-rec-bridge-eps}
 \textup{(O-LING.REC-Bridge-$\varepsilon$: Recursion Loss Convergence ---
 Conditionally Discharged.)}
 \textup{[Conditional on: the SCC-carrier minimality of the recursion
@@ -1523,7 +1526,7 @@ collar-type alphabet).]}
 The recursion domain loss satisfies
 $\varepsilon_n^{\mathrm{rec}} \to 0$ at geometric rate
 $O(e^{-\Delta_{\mathrm{Ling}} \cdot n})$.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:ling-rec-bridge-eps-discharged}
 \textup{(O-LING.REC-Bridge-$\varepsilon$ Conditionally Discharged.)}
@@ -1823,13 +1826,13 @@ minimal-complexity context family among semantically equivalent ones.
 \end{remark}
 
 
-\begin{openobligation}[\status{C}]\label{ob:ling-SEM-ref-open}
+\begin{obligation}[\status{C}]\label{ob:ling-SEM-ref-open}
 \textup{(O-LING.SEM$_{\mathrm{ref}}$: Reference-Bearing Probes ---
 Formally Structured.)}
 \textup{[Conditional on Thm.~\ref{thm:ling-sem-ref-template} below.]}
 The reference-bearing upgrade reduces to a two-route predicate
 analogous to the CRYST phase problem.
-\end{openobligation}
+\end{obligation}
 
 \begin{definition}[\status{D}]\label{def:ling-ref-predicate}
 \textup{(Reference-Bearing Predicate.)}
@@ -1987,7 +1990,7 @@ template theorem (Thm.~\ref{thm:ling-sem-ref-template}), by the
 Zorn/finite-stabilization argument.  \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-ref-probe-nomination}
+\begin{obligation}[\status{C}]\label{ob:ling-ref-probe-nomination}
 \textup{(O-LING.SEM$_{\mathrm{ref}}$: Reference-Indicating Probe
 Nominated.)}
 \textup{[Conditional on Thm.~\ref{thm:ling-REF-RECOV} and the
@@ -2015,9 +2018,9 @@ discharges residual condition (b) of \texttt{ob:ling-ref-formal}
 (concrete probe nomination); residual condition (a), the
 finite factorization audit of the base discipline, remains a
 declared check.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:ling-ref-formal}
+\begin{obligation}[\status{C}]\label{ob:ling-ref-formal}
 \textup{(O-LING.SEM$_{\mathrm{ref}}$: Formal Frontier ---
 Conditionally Resolved, Two Routes at Two Scopes.)}
 \textup{[Conditional on Thm.~\ref{thm:ling-REF-INVIS} and
@@ -2046,7 +2049,7 @@ This mirrors the CRYST phase-problem resolution structure:
 structural invisibility certified by an invariance argument,
 recovery certified conditionally on a nominated lawful probe
 extension.
-\end{openobligation}
+\end{obligation}
 
 %% ---------------------------------------------------------------
 \section{Updated LING Closure Ledger}\label{sec:ling-closure-updated}

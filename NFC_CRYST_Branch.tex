@@ -40,6 +40,9 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{obligation}[theorem]{Open Obligation}
+%% DEPRECATED (v1.1, MIG-019): `openobligation` is retained below as a
+%% compatibility alias only; new obligation declarations use `obligation`.
 \newtheorem{openobligation}[theorem]{Open Obligation}
 
 \theoremstyle{remark}
@@ -723,13 +726,13 @@ By Prop.~\ref{prop:cryst-lawful} and the branch-legitimacy doctrine
 
 \subsection{Probe Realization}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-PR}
+\begin{obligation}[\status{C}]\label{ob:cryst-PR}
 \textup{(O-CRYST.PR: Probe Realization.)}
 Show that the diffraction probe family $\mathcal{P}_{\mathrm{diff}}$
 is sourced through $\mathbf{U}$ and constitutes a lawful branch
 observable within the declared regime, with all probe declarations
 inherited from the Book~I admissible-test discipline.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:cryst-PR}
 \textup{(Probe Realization Theorem.)}
@@ -749,13 +752,13 @@ discipline.  Full proof is conditional on O-CRYST.PR.
 
 \subsection{Bragg Gap}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-GAP}
+\begin{obligation}[\status{C}]\label{ob:cryst-GAP}
 \textup{(O-CRYST.GAP: Bragg Gap.)}
 Show that the Bragg gap $B_{\mathrm{Cryst}}(X)$ is
 branch-computably positive for certified crystalline configurations
 within the declared regime, and that no Bragg peak collapse occurs
 without a declared admissible structure-change event.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:cryst-GAP}
 \textup{(Bragg Gap Theorem.)}
@@ -778,13 +781,13 @@ on O-CRYST.GAP.
 
 \subsection{Lattice Certification}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-LAT}
+\begin{obligation}[\status{C}]\label{ob:cryst-LAT}
 \textup{(O-CRYST.LAT: Lattice Certification.)}
 Show that the lattice ledger $\mathcal{L}_{\mathrm{Cryst}}$ is
 additive, sourced through the Book~III transport accounting, and
 that the translation equivalence classes are genuinely
 quotient-visible (no hidden spatial primitive is required).
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:cryst-LAT}
 \textup{(Lattice Certification Theorem.)}
@@ -805,14 +808,14 @@ O-CRYST.LAT.
 
 \subsection{No Hidden Diffraction Channel}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-NC}
+\begin{obligation}[\status{C}]\label{ob:cryst-NC}
 \textup{(O-CRYST.NC: No Hidden Diffraction Channel.)}
 Show that no diffraction pathway exists outside the declared
 admissible probe family: any discrepancy between two configurations
 sharing the same certified diffraction equivalence class would
 require an undeclared diffraction channel, ruled out by the
 exhaustive source-image condition.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:cryst-NC}
 \textup{(No-Hidden-Diffraction-Channel Theorem.)}
@@ -836,7 +839,7 @@ Full proof is conditional on O-CRYST.NC.
 
 \subsection{Space Group Descent}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-SG}
+\begin{obligation}[\status{C}]\label{ob:cryst-SG}
 \textup{(O-CRYST.SG: Space Group Descent.)}
 Show that the symmetry-descent object $\mathcal{G}_{\mathrm{Cryst}}$
 is sourced through $\mathbf{U}$, passes the Book~V five-condition
@@ -845,7 +848,7 @@ as the unique minimal faithful carrier for the diffraction-visible
 symmetry predicate.  Under the declared Euclidean domain (after
 O-CRYST.DOM and O-CRYST.EWALD), show that $\mathcal{G}_{\mathrm{Cryst}}$
 coincides with one of the 230 crystallographic space groups.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:cryst-SG}
 \textup{(Space Group Descent Theorem.)}
@@ -872,7 +875,7 @@ conditional on O-CRYST.SG.
 
 \subsection{Domain Bridge}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-DOM}
+\begin{obligation}[\status{C}]\label{ob:cryst-DOM}
 \textup{(O-CRYST.DOM: Euclidean Domain Bridge.)}
 Show that the crystallography branch has a certified
 three-dimensional effective geometric carrier $D_{\mathrm{Cryst}}$,
@@ -881,7 +884,7 @@ $\dim D_{\mathrm{Cryst}} = 3$ and matching the Euclidean continuum
 domain at observable/operator/no-loss quotient scope.  This is the
 crystallographic analogue of the YM B2 domain bridge
 (\texttt{prop:ClaySpec-DOM}, YM Branch).
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]\label{rem:cryst-dom-note}
 \textbf{Why the domain bridge is required.}
@@ -899,7 +902,7 @@ from the certified discrete lattice to the Euclidean continuum.
 
 \subsection{Ewald Bridge (Fourier Legitimacy)}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-EWALD}
+\begin{obligation}[\status{C}]\label{ob:cryst-EWALD}
 \textup{(O-CRYST.EWALD: Ewald/Fourier Bridge.)}
 Show that reciprocal lattice notation, structure factor notation
 ($F(hkl)$ as a complex amplitude), and the Bragg equation
@@ -908,7 +911,7 @@ for certified discrete diffraction peak data within a declared
 Fourier-interface regime.  This is the Book~VI bridge controlling
 all continuous-angle, continuous-wavelength, and complex-amplitude
 notation in the crystallography branch.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]\label{rem:cryst-ewald-note}
 \textbf{The Ewald bridge as Book~VI instance.}
@@ -977,14 +980,14 @@ open mathematical questions that the NFC framework makes precise.
 
 \subsection{Crystallography Endpoint}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-END}
+\begin{obligation}[\status{C}]\label{ob:cryst-END}
 \textup{(O-CRYST.END: Crystallography Endpoint.)}
 Show that the endpoint datum $E_{\mathrm{Cryst}}$ is fully certified:
 probe realization, Bragg gap, lattice certification,
 no-hidden-diffraction-channel, and space group descent all
 discharged.  The endpoint is reached when the crystallography branch
 satisfies the shared-endgame schema of Book~VII.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:cryst-END}
 \textup{(Crystallography Endpoint Theorem.)}
@@ -1436,13 +1439,13 @@ continuum domain.  Therefore the ClaySpec-DOM parallel
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-dom-noloss}
+\begin{obligation}[\status{C}]\label{ob:cryst-dom-noloss}
 \textup{(O-CRYST.DOM-$\varepsilon$: Domain No-Loss Convergence.)}
 The remaining DOM frontier reduces precisely to: certify that
 the crystallographic domain loss $\varepsilon^{\mathrm{dom}}_n \to 0$
 as the lattice exhaustion deepens.  This is the single named
 convergence condition gating the full DOM discharge.
-\end{openobligation}
+\end{obligation}
 
 \subsection{O-CRYST.EWALD: Fourier/Ewald Bridge}
 \label{sec:cryst-EWALD-discharge}
@@ -1503,7 +1506,7 @@ the certified discrete diffraction data.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-EWALD-reduced}
+\begin{obligation}[\status{C}]\label{ob:cryst-EWALD-reduced}
 \textup{(O-CRYST.EWALD Conditionally Reduced.)}
 O-CRYST.EWALD reduces to a single named convergence condition:
 prove that the Ewald domain loss satisfies
@@ -1511,15 +1514,15 @@ $\varepsilon^{\mathrm{Ewald}}_n \to 0$ along the certified lattice
 exhaustion in the declared Fourier-interface regime.  The bridge
 template (Thm.~\ref{thm:cryst-EWALD-template}) is established;
 the remaining burden is this convergence condition alone.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-ewald-eps}
+\begin{obligation}[\status{C}]\label{ob:cryst-ewald-eps}
 \textup{(O-CRYST.EWALD-$\varepsilon$: Ewald Loss Convergence.)}
 Prove that $\varepsilon^{\mathrm{Ewald}}_n \to 0$ along the declared
 crystallographic Fourier-interface regime.  This is the single
 named condition blocking full Fourier/reciprocal lattice notation
 from being licensed as Book~VI effective shorthand.
-\end{openobligation}
+\end{obligation}
 
 \subsection{O-CRYST.SG: Space Group Descent}
 \label{sec:cryst-SG-discharge}
@@ -1835,7 +1838,7 @@ the diffraction equivalence class.
 
 \subsection{Phase Problem Obligation: Formal Statement}
 
-\begin{openobligation}[\status{O}]\label{ob:cryst-PHASE}
+\begin{obligation}[\status{O}]\label{ob:cryst-PHASE}
 \textup{(O-CRYST.PHASE: Phase Problem --- Formal Statement.)}
 The remaining phase problem obligation is: for the declared
 crystallography probe discipline $\mathcal{P}_{\mathrm{diff}}$
@@ -1899,7 +1902,7 @@ for generic configurations in the declared regime:
 Proving either direction within NFC requires an explicit theorem
 about the information capacity of the probe family, which is the
 content of the remaining obligation.
-\end{openobligation}
+\end{obligation}
 
 
 
@@ -2412,7 +2415,7 @@ $|F|^2$-type channel; origin fixing is a separate declaration, not
 a probe-information question. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-anomalous-nomination}
+\begin{obligation}[\status{C}]\label{ob:cryst-anomalous-nomination}
 \textup{(O-CRYST.PHASE-RECOV: Anomalous-Scattering Wavelength
 Nominated.)}
 \textup{[Conditional on Thm.~\ref{thm:cryst-anomalous-PHASERECOV}
@@ -2436,9 +2439,9 @@ the enantiomorph by Thm.~\ref{thm:cryst-anomalous-PHASERECOV}.  The
 numerical wavelength value, when a specific edge is fixed, enters only
 through the empirical calibration map, not through the foundational
 derivation --- exactly as the caesium value does for $\hbar$.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:cryst-diffraction-standard}
+\begin{obligation}[\status{C}]\label{ob:cryst-diffraction-standard}
 \textup{(O-CRYST.CAL: Diffraction Standard Nominated.)}
 \textup{[Conditional on the diffraction calibration pattern and the
 declaration below.]}
@@ -2461,9 +2464,9 @@ spacings are nomination-independent, and only their SI \emph{scale}
 is fixed by $\lambda_{\mathrm{cal}}$.  This completes the
 calibration-pattern row recorded as pending for the diffraction
 standard.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{O}]\label{ob:cryst-PHASE-progress}
+\begin{obligation}[\status{O}]\label{ob:cryst-PHASE-progress}
 \textup{(O-CRYST.PHASE: Current Status and Remaining Frontier.)}
 Phase problem progress summary after Sessions~L+1--L+4:
 
@@ -2511,7 +2514,7 @@ Phase problem progress summary after Sessions~L+1--L+4:
     certified observable variable) and the diffraction standard
     remain calibration-pattern declarations to be made.
 \end{enumerate}
-\end{openobligation}
+\end{obligation}
 
 %% ---------------------------------------------------------------
 \section{Referee Attack Table and Non-Jargon Architecture}

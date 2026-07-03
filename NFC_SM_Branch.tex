@@ -31,6 +31,9 @@
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{obligation}[theorem]{Open Obligation}
+%% DEPRECATED (v1.1, MIG-019): `openobligation` is retained below as a
+%% compatibility alias only; new obligation declarations use `obligation`.
 \newtheorem{openobligation}[theorem]{Open Obligation}
 \newtheorem{standingrule}[theorem]{Standing Rule}
 \newtheorem{hypothesis}[theorem]{Hypothesis}
@@ -349,7 +352,7 @@ consequence: the shared interface constrains the relative coupling
 constants of su(3) and su(2) sectors. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:SM-coupling-transfer}
+\begin{obligation}[\status{C}]\label{ob:SM-coupling-transfer}
 \textup{(O-SM.CouplingTransfer: Gauge Coupling Constraint, Structural Seed.)}
 \textup{[Conditionally discharged at structural-seed level by
 Prop.~\ref{prop:SM-coupling-seed}
@@ -362,7 +365,7 @@ saturates the interface budget forcing shared archetype with
 $\mathrm{SA}_1$). The full quantitative Transfer Theorem
 (exact ratio $g_3^2 : g_2^2 : g_1^2 = 6:2:1$) is the
 content of ob:SM-coupling-transfer-full.
-\end{openobligation}
+\end{obligation}
 
 %% ---------------------------------------------------------------
 \section{Three-Generation Structure}
@@ -958,7 +961,7 @@ $g_2^2/g_1^2 = |\Phi(A_1)|/\|Z\|^2 = 2/1 = 2$.
 6 : 2 : 1$. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:SM-coupling-transfer-full}
+\begin{obligation}[\status{C}]\label{ob:SM-coupling-transfer-full}
 \textup{(O-SM.CouplingTransfer: Full Transfer Theorem.)}
 \textup{[Conditionally discharged by
 Thm.~\ref{thm:SM-coupling-transfer-full}.]}
@@ -967,7 +970,7 @@ derived from the archetype interface sharing and canonical
 central-generator normalization. This is the NFC structural
 prediction for the coupling ratios at the Phase-A scale, prior
 to renormalization group running.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]
 \textbf{Coupling Transfer Theorem status.}
@@ -1111,7 +1114,7 @@ states) is the structural analogue of the primary generation. \qed
 \label{sec:sm-obligations}
 %% ---------------------------------------------------------------
 
-\begin{openobligation}[\status{C}]\label{ob:SM-harmonization}
+\begin{obligation}[\status{C}]\label{ob:SM-harmonization}
 \textup{(O-SM.Harmonization: The Harmonization Functor.)}
 \textup{[Conditionally discharged by
 Thm.~\ref{thm:SM-harmonization-partial}
@@ -1124,7 +1127,7 @@ is a POT morphism (Thm.~\ref{thm:F-SM-POT-morphism}).
 Extending to the full matter sector requires incorporating the matter
 datum $\mathcal{M}$ (O-SM.Matter, O-SM.Higgs); the functor is then
 $F_{\mathrm{SM}}^{\mathrm{KPO}+\mathcal{M}}$.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:SM-harmonization-partial}
 \textup{(O-SM.Harmonization: Conditional Partial Discharge.)}
@@ -1303,7 +1306,7 @@ is required at this structural level. The representation
 assignment is therefore source-descended. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:SM-matter}
+\begin{obligation}[\status{C}]\label{ob:SM-matter}
 \textup{(O-SM.Matter: Matter Field Content.)}
 \textup{[Conditionally discharged at structural level by
 Prop.~\ref{prop:rh-SM-matter-candidate}
@@ -1314,7 +1317,7 @@ and uniquely determined by the declared collar eigenblock structure
 Klein-four asymmetry). Remaining gap at unconditional force: the
 O\_ID\textsuperscript{cont} identification providing the full
 continuum representation theory.
-\end{openobligation}
+\end{obligation}
 
 %% CS10-SCC AUDIT FOR SM MATTER/HIGGS SECTORS
 \begin{remark}[\status{R}]\label{rem:SM-sector-audit}
@@ -1486,7 +1489,7 @@ mechanism is imported. The Higgs mechanism emerges entirely
 from the collar spectral data. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:SM-higgs}
+\begin{obligation}[\status{C}]\label{ob:SM-higgs}
 \textup{(O-SM.Higgs: Electroweak Symmetry Breaking.)}
 \textup{[Conditionally discharged at structural level by
 Prop.~\ref{prop:rh-SM-higgs-candidate}
@@ -1498,7 +1501,7 @@ the collar eigenblock structure, requiring no imported potential.
 Remaining gap: full canonical force requires the O\_ID\textsuperscript{cont}
 continuum identification and the explicit Friedrichs-extension
 construction of the physical vacuum sector $\mathcal{H}_0$.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]
 O-SM.CouplingTransfer: see
@@ -2164,7 +2167,7 @@ subspace, so $\mathcal{H}_0$ is invariant under the full dynamics
 there.
 \end{remark}
 
-\begin{openobligation}[\status{C}]\label{ob:SM-H0-ScreenInv}
+\begin{obligation}[\status{C}]\label{ob:SM-H0-ScreenInv}
 \textup{(O-SM.H0.ScreenInv: Screening-Invariance Check ---
 Conditionally Discharged.)}
 \textup{[Conditional on Thm.~\ref{thm:SM-H0-ScreenInv-verified}.]}
@@ -2175,9 +2178,9 @@ explicit relative bound with constant $\|L_{K_0}\| =
 imports nothing and constructs nothing, as required; the
 realization-dependence of the stronger reducing property is
 recorded in Rem.~\ref{rem:SM-H0-realization}.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:SM-IDcont-TV}
+\begin{obligation}[\status{C}]\label{ob:SM-IDcont-TV}
 \textup{(O\_ID\textsuperscript{cont}\_TV: Transfer-and-Vacuum
 Component --- Conditionally Discharged.)}
 \textup{[Conditional on Thm.~\ref{thm:SM-IDcont-transfer},
@@ -2204,7 +2207,7 @@ their own in-branch construction work.  The SM status line
 remains \emph{conditionally intrinsic-structural closed,
 inherited-scope open} until the residual is verified; this
 obligation records the advance without inflating it.
-\end{openobligation}
+\end{obligation}
 
 
 \begin{remark}[\status{R}]\label{rem:SM-matter-close-memo}

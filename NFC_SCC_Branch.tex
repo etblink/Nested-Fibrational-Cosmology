@@ -29,6 +29,9 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{hypothesis}[theorem]{Hypothesis}
 \newtheorem{standingrule}[theorem]{Standing Rule}
+\newtheorem{obligation}[theorem]{Open Obligation}
+%% DEPRECATED (v1.1, MIG-019): `openobligation` is retained below as a
+%% compatibility alias only; new obligation declarations use `obligation`.
 \newtheorem{openobligation}[theorem]{Open Obligation}
 
 \theoremstyle{remark}
@@ -779,12 +782,12 @@ With O-SCC.MCS discharged, O-SCC.UC and O-SCC.TSI become the
 active frontiers.
 \end{remark}
 
-\begin{openobligation}[\status{C}]\label{ob:scc-weakglue}
+\begin{obligation}[\status{C}]\label{ob:scc-weakglue}
 \textup{(O-SCC.WeakGlue: DISCHARGED.)}
 See Theorem~\ref{thm:scc-weakglue}. This obligation is now [C].
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:scc-mcs}
+\begin{obligation}[\status{C}]\label{ob:scc-mcs}
 \textup{(O-SCC.MCS: Minimal Structural Carrier Theorem --- DISCHARGED.)}
 For every SCC object $X$ with transported invariant
 $\mathcal{T}_X$, there exists a unique (up to carrier equivalence)
@@ -793,7 +796,7 @@ minimal faithful support family $\mathcal{M}_X \subseteq \mathcal{W}_X$.
 uniqueness by Thm.~\ref{thm:scc-mcs-uniqueness};
 combined discharge by Thm.~\ref{thm:scc-mcs}.
 This obligation is now [C].
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]
 The dependency chain is:
@@ -802,18 +805,18 @@ $\mathrm{WeakGlue} \Rightarrow \mathrm{MCS} \Rightarrow
 O-SCC.MCS is now discharged. The active frontier advances to O-SCC.UC.
 \end{remark}
 
-\begin{openobligation}[\status{C}]\label{ob:scc-uc}
+\begin{obligation}[\status{C}]\label{ob:scc-uc}
 \textup{(O-SCC.UC: Branchwise SCC Completion --- Conditionally Discharged.)}
 See Thm.~\ref{thm:scc-uc}. With O-SCC.MCS now discharged
 (Thm.~\ref{thm:scc-mcs}), the UC branchwise completion object
 $\mathcal{U}_{\mathrm{SCC}}$ is conditionally available.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:scc-tsi}
+\begin{obligation}[\status{C}]\label{ob:scc-tsi}
 \textup{(O-SCC.TSI: Target/Structural Identification --- Conditionally Discharged.)}
 See Thm.~\ref{thm:scc-tsi}. With O-SCC.MCS and O-SCC.UC
 now conditionally discharged, TSI follows at conditional force.
-\end{openobligation}
+\end{obligation}
 
 %% ---------------------------------------------------------------
 %% ---------------------------------------------------------------
@@ -1648,7 +1651,7 @@ $\mathcal{T}_\rho$, completing the descent from the zero datum
 to the SCC carrier framework. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:rh-d1-full}
+\begin{obligation}[\status{C}]\label{ob:rh-d1-full}
 \textup{(D1 Full Discharge: Zero-Descent Theorem.)}
 \textup{[Conditionally hardened. The D1 obligation has been
 reduced to its sharpest form via the RH Branch first-hard-block
@@ -1676,7 +1679,7 @@ The three sub-items have been partially resolved:
 The ob:rh-d1-full label is upgraded from open [O] to conditionally
 hardened [C]: the obligation is substantially advanced but not yet
 unconditionally proved.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]\label{rem:rh-d1-status}
 \textbf{D1 status after this section.}

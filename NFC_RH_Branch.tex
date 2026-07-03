@@ -26,6 +26,9 @@
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{obligation}[theorem]{Open Obligation}
+%% DEPRECATED (v1.1, MIG-019): `openobligation` is retained below as a
+%% compatibility alias only; new obligation declarations use `obligation`.
 \newtheorem{openobligation}[theorem]{Open Obligation}
 \newtheorem{hypothesis}[theorem]{Hypothesis}
 
@@ -205,7 +208,7 @@ consistent with RH-N1 through RH-N5 (Def.~\ref{def:RH-necessary-conditions},
 SCC Branch). \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:RH4}
+\begin{obligation}[\status{C}]\label{ob:RH4}
 \textup{(RH4: Operator Realization.)}
 \textup{[Conditionally advanced by the orbit grammar and scaling-flow
 program. The scaling-flow candidate $G_{\mathrm{sf}}$ provides a
@@ -232,9 +235,9 @@ Connes (1999); the branch claims only the NFC-local admissibility force
 proved in this branch. Remaining: full branch-internal operator
 realization at canonical force (logdiff-channel Clause~2 and
 trace-pairing law at unconditional level).
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:RH5}
+\begin{obligation}[\status{C}]\label{ob:RH5}
 \textup{(RH5: Selection Exclusion.)}
 \textup{[Conditionally hardened: the SCC support-rigidity chain
 (Thm.~\ref{thm:rh-ac-a3}, SCC Branch) provides the structural
@@ -245,7 +248,7 @@ off-critical-line zero fails the branch-admissibility conditions in
 $W_{RH}$. Remaining: lifting this from SCC-admissibility to full
 operator-level exclusion once $H_{\mathrm{RH}}$ is explicitly
 constructed (ob:RH4).
-\end{openobligation}
+\end{obligation}
 
 \begin{proposition}[\status{C}]\label{prop:rh-critical-line-structural}
 \textup{(Critical-Line Structural Argument.)}
@@ -282,7 +285,7 @@ probe gives $Q[\psi] < 0$; the SCC equivalence then gives RH
 conditionally. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:RH6}
+\begin{obligation}[\status{C}]\label{ob:RH6}
 \textup{(RH6: Critical-Line Localization.)}
 \textup{[Conditionally hardened by
 Prop.~\ref{prop:rh-critical-line-structural}.]}
@@ -294,7 +297,7 @@ therefore all admissible zeros satisfy $\mathrm{Re}(\rho) =
 branch-internal proof of ob:RH4 at canonical theorem force (logdiff-channel
 Clause~2 and trace-pairing law beyond conditional status), together with
 the extension of the SCC/RH equivalence beyond Phase-A scope.
-\end{openobligation}
+\end{obligation}
 
 %% ---------------------------------------------------------------
 \section{RH AC Obstruction Ledger (Imported from SCC Branch)}
@@ -448,7 +451,7 @@ Therefore the S1 predicate implies RH at the declared scope.
 \qed
 \end{proof}
 
-\begin{openobligation}[\status{O}]\label{ob:rh-s1-formal}
+\begin{obligation}[\status{O}]\label{ob:rh-s1-formal}
 \textup{(O-RH.S1: Arithmetic Witness Assembly --- Formal Statement.)}
 The precise remaining obligation is: construct a finite arithmetic
 witness package $\mathcal{W}_{\mathrm{arith}}$ satisfying the S1
@@ -474,7 +477,7 @@ Therefore the irreducible arithmetic content reduces to
 structure of $\Xi$. All other S1 sub-predicates are conditionally
 resolved. This is the sharpest possible statement of the
 remaining RH frontier within the NFC canonical framework.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]\label{rem:rh-s1-reduction}
 \textbf{S1 reduction to S1-ARC.}
@@ -1523,7 +1526,7 @@ test function yields the RH-N2 prime-power template. \qed
 
 \subsection{Open Obligations in the Orbit Grammar Workstream}
 
-\begin{openobligation}[\status{C}]\label{ob:rh-sf-logderiv-legality}
+\begin{obligation}[\status{C}]\label{ob:rh-sf-logderiv-legality}
 \textup{(Log-Derivative Legality in Branch Scope.)}
 \textup{[Conditionally discharged by Def.~\ref{def:rh-logdiff-channel}
 together with Props.~\ref{prop:rh-sf-operator-origin}
@@ -1538,9 +1541,9 @@ Clause~2); interface lawfulness holds
 structure is imported
 (Rem.~\ref{rem:rh-logdiff-attribution-discipline}).
 All four clauses of Def.~\ref{def:rh-logdiff-channel} are satisfied.
-\end{openobligation}
+\end{obligation}
 
-\begin{openobligation}[\status{C}]\label{ob:rh-sf-trace-pairing-law}
+\begin{obligation}[\status{C}]\label{ob:rh-sf-trace-pairing-law}
 \textup{(Admissible Trace Pairing Law.)}
 \textup{[Conditionally discharged by
 Prop.~\ref{prop:rh-sf-primepower-pairing} and
@@ -1554,7 +1557,7 @@ and this realization is branch-visible and uniform in $\rho$
 (Lem.~\ref{lem:rh-sf-trace-uniformity}).
 The RH-N2 prime-power trace template is realized in
 branch-admissible form.
-\end{openobligation}
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:rh-og-5}
 \textup{(Conditional RH-N2 Realization via the Log-Derivative Channel.)}
@@ -1610,7 +1613,7 @@ A candidate spectral/trace construction for the RH branch is
 \end{enumerate}
 \end{definition}
 
-\begin{openobligation}[\status{C}]\label{ob:rh-sf-d2-audit}
+\begin{obligation}[\status{C}]\label{ob:rh-sf-d2-audit}
 \textup{(D2 Audit for the Scaling-Flow Determinant Channel.)}
 Prove that the scaling-flow/transfer-operator/determinant/log-derivative
 construction satisfies Def.~\ref{def:rh-d2-checklist}. Specifically:
@@ -1620,7 +1623,7 @@ regime; (2) $\det(1-\mathcal{S}_s)^{-1}$ is a lawful branch object;
 trace-test objects in $W_{RH}$; (4) the resulting prime-power trace
 distribution lands in $T_{RH}$; (5) the whole construction is uniform
 in $\rho$.
-\end{openobligation}
+\end{obligation}
 
 \begin{lemma}[\status{C}]\label{lem:rh-d2-reduction}
 \textup{(D2 Reduces to Four Local Certification Checks.)}
@@ -2258,7 +2261,7 @@ Therefore L2 is uniform in $\rho$ and no-smuggling. \qed
 
 \subsection{Steps L3--L7: Remaining Template Obligations}
 
-\begin{openobligation}[\status{C}]\label{ob:rh-tloc-L3}
+\begin{obligation}[\status{C}]\label{ob:rh-tloc-L3}
 \textup{(L3: Phase Detectability.)}
 \textup{[Conditionally discharged by
 Props.~\ref{prop:rh-L3-observable-existence}--\ref{prop:rh-L3-template-clean}.]}
@@ -2269,7 +2272,7 @@ L3.3 (detectability threshold, Prop.~\ref{prop:rh-L3-threshold}),
 L3.4 (template cleanliness, Prop.~\ref{prop:rh-L3-template-clean}).
 The phase-detectability step is governed by one common law for every
 $\rho$ with no zero-specific auxiliary data.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]\label{rem:rh-L3-structure}
 \textbf{L3 internal decomposition.}
@@ -2540,7 +2543,7 @@ threshold $\kappa/|B_P|$ applied to packet-scale differences — governs
 every $\rho$. The spacing criterion is $\rho$-uniform. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:rh-tloc-L4}
+\begin{obligation}[\status{C}]\label{ob:rh-tloc-L4}
 \textup{(L4: Phase-Spacing Test.)}
 \textup{[Conditionally discharged by
 Props.~\ref{prop:rh-tloc-L4-structural}
@@ -2551,7 +2554,7 @@ comparison law uniformly in $\rho$: structural foundation
 from distinct packet scales; uniformity
 (Prop.~\ref{prop:rh-tloc-L4-uniform}) gives the common-law
 verification.
-\end{openobligation}
+\end{obligation}
 
 %% ── L5: Gram Test ──────────────────────────────────────────────
 
@@ -2617,7 +2620,7 @@ for every $\rho$, with no zero-specific adjustment.
 Hence the Gram-positivity certification is uniform in $\rho$. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:rh-tloc-L5}
+\begin{obligation}[\status{C}]\label{ob:rh-tloc-L5}
 \textup{(L5: Gram Test.)}
 \textup{[Conditionally discharged by
 Props.~\ref{prop:rh-tloc-L5-structural}
@@ -2626,7 +2629,7 @@ Local nondegeneracy is certified by one common Gram-positivity
 criterion uniformly in $\rho$: structural foundation gives
 $G \succ 0$ from phase separation; uniformity gives the common-law
 verification.
-\end{openobligation}
+\end{obligation}
 
 %% ── L6: Leakage Criterion ──────────────────────────────────────
 
@@ -2685,7 +2688,7 @@ are branch-declared constants. Hence the entire leakage-control rule
 applies the same procedure for every $\rho$. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:rh-tloc-L6}
+\begin{obligation}[\status{C}]\label{ob:rh-tloc-L6}
 \textup{(L6: Leakage Criterion.)}
 \textup{[Conditionally discharged by
 Props.~\ref{prop:rh-tloc-L6-structural}
@@ -2694,7 +2697,7 @@ Lawful coefficient directions are chosen by one common leakage-control
 rule uniformly in $\rho$: structural foundation gives unique
 Gram-orthogonal coefficients with no-leakage bound; uniformity gives
 the common-law verification.
-\end{openobligation}
+\end{obligation}
 
 %% ── L7: Local Compression ──────────────────────────────────────
 
@@ -2757,7 +2760,7 @@ the same compression rule applies for every $\rho$,
 with no zero-specific auxiliary choice. \qed
 \end{proof}
 
-\begin{openobligation}[\status{C}]\label{ob:rh-tloc-L7}
+\begin{obligation}[\status{C}]\label{ob:rh-tloc-L7}
 \textup{(L7: Local Compression.)}
 \textup{[Conditionally discharged by
 Props.~\ref{prop:rh-tloc-L7-structural}
@@ -2766,7 +2769,7 @@ The local detecting family is compressed to a minimal witness core by
 one common minimal-cover rule uniformly in $\rho$: structural
 foundation gives existence of the minimal core; uniformity gives the
 common-law verification.
-\end{openobligation}
+\end{obligation}
 
 \begin{remark}[\status{R}]\label{rem:rh-second-hinge-status}
 \textbf{Second hard block current status.}
