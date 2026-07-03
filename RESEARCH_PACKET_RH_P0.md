@@ -33,6 +33,10 @@ Independently of Lemma P0.1, the theorem's proof establishes only:
 RH ⟹ K positive-definite ⟹ Q[ψ] ≥ 0 for every SCC-admissible ψ.
 The converse — that positivity **on the subclass** implies positive-definiteness of K, hence RH — requires the subclass to *detect every negative direction* of the quadratic form. Restriction of a universal quantifier does not preserve an equivalence; the missing ingredient is a **separation (or density) theorem**: if K is not positive-definite, some admissible ψ witnesses Q[ψ] < 0. No such theorem exists in the canon. Until it does, the honest reading of the equivalence is one-directional at the declared scope.
 
+## K0-W1 update (MIG-023): the Weil anchor reshapes P0's targets
+
+With the Weil specification adopted (`RESEARCH_PACKET_RH_K0_WEIL.md`): **(a)** the raw rational-scale probes U_q f₀ do **not** satisfy the two Weil moment conditions (each contributes √π and √π/(2q) at s = 0, 1); the candidate probe core is the **moment-constrained** family 𝒟_ℚ = {Σcⱼ U_{qⱼ}f₀ : Σcⱼ = 0, Σcⱼ/qⱼ = 0} — at least three distinct scales for a generic nonzero member. **(b)** P0-4's SEP burden is superseded by **P0-WEIL-CORE** (𝒟_ℚ is a core for 𝔔_W on the declared Weil form domain); unconstrained Γ-span L²-density (Lemma K0.A) does not by itself prove it — the moment constraints and the explicit-formula topology must also be controlled. **(c)** P0-5/P0-6's truncations are re-founded as the moment-compressed matrices M_N = V_N* H_N V_N of the Weil packet §7.
+
 ## 3. Program items (the mandate, in order)
 
 **P0-1. Record the collapse lemma.** Done above (§1). Canonical destination when authorized: a `[U]` lemma adjacent to the re-declared probe definition, serving as the permanent record of *why* the definition was repaired (Phase-3 Rule 4: the failed intake is preserved and explained, not erased).
