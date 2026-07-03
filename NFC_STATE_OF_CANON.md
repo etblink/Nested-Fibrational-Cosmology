@@ -1,77 +1,76 @@
 # NFC Canon: State of the Canon
-## Sessions XXXIV – L+63 (June 2026)
 
----
+> **GENERATED SNAPSHOT** — produced by `scripts/generate_state_of_canon.py` from the
+> metadata layer (census commit `d708136`, generated 2026-07-03 07:07Z).
+> Do not hand-edit above the historical marker; run `make state` to refresh.
+> Historical session material is preserved verbatim below the marker.
 
-## Corpus Overview
+## Corpus Overview (generated)
 
-| Metric | Value |
+| Measure | Value |
 |---|---|
-| Total files | 17 (7 spine books + 10 branch books) |
-| Total lines | ~36,900 |
-| Approximate pages | ~510 |
-| Compile status | **All 17 files clean (full-corpus audit L+19); 0 citation cycles (711 nodes); 0 dangling refs corpus-wide** |
-| [D]-tagged | **461** |
-| [U]-tagged | **212** |
-| [C]-tagged | **748** |
-| [B]-tagged | **9** |
-| [R]-tagged | **349** |
-| [O] open obligations | **5 (post L+56) — 4 toolkit-boundary + 1 sharpened continuum-bridge residual (O_Charge.Quant-cont.b2, numeric isolation of the frequency module in ℝ; charge + abstract-frequency halves now [C]-discharged)** |
-| [C] discharged obligations | **93 (census-verified)** |
-| Proof citation cycles | **0 (corpus-wide audit L+19, 711 statement-proof nodes; includes textual-citation check of SCT doctrine)** |
+| Canon files | 17 (7 spine + 10 branch) |
+| Status-tagged claim records | 1790 |
+| [D]-tagged (raw census) | **461** |
+| [U]-tagged (raw census) | **211** |
+| [C]-tagged (raw census) | **749** |
+| [B]-tagged (raw census) | **9** |
+| [O]-tagged (raw census) | **5** |
+| [R]-tagged (raw census) | **366** |
+| Prose-mention delta (raw − declarations) | {'R': 0, 'D': 0, 'U': 1, 'C': 9, 'O': 0, 'B': 1} |
+| Unique labels | 1990 |
+| Dangling references | 0 |
+| Proof-citation cycles | 0 |
+| Validation suite | **PASS** |
 
-*Counting note (regenerated; migration `MIG-003`): status-tag figures are the raw direct census over `\status{...}` occurrences corpus-wide, now produced mechanically by `scripts/extract_metadata.py` (see `metadata/census.json`, field `raw_grep_census`) rather than typed by hand. The previously-shown figures ([U]=209, [C]=685, [D]=443, no [B]/[R] row) were retained from the L+12/L+13 refresh and had gone stale as the corpus grew; they are superseded by the current census above (review ruling F-3: stale, not a narrower convention). The `[O]=5` headline was already current. Run `make metadata` to regenerate; the environment-declaration census (a second, slightly lower set of figures that excludes 11 inline prose status-mentions) is also in `metadata/census.json`.*
+*Counting note: the raw census counts every `\status{X}` occurrence; the
+environment-declaration census (claim records) excludes inline prose mentions.
+Declarations: {'D': 461, 'U': 210, 'C': 740, 'B': 8, 'O': 5, 'R': 366}. Both are regenerated, never hand-typed (F-3 resolution).*
 
----
+## Branch Status Summary (generated)
 
-## Branch Status Summary
+| Branch | Current posture (verbatim A1 status proposition) | D | U | C | B | O | R |
+|---|---|---|---|---|---|---|---|
+| YM | Conditional CERT-CLOSE (MSC-normalized NFC scope); B1/B2/B3 post-program | 47 | 19 | 185 | 0 | 0 | 46 |
+| NS | Domain-bounded conditional CERT-CLOSE; unconditional global regularity external | 20 | 17 | 39 | 0 | 0 | 36 |
+| SCC | Conditional CERT-CLOSE at declared structural endpoint (UCTI/depth-sum/threshold-stability + source-descent) | 15 | 8 | 40 | 0 | 0 | 19 |
+| GR | Domain-bounded conditional CERT-CLOSE + CK-corner extension; global curvature-subcriticality open | 11 | 9 | 29 | 1 | 0 | 15 |
+| SM | Conditionally intrinsic-structural closed, inherited-scope open | 6 | 1 | 42 | 0 | 0 | 19 |
+| BIO | Replication-heredity endpoint discharged; EVO/MULTI conditional; BND residual toolkit-boundary | 42 | 0 | 51 | 0 | 1 | 23 |
+| LING | Contrast+recursion+context-response closed; reference semantics conditional at two scopes | 37 | 0 | 46 | 1 | 0 | 21 |
+| CRYST | Conditional CERT-CLOSE (diffraction-periodicity-symmetry); phase problem frontier | 31 | 3 | 45 | 0 | 2 | 25 |
+| SPEC | CERT-CLOSE on gauge-response regime; matter-rich regime open (SM-gated) | 41 | 0 | 31 | 6 | 0 | 10 |
+| RH | CERT-PROJ; S1 arithmetic + RH4-6 frontier | 26 | 0 | 86 | 0 | 1 | 17 |
+| SPINE (Books I–VII) | Stable foundational/governance layer | 185 | 153 | 146 | 0 | 1 | 135 |
 
-| Branch | Status | Principal Frontier |
-|---|---|---|
-| **SPEC** | **CERT-CLOSE** (gauge-response); **matter-rich extension conditionally discharged (coupling + extended endpoint); branch [O]=0** | Continuum-interface bridges retain [B] status |
-| **YM** | Conditional CERT-CLOSE (MSC-normalized, ClaySpec-matched); **branch [O] count now zero** | B1/B2 Clay gaps; declared-weights re-verification inside ob:B3-A2-reserve [C] |
-| **SCC** | Conditional CERT-CLOSE (MCS+UC+TSI) | — |
-| **NS** | Domain-bounded conditional CERT-CLOSE | Stage-3 global unconditional; SCT.6b (H1)–(H3) verification in NS safe-tail regime |
-| **GR** | Domain-extended conditional CERT-CLOSE | Curvature-subcriticality (global) |
-| **SM** | Conditionally intrinsic-structural closed; **O_ID^cont gate conditionally discharged end-to-end (rate + transfer + vacuum + ScreenInv verified); branch [O]=0** | Coupling-transfer RG refinement (in-toolkit, non-blocking) |
-| **BIO** | Full endpoint on C_Bio^nd; two-unit assembly declared; **BND forced for all nontrivial persistent cycles except trivial-core** | BND trivial-core existence residual (toolkit-boundary) |
-| **LING** | Contrast+recursion+context-response closed; **reference semantics conditionally resolved at two scopes (REF-INVIS base / REF-RECOV nominated extension)** | Truth-condition semantics; strong infinite generativity |
-| **CRYST** | Conditional CERT-CLOSE (diffraction-periodicity-symmetry); **phase invisibility certified for the invariance subgroup (origin coset + enantiomorph); enantiomorph recovery conditional on anomalous nomination** | Phase problem modulo the certified invariance group (toolkit-boundary) |
-| **RH** | CERT-PROJ | S1-ARC: Q[ψ]≥0 from arithmetic structure of Ξ |
+## Open Obligation Register (generated — syntactic [O] census: 5 items)
 
----
+| Label | Branch | Section | Discharge basis / residual |
+|---|---|---|---|
+| `ob:bio-BND-open` | BIO | O-BIO.BND: Principal Biology Frontier (Remains Open) | toolkit-boundary residual; BND forced except trivial-core. |
+| `ob:cryst-PHASE` | CRYST | Phase Problem Obligation: Formal Statement | phase problem modulo certified invariance group; toolkit-boundary. |
+| `ob:cryst-PHASE-progress` | CRYST | Updated Phase Problem Status | — |
+| `ob:rh-s1-formal` | RH | S1 Formal Theorem Packet | Q[psi]>=0 from arithmetic structure of Xi; out-of-toolkit. |
+| `ob:vrp-charge-quant` | SPINE | Charge as Licensed Conserved Quotient Invariant | scoped to residual b2 (numeric isolation of Omega_B in R); a/b1 conditionally discharged (thm:vrp-charge-continuum-survival, cor:vrp-frequency-lattice-survival). |
 
-## Open Obligation Register (4 items, as of L+22 — census-verified)
+## Frontier Accountings (generated — four accountings, NEVER summed)
 
-*Frontier classification (Book VII def:toolkit-boundary-frontier): all 4 remaining items are toolkit-boundary residual-isolated (RH, CRYST×2, BIO). The in-toolkit surface is fully worked (L+22): every obligation reachable by existing methods is conditionally discharged with named conditions.*
+| # | Accounting | Count | Measures |
+|---|---|---|---|
+| I | Syntactic [O] census | 5 | environments literally tagged \status{O} |
+| II | Named `ob:` roster | 99 | all ob:-labelled obligation environments regardless of tag |
+| III | Reduced irreducible frontier | 4 | genuinely open deep mathematics after all reductions |
+| IV | Branch posture | 10 branches | closure ladder position per branch (see views.branch_posture) |
 
-*Register correction (L+12): the L+4 register carried two offsetting bookkeeping errors — ob:B3-A2-reserve was listed as open despite carrying [C] in canon, and ob:bio-BND-open was omitted. Both corrected below.*
+**Reduced irreducible frontier (III):**
+- **RH arithmetic orbit grammar** — labels: `ob:rh-sf-logderiv-legality`, `ob:rh-sf-trace-pairing-law`, `ob:rh-sf-d2-audit`
+- **RH packet-local synthesis** — labels: `ob:rh-tloc-L3`, `ob:rh-tloc-L4`, `ob:rh-tloc-L5`, `ob:rh-tloc-L6`, `ob:rh-tloc-L7`
+- **SM matter content** — labels: `ob:SM-matter`, `ob:SM-IDcont-TV`, `ob:O-ID-cont`
+- **GR global curvature-subcriticality** — labels: `def:curv-subcrit-global`
 
-### Arithmetic / Clay-grade outside current toolkit (1)
-
-| Label | Branch | Description |
-|---|---|---|
-| ob:rh-s1-formal | RH | Q[ψ]≥0 from arithmetic structure of Ξ. S1-ARC alone (S1-TRACE, S1-DESCENT, S1-COMP all [C]). Pure arithmetic; no NFC collar-algebra tool. |
-
-### Observational information theory (2)
-
-| Label | Branch | Description |
-|---|---|---|
-| ob:cryst-PHASE | CRYST | Phase problem, narrowed: uniqueness modulo the certified invariance group (origin ⋊ conjugation) for generic non-centrosymmetric configurations. Toolkit-boundary (structure-factor fibration), same register as rh-s1-formal. Centrosymmetric sign, enantiomorph, origin coset all [C]; enantiomorph recovery [C] conditional on anomalous nomination. |
-| ob:cryst-PHASE-progress | CRYST | Progress tracker. Babinet, positivity, centrosymmetric sign, enantiomorph, origin coset, conditional anomalous recovery all [C]. Open: modulo-invariance residual + two pending nominations. |
+<!-- ===== HISTORICAL HAND-MAINTAINED RECORD BELOW: GENERATOR PRESERVES VERBATIM ===== -->
 
 
-### Force question (1)
-
-| Label | Branch | Description |
-|---|---|---|
-| ob:bio-BND-open | BIO | BND narrowed: forced for every nontrivial persistent replication-metabolism cycle except whole-support core (I_X = X). Internal-only and external-only metabolism excluded via UCTI dissipation accounting. Residual: constructibility of a coreless-complement persistent replicator — configuration-existence question, toolkit-boundary (same register as rh-s1-formal). |
-
-### Discharged this run (L+12): three YM items
-
-ob:YM-B3-A2 [O]→[C] (route (ii) gap-subcriticality, reserve 0.113 at unit weights); ob:O-YM-WeakGlue-standalone [O]→[C] (discharged for declared carriers; per-extension duty reclassified as standing re-audit rule); ob:O-YM-SVC-Lip [O]→[C] (via new thm:YM-SVC-Lip: branch-computability + explicit β·N bound; O-YM.SVC chain conditionally closed end-to-end).
-
----
 
 ## Governance Additions (Sessions L+6 – L+12)
 

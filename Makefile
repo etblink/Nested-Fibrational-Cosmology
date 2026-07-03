@@ -16,3 +16,5 @@ dashboard:     ## Rebuild the read-only local dashboard from current metadata
 check: validate compile ## Full edit-gate: structural validation + compile
 
 all: metadata validate dashboard ## Regenerate metadata + validate + dashboard
+state:          ## Regenerate NFC_STATE_OF_CANON.md snapshot from metadata
+	python3 scripts/generate_state_of_canon.py
