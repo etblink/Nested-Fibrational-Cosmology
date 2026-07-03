@@ -1,5 +1,15 @@
 # Research Packet — RH-P0: Probe-Space Nontriviality and Separation Audit
 
+> ## ⚠ GATE NOTICE (2026-07-03, second review): RH-K0 PRECEDES ANY P0 CANON MIGRATION
+> A deeper defect sits one layer upstream: `prop:rh-kernel-positivity` and `def:rh-kernel`
+> carry three independent problems (sign reversal in the displayed zero contribution;
+> exact cancellation of functional-equation partners in the displayed sum; a
+> difference-kernel vs. spectral-multiplier mismatch between `def:rh-kernel` and the
+> quadratic form actually used). See **`RESEARCH_PACKET_RH_K0.md`**. P0's *research* items
+> (P0-1…P0-4 analysis, the density candidate) may proceed, but **no P0 canon migration is
+> authorized until K0 is resolved** — repairing the probe space against an ill-posed
+> kernel criterion would build on sand. Both kernel claims are flagged `review_needed`.
+
 **Class:** scaffold planning document; **not canon**. Nothing here alters any `\status` tag, label, or canon text. This packet is the mandated prerequisite to S1-ARC-0 (see the gate notice in `RESEARCH_PACKET_RH_S1.md`) and exists because the S1 packet's F4 falsification criterion fired against the canon's own probe-space definition. The canon repairs it motivates are `[D]`-level re-declarations plus one theorem repair, each individually migration-gated.
 
 **Affected canon claims (flagged `review_needed` in metadata):** `def:scc-admissible-probes` (SCC Branch, SCC-M1–M4) and `thm:scc-rh-equivalence` `[C]`; `thm:rh-s1-conditional` and `ob:rh-s1-formal` carry inherited gate notes.
@@ -27,11 +37,11 @@ The converse — that positivity **on the subclass** implies positive-definitene
 
 **P0-2. Repair SCC-M3: family-level covariance instead of pointwise invariance.** Proposed re-declaration: replace "f(qx) = f(x) for all q ∈ ℚ×" with a **quotient-visible action on the family**: with (U_q f)(x) := f(qx), require
 > **SCC-M3′:** U_q W ⊆ W for every q ∈ ℚ₊ (the probe *family* is stable under the arithmetic scaling action),
-so no individual member is required to be a fixed point. This preserves the original intent (ℚ×-quotient descent = the arithmetic scaling structure is visible to the family) while removing the fixed-point requirement that caused the collapse. Note U_q is (up to the unitary normalization on L²(dx/x)) the multiplicative translation; Haar invariance of dx/x makes each U_q an isometry, so SCC-M3′ is compatible with SCC-M4 by construction.
+so no individual member is required to be a fixed point. This preserves the original intent (ℚ×-quotient descent = the arithmetic scaling structure is visible to the family) while removing the fixed-point requirement that caused the collapse. Note U_q is the multiplicative translation on L²(dx/x); each U_q is exactly an isometry of L²(dx/x) (Haar invariance), so SCC-M3′ is compatible with SCC-M4 by construction.
 
 **P0-3. Nontriviality of the repaired family (proposed lemma, with witness).**
 > **Proposed Lemma P0.3 (target `[C]` pending audit of the aggregation rule).** The smallest family W containing f₀(x) := x^{1/2} e^{−x} and closed under {U_q : q ∈ ℚ₊}, Mellin weighting, and the licensed finite aggregation rule consists of L²(ℝ₊, dx/x) functions and is nontrivial.
-> *Sketch:* ‖f₀‖²_{L²(dx/x)} = ∫₀^∞ x e^{−2x} dx/x · x = ∫₀^∞ x e^{−2x} dx = 1/4 < ∞ and f₀ ≢ 0; each U_q is an isometry of L²(dx/x); finite aggregation preserves membership. (The Mellin transform of f₀ is Γ(1/2 + iτ)-type — nonvanishing, giving a nonzero ψ.)
+> *Sketch:* ‖f₀‖²_{L²(dx/x)} = ∫₀^∞ |x^{1/2}e^{−x}|² dx/x = ∫₀^∞ e^{−2x} dx = **1/2** < ∞ (corrected per review — an earlier draft misstated 1/4, which would correspond to f₀(x)=xe^{−x}) and f₀ ≢ 0; each U_q is **exactly** an isometry of L²(dx/x): ‖U_q f‖² = ∫|f(qx)|² dx/x = ∫|f(y)|² dy/y by y = qx and Haar invariance; finite aggregation preserves membership. (The Mellin transform of f₀ is Γ(1/2 + iτ)-type — nonvanishing, giving a nonzero ψ.)
 This discharges the reviewer's item 3 at proposal level; the canonical proof must additionally verify the branch-visibility/no-smuggling conditions of the RH descent discipline.
 
 **P0-4. The exact separation condition (to be stated and proved before any converse is claimed).**

@@ -26854,7 +26854,7 @@
     ],
     "generated_from": null,
     "last_reviewed": "2026-07-03",
-    "reviewer_note": "S1-ARC-0 attempt PAUSED (2026-07-03): F4 probe-space-degeneracy criterion fired. Prerequisite program: RESEARCH_PACKET_RH_P0.md (probe-space nontriviality + separation audit).",
+    "reviewer_note": "S1-ARC-0 PAUSED (F4, 2026-07-03) and now additionally gated on RH-K0 (kernel-criterion audit) upstream of RH-P0 (probe-space repair). Order: K0 -> P0 -> S1-ARC-0.",
     "review_needed": false
   },
   {
@@ -28295,7 +28295,7 @@
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": "2026-07-03",
-    "reviewer_note": "Inherits the F4 gate via thm:scc-rh-equivalence: formally intact [C] implication, but its hypothesis set is currently satisfiable only trivially. Gated on RH-P0.",
+    "reviewer_note": "Inherits K0 gate (via thm:scc-rh-equivalence <- prop:rh-kernel-positivity) and F4 gate. Formally intact [C] implication; usable force gated on K0 then P0.",
     "review_needed": false
   },
   {
@@ -28767,9 +28767,9 @@
     "authority_level": "body_claim",
     "frontier_accounting": [],
     "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
+    "last_reviewed": "2026-07-03",
+    "reviewer_note": "K0 GATE (2026-07-03): F is declared as a difference kernel K(t,u)=F(t-u) but used downstream as a spectral multiplier (Q=int F|psi|^2); the displayed zero-sum has a sign error (leading minus makes sigma>1/2 contributions POSITIVE) and functional-equation partners rho and 1-conj(rho) cancel exactly in the displayed Re sum. Regularization (zeta'/zeta '~') undefined. See RESEARCH_PACKET_RH_K0.md.",
+    "review_needed": true
   },
   {
     "claim_id": "def:rh-zero-datum",
@@ -29203,9 +29203,9 @@
     "authority_level": "body_claim",
     "frontier_accounting": [],
     "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
+    "last_reviewed": "2026-07-03",
+    "reviewer_note": "K0 GATE (2026-07-03): three independent defects verified against the text: (1) proof asserts 'negative bump' for sigma>1/2 but the definition's leading minus makes that contribution positive; (2) partner zeros at 1-sigma+i*gamma cancel it exactly (Re xi'/xi vanishes on the critical line off zeros, RH or not), so the displayed sum cannot detect off-critical pairs; (3) even granting a bump, a positive-definite function may take negative values (cos t), so the equivalence step is invalid for the declared difference kernel. [C] proposition's claimed equivalence is unestablished as written. See RESEARCH_PACKET_RH_K0.md.",
+    "review_needed": true
   },
   {
     "claim_id": "prop:scc-antismuggle",
@@ -30005,7 +30005,7 @@
     "frontier_accounting": [],
     "generated_from": null,
     "last_reviewed": "2026-07-03",
-    "reviewer_note": "F4 GATE (2026-07-03): (a) probe space trivial under current Def (see def:scc-admissible-probes note), making the RHS vacuous; (b) proof's second step supplies only RH => Q>=0 on the subclass; the converse needs a separation/density theorem (subclass must detect every negative direction). See RESEARCH_PACKET_RH_P0.md item 4. [C] tag formally intact as a conditional statement; its usable force is gated on the P0 repairs.",
+    "reviewer_note": "K0+F4 GATES (2026-07-03): inherits ALL prop:rh-kernel-positivity defects (first displayed equivalence) IN ADDITION to the F4 issues: trivial probe space under current Def, and the restriction-only converse gap. Kernel/multiplier mismatch is visible in this theorem's own display (K(t,u) pos-def vs int F|psi|^2). Gated on RH-K0 then RH-P0.",
     "review_needed": true
   },
   {
