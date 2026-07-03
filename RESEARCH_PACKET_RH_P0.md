@@ -23,7 +23,9 @@
 >
 > *Proof.* It suffices to use the single rational q = 2. Set g(t) := f(eᵗ). The substitution x = eᵗ gives ‖f‖²_{L²(dx/x)} = ∫_ℝ |g(t)|² dt, so g ∈ L²(ℝ). SCC-M3 at q = 2 gives f(2x) = f(x), i.e. g(t + log 2) = g(t) for a.e. t: g is (log 2)-periodic. For a periodic g, ∫_ℝ |g|² dt equals the sum over infinitely many periods of the constant period-integral ∫₀^{log 2} |g|² dt; finiteness forces that period-integral to be 0, hence g = 0 a.e., hence f = 0 a.e. ∎
 
-**Immediate consequences (as the review states):** W_RH = {0}; Q[0] = 0 holds vacuously; every truncation W_RH^sf(N) inheriting SCC-M3/M4 is likewise trivial; positivity on this class cannot imply RH. The canon's own Gaussian-exclusion remark in `thm:scc-rh-equivalence` was a visible symptom: the definition excludes not just Gaussians but everything nonzero.
+**Immediate consequences (as the review states):** W_RH = {0}; Q[0] = 0 holds vacuously; every truncation W_RH^sf(N) inheriting SCC-M3/M4 is likewise trivial; positivity on this class cannot imply RH.
+
+**D4 addendum (MIG-022, second review — Mellin–Plancherel domain error).** The canon's Gaussian-exclusion argument in `thm:scc-rh-equivalence` is itself wrong in its SCC-M4 part: ψ_γ(τ) = e^{−(τ−γ)²} **is** the Mellin transform of the explicit function f_γ(x) = (1/(2√π)) x^{−iγ} exp(−(log x)²/4), with ‖f_γ‖²_{L²(dx/x)} = (1/4π)∫e^{−t²/2}dt = √2/(4√π) < ∞ (verified symbolically): under t = log x, Mellin **is** Fourier–Plancherel, so every L²(ℝ, dτ) function — Gaussians included — is the Mellin transform of some L²(dx/x) function. Gaussians fail only SCC-M3 as written (no pointwise rational-scale invariance); whether they fail SCC-M2 is undecidable until 'stable under x ↦ x/n' is formalized. The correct statement of the collapse remains M3+M4 **jointly** (Lemma P0.1); no per-condition exclusion of standard localized probes survives D4.
 
 ## 2. The separation gap in `thm:scc-rh-equivalence` (recorded)
 
@@ -46,7 +48,7 @@ This discharges the reviewer's item 3 at proposal level; the canonical proof mus
 
 **P0-4. The exact separation condition (to be stated and proved before any converse is claimed).**
 > **Required theorem shape (SEP):** Let W satisfy SCC-M1, M2, M3′, M4. Call W *separating for K* if: whenever K is not positive-definite on the full declared test class, there exists ψ ∈ W (equivalently, in the closed span of W under the licensed aggregation) with Q[ψ] < 0.
-> Sufficient route to prove SEP: show the Mellin images of W are **dense** in the relevant weighted L² space on the critical line (density ⟹ any negative direction of the form is approximable ⟹ some member goes negative). The Γ-type images of the U_q-orbit of f₀ under Mellin weighting are a natural candidate total set; density must be proved, not assumed.
+> Sufficient route to prove SEP: if the (K0-repaired) quadratic form is **bounded on L²**, ordinary L²-density of the Mellin images of W suffices (density ⟹ any negative direction is approximable ⟹ some member goes negative). If the form is **unbounded but closed**, L²-density is NOT enough: the probe span must additionally be a **form core** — dense in the form domain under the form norm ‖·‖² + Q[·]. The Γ-type images of the U_q-orbit of f₀ under Mellin weighting are a natural candidate total set; density must be proved, not assumed.
 Only after SEP is proved may `thm:scc-rh-equivalence` be repaired to a genuine equivalence (a theorem-statement change: `[C]`, migration-gated, with the old statement preserved as superseded intake per Phase-3 Rule 5).
 
 **P0-5. Only then: re-found the truncations.** Define W_RH^sf(N) over the repaired family: generator set = {U_q f₀ : q = a/b, a,b ≤ N} together with the declared Mellin weightings; admissible aggregation = the licensed finite rule; and the **finite quadratic-form matrix** Q_N := (Q[ψ_i, ψ_j])_{i,j} (the polarized form on the generator list). All of `def:rh-sf-probe-subfamily`'s closure clauses re-anchor to SCC-M3′.

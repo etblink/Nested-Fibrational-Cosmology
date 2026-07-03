@@ -56,7 +56,7 @@
   },
   "thm:scc-rh-equivalence": {
     "review_needed": true,
-    "reviewer_note": "K0+F4 GATES (2026-07-03): inherits ALL prop:rh-kernel-positivity defects (first displayed equivalence) IN ADDITION to the F4 issues: trivial probe space under current Def, and the restriction-only converse gap. Kernel/multiplier mismatch is visible in this theorem's own display (K(t,u) pos-def vs int F|psi|^2). Gated on RH-K0 then RH-P0.",
+    "reviewer_note": "K0+F4 GATES (2026-07-03, upd. MIG-022): inherits prop:rh-kernel-positivity defects D1-D3 PLUS its own D4 (Mellin-Plancherel domain error): the proof claims Gaussians fail SCC-M4, but psi_gamma=e^{-(tau-gamma)^2} IS the Mellin transform of an explicit L^2(dx/x) function (verified); Gaussians fail only SCC-M3 as written. Also F4: trivial probe space under current Def; restriction-only converse gap. Kernel/multiplier mismatch visible in this theorem's own display. Gated on RH-K0 then RH-P0.",
     "last_reviewed": "2026-07-03"
   },
   "thm:rh-s1-conditional": {
@@ -71,6 +71,11 @@
   "prop:rh-kernel-positivity": {
     "review_needed": true,
     "reviewer_note": "K0 GATE (2026-07-03): three independent defects verified against the text: (1) proof asserts 'negative bump' for sigma>1/2 but the definition's leading minus makes that contribution positive; (2) partner zeros at 1-sigma+i*gamma cancel it exactly (Re xi'/xi vanishes on the critical line off zeros, RH or not), so the displayed sum cannot detect off-critical pairs; (3) even granting a bump, a positive-definite function may take negative values (cos t), so the equivalence step is invalid for the declared difference kernel. [C] proposition's claimed equivalence is unestablished as written. See RESEARCH_PACKET_RH_K0.md.",
+    "last_reviewed": "2026-07-03"
+  },
+  "rem:scc-rh-governance": {
+    "review_needed": true,
+    "reviewer_note": "D4/K0 GATE (2026-07-03): this remark repeats (a) that the Theorem 'establishes' the RH equivalence (unestablished as written: defects D1-D3) and (b) that the M1-M4 restriction 'excludes artificial localization probes' - the theorem's Gaussian-exclusion argument is wrong on M4 (D4, Mellin-Plancherel domain error: psi_gamma = Mellin of f_gamma(x)=(1/(2 sqrt(pi))) x^{-i gamma} exp(-(log x)^2/4) in L^2(dx/x), verified). Gaussians fail only SCC-M3 as written; M2 undecidable until formalized. Gated on RH-K0.",
     "last_reviewed": "2026-07-03"
   }
 }
