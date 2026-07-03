@@ -53,3 +53,17 @@
 | Duplicate labels | 12 benign | 12 benign | 0 | — |
 
 **Verdict: all nine acceptance criteria pass.** The one deliberate status change is a *weakening/correction* (`[U]→[C]`), explicitly review-authorized; every other status, label, and dependency is byte-preserved or additive-`[R]` only.
+
+---
+
+## Addendum — Final semantic-consistency commit (reviewer-directed)
+
+Commit `486455c` (MIG-014…017), applied after the acceptance review, reconciles every remaining live rendered status surface:
+
+**NS (MIG-014):** all 11 dependency-ledger display cells corrected to their referenced environments' declared tags (nine `[O]→[C]`, NS.7.1 `[B]→[C]`, status prop `[U]→[C]`); `rem:NS-chain-status` and `rem:NS7-now-accessible` rewritten as current summaries with dated transition snapshots retained inside them; `cor:NS-claims` now claims domain-bounded conditional CERT-CLOSE while explicitly withholding unconditional global regularity; Scholium `sch:NS-final` identifies the external unconditional Stage-3 frontier instead of UH.3/SB2; the dormant remark was moved above `\end{document}`, retitled "(Note on the pre-canonical record.)", explicitly differentiated from the scholium, and given the label `rem:NS-precanonical-completeness`.
+
+**SCC (MIG-015):** `thm:scc-frontier` keeps `[U]` with the symmetric residual wording for all four items (each "conditionally discharged; residual = …"); its proof now states the four labels are the stable governance ledger for the residual-to-unconditional program; closure-ledger MCS/UC/TSI cells `[O]→[C]`; "CERT-PROJ upgrade" → "residual to unconditional CERT-CLOSE"; the stale remark below the table now records all links conditionally discharged (including MCS existence, carried inside the stated conditions); the "upgraded from CERT-PROJ toward" prose → "has reached conditional CERT-CLOSE; the listed verifications remain necessary for unconditional closure"; the dependency-ledger scrutiny cell → "residual-to-unconditional-closure audit"; the front-block "Four open obligations" list and bridge-stack MCS item corrected under the original C-2 open-declaration clause.
+
+**Validator (MIG-017):** two new rules per the review — check 6 fails on non-comment content after `\end{document}`; check 7 compares every ledger display-status cell against the in-file declared `\status` of its referenced label (per-file resolution, avoiding duplicate-label false positives). **Check 7 immediately caught five further mismatches in Book I, Book III, GR, and YM** (MIG-016), all corrected to their declarations — including one cell that *understated* a `[U]` corollary as `[C]`. Both checks pass on the final corpus.
+
+**Integrity after this commit:** census unchanged (`D461/U211/C749/B9/O5/R366` — every edit was table-cell or `[R]`/prose text); label delta = +1 authorized (`rem:NS-precanonical-completeness`), 0 removed; 0 dangling; 0 cycles; all touched files compile clean; all six affected PDFs regenerated from source; metadata and dashboard rebuilt. Every rendered contradiction enumerated in the acceptance review is verified absent from the regenerated PDFs (`pdftotext` checks: no "[O]" ledger rows against `[C]` declarations, no "blocked by two small… UH.3 and SB2," no "must be discharged / Blocked by / currently unresolved" in SCC).
