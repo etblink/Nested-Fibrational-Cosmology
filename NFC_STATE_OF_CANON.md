@@ -71,7 +71,6 @@ Declarations: {'D': 461, 'U': 210, 'C': 740, 'B': 8, 'O': 5, 'R': 366}. Both are
 <!-- ===== HISTORICAL HAND-MAINTAINED RECORD BELOW: GENERATOR PRESERVES VERBATIM ===== -->
 
 
-
 ## Governance Additions (Sessions L+6 – L+12)
 
 | Addition | Location | Content |

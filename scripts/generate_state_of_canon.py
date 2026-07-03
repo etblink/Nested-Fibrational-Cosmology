@@ -102,7 +102,8 @@ def main():
     else:
         # first run: everything from "## Governance Additions" onward is historical
         idx = old.index("## Governance Additions")
-        historical = "\n\n" + old[idx:]
+        historical = old[idx:]
+    historical = "\n\n" + historical.lstrip("\n")
     open(TARGET, "w", encoding="utf-8").write(generated + historical)
     print(f"regenerated {TARGET}: {len(generated.splitlines())} generated lines + preserved history")
 
