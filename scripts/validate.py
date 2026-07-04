@@ -99,6 +99,36 @@ def main():
                 ledger_mismatch.append(f"{fn}: row \\ref{{{lbl}}} shows [{cell}] but declaration is [{declared[lbl]}]")
     if ledger_mismatch: fails.append("ledger display-status mismatches:\n    "+"\n    ".join(ledger_mismatch))
 
+    # 8. Weil certificates (MIG-025): decimal endpoints must satisfy 0 < lower <= upper
+    # for every ball whose sign is claimed positive; endpoints parsed from the JSON strings.
+    import os as _os, json as _json
+    from decimal import Decimal as _D
+    def _check_ball(tag, ball):
+        lo, up = _D(ball["lower_decimal"]), _D(ball["upper_decimal"])
+        if not (lo <= up): return f"{tag}: lower > upper"
+        if ball.get("sign_certified") == "positive" and not (lo > 0):
+            return f"{tag}: claimed positive but lower <= 0"
+        return None
+    cert_issues=[]
+    if _os.path.exists("metadata/weil_M3_result.json"):
+        c=_json.load(open("metadata/weil_M3_result.json"))
+        e=_check_ball("M3", c["M3_ball"]);  cert_issues += [e] if e else []
+        if c["M3_ball"].get("sign_certified") != "positive":
+            cert_issues.append("M3: sign not certified positive")
+    if _os.path.exists("metadata/weil_M4_certificate.json"):
+        c=_json.load(open("metadata/weil_M4_certificate.json"))
+        for i,b in enumerate(c["ldl_pivots"]):
+            e=_check_ball(f"M4 pivot {i}", b);  cert_issues += [e] if e else []
+        for i,b in enumerate(c["eigenvalue_enclosures"]):
+            e=_check_ball(f"M4 eig {i}", b);  cert_issues += [e] if e else []
+    if _os.path.exists("metadata/weil_Q12_certificates.json"):
+        c=_json.load(open("metadata/weil_Q12_certificates.json"))
+        for n,r in c["results"].items():
+            if r["ldl_status"]=="PD":
+                for i,b in enumerate(r["pivots"]):
+                    e=_check_ball(f"Q{n} pivot {i}", b);  cert_issues += [e] if e else []
+    if cert_issues: fails.append("Weil certificate endpoint failures:\n    "+"\n    ".join(cert_issues))
+
     report={"labels":sum(len(v) for v in defs.values()),"unique_labels":len(defs),
             "benign_dups_present":sorted(k for k in defs if len(defs[k])>1 and k in BENIGN_DUP),
             "dangling":len(dangling),"cycles":len(cyc),"census":cen,"pass":not fails}

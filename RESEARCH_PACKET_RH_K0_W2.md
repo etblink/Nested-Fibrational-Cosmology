@@ -59,3 +59,37 @@ It means: the Weil quadratic form is rigorously positive on the **one-dimensiona
 2. Exercise the generalized Schur extension criterion on the first genuinely 2×2 step (Q₄).
 3. Profile how the certified radius scales with N to fix precision policy before larger runs.
 The form-core theorem (P0-WEIL-CORE) remains the sole route by which any of this could ever acquire RH relevance.
+
+---
+
+# MIG-025 Addendum — Hardened Certificates, Certified Q₄ Schur Step, Certified Ladder to Q₁₂
+
+## A. Certificate hardening (the float-serialization defect, fixed rigorously)
+The MIG-024 JSON stored `float(mid)`/`float(rad)`: the double-rounded midpoint sat ~3.4×10⁻³³ from the true center while the stored radius was 6.3×10⁻⁶³ — the JSON interval **did not contain the certified value** (the review's catch). Certificates now serialize via **exact dyadic extraction**: `arb.man_exp()` yields exact (mantissa, exponent) for midpoint and radius → exact `Fraction` endpoints L = mid−rad, U = mid+rad → decimal strings with **directed rounding** (lower: ROUND_FLOOR; upper and radius: ROUND_CEILING). The float value is retained under `diagnostic_float`, explicitly non-certifying. Every certificate carries full provenance: precision bits, N, M, Python/python-flint versions (FLINT/Arb versions are not exposed by python-flint 0.8 — recorded as bundled-with-wheel), script SHA-256, git commit, scale set, exact basis, the prime-tail bound formula, and the archimedean method. `scripts/validate.py` check 8 now parses the decimal endpoints of every certificate and fails unless 0 < lower ≤ upper for every positivity claim. The hardened M₃ endpoints (width ~1.3×10⁻⁶⁰) contain the review's 100-digit value.
+
+## B. Certified Q₄ (first Schur extension) — all diagnostic targets matched
+Basis b₃ = (−1,4,−3,0), b₄ = (−2,6,0,−4) (moment identities asserted exactly at runtime). Certified results (balls):
+M�� = [[5.0834527285304509374e−17, 1.6774809068366707783e−16],[·, 5.8495137548902276628e−16]]; LDL pivots M₃ and **Schur complement [3.140197844072025462229732×10⁻¹⁷ ± 1.1×10⁻⁴²]**; eigenvalue enclosures **[2.520752530345813039×10⁻¹⁸ ± 2.4×10⁻⁴³]** and **[6.332651502439814626×10⁻¹⁶ ± 1.3×10⁻⁴¹]** — every value matching the review's diagnostics to all stated digits, both eigenvalues rigorously positive. The zero-side matrix diagnostic, with the **corrected off-diagonal convention 2·Re(a_iā_j)** over positive ordinates, reproduces the certified matrix to 15 digits (diagnostic only).
+
+## C. A second precision defect found and fixed by the escalation policy itself
+The first Q₉ attempt returned an indeterminate 7th pivot, and escalation initially made radii **worse** (pivot-6 radius 4.7×10⁻³⁹ → 7.1×10⁻³⁰). Instrumentation isolated the cause: **S_m carries an *absolute* ball-radius floor ~2^(−prec)** (it is a difference of O(2^(−m))-scale quantities), and the downstream factor (r/q)^m — up to 12^m — amplifies that floor catastrophically as M grows (at m = 111 a single term contributed 1.1×10⁻¹⁴ of radius). Fix: the S-table is computed once per profile at **elevated internal precision** prec_S = base + ⌈M·log₂(max r/q)⌉ + 64, then the context is restored; term arithmetic stays at base precision (midpoints are small). This is exactly the kind of failure the review's auto-escalation directive was designed to surface, and it is now documented in the engine itself.
+
+## D. Certified ladder Q₃ → Q₁₂: all positive-definite
+With the fix, the escalation ladder certifies **every truncation**: Q₃–Q₈ at profile (350 bits, N=64, M=48); Q₉–Q₁₂ at profile (450 bits, N=192, M=112). Full certified pivot sequence at Q₁₂ (10 pivots, Sylvester ⟹ all eigenvalues of every M_N rigorously positive):
+
+| k | pivot (certified ball) |
+|---|---|
+| 1 | 5.08345272853×10⁻¹⁷ |
+| 2 | 3.14019784407×10⁻¹⁷ |
+| 3 | 4.90702749193×10⁻²⁵ |
+| 4 | 8.91994112684×10⁻²⁶ |
+| 5 | 1.13226803457×10⁻³¹ |
+| 6 | 9.00002691081×10⁻³¹ |
+| 7 | 1.43254395580×10⁻³⁷ ± 2.8×10⁻⁴⁹ |
+| 8 | 2.47512632682×10⁻³⁸ ± 8×10⁻⁵⁴ |
+| 9 | 6.23133164444×10⁻⁴¹ ± 1.7×10⁻⁵³ |
+| 10 | 2.21402513702×10⁻⁴² ± 1.6×10⁻⁵⁴ |
+
+The pivot decay (25 orders of magnitude over 10 pivots) matches the expected spectral structure: the compressed matrix is a rapidly-weighted sum of rank-2 contributions per zero ordinate (weights ~2πγe^(−πγ)), so each new pivot pair descends to the next zero's scale — Q₁₂'s smallest pivots live at the γ₅/γ₆ weight scale. This quantifies the conditioning wall: each +2 dimensions costs ~7–9 more digits of certified entry precision, a scaling law now measured, not guessed.
+
+**Classification (standing, gate 8):** all of the above are restricted finite Weil tests (K0-W1 §7). Positivity of M₃…M₁₂ says the Weil form is rigorously positive on specific finite moment-constrained slices; it carries no RH content absent P0-WEIL-CORE, and none may be described otherwise.

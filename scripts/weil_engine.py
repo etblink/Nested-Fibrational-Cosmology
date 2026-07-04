@@ -68,6 +68,40 @@ def neg_zeta_log_deriv(sigma_num, sigma_den):
     return -(zp / z)
 
 # ---------- prime side: T(q,r) = sum_{n>=2} Lambda(n) sqrt(n)/(qn+r)^2 ----------
+_S_cache = {}
+MAX_SCALE_RATIO = 12  # largest r/q among used scale pairs; controls the S-table precision boost
+
+def S_values(N, M):
+    """Entry-independent certified S_m = -zeta'/zeta(m+3/2) - sum_{n<=N} Lambda(n) n^{-m-3/2}.
+
+    PRECISION NOTE (MIG-025 radius-floor fix): S_m is a difference of O(2^-m)-scale
+    quantities and so carries an ABSOLUTE ball-radius floor ~2^-prec. Downstream it is
+    multiplied by (r/q)^m (up to 12^m), which amplifies that floor catastrophically for
+    large m. Therefore the S-table is computed once at an ELEVATED internal precision
+    prec_S = base + ceil(M*log2(MAX_SCALE_RATIO)) + 64, then the context is restored.
+    Term arithmetic downstream stays at base precision (term midpoints are small)."""
+    base = flint.ctx.prec
+    import math
+    prec_S = base + int(M * math.log2(MAX_SCALE_RATIO)) + 64
+    key = (N, M, base)
+    if key in _S_cache:
+        return _S_cache[key]
+    flint.ctx.prec = prec_S
+    try:
+        pps = prime_powers_upto(N)
+        logs = {n: arb(p).log() for n, p in pps}
+        out = []
+        for m in range(M + 1):
+            S = neg_zeta_log_deriv(2 * m + 3, 2)
+            e = arb(2 * m + 3) / 2
+            for n, p in pps:
+                S -= logs[n] / arb(n) ** e
+            out.append(S)
+    finally:
+        flint.ctx.prec = base
+    _S_cache[key] = out
+    return out
+
 def T_certified(q, r, N=64, M=48):
     """Head to N exactly; tail by geometric m-expansion with certified -zeta'/zeta;
     explicit truncation bound (outward) for the m-series remainder. q,r ints (scales)."""
@@ -75,17 +109,13 @@ def T_certified(q, r, N=64, M=48):
     pps = prime_powers_upto(N)
     qA, rA = arb(q), arb(r)
     head = arb(0)
-    # also precompute partial Dirichlet sums sum_{n<=N} Lambda(n)/n^{m+3/2} for each m
     for n, p in pps:
         lam = arb(p).log()
         head += lam * arb(n).sqrt() / (qA * n + rA) ** 2
+    Svals = S_values(N, M)
     tail = arb(0)
     for m in range(M + 1):
-        # S_m = -zeta'/zeta(m+3/2) - sum_{n<=N} Lambda(n)/n^{m+3/2}
-        S = neg_zeta_log_deriv(2 * m + 3, 2)
-        for n, p in pps:
-            S -= arb(p).log() / arb(n) ** (arb(2 * m + 3) / 2)
-        term = ((-1) ** m) * arb(m + 1) * (rA / qA) ** m * S / qA ** 2
+        term = ((-1) ** m) * arb(m + 1) * (rA / qA) ** m * Svals[m] / qA ** 2
         tail += term
     # truncation bound: |term_m| <= (1/q^2)(m+1)(r/(qN))^m N^{-1/2}[logN/(m+1/2)+1/(m+1/2)^2]
     # for m > M:  sum <= C * rho^{M+1} ((M+2) - (M+1) rho)/(1-rho)^2,  rho = r/(qN),
@@ -186,41 +216,208 @@ def zero_side_M3(coeffs, scales, K=10, dps=60):
         total += 2 * w * abs(phi) ** 2   # zeros come in pairs rho, conj(rho)
     return total
 
-# ---------- main ----------
-def main():
-    scales = [1, 2, 3]
-    print(f"K0-W2 engine | Arb precision {BITS} bits | scales {scales}")
-    H, V, Mm = M_compressed(scales)
-    print("\nUnrestricted entries H(q,r) [certified balls]:")
-    for i in range(3):
-        for j in range(i, 3):
-            approx = -(float(PI) / 2) * (1 / scales[i] + 1 / scales[j])
-            print(f"  H({scales[i]},{scales[j]}) = {H[i][j].str(25)}   [boundary part ~ {approx:+.6f}]")
-    v = V[0]
-    print(f"\nNested basis vector b3 = {v}  (expect [-1, 4, -3])")
-    M3 = Mm[0][0]
-    print(f"\nM_3 (compressed 1x1) = {M3.str(30)}")
-    ok_sign = M3 > 0
-    print(f"Rigorous sign determination: M_3 > 0 is {'PROVED (interval strictly positive)' if ok_sign else 'NOT determined at this precision'}")
-    norm2 = sum(x * x for x in v)
-    print(f"Rayleigh value M_3/|b3|^2 = {(M3 / norm2).str(25)}   (|b3|^2 = {norm2})")
-    zs = zero_side_M3(v, scales)
-    print(f"\nZero-side cross-check (first 10 zeros, mpmath, NOT certified): {zs}")
-    print("   note: zero-side tail beyond zero #10 is O(gamma_11 e^{-pi gamma_11}) ~ 1e-70; agreement is a")
-    print("   consistency check of conventions only. It certifies nothing (K0-W2 gate 7).")
-    print("\nCLASSIFICATION: restricted finite Weil test only (K0-W1 §7). Not progress toward RH")
-    print("absent P0-WEIL-CORE. No zero-location assumption used on the certified track.")
-    # machine-readable result
-    out = {
-        "scales": scales, "basis_b3": v,
-        "M3_mid": float(M3.mid()), "M3_rad": float(M3.rad()),
-        "M3_sign_certified_positive": bool(ok_sign),
-        "zero_side_diagnostic": float(zs),
-        "classification": "restricted finite Weil test (K0-W1 §7); no RH-progress claim",
+# ---------- MIG-025: rigorous certificates, Q4 Schur, Q12 LDL ----------
+import hashlib, subprocess, platform
+from decimal import Decimal, getcontext, ROUND_FLOOR, ROUND_CEILING
+
+def _arb_exact_fraction(x):
+    """Exact Fraction for an arb with ZERO radius (mid() or rad() results)."""
+    man, exp = x.man_exp()
+    man, exp = int(man), int(exp)
+    return Fraction(man) * (Fraction(2) ** exp if exp >= 0 else Fraction(1, 2 ** (-exp)))
+
+def _frac_to_decimal(fr, digits, rounding):
+    getcontext().prec = digits + 10
+    getcontext().rounding = rounding
+    d = Decimal(fr.numerator) / Decimal(fr.denominator)
+    return format(d.normalize(), 'e')
+
+def ball_certificate(x, digits=50):
+    """Exact dyadic ball -> outward decimal certificate. lower rounded FLOOR, upper CEILING,
+    radius CEILING, mid FLOOR (mid is informational; endpoints are the certificate)."""
+    mid = _arb_exact_fraction(x.mid())
+    rad = _arb_exact_fraction(x.rad())
+    lo, up = mid - rad, mid + rad
+    return {
+        "mid_decimal": _frac_to_decimal(mid, digits, ROUND_FLOOR),
+        "radius_decimal": _frac_to_decimal(rad, digits, ROUND_CEILING),
+        "lower_decimal": _frac_to_decimal(lo, digits, ROUND_FLOOR),
+        "upper_decimal": _frac_to_decimal(up, digits, ROUND_CEILING),
+        "sign_certified": ("positive" if lo > 0 else ("negative" if up < 0 else "indeterminate")),
     }
-    with open("metadata/weil_M3_result.json", "w") as f:
-        json.dump(out, f, indent=2)
-    print("\nresult written to metadata/weil_M3_result.json")
+
+def provenance(N, M):
+    try:
+        commit = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"],
+                                         stderr=subprocess.DEVNULL).decode().strip()
+    except Exception:
+        commit = "unknown"
+    src = open(__file__, "rb").read()
+    return {
+        "precision_bits": BITS, "prime_head_N": N, "prime_tail_M": M,
+        "python": platform.python_version(),
+        "python_flint": getattr(flint, "__version__", "unknown"),
+        "flint_arb_note": "FLINT/Arb library versions not exposed by python-flint 0.8; bundled with wheel",
+        "script_sha256": hashlib.sha256(src).hexdigest(),
+        "git_commit": commit,
+        "prime_tail_bound": "sum_{m>M} <= C rho^{M+1}((M+2)-(M+1)rho)/(1-rho)^2, rho=r/(qN), C=2(logN+2)/(sqrt(N) q^2), added outward",
+        "archimedean": "u=1/t substitution to [0,1]; removable u=1 singularity cancelled by exact rational polynomial division; Arb acb_calc certified integration",
+        "classification": "restricted finite Weil test (K0-W1 sec.7); no RH-progress claim; no zero-location input on certified track",
+    }
+
+def H_matrix(scales, N=64, M=48):
+    n = len(scales)
+    H = [[None] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(i, n):
+            H[i][j] = H_entry_certified(scales[i], scales[j], N, M)
+            H[j][i] = H[i][j]
+    return H
+
+def compress(H, V):
+    m = len(V); n = len(V[0])
+    out = [[arb(0)] * m for _ in range(m)]
+    for a in range(m):
+        for b in range(m):
+            s = arb(0)
+            for i in range(n):
+                if V[a][i] == 0: continue
+                for j in range(n):
+                    if V[b][j] == 0: continue
+                    s += arb(V[a][i]) * arb(V[b][j]) * H[i][j]
+            out[a][b] = s
+    return out
+
+def ldl_pivots(Mm):
+    """Interval LDL^T pivots. Returns (pivots, status): status 'PD' if all pivots
+    rigorously > 0, 'INDETERMINATE' if any pivot ball straddles 0, 'NOT_PD' if any < 0."""
+    n = len(Mm)
+    A = [[Mm[i][j] for j in range(n)] for i in range(n)]
+    pivots = []
+    for k in range(n):
+        p = A[k][k]
+        pivots.append(p)
+        if not (p > 0):
+            return pivots, ("NOT_PD" if (p < 0) else "INDETERMINATE")
+        for i in range(k + 1, n):
+            lik = A[i][k] / p
+            for j in range(k + 1, i + 1):
+                A[i][j] = A[i][j] - lik * A[k][j]
+                A[j][i] = A[i][j]
+    return pivots, "PD"
+
+def eig2_enclosure(a, b, d):
+    """Rigorous eigenvalue enclosures for [[a,b],[b,d]] in ball arithmetic."""
+    tr2 = (a + d) / 2
+    disc = (((a - d) / 2) ** 2 + b ** 2).sqrt()
+    return tr2 - disc, tr2 + disc
+
+def zero_side_matrix(V, scales, K=12, dps=60):
+    """Diagnostic zero-side compressed matrix using positive ordinates only:
+    (M)_{ab} = sum_{gamma>0} w(gamma) * 2*Re(a_a conj(a_b)), w = pi g/sinh(pi g)."""
+    import mpmath as mp
+    mp.mp.dps = dps
+    m = len(V)
+    out = [[mp.mpf(0)] * m for _ in range(m)]
+    for k in range(1, K + 1):
+        g = mp.im(mp.zetazero(k))
+        w = mp.pi * g / mp.sinh(mp.pi * g)
+        amps = [sum(V[a][i] * mp.power(s, mp.mpf(-0.5)) * mp.e ** (-1j * g * mp.log(s))
+                    for i, s in enumerate(scales)) for a in range(m)]
+        for a in range(m):
+            for b in range(m):
+                out[a][b] += w * 2 * mp.re(amps[a] * mp.conj(amps[b]))
+    return out
+
+def run_m3():
+    scales = [1, 2, 3]
+    H = H_matrix(scales)
+    V = nested_basis(scales)
+    Mm = compress(H, V)
+    M3 = Mm[0][0]
+    cert = {
+        "M3_ball": ball_certificate(M3),
+        "diagnostic_float": float(M3.mid()),
+        "scales": scales, "basis": V,
+        "provenance": provenance(64, 48),
+    }
+    json.dump(cert, open("metadata/weil_M3_result.json", "w"), indent=2)
+    print("M3 =", M3.str(30), "->", cert["M3_ball"]["sign_certified"])
+    print("cert endpoints:", cert["M3_ball"]["lower_decimal"], "..", cert["M3_ball"]["upper_decimal"])
+
+def run_q4():
+    scales = [1, 2, 3, 4]
+    H = H_matrix(scales)
+    V = nested_basis(scales)          # b3=(-1,4,-3,0), b4=(-2,6,0,-4)
+    print("basis:", V)
+    Mm = compress(H, V)
+    for row in Mm:
+        print("  [", ", ".join(x.str(20) for x in row), "]")
+    pivots, status = ldl_pivots(Mm)
+    schur = pivots[1] if len(pivots) > 1 else None
+    lo_eig, hi_eig = eig2_enclosure(Mm[0][0], Mm[0][1], Mm[1][1])
+    print("LDL pivots:", [p.str(20) for p in pivots], "->", status)
+    print("Schur complement (alpha - u^2/M3):", schur.str(25))
+    print("eigenvalue enclosures:", lo_eig.str(25), "|", hi_eig.str(25))
+    both_pos = (lo_eig > 0)
+    cert = {
+        "scales": scales, "basis": V,
+        "M4_entries_balls": {f"{a}{b}": ball_certificate(Mm[a][b]) for a in range(2) for b in range(2)},
+        "ldl_pivots": [ball_certificate(p) for p in pivots],
+        "ldl_status": status,
+        "schur_complement": ball_certificate(schur),
+        "eigenvalue_enclosures": [ball_certificate(lo_eig), ball_certificate(hi_eig)],
+        "all_eigenvalues_certified_positive": bool(both_pos),
+        "provenance": provenance(64, 48),
+    }
+    json.dump(cert, open("metadata/weil_M4_certificate.json", "w"), indent=2)
+    zs = zero_side_matrix(V, scales)
+    print("zero-side diagnostic matrix (12 zeros, 2Re convention, NOT certified):")
+    for row in zs: print("  [", ", ".join(mp_str(x) for x in row), "]")
+
+def mp_str(x):
+    return f"{float(x):.14e}"
+
+PROFILES = [(350, 64, 48), (450, 192, 112), (600, 384, 160)]
+
+def run_q12():
+    scales = list(range(1, 13))
+    results = {}
+    pending = set(range(3, 13))
+    used_profile = {}
+    for (bits, N, M) in PROFILES:
+        if not pending:
+            break
+        flint.ctx.prec = bits
+        print(f"profile bits={bits} N={N} M={M}: computing 78 certified entries...")
+        H = H_matrix(scales, N, M)
+        for n in sorted(pending):
+            sub = scales[:n]
+            V = nested_basis(sub)
+            Hs = [[H[i][j] for j in range(n)] for i in range(n)]
+            Mm = compress(Hs, V)
+            pivots, status = ldl_pivots(Mm)
+            results[n] = {"scales": sub, "dim": len(V), "ldl_status": status,
+                          "profile": {"bits": bits, "N": N, "M": M},
+                          "pivots": [ball_certificate(p, digits=40) for p in pivots]}
+            print(f"  Q_{n}: dim {len(V)}  LDL {status}  pivots: " + ", ".join(p.str(12) for p in pivots))
+            if status == "PD":
+                used_profile[n] = (bits, N, M)
+        pending = {n for n in pending if results[n]["ldl_status"] != "PD"}
+        if pending:
+            print(f"  escalating for Q_{sorted(pending)} (pivot interval touched zero)")
+    out = {"family": "M_N = V_N^T H V_N, nested exact basis, scales 1..N",
+           "escalation_profiles": PROFILES,
+           "results": results, "provenance": provenance("per-result", "per-result"),
+           "eigenvalue_sign_statement": "for each N with ldl_status=PD, all eigenvalues of M_N are rigorously positive (Sylvester via certified LDL pivots)"}
+    json.dump(out, open("metadata/weil_Q12_certificates.json", "w"), indent=2)
+    if pending:
+        print(f"UNRESOLVED at max profile: Q_{sorted(pending)} — reported as indeterminate, per gate policy")
+    print("written metadata/weil_Q12_certificates.json")
+
+def main():
+    cmd = sys.argv[1] if len(sys.argv) > 1 else "m3"
+    {"m3": run_m3, "q4": run_q4, "q12": run_q12}[cmd]()
 
 if __name__ == "__main__":
     main()
