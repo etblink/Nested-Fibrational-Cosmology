@@ -612,12 +612,48 @@ def run_rational_height(H, base_bits=350, N=64, M=48):
     return Mm, pivots, status
 
 
-def display_interval_from_cert(ball, sig=24):
-    """MIG-032: generate prose interval text DIRECTLY from certified outward endpoints
-    (never hand-rounded). Returns a string [lower, upper] guaranteed to enclose the ball."""
+def _display_ball_refs(ball):
+    """Exact Fraction reference endpoints for enclosure checks: the dyadic ball
+    [mid-rad, mid+rad] when serialized dyadics are present (strongest), else the
+    outward decimal endpoints (themselves proven to enclose the dyadic ball by
+    validate.py check 8)."""
+    from fractions import Fraction
     from decimal import Decimal
+    if "mid_dyadic" in ball and "radius_dyadic" in ball:
+        mid = Fraction(int(ball["mid_dyadic"]["mantissa"])) * Fraction(2) ** int(ball["mid_dyadic"]["exponent"])
+        rad = Fraction(int(ball["radius_dyadic"]["mantissa"])) * Fraction(2) ** int(ball["radius_dyadic"]["exponent"])
+        return mid - rad, mid + rad
+    return (Fraction(Decimal(ball["lower_decimal"])), Fraction(Decimal(ball["upper_decimal"])))
+
+def display_interval_from_cert(ball, sig=24):
+    """MIG-033: generate prose interval text from certified outward endpoints with
+    DIRECTED rounding — lower endpoint ROUND_FLOOR, upper endpoint ROUND_CEILING,
+    at `sig` significant digits — then PROVE enclosure of the exact dyadic ball
+    before returning. Never returns a non-enclosing string (raises ValueError).
+
+    MIG-032's version formatted with round-to-nearest ({:.24e}), which rounded the
+    H=2 lower endpoint UP by ~9.02e-42 past the certified lower endpoint, so the
+    displayed interval failed to enclose the certificate. Round-to-nearest is
+    never directionally safe; only floor/ceiling formatting is."""
+    from decimal import Decimal, Context, ROUND_FLOOR, ROUND_CEILING
+    from fractions import Fraction
     lo = Decimal(ball["lower_decimal"]); up = Decimal(ball["upper_decimal"])
-    return f"[{lo:.{sig}e}, {up:.{sig}e}]"
+    dlo = Context(prec=sig, rounding=ROUND_FLOOR).plus(lo)
+    dup = Context(prec=sig, rounding=ROUND_CEILING).plus(up)
+    # format at exactly `sig` significant digits; the Decimal already has <= sig
+    # digits, so this formatting is exact (no further rounding occurs)
+    slo, sup = f"{dlo:.{sig-1}e}", f"{dup:.{sig-1}e}"
+    # mandatory enclosure self-check against the exact dyadic ball
+    L, U = _display_ball_refs(ball)
+    if not (Fraction(Decimal(slo)) <= L and Fraction(Decimal(sup)) >= U):
+        raise ValueError(f"display_interval_from_cert: [{slo}, {sup}] does not enclose "
+                         f"the certified ball — refusing to emit a non-enclosing display")
+    return f"[{slo}, {sup}]"
+
+def display_interval_exact(ball):
+    """MIG-033 alternative: verbatim certified outward endpoints, no shortening.
+    Trivially enclosing (endpoints are the certificate's own outward decimals)."""
+    return f"[{ball['lower_decimal']}, {ball['upper_decimal']}]"
 
 
 def main():

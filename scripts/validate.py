@@ -218,16 +218,74 @@ def main():
         if "max_min_ratio" in c:
             rr=_Frac2(*c["max_min_ratio"]); exp_r=max(sc)/min(sc)
             if rr!=exp_r: cert_issues.append(f"{_fn}: recorded ratio {rr} != max/min {exp_r}")
+        # MIG-033: dynamic precision guard. profile.max_scale_ratio feeds the elevated
+        # S_m-table precision, so it MUST equal the engine's exact rule
+        #   max_scale_ratio = max(2, ceil(max Q_H / min Q_H) + 1)   (= H^2 + 1 for Q_H),
+        # and the profile MUST agree with provenance on bits/N/M. Previously only
+        # max_min_ratio was checked; a tampered profile.max_scale_ratio passed.
+        from math import ceil as _ceil2
+        prof = c.get("profile"); prov = c.get("provenance")
+        if not isinstance(prof, dict):
+            cert_issues.append(f"{_fn}: profile block missing")
+        elif not isinstance(prov, dict):
+            cert_issues.append(f"{_fn}: provenance block missing")
+        else:
+            exp_msr = max(2, _ceil2(max(sc)/min(sc)) + 1)
+            if prof.get("max_scale_ratio") != exp_msr:
+                cert_issues.append(f"{_fn}: profile.max_scale_ratio {prof.get('max_scale_ratio')} != ceil(max/min)+1 = {exp_msr}")
+            if H is not None and exp_msr != H*H + 1:
+                cert_issues.append(f"{_fn}: ceil(max/min)+1 = {exp_msr} != H^2+1 = {H*H+1} (Q_H ratio invariant broken)")
+            for pk, vk in (("bits","precision_bits"), ("N","prime_head_N"), ("M","prime_tail_M")):
+                if prof.get(pk) != prov.get(vk):
+                    cert_issues.append(f"{_fn}: profile.{pk} {prof.get(pk)} != provenance.{vk} {prov.get(vk)}")
         # PD pivots strictly positive
         pd=c["ldl_status"]=="PD"
         for i,b in enumerate(c["pivots"]):
             cert_issues += _check_ball(f"{_fn} pivot {i}", b, require_positive=pd)
     if cert_issues: fails.append("Weil certificate failures:\n    "+"\n    ".join(cert_issues))
 
-    # 9. strict UTF-8 over all tracked text files (MIG-026 item 1; MIG-028 git-free).
-    # Source of the file list: git ls-files when a git repo is present, else the
-    # packaged manifest release/TRACKED_TEXT_MANIFEST.txt. The check is NEVER skipped;
-    # if neither source is available that is itself a failure.
+    # 8b. MIG-033: displayed-interval enclosure. Two guarantees:
+    #   (i)  the canonical directed-rounded display (floor lower / ceiling upper,
+    #        24 significant digits) of EVERY certified ball encloses its exact
+    #        dyadic ball — re-proved here independently of weil_engine.py;
+    #   (ii) every interval printed in prose reports ([<sci>, <sci>] in tracked
+    #        .md files outside migrations/) encloses the certified ball it
+    #        displays; intervals matching no certified ball are rejected, so
+    #        prose intervals can only come from certificates.
+    # MIG-032's round-to-nearest display violated (i)/(ii) on every QH pivot.
+    from decimal import Decimal as _Dec3, Context as _Ctx3, ROUND_FLOOR as _RF3, ROUND_CEILING as _RC3
+    disp_issues=[]
+    def _ball_exact(b):
+        if "mid_dyadic" in b and "radius_dyadic" in b:
+            mid=_dy_to_frac(b["mid_dyadic"]); rad=_dy_to_frac(b["radius_dyadic"])
+            return mid-rad, mid+rad
+        return _dec_to_frac(b["lower_decimal"]), _dec_to_frac(b["upper_decimal"])
+    def _walk_balls(obj, tag):
+        if isinstance(obj, dict):
+            if "lower_decimal" in obj and "upper_decimal" in obj:
+                yield tag, obj
+            for k,v in obj.items(): yield from _walk_balls(v, f"{tag}.{k}")
+        elif isinstance(obj, list):
+            for i,v in enumerate(obj): yield from _walk_balls(v, f"{tag}[{i}]")
+    _balls=[]
+    if _os.path.isdir("metadata"):
+        for _fn in sorted(_os.listdir("metadata")):
+            if _fn.startswith("weil_") and _fn.endswith(".json"):
+                try: _c=_json.load(open(f"metadata/{_fn}"))
+                except Exception as e:
+                    disp_issues.append(f"{_fn}: unreadable ({e})"); continue
+                _balls += list(_walk_balls(_c, _fn))
+    for _tag,_b in _balls:
+        try: _L,_U=_ball_exact(_b)
+        except Exception as e:
+            disp_issues.append(f"{_tag}: cannot reconstruct exact ball ({e})"); continue
+        _sig=24
+        _dlo=_Ctx3(prec=_sig, rounding=_RF3).plus(_Dec3(_b["lower_decimal"]))
+        _dup=_Ctx3(prec=_sig, rounding=_RC3).plus(_Dec3(_b["upper_decimal"]))
+        if not (_dec_to_frac(f"{_dlo:.{_sig-1}e}") <= _L and _dec_to_frac(f"{_dup:.{_sig-1}e}") >= _U):
+            disp_issues.append(f"{_tag}: canonical directed display fails to enclose exact ball")
+    # tracked text enumeration (shared by checks 8b and 9; MIG-028 rule: git ls-files
+    # when a repo is present, else the packaged manifest; NEVER silently skipped).
     import subprocess as _sp, os as _os2
     tracked=None
     if _os2.path.isdir(".git"):
@@ -240,8 +298,40 @@ def main():
         if _os2.path.exists(man):
             tracked=[l.strip() for l in open(man, encoding="utf-8") if l.strip()]
         else:
-            fails.append("check 9: no git repo and no release/TRACKED_TEXT_MANIFEST.txt — cannot enumerate tracked text files (UTF-8 check not skipped)")
+            fails.append("checks 8b/9: no git repo and no release/TRACKED_TEXT_MANIFEST.txt — cannot enumerate tracked text files (checks not skipped)")
             tracked=[]
+
+    # 8b (continued): prose interval scan. Every [<sci>, <sci>] in tracked .md
+    # reports must enclose the certified ball it displays. Matching rule: a ball
+    # is DISPLAYED by an interval if the ball's exact midpoint lies inside it;
+    # the interval passes iff at least one certified ball is FULLY enclosed by it.
+    # An interval that matches no ball at all is rejected (prose intervals may
+    # only be generated from certificates). migrations/ is excluded: the
+    # migration log is an immutable historical record and may quote defective
+    # pre-repair displays verbatim.
+    import re as _re3
+    _ivpat=_re3.compile(r"\[\s*(-?\d+(?:\.\d+)?[eE][+-]?\d+)\s*,\s*(-?\d+(?:\.\d+)?[eE][+-]?\d+)\s*\]")
+    _exact_cache=[]
+    for _tag,_b in _balls:
+        try: _exact_cache.append((_tag, *_ball_exact(_b)))
+        except Exception: pass
+    for _fn in tracked:
+        if not _fn.endswith(".md") or _fn.startswith("migrations/"): continue
+        try: _txt=open(_fn, encoding="utf-8").read()
+        except Exception: continue
+        for _m in _ivpat.finditer(_txt):
+            _a,_bb=_dec_to_frac(_m.group(1)), _dec_to_frac(_m.group(2))
+            _line=_txt[:_m.start()].count("\n")+1
+            _mid_matched=[t for t,_L,_U in _exact_cache if _a <= (_L+_U)/2 <= _bb]
+            _enclosed=[t for t,_L,_U in _exact_cache if _a <= _L and _U <= _bb]
+            if _enclosed: continue
+            if _mid_matched:
+                disp_issues.append(f"{_fn}:{_line}: displayed interval {_m.group(0)} does NOT enclose certified ball(s) {', '.join(_mid_matched[:3])}")
+            else:
+                disp_issues.append(f"{_fn}:{_line}: displayed interval {_m.group(0)} matches no certified ball (prose intervals must be generated from certificates)")
+    if disp_issues: fails.append("Displayed-interval failures:\n    "+"\n    ".join(disp_issues))
+
+    # 9. strict UTF-8 over all tracked text files (MIG-026 item 1; MIG-028 git-free).
     bad_utf8=[]
     for fn in tracked:
         if fn.endswith((".pdf",".pyc",".png",".zip",".bundle")): continue
