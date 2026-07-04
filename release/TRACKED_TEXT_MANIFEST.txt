@@ -52,6 +52,7 @@ NFC_YM_Branch.tex
 PATCH_SUMMARY.md
 RESEARCH_PACKET_RH_K0.md
 RESEARCH_PACKET_RH_K0_W2.md
+RESEARCH_PACKET_RH_K0_W3.md
 RESEARCH_PACKET_RH_K0_WEIL.md
 RESEARCH_PACKET_RH_P0.md
 RESEARCH_PACKET_RH_P0_W1.md
@@ -74,6 +75,8 @@ metadata/views.json
 metadata/weil_M3_result.json
 metadata/weil_M4_certificate.json
 metadata/weil_Q12_certificates.json
+metadata/weil_QH2_certificate.json
+metadata/weil_QH3_certificate.json
 migrations/MAINTENANCE_MIGRATION_v1.1.md
 migrations/MIGRATIONS.md
 release/ARCHIVE_MANIFEST_v1.0.sha256
