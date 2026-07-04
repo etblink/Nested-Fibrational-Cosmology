@@ -148,9 +148,24 @@ def main():
                 cert_issues += _check_ball(f"Q{n} pivot {i}", b, require_positive=pd)
     if cert_issues: fails.append("Weil certificate failures:\n    "+"\n    ".join(cert_issues))
 
-    # 9. strict UTF-8 over all tracked text files (MIG-026 item 1)
-    import subprocess as _sp
-    tracked = _sp.check_output(["git","ls-files"]).decode().splitlines()
+    # 9. strict UTF-8 over all tracked text files (MIG-026 item 1; MIG-028 git-free).
+    # Source of the file list: git ls-files when a git repo is present, else the
+    # packaged manifest release/TRACKED_TEXT_MANIFEST.txt. The check is NEVER skipped;
+    # if neither source is available that is itself a failure.
+    import subprocess as _sp, os as _os2
+    tracked=None
+    if _os2.path.isdir(".git"):
+        try:
+            tracked=_sp.check_output(["git","ls-files"], stderr=_sp.DEVNULL).decode().splitlines()
+        except Exception:
+            tracked=None
+    if tracked is None:
+        man="release/TRACKED_TEXT_MANIFEST.txt"
+        if _os2.path.exists(man):
+            tracked=[l.strip() for l in open(man, encoding="utf-8") if l.strip()]
+        else:
+            fails.append("check 9: no git repo and no release/TRACKED_TEXT_MANIFEST.txt — cannot enumerate tracked text files (UTF-8 check not skipped)")
+            tracked=[]
     bad_utf8=[]
     for fn in tracked:
         if fn.endswith((".pdf",".pyc",".png",".zip",".bundle")): continue

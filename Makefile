@@ -18,3 +18,8 @@ check: validate compile ## Full edit-gate: structural validation + compile
 all: metadata validate dashboard ## Regenerate metadata + validate + dashboard
 state:          ## Regenerate NFC_STATE_OF_CANON.md snapshot from metadata
 	python3 scripts/generate_state_of_canon.py
+release:        ## Package git-free source archive with tracked-text manifest
+	bash scripts/make_release.sh
+
+release-test:   ## Extract archive to clean dir, assert no .git, run make check
+	bash scripts/release_test.sh $(ARCHIVE)
