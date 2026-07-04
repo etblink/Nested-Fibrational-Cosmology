@@ -612,6 +612,221 @@ def run_rational_height(H, base_bits=350, N=64, M=48):
     return Mm, pivots, status
 
 
+# ================= MIG-035: H=4/H=5 certified rational-height matrices =================
+def _basis_moment_checks(basis, scales):
+    """Verify Sum_j c_j = 0 and Sum_j c_j/q_j = 0 EXACTLY (rationals) for every basis
+    vector (req 3). Returns per-vector dict; raises on any failure."""
+    out = []
+    for idx, c in enumerate(basis):
+        s0 = sum(c)  # integers
+        s1 = sum(_Frac(cj) / _Frac(scales[j]) for j, cj in enumerate(c))  # exact rational
+        if s0 != 0 or s1 != 0:
+            raise ValueError(f"basis vector {idx} fails moment equations: sum={s0}, sum c/q={s1}")
+        out.append({"index": idx, "sum_c": int(s0), "sum_c_over_q": [s1.numerator, s1.denominator]})
+    return out
+
+def _nesting_certificate(H):
+    """Verify Q_{H-1} is the exact ordered prefix of Q_H, so V_{H-1} embeds canonically
+    into V_H by zero-padding (req 1: verify nesting against the previous height)."""
+    cur = Q_height(H)
+    if H <= 1:
+        return {"previous_H": None, "prefix_verified": True, "note": "base height; no predecessor"}
+    prev = Q_height(H - 1)
+    is_prefix = cur[:len(prev)] == prev
+    if not is_prefix:
+        raise ValueError(f"nesting broken: Q_{H-1} is not the ordered prefix of Q_{H}")
+    return {
+        "previous_H": H - 1,
+        "previous_len": len(prev),
+        "current_len": len(cur),
+        "prefix_verified": True,
+        "embedding": "V_{H-1} embeds into V_H by zero-padding new coordinates (persistent (reduced_height,value) order)",
+    }
+
+def _rad_frac(x):
+    """Exact Fraction radius of an arb ball (outward)."""
+    return _arb_exact_fraction(x.rad())
+
+def _weyl_eig_enclosures(Mm, base_prec):
+    """Method B (verifier-accepted): rigorous Hermitian eigenvalue enclosures via
+    midpoint eigendecomposition + Weyl perturbation.
+
+      A = A_0 + E,  A_0 = exact dyadic midpoint (point) matrix,  |E_jk| <= R_jk (ball radii).
+      ||E||_2 <= ||R||_inf := max_i sum_j R_ij   (valid for Hermitian E, since
+                 ||E||_2 <= sqrt(||E||_1 ||E||_inf) = ||E||_inf and ||E||_1=||E||_inf).
+      Weyl: |lambda_i(A) - lambda_i(A_0)| <= ||E||_2 <= ||R||_inf  (sorted order).
+
+    The POINT matrix A_0 isolates cleanly even when the interval matrix does not
+    (near-degenerate near-singular spectrum). Each sorted point-eigenvalue enclosure is
+    widened OUTWARD by ||R||_inf. Returns (enclosures, Rinf_arb, imag_bound_arb) with
+    enclosures a sorted list of arb balls rigorously containing lambda_i(A); raises
+    RuntimeError if the point matrix fails to isolate (caller escalates precision)."""
+    n = len(Mm)
+    Rinf_frac = max(sum(_rad_frac(Mm[i][j]) for j in range(n)) for i in range(n))
+    Rinf = arb(_frac_to_decimal(Rinf_frac, 80, ROUND_CEILING))  # outward upper bound on ||R||_inf
+    A0 = flint.acb_mat([[acb(Mm[i][j].mid()) for j in range(n)] for i in range(n)])
+    saved = flint.ctx.prec
+    E = None
+    try:
+        for mult in (2, 4, 8, 12):
+            flint.ctx.prec = base_prec * mult
+            try:
+                E = A0.eig(); break
+            except (ValueError, ZeroDivisionError):
+                E = None
+        if E is None:
+            raise RuntimeError("midpoint eig failed to isolate at all attempted precisions")
+        pairs = sorted(((e.real, e.imag) for e in E), key=lambda t: float(t[0].mid()))
+    finally:
+        flint.ctx.prec = saved
+    encl = []
+    imag_bound = arb(0)
+    for re, im in pairs:
+        widened = (re + Rinf).union(re - Rinf)   # Weyl outward widening
+        encl.append(widened)
+        imag_bound = imag_bound.union(im)
+    return encl, Rinf, imag_bound
+
+RH_PROFILES = [(350, 64, 48), (500, 192, 112), (700, 384, 160), (900, 512, 224)]
+
+def _build_compressed(H, scales, V, base_bits, N, M):
+    """Build the compressed real-symmetric interval matrix M_H at one precision profile."""
+    global MAX_SCALE_RATIO
+    ratio = dynamic_max_ratio(scales)
+    MAX_SCALE_RATIO = max(2, int(ratio) + 1)
+    _S_cache.clear()
+    flint.ctx.prec = base_bits
+    n = len(scales)
+    Hm = [[None] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(i, n):
+            Hm[i][j] = H_entry_rational(scales[i], scales[j], N, M)
+            Hm[j][i] = Hm[i][j]
+    m = len(V)
+    Mm = [[arb(0)] * m for _ in range(m)]
+    for a in range(m):
+        for b in range(a, m):
+            s = arb(0)
+            for i in range(n):
+                if V[a][i] == 0: continue
+                for j in range(n):
+                    if V[b][j] == 0: continue
+                    s += arb(V[a][i]) * arb(V[b][j]) * Hm[i][j]
+            Mm[a][b] = s
+            Mm[b][a] = s
+    return Mm
+
+def run_rational_height_certified(H, profiles=None):
+    """MIG-035 richer certificate for H (>=4): full compressed matrix as dyadic entry
+    balls, exact basis with moment checks, interval-LDL PD certification, and rigorous
+    eigenvalue enclosures, plus nesting proof and LDL/eigenvalue inertia agreement.
+    Escalates precision profiles until PD certifies (like run_q12).
+    Does NOT touch the existing QH2/QH3 certificates (different generator, only run for H)."""
+    scales = Q_height(H)
+    ratio = dynamic_max_ratio(scales)
+    n = len(scales)
+    nesting = _nesting_certificate(H)
+    V = primitive_nullspace_basis(scales)
+    moment_checks = _basis_moment_checks(V, scales)
+    m = len(V)
+    print(f"Q_{H}: {n} scales; dim {m}; max/min ratio {ratio}; nesting OK")
+
+    profiles = profiles or RH_PROFILES
+    Mm = pivots = eig_encl = None; Rinf = imag_bound = None; status = "INDETERMINATE"; base_bits = N = M = None
+    for (bb, NN, MM) in profiles:
+        base_bits, N, M = bb, NN, MM
+        Mm = _build_compressed(H, scales, V, bb, NN, MM)
+        pivots, status = ldl_pivots(Mm)
+        if status != "PD":
+            print(f"  profile bits={bb} N={NN} M={MM}: LDL {status} -> escalate")
+            continue
+        try:
+            eig_encl, Rinf, imag_bound = _weyl_eig_enclosures(Mm, bb)
+        except RuntimeError as ex:
+            print(f"  profile bits={bb} N={NN} M={MM}: LDL PD but midpoint eig failed ({ex}) -> escalate")
+            status = "INDETERMINATE"
+            continue
+        if not all(e > 0 for e in eig_encl):
+            print(f"  profile bits={bb} N={NN} M={MM}: LDL PD but a Weyl-widened eig enclosure not strictly positive -> escalate")
+            status = "INDETERMINATE"
+            continue
+        print(f"  profile bits={bb} N={NN} M={MM}: LDL PD and eigenvalues enclosed (Weyl), all positive")
+        break
+    if status != "PD" or eig_encl is None:
+        raise ValueError(f"H={H}: not fully certified at max profile (LDL {status})")
+    for p in pivots:
+        assert p > 0, "pivot lower endpoint not strictly positive"
+
+    # rigorous eigenvalue enclosures (Method B: midpoint eig + Weyl, from the loop above)
+    assert len(eig_encl) == len(pivots), "eigenvalue count != dim"
+    if not imag_bound.contains(arb(0)):
+        raise ValueError("point-matrix eigenvalue imaginary parts do not enclose 0 (spectrum not certified real)")
+    eig_positive = 0
+    eig_certs = []
+    for e in eig_encl:
+        if e > 0:
+            eig_positive += 1
+        eig_certs.append(ball_certificate(e, digits=40))
+    m = len(pivots)
+    if eig_positive != m:
+        raise ValueError(f"H={H}: only {eig_positive}/{m} eigenvalue enclosures strictly positive")
+    lo_eig = eig_encl[0]; hi_eig = eig_encl[-1]
+    Rinf_cert = ball_certificate(Rinf, digits=40)
+    imag_abs = abs(_arb_exact_fraction(imag_bound.mid())) + _arb_exact_fraction(imag_bound.rad())
+    print(f"  eigenvalues: {m} real enclosures (Weyl), all positive; "
+          f"lambda_min in {ball_certificate(lo_eig)['lower_decimal']}.., lambda_max ..{ball_certificate(hi_eig)['upper_decimal']}")
+
+    # serialize the FULL compressed matrix (both triangles) so Hermitian pairing
+    # M_jk = conj(M_kj) is independently checkable and tamperable in adversarial tests
+    cmb = {}
+    for a in range(m):
+        for b in range(m):
+            cmb[f"{a}_{b}"] = ball_certificate(Mm[a][b], digits=40)
+
+    cert = {
+        "H": H,
+        "scales": [[s.numerator, s.denominator] for s in scales],
+        "ordering_rule": "anchors [1,2] then (reduced_height h(m/n)=max(m,n), value); persistent nesting",
+        "nesting": nesting,
+        "max_min_ratio": [ratio.numerator, ratio.denominator],
+        "basis": V,
+        "basis_moment_checks": moment_checks,
+        "dim": m,
+        "matrix_dim_rule": "|Q_H| - 2",
+        "primary_matrix": "compressed",
+        "hermitian": True,
+        "compressed_matrix_balls": cmb,
+        "profile": {"bits": base_bits, "N": N, "M": M, "max_scale_ratio": MAX_SCALE_RATIO},
+        "ldl_status": status,
+        "pivots": [ball_certificate(p, digits=40) for p in pivots],
+        "eigenvalue_method": ("midpoint + Weyl (Method B): A = A_0 + E with A_0 the exact "
+                              "dyadic midpoint matrix and |E_jk| <= R_jk (serialized ball radii); "
+                              "||A-A_0||_2 <= ||R||_inf = max abs row sum of R (Hermitian bound); "
+                              "point-matrix eigenvalues enclosed rigorously by Arb acb_mat.eig and "
+                              "each sorted enclosure widened outward by ||R||_inf (Weyl). Chosen over "
+                              "the interval eigensolver because the near-singular H>=5 spectrum is not "
+                              "isolable as an interval matrix; the point matrix isolates cleanly and "
+                              "||R||_inf << lambda_min preserves strict positivity."),
+        "weyl": {
+            "R_inf_upper": Rinf_cert,
+            "bound": "||A-A_0||_2 <= ||R||_inf (max abs row sum of entry-ball radii; Hermitian)",
+            "imag_abs_upper_decimal": _frac_to_decimal(imag_abs, 40, ROUND_CEILING),
+            "spectrum_real": True,
+        },
+        "eigenvalue_enclosures": eig_certs,
+        "all_eigenvalues_certified_positive": True,
+        "inertia": {"ldl_positive_pivots": m, "eig_positive": eig_positive, "dim": m, "agree": True},
+        "classification": ("H=%d rigorously positive restricted rational-height Weil test if certified: "
+                           "a finite consistency result inside an exact infinite reformulation, "
+                           "NOT a theorem-step toward RH." % H),
+        "provenance": provenance(base_bits, N, M),
+    }
+    path = f"metadata/weil_QH{H}_certificate.json"
+    json.dump(cert, open(path, "w"), indent=2)
+    print(f"  written {path}")
+    return Mm, pivots, eig_encl, status
+
+
 def _display_ball_refs(ball):
     """Exact Fraction reference endpoints for enclosure checks: the dyadic ball
     [mid-rad, mid+rad] when serialized dyadics are present (strongest), else the

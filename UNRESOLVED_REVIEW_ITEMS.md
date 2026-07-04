@@ -33,8 +33,9 @@ These are scaffold research-track flags awaiting independent specialist review, 
 9. **Extractor's statement-proof node count (835) vs. the corpus's historical "711".** Methodology for the historical figure was never documented; the scripted count is now the canonical one going forward (flagged in `AUDIT_BASELINE.md` §0.7).
 
 ## Suggested next tasks (live work)
-- **H=4/H=5 rational-height certification** (the authorized next numerical step): serialize compressed matrix-entry balls, certify LDL positivity, provide rigorous eigenvalue enclosures (not diagnostic eigenvalues), preserve exact rational-height ordering and nullspace bases, and keep finite results classified as restricted tests — never RH theorem-steps.
-- **Independent specialist review** of the RH/SCC research-overlay gates listed above (and the cyclicity/continuity arguments), before any external claim.
+- ~~**H=4/H=5 rational-height certification**~~ **Done (MIG-035):** M₄ (9×9) and M₅ (17×17) certified LDL-PD with rigorous all-positive eigenvalue enclosures (midpoint+Weyl), full compressed matrices serialized as dyadic balls, nesting and moment equations verified, 4 new adversarial tests. Certificates: `metadata/weil_QH4_certificate.json`, `metadata/weil_QH5_certificate.json`. Classification retained: finite restricted rational-height Weil tests, **not** RH theorem-steps.
+- **H=6+ rational-height certification** (future, needs authorization): the escalation ladder and generator generalize directly; dim grows as |Q_H|−2 and the precision schedule tracks the smallest eigenvalue's decay, so expect higher profiles.
+- **Independent specialist review** of the RH/SCC research-overlay gates and the cyclicity/continuity arguments, before any external claim.
 - Adopt `make check` as the pre-commit hook for any future canon edit.
 - *(Lower priority, later)* Dashboard "diff two snapshots" panel — useful only once a meaningful second release snapshot exists to compare (`release_snapshot_view` is already diff-ready).
 - *(Optional, separate migration)* Rendered-heading decision for the obligation environment (item 1a) — a presentation-only migration if ever authorized.

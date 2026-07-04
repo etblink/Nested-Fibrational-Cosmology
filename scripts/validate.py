@@ -129,6 +129,104 @@ def main():
                 errs.append(f"{tag}: required positive but sign_certified != positive")
         return errs
     cert_issues=[]
+
+    # ---- MIG-035: independent interval arithmetic (Fraction-based; no flint dependency,
+    # so the git-free release environment can run it) for the H=4/H=5 matrix + eigenvalue
+    # certificate checks. Each interval is an exact [lo, hi] pair of Fractions. ----
+    class _Iv:
+        __slots__=("lo","hi")
+        def __init__(s,lo,hi): s.lo,s.hi=lo,hi
+        def __add__(s,o): return _Iv(s.lo+o.lo, s.hi+o.hi)
+        def __sub__(s,o): return _Iv(s.lo-o.hi, s.hi-o.lo)
+        def __mul__(s,o):
+            ps=(s.lo*o.lo, s.lo*o.hi, s.hi*o.lo, s.hi*o.hi); return _Iv(min(ps),max(ps))
+        def __truediv__(s,o):
+            if o.lo<=0<=o.hi: raise ZeroDivisionError("interval divisor contains 0")
+            r=_Iv(_F(1)/o.hi, _F(1)/o.lo); return s*r
+        def pos(s): return s.lo>0
+        def contains(s,x): return s.lo<=x<=s.hi
+        def overlaps(s,o): return s.lo<=o.hi and o.lo<=s.hi
+    def _ball_iv(b):
+        return _Iv(_dec_to_frac(b["lower_decimal"]), _dec_to_frac(b["upper_decimal"]))
+    def _dy_rad(b):
+        return _dy_to_frac(b["radius_dyadic"])
+
+    def _mig035_checks(_fn, c):
+        errs=[]
+        if "compressed_matrix_balls" not in c:
+            return errs  # not a MIG-035 full-matrix certificate (e.g. QH2/QH3); other checks cover it
+        m=c.get("dim")
+        B=c["compressed_matrix_balls"]
+        # (i) dimension = |Q_H|-2 and full m*m serialized
+        want={f"{a}_{b}" for a in range(m) for b in range(m)}
+        if set(B.keys())!=want:
+            errs.append(f"{_fn}: compressed_matrix_balls keys != full {m}x{m} grid"); return errs
+        # every entry ball must enclose its own exact dyadic (catches a narrowed entry ball)
+        for key,b in B.items():
+            errs += _check_ball(f"{_fn} M[{key}]", b, require_positive=False)
+        # (ii) Hermitian-compatibility: M_jk == M_kj (equal dyadic mid & rad; real => conj trivial)
+        for a in range(m):
+            for b in range(a+1,m):
+                jk,kj=B[f"{a}_{b}"],B[f"{b}_{a}"]
+                if (jk["mid_dyadic"],jk["radius_dyadic"])!=(kj["mid_dyadic"],kj["radius_dyadic"]):
+                    errs.append(f"{_fn}: non-Hermitian pair M[{a}_{b}] != M[{b}_{a}]")
+        if errs: return errs
+        # (iii) primary matrix identified; the engine's interval LDL is the PD certificate.
+        # Independent ties below (trace, det, positivity) bind pivots<->eigenvalues<->matrix
+        # without re-deriving the ~1e-64 pivots (beyond a 40-digit serialization's reach).
+        if c.get("primary_matrix")!="compressed":
+            errs.append(f"{_fn}: primary_matrix not identified as 'compressed'")
+        claimed_pd = c.get("ldl_status")=="PD"
+        if claimed_pd and not all(_ball_iv(b).pos() for b in c["pivots"]):
+            errs.append(f"{_fn}: claims LDL PD but a serialized pivot lower endpoint is not > 0")
+        # (iv) eigenvalues: count==dim, sorted, all lower>0, inertia agree
+        E=c.get("eigenvalue_enclosures",[])
+        if len(E)!=m:
+            errs.append(f"{_fn}: {len(E)} eigenvalue enclosures != dim {m}"); return errs
+        allpos=c.get("all_eigenvalues_certified_positive",False)
+        for i,b in enumerate(E):
+            errs += _check_ball(f"{_fn} eig {i}", b, require_positive=allpos)
+        Ivs=[_ball_iv(b) for b in E]
+        for i in range(1,m):
+            if Ivs[i].lo < Ivs[i-1].lo:
+                errs.append(f"{_fn}: eigenvalue enclosures not in nondecreasing order at {i}")
+        pos_eig=sum(1 for iv in Ivs if iv.pos())
+        pos_piv=sum(1 for b in c["pivots"] if _ball_iv(b).pos())
+        inertia=c.get("inertia",{})
+        if not (pos_eig==pos_piv==m and inertia.get("agree") is True
+                and inertia.get("ldl_positive_pivots")==m and inertia.get("eig_positive")==m):
+            errs.append(f"{_fn}: LDL/eigenvalue inertia disagreement (eig+={pos_eig}, piv+={pos_piv}, dim={m}, inertia={inertia})")
+        # (v) trace = sum(eig): trace interval (sum of diagonal) must overlap sum(eig)
+        tr=_Iv(_F(0),_F(0))
+        for i in range(m): tr=tr+_ball_iv(B[f"{i}_{i}"])
+        se=_Iv(_F(0),_F(0))
+        for iv in Ivs: se=se+iv
+        if not tr.overlaps(se):
+            errs.append(f"{_fn}: trace enclosure disjoint from sum(eigenvalues)")
+        # (vi) det = prod(pivots) = prod(eig): both interval products must overlap
+        pp=_Iv(_F(1),_F(1))
+        for b in c["pivots"]: pp=pp*_ball_iv(b)
+        pe=_Iv(_F(1),_F(1))
+        for iv in Ivs: pe=pe*iv
+        if not pp.overlaps(pe):
+            errs.append(f"{_fn}: prod(pivots) enclosure disjoint from prod(eigenvalues) (det mismatch)")
+        # (vii) Weyl construction: recompute ||R||_inf from serialized entry-ball radii,
+        # confirm recorded bound is valid and each eigenvalue enclosure was widened by it.
+        w=c.get("weyl")
+        if w is None:
+            errs.append(f"{_fn}: eigenvalue method records no Weyl block")
+        else:
+            Rinf_recomputed=max(sum(_dy_rad(B[f"{a}_{b}"]) for b in range(m)) for a in range(m))
+            Rinf_claimed=_dec_to_frac(w["R_inf_upper"]["upper_decimal"])
+            if Rinf_claimed < Rinf_recomputed:
+                errs.append(f"{_fn}: recorded ||R||_inf {float(Rinf_claimed):.3e} < recomputed {float(Rinf_recomputed):.3e} (invalid Weyl bound)")
+            for i,iv in enumerate(Ivs):
+                half=(iv.hi-iv.lo)/2
+                if half < Rinf_recomputed:
+                    errs.append(f"{_fn}: eig {i} half-width < ||R||_inf (Weyl widening not applied)")
+                    break
+        return errs
+
     if _os.path.exists("metadata/weil_M3_result.json"):
         c=_json.load(open("metadata/weil_M3_result.json"))
         cert_issues += _check_ball("M3", c["M3_ball"], require_positive=True)
@@ -242,6 +340,12 @@ def main():
         pd=c["ldl_status"]=="PD"
         for i,b in enumerate(c["pivots"]):
             cert_issues += _check_ball(f"{_fn} pivot {i}", b, require_positive=pd)
+        # MIG-035: full compressed matrix, eigenvalue enclosures, nesting, inertia, Weyl
+        cert_issues += _mig035_checks(_fn, c)
+        # MIG-035: nesting proof (Q_{H-1} ordered prefix of Q_H) when present
+        nst=c.get("nesting")
+        if isinstance(nst,dict) and nst.get("previous_H") is not None and not nst.get("prefix_verified"):
+            cert_issues.append(f"{_fn}: nesting.prefix_verified is not True")
     if cert_issues: fails.append("Weil certificate failures:\n    "+"\n    ".join(cert_issues))
 
     # 8b. MIG-033: displayed-interval enclosure. Two guarantees:

@@ -20,7 +20,7 @@ PY
   if [ $? -eq 0 ]; then echo "  PASS (rejected): $desc"; else echo "  FAIL (slipped through): $desc"; fail=1; fi
 }
 
-echo "Adversarial validator tests (MIG-032 tampers 1-5; MIG-033 tampers 6-7):"
+echo "Adversarial validator tests (MIG-032 tampers 1-5; MIG-033 tampers 6-7; MIG-035 tampers 8-11):"
 # 1. counterfeit H=3 = H=2 payload under H:3 name
 tamper_must_fail "counterfeit H=3 (H=2 payload, H:3 name)" metadata/weil_QH3_certificate.json \
   'q2=json.load(open("metadata/weil_QH2_certificate.json")); c["scales"]=q2["scales"]; c["basis"]=q2["basis"]; c["dim"]=q2["dim"]; c["pivots"]=q2["pivots"]'
@@ -70,5 +70,23 @@ text_tamper_must_fail "non-enclosing displayed interval (MIG-032 round-to-neares
   RESEARCH_PACKET_RH_K0_W3.md \
   '[2.92475687744511383141046e-16, 2.92475687744511383141047e-16]' \
   '[2.924756877445113831410465e-16, 2.924756877445113831410465e-16]'
+
+# --- MIG-035 permanent tests (H=4/H=5 matrix + eigenvalue certificates) ---
+
+# 8. broken off-diagonal Hermitian pair: M[0_1] != M[1_0] must be rejected.
+tamper_must_fail "broken Hermitian pair (M[0_1] != M[1_0])" metadata/weil_QH5_certificate.json \
+  'b=c["compressed_matrix_balls"]["0_1"]["mid_dyadic"]; b["mantissa"]=str(int(b["mantissa"])+7)'
+
+# 9. eigenvalue lower endpoint moved below zero while retaining the all-positive claim.
+tamper_must_fail "eigenvalue lower endpoint below zero under all-positive claim" metadata/weil_QH5_certificate.json \
+  'c["eigenvalue_enclosures"][0]["lower_decimal"]="-1e-70"'
+
+# 10. matrix-entry ball narrowed so it no longer encloses its exact dyadic representation.
+tamper_must_fail "entry ball narrowed below its dyadic (non-enclosing)" metadata/weil_QH5_certificate.json \
+  'e=c["compressed_matrix_balls"]["2_2"]; e["upper_decimal"]=e["lower_decimal"]'
+
+# 11. compressed matrix inconsistent with its basis (basis vector no longer a moment nullvector).
+tamper_must_fail "compressed matrix inconsistent with basis (broken moment nullvector)" metadata/weil_QH4_certificate.json \
+  'c["basis"][0][0]=c["basis"][0][0]+1'
 
 exit $fail
