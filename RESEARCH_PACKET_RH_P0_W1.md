@@ -26,7 +26,7 @@ In these coordinates the moment functionals are
 
 > 𝓗¹_{a,0} := ker L₊ ∩ ker L₋
 
-is a closed subspace of codimension ≤ 2. **This is the domain on which the Weil form will be posed.**
+is a closed subspace of **codimension exactly 2**: the moment map L = (L₊,L₋) is surjective, since two distinct dilates give linearly independent moment vectors — L₊(H_q) = √π/2q, L₋(H_q) = √π, with det[[√π/2, √π],[√π/4, √π]] = π/4 ≠ 0 (verified). **This is the domain on which the Weil form will be posed.**
 
 ## 3. The generator and its rational dilates lie in 𝓗¹_a
 
@@ -34,7 +34,7 @@ The generator (image of f₀(x) = √x e^{−x} under the intertwiner) is
 
 > H₀(t) = eᵗ e^{−eᵗ}.
 
-- **Membership H₀ ∈ 𝓗¹_a for a < 1** (verified): as t → +∞ the double-exponential e^{−eᵗ} dominates every polynomial/exponential, so both weighted norms converge; as t → −∞, H₀(t) ∼ eᵗ and e^{a|t|}H₀ ∼ e^{(1−a)t} → 0 with a finite L² tail iff a < 1. H₀′(t) = (1 − eᵗ)H₀(t) has the same tails. So H₀ ∈ 𝓗¹_a exactly on ½ < a < 1.
+- **Membership H₀ ∈ 𝓗¹_a for a < 1** (verified): as t → +∞ the double-exponential e^{−eᵗ} dominates every polynomial/exponential, so both weighted norms converge; as t → −∞, H₀(t) ∼ eᵗ and e^{a|t|}H₀ ∼ e^{(1−a)t} → 0 with a finite L² tail iff a < 1. H₀′(t) = (1 − eᵗ)H₀(t) has the same tails. So **H₀ ∈ 𝓗¹_a for a < 1**; the **joint program range** is ½ < a < 1, because moment continuity (§2) and prime summability (T1) impose the lower bound a > ½.
 - **Rational dilates as weighted translates:** H_q(t) = q^{−1/2} H₀(t + log q), q ∈ ℚ₊. Translation moves the −∞ tail, so H_q ∈ 𝓗¹_a for the same a (the weight e^{a|t|} is translation-*quasi*-invariant: ‖H_q‖_{𝓗¹_a} ≤ e^{a|log q|}·const).
 - **Moments of the generator (verified):** L₊(H₀) = Γ(3/2) = √π/2, L₋(H₀) = Γ(1/2) = √π — both nonzero, so H₀ ∉ 𝓗¹_{a,0}; the constrained combinations of §5 are needed.
 
@@ -46,41 +46,63 @@ The generator (image of f₀(x) = √x e^{−x} under the intertwiner) is
 
 ## 5. Theorem targets
 
-**T1 — Form continuity on 𝓗¹_{a,0}.** For Φ = H ∗ K̃ (multiplicative autocorrelation in log-coordinates, K̃(t) = K(−t)‾), establish
+**T1 — Form continuity on 𝓗¹_{a,0} — PROVED (promoted from target, MIG-028).** Let w(t) = e^{a|t|} and Φ = H ∗ K̃ (K̃(t) = K(−t)‾). Weight **submultiplicativity** w(t) ≤ w(s)w(t−s) plus Cauchy–Schwarz give, directly,
 
-> |Φ(t)| + |Φ′(t)| ≤ C e^{−a|t|} ‖H‖_{𝓗¹_a} ‖K‖_{𝓗¹_a}.
+> e^{a|t|}|Φ(t)| = |∫ w(t)H(s)K̃(t−s) ds| ≤ ∫ w(s)|H(s)|·w(t−s)|K̃(t−s)| ds ≤ ‖wH‖₂‖wK‖₂,
 
-The e^{−a|t|} decay is what makes both sides of the explicit formula converge on 𝓗¹_{a,0}: the **prime side** Σ_n Λ(n) n^{−1/2}[Φ(log n) + Φ(−log n)] is dominated by C‖H‖‖K‖ Σ_n Λ(n) n^{−1/2−a}, finite because Σ Λ(n) n^{−1/2−a} = −ζ′/ζ(½ + a) < ∞ for a > ½ (the very lower bound already forced by moment continuity); the **archimedean side** ∫₁^∞[…] dx/(x − x^{−1}) converges by the same pointwise bound. So the imported Weil functional 𝔔_W extends to a continuous Hermitian form on 𝓗¹_{a,0}. *(This is where a > ½ pays off twice — moments AND prime sum.)*
+and differentiating under the integral onto either factor,
 
-**T2 — Determining-domain theorem.** Positivity of 𝔔_W on 𝓗¹_{a,0} must be **equivalent** to the imported Weil criterion (positivity on all of 𝒲₀), not merely positivity on a smaller harmless subspace. Route: show 𝒲₀ ∩ (image of 𝓗¹_{a,0}) is dense in 𝒲₀ in the Weil-form topology, so no negative direction of the full criterion is invisible to 𝓗¹_{a,0}. Until T2 is proved, positivity on 𝓗¹_{a,0} is **not** known to imply RH — this is the determining-domain obligation and must not be elided.
+> e^{a|t|}|Φ′(t)| ≤ min(‖wH′‖₂‖wK‖₂, ‖wH‖₂‖wK′‖₂).
 
-**T3 — Constrained rational-scale core.**
+Hence |Φ(t)| + |Φ′(t)| ≤ C e^{−a|t|}‖H‖_{𝓗¹_a}‖K‖_{𝓗¹_a}. The **prime series** is then bounded by C‖H‖‖K‖ Σ_{n≥2} Λ(n)/n^{a+1/2}, which **converges because a + ½ > 1** (equivalently −ζ′/ζ(a+½) < ∞). For the **archimedean integral** the apparent singularity at t = 0 is removable — the numerator is O(t) by the C¹ bound while 1 − e^{−2t} = O(t) — and at infinity the same e^{−a|t|} estimate gives integrability. So the imported Weil functional 𝔔_W extends to a **continuous** Hermitian form on 𝓗¹_{a,0}. *(a > ½ pays off twice — moments AND prime sum.)* **Status: proved scaffold lemma.**
 
-> 𝒟_ℚ := span{ H_q : q ∈ ℚ₊ } ∩ ker L₊ ∩ ker L₋
+**T2 — Determining-domain theorem — CLOSED (no density theorem needed, MIG-028).** The equivalence follows directly from Burnol's compact-support form of Weil's criterion (arXiv:math/9810169), **without** proving 𝓗¹_{a,0} dense in 𝒲₀:
+- *(⇒, under RH)* positivity holds on the full imported Weil class, hence on the subspace 𝓗¹_{a,0};
+- *(⇐)* positivity on 𝓗¹_{a,0} **includes** positivity on C_c^∞(0,∞) ∩ 𝒲₀ — and Burnol shows this compactly supported subclass already detects any off-critical zero (his non-RH-direction counterexample test function can be chosen with Mellin values zero at both 0 and 1, i.e. inside 𝒲₀ and, being smooth and compactly supported in log-coordinates, inside 𝓗¹_{a,0}).
 
-is dense in 𝓗¹_{a,0} in the form topology. (In log-coordinates the §6 K0-W1 constraints Σc_j = 0, Σc_j/q_j = 0 become the two moment kernels; minimum three distinct rational scales for a nonzero member.)
+So positivity on 𝓗¹_{a,0} ⟺ RH. The determining-domain implication is supplied by Burnol's direct construction; **T2 is closed** — there is no need for a density theorem here. **Status: closed by imported result** (Burnol criterion, recorded as external import alongside the Weil baseline).
 
-## 6. The density obstacle — stated precisely as an open sub-problem (reviewer's caution, confirmed)
+**T3 — Constrained rational-scale core — REDUCED to one cyclicity theorem (MIG-028).**
 
-T3 needs a **weighted** density theorem; ordinary unweighted L²-density (Lemma K0.A) is insufficient because the two moment constraints and the form norm ‖·‖_{𝓗¹_a} must both be controlled. The natural tool is a weighted Wiener–Tauberian / Beurling-algebra theorem for the weight ω(t) = e^{a|t|}. **But this weight fails the standard admissibility hypothesis, and that failure is real:**
+> 𝒟_ℚ := span{ H_q : q ∈ ℚ₊ } ∩ ker L₊ ∩ ker L₋  dense in 𝓗¹_{a,0}.
 
-> **Obstacle (verified).** The Beurling–Domar non-quasianalyticity condition Σ_{n≥1} log ω(n)/n² < ∞ **fails** for ω(t) = e^{a|t|}: log ω(n) = a·n, so Σ a·n/n² = a·Σ 1/n **diverges** for every a > 0.
+**Finite-dimensional moment-correction lemma (proved).** Because L = (L₊,L₋) is surjective (codim exactly 2, above), 𝒟 = span{H_q} contains a two-element right inverse for L: pick dilates whose moment vectors span ℂ². Then **if D is dense in X = 𝓗¹_a, then D ∩ ker L is dense in ker L = 𝓗¹_{a,0}.** Proof: given F ∈ ker L and ε, take D ∋ G with ‖F − G‖ < ε; G has small but nonzero moments L(G) = (L(G−F)); subtract the right-inverse combination R·L(G) ∈ D (with ‖R·L(G)‖ ≤ ‖R‖‖L‖ε by continuity of L, T1-style); then G − R·L(G) ∈ D ∩ ker L and is within (1+‖R‖‖L‖)ε of F. ∎
 
-Therefore the classical weighted-Wiener–Tauberian route (Beurling–Domar; cf. Esterle's proof for Beurling algebras, Numdam 10.5802/aif.852) is **not applicable to this weight as stated**. This is a genuine gap, flagged here as an explicit open sub-problem rather than invoked generically. Candidate substitutes, each to be identified precisely (with its exact hypotheses checked against ω) before use:
+So the **constrained** density T3 reduces to the **unconstrained** density of D in X — i.e. to a pure cyclicity statement with no moment side-conditions:
 
-- **(C1) Beurling strip / quasianalytic-boundary theorems** exploiting that H₀'s transform Γ(1+z) is analytic and zero-free in |Re z| ≤ a — density may follow from a *completeness* argument on the zero-free analytic factor rather than a Tauberian one (the quasianalyticity that defeats Beurling–Domar can itself force completeness of the dilate system, à la Beurling–Malliavin territory).
-- **(C2) Weighted Bernstein / Beurling–Malliavin** completeness for exponential systems {q^{−iτ}} against the multiplier Γ(½ + iτ): the density radius is governed by log ℚ₊ being dense, and the admissible-majorant machinery may supply the form-norm control the Tauberian route cannot.
-- **(C3) de Branges spaces:** the twisted transform lands in a de Branges space with structure function tied to Γ; density of 𝒟_ℚ becomes a reproducing-kernel completeness question there.
+> **Γ strip-cyclicity theorem (the sole remaining analytic gate).**
+> closure_{𝓗¹_a} span{ q^{−1/2} H₀(· + log q) : q ∈ ℚ₊ } = 𝓗¹_a.
 
-**Falsification criteria for P0-W1.**
-- **W1-F1:** if every ℚ₊-dilate system of a single 𝓗¹_a generator is provably *incomplete* in 𝓗¹_{a,0} (form norm), T3 fails for this generator and f₀/H₀ must be replaced or the family enlarged beyond pure dilates.
-- **W1-F2:** if no weighted-completeness theorem applies to ω(t) = e^{a|t|} (all of C1–C3 obstructed), the weighted-Sobolev model itself is the wrong domain and the form-core must be sought in a different completion (reopening the K0-3 form-domain choice).
-- **W1-F3:** if T2 fails — 𝓗¹_{a,0} positivity is strictly weaker than 𝒲₀ positivity — then even a proven core would not reach RH, and the determining-domain step must be redesigned.
+Since log ℚ₊ is dense in ℝ and translation is continuous on 𝓗¹_a, this is equivalent to **cyclicity of H₀ under all real translations** in 𝓗¹_a.
+
+## 6. The single remaining gate: cyclicity of Γ(1−iz) in the Hardy–Sobolev strip
+
+After T1 (proved) and T2 (closed), and the moment-correction lemma reducing T3 to unconstrained cyclicity, the **entire** remaining analytic content is one question. Under the strip Fourier–Laplace transform, H₀ maps to **Γ(1−iz)**, analytic and zero-free on the strip |Im z| ≤ a < 1 (poles only at z = −i, −2i, …). The gate:
+
+> **Is H₀ cyclic under real translations in 𝓗¹_a — equivalently, is Γ(1−iz) cyclic in the corresponding exponential-weight Hardy–Sobolev strip space?**
+
+**What is NOT a proof.** Zero-freeness of Γ(1−iz) on the strip is necessary but **must not be treated as sufficient** for cyclicity (prohibition 15, sharpened). The failure of Beurling–Domar for ω(t) = e^{a|t|} (Σ a·n/n² diverges, verified in MIG-027) blocks one standard *algebraic* route — but **it does not establish incompleteness**; it only removes the generic Wiener–Tauberian argument.
+
+**Correct literature anchors (hypotheses to verify against this exact space, not invoked generically):**
+- **Borichev–Hedenmalm, "Completeness of translates in weighted spaces on the half-line"** (Acta Math.): directly about completeness of translates in weighted spaces *including quasianalytic regimes* — the focused anchor for this problem, far more apposite than a generic weighted-Wiener invocation.
+- **Dales–Hayman / Esterle** (Beurling-algebra Tauberian, Numdam AIF_1981__31_4_141_0): a genuine Tauberian source, but its applicability to *this* weighted Sobolev strip must be **demonstrated**, since the weight is quasianalytic here — not presumed.
+- de Branges spaces remain a secondary route (structure function tied to Γ) if the translation-cyclicity framing stalls.
+
+**Falsification criteria (updated).**
+- **W1-F1:** a proof that {q^{−1/2}H₀(·+log q)} is *incomplete* in 𝓗¹_a settles the gate negatively — f₀/H₀ must be replaced or the family enlarged beyond pure dilates. (Note: incompleteness is exactly what Beurling–Domar failure does *not* prove.)
+- **W1-F2:** if Borichev–Hedenmalm-type completeness provably cannot hold for ω(t) = e^{a|t|} at any ½ < a < 1, the weighted-Sobolev model is the wrong completion and the form-domain choice (K0-3) reopens.
+- **W1-F3 is retired:** T2 is closed, so "positivity on 𝓗¹_{a,0} is strictly weaker than 𝒲₀ positivity" is no longer a live failure mode.
 
 ## 7. Prohibited paths (inherited + new)
 
-All K0/K0-W1 prohibitions stand. Additionally: **(14)** no claim that 𝒟_ℚ is a core may rest on unweighted L²-density (Lemma K0.A alone) — the form norm and both moment constraints must be controlled; **(15)** no invocation of a "weighted Wiener–Tauberian theorem" without exhibiting the exact theorem and verifying its hypotheses against ω(t) = e^{a|t|} (which fails Beurling–Domar) — generic invocation is barred; **(16)** T2 (determining domain) may not be skipped: positivity on 𝓗¹_{a,0} carries no RH content until equivalence to the full Weil criterion is proved.
+All K0/K0-W1 prohibitions stand. Additionally: **(14)** no claim that 𝒟_ℚ is a core may rest on unweighted L²-density (Lemma K0.A alone) — the form norm and both moment constraints must be controlled; **(15)** no invocation of a "weighted Wiener–Tauberian theorem" without exhibiting the exact theorem and verifying its hypotheses against ω(t) = e^{a|t|} (which fails Beurling–Domar) — generic invocation is barred; **(16)** [DISCHARGED — T2 closed via Burnol] the determining-domain equivalence is now proved, not an open obligation; **(17)** zero-freeness of Γ(1−iz) on the strip may not be cited as cyclicity — a completeness theorem with verified hypotheses is required.
 
-## 8. Exit criteria
+## 8. Status and exit criteria (updated, MIG-028)
 
-P0-W1 closes when T1 (form continuity) and T2 (determining domain) are proved, and T3 (constrained core) is either proved via a precisely-identified weighted-completeness theorem (one of C1–C3 with hypotheses verified) or explicitly reduced to a named, literature-anchored open problem. Only then does P0-WEIL-CORE — now a *theorem about this concrete domain* rather than a schematic burden — become the active target, with the certified finite tests M_N ⪰ 0 (K0-W2) as its already-established finite-dimensional shadows.
+- **T1 (form continuity): PROVED** (submultiplicativity + Cauchy–Schwarz; prime sum converges for a > ½).
+- **T2 (determining domain): CLOSED** (Burnol compact-support Weil criterion; no density theorem needed).
+- **T3 (constrained core): REDUCED** to the single Γ strip-cyclicity theorem via the proved finite-dimensional moment-correction lemma.
+
+P0-W1 therefore closes when the **Γ strip-cyclicity theorem** is settled — the sole remaining analytic gate. It is no longer a diffuse "weighted form-core topology" problem but the sharply stated question of whether Γ(1−iz) is cyclic in the exponential-weight Hardy–Sobolev strip (½ < a < 1), to be attacked via Borichev–Hedenmalm completeness-of-translates with hypotheses verified against this weight. The certified finite tests M₃–M₁₂ (K0-W2) are retained as **evidence only** — finite-dimensional shadows consistent with the form's positivity, carrying no RH content until cyclicity closes T3 and P0-WEIL-CORE follows.
+
+**Updated gate sequence:** MIG-026 ✓ → T1 ✓ / T2 ✓ / T3-reduction ✓ (MIG-028) → **Γ strip-cyclicity (sole active gate)** → P0-WEIL-CORE → all-N positivity.
