@@ -22,7 +22,9 @@ Therefore **P0-WEIL-CORE is CLOSED**: 𝒟_ℚ is a core for 𝔔_W on the decla
 
 > 0 = q^{−1/2}⟨F,H_q⟩_X = ∫₀^∞ e^{−qu}[ W(F + Ḟ) − q W u Ḟ ] du.   (identity verified to 24 digits, §5.i)
 
-Setting A(u) = W(F + Ḟ), C(u) = W u Ḟ: the second term integrates by parts to ℒ(C′)(q) with **boundary terms vanishing** at u = 0 and u = ∞ — this is exactly where **a < 1** is used (endpoint cutoffs; verified, §5.ii). So ℒ(A)(q) = ℒ(C′)(q) for all q > 0, and **Laplace injectivity** gives C′ = A distributionally, i.e. back in t:
+Setting A(u) = W(F + Ḟ), C(u) = W u Ḟ, orthogonality gives ℒ(A)(q) = q·ℒ(C)(q) for all q > 0.
+
+**Laplace-primitive lemma (MIG-030 — rigorous, no endpoint traces).** The earlier draft integrated the second term by parts and *asserted* the boundary terms vanish; but for arbitrary F ∈ 𝓗¹_a, Ḟ is only L² and C(u) need not have a pointwise trace at u = 0, so that step was a proof-presentation gap. The clean repair avoids endpoint traces entirely. For ½ < a < 1, weighted Cauchy–Schwarz against the X-norm gives A, C ∈ L¹(0,1) — the tail integral ∫_{−∞}^0 e^{2(1−a)t}dt = 1/(2(1−a)) is finite **iff a < 1** (verified) — and after the e^{−qu} factor both are integrable at ∞. Define the primitive D(u) := ∫₀ᵘ A(v)dv (well-defined, absolutely continuous, D(0) = 0). Fubini gives ℒ(D)(q) = ℒ(A)(q)/q = ℒ(C)(q). **Laplace injectivity** then yields C = D a.e.; hence C has an absolutely continuous representative with C(0) = 0 and C′ = A — the boundary behavior is now *derived, not assumed*. Back in t:
 
 > **(e^{2a|t|}F′)′ = e^{2a|t|}F.**   (a constant-coefficient Sturm–Liouville equation on each half-line)
 
@@ -52,11 +54,11 @@ With P0-WEIL-CORE closed, the finite program acquires an **exact, non-vacuous eq
 ## 5. Independent verification log (this session, before recording)
 
 - **(i)** The Laplace identity q^{−1/2}⟨F,H_q⟩_X = ∫₀^∞ e^{−qu}[W(F+Ḟ) − qWuḞ]du: confirmed for a test F = e^{−t²} at q = 0.5, 1, 2.3 to 13–24 digits.
-- **(ii)** Integration-by-parts qℒ(C) = ℒ(C′) with boundary terms e^{−qu}C(u) → 0 at both ends (a = 0.7): boundary values ~10^{−225} (u→0) and ~10^{−36} (u→∞); identity matched to 30 digits.
+- **(ii)** Laplace-primitive lemma (MIG-030): the Fubini identity ℒ(D) = ℒ(A)/q verified to 8 digits; A,C ∈ L¹(0,1) integrability confirmed via the exponent integral 1/(2(1−a)) finite iff a<1. This replaces the earlier boundary-term assertion with a derivation requiring no pointwise endpoint trace of C.
 - **(iii)** ODE root selection and junction algebra: t<0 roots a±κ, t>0 roots −a±κ (sympy); X-membership selects the decaying root each side; C=D from continuity; (a+κ)C = −(a+κ)D from flux continuity ⟹ C=D=0.
 - **(iv)** Borichev–Hedenmalm hypothesis log ω(t) = o(t) fails for ω(t)=e^{a|t|} (log ω = a|t|): confirmed inapplicable.
 - **(v)** Moment values L₊(H_q)=√π/2q, L₋(H_q)=√π and moment-vector independence (det = π/4): confirmed (P0-W1).
 
 ## 6. Prohibited paths (inherited + new) and standing classification
 
-All prior prohibitions stand. **(18)** No statement may describe P0-WEIL-CORE's closure, or the RH ⟺ {M_H ⪰ 0} equivalence, as evidence *for* RH: the equivalence is conditional and symmetric; a finite positive M_H is a consistency check, not a theorem-step. **(19)** The RH-equivalence may enter canon only as a structure built on the **imported** Weil + Burnol criteria (external), never as an NFC-internal proof of RH. **Classification:** the certified M₃–M₁₂ remain restricted finite Weil tests; P0-WEIL-CORE is a proved form-core theorem about the declared domain; RH itself remains open and is claimed nowhere.
+All prior prohibitions stand. **(18)** No statement may describe P0-WEIL-CORE's closure, or the RH ⟺ {M_H ⪰ 0} equivalence, as evidence *for* RH: the equivalence is conditional and symmetric; a finite positive M_H is a consistency check, not a theorem-step. **(19)** The RH-equivalence may enter canon only as a structure built on the **imported** Weil + Burnol criteria (external), never as an NFC-internal proof of RH. **External-review status (MIG-030):** the cyclicity and continuity arguments are internally verified but have NOT undergone independent specialist review. The RH ⟺ {M_H ⪰ 0} equivalence may be described as a result only *within* this internal scaffold until such review occurs; it must not be presented as an established external theorem beforehand. **Classification:** the certified M₃–M₁₂ remain restricted finite Weil tests; P0-WEIL-CORE is a proved form-core theorem about the declared domain; RH itself remains open and is claimed nowhere.
