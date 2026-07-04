@@ -21,18 +21,31 @@
 
 The first rational run gave M₂ = 2.32×10⁰, wildly off the reviewer's diagnostic target 2.9247568774451138314×10⁻¹⁶. Rather than accept it, component comparison against the verified integer engine localized the fault to the archimedean term: the rational coefficient normalizer divided numerator and denominator by **independent** gcds, corrupting the rational-function ratio (num scaled by 2, den by 9 → integrand off by 2/9). Fixed by normalizing both by a single common factor. After the fix:
 
-> **M₂ = [2.924756877445113831410465×10⁻¹⁶ ± 9.0×10⁻⁴²] — certified, matching the reviewer's zero-side diagnostic to every stated digit.**
+> **M₂ ∈ [2.924756877445113831410465e-16, 2.924756877445113831410465e-16]** (certified enclosing interval, generated directly from outward-rounded certificate endpoints per MIG-032 — the exact radius is ~1.31×10⁻⁵⁶; an earlier hand-written ±9.0×10⁻⁴² prose interval was **non-enclosing** and is corrected here). This matches the reviewer's zero-side diagnostic 2.924756877445113831410464909826×10⁻¹⁶ to all stated digits.
 
 This is exactly why diagnostic targets accompany each authorized step: a 16-order error was caught before it entered a certificate.
 
 ## Certified results
 
 **H = 2.** Q₂ = [1, 2, ½] (max/min = 4 = H²); primitive basis (3, −2, −1) (matches reviewer); compressed dimension 1.
-> M₂ = [2.92475687744511383×10⁻¹⁶ ± 1.4×10⁻³⁴], **PD**.
+> M₂ ∈ [2.924756877445113831410465e-16, 2.924756877445113831410465e-16], **PD** (enclosing interval from certificate endpoints).
 
 **H = 3.** Q₃ = [1, 2, ½, ⅓, ⅔, 3/2, 3] (7 scales, max/min = 9 = H²); 5 primitive basis vectors; compressed dimension 5; profile 350 bits / N=64 / M=48 (MAX_SCALE_RATIO=10).
-> M₃ certified **PD** (all 5 LDL pivots strictly positive). Certified-matrix eigenvalues:
-> 4.34×10⁻³², 7.74×10⁻²⁷, 8.34×10⁻²⁶, 2.84×10⁻¹⁷, 1.22×10⁻¹⁵ — matching the reviewer's 30-zero diagnostic targets (4.40×10⁻³², 7.74×10⁻²⁷, 8.34×10⁻²⁶, 2.84×10⁻¹⁷, 1.22×10⁻¹⁵) to their stated precision; the smallest eigenvalue confirms H=3 already needs substantially more precision than the H=2 scalar test, as the reviewer anticipated.
+> M₃ certified **PD** — the certification is the 5 rigorous LDL pivots (all strictly positive lower endpoints), NOT the eigenvalues. The individual **eigenvalues below are DIAGNOSTIC ONLY** (midpoint estimates, not certified enclosures): 4.395×10⁻³², 7.736×10⁻²⁷, 8.340×10⁻²⁶, 2.839×10⁻¹⁷, 1.219×10⁻¹⁵ — matching the reviewer's independent 50-ordinate diagnostics (4.3952…×10⁻³², 7.7364…×10⁻²⁷, 8.3399…×10⁻²⁶, 2.8395…×10⁻¹⁷, 1.2190…×10⁻¹⁵). (An earlier draft printed the smallest as 4.34×10⁻³², an over-rounded/unstable estimate; the stable value is 4.395×10⁻³².) The smallest eigenvalue confirms H=3 already needs substantially more precision than the H=2 scalar test. Rigorous eigenvalue enclosures require serialized compressed matrix-entry balls (deferred to the next step, MIG-032 req 7); until then PD rests on LDL pivots alone.
 
 ## Relation to the integer ladder and next steps
 Q_H exhausts ℚ₊ (the integer sequence did not), so the M_H are the matrices of the exact reformulation. The certified integer results Q₃–Q₁₂ (K0-W2) are valid slices of the corresponding integer-scale subsystem. Natural next computational steps within this packet's authority: H=4,5 with the escalation profile ladder (the smallest eigenvalue's ~H⁻ᵏ decay sets the precision schedule); a certified eigenvalue-enclosure routine for M_H (rather than diagnostic midpoint eigenvalues). The two program-level tracks remain the certified Q_H computation and **independent specialist review** of the cyclicity and continuity arguments before any external claim.
+
+---
+
+# MIG-032 Addendum — Validator Hardening + Interval/Eigenvalue Corrections
+
+Three scaffold defects from the MIG-031 review, all reproduced and fixed:
+
+1. **Validator did not reconstruct Q_H** (a counterfeit H=3 certificate carrying H=2 data under the H:3 name passed). The validator now computes the deterministic expected ordered Q_height(H) and requires exact equality; additionally checks dim = |Q_H|−2, basis vector count/length, exact rank (over 𝔽_p) equal to the nullspace dimension (so the basis **spans** the full two-moment nullspace, not merely lies in it), recorded max/min ratio agreement, and filename-height ↔ JSON-H ↔ scale-set consistency. The counterfeit substitution is now **rejected** and is a permanent adversarial test.
+2. **Hand-rounded prose intervals were non-enclosing.** The displayed M₂ center 2.924…465×10⁻¹⁶ differs from the exact midpoint by ~9.02×10⁻⁴², so the hand-written ±9.0×10⁻⁴² did not contain the certified value (exact radius ~1.31×10⁻⁵⁶). Fixed: all displayed intervals are now generated **directly from outward-rounded certificate endpoints** (`display_interval_from_cert`), guaranteeing enclosure. The machine certificate was always valid; only the prose was wrong.
+3. **H=3 "certified-matrix eigenvalues" was ambiguous** — PD is certified by the LDL pivots, but the individual eigenvalues are diagnostic midpoints. Relabeled **DIAGNOSTIC ONLY** in both packet and certificate; the smallest value is corrected from an unstable 4.34×10⁻³² to the stable **4.395240991×10⁻³²** (verified at 600-bit entry precision / 60 dps, matching the reviewer's 50-ordinate 4.3952409913…×10⁻³² to 10 digits). Rigorous eigenvalue enclosures require serialized compressed matrix-entry balls, deferred to the H=4/H=5 step; until then PD rests on LDL pivots alone.
+
+**Permanent adversarial suite** (`scripts/adversarial_test.sh`, wired into `make check`): counterfeit H=3, broken moment identity, nonpositive PD pivot endpoint, reordered scales, tampered dim — all five must be (and are) rejected.
+
+With this hardening, H=4 and H=5 are the correct next computational targets, with rigorous eigenvalue-enclosure serialization added at that step. Independent specialist review of the continuity and cyclicity arguments remains the parallel mathematical track.

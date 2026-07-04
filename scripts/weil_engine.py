@@ -612,6 +612,14 @@ def run_rational_height(H, base_bits=350, N=64, M=48):
     return Mm, pivots, status
 
 
+def display_interval_from_cert(ball, sig=24):
+    """MIG-032: generate prose interval text DIRECTLY from certified outward endpoints
+    (never hand-rounded). Returns a string [lower, upper] guaranteed to enclose the ball."""
+    from decimal import Decimal
+    lo = Decimal(ball["lower_decimal"]); up = Decimal(ball["upper_decimal"])
+    return f"[{lo:.{sig}e}, {up:.{sig}e}]"
+
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "m3"
     {"m3": run_m3, "q4": run_q4, "q12": run_q12, "qheight": lambda: run_qheight(int(sys.argv[2]) if len(sys.argv)>2 else 4),

@@ -179,5 +179,6 @@
     "prime_tail_bound": "sum_{m>M} <= C rho^{M+1}((M+2)-(M+1)rho)/(1-rho)^2, rho=r/(qN), C=2(logN+2)/(sqrt(N) q^2), added outward",
     "archimedean": "u=1/t substitution to [0,1]; removable u=1 singularity cancelled by exact rational polynomial division; Arb acb_calc certified integration",
     "classification": "restricted finite Weil test (K0-W1 sec.7); no RH-progress claim; no zero-location input on certified track"
-  }
+  },
+  "eigenvalues_note": "LDL pivots certify PD rigorously; no matrix-entry balls or eigenvalue enclosures are serialized here, so any eigenvalue figures quoted elsewhere are DIAGNOSTIC ONLY (midpoint estimates). Stable smallest diagnostic eigenvalue: 4.395240991e-32 (MIG-032)."
 }

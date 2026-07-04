@@ -146,25 +146,80 @@ def main():
             pd = r["ldl_status"] == "PD"
             for i,b in enumerate(r["pivots"]):
                 cert_issues += _check_ball(f"Q{n} pivot {i}", b, require_positive=pd)
-    # rational-height QH certificates (MIG-031): reconstruct the rational set, verify reduction
-    # and uniqueness, verify BOTH moment identities exactly, require PD pivots strictly positive.
+    # rational-height QH certificates (MIG-031; MIG-032 hardened): reconstruct the EXPECTED
+    # ordered Q_H from H and require equality; check dim, basis rank, full two-moment nullspace
+    # spanning, ratio/profile agreement, and filename<->H<->scales consistency.
     from fractions import Fraction as _Frac2
     from math import gcd as _gcd2
+    def _q_height(H):
+        S={_Frac2(m,n) for m in range(1,H+1) for n in range(1,H+1) if _gcd2(m,n)==1}
+        anchors=[_Frac2(1),_Frac2(2)]
+        rest=sorted((s for s in S if s not in anchors), key=lambda s:(max(abs(s.numerator),s.denominator),s))
+        return [a for a in anchors if a in S]+rest
+    def _rank_mod_p(rows, ncols, p=2147483647):
+        # exact rank over F_p of an integer matrix given as list of row lists
+        M=[[x % p for x in row] for row in rows]; rank=0; r=0
+        for c in range(ncols):
+            piv=None
+            for i in range(r,len(M)):
+                if M[i][c]%p!=0: piv=i; break
+            if piv is None: continue
+            M[r],M[piv]=M[piv],M[r]
+            inv=pow(M[r][c],p-2,p)
+            M[r]=[(x*inv)%p for x in M[r]]
+            for i in range(len(M)):
+                if i!=r and M[i][c]%p!=0:
+                    f=M[i][c]; M[i]=[(a-f*b)%p for a,b in zip(M[i],M[r])]
+            r+=1; rank+=1
+            if r==len(M): break
+        return rank
     for _fn in sorted(_os.listdir("metadata")) if _os.path.isdir("metadata") else []:
         if not (_fn.startswith("weil_QH") and _fn.endswith("_certificate.json")): continue
         c=_json.load(open(f"metadata/{_fn}"))
+        H=c.get("H")
+        # filename height <-> JSON H
+        import re as _re
+        mfn=_re.search(r"weil_QH(\d+)_certificate", _fn)
+        if mfn and int(mfn.group(1))!=H:
+            cert_issues.append(f"{_fn}: filename height {mfn.group(1)} != JSON H {H}")
         sc=[_Frac2(a,b) for a,b in c["scales"]]
         # reduction + uniqueness
         for a,b in c["scales"]:
             if _gcd2(a,b)!=1: cert_issues.append(f"{_fn}: scale {a}/{b} not reduced")
         if len(set(sc))!=len(sc): cert_issues.append(f"{_fn}: duplicate scales")
-        # both moment identities exactly, for every basis vector
-        for k,vec in enumerate(c["basis"]):
+        # EXPECTED ordered Q_H equality (defeats counterfeit substitution)
+        if H is not None:
+            exp=_q_height(H)
+            if sc!=exp:
+                cert_issues.append(f"{_fn}: scales != deterministic Q_height({H}) (order/content mismatch)")
+        # dim = |Q_H| - 2
+        if c.get("dim")!=len(sc)-2:
+            cert_issues.append(f"{_fn}: dim {c.get('dim')} != |Q_H|-2 = {len(sc)-2}")
+        # basis: exactly dim vectors, correct length, both moments exact, full rank = dim,
+        # and spans the entire two-moment nullspace (nullspace dim = len(sc)-2)
+        B=c["basis"]
+        if len(B)!=c.get("dim"):
+            cert_issues.append(f"{_fn}: basis has {len(B)} vectors, dim={c.get('dim')}")
+        for k,vec in enumerate(B):
+            if len(vec)!=len(sc):
+                cert_issues.append(f"{_fn}: basis[{k}] length {len(vec)} != #scales {len(sc)}")
+                continue
             if sum(vec)!=0:
                 cert_issues.append(f"{_fn}: basis[{k}] sum c != 0")
             if sum(_Frac2(v,1)/s for v,s in zip(vec,sc))!=0:
                 cert_issues.append(f"{_fn}: basis[{k}] sum c/q != 0")
-        pd = c["ldl_status"]=="PD"
+        if B and all(len(v)==len(sc) for v in B):
+            rk=_rank_mod_p(B, len(sc))
+            if rk!=len(B):
+                cert_issues.append(f"{_fn}: basis rank {rk} != #vectors {len(B)} (dependent)")
+            if rk!=len(sc)-2:
+                cert_issues.append(f"{_fn}: basis rank {rk} != nullspace dim {len(sc)-2} (does not span two-moment nullspace)")
+        # recorded ratio agreement (max/min of scales)
+        if "max_min_ratio" in c:
+            rr=_Frac2(*c["max_min_ratio"]); exp_r=max(sc)/min(sc)
+            if rr!=exp_r: cert_issues.append(f"{_fn}: recorded ratio {rr} != max/min {exp_r}")
+        # PD pivots strictly positive
+        pd=c["ldl_status"]=="PD"
         for i,b in enumerate(c["pivots"]):
             cert_issues += _check_ball(f"{_fn} pivot {i}", b, require_positive=pd)
     if cert_issues: fails.append("Weil certificate failures:\n    "+"\n    ".join(cert_issues))

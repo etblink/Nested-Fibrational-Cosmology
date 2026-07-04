@@ -13,7 +13,7 @@ compile:       ## Compile gate: all 17 canon files, twice each (fatal=fail)
 dashboard:     ## Rebuild the read-only local dashboard from current metadata
 	python3 scripts/build_dashboard.py
 
-check: validate compile ## Full edit-gate: structural validation + compile
+check: validate adversarial compile ## Full edit-gate: structural validation + adversarial cert tests + compile
 
 all: metadata validate dashboard ## Regenerate metadata + validate + dashboard
 state:          ## Regenerate NFC_STATE_OF_CANON.md snapshot from metadata
@@ -23,3 +23,5 @@ release:        ## Package git-free source archive with tracked-text manifest
 
 release-test:   ## Extract archive to clean dir, assert no .git, run make check
 	bash scripts/release_test.sh $(ARCHIVE)
+adversarial:    ## Run permanent adversarial validator tests (must all reject)
+	bash scripts/adversarial_test.sh
