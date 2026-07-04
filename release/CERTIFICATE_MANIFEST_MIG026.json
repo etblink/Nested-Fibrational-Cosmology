@@ -1,0 +1,12 @@
+{
+  "manifest": "CERTIFICATE_MANIFEST_MIG026",
+  "certificate_container_commit_full": "62e84c96eeb55fb82b436750e176774439183b12",
+  "certificate_container_commit": "62e84c9",
+  "generator_script_sha256": "7c0e978eabeee9373b2c1acc02531124b620122672fe3b1a011bbfecf7e1d065",
+  "note": "The container commit is recorded here (external to the certificates) because a certificate cannot embed the hash of the commit that contains it. Verify: git show <container_commit>:<path> | sha256sum matches below.",
+  "certificates": {
+    "metadata/weil_M3_result.json": "e74df653e6cc3dcba17ea1166fd8e6b20016e95d0823faaf4f11a4f2cbf1014d",
+    "metadata/weil_M4_certificate.json": "1e79702e7480de57008ccf5d6e5c6dac7b35b7470721230c40c8260819cfeca0",
+    "metadata/weil_Q12_certificates.json": "ae2f30f3cfc4438b614c949ed9e809f15fd3425c354b0110edf2c15295335909"
+  }
+}
