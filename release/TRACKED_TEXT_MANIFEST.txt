@@ -81,9 +81,12 @@ release/CORPUS_MANIFEST_v1.0.sha256
 release/FINAL_VALIDATION_REPORT_v1.0.md
 release/RELEASE_NOTES_v1.0.md
 release/RELEASE_POINTER.txt
+release/TRACKED_TEXT_MANIFEST.txt
 scripts/build_dashboard.py
 scripts/compile_check.sh
 scripts/extract_metadata.py
 scripts/generate_state_of_canon.py
+scripts/make_release.sh
+scripts/release_test.sh
 scripts/validate.py
 scripts/weil_engine.py
