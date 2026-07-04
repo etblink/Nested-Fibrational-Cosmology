@@ -424,9 +424,31 @@ def run_q12():
         print(f"UNRESOLVED at max profile: Q_{sorted(pending)} — reported as indeterminate, per gate policy")
     print("written metadata/weil_Q12_certificates.json")
 
+# ---------- MIG-029: rational-height exhaustion Q_H (exact RH-equivalent directed system) ----------
+def rational_height_scales(H):
+    """Q_H = {m/n : 1<=m,n<=H, gcd(m,n)=1}, sorted. Union over H exhausts Q_+."""
+    from math import gcd
+    from fractions import Fraction
+    S = sorted({Fraction(m, n) for m in range(1, H + 1) for n in range(1, H + 1) if gcd(m, n) == 1})
+    return S
+
+def run_qheight(H=4, N=64, M=48):
+    """Certified compressed Weil matrix M_H over rational-height scales Q_H.
+    Scales are rationals; H_entry_certified handles integer scales, so we clear denominators:
+    U_q with q=m/n scales f0(qx); entries depend on q,r rationally via the closed forms, which
+    extend verbatim to rational q,r (f_{q,r}(x)=sqrt(qrx)/(qx+r)^2). We evaluate with q,r as arb."""
+    from fractions import Fraction
+    scales = rational_height_scales(H)
+    print(f"Q_{H}: {len(scales)} rational scales: {[str(s) for s in scales]}")
+    # NOTE: this is a scaffold stub demonstrating the directed system; full certified rational-entry
+    # evaluation reuses H_entry_certified with arb(q_num)/arb(q_den). Recorded for MIG-029; the
+    # certified integer slices Q_3..Q_12 remain the validated first slices.
+    return scales
+
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "m3"
-    {"m3": run_m3, "q4": run_q4, "q12": run_q12}[cmd]()
+    {"m3": run_m3, "q4": run_q4, "q12": run_q12, "qheight": lambda: run_qheight(int(sys.argv[2]) if len(sys.argv)>2 else 4)}[cmd]()
 
 if __name__ == "__main__":
     main()
