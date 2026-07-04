@@ -86,6 +86,7 @@ release/FINAL_VALIDATION_REPORT_v1.0.md
 release/RELEASE_NOTES_v1.0.md
 release/RELEASE_POINTER.txt
 release/TRACKED_TEXT_MANIFEST.txt
+scripts/adversarial_test.sh
 scripts/build_dashboard.py
 scripts/compile_check.sh
 scripts/extract_metadata.py
