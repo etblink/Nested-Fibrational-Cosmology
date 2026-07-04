@@ -238,7 +238,10 @@ def ball_certificate(x, digits=50):
     mid = _arb_exact_fraction(x.mid())
     rad = _arb_exact_fraction(x.rad())
     lo, up = mid - rad, mid + rad
+    mman, mexp = x.mid().man_exp(); rman, rexp = x.rad().man_exp()
     return {
+        "mid_dyadic": {"mantissa": str(int(mman)), "exponent": int(mexp)},
+        "radius_dyadic": {"mantissa": str(int(rman)), "exponent": int(rexp)},
         "mid_decimal": _frac_to_decimal(mid, digits, ROUND_FLOOR),
         "radius_decimal": _frac_to_decimal(rad, digits, ROUND_CEILING),
         "lower_decimal": _frac_to_decimal(lo, digits, ROUND_FLOOR),
@@ -246,7 +249,11 @@ def ball_certificate(x, digits=50):
         "sign_certified": ("positive" if lo > 0 else ("negative" if up < 0 else "indeterminate")),
     }
 
-def provenance(N, M):
+def provenance(bits, N, M):
+    """MIG-026: generation_start_commit is the commit checked out when generation began
+    (NOT a pointer to the generator source, which is identified only by
+    generator_script_sha256). The commit CONTAINING these certificates is recorded
+    post-commit in the external release manifest (certificate_container_commit)."""
     try:
         commit = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"],
                                          stderr=subprocess.DEVNULL).decode().strip()
@@ -254,12 +261,12 @@ def provenance(N, M):
         commit = "unknown"
     src = open(__file__, "rb").read()
     return {
-        "precision_bits": BITS, "prime_head_N": N, "prime_tail_M": M,
+        "precision_bits": bits, "prime_head_N": N, "prime_tail_M": M,
         "python": platform.python_version(),
         "python_flint": getattr(flint, "__version__", "unknown"),
         "flint_arb_note": "FLINT/Arb library versions not exposed by python-flint 0.8; bundled with wheel",
-        "script_sha256": hashlib.sha256(src).hexdigest(),
-        "git_commit": commit,
+        "generator_script_sha256": hashlib.sha256(src).hexdigest(),
+        "generation_start_commit": commit,
         "prime_tail_bound": "sum_{m>M} <= C rho^{M+1}((M+2)-(M+1)rho)/(1-rho)^2, rho=r/(qN), C=2(logN+2)/(sqrt(N) q^2), added outward",
         "archimedean": "u=1/t substitution to [0,1]; removable u=1 singularity cancelled by exact rational polynomial division; Arb acb_calc certified integration",
         "classification": "restricted finite Weil test (K0-W1 sec.7); no RH-progress claim; no zero-location input on certified track",
@@ -339,7 +346,7 @@ def run_m3():
         "M3_ball": ball_certificate(M3),
         "diagnostic_float": float(M3.mid()),
         "scales": scales, "basis": V,
-        "provenance": provenance(64, 48),
+        "provenance": provenance(BITS, 64, 48),
     }
     json.dump(cert, open("metadata/weil_M3_result.json", "w"), indent=2)
     print("M3 =", M3.str(30), "->", cert["M3_ball"]["sign_certified"])
@@ -368,7 +375,7 @@ def run_q4():
         "schur_complement": ball_certificate(schur),
         "eigenvalue_enclosures": [ball_certificate(lo_eig), ball_certificate(hi_eig)],
         "all_eigenvalues_certified_positive": bool(both_pos),
-        "provenance": provenance(64, 48),
+        "provenance": provenance(BITS, 64, 48),
     }
     json.dump(cert, open("metadata/weil_M4_certificate.json", "w"), indent=2)
     zs = zero_side_matrix(V, scales)
@@ -408,7 +415,9 @@ def run_q12():
             print(f"  escalating for Q_{sorted(pending)} (pivot interval touched zero)")
     out = {"family": "M_N = V_N^T H V_N, nested exact basis, scales 1..N",
            "escalation_profiles": PROFILES,
-           "results": results, "provenance": provenance("per-result", "per-result"),
+           "precision_note": "precision_bits, N, M are strictly per-result (results[n].profile); no global values apply (MIG-026 item 4)",
+           "results": results, "provenance": {k: v for k, v in provenance("per-result", "per-result", "per-result").items()
+                                              if k not in ("precision_bits", "prime_head_N", "prime_tail_M")},
            "eigenvalue_sign_statement": "for each N with ldl_status=PD, all eigenvalues of M_N are rigorously positive (Sylvester via certified LDL pivots)"}
     json.dump(out, open("metadata/weil_Q12_certificates.json", "w"), indent=2)
     if pending:

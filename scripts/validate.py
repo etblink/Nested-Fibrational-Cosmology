@@ -99,35 +99,68 @@ def main():
                 ledger_mismatch.append(f"{fn}: row \\ref{{{lbl}}} shows [{cell}] but declaration is [{declared[lbl]}]")
     if ledger_mismatch: fails.append("ledger display-status mismatches:\n    "+"\n    ".join(ledger_mismatch))
 
-    # 8. Weil certificates (MIG-025): decimal endpoints must satisfy 0 < lower <= upper
-    # for every ball whose sign is claimed positive; endpoints parsed from the JSON strings.
+    # 8. Weil certificates (MIG-026 hardened): (a) reconstruct the EXACT dyadic ball and
+    # prove the decimal endpoints enclose mid +/- radius; (b) every pivot under ldl_status
+    # PD, and every eigenvalue under an all-positive claim, must have strictly positive
+    # lower endpoint AND sign_certified == "positive".
     import os as _os, json as _json
+    from fractions import Fraction as _F
     from decimal import Decimal as _D
-    def _check_ball(tag, ball):
-        lo, up = _D(ball["lower_decimal"]), _D(ball["upper_decimal"])
-        if not (lo <= up): return f"{tag}: lower > upper"
-        if ball.get("sign_certified") == "positive" and not (lo > 0):
-            return f"{tag}: claimed positive but lower <= 0"
-        return None
+    def _dec_to_frac(s):
+        d = _D(s); sign, digits, exp = d.as_tuple()
+        n = int(''.join(map(str, digits))) * (-1 if sign else 1)
+        return _F(n) * (_F(10) ** exp if exp >= 0 else _F(1, 10 ** (-exp)))
+    def _dy_to_frac(dy):
+        man, ex = int(dy["mantissa"]), int(dy["exponent"])
+        return _F(man) * (_F(2) ** ex if ex >= 0 else _F(1, 2 ** (-ex)))
+    def _check_ball(tag, ball, require_positive):
+        errs = []
+        try:
+            mid, rad = _dy_to_frac(ball["mid_dyadic"]), _dy_to_frac(ball["radius_dyadic"])
+        except KeyError:
+            return [f"{tag}: exact dyadics missing (pre-MIG-026 certificate)"]
+        lo, up = _dec_to_frac(ball["lower_decimal"]), _dec_to_frac(ball["upper_decimal"])
+        if not (lo <= mid - rad and mid + rad <= up):
+            errs.append(f"{tag}: decimal endpoints do NOT enclose exact dyadic ball")
+        if not (lo <= up): errs.append(f"{tag}: lower > upper")
+        if require_positive:
+            if not (lo > 0): errs.append(f"{tag}: required positive but lower <= 0")
+            if ball.get("sign_certified") != "positive":
+                errs.append(f"{tag}: required positive but sign_certified != positive")
+        return errs
     cert_issues=[]
     if _os.path.exists("metadata/weil_M3_result.json"):
         c=_json.load(open("metadata/weil_M3_result.json"))
-        e=_check_ball("M3", c["M3_ball"]);  cert_issues += [e] if e else []
-        if c["M3_ball"].get("sign_certified") != "positive":
-            cert_issues.append("M3: sign not certified positive")
+        cert_issues += _check_ball("M3", c["M3_ball"], require_positive=True)
     if _os.path.exists("metadata/weil_M4_certificate.json"):
         c=_json.load(open("metadata/weil_M4_certificate.json"))
+        pd = c.get("ldl_status") == "PD"
         for i,b in enumerate(c["ldl_pivots"]):
-            e=_check_ball(f"M4 pivot {i}", b);  cert_issues += [e] if e else []
+            cert_issues += _check_ball(f"M4 pivot {i}", b, require_positive=pd)
+        allpos = c.get("all_eigenvalues_certified_positive", False)
         for i,b in enumerate(c["eigenvalue_enclosures"]):
-            e=_check_ball(f"M4 eig {i}", b);  cert_issues += [e] if e else []
+            cert_issues += _check_ball(f"M4 eig {i}", b, require_positive=allpos)
     if _os.path.exists("metadata/weil_Q12_certificates.json"):
         c=_json.load(open("metadata/weil_Q12_certificates.json"))
         for n,r in c["results"].items():
-            if r["ldl_status"]=="PD":
-                for i,b in enumerate(r["pivots"]):
-                    e=_check_ball(f"Q{n} pivot {i}", b);  cert_issues += [e] if e else []
-    if cert_issues: fails.append("Weil certificate endpoint failures:\n    "+"\n    ".join(cert_issues))
+            pd = r["ldl_status"] == "PD"
+            for i,b in enumerate(r["pivots"]):
+                cert_issues += _check_ball(f"Q{n} pivot {i}", b, require_positive=pd)
+    if cert_issues: fails.append("Weil certificate failures:\n    "+"\n    ".join(cert_issues))
+
+    # 9. strict UTF-8 over all tracked text files (MIG-026 item 1)
+    import subprocess as _sp
+    tracked = _sp.check_output(["git","ls-files"]).decode().splitlines()
+    bad_utf8=[]
+    for fn in tracked:
+        if fn.endswith((".pdf",".pyc",".png",".zip",".bundle")): continue
+        try:
+            open(fn,"rb").read().decode("utf-8")
+        except UnicodeDecodeError as e:
+            bad_utf8.append(f"{fn} @ byte {e.start}")
+        except FileNotFoundError:
+            pass
+    if bad_utf8: fails.append("strict UTF-8 failures: "+", ".join(bad_utf8))
 
     report={"labels":sum(len(v) for v in defs.values()),"unique_labels":len(defs),
             "benign_dups_present":sorted(k for k in defs if len(defs[k])>1 and k in BENIGN_DUP),

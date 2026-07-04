@@ -1,5 +1,13 @@
 {
   "M3_ball": {
+    "mid_dyadic": {
+      "mantissa": "1821701843333678427712332225266690710325060022742288319265139591291238010331055152954683",
+      "exponent": -344
+    },
+    "radius_dyadic": {
+      "mantissa": "348796973",
+      "exponent": -235
+    },
     "mid_decimal": "5.08345272853045093738616917619142441886034949315640914319028e-17",
     "radius_decimal": "6.31718690230837133065768871711513651151269351177798926671024e-63",
     "lower_decimal": "5.08345272853045093738616917619142441886034949252469045295944e-17",
@@ -26,8 +34,8 @@
     "python": "3.12.3",
     "python_flint": "0.8.0",
     "flint_arb_note": "FLINT/Arb library versions not exposed by python-flint 0.8; bundled with wheel",
-    "script_sha256": "289e54c6d16f75bd2fffb6c8bfde1c6eddc14972539c90090eb412d81be860ce",
-    "git_commit": "b6c4c92",
+    "generator_script_sha256": "7c0e978eabeee9373b2c1acc02531124b620122672fe3b1a011bbfecf7e1d065",
+    "generation_start_commit": "bfa0fc7",
     "prime_tail_bound": "sum_{m>M} <= C rho^{M+1}((M+2)-(M+1)rho)/(1-rho)^2, rho=r/(qN), C=2(logN+2)/(sqrt(N) q^2), added outward",
     "archimedean": "u=1/t substitution to [0,1]; removable u=1 singularity cancelled by exact rational polynomial division; Arb acb_calc certified integration",
     "classification": "restricted finite Weil test (K0-W1 sec.7); no RH-progress claim; no zero-location input on certified track"
