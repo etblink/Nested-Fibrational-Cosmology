@@ -146,6 +146,27 @@ def main():
             pd = r["ldl_status"] == "PD"
             for i,b in enumerate(r["pivots"]):
                 cert_issues += _check_ball(f"Q{n} pivot {i}", b, require_positive=pd)
+    # rational-height QH certificates (MIG-031): reconstruct the rational set, verify reduction
+    # and uniqueness, verify BOTH moment identities exactly, require PD pivots strictly positive.
+    from fractions import Fraction as _Frac2
+    from math import gcd as _gcd2
+    for _fn in sorted(_os.listdir("metadata")) if _os.path.isdir("metadata") else []:
+        if not (_fn.startswith("weil_QH") and _fn.endswith("_certificate.json")): continue
+        c=_json.load(open(f"metadata/{_fn}"))
+        sc=[_Frac2(a,b) for a,b in c["scales"]]
+        # reduction + uniqueness
+        for a,b in c["scales"]:
+            if _gcd2(a,b)!=1: cert_issues.append(f"{_fn}: scale {a}/{b} not reduced")
+        if len(set(sc))!=len(sc): cert_issues.append(f"{_fn}: duplicate scales")
+        # both moment identities exactly, for every basis vector
+        for k,vec in enumerate(c["basis"]):
+            if sum(vec)!=0:
+                cert_issues.append(f"{_fn}: basis[{k}] sum c != 0")
+            if sum(_Frac2(v,1)/s for v,s in zip(vec,sc))!=0:
+                cert_issues.append(f"{_fn}: basis[{k}] sum c/q != 0")
+        pd = c["ldl_status"]=="PD"
+        for i,b in enumerate(c["pivots"]):
+            cert_issues += _check_ball(f"{_fn} pivot {i}", b, require_positive=pd)
     if cert_issues: fails.append("Weil certificate failures:\n    "+"\n    ".join(cert_issues))
 
     # 9. strict UTF-8 over all tracked text files (MIG-026 item 1; MIG-028 git-free).

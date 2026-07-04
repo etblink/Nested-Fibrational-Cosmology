@@ -1,0 +1,67 @@
+{
+  "H": 2,
+  "scales": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "ordering_rule": "anchors [1,2] then (reduced_height h(m/n)=max(m,n), value); persistent nesting",
+  "max_min_ratio": [
+    4,
+    1
+  ],
+  "basis": [
+    [
+      3,
+      -2,
+      -1
+    ]
+  ],
+  "dim": 1,
+  "profile": {
+    "bits": 350,
+    "N": 64,
+    "M": 48,
+    "max_scale_ratio": 5
+  },
+  "ldl_status": "PD",
+  "pivots": [
+    {
+      "mid_dyadic": {
+        "mantissa": "83849073131597647170043413153075100446728779559201852572909378316684641046819331222087537",
+        "exponent": -347
+      },
+      "radius_dyadic": {
+        "mantissa": "689777907",
+        "exponent": -215
+      },
+      "mid_decimal": "2.9247568774451138314104649098261998207895452714317e-16",
+      "radius_decimal": "1.3099665690893804209546629182404753225324428056466e-56",
+      "lower_decimal": "2.9247568774451138314104649098261998207894142747748e-16",
+      "upper_decimal": "2.9247568774451138314104649098261998207896762680887e-16",
+      "sign_certified": "positive"
+    }
+  ],
+  "provenance": {
+    "precision_bits": 350,
+    "prime_head_N": 64,
+    "prime_tail_M": 48,
+    "python": "3.12.3",
+    "python_flint": "0.8.0",
+    "flint_arb_note": "FLINT/Arb library versions not exposed by python-flint 0.8; bundled with wheel",
+    "generator_script_sha256": "3114dd3f5401476ebd0147b5a380e5463eb97b61418e507b620a7c7fdade048b",
+    "generation_start_commit": "a1503b3",
+    "prime_tail_bound": "sum_{m>M} <= C rho^{M+1}((M+2)-(M+1)rho)/(1-rho)^2, rho=r/(qN), C=2(logN+2)/(sqrt(N) q^2), added outward",
+    "archimedean": "u=1/t substitution to [0,1]; removable u=1 singularity cancelled by exact rational polynomial division; Arb acb_calc certified integration",
+    "classification": "restricted finite Weil test (K0-W1 sec.7); no RH-progress claim; no zero-location input on certified track"
+  }
+}

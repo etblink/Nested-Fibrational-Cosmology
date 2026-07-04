@@ -446,9 +446,176 @@ def run_qheight(H=4, N=64, M=48):
     return scales
 
 
+# ================= MIG-031: certified rational-height evaluator =================
+# Reuses the verified integer machinery's mathematics (closed forms f_{q,r}=sqrt(qrx)/(qx+r)^2,
+# prime series, archimedean J) but with EXACT rational scales q,r in Q_+, per the 8 requirements.
+from fractions import Fraction as _Frac
+from math import gcd as _gcd, log2 as _log2
+
+def _arb_from_fraction(fr):
+    """Exact arb for a Fraction: arb(numerator)/arb(denominator). No float path (req 1)."""
+    return arb(int(fr.numerator)) / arb(int(fr.denominator))
+
+def reduced_height(fr):
+    """h(m/n) = max(m,n) for reduced m/n (req 5)."""
+    return max(abs(fr.numerator), fr.denominator)
+
+def Q_height(H):
+    """Q_H = {m/n : 1<=m,n<=H, gcd=1}, ordered by PERSISTENT rule: anchors 1,2 first,
+    then by (reduced_height, value) so V_H embeds canonically into V_{H+1} (req 5)."""
+    from math import gcd
+    S = {_Frac(m, n) for m in range(1, H + 1) for n in range(1, H + 1) if gcd(m, n) == 1}
+    anchors = [_Frac(1), _Frac(2)]
+    rest = sorted((s for s in S if s not in anchors), key=lambda s: (reduced_height(s), s))
+    return [a for a in anchors if a in S] + rest
+
+def T_certified_rational(q, r, N=64, M=48):
+    """Prime series T(q,r)=sum Lambda(n)sqrt(n)/(qn+r)^2 for rational q,r (arb-exact)."""
+    qA, rA = _arb_from_fraction(q), _arb_from_fraction(r)
+    ratio = _Frac(r, 1) / _Frac(q, 1)  # r/q as Fraction
+    assert N > ratio, f"need N > r/q = {float(ratio)} for geometric tail"
+    pps = prime_powers_upto(N)
+    head = arb(0)
+    for n, p in pps:
+        head += arb(p).log() * arb(n).sqrt() / (qA * n + rA) ** 2
+    Svals = S_values(N, M)
+    tail = arb(0)
+    rq = rA / qA
+    for m in range(M + 1):
+        tail += ((-1) ** m) * arb(m + 1) * rq ** m * Svals[m] / qA ** 2
+    # outward truncation bound (same closed form, ratio rho=r/(qN))
+    rho = rA / (qA * N)
+    C = (arb(2) * (arb(N).log() + 2)) / (arb(N).sqrt() * qA ** 2)
+    bound = C * rho ** (M + 1) * ((M + 2) - (M + 1) * rho) / (1 - rho) ** 2
+    return (head + tail).union(head + tail + bound).union(head + tail - bound)
+
+def J_integrand_coeffs_rational(q, r):
+    """Exact rational archimedean integrand: clear denominators over Q[u], cancel the
+    removable u=1 singularity over Q[u], return normalized integer coeff arrays (req 3)."""
+    u = sp.symbols('u')
+    Q = sp.Rational(q.numerator, q.denominator)
+    R = sp.Rational(r.numerator, r.denominator)
+    G = (2 * u ** 2 / (1 - u ** 4)) * (1 / (Q + R * u ** 2) ** 2 + 1 / (Q * u ** 2 + R) ** 2)         - 4 * u / ((Q + R) ** 2 * (1 - u ** 4))
+    Gc = sp.cancel(sp.together(G))
+    num, den = sp.fraction(Gc)
+    num, den = sp.Poly(sp.expand(num), u), sp.Poly(sp.expand(den), u)
+    assert den.eval(1) != 0, "u=1 singularity not cancelled"
+    # Clear denominators of BOTH polys by a single common factor L (lcm over all coeff
+    # denominators of num AND den), then divide BOTH by a single common integer gcd, so the
+    # rational function num/den is preserved exactly (fixing the independent-gcd bug).
+    all_cs = [sp.Rational(c) for c in num.all_coeffs()] + [sp.Rational(c) for c in den.all_coeffs()]
+    L = 1
+    for c in all_cs:
+        L = sp.lcm(L, sp.denom(c))
+    ncI = [int(sp.Rational(c) * L) for c in num.all_coeffs()]
+    dcI = [int(sp.Rational(c) * L) for c in den.all_coeffs()]
+    g = 0
+    for c in ncI + dcI:
+        g = _gcd(g, abs(c))
+    g = g or 1
+    nc = [c // g for c in ncI]
+    dc = [c // g for c in dcI]
+    return nc, dc
+
+def J_certified_rational(q, r):
+    nc, dc = J_integrand_coeffs_rational(q, r)
+    def f(u, analytic=False):
+        return _horner(nc, u) / _horner(dc, u)
+    return acb.integral(f, 0, 1).real
+
+def H_entry_rational(q, r, N=64, M=48):
+    """Ambient Weil entry B_hat_W(U_q f0, U_r f0) for rational q,r."""
+    qr = _arb_from_fraction(q) * _arb_from_fraction(r)
+    boundary = (LOG4PI + EULER) / (_arb_from_fraction(q) + _arb_from_fraction(r)) ** 2
+    prime = T_certified_rational(q, r, N, M) + T_certified_rational(r, q, N, M)
+    arch = J_certified_rational(q, r)
+    return -qr.sqrt() * (prime + boundary + arch)
+
+def primitive_nullspace_basis(scales):
+    """Integer nullspace basis of the 2xN moment matrix A=[[1..1],[1/q..]], anchors q1,q2 fixed.
+    b_k supported on (0,1,k): clear denominators, divide by gcd, serialize exact ints (req 4)."""
+    n = len(scales)
+    q1, q2 = scales[0], scales[1]
+    cols = []
+    for k in range(2, n):
+        qk = scales[k]
+        # b1*1+b2*1+bk*1=0 ; b1/q1+b2/q2+bk/qk=0. Solve over Q, clear denominators.
+        # Use the same closed form as integer case but with Fractions:
+        b1 = q1 * (q2 - qk)
+        b2 = q2 * (qk - q1)
+        bk = qk * (q1 - q2)
+        vec = [_Frac(0)] * n
+        vec[0], vec[1], vec[k] = b1, b2, bk
+        # clear denominators to integers, divide by gcd
+        from sympy import lcm
+        L = 1
+        for v in (b1, b2, bk): L = sp.lcm(L, v.denominator)
+        ivec = [int(v * L) for v in vec]
+        g = 0
+        for v in ivec: g = _gcd(g, abs(v))
+        g = g or 1
+        ivec = [v // g for v in ivec]
+        assert sum(ivec) == 0 and sum(_Frac(v, 1) / s for v, s in zip(ivec, scales)) == 0
+        cols.append(ivec)
+    return cols
+
+def dynamic_max_ratio(scales):
+    """max/min of the scale set = H^2 for Q_H (req 2); controls S-table precision."""
+    fr = [_Frac(s) for s in scales]
+    return max(fr) / min(fr)
+
+def run_rational_height(H, base_bits=350, N=64, M=48):
+    global MAX_SCALE_RATIO
+    scales = Q_height(H)
+    ratio = dynamic_max_ratio(scales)
+    MAX_SCALE_RATIO = max(2, int(ratio) + 1)  # req 2: derive from actual scale set, not hard-coded 12
+    _S_cache.clear()
+    flint.ctx.prec = base_bits
+    print(f"Q_{H}: {len(scales)} scales {[f'{s.numerator}/{s.denominator}' for s in scales]}")
+    print(f"  max/min ratio = {ratio} (= H^2 = {H*H}); MAX_SCALE_RATIO -> {MAX_SCALE_RATIO}")
+    n = len(scales)
+    Hm = [[None]*n for _ in range(n)]
+    for i in range(n):
+        for j in range(i, n):
+            Hm[i][j] = H_entry_rational(scales[i], scales[j], N, M)
+            Hm[j][i] = Hm[i][j]
+    V = primitive_nullspace_basis(scales)
+    print(f"  primitive basis vectors: {V}")
+    m = len(V)
+    Mm = [[arb(0)]*m for _ in range(m)]
+    for c in range(m):
+        for d in range(m):
+            s = arb(0)
+            for i in range(n):
+                if V[c][i]==0: continue
+                for j in range(n):
+                    if V[d][j]==0: continue
+                    s += arb(V[c][i])*arb(V[d][j])*Hm[i][j]
+            Mm[c][d] = s
+    pivots, status = ldl_pivots(Mm)
+    print(f"  M_{H}: dim {m}  LDL {status}")
+    for p in pivots: print("    pivot", p.str(18))
+    cert = {
+        "H": H,
+        "scales": [[s.numerator, s.denominator] for s in scales],
+        "ordering_rule": "anchors [1,2] then (reduced_height h(m/n)=max(m,n), value); persistent nesting",
+        "max_min_ratio": [ratio.numerator, ratio.denominator],
+        "basis": V,
+        "dim": m,
+        "profile": {"bits": base_bits, "N": N, "M": M, "max_scale_ratio": MAX_SCALE_RATIO},
+        "ldl_status": status,
+        "pivots": [ball_certificate(p, digits=40) for p in pivots],
+        "provenance": provenance(base_bits, N, M),
+    }
+    json.dump(cert, open(f"metadata/weil_QH{H}_certificate.json","w"), indent=2)
+    print(f"  written metadata/weil_QH{H}_certificate.json")
+    return Mm, pivots, status
+
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "m3"
-    {"m3": run_m3, "q4": run_q4, "q12": run_q12, "qheight": lambda: run_qheight(int(sys.argv[2]) if len(sys.argv)>2 else 4)}[cmd]()
+    {"m3": run_m3, "q4": run_q4, "q12": run_q12, "qheight": lambda: run_qheight(int(sys.argv[2]) if len(sys.argv)>2 else 4),
+     "qh": lambda: run_rational_height(int(sys.argv[2]) if len(sys.argv)>2 else 2)}[cmd]()
 
 if __name__ == "__main__":
     main()

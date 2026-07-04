@@ -1,0 +1,183 @@
+{
+  "H": 3,
+  "scales": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      1
+    ]
+  ],
+  "ordering_rule": "anchors [1,2] then (reduced_height h(m/n)=max(m,n), value); persistent nesting",
+  "max_min_ratio": [
+    9,
+    1
+  ],
+  "basis": [
+    [
+      3,
+      -2,
+      -1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      -4,
+      0,
+      -1,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      -1,
+      0,
+      0,
+      -1,
+      0,
+      0
+    ],
+    [
+      1,
+      2,
+      0,
+      0,
+      0,
+      -3,
+      0
+    ],
+    [
+      -1,
+      4,
+      0,
+      0,
+      0,
+      0,
+      -3
+    ]
+  ],
+  "dim": 5,
+  "profile": {
+    "bits": 350,
+    "N": 64,
+    "M": 48,
+    "max_scale_ratio": 10
+  },
+  "ldl_status": "PD",
+  "pivots": [
+    {
+      "mid_dyadic": {
+        "mantissa": "83849073131597647170043413153075100446728779559201852572909378316684641046819331222087537",
+        "exponent": -347
+      },
+      "radius_dyadic": {
+        "mantissa": "689777907",
+        "exponent": -215
+      },
+      "mid_decimal": "2.9247568774451138314104649098261998207895452714317e-16",
+      "radius_decimal": "1.3099665690893804209546629182404753225324428056466e-56",
+      "lower_decimal": "2.9247568774451138314104649098261998207894142747748e-16",
+      "upper_decimal": "2.9247568774451138314104649098261998207896762680887e-16",
+      "sign_certified": "positive"
+    },
+    {
+      "mid_dyadic": {
+        "mantissa": "21323283289464287514954286452431107733436696920928056544239690063785155134702099953585814952501832818941",
+        "exponent": -399
+      },
+      "radius_dyadic": {
+        "mantissa": "949751721",
+        "exponent": -184
+      },
+      "mid_decimal": "1.651527489296419507128010144125227141845899003968e-17",
+      "radius_decimal": "3.873386967831617559189882686676605044715952572378e-47",
+      "lower_decimal": "1.6515274892964195071280101441213537548780673864088e-17",
+      "upper_decimal": "1.6515274892964195071280101441291005288137306215273e-17",
+      "sign_certified": "positive"
+    },
+    {
+      "mid_dyadic": {
+        "mantissa": "30637757477574086148636854639414814729737410017155079926601606181346337198010927273237563851715851",
+        "exponent": -409
+      },
+      "radius_dyadic": {
+        "mantissa": "274387547",
+        "exponent": -185
+      },
+      "mid_decimal": "2.3173346073587431566215119365348472110884714680479e-26",
+      "radius_decimal": "5.5951946450070473265730424383982939921802760181739e-48",
+      "lower_decimal": "2.3173346073587431566209524170703465063558141638041e-26",
+      "upper_decimal": "2.3173346073587431566220714559993479158211287722919e-26",
+      "sign_certified": "positive"
+    },
+    {
+      "mid_dyadic": {
+        "mantissa": "593766668704313852931506986186908294637430662803296921412569585267694994389375406574722860260534357823575",
+        "exponent": -432
+      },
+      "radius_dyadic": {
+        "mantissa": "720126069",
+        "exponent": -183
+      },
+      "mid_decimal": "5.353745074317184196090332220969483572733496438327e-26",
+      "radius_decimal": "5.8738023194598922065249619984159676297482974448582e-47",
+      "lower_decimal": "5.3537450743171841960844584186500236805269714763286e-26",
+      "upper_decimal": "5.3537450743171841960962060232889434649400214003256e-26",
+      "sign_certified": "positive"
+    },
+    {
+      "mid_dyadic": {
+        "mantissa": "119050815156073079758049916961171034468693341158576955170283617267732697830502242305635667593559517216181",
+        "exponent": -448
+      },
+      "radius_dyadic": {
+        "mantissa": "403859819",
+        "exponent": -155
+      },
+      "mid_decimal": "1.6379261475294601146758416979075662202131327408659e-31",
+      "radius_decimal": "8.8426272526124778042401186298814211453754191581069e-39",
+      "lower_decimal": "1.6379260591031875885510636555063799213989212871117e-31",
+      "upper_decimal": "1.6379262359557326408006197403087525190273441946202e-31",
+      "sign_certified": "positive"
+    }
+  ],
+  "provenance": {
+    "precision_bits": 350,
+    "prime_head_N": 64,
+    "prime_tail_M": 48,
+    "python": "3.12.3",
+    "python_flint": "0.8.0",
+    "flint_arb_note": "FLINT/Arb library versions not exposed by python-flint 0.8; bundled with wheel",
+    "generator_script_sha256": "3114dd3f5401476ebd0147b5a380e5463eb97b61418e507b620a7c7fdade048b",
+    "generation_start_commit": "a1503b3",
+    "prime_tail_bound": "sum_{m>M} <= C rho^{M+1}((M+2)-(M+1)rho)/(1-rho)^2, rho=r/(qN), C=2(logN+2)/(sqrt(N) q^2), added outward",
+    "archimedean": "u=1/t substitution to [0,1]; removable u=1 singularity cancelled by exact rational polynomial division; Arb acb_calc certified integration",
+    "classification": "restricted finite Weil test (K0-W1 sec.7); no RH-progress claim; no zero-location input on certified track"
+  }
+}
