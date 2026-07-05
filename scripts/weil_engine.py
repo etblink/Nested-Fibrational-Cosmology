@@ -823,12 +823,35 @@ def run_rational_height_certified(H, profiles=None):
     print(f"Q_{H}: {n} scales; dim {m}; max/min ratio {ratio}; nesting OK")
 
     profiles = profiles or RH_PROFILES
+    # MIG-042: exact maximum ordered scale ratio for the applicability predicate.
+    # For the symmetric entry construction H_entry_rational evaluates both T(q,r) and
+    # T(r,q), so the relevant threshold is max_{q,r} r/q = max(Q_H)/min(Q_H), computed
+    # exactly as a Fraction (never float, never hardcoded H**2 or a height-specific value).
+    _sfr = [_Frac(s) for s in scales]
+    max_ratio = max(_sfr) / min(_sfr)
+    profile_dispositions = []
     Mm = pivots = eigpairs = eig_encl_ser = None; Rinf = Rinf_frac = None; status = "INDETERMINATE"; base_bits = N = M = None
     for (bb, NN, MM) in profiles:
+        # MIG-042 structural-applicability guard: the prime-tail geometric expansion
+        # requires N > r/q for every ordered pair, i.e. N > max_ratio (strict). A profile
+        # failing this is STRUCTURALLY INAPPLICABLE (outside the convergence domain) and is
+        # recorded and skipped BEFORE any matrix construction. This is distinct from LDL
+        # indeterminacy / residual-isolation / nonpositive-endpoint / profile exhaustion.
+        if not (_Frac(NN) > max_ratio):
+            profile_dispositions.append({
+                "bits": bb, "N": NN, "M": MM,
+                "max_ratio": [max_ratio.numerator, max_ratio.denominator],
+                "comparison": f"N={NN} <= max_ratio={max_ratio} (float {float(max_ratio):.6g})",
+                "outcome": "STRUCTURALLY INAPPLICABLE",
+                "reason": "prime-tail geometric convergence precondition N > r/q not met; matrix not constructed",
+            })
+            print(f"  profile bits={bb} N={NN} M={MM}: STRUCTURALLY INAPPLICABLE (N={NN} <= max_ratio {max_ratio}); skip")
+            continue
         base_bits, N, M = bb, NN, MM
         Mm = _build_compressed(H, scales, V, bb, NN, MM)
         pivots, status = ldl_pivots(Mm)
         if status != "PD":
+            profile_dispositions.append({"bits": bb, "N": NN, "M": MM, "outcome": f"LDL {status}"})
             print(f"  profile bits={bb} N={NN} M={MM}: LDL {status} -> escalate")
             continue
         try:
@@ -842,6 +865,7 @@ def run_rational_height_certified(H, profiles=None):
             status = "INDETERMINATE"
             continue
         print(f"  profile bits={bb} N={NN} M={MM}: LDL PD and eigenvalues residual-certified (disjoint, all positive)")
+        profile_dispositions.append({"bits": bb, "N": NN, "M": MM, "outcome": "CERTIFIED"})
         break
     if status != "PD" or eigpairs is None:
         raise ValueError(f"H={H}: not fully certified at max profile (LDL {status})")
@@ -877,6 +901,8 @@ def run_rational_height_certified(H, profiles=None):
         "hermitian": True,
         "compressed_matrix_balls": cmb,
         "profile": {"bits": base_bits, "N": N, "M": M, "max_scale_ratio": MAX_SCALE_RATIO},
+        "profile_history": profile_dispositions,
+        "max_ratio_exact": [max_ratio.numerator, max_ratio.denominator],
         "ldl_status": status,
         "pivots": [ball_certificate(p, digits=40) for p in pivots],
         "pivots_role": ("redundant generator-produced cross-check; the PRIMARY positive-definiteness "

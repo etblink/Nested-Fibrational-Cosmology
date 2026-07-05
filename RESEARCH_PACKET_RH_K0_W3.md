@@ -179,45 +179,57 @@ link remains generation provenance. Certified heights are now H = 2, 3, 4, 5, 6,
 unauthorized. The independent Weil-core / SCC specialist review continues in parallel, logically
 separate.
 
+
 ---
 
-# MIG-041 Record — H=8: Profile-Applicability Obstruction (No Certificate)
+# MIG-041 → MIG-042 — H=8: Applicability Guard Added; Residual-Isolation Obstruction Remains
 
-H=8 generation was attempted from the accepted MIG-040 baseline. **No H=8 certificate is
-claimed.** The structural preconditions all hold (Q₈ = 43 ordered reduced scales; Q₇ its exact
-ordered prefix of length 35; 41×43 primitive basis; expected 41×41 matrix), and the
-active-precision boundary constant behaves correctly (no radius floor). The obstruction is of a
-new kind, distinct from MIG-039's radius floor.
+MIG-041 delivered H=8 as a profile-applicability obstruction: the base profile (350, 64, 48)
+is structurally inapplicable because its prime-head N=64 does not exceed the maximum ordered
+scale ratio 64 (the geometric-tail precondition N > r/q). MIG-042 adds the authorized exact
+structural-applicability guard: before matrix construction, `run_rational_height_certified`
+computes max_ratio = max(Q_H)/min(Q_H) as an exact `Fraction` and records any profile with
+N ≤ max_ratio as STRUCTURALLY INAPPLICABLE, skipping it (the backstop assertion inside
+`T_certified_rational` is retained; no broad exception-catching; no hardcoded 64 or H²). Guard
+regressions verified: H=7 @ (350,64,48) applicable (64 > 49); H=8 @ (350,64,48) inapplicable
+(64 ≤ 64); H=8 @ (500,192,112) applicable (192 > 64); predicate derived from the actual scale
+set; QH2–QH7 unchanged.
 
-**Obstruction (diagnosed exactly).** The prime-tail geometric expansion in
-`T_certified_rational` carries a genuine convergence precondition `assert N > r/q`. For H=8 the
-extreme scale pair (q, r) = (1/8, 8) has r/q = 64, equal to the maximum scale ratio. The base
-profile (350, 64, 48) has prime-head N = 64, so N > r/q is **false** (64 > 64 fails): the base
-profile is **structurally inapplicable** to H=8 — it cannot evaluate the extreme entries at all.
-This is not a numerical-enclosure-strength failure (the MIG-039 category) and not one of the
-four authorized recorded outcomes (LDL indeterminate / residual isolation failure / nonpositive
-Weyl-widened endpoint / certification). Profiles 2–6 (N = 192, 384, 512, 768, 1024) all satisfy
-N > 64 and are applicable.
+With the guard, the H=8 ladder now reaches the applicable profiles. Complete profile history:
 
-**Why generation stopped.** The escalation loop attempts the ladder in order and raises the
-`N > r/q` assertion on the base profile, halting before reaching the first applicable profile.
-Getting past an inapplicable low profile requires a control-flow guard in the ladder driver
-(skip any profile whose N ≤ max scale ratio, recording the skip) — this is **not** the
-authorized operation of "appending strictly higher numerical profiles," so per the MIG-041
-authorization generation stopped without claiming certification. No caller-side ladder
-alteration, elevated-import workaround, or math change was used to force progress.
+    (350,  64, 48)  STRUCTURALLY INAPPLICABLE (N=64 ≤ max_ratio 64; skipped, no matrix built)
+    (500, 192,112)  LDL INDETERMINATE
+    (700, 384,160)  LDL PD, residual-certificate isolation FAILED (no disjoint ordered intervals)
+    (900, 512,224)  LDL PD, residual-certificate isolation FAILED
+    (1200,768,320)  LDL PD, residual-certificate isolation FAILED
+    (1600,1024,448) LDL PD, residual-certificate isolation FAILED
 
-**Proposed minimal repair (requires explicit authorization, e.g. MIG-042).** Add a
-structural-applicability guard to the escalation loop: a profile with N ≤ max-scale-ratio for
-the height is recorded as INAPPLICABLE and skipped, so the ladder proceeds to the first
-applicable profile. This is mathematically inert — it changes nothing about how any applicable
-profile is computed, the Weil form, the tail bound, or any semantics; it only prevents
-attempting a rung outside the geometric-tail domain. With the guard, H=8 would begin at
-(500, 192, 112); whether it then certifies is a separate numerical outcome to be established by
-the authorized migration itself.
+**H=8 is NOT certified.** The obstruction is new and distinct from both MIG-039 (radius floor)
+and MIG-041 (applicability). At profiles 3–6 the interval LDL certifies positive-definiteness
+rigorously (every pivot has a positive lower endpoint), so the compressed matrix is very likely
+PD; but the *required primary proof object* — the exact-rational residual certificate — cannot
+isolate the dense 41-dimensional midpoint spectrum into 41 pairwise-disjoint ordered intervals,
+even with eigenvector working precision escalated to 32,000 bits (base 1600 × mult 20). As the
+dimension grows the eigenvalues cluster, and the residual method needs each interval half-width
+ρᵢ below half the local spectral gap; for at least one near-degenerate pair the achievable ρᵢ at
+the authorized precisions exceeds the gap.
 
-**Classification.** This is a profile-applicability obstruction, not a negative mathematical
-result: no midpoint evidence contradicts H=8 positivity, and no positivity is claimed. Certified
-heights remain exactly H = 2, 3, 4, 5, 6, 7. H=8 remains uncertified; H=9+ remains unauthorized.
-No RH/SCC implication in either direction. Permanent tamper 17 (H=8 matrix-to-residual binding)
-is deferred until an H=8 certificate exists.
+This is a residual-isolation obstruction, **not** a positivity failure in either direction: the
+rigorous interval-LDL result points to PD, and nothing contradicts it. Per the MIG-042 failure
+condition it is delivered as an obstruction, not converted into positivity by LDL alone,
+heuristic eigenvalues, floating-point ordering, or widened tolerances.
+
+**Diagnostic recommended before the next authorization.** Measure the minimum midpoint spectral
+gap of the H=8 compressed matrix. If the gap is nonzero but small (isolable at higher precision),
+the resolution is an authorized profile-only extension (higher monotone bits) that raises the
+eigenvector precision past the gap. If the gap reflects genuine near-degeneracy at dim 41, the
+resolution is an algorithmic enhancement to the residual certificate (a cluster-aware /
+Kato–Temple subspace enclosure that certifies a tight *interval containing k eigenvalues*
+without isolating them individually) — which is beyond the profile-only and guard permissions and
+would require its own authorization. Determining which was not attempted here, as it needs either
+a profile extension or an algorithmic change, both outside MIG-042's authorized scope.
+
+**Classification (unchanged, load-bearing).** No H=8 result exists in either direction. Certified
+heights remain exactly H = 2, 3, 4, 5, 6, 7 — finite restricted rational-height Weil tests, not
+RH theorem-steps, no RH/SCC/canonical-status implication. Permanent tamper 17 (H=8
+matrix-to-residual binding) is deferred until an H=8 certificate exists. H=9+ remains unauthorized.
