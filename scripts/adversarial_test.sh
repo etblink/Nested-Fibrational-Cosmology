@@ -80,7 +80,7 @@ PY
   _check_tamper_output "$rc" "$out" "$desc"
 }
 
-echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12):"
+echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12; MIG-037 13-14):"
 tamper_must_fail "counterfeit H=3 (H=2 payload, H:3 name)" metadata/weil_QH3_certificate.json \
   'q2=json.load(open("metadata/weil_QH2_certificate.json")); c["scales"]=q2["scales"]; c["basis"]=q2["basis"]; c["dim"]=q2["dim"]; c["pivots"]=q2["pivots"]'
 tamper_must_fail "broken moment identity in basis[0]" metadata/weil_QH2_certificate.json \
@@ -143,5 +143,21 @@ PY
   _check_tamper_output "$rc" "$out" "$desc"
 }
 counterfeit_must_fail
+
+# --- MIG-037 permanent tests (residual-certificate schema preconditions) ---
+
+# 13. Negate every matrix-entry dyadic radius while preserving Hermitian pairing and the
+#     existing decimal endpoints. Must be rejected (negative radius defeats ||R||_inf).
+tamper_must_fail "negated matrix-entry dyadic radii (nonnegative-radius precondition)" metadata/weil_QH5_certificate.json \
+  'import copy
+for _k,_b in c["compressed_matrix_balls"].items():
+    _m=_b["radius_dyadic"]["mantissa"]
+    if not _m.startswith("-") and _m!="0": _b["radius_dyadic"]["mantissa"]="-"+_m'
+
+# 14. Append one zero dyadic coordinate to each residual witness vector (dimension attack).
+#     Must be rejected: v is no longer an element of the m-dimensional matrix space.
+tamper_must_fail "surplus witness-vector coordinate (dimension precondition)" metadata/weil_QH4_certificate.json \
+  'for _pr in c["eigenvalue_certificate"]["eigenpairs"]:
+    _pr["v"].append({"mantissa":"0","exponent":0})'
 
 exit $fail

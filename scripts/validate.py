@@ -119,6 +119,10 @@ def main():
             mid, rad = _dy_to_frac(ball["mid_dyadic"]), _dy_to_frac(ball["radius_dyadic"])
         except KeyError:
             return [f"{tag}: exact dyadics missing (pre-MIG-026 certificate)"]
+        # MIG-037 (item 1): a negative radius defeats the perturbation-bound semantics
+        # (||R||_inf row sums would be invalid). Reject before any enclosure/row-sum use.
+        if rad < 0:
+            errs.append(f"{tag}: radius_dyadic is negative")
         lo, up = _dec_to_frac(ball["lower_decimal"]), _dec_to_frac(ball["upper_decimal"])
         if not (lo <= mid - rad and mid + rad <= up):
             errs.append(f"{tag}: decimal endpoints do NOT enclose exact dyadic ball")
@@ -149,7 +153,10 @@ def main():
     def _ball_iv(b):
         return _Iv(_dec_to_frac(b["lower_decimal"]), _dec_to_frac(b["upper_decimal"]))
     def _dy_rad(b):
-        return _dy_to_frac(b["radius_dyadic"])
+        r = _dy_to_frac(b["radius_dyadic"])
+        if r < 0:
+            raise ValueError("negative radius_dyadic in matrix entry")
+        return r
 
     def _mig035_checks(_fn, c):
         errs=[]
@@ -183,7 +190,14 @@ def main():
         # serialized eigenvalue enclosures to the eigenvalues of the serialized midpoint A_0.
         # Reconstruct A_0 (exact dyadic midpoints) and ||R||_inf from the serialized matrix.
         A0=[[_dy_to_frac(B[f"{i}_{j}"]["mid_dyadic"]) for j in range(m)] for i in range(m)]
-        Rinf_recomputed=max(sum(_dy_rad(B[f"{a}_{b}"]) for b in range(m)) for a in range(m))
+        # MIG-037 (item 1): reject negative matrix radii cleanly (no traceback) before the
+        # row-sum; a negative radius would corrupt ||R||_inf and the perturbation bound.
+        try:
+            Rinf_recomputed=max(sum(_dy_rad(B[f"{a}_{b}"]) for b in range(m)) for a in range(m))
+        except ValueError as ex:
+            errs.append(f"{_fn}: {ex}"); return errs
+        if Rinf_recomputed < 0:
+            errs.append(f"{_fn}: recomputed ||R||_inf is negative"); return errs
         ec=c.get("eigenvalue_certificate")
         E=c.get("eigenvalue_enclosures",[])
         if not ec or "eigenpairs" not in ec:
@@ -197,7 +211,12 @@ def main():
             errs.append(f"{_fn}: recorded ||R||_inf < recomputed (invalid Weyl bound)"); return errs
         thetas=[]; intervals=[]
         for idx,pr in enumerate(pairs):
-            v=[_dy_to_frac(d) for d in pr["v"]]
+            # MIG-037 (item 2): witness vector must be exactly dim dyadic coordinates
+            # (a surplus/short coordinate makes v not an element of the m-dim matrix space).
+            vlist=pr.get("v")
+            if not isinstance(vlist,list) or len(vlist)!=m:
+                errs.append(f"{_fn}: eig {idx} witness vector has {len(vlist) if isinstance(vlist,list) else 'non-list'} coords != dim {m}"); return errs
+            v=[_dy_to_frac(d) for d in vlist]
             rho=_dy_to_frac(pr["rho"])
             if rho<0: errs.append(f"{_fn}: eig {idx} rho negative"); return errs
             if all(x==0 for x in v):
@@ -211,7 +230,11 @@ def main():
             if w2 > rho*rho*s**3:
                 errs.append(f"{_fn}: eig {idx} residual bound violated (||r|| > rho): counterfeit"); return errs
             theta=_F(p,s)
-            thetas.append(theta); intervals.append((theta-rho, theta+rho, rho))
+            lo_t,hi_t=theta-rho,theta+rho
+            # MIG-037 (item 3): residual interval must be well-formed
+            if lo_t>hi_t:
+                errs.append(f"{_fn}: eig {idx} residual interval lower > upper"); return errs
+            thetas.append(theta); intervals.append((lo_t, hi_t, rho))
         # disjoint and strictly ordered (exact rational) -> n intervals exhaust the n-point spectrum
         for i in range(1,m):
             if not (intervals[i][0] > intervals[i-1][1]):
@@ -220,7 +243,11 @@ def main():
         allpos=c.get("all_eigenvalues_certified_positive",False)
         for i,(lo_t,hi_t,rho) in enumerate(intervals):
             wlo=lo_t-Rinf_recomputed; whi=hi_t+Rinf_recomputed
+            if wlo>whi:  # MIG-037 (item 3): widened interval must be well-formed
+                errs.append(f"{_fn}: eig {i} widened interval lower > upper"); return errs
             ser_lo=_dec_to_frac(E[i]["lower_decimal"]); ser_hi=_dec_to_frac(E[i]["upper_decimal"])
+            if ser_lo>ser_hi:
+                errs.append(f"{_fn}: eig {i} serialized enclosure lower > upper"); return errs
             if ser_lo>wlo or ser_hi<whi:
                 errs.append(f"{_fn}: serialized eig enclosure {i} does not outward-contain the residual-certified widened interval")
             if allpos and (wlo<=0 or ser_lo<=0):
