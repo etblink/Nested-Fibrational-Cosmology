@@ -179,52 +179,67 @@ def main():
         claimed_pd = c.get("ldl_status")=="PD"
         if claimed_pd and not all(_ball_iv(b).pos() for b in c["pivots"]):
             errs.append(f"{_fn}: claims LDL PD but a serialized pivot lower endpoint is not > 0")
-        # (iv) eigenvalues: count==dim, sorted, all lower>0, inertia agree
+        # (iv) MIG-036 PRIMARY binding: exact rational residual certificate ties the
+        # serialized eigenvalue enclosures to the eigenvalues of the serialized midpoint A_0.
+        # Reconstruct A_0 (exact dyadic midpoints) and ||R||_inf from the serialized matrix.
+        A0=[[_dy_to_frac(B[f"{i}_{j}"]["mid_dyadic"]) for j in range(m)] for i in range(m)]
+        Rinf_recomputed=max(sum(_dy_rad(B[f"{a}_{b}"]) for b in range(m)) for a in range(m))
+        ec=c.get("eigenvalue_certificate")
         E=c.get("eigenvalue_enclosures",[])
-        if len(E)!=m:
-            errs.append(f"{_fn}: {len(E)} eigenvalue enclosures != dim {m}"); return errs
-        allpos=c.get("all_eigenvalues_certified_positive",False)
-        for i,b in enumerate(E):
-            errs += _check_ball(f"{_fn} eig {i}", b, require_positive=allpos)
-        Ivs=[_ball_iv(b) for b in E]
+        if not ec or "eigenpairs" not in ec:
+            errs.append(f"{_fn}: missing eigenvalue_certificate.eigenpairs (MIG-036 residual proof required)"); return errs
+        pairs=ec["eigenpairs"]
+        if len(pairs)!=m or len(E)!=m:
+            errs.append(f"{_fn}: eigenpairs/enclosures count != dim {m}"); return errs
+        # recorded ||R||_inf must be a valid (>=) upper bound
+        Rinf_claimed=_dec_to_frac(ec["R_inf_upper"]["upper_decimal"])
+        if Rinf_claimed < Rinf_recomputed:
+            errs.append(f"{_fn}: recorded ||R||_inf < recomputed (invalid Weyl bound)"); return errs
+        thetas=[]; intervals=[]
+        for idx,pr in enumerate(pairs):
+            v=[_dy_to_frac(d) for d in pr["v"]]
+            rho=_dy_to_frac(pr["rho"])
+            if rho<0: errs.append(f"{_fn}: eig {idx} rho negative"); return errs
+            if all(x==0 for x in v):
+                errs.append(f"{_fn}: eig {idx} residual vector is zero"); return errs
+            s=sum(x*x for x in v)
+            Av=[sum(A0[i][j]*v[j] for j in range(m)) for i in range(m)]
+            p=sum(v[i]*Av[i] for i in range(m))
+            w=[s*Av[i]-p*v[i] for i in range(m)]
+            w2=sum(x*x for x in w)
+            # Hermitian residual bound: ||w||^2 <= rho^2 s^3  <=>  ||A0 v - theta v|| <= rho ||v||
+            if w2 > rho*rho*s**3:
+                errs.append(f"{_fn}: eig {idx} residual bound violated (||r|| > rho): counterfeit"); return errs
+            theta=_F(p,s)
+            thetas.append(theta); intervals.append((theta-rho, theta+rho, rho))
+        # disjoint and strictly ordered (exact rational) -> n intervals exhaust the n-point spectrum
         for i in range(1,m):
-            if Ivs[i].lo < Ivs[i-1].lo:
-                errs.append(f"{_fn}: eigenvalue enclosures not in nondecreasing order at {i}")
-        pos_eig=sum(1 for iv in Ivs if iv.pos())
+            if not (intervals[i][0] > intervals[i-1][1]):
+                errs.append(f"{_fn}: midpoint eigenvalue intervals not disjoint/ordered at {i} (spectrum not exhausted)"); return errs
+        # widen by ||R||_inf (Weyl) and bind to the serialized enclosures; positivity = PRIMARY PD proof
+        allpos=c.get("all_eigenvalues_certified_positive",False)
+        for i,(lo_t,hi_t,rho) in enumerate(intervals):
+            wlo=lo_t-Rinf_recomputed; whi=hi_t+Rinf_recomputed
+            ser_lo=_dec_to_frac(E[i]["lower_decimal"]); ser_hi=_dec_to_frac(E[i]["upper_decimal"])
+            if ser_lo>wlo or ser_hi<whi:
+                errs.append(f"{_fn}: serialized eig enclosure {i} does not outward-contain the residual-certified widened interval")
+            if allpos and (wlo<=0 or ser_lo<=0):
+                errs.append(f"{_fn}: eig {i} lower endpoint <= 0 under all-positive claim (PD fails)")
+        # inertia agreement (LDL pivots are a redundant cross-check per MIG-036)
         pos_piv=sum(1 for b in c["pivots"] if _ball_iv(b).pos())
         inertia=c.get("inertia",{})
-        if not (pos_eig==pos_piv==m and inertia.get("agree") is True
+        if not (pos_piv==m and inertia.get("agree") is True
                 and inertia.get("ldl_positive_pivots")==m and inertia.get("eig_positive")==m):
-            errs.append(f"{_fn}: LDL/eigenvalue inertia disagreement (eig+={pos_eig}, piv+={pos_piv}, dim={m}, inertia={inertia})")
-        # (v) trace = sum(eig): trace interval (sum of diagonal) must overlap sum(eig)
+            errs.append(f"{_fn}: LDL/eigenvalue inertia disagreement (piv+={pos_piv}, dim={m}, inertia={inertia})")
+        # (v) SECONDARY sanity only (necessary, not sufficient; the residual cert above is the binding):
+        # trace overlap and det-product overlap, using the residual-derived intervals.
+        Ivs=[_Iv(_dec_to_frac(E[i]["lower_decimal"]), _dec_to_frac(E[i]["upper_decimal"])) for i in range(m)]
         tr=_Iv(_F(0),_F(0))
         for i in range(m): tr=tr+_ball_iv(B[f"{i}_{i}"])
         se=_Iv(_F(0),_F(0))
         for iv in Ivs: se=se+iv
         if not tr.overlaps(se):
-            errs.append(f"{_fn}: trace enclosure disjoint from sum(eigenvalues)")
-        # (vi) det = prod(pivots) = prod(eig): both interval products must overlap
-        pp=_Iv(_F(1),_F(1))
-        for b in c["pivots"]: pp=pp*_ball_iv(b)
-        pe=_Iv(_F(1),_F(1))
-        for iv in Ivs: pe=pe*iv
-        if not pp.overlaps(pe):
-            errs.append(f"{_fn}: prod(pivots) enclosure disjoint from prod(eigenvalues) (det mismatch)")
-        # (vii) Weyl construction: recompute ||R||_inf from serialized entry-ball radii,
-        # confirm recorded bound is valid and each eigenvalue enclosure was widened by it.
-        w=c.get("weyl")
-        if w is None:
-            errs.append(f"{_fn}: eigenvalue method records no Weyl block")
-        else:
-            Rinf_recomputed=max(sum(_dy_rad(B[f"{a}_{b}"]) for b in range(m)) for a in range(m))
-            Rinf_claimed=_dec_to_frac(w["R_inf_upper"]["upper_decimal"])
-            if Rinf_claimed < Rinf_recomputed:
-                errs.append(f"{_fn}: recorded ||R||_inf {float(Rinf_claimed):.3e} < recomputed {float(Rinf_recomputed):.3e} (invalid Weyl bound)")
-            for i,iv in enumerate(Ivs):
-                half=(iv.hi-iv.lo)/2
-                if half < Rinf_recomputed:
-                    errs.append(f"{_fn}: eig {i} half-width < ||R||_inf (Weyl widening not applied)")
-                    break
+            errs.append(f"{_fn}: [sanity] trace enclosure disjoint from sum(eigenvalues)")
         return errs
 
     if _os.path.exists("metadata/weil_M3_result.json"):

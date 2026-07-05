@@ -91,3 +91,27 @@ restricted rational-height Weil tests. They are finite consistency results insid
 infinite reformulation, **not** theorem-steps toward RH. Independent specialist review of the
 continuity and cyclicity arguments remains the separate mathematical track before any external
 claim.
+
+---
+
+# MIG-036 Note — Self-Verifying Eigenvalue and PD Certificates
+
+An independent review of MIG-035 found that the eigenvalue certificate, while numerically
+correct, was not *independently* machine-verifiable: the validator bound the spectrum to the
+matrix only through positivity, trace overlap, determinant-product overlap, and Weyl width.
+Those are necessary but not sufficient — a counterfeit that alters three eigenvalues while
+preserving their sum and product passed validation.
+
+MIG-036 closes this. The eigenvalue certificate now carries, for each eigenvalue, a dyadic
+witness vector v and a dyadic bound ρ. The validator reconstructs the exact dyadic midpoint
+matrix A₀ from the serialized entries and recomputes, in exact rational arithmetic,
+θ = vᵀA₀v / vᵀv and the residual, verifying ‖A₀v − θv‖₂ ≤ ρ‖v‖₂. The Hermitian residual
+theorem then places an eigenvalue of A₀ in [θ − ρ, θ + ρ]; the n intervals are proved
+pairwise disjoint and ordered by exact rational comparison, so they exhaust the n-point
+spectrum, and each is widened by the recomputed ‖R‖∞ to enclose the true spectrum. This
+residual certificate is now the **primary** positive-definiteness proof (the LDL pivots are
+retained as a redundant generator cross-check). The sum/product-preserving counterfeit is a
+permanent adversarial test and is rejected because its intervals do not contain the
+residual-certified eigenvalues of A₀. Eigenvalue ordering no longer uses floating point
+(exact rational comparison of pᵢ/sᵢ), and the adversarial runner now distinguishes a genuine
+validation rejection from an environment crash. The H=4/H=5 numerical values are unchanged.

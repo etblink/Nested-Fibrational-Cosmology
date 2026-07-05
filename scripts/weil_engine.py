@@ -647,47 +647,110 @@ def _rad_frac(x):
     """Exact Fraction radius of an arb ball (outward)."""
     return _arb_exact_fraction(x.rad())
 
-def _weyl_eig_enclosures(Mm, base_prec):
-    """Method B (verifier-accepted): rigorous Hermitian eigenvalue enclosures via
-    midpoint eigendecomposition + Weyl perturbation.
-
-      A = A_0 + E,  A_0 = exact dyadic midpoint (point) matrix,  |E_jk| <= R_jk (ball radii).
-      ||E||_2 <= ||R||_inf := max_i sum_j R_ij   (valid for Hermitian E, since
-                 ||E||_2 <= sqrt(||E||_1 ||E||_inf) = ||E||_inf and ||E||_1=||E||_inf).
-      Weyl: |lambda_i(A) - lambda_i(A_0)| <= ||E||_2 <= ||R||_inf  (sorted order).
-
-    The POINT matrix A_0 isolates cleanly even when the interval matrix does not
-    (near-degenerate near-singular spectrum). Each sorted point-eigenvalue enclosure is
-    widened OUTWARD by ||R||_inf. Returns (enclosures, Rinf_arb, imag_bound_arb) with
-    enclosures a sorted list of arb balls rigorously containing lambda_i(A); raises
-    RuntimeError if the point matrix fails to isolate (caller escalates precision)."""
-    n = len(Mm)
-    Rinf_frac = max(sum(_rad_frac(Mm[i][j]) for j in range(n)) for i in range(n))
-    Rinf = arb(_frac_to_decimal(Rinf_frac, 80, ROUND_CEILING))  # outward upper bound on ||R||_inf
-    A0 = flint.acb_mat([[acb(Mm[i][j].mid()) for j in range(n)] for i in range(n)])
-    saved = flint.ctx.prec
-    E = None
-    try:
-        for mult in (2, 4, 8, 12):
-            flint.ctx.prec = base_prec * mult
-            try:
-                E = A0.eig(); break
-            except (ValueError, ZeroDivisionError):
-                E = None
-        if E is None:
-            raise RuntimeError("midpoint eig failed to isolate at all attempted precisions")
-        pairs = sorted(((e.real, e.imag) for e in E), key=lambda t: float(t[0].mid()))
-    finally:
-        flint.ctx.prec = saved
-    encl = []
-    imag_bound = arb(0)
-    for re, im in pairs:
-        widened = (re + Rinf).union(re - Rinf)   # Weyl outward widening
-        encl.append(widened)
-        imag_bound = imag_bound.union(im)
-    return encl, Rinf, imag_bound
+# MIG-036 (item 5): the former _weyl_eig_enclosures used float ordering
+# (key=lambda t: float(t[0].mid())), unsafe for increasingly clustered H>=6 spectra.
+# It is removed; eigenvalues are now bound by the exact-rational residual certificate
+# (_residual_eig_certificate), which orders by exact rational comparison of p_i/s_i.
 
 RH_PROFILES = [(350, 64, 48), (500, 192, 112), (700, 384, 160), (900, 512, 224)]
+
+def _dyadic(x):
+    """Serialize an arb (or its exact midpoint) as an exact dyadic {mantissa, exponent}."""
+    src = x.mid() if hasattr(x, "mid") else x
+    man, exp = src.man_exp()
+    return {"mantissa": str(int(man)), "exponent": int(exp)}
+
+def _dyf(d):
+    """Dyadic dict -> exact Fraction."""
+    from fractions import Fraction as Fr
+    m = int(d["mantissa"]); e = int(d["exponent"])
+    return Fr(m) * (Fr(2) ** e if e >= 0 else Fr(1, 2 ** (-e)))
+
+def _residual_eig_certificate(Mm, base_prec):
+    """MIG-036: bind the midpoint spectrum to A_0 with an EXACT RATIONAL residual
+    certificate the validator can recompute without flint.
+
+    For each eigenvector v_i (dyadic), with s = v^T v, p = v^T A_0 v, w = s*A_0 v - p*v
+    (all exact dyadic), the Hermitian residual theorem gives an eigenvalue of A_0 in
+    [theta - rho, theta + rho] with theta = p/s and any rho satisfying ||w||_2^2 <= rho^2 s^3
+    (equivalently ||A_0 v - theta v||_2 <= rho ||v||_2). We serialize v and a dyadic rho;
+    the n intervals are proved pairwise disjoint and ordered, so they exhaust the n-point
+    midpoint spectrum. Widening each by the recomputed ||R||_inf encloses the true spectrum.
+    Ordering uses EXACT rational comparison of p_i/s_i (no float)."""
+    from fractions import Fraction as Fr
+    from math import isqrt
+    m = len(Mm)
+    A0 = [[_arb_exact_fraction(Mm[i][j].mid()) for j in range(m)] for i in range(m)]
+    Rinf_frac = max(sum(_arb_exact_fraction(Mm[i][j].rad()) for j in range(m)) for i in range(m))
+    Rinf = arb(_frac_to_decimal(Rinf_frac, 80, ROUND_CEILING))
+    P = flint.acb_mat([[acb(Mm[i][j].mid()) for j in range(m)] for i in range(m)])
+    saved = flint.ctx.prec
+    result = None
+    try:
+        for mult in (3, 6, 12, 20):
+            flint.ctx.prec = base_prec * mult
+            vals, vecs = P.eig(right=True)
+            cand = []
+            good = True
+            for col in range(m):
+                v = [_arb_exact_fraction(vecs[i, col].real.mid()) for i in range(m)]
+                if all(x == 0 for x in v):
+                    good = False; break
+                s = sum(x * x for x in v)
+                Av = [sum(A0[i][j] * v[j] for j in range(m)) for i in range(m)]
+                p = sum(v[i] * Av[i] for i in range(m))
+                w = [s * Av[i] - p * v[i] for i in range(m)]
+                w2 = sum(x * x for x in w)
+                theta = Fr(p, s)
+                # dyadic rho with rho^2 s^3 >= w2  (=> ||A0 v - theta v|| <= rho ||v||)
+                rho2 = Fr(w2, s ** 3)
+                SCALE = 1 << 320
+                rs = isqrt((rho2.numerator * SCALE * SCALE) // rho2.denominator) + 2
+                rho = Fr(rs, SCALE)
+                if rho * rho * s ** 3 < w2:
+                    rho = rho * 2  # safety bump (should never trigger)
+                assert rho * rho * s ** 3 >= w2
+                cand.append({"theta": theta, "rho": rho, "v": v, "w2": w2, "s": s})
+            if not good:
+                continue
+            cand.sort(key=lambda c: c["theta"])  # exact rational sort
+            disjoint = all(cand[i]["theta"] - cand[i]["rho"] > cand[i - 1]["theta"] + cand[i - 1]["rho"]
+                           for i in range(1, m))
+            if disjoint:
+                result = cand; break
+    finally:
+        flint.ctx.prec = saved
+    if result is None:
+        raise RuntimeError("residual eig certificate: could not obtain disjoint ordered midpoint intervals")
+    # widened enclosures (exact) and serialization
+    eigpairs = []
+    enclosures = []
+    all_pos = True
+    for c in result:
+        lo = c["theta"] - c["rho"] - Rinf_frac
+        hi = c["theta"] + c["rho"] + Rinf_frac
+        if lo <= 0:
+            all_pos = False
+        enclosures.append({
+            "lower_decimal": _frac_to_decimal(lo, 45, ROUND_FLOOR),
+            "upper_decimal": _frac_to_decimal(hi, 45, ROUND_CEILING),
+        })
+        # rho serialized as dyadic upper bound (rho was built as rs/2^320)
+        eigpairs.append({
+            "v": [_dyadic_from_fraction(x) for x in c["v"]],
+            "rho": _dyadic_from_fraction(c["rho"]),
+        })
+    return eigpairs, enclosures, Rinf, Rinf_frac, all_pos
+
+def _dyadic_from_fraction(fr):
+    """Serialize an exact dyadic Fraction (denominator a power of 2) as {mantissa, exponent}.
+    For a general Fraction, represents it exactly if dyadic; else raises."""
+    num, den = fr.numerator, fr.denominator
+    if den & (den - 1) != 0:
+        raise ValueError("non-dyadic fraction cannot be serialized exactly")
+    e = -(den.bit_length() - 1)
+    return {"mantissa": str(num), "exponent": e}
+
 
 def _build_compressed(H, scales, V, base_bits, N, M):
     """Build the compressed real-symmetric interval matrix M_H at one precision profile."""
@@ -732,7 +795,7 @@ def run_rational_height_certified(H, profiles=None):
     print(f"Q_{H}: {n} scales; dim {m}; max/min ratio {ratio}; nesting OK")
 
     profiles = profiles or RH_PROFILES
-    Mm = pivots = eig_encl = None; Rinf = imag_bound = None; status = "INDETERMINATE"; base_bits = N = M = None
+    Mm = pivots = eigpairs = eig_encl_ser = None; Rinf = Rinf_frac = None; status = "INDETERMINATE"; base_bits = N = M = None
     for (bb, NN, MM) in profiles:
         base_bits, N, M = bb, NN, MM
         Mm = _build_compressed(H, scales, V, bb, NN, MM)
@@ -741,40 +804,29 @@ def run_rational_height_certified(H, profiles=None):
             print(f"  profile bits={bb} N={NN} M={MM}: LDL {status} -> escalate")
             continue
         try:
-            eig_encl, Rinf, imag_bound = _weyl_eig_enclosures(Mm, bb)
+            eigpairs, eig_encl_ser, Rinf, Rinf_frac, all_pos = _residual_eig_certificate(Mm, bb)
         except RuntimeError as ex:
-            print(f"  profile bits={bb} N={NN} M={MM}: LDL PD but midpoint eig failed ({ex}) -> escalate")
+            print(f"  profile bits={bb} N={NN} M={MM}: LDL PD but residual eig certificate failed ({ex}) -> escalate")
             status = "INDETERMINATE"
             continue
-        if not all(e > 0 for e in eig_encl):
-            print(f"  profile bits={bb} N={NN} M={MM}: LDL PD but a Weyl-widened eig enclosure not strictly positive -> escalate")
+        if not all_pos:
+            print(f"  profile bits={bb} N={NN} M={MM}: LDL PD but a widened eigenvalue interval not strictly positive -> escalate")
             status = "INDETERMINATE"
             continue
-        print(f"  profile bits={bb} N={NN} M={MM}: LDL PD and eigenvalues enclosed (Weyl), all positive")
+        print(f"  profile bits={bb} N={NN} M={MM}: LDL PD and eigenvalues residual-certified (disjoint, all positive)")
         break
-    if status != "PD" or eig_encl is None:
+    if status != "PD" or eigpairs is None:
         raise ValueError(f"H={H}: not fully certified at max profile (LDL {status})")
     for p in pivots:
         assert p > 0, "pivot lower endpoint not strictly positive"
 
-    # rigorous eigenvalue enclosures (Method B: midpoint eig + Weyl, from the loop above)
-    assert len(eig_encl) == len(pivots), "eigenvalue count != dim"
-    if not imag_bound.contains(arb(0)):
-        raise ValueError("point-matrix eigenvalue imaginary parts do not enclose 0 (spectrum not certified real)")
-    eig_positive = 0
-    eig_certs = []
-    for e in eig_encl:
-        if e > 0:
-            eig_positive += 1
-        eig_certs.append(ball_certificate(e, digits=40))
+    # MIG-036: eigenvalue enclosures are the residual-certified widened intervals
+    assert len(eig_encl_ser) == len(pivots), "eigenvalue count != dim"
     m = len(pivots)
-    if eig_positive != m:
-        raise ValueError(f"H={H}: only {eig_positive}/{m} eigenvalue enclosures strictly positive")
-    lo_eig = eig_encl[0]; hi_eig = eig_encl[-1]
+    eig_positive = m  # all_pos verified above
     Rinf_cert = ball_certificate(Rinf, digits=40)
-    imag_abs = abs(_arb_exact_fraction(imag_bound.mid())) + _arb_exact_fraction(imag_bound.rad())
-    print(f"  eigenvalues: {m} real enclosures (Weyl), all positive; "
-          f"lambda_min in {ball_certificate(lo_eig)['lower_decimal']}.., lambda_max ..{ball_certificate(hi_eig)['upper_decimal']}")
+    print(f"  eigenvalues: {m} residual-certified enclosures, all positive; "
+          f"lambda_min lower {eig_encl_ser[0]['lower_decimal']}.., lambda_max upper ..{eig_encl_ser[-1]['upper_decimal']}")
 
     # serialize the FULL compressed matrix (both triangles) so Hermitian pairing
     # M_jk = conj(M_kj) is independently checkable and tamperable in adversarial tests
@@ -799,21 +851,28 @@ def run_rational_height_certified(H, profiles=None):
         "profile": {"bits": base_bits, "N": N, "M": M, "max_scale_ratio": MAX_SCALE_RATIO},
         "ldl_status": status,
         "pivots": [ball_certificate(p, digits=40) for p in pivots],
-        "eigenvalue_method": ("midpoint + Weyl (Method B): A = A_0 + E with A_0 the exact "
-                              "dyadic midpoint matrix and |E_jk| <= R_jk (serialized ball radii); "
-                              "||A-A_0||_2 <= ||R||_inf = max abs row sum of R (Hermitian bound); "
-                              "point-matrix eigenvalues enclosed rigorously by Arb acb_mat.eig and "
-                              "each sorted enclosure widened outward by ||R||_inf (Weyl). Chosen over "
-                              "the interval eigensolver because the near-singular H>=5 spectrum is not "
-                              "isolable as an interval matrix; the point matrix isolates cleanly and "
-                              "||R||_inf << lambda_min preserves strict positivity."),
+        "pivots_role": ("redundant generator-produced cross-check; the PRIMARY positive-definiteness "
+                        "proof is the matrix-bound eigenvalue residual certificate below (MIG-036)"),
+        "eigenvalue_method": ("MIG-036 exact rational residual certificate binding lambda(A_0): for each "
+                              "eigenvector v (dyadic), the validator recomputes theta = v^T A_0 v / v^T v "
+                              "and w = (v^T v) A_0 v - (v^T A_0 v) v in exact rational arithmetic and "
+                              "verifies ||w||_2^2 <= rho^2 (v^T v)^3, so the Hermitian residual theorem "
+                              "places an eigenvalue of A_0 in [theta-rho, theta+rho]; the n intervals are "
+                              "proved pairwise disjoint and ordered (exact rational comparison), hence "
+                              "exhaust the n-point spectrum; each is widened outward by the recomputed "
+                              "||R||_inf (Weyl) to enclose the true spectrum. This binds the spectrum to "
+                              "the serialized matrix and is the primary PD proof."),
+        "eigenvalue_certificate": {
+            "primary_pd_proof": True,
+            "residual_theorem": "Hermitian residual: exists eigenvalue in [theta-rho, theta+rho] when ||A0 v - theta v||_2 <= rho ||v||_2",
+            "eigenpairs": eigpairs,
+            "R_inf_upper": Rinf_cert,
+        },
         "weyl": {
             "R_inf_upper": Rinf_cert,
             "bound": "||A-A_0||_2 <= ||R||_inf (max abs row sum of entry-ball radii; Hermitian)",
-            "imag_abs_upper_decimal": _frac_to_decimal(imag_abs, 40, ROUND_CEILING),
-            "spectrum_real": True,
         },
-        "eigenvalue_enclosures": eig_certs,
+        "eigenvalue_enclosures": eig_encl_ser,
         "all_eigenvalues_certified_positive": True,
         "inertia": {"ldl_positive_pivots": m, "eig_positive": eig_positive, "dim": m, "agree": True},
         "classification": ("H=%d rigorously positive restricted rational-height Weil test if certified: "
@@ -824,7 +883,7 @@ def run_rational_height_certified(H, profiles=None):
     path = f"metadata/weil_QH{H}_certificate.json"
     json.dump(cert, open(path, "w"), indent=2)
     print(f"  written {path}")
-    return Mm, pivots, eig_encl, status
+    return Mm, pivots, eig_encl_ser, status
 
 
 def _display_ball_refs(ball):
