@@ -178,3 +178,46 @@ flint-free validator verifies the serialized matrix and proof objects; the analy
 link remains generation provenance. Certified heights are now H = 2, 3, 4, 5, 6, 7. H=8+ remains
 unauthorized. The independent Weil-core / SCC specialist review continues in parallel, logically
 separate.
+
+---
+
+# MIG-041 Record — H=8: Profile-Applicability Obstruction (No Certificate)
+
+H=8 generation was attempted from the accepted MIG-040 baseline. **No H=8 certificate is
+claimed.** The structural preconditions all hold (Q₈ = 43 ordered reduced scales; Q₇ its exact
+ordered prefix of length 35; 41×43 primitive basis; expected 41×41 matrix), and the
+active-precision boundary constant behaves correctly (no radius floor). The obstruction is of a
+new kind, distinct from MIG-039's radius floor.
+
+**Obstruction (diagnosed exactly).** The prime-tail geometric expansion in
+`T_certified_rational` carries a genuine convergence precondition `assert N > r/q`. For H=8 the
+extreme scale pair (q, r) = (1/8, 8) has r/q = 64, equal to the maximum scale ratio. The base
+profile (350, 64, 48) has prime-head N = 64, so N > r/q is **false** (64 > 64 fails): the base
+profile is **structurally inapplicable** to H=8 — it cannot evaluate the extreme entries at all.
+This is not a numerical-enclosure-strength failure (the MIG-039 category) and not one of the
+four authorized recorded outcomes (LDL indeterminate / residual isolation failure / nonpositive
+Weyl-widened endpoint / certification). Profiles 2–6 (N = 192, 384, 512, 768, 1024) all satisfy
+N > 64 and are applicable.
+
+**Why generation stopped.** The escalation loop attempts the ladder in order and raises the
+`N > r/q` assertion on the base profile, halting before reaching the first applicable profile.
+Getting past an inapplicable low profile requires a control-flow guard in the ladder driver
+(skip any profile whose N ≤ max scale ratio, recording the skip) — this is **not** the
+authorized operation of "appending strictly higher numerical profiles," so per the MIG-041
+authorization generation stopped without claiming certification. No caller-side ladder
+alteration, elevated-import workaround, or math change was used to force progress.
+
+**Proposed minimal repair (requires explicit authorization, e.g. MIG-042).** Add a
+structural-applicability guard to the escalation loop: a profile with N ≤ max-scale-ratio for
+the height is recorded as INAPPLICABLE and skipped, so the ladder proceeds to the first
+applicable profile. This is mathematically inert — it changes nothing about how any applicable
+profile is computed, the Weil form, the tail bound, or any semantics; it only prevents
+attempting a rung outside the geometric-tail domain. With the guard, H=8 would begin at
+(500, 192, 112); whether it then certifies is a separate numerical outcome to be established by
+the authorized migration itself.
+
+**Classification.** This is a profile-applicability obstruction, not a negative mathematical
+result: no midpoint evidence contradicts H=8 positivity, and no positivity is claimed. Certified
+heights remain exactly H = 2, 3, 4, 5, 6, 7. H=8 remains uncertified; H=9+ remains unauthorized.
+No RH/SCC implication in either direction. Permanent tamper 17 (H=8 matrix-to-residual binding)
+is deferred until an H=8 certificate exists.
