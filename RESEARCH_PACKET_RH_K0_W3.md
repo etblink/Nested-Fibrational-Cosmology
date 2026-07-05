@@ -142,3 +142,38 @@ finitely many positive matrices toward the universal positivity statement, and l
 SCC/RH status promotion. No zero-location data enters the certified generation path, and this
 result remains procedurally and logically separate from the independent Weil-core /
 SCC specialist-review track.
+
+---
+
+# MIG-039 Record — H=7: Numerical-Certification Frontier (No Certificate)
+
+H=7 generation was attempted under the hardened residual-certificate format from the accepted
+MIG-038 baseline. **No H=7 certificate is claimed.** The structural preconditions all hold
+(Q₇ = 35 ordered reduced scales; Q₆ its exact ordered prefix; 33×35 primitive basis with both
+moment identities exact; expected 33×33 compressed matrix), but positive-definiteness could
+not be certified at any authorized precision profile.
+
+Every attempted profile and outcome (in the required order):
+(350, 64, 48) → LDL INDETERMINATE; (500, 192, 112) → LDL INDETERMINATE;
+(700, 384, 160) → LDL INDETERMINATE; (900, 512, 224) → LDL INDETERMINATE;
+then, under the restricted profile-extension permission (all existing rungs exhausted and the
+failure diagnosed as purely numerical — every computed pivot midpoint positive, pivot 31
+mid ≈ 5.48×10⁻⁸⁸ with radius ≈ 6.71×10⁻⁸⁷ straddling zero), two monotone extensions:
+(1200, 768, 320) → LDL INDETERMINATE; (1600, 1024, 448) → LDL INDETERMINATE.
+
+**Obstruction (diagnosed exactly).** The engine's constants `EULER` and `LOG4PI` are
+evaluated once at module import at the then-active default precision (350 bits), freezing
+their ball radii at ≈ 2×10⁻¹⁰⁶. The boundary term (log 4π + γ)/(q+r)² therefore injects an
+irreducible ≈ 4.4×10⁻¹⁰⁷ radius into every matrix entry, **invariant under all profile
+parameters** (verified: identical entry radius at (900, 512, 224) and (1600, 1024, 448),
+while the T and J terms' radii are 10⁻²²⁶–10⁻²⁷¹). Amplified through the VᵀHV compression by
+H=7's large integer basis coefficients, pivot radii reach ≈ 6.7×10⁻⁸⁷, exceeding the smallest
+pivot magnitudes (≈ 5.5×10⁻⁸⁸). No monotone profile extension can pass below this floor. The
+repair — evaluating the two constants under the active profile precision — changes no formula
+but is an engine change outside MIG-039's profile-only permission, so generation stopped per
+the authorization. H ≤ 6 certificates are unaffected: their pivot scales (≥ 10⁻⁷⁰) sit far
+above the constant floor.
+
+**Classification.** This is a numerical-certification frontier, not a negative mathematical
+result: no midpoint evidence contradicts H=7 positivity, and no positivity is claimed. H=7
+remains uncertified; H=8+ remains unauthorized. No RH/SCC implication in either direction.

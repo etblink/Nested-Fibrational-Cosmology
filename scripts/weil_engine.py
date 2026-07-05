@@ -652,7 +652,14 @@ def _rad_frac(x):
 # It is removed; eigenvalues are now bound by the exact-rational residual certificate
 # (_residual_eig_certificate), which orders by exact rational comparison of p_i/s_i.
 
-RH_PROFILES = [(350, 64, 48), (500, 192, 112), (700, 384, 160), (900, 512, 224)]
+RH_PROFILES = [(350, 64, 48), (500, 192, 112), (700, 384, 160), (900, 512, 224),
+               # MIG-039 restricted profile-extension: appended ONLY after all four existing
+               # profiles returned LDL INDETERMINATE for H=7, with the failure diagnosed as
+               # solely numerical certification strength (all computed pivot midpoints
+               # positive; pivot 31 mid=5.48e-88 with radius 6.71e-87 straddling zero).
+               # Same formulas, matrix construction, Arb semantics, residual theorem,
+               # dyadic serialization, and validator format; strictly monotone increases.
+               (1200, 768, 320), (1600, 1024, 448)]
 
 def _dyadic(x):
     """Serialize an arb (or its exact midpoint) as an exact dyadic {mantissa, exponent}."""
