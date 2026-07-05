@@ -80,7 +80,7 @@ PY
   _check_tamper_output "$rc" "$out" "$desc"
 }
 
-echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12; MIG-037 13-14):"
+echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12; MIG-037 13-14; MIG-038 15):"
 tamper_must_fail "counterfeit H=3 (H=2 payload, H:3 name)" metadata/weil_QH3_certificate.json \
   'q2=json.load(open("metadata/weil_QH2_certificate.json")); c["scales"]=q2["scales"]; c["basis"]=q2["basis"]; c["dim"]=q2["dim"]; c["pivots"]=q2["pivots"]'
 tamper_must_fail "broken moment identity in basis[0]" metadata/weil_QH2_certificate.json \
@@ -159,5 +159,16 @@ for _k,_b in c["compressed_matrix_balls"].items():
 tamper_must_fail "surplus witness-vector coordinate (dimension precondition)" metadata/weil_QH4_certificate.json \
   'for _pr in c["eigenvalue_certificate"]["eigenpairs"]:
     _pr["v"].append({"mantissa":"0","exponent":0})'
+
+# --- MIG-038 permanent test (H=6 payload binding) ---
+
+# 15. Alter the first H=6 serialized eigenvalue enclosure so it no longer outward-contains
+#     its residual-certified Weyl-widened interval (raise the lower endpoint above the
+#     residual-certified widened lower endpoint while keeping it positive and below upper).
+tamper_must_fail "H=6 eigenvalue enclosure fails outward containment (payload binding)" metadata/weil_QH6_certificate.json \
+  'e=c["eigenvalue_enclosures"][0]
+from decimal import Decimal as _D
+lo=_D(e["lower_decimal"]); hi=_D(e["upper_decimal"])
+e["lower_decimal"]=format(lo + (hi-lo)/2, ".45e")'
 
 exit $fail

@@ -115,3 +115,30 @@ permanent adversarial test and is rejected because its intervals do not contain 
 residual-certified eigenvalues of A₀. Eigenvalue ordering no longer uses floating point
 (exact rational comparison of pᵢ/sᵢ), and the adversarial runner now distinguishes a genuine
 validation rejection from an environment crash. The H=4/H=5 numerical values are unchanged.
+
+---
+
+# MIG-038 Addendum — H=6 Certified Rational-Height Weil Test
+
+The H=6 certificate (`metadata/weil_QH6_certificate.json`) is complete under the hardened
+MIG-036/MIG-037 residual-certificate format. Q₆ contains exactly 23 ordered reduced rational
+scales with Q₅ verified as its exact ordered prefix; the compressed two-moment nullspace has
+dimension 21 (exact rational rank 21, every basis vector verified against both moment
+identities exactly); the full 21×21 Hermitian dyadic-ball matrix is serialized with
+nonnegative radii and exact Hermitian pairing. The base profile (350 bits, N=64, M=48) was
+INDETERMINATE; the certificate was produced at the existing escalation profile (500 bits,
+N=192, M=112) — no engine change was required. Twenty-one residual witnesses (each 21 dyadic
+coordinates) yield exact-rationally recomputable Rayleigh centers and residual inequalities;
+the 21 residual intervals are pairwise disjoint and strictly ordered, exhausting the midpoint
+spectrum, and each is widened outward by the independently recomputed nonnegative ‖R‖∞. Every
+widened interval has a strictly positive lower endpoint (λ_min lower bound
+≈ 7.53×10⁻⁷⁰), the serialized enclosures outward-contain the widened intervals, the interval-LDL
+pivots are retained only as a redundant cross-check, and the inertia record is consistently
+21-positive. A permanent H=6 payload-binding adversarial test (tamper 15) is added.
+
+**Classification (unchanged, load-bearing).** H=6 is one additional finite restricted
+rational-height Weil test. It is not an RH theorem-step, does not establish progress from
+finitely many positive matrices toward the universal positivity statement, and licenses no
+SCC/RH status promotion. No zero-location data enters the certified generation path, and this
+result remains procedurally and logically separate from the independent Weil-core /
+SCC specialist-review track.
