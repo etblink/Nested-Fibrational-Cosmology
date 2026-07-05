@@ -80,7 +80,7 @@ PY
   _check_tamper_output "$rc" "$out" "$desc"
 }
 
-echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12; MIG-037 13-14; MIG-038 15):"
+echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12; MIG-037 13-14; MIG-038 15; MIG-040 16):"
 tamper_must_fail "counterfeit H=3 (H=2 payload, H:3 name)" metadata/weil_QH3_certificate.json \
   'q2=json.load(open("metadata/weil_QH2_certificate.json")); c["scales"]=q2["scales"]; c["basis"]=q2["basis"]; c["dim"]=q2["dim"]; c["pivots"]=q2["pivots"]'
 tamper_must_fail "broken moment identity in basis[0]" metadata/weil_QH2_certificate.json \
@@ -170,5 +170,26 @@ tamper_must_fail "H=6 eigenvalue enclosure fails outward containment (payload bi
 from decimal import Decimal as _D
 lo=_D(e["lower_decimal"]); hi=_D(e["upper_decimal"])
 e["lower_decimal"]=format(lo + (hi-lo)/2, ".45e")'
+
+# --- MIG-040 permanent test (H=7 matrix-to-residual binding) ---
+
+# 16. Alter an H=7 compressed-matrix midpoint (a diagonal, both triangles for Hermitian
+#     symmetry) substantially, keep nonnegative radii and valid outward decimal endpoints,
+#     and leave residual witnesses + eigenvalue enclosures unchanged. Rejection must arise
+#     downstream from the matrix->residual / spectral binding (the recomputed A_0 no longer
+#     matches the certified spectrum), NOT from malformed JSON, broken Hermitian pairing, or
+#     a bad decimal enclosure.
+tamper_must_fail "H=7 matrix midpoint altered, spectrum unchanged (matrix-to-residual binding)" metadata/weil_QH7_certificate.json \
+  'b=c["compressed_matrix_balls"]["5_5"]
+rd=b["radius_dyadic"]
+from fractions import Fraction as _Fr
+_rad=_Fr(int(rd["mantissa"]))*(_Fr(2)**int(rd["exponent"]))
+from decimal import Decimal as _D, getcontext as _gc
+_gc().prec=80
+b["mid_dyadic"]={"mantissa":"1","exponent":-40}
+v=_D(2)**-40; _r=_D(int(rd["mantissa"]))*(_D(2)**int(rd["exponent"]))
+b["mid_decimal"]=format(v,".45e")
+b["lower_decimal"]=format(v-_r-_D(10)**-50,".45e"); b["upper_decimal"]=format(v+_r+_D(10)**-50,".45e")
+b["sign_certified"]="positive"'
 
 exit $fail

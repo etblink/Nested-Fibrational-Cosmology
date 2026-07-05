@@ -143,37 +143,38 @@ SCC/RH status promotion. No zero-location data enters the certified generation p
 result remains procedurally and logically separate from the independent Weil-core /
 SCC specialist-review track.
 
+
 ---
 
-# MIG-039 Record — H=7: Numerical-Certification Frontier (No Certificate)
+# MIG-039 → MIG-040 — H=7 Certified After the Active-Precision Boundary-Constant Repair
 
-H=7 generation was attempted under the hardened residual-certificate format from the accepted
-MIG-038 baseline. **No H=7 certificate is claimed.** The structural preconditions all hold
-(Q₇ = 35 ordered reduced scales; Q₆ its exact ordered prefix; 33×35 primitive basis with both
-moment identities exact; expected 33×33 compressed matrix), but positive-definiteness could
-not be certified at any authorized precision profile.
+MIG-039 delivered H=7 as a numerical-certification obstruction: the constants EULER and
+LOG4PI were evaluated once at module import (350-bit default), freezing a ≈4.4×10⁻¹⁰⁷ radius
+into every matrix entry through the boundary term (log 4π + γ)/(q+r)², a floor invariant under
+all precision profiles. MIG-040 removes that floor with a narrowly targeted engine repair — no
+mathematical change: the boundary constant is now evaluated at the active profile precision
+(`boundary_constant()`, cached by exact precision, built once per profile, with no fallback to
+the frozen constants). The term remains exactly (log 4π + γ)/(q+r)².
 
-Every attempted profile and outcome (in the required order):
-(350, 64, 48) → LDL INDETERMINATE; (500, 192, 112) → LDL INDETERMINATE;
-(700, 384, 160) → LDL INDETERMINATE; (900, 512, 224) → LDL INDETERMINATE;
-then, under the restricted profile-extension permission (all existing rungs exhausted and the
-failure diagnosed as purely numerical — every computed pivot midpoint positive, pivot 31
-mid ≈ 5.48×10⁻⁸⁸ with radius ≈ 6.71×10⁻⁸⁷ straddling zero), two monotone extensions:
-(1200, 768, 320) → LDL INDETERMINATE; (1600, 1024, 448) → LDL INDETERMINATE.
+Constant-radius diagnostics confirm the floor is gone — the boundary radius now contracts with
+precision instead of staying fixed: ≈2.0×10⁻¹⁰⁶ at 350 bits, ≈1.4×10⁻¹⁵¹ at 500, ≈8.7×10⁻²¹²
+at 700, ≈5.4×10⁻²⁷² at 900 (previously identical ≈4.4×10⁻¹⁰⁷ at 900 and 1600).
 
-**Obstruction (diagnosed exactly).** The engine's constants `EULER` and `LOG4PI` are
-evaluated once at module import at the then-active default precision (350 bits), freezing
-their ball radii at ≈ 2×10⁻¹⁰⁶. The boundary term (log 4π + γ)/(q+r)² therefore injects an
-irreducible ≈ 4.4×10⁻¹⁰⁷ radius into every matrix entry, **invariant under all profile
-parameters** (verified: identical entry radius at (900, 512, 224) and (1600, 1024, 448),
-while the T and J terms' radii are 10⁻²²⁶–10⁻²⁷¹). Amplified through the VᵀHV compression by
-H=7's large integer basis coefficients, pivot radii reach ≈ 6.7×10⁻⁸⁷, exceeding the smallest
-pivot magnitudes (≈ 5.5×10⁻⁸⁸). No monotone profile extension can pass below this floor. The
-repair — evaluating the two constants under the active profile precision — changes no formula
-but is an engine change outside MIG-039's profile-only permission, so generation stopped per
-the authorization. H ≤ 6 certificates are unaffected: their pivot scales (≥ 10⁻⁷⁰) sit far
-above the constant floor.
+The H=7 ladder was rerun from the base rung: (350, 64, 48) LDL INDETERMINATE; (500, 192, 112)
+LDL INDETERMINATE; **(700, 384, 160) certified** — 33×33 matrix LDL positive-definite, all 33
+eigenvalues residual-certified, pairwise disjoint, Weyl-widened, strictly positive, with
 
-**Classification.** This is a numerical-certification frontier, not a negative mathematical
-result: no midpoint evidence contradicts H=7 positivity, and no positivity is claimed. H=7
-remains uncertified; H=8+ remains unauthorized. No RH/SCC implication in either direction.
+    λ_min ≥ 4.101947712306630724476060955915436794880175738319424571 × 10⁻⁹².
+
+All 23 required certificate properties hold, including exact rational rank 33, exact Q₆ prefix
+nesting, the full 1,089-ball Hermitian grid, and provenance recording the boundary-constant
+mode as active-profile. A permanent H=7 matrix-to-residual binding adversarial test (tamper 16)
+is added and rejected downstream from the residual certificate.
+
+**Classification (unchanged, load-bearing).** H=7 is one additional finite restricted
+rational-height Weil test. It is not an RH theorem-step, provides no logical or probabilistic
+promotion toward universal Weil positivity, and licenses no RH/SCC/canonical-status change. The
+flint-free validator verifies the serialized matrix and proof objects; the analytic production
+link remains generation provenance. Certified heights are now H = 2, 3, 4, 5, 6, 7. H=8+ remains
+unauthorized. The independent Weil-core / SCC specialist review continues in parallel, logically
+separate.

@@ -46,8 +46,27 @@ def const_euler():
         return -s[1]
 
 PI = const_pi()
+# MIG-040: the module-level EULER/LOG4PI below are evaluated at import-time precision and
+# are RETAINED ONLY for provenance/diagnostic reference. The certified matrix-building path
+# MUST NOT use them for the boundary constant (they froze a ~2e-106 radius floor that no
+# profile could contract, blocking H=7). Use boundary_constant() instead, which evaluates
+# (log(4*pi) + EulerGamma) at the ACTIVE flint.ctx.prec and caches by exact precision.
 EULER = const_euler()
 LOG4PI = (arb(4) * PI).log()
+
+_boundary_const_cache = {}
+def boundary_constant():
+    """MIG-040: C_boundary = log(4*pi) + EulerGamma, evaluated at the CURRENTLY active
+    flint.ctx.prec and cached keyed by that exact precision. A ball created at one
+    precision is never returned for another. No fallback to the frozen 350-bit constants.
+    Formula unchanged: this is exactly log(4*pi) + gamma; only its evaluation precision moves."""
+    prec = flint.ctx.prec
+    cached = _boundary_const_cache.get(prec)
+    if cached is not None:
+        return cached
+    val = (arb(4) * arb.pi()).log() + const_euler()   # both at the active precision
+    _boundary_const_cache[prec] = val
+    return val
 
 # ---------- prime powers and Lambda ----------
 def prime_powers_upto(N):
@@ -162,7 +181,7 @@ def J_certified(q, r):
 
 # ---------- full entry ----------
 def H_entry_certified(q, r, N=64, M=48):
-    boundary = (LOG4PI + EULER) / arb(q + r) ** 2
+    boundary = boundary_constant() / arb(q + r) ** 2
     prime = T_certified(q, r, N, M) + T_certified(r, q, N, M)
     arch = J_certified(q, r)
     return -(arb(q) * arb(r)).sqrt() * (prime + boundary + arch)
@@ -264,6 +283,7 @@ def provenance(bits, N, M):
         "precision_bits": bits, "prime_head_N": N, "prime_tail_M": M,
         "python": platform.python_version(),
         "python_flint": getattr(flint, "__version__", "unknown"),
+        "boundary_constant_mode": "active-profile (MIG-040): log(4*pi)+EulerGamma evaluated at active flint.ctx.prec, cached by exact precision; not import-time",
         "flint_arb_note": "FLINT/Arb library versions not exposed by python-flint 0.8; bundled with wheel",
         "generator_script_sha256": hashlib.sha256(src).hexdigest(),
         "generation_start_commit": commit,
@@ -526,7 +546,7 @@ def J_certified_rational(q, r):
 def H_entry_rational(q, r, N=64, M=48):
     """Ambient Weil entry B_hat_W(U_q f0, U_r f0) for rational q,r."""
     qr = _arb_from_fraction(q) * _arb_from_fraction(r)
-    boundary = (LOG4PI + EULER) / (_arb_from_fraction(q) + _arb_from_fraction(r)) ** 2
+    boundary = boundary_constant() / (_arb_from_fraction(q) + _arb_from_fraction(r)) ** 2
     prime = T_certified_rational(q, r, N, M) + T_certified_rational(r, q, N, M)
     arch = J_certified_rational(q, r)
     return -qr.sqrt() * (prime + boundary + arch)
@@ -766,6 +786,7 @@ def _build_compressed(H, scales, V, base_bits, N, M):
     MAX_SCALE_RATIO = max(2, int(ratio) + 1)
     _S_cache.clear()
     flint.ctx.prec = base_bits
+    _bc = boundary_constant()  # MIG-040: built once at this profile's precision, reused for all entries
     n = len(scales)
     Hm = [[None] * n for _ in range(n)]
     for i in range(n):
