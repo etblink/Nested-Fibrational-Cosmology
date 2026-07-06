@@ -693,6 +693,113 @@ def _dyf(d):
     m = int(d["mantissa"]); e = int(d["exponent"])
     return Fr(m) * (Fr(2) ** e if e >= 0 else Fr(1, 2 ** (-e)))
 
+def _adaptive_rho(w2, s, B):
+    """MIG-043: rigorous exact dyadic upper bound rho = ceil(2^B * sqrt(w2/s^3)) / 2^B,
+    computed with integer/rational arithmetic only (no float). Postcondition rho^2 s^3 >= w2.
+    A zero exact residual (w2 == 0) receives rho = 0."""
+    from fractions import Fraction as Fr
+    from math import isqrt
+    if w2 == 0:
+        return Fr(0)
+    # eta^2 = w2 / s^3 = a/b ; rho = r/2^B with r = ceil(2^B * sqrt(a/b))
+    a = Fr(w2, s ** 3)
+    num = a.numerator * (1 << (2 * B))   # a * 2^{2B}
+    den = a.denominator
+    r = isqrt(num // den)
+    while r * r * den < num:              # ensure (r/2^B)^2 >= a  i.e.  r^2 den >= num
+        r += 1
+    rho = Fr(r, 1 << B)
+    assert rho * rho * s ** 3 >= w2
+    return rho
+
+def _candidate_quantities(Mm, base_prec, mult):
+    """MIG-043 Phase A: reproduce the residual method's candidate vectors at one
+    (profile, multiplier) and return exact per-candidate quantities. Does NOT change the
+    matrix, solver, profile, formula, enclosure, basis, or LDL."""
+    from fractions import Fraction as Fr
+    m = len(Mm)
+    A0 = [[_arb_exact_fraction(Mm[i][j].mid()) for j in range(m)] for i in range(m)]
+    Rinf_frac = max(sum(_arb_exact_fraction(Mm[i][j].rad()) for j in range(m)) for i in range(m))
+    P = flint.acb_mat([[acb(Mm[i][j].mid()) for j in range(m)] for i in range(m)])
+    saved = flint.ctx.prec
+    try:
+        flint.ctx.prec = base_prec * mult
+        vals, vecs = P.eig(right=True)
+        cand = []
+        for col in range(m):
+            v = [_arb_exact_fraction(vecs[i, col].real.mid()) for i in range(m)]
+            if all(x == 0 for x in v):
+                return None, Rinf_frac
+            s = sum(x * x for x in v)
+            Av = [sum(A0[i][j] * v[j] for j in range(m)) for i in range(m)]
+            p = sum(v[i] * Av[i] for i in range(m))
+            w = [s * Av[i] - p * v[i] for i in range(m)]
+            w2 = sum(x * x for x in w)
+            cand.append({"theta": Fr(p, s), "w2": w2, "s": s})
+        cand.sort(key=lambda c: c["theta"])
+        return cand, Rinf_frac
+    finally:
+        flint.ctx.prec = saved
+
+def _classify_candidate(cand, Rinf_frac, W):
+    """MIG-043 Phase A: 320-bit floor audit + B-ladder separation + Weyl, then classify."""
+    from fractions import Fraction as Fr
+    m = len(cand)
+    thetas = [c["theta"] for c in cand]
+    gaps = [thetas[i + 1] - thetas[i] for i in range(m - 1)]
+    min_gap = min(gaps); min_idx = gaps.index(min_gap)
+    # 320-bit floor audit
+    floor = Fr(1, 1 << 319)
+    rho320 = [_adaptive_rho(c["w2"], c["s"], 320) for c in cand]
+    at_floor = sum(1 for r in rho320 for _ in [0] if r == floor)
+    disj320 = all(thetas[i + 1] - rho320[i + 1] > thetas[i] + rho320[i] for i in range(m - 1))
+    # B-ladder (<= W, plus W), dedup
+    ladder = sorted({b for b in (320, 640, 1280, 2560, 5120, 10240, 20480) if b <= W} | {W})
+    ladder_results = {}
+    first_sep_B = None
+    sep_rhos = None
+    for B in ladder:
+        rhos = [_adaptive_rho(c["w2"], c["s"], B) for c in cand]
+        disj = all(thetas[i + 1] - rhos[i + 1] > thetas[i] + rhos[i] for i in range(m - 1))
+        ladder_results[B] = disj
+        if disj and first_sep_B is None:
+            first_sep_B = B; sep_rhos = rhos
+    # Weyl check at the first separating B
+    weyl_all_pos = None
+    if first_sep_B is not None:
+        weyl_all_pos = all((thetas[i] - sep_rhos[i] - Rinf_frac) > 0 for i in range(m))
+    # classification
+    if first_sep_B is None:
+        cls = "VECTOR-RESIDUAL-LIMITED"
+    elif not weyl_all_pos:
+        cls = "NONPOSITIVE-AFTER-WEYL"
+    elif disj320:
+        cls = "FULLY-SEPARABLE"
+    else:
+        cls = "QUANTIZATION-LIMITED"
+    return {
+        "dim": m,
+        "min_center_gap": [min_gap.numerator, min_gap.denominator],
+        "min_gap_indices": [min_idx, min_idx + 1],
+        "min_gap_float": float(min_gap),
+        "floor_2^-319_float": float(floor),
+        "candidates_at_floor_320": at_floor,
+        "min_gap_over_floor_float": float(min_gap / floor),
+        "disjoint_at_320": disj320,
+        "ladder_tested": ladder,
+        "ladder_disjoint": {str(B): ladder_results[B] for B in ladder},
+        "first_separating_B": first_sep_B,
+        "weyl_all_positive_at_first_sep": weyl_all_pos,
+        "classification": cls,
+        "failing_pairs_at_320": [
+            [i, i + 1,
+             [gaps[i].numerator, gaps[i].denominator],
+             float(gaps[i] - (rho320[i] + rho320[i + 1]))]
+            for i in range(m - 1)
+            if not (thetas[i + 1] - rho320[i + 1] > thetas[i] + rho320[i])
+        ],
+    }
+
 def _residual_eig_certificate(Mm, base_prec):
     """MIG-036: bind the midpoint spectrum to A_0 with an EXACT RATIONAL residual
     certificate the validator can recompute without flint.
@@ -713,9 +820,11 @@ def _residual_eig_certificate(Mm, base_prec):
     P = flint.acb_mat([[acb(Mm[i][j].mid()) for j in range(m)] for i in range(m)])
     saved = flint.ctx.prec
     result = None
+    resolution_bits = None
     try:
         for mult in (3, 6, 12, 20):
             flint.ctx.prec = base_prec * mult
+            W_prec = base_prec * mult
             vals, vecs = P.eig(right=True)
             cand = []
             good = True
@@ -728,23 +837,39 @@ def _residual_eig_certificate(Mm, base_prec):
                 p = sum(v[i] * Av[i] for i in range(m))
                 w = [s * Av[i] - p * v[i] for i in range(m)]
                 w2 = sum(x * x for x in w)
-                theta = Fr(p, s)
-                # dyadic rho with rho^2 s^3 >= w2  (=> ||A0 v - theta v|| <= rho ||v||)
-                rho2 = Fr(w2, s ** 3)
-                SCALE = 1 << 320
-                rs = isqrt((rho2.numerator * SCALE * SCALE) // rho2.denominator) + 2
-                rho = Fr(rs, SCALE)
-                if rho * rho * s ** 3 < w2:
-                    rho = rho * 2  # safety bump (should never trigger)
-                assert rho * rho * s ** 3 >= w2
-                cand.append({"theta": theta, "rho": rho, "v": v, "w2": w2, "s": s})
+                cand.append({"theta": Fr(p, s), "w2": w2, "s": s, "v": v})
             if not good:
                 continue
             cand.sort(key=lambda c: c["theta"])  # exact rational sort
-            disjoint = all(cand[i]["theta"] - cand[i]["rho"] > cand[i - 1]["theta"] + cand[i - 1]["rho"]
-                           for i in range(1, m))
-            if disjoint:
-                result = cand; break
+            # MIG-043: ADAPTIVE dyadic residual resolution. The former fixed SCALE = 1<<320
+            # imposed a rho floor of 2^-319 (~9.36e-97) regardless of eigenvector precision,
+            # which prevented separation whenever the center gap fell below that floor
+            # (the H=8 min gap is ~2.2e-103). We now select the SMALLEST bit resolution B on
+            # the deterministic ladder {320,640,...,20480,W} (<= W = working precision) at which
+            # every rho_i = ceil(2^B * sqrt(w2_i/s_i^3)) / 2^B (integer sqrt; rho^2 s^3 >= w2)
+            # yields pairwise-disjoint ordered intervals. Same theorem, same formula, same
+            # postcondition; only the grid fineness adapts.
+            ladder = sorted({b for b in (320, 640, 1280, 2560, 5120, 10240, 20480) if b <= W_prec} | {W_prec})
+            chosen = None
+            for B in ladder:
+                SCALE = 1 << B
+                rhos = []
+                for c in cand:
+                    rho2 = Fr(c["w2"], c["s"] ** 3)
+                    rs = isqrt((rho2.numerator * SCALE * SCALE) // rho2.denominator) + 2
+                    rho = Fr(rs, SCALE)
+                    if rho * rho * c["s"] ** 3 < c["w2"]:
+                        rho = rho * 2  # safety (never triggers)
+                    rhos.append(rho)
+                if all(cand[i]["theta"] - rhos[i] > cand[i - 1]["theta"] + rhos[i - 1] for i in range(1, m)):
+                    chosen = (B, rhos); break
+            if chosen is None:
+                continue  # residual isolation genuinely failed at this multiplier; escalate
+            B_used, rhos = chosen
+            for c, r in zip(cand, rhos):
+                c["rho"] = r
+            resolution_bits = B_used
+            result = cand; break
     finally:
         flint.ctx.prec = saved
     if result is None:
@@ -762,12 +887,12 @@ def _residual_eig_certificate(Mm, base_prec):
             "lower_decimal": _frac_to_decimal(lo, 45, ROUND_FLOOR),
             "upper_decimal": _frac_to_decimal(hi, 45, ROUND_CEILING),
         })
-        # rho serialized as dyadic upper bound (rho was built as rs/2^320)
+        # rho serialized as dyadic upper bound (adaptive B-ladder resolution, MIG-043)
         eigpairs.append({
             "v": [_dyadic_from_fraction(x) for x in c["v"]],
             "rho": _dyadic_from_fraction(c["rho"]),
         })
-    return eigpairs, enclosures, Rinf, Rinf_frac, all_pos
+    return eigpairs, enclosures, Rinf, Rinf_frac, all_pos, resolution_bits
 
 def _dyadic_from_fraction(fr):
     """Serialize an exact dyadic Fraction (denominator a power of 2) as {mantissa, exponent}.
@@ -830,7 +955,7 @@ def run_rational_height_certified(H, profiles=None):
     _sfr = [_Frac(s) for s in scales]
     max_ratio = max(_sfr) / min(_sfr)
     profile_dispositions = []
-    Mm = pivots = eigpairs = eig_encl_ser = None; Rinf = Rinf_frac = None; status = "INDETERMINATE"; base_bits = N = M = None
+    Mm = pivots = eigpairs = eig_encl_ser = None; Rinf = Rinf_frac = None; resolution_bits = None; status = "INDETERMINATE"; base_bits = N = M = None
     for (bb, NN, MM) in profiles:
         # MIG-042 structural-applicability guard: the prime-tail geometric expansion
         # requires N > r/q for every ordered pair, i.e. N > max_ratio (strict). A profile
@@ -855,17 +980,22 @@ def run_rational_height_certified(H, profiles=None):
             print(f"  profile bits={bb} N={NN} M={MM}: LDL {status} -> escalate")
             continue
         try:
-            eigpairs, eig_encl_ser, Rinf, Rinf_frac, all_pos = _residual_eig_certificate(Mm, bb)
+            eigpairs, eig_encl_ser, Rinf, Rinf_frac, all_pos, resolution_bits = _residual_eig_certificate(Mm, bb)
         except RuntimeError as ex:
+            profile_dispositions.append({"bits": bb, "N": NN, "M": MM, "outcome": "LDL PD; RESIDUAL-ISOLATION-FAILURE",
+                                         "detail": str(ex)})
             print(f"  profile bits={bb} N={NN} M={MM}: LDL PD but residual eig certificate failed ({ex}) -> escalate")
             status = "INDETERMINATE"
             continue
         if not all_pos:
+            profile_dispositions.append({"bits": bb, "N": NN, "M": MM, "outcome": "LDL PD; NONPOSITIVE-AFTER-WEYL"})
             print(f"  profile bits={bb} N={NN} M={MM}: LDL PD but a widened eigenvalue interval not strictly positive -> escalate")
             status = "INDETERMINATE"
             continue
-        print(f"  profile bits={bb} N={NN} M={MM}: LDL PD and eigenvalues residual-certified (disjoint, all positive)")
-        profile_dispositions.append({"bits": bb, "N": NN, "M": MM, "outcome": "CERTIFIED"})
+        print(f"  profile bits={bb} N={NN} M={MM}: LDL PD and eigenvalues residual-certified "
+              f"(disjoint at adaptive resolution B={resolution_bits}, all positive)")
+        profile_dispositions.append({"bits": bb, "N": NN, "M": MM, "outcome": "CERTIFIED",
+                                     "residual_resolution_bits": resolution_bits})
         break
     if status != "PD" or eigpairs is None:
         raise ValueError(f"H={H}: not fully certified at max profile (LDL {status})")
@@ -919,6 +1049,10 @@ def run_rational_height_certified(H, profiles=None):
         "eigenvalue_certificate": {
             "primary_pd_proof": True,
             "residual_theorem": "Hermitian residual: exists eigenvalue in [theta-rho, theta+rho] when ||A0 v - theta v||_2 <= rho ||v||_2",
+            "residual_resolution_bits": resolution_bits,
+            "residual_resolution_note": ("MIG-043 adaptive dyadic resolution: rho_i = ceil(2^B sqrt(w2_i/s_i^3))/2^B "
+                                         "at the smallest ladder B in {320,640,...,W} giving pairwise-disjoint "
+                                         "ordered intervals (replaces the fixed 2^-320 grid; same theorem/formula)."),
             "eigenpairs": eigpairs,
             "R_inf_upper": Rinf_cert,
         },

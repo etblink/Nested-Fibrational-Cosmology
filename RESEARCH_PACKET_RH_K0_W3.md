@@ -182,54 +182,47 @@ separate.
 
 ---
 
-# MIG-041 → MIG-042 — H=8: Applicability Guard Added; Residual-Isolation Obstruction Remains
+# MIG-042 → MIG-043 — H=8 Certified After Removing the Fixed Residual-Resolution Floor
 
-MIG-041 delivered H=8 as a profile-applicability obstruction: the base profile (350, 64, 48)
-is structurally inapplicable because its prime-head N=64 does not exceed the maximum ordered
-scale ratio 64 (the geometric-tail precondition N > r/q). MIG-042 adds the authorized exact
-structural-applicability guard: before matrix construction, `run_rational_height_certified`
-computes max_ratio = max(Q_H)/min(Q_H) as an exact `Fraction` and records any profile with
-N ≤ max_ratio as STRUCTURALLY INAPPLICABLE, skipping it (the backstop assertion inside
-`T_certified_rational` is retained; no broad exception-catching; no hardcoded 64 or H²). Guard
-regressions verified: H=7 @ (350,64,48) applicable (64 > 49); H=8 @ (350,64,48) inapplicable
-(64 ≤ 64); H=8 @ (500,192,112) applicable (192 > 64); predicate derived from the actual scale
-set; QH2–QH7 unchanged.
+MIG-042's applicability guard let the H=8 ladder reach the applicable profiles, where it hit
+an apparent residual-isolation obstruction. Independent review found the true cause: the
+residual radii were quantized on a **fixed 320-bit grid** (`SCALE = 1 << 320` in the residual
+certificate), forcing every rho_i to at least 2^-319 ~ 9.36e-97 regardless of eigenvector
+precision. Confirmed on the accepted H=7 certificate — all 33 residual radii are exactly
+2^-319. The MIG-042 conclusion "isolation failed at 32,000-bit precision" was confounded by
+this floor.
 
-With the guard, the H=8 ladder now reaches the applicable profiles. Complete profile history:
+**Phase A (mandatory exact diagnostic, `metadata/weil_QH8_residual_diagnostic.json`).** For all
+four LDL-PD H=8 profiles across eigenvector multipliers, the exact minimum center gap is
+2.215e-103 — about 7 orders BELOW the 2^-319 floor (gap/floor ~ 2.37e-7) — so the fixed grid
+cannot separate the intervals while any finer grid can. Across 14 evaluated candidate sets the
+classification is unanimous **QUANTIZATION-LIMITED**, first separating resolution B = 640, with
+strictly positive Weyl-widened endpoints. (Profile (1600,1024,448) at multipliers 12/20 was
+omitted as computationally infeasible and purely confirmatory; the gap is profile-invariant and
+identical across every completed set.)
 
-    (350,  64, 48)  STRUCTURALLY INAPPLICABLE (N=64 ≤ max_ratio 64; skipped, no matrix built)
-    (500, 192,112)  LDL INDETERMINATE
-    (700, 384,160)  LDL PD, residual-certificate isolation FAILED (no disjoint ordered intervals)
-    (900, 512,224)  LDL PD, residual-certificate isolation FAILED
-    (1200,768,320)  LDL PD, residual-certificate isolation FAILED
-    (1600,1024,448) LDL PD, residual-certificate isolation FAILED
+**Phase B (adaptive dyadic resolution).** The fixed `SCALE = 1<<320` is replaced by selection of
+the smallest resolution B on the deterministic ladder {320, 640, ..., W} at which every
+rho_i = ceil(2^B sqrt(w2_i/s_i^3))/2^B (integer sqrt; postcondition rho^2 s^3 >= w2) yields
+pairwise-disjoint ordered intervals. Same residual theorem, same formula, same postcondition;
+only the grid fineness adapts. Regression: at B=320 the rho computation is byte-for-byte the
+prior one, so H=2..7 are unaffected (their residual radii still separate at B=320 and the
+committed certificates are byte-identical).
 
-**H=8 is NOT certified.** The obstruction is new and distinct from both MIG-039 (radius floor)
-and MIG-041 (applicability). At profiles 3–6 the interval LDL certifies positive-definiteness
-rigorously (every pivot has a positive lower endpoint), so the compressed matrix is very likely
-PD; but the *required primary proof object* — the exact-rational residual certificate — cannot
-isolate the dense 41-dimensional midpoint spectrum into 41 pairwise-disjoint ordered intervals,
-even with eigenvector working precision escalated to 32,000 bits (base 1600 × mult 20). As the
-dimension grows the eigenvalues cluster, and the residual method needs each interval half-width
-ρᵢ below half the local spectral gap; for at least one near-degenerate pair the achievable ρᵢ at
-the authorized precisions exceeds the gap.
+With the floor removed, H=8 certifies: base profile (350,64,48) STRUCTURALLY INAPPLICABLE
+(guard), (500,192,112) LDL INDETERMINATE, and **(700,384,160) certified** at adaptive
+resolution B=640 — 41x41 matrix, LDL positive-definite, 41 residual-certified pairwise-disjoint
+Weyl-widened strictly-positive eigenvalue intervals, exact basis rank 41, exact Q_7 prefix
+nesting, full 1,681-ball Hermitian grid, with
 
-This is a residual-isolation obstruction, **not** a positivity failure in either direction: the
-rigorous interval-LDL result points to PD, and nothing contradicts it. Per the MIG-042 failure
-condition it is delivered as an obstruction, not converted into positivity by LDL alone,
-heuristic eigenvalues, floating-point ordering, or widened tolerances.
+    lambda_min >= 1.829499551208489978550227918870928544987041219354483175 x 10^-106.
 
-**Diagnostic recommended before the next authorization.** Measure the minimum midpoint spectral
-gap of the H=8 compressed matrix. If the gap is nonzero but small (isolable at higher precision),
-the resolution is an authorized profile-only extension (higher monotone bits) that raises the
-eigenvector precision past the gap. If the gap reflects genuine near-degeneracy at dim 41, the
-resolution is an algorithmic enhancement to the residual certificate (a cluster-aware /
-Kato–Temple subspace enclosure that certifies a tight *interval containing k eigenvalues*
-without isolating them individually) — which is beyond the profile-only and guard permissions and
-would require its own authorization. Determining which was not attempted here, as it needs either
-a profile extension or an algorithmic change, both outside MIG-042's authorized scope.
+All required certificate properties hold; the flint-free validator recomputes the residual
+certificate at B=640 and accepts. Permanent tamper 17 (H=8 matrix-to-residual binding) is added
+and rejected downstream from the residual bound.
 
-**Classification (unchanged, load-bearing).** No H=8 result exists in either direction. Certified
-heights remain exactly H = 2, 3, 4, 5, 6, 7 — finite restricted rational-height Weil tests, not
-RH theorem-steps, no RH/SCC/canonical-status implication. Permanent tamper 17 (H=8
-matrix-to-residual binding) is deferred until an H=8 certificate exists. H=9+ remains unauthorized.
+**Classification (unchanged, load-bearing).** H=8 is one additional finite restricted
+rational-height Weil test. It is not an RH theorem-step, provides no logical or probabilistic
+promotion toward universal Weil positivity, and licenses no RH/SCC/canonical-status change.
+Certified heights are now H = 2, 3, 4, 5, 6, 7, 8. H=9+ remains unauthorized. The independent
+Weil-core / SCC specialist review continues in parallel, logically separate.
