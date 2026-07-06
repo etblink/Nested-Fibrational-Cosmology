@@ -81,6 +81,8 @@ metadata/weil_QH4_certificate.json
 metadata/weil_QH5_certificate.json
 metadata/weil_QH6_certificate.json
 metadata/weil_QH7_certificate.json
+metadata/weil_QH8_certificate.json
+metadata/weil_QH8_residual_diagnostic.json
 migrations/MAINTENANCE_MIGRATION_v1.1.md
 migrations/MIGRATIONS.md
 release/ARCHIVE_MANIFEST_v1.0.sha256
@@ -96,6 +98,7 @@ scripts/compile_check.sh
 scripts/extract_metadata.py
 scripts/generate_state_of_canon.py
 scripts/make_release.sh
+scripts/mig043_diagnostic.py
 scripts/release_test.sh
 scripts/validate.py
 scripts/weil_engine.py
