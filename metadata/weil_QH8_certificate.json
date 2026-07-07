@@ -27614,7 +27614,9 @@
       "N": 384,
       "M": 160,
       "outcome": "CERTIFIED",
-      "residual_resolution_bits": 640
+      "residual_resolution_bits": 640,
+      "eigenvector_multiplier": 3,
+      "eigenvector_working_precision_bits": 2100
     }
   ],
   "max_ratio_exact": [
@@ -28245,7 +28247,14 @@
     "primary_pd_proof": true,
     "residual_theorem": "Hermitian residual: exists eigenvalue in [theta-rho, theta+rho] when ||A0 v - theta v||_2 <= rho ||v||_2",
     "residual_resolution_bits": 640,
-    "residual_resolution_note": "MIG-043 adaptive dyadic resolution: rho_i = ceil(2^B sqrt(w2_i/s_i^3))/2^B at the smallest ladder B in {320,640,...,W} giving pairwise-disjoint ordered intervals (replaces the fixed 2^-320 grid; same theorem/formula).",
+    "residual_resolution_note": "MIG-043/044 adaptive dyadic resolution: rho_i = ceil(2^B sqrt(w2_i/s_i^3))/2^B (exact integer-sqrt ceiling, no unconditional +2, no safety doubling; single shared _adaptive_rho implementation used by both production and diagnostic) at the smallest ladder B in {320,640,...,W} giving pairwise-disjoint ordered intervals (replaces the fixed 2^-320 grid; same theorem/formula).",
+    "eigenvector_multiplier": 3,
+    "eigenvector_working_precision_bits": 2100,
+    "working_precision_identity": "profile_bits * multiplier",
+    "working_precision_check": true,
+    "canonical_encoding_version": "MIG044-canon-v1",
+    "midpoint_matrix_sha256": "eab6380c8182582fecd23169e446c5f6557353fbda9f9c330e74ae39440373e7",
+    "ordered_witness_sha256": "c2738b13dd6c6ddde341cc40a6911a64820b85d5dce175756dbfb16c134b8aa0",
     "eigenpairs": [
       {
         "v": [
@@ -28416,7 +28425,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -28588,7 +28597,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -28760,7 +28769,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -28932,7 +28941,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -29104,7 +29113,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -29276,7 +29285,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -29448,7 +29457,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -29620,7 +29629,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -29792,7 +29801,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -29964,7 +29973,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -30136,7 +30145,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -30308,7 +30317,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -30480,7 +30489,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -30652,7 +30661,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -30824,7 +30833,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -30996,7 +31005,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -31168,7 +31177,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -31340,7 +31349,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -31512,7 +31521,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -31684,7 +31693,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -31856,7 +31865,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -32028,7 +32037,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -32200,7 +32209,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -32372,7 +32381,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -32544,7 +32553,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -32716,7 +32725,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -32888,7 +32897,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -33060,7 +33069,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -33232,7 +33241,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -33404,7 +33413,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -33576,7 +33585,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -33748,7 +33757,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -33920,7 +33929,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -34092,7 +34101,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -34264,7 +34273,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -34436,7 +34445,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -34608,7 +34617,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -34780,7 +34789,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -34952,7 +34961,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -35124,7 +35133,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       },
       {
@@ -35296,7 +35305,7 @@
         ],
         "rho": {
           "mantissa": "1",
-          "exponent": -639
+          "exponent": -640
         }
       }
     ],
@@ -35516,8 +35525,8 @@
     "python_flint": "0.9.0",
     "boundary_constant_mode": "active-profile (MIG-040): log(4*pi)+EulerGamma evaluated at active flint.ctx.prec, cached by exact precision; not import-time",
     "flint_arb_note": "FLINT/Arb library versions not exposed by python-flint 0.8; bundled with wheel",
-    "generator_script_sha256": "db760df09295591b3051efaa6a27d60a9072a2183087e464b3ac3d82beeb215f",
-    "generation_start_commit": "1f3b0e8",
+    "generator_script_sha256": "cbacd87aca74a5ee92ab03d58796943df1d392c6ec7806b903d782224ba43752",
+    "generation_start_commit": "15e9167",
     "prime_tail_bound": "sum_{m>M} <= C rho^{M+1}((M+2)-(M+1)rho)/(1-rho)^2, rho=r/(qN), C=2(logN+2)/(sqrt(N) q^2), added outward",
     "archimedean": "u=1/t substitution to [0,1]; removable u=1 singularity cancelled by exact rational polynomial division; Arb acb_calc certified integration",
     "classification": "restricted finite Weil test (K0-W1 sec.7); no RH-progress claim; no zero-location input on certified track"

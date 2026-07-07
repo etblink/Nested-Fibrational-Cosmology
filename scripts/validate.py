@@ -267,6 +267,43 @@ def main():
         for iv in Ivs: se=se+iv
         if not tr.overlaps(se):
             errs.append(f"{_fn}: [sanity] trace enclosure disjoint from sum(eigenvalues)")
+        # --- MIG-044 item E: residual-provenance validation (only for certificates that
+        # carry the new fields; pre-MIG-044 certificates, e.g. H<=7, are unaffected). ---
+        if "midpoint_matrix_sha256" in ec:
+            import hashlib as _hashlib
+            CANON_V = "MIG044-canon-v1"
+            def _cdy(d): return f"{int(d['mantissa'])}:{int(d['exponent'])}"
+            # E.4: recompute the canonical midpoint-matrix hash from the SERIALIZED matrix
+            mid_parts = [_cdy(B[f"{i}_{j}"]["mid_dyadic"]) for i in range(m) for j in range(m)]
+            recomputed_mid_hash = _hashlib.sha256((CANON_V + "|MID|" + ";".join(mid_parts)).encode("ascii")).hexdigest()
+            if recomputed_mid_hash != ec["midpoint_matrix_sha256"]:
+                errs.append(f"{_fn}: recomputed midpoint_matrix_sha256 does not match serialized matrix (counterfeit)")
+            # E.5: recompute the canonical ordered-witness hash from the SERIALIZED witnesses
+            wit_rows = [",".join(_cdy(d) for d in pr["v"]) for pr in pairs]
+            recomputed_wit_hash = _hashlib.sha256((CANON_V + "|WIT|" + "|".join(wit_rows)).encode("ascii")).hexdigest()
+            if recomputed_wit_hash != ec["ordered_witness_sha256"]:
+                errs.append(f"{_fn}: recomputed ordered_witness_sha256 does not match serialized witnesses (counterfeit)")
+            # E.3: certificate generator hash equals the actual generator file (if accessible)
+            try:
+                actual_gen_hash = _hashlib.sha256(open("scripts/weil_engine.py", "rb").read()).hexdigest()
+                if c.get("provenance", {}).get("generator_script_sha256") != actual_gen_hash:
+                    errs.append(f"{_fn}: certificate generator_script_sha256 does not match scripts/weil_engine.py")
+            except FileNotFoundError:
+                pass
+            # E.7: multiplier belongs to the declared multiplier ladder
+            mult = ec.get("eigenvector_multiplier")
+            if mult not in (3, 6, 12, 20):
+                errs.append(f"{_fn}: eigenvector_multiplier {mult} not in declared ladder (3,6,12,20)")
+            # E.8: working precision == profile bits * multiplier
+            wprec = ec.get("eigenvector_working_precision_bits")
+            pbits = c.get("profile", {}).get("bits")
+            if wprec != (pbits * mult if isinstance(mult, int) and isinstance(pbits, int) else None):
+                errs.append(f"{_fn}: eigenvector_working_precision_bits {wprec} != profile bits {pbits} * multiplier {mult}")
+            # E.9: selected B belongs to the deterministic resolution ladder and satisfies B <= working precision
+            Bsel = ec.get("residual_resolution_bits")
+            ladder_vals = {320, 640, 1280, 2560, 5120, 10240, 20480}
+            if not (isinstance(Bsel, int) and isinstance(wprec, int) and Bsel <= wprec and (Bsel in ladder_vals or Bsel == wprec)):
+                errs.append(f"{_fn}: residual_resolution_bits {Bsel} not on the deterministic ladder or exceeds working precision {wprec}")
         return errs
 
     if _os.path.exists("metadata/weil_M3_result.json"):
@@ -389,6 +426,47 @@ def main():
         if isinstance(nst,dict) and nst.get("previous_H") is not None and not nst.get("prefix_verified"):
             cert_issues.append(f"{_fn}: nesting.prefix_verified is not True")
     if cert_issues: fails.append("Weil certificate failures:\n    "+"\n    ".join(cert_issues))
+
+    # 7b. MIG-044: residual-resolution diagnostic artifact validation (weil_QH*_residual_diagnostic.json).
+    # A diagnostic file is supplemental evidence, never itself a positivity certificate; it is
+    # validated for (i) internal self-consistency (self-hash) and (ii) binding to the delivered
+    # generator and to the certificate it supports (load-bearing candidate's matrix/witness hashes).
+    diag_issues=[]
+    import hashlib as _hashlib2, os as _os3, re as _re4
+    for _dfn in (sorted(_os3.listdir("metadata")) if _os3.path.isdir("metadata") else []):
+        if not (_dfn.startswith("weil_QH") and _dfn.endswith("_residual_diagnostic.json")): continue
+        d=_json.load(open(f"metadata/{_dfn}"))
+        # E.1: diagnostic self-hash recomputable after excluding only the self-hash field
+        claimed=d.get("diagnostic_sha256")
+        recomputed=_hashlib2.sha256(
+            _json.dumps({k:v for k,v in d.items() if k!="diagnostic_sha256"}, sort_keys=True).encode()
+        ).hexdigest()
+        if claimed!=recomputed:
+            diag_issues.append(f"{_dfn}: diagnostic_sha256 does not match recomputation from its own contents")
+        # E.2: diagnostic generator hash equals the actual generator file
+        try:
+            actual_gen=_hashlib2.sha256(open("scripts/weil_engine.py","rb").read()).hexdigest()
+            if d.get("generator_sha256")!=actual_gen:
+                diag_issues.append(f"{_dfn}: generator_sha256 does not match scripts/weil_engine.py")
+        except FileNotFoundError:
+            pass
+        # E.6: the load-bearing candidate's matrix/witness hashes equal the certificate's
+        lb=d.get("load_bearing_candidate")
+        if isinstance(lb, dict):
+            hnum=_re4.search(r"weil_QH(\d+)_residual_diagnostic", _dfn)
+            if hnum:
+                _certpath=f"metadata/weil_QH{hnum.group(1)}_certificate.json"
+                if _os3.path.exists(_certpath):
+                    _cert=_json.load(open(_certpath))
+                    _cec=_cert.get("eigenvalue_certificate",{})
+                    if lb.get("midpoint_matrix_sha256")!=_cec.get("midpoint_matrix_sha256"):
+                        diag_issues.append(f"{_dfn}: load_bearing_candidate midpoint hash does not match {_certpath}")
+                    if lb.get("ordered_witness_sha256")!=_cec.get("ordered_witness_sha256"):
+                        diag_issues.append(f"{_dfn}: load_bearing_candidate witness hash does not match {_certpath}")
+                    if not (lb.get("midpoint_hash_matches_certificate") and lb.get("witness_hash_matches_certificate")
+                            and lb.get("generator_hash_matches_certificate")):
+                        diag_issues.append(f"{_dfn}: load_bearing_candidate self-reports a binding mismatch")
+    if diag_issues: fails.append("Residual-diagnostic failures:\n    "+"\n    ".join(diag_issues))
 
     # 8b. MIG-033: displayed-interval enclosure. Two guarantees:
     #   (i)  the canonical directed-rounded display (floor lower / ceiling upper,

@@ -80,7 +80,7 @@ PY
   _check_tamper_output "$rc" "$out" "$desc"
 }
 
-echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12; MIG-037 13-14; MIG-038 15; MIG-040 16; MIG-043 17):"
+echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12; MIG-037 13-14; MIG-038 15; MIG-040 16; MIG-043 17; MIG-044 18):"
 tamper_must_fail "counterfeit H=3 (H=2 payload, H:3 name)" metadata/weil_QH3_certificate.json \
   'q2=json.load(open("metadata/weil_QH2_certificate.json")); c["scales"]=q2["scales"]; c["basis"]=q2["basis"]; c["dim"]=q2["dim"]; c["pivots"]=q2["pivots"]'
 tamper_must_fail "broken moment identity in basis[0]" metadata/weil_QH2_certificate.json \
@@ -208,5 +208,17 @@ v=_D(2)**-40; _r=_D(int(rd["mantissa"]))*(_D(2)**int(rd["exponent"]))
 b["mid_decimal"]=format(v,".45e")
 b["lower_decimal"]=format(v-_r-_D(10)**-50,".45e"); b["upper_decimal"]=format(v+_r+_D(10)**-50,".45e")
 b["sign_certified"]="positive"'
+
+# --- MIG-044 permanent test (provenance-binding attack) ---
+
+# 18. Alter the serialized H=8 ordered-witness hash (a single hex character) while leaving
+#     the matrix, witness vectors, residual radii, and eigenvalue enclosures byte-identical.
+#     Must reject cleanly via the hash-recomputation mismatch (item E.5), not via any other
+#     check (matrix/vectors/radii/enclosures are untouched so all other checks still pass).
+tamper_must_fail "H=8 ordered-witness hash altered (provenance-binding attack)" metadata/weil_QH8_certificate.json \
+  'ec=c["eigenvalue_certificate"]
+h=ec["ordered_witness_sha256"]
+flipped = ("0" if h[0]!="0" else "1") + h[1:]
+ec["ordered_witness_sha256"]=flipped'
 
 exit $fail

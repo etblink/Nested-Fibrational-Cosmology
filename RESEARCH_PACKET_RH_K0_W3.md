@@ -182,47 +182,60 @@ separate.
 
 ---
 
-# MIG-042 → MIG-043 — H=8 Certified After Removing the Fixed Residual-Resolution Floor
+# MIG-043 → MIG-044 — H=8 Governance Reconciliation
 
-MIG-042's applicability guard let the H=8 ladder reach the applicable profiles, where it hit
-an apparent residual-isolation obstruction. Independent review found the true cause: the
-residual radii were quantized on a **fixed 320-bit grid** (`SCALE = 1 << 320` in the residual
-certificate), forcing every rho_i to at least 2^-319 ~ 9.36e-97 regardless of eigenvector
-precision. Confirmed on the accepted H=7 certificate — all 33 residual radii are exactly
-2^-319. The MIG-042 conclusion "isolation failed at 32,000-bit precision" was confounded by
-this floor.
+MIG-043's H=8 certificate was independently verified as mathematically sound, but migration
+closure was withheld pending five governance/reproducibility corrections. MIG-044 makes those
+corrections; the H=8 mathematical result and classification are unchanged.
 
-**Phase A (mandatory exact diagnostic, `metadata/weil_QH8_residual_diagnostic.json`).** For all
-four LDL-PD H=8 profiles across eigenvector multipliers, the exact minimum center gap is
-2.215e-103 — about 7 orders BELOW the 2^-319 floor (gap/floor ~ 2.37e-7) — so the fixed grid
-cannot separate the intervals while any finer grid can. Across 14 evaluated candidate sets the
-classification is unanimous **QUANTIZATION-LIMITED**, first separating resolution B = 640, with
-strictly positive Weyl-widened endpoints. (Profile (1600,1024,448) at multipliers 12/20 was
-omitted as computationally infeasible and purely confirmatory; the gap is profile-invariant and
-identical across every completed set.)
+**1. Unauthorized path.** `scripts/mig043_diagnostic.py` (added in MIG-043 without being one of
+its eight authorized paths) is now explicitly authorized as a retained diagnostic driver.
 
-**Phase B (adaptive dyadic resolution).** The fixed `SCALE = 1<<320` is replaced by selection of
-the smallest resolution B on the deterministic ladder {320, 640, ..., W} at which every
-rho_i = ceil(2^B sqrt(w2_i/s_i^3))/2^B (integer sqrt; postcondition rho^2 s^3 >= w2) yields
-pairwise-disjoint ordered intervals. Same residual theorem, same formula, same postcondition;
-only the grid fineness adapts. Regression: at B=320 the rho computation is byte-for-byte the
-prior one, so H=2..7 are unaffected (their residual radii still separate at B=320 and the
-committed certificates are byte-identical).
+**2. Coverage honesty.** The diagnostic sweep evaluates 14 of 16 (4 LDL-PD profiles x 4
+eigenvector multipliers) candidate sets; the 1600-bit profile's multipliers 12 and 20 (19,200-
+and 32,000-bit working precision) are computationally infeasible on ~2x10^5-bit exact-rational
+integers and are explicitly recorded as NOT evaluated. The artifact is labeled **14/16
+SUPPLEMENTAL COVERAGE** and no longer claims exhaustive coverage. The load-bearing evidence for
+certification is instead a single **completely-bound candidate set** -- the exact (profile,
+multiplier) combination that produced the delivered certificate -- which independently
+demonstrates failure at B=320, separation at the selected B, exact residual inequalities, and
+strict Weyl positivity, with its matrix and witness hashes cross-bound to the certificate.
 
-With the floor removed, H=8 certifies: base profile (350,64,48) STRUCTURALLY INAPPLICABLE
-(guard), (500,192,112) LDL INDETERMINATE, and **(700,384,160) certified** at adaptive
-resolution B=640 — 41x41 matrix, LDL positive-definite, 41 residual-certified pairwise-disjoint
-Weyl-widened strictly-positive eigenvalue intervals, exact basis rank 41, exact Q_7 prefix
-nesting, full 1,681-ball Hermitian grid, with
+**3. Exact production radius.** The production path in `_residual_eig_certificate` previously
+used a separate, looser `isqrt(...)+2`-with-safety-doubling formula instead of the diagnostic's
+exact-ceiling `_adaptive_rho` (rho = ceil(2^B sqrt(w2/s^3))/2^B, integer sqrt only, no
+unconditional "+2", no undocumented safety doubling). Both paths now call the SAME
+implementation. Effect on the delivered H=8 witnesses: every residual radius is now exactly
+2^-640 (previously 2^-639). QH2-QH7 are unaffected and remain byte-identical (not regenerated).
 
-    lambda_min >= 1.829499551208489978550227918870928544987041219354483175 x 10^-106.
+**4/5. Provenance binding.** The certificate now explicitly serializes
+`eigenvector_multiplier`, `eigenvector_working_precision_bits`, the
+working-precision identity (bits x multiplier) with a verified-boolean check,
+`canonical_encoding_version`, `midpoint_matrix_sha256`, and `ordered_witness_sha256` --
+canonical SHA-256 hashes of the exact dyadic midpoint matrix and the ordered (residual-center
+order) witness vector set, using a version-tagged deterministic encoding (mantissa:exponent,
+fixed separators, no whitespace). The diagnostic artifact is bound to the same generator and to
+the certificate's hashes via its `load_bearing_candidate` section, and carries its own
+recomputable self-hash. `scripts/validate.py` was extended (narrowly, as authorized) to check
+all of this: diagnostic self-hash; diagnostic and certificate generator-hash agreement with the
+actual engine file; certificate midpoint/witness hash recomputation from the serialized payload;
+cross-binding of the diagnostic's load-bearing hashes to the certificate; multiplier ladder
+membership; the working-precision identity; and resolution-ladder membership. A permanent
+provenance-binding adversarial test (tamper 18: alter the serialized witness hash, leaving the
+matrix/vectors/radii/enclosures untouched) is added and rejected cleanly; tamper 17 continues to
+reject specifically through the matrix-to-residual inequality, not incidentally through the new
+hash checks.
 
-All required certificate properties hold; the flint-free validator recomputes the residual
-certificate at B=640 and accepts. Permanent tamper 17 (H=8 matrix-to-residual binding) is added
-and rejected downstream from the residual bound.
+**Result.** H=8 recertifies at the same profile (700,384,160), multiplier 3, adaptive resolution
+B=640, with
 
-**Classification (unchanged, load-bearing).** H=8 is one additional finite restricted
-rational-height Weil test. It is not an RH theorem-step, provides no logical or probabilistic
-promotion toward universal Weil positivity, and licenses no RH/SCC/canonical-status change.
-Certified heights are now H = 2, 3, 4, 5, 6, 7, 8. H=9+ remains unauthorized. The independent
-Weil-core / SCC specialist review continues in parallel, logically separate.
+    lambda_min >= 1.829499551208489978550227918870928544987041219354483175 x 10^-106
+
+-- bit-for-bit identical to the pre-reconciliation value at the printed precision (the
+tightened radius only affects the final bit, invisible at 56 significant digits).
+
+**Classification (unchanged, load-bearing).** H=8 remains one finite restricted rational-height
+Weil test. Nothing in this reconciliation licenses an RH theorem-step, inference toward
+universal Weil positivity, SCC promotion, or canonical-status change. Certified heights: H = 2,
+3, 4, 5, 6, 7, 8. H=9+ remains unauthorized. The independent Weil-core / SCC specialist review
+continues in parallel, logically separate.

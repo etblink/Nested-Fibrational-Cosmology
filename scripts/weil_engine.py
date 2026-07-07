@@ -693,6 +693,40 @@ def _dyf(d):
     m = int(d["mantissa"]); e = int(d["exponent"])
     return Fr(m) * (Fr(2) ** e if e >= 0 else Fr(1, 2 ** (-e)))
 
+CANON_ENCODING_VERSION = "MIG044-canon-v1"
+
+def _canon_dyadic_str(man, exp):
+    """Deterministic encoding of one dyadic value: signed decimal mantissa, colon,
+    signed decimal exponent. No whitespace or locale-dependent formatting."""
+    return f"{int(man)}:{int(exp)}"
+
+def _canonical_midpoint_hash(Mm):
+    """MIG-044 item C.1: canonical SHA-256 of the exact dyadic midpoint matrix.
+    Row-major order; each entry's exact midpoint encoded by _canon_dyadic_str;
+    fixed ';' separator between entries. Version-prefixed so the encoding is unambiguous."""
+    parts = []
+    for row in Mm:
+        for x in row:
+            man, exp = x.mid().man_exp()
+            parts.append(_canon_dyadic_str(man, exp))
+    blob = (CANON_ENCODING_VERSION + "|MID|" + ";".join(parts)).encode("ascii")
+    return hashlib.sha256(blob).hexdigest()
+
+def _canonical_witness_hash(ordered_vectors):
+    """MIG-044 item C.2: canonical SHA-256 of the ordered (residual-center order) witness
+    vector set. Each vector's coordinates in coordinate order, each exact dyadic Fraction
+    encoded by the same mantissa/exponent rule as the midpoint matrix; fixed ',' separator
+    within a vector and '|' separator between vectors."""
+    rows = []
+    for v in ordered_vectors:
+        coords = []
+        for x in v:
+            d = _dyadic_from_fraction(x)
+            coords.append(_canon_dyadic_str(d["mantissa"], d["exponent"]))
+        rows.append(",".join(coords))
+    blob = (CANON_ENCODING_VERSION + "|WIT|" + "|".join(rows)).encode("ascii")
+    return hashlib.sha256(blob).hexdigest()
+
 def _adaptive_rho(w2, s, B):
     """MIG-043: rigorous exact dyadic upper bound rho = ceil(2^B * sqrt(w2/s^3)) / 2^B,
     computed with integer/rational arithmetic only (no float). Postcondition rho^2 s^3 >= w2.
@@ -735,7 +769,7 @@ def _candidate_quantities(Mm, base_prec, mult):
             p = sum(v[i] * Av[i] for i in range(m))
             w = [s * Av[i] - p * v[i] for i in range(m)]
             w2 = sum(x * x for x in w)
-            cand.append({"theta": Fr(p, s), "w2": w2, "s": s})
+            cand.append({"theta": Fr(p, s), "w2": w2, "s": s, "v": v})
         cand.sort(key=lambda c: c["theta"])
         return cand, Rinf_frac
     finally:
@@ -791,10 +825,29 @@ def _classify_candidate(cand, Rinf_frac, W):
         "first_separating_B": first_sep_B,
         "weyl_all_positive_at_first_sep": weyl_all_pos,
         "classification": cls,
+        # MIG-044 item D.5: full exact data for every pair failing at B=320 (not just
+        # the gap and a float margin) -- adjacent indices, exact center gap, exact s_i/s_i+1,
+        # exact w2_i/w2_i+1, exact eta2_i/eta2_i+1 (= w2/s^3), exact B=320 radii, exact margin.
         "failing_pairs_at_320": [
-            [i, i + 1,
-             [gaps[i].numerator, gaps[i].denominator],
-             float(gaps[i] - (rho320[i] + rho320[i + 1]))]
+            {
+                "indices": [i, i + 1],
+                "exact_center_gap": [gaps[i].numerator, gaps[i].denominator],
+                "exact_s": [cand[i]["s"], cand[i + 1]["s"]],
+                "exact_w2": [cand[i]["w2"], cand[i + 1]["w2"]],
+                "exact_eta2": [
+                    [Fr(cand[i]["w2"], cand[i]["s"] ** 3).numerator, Fr(cand[i]["w2"], cand[i]["s"] ** 3).denominator],
+                    [Fr(cand[i + 1]["w2"], cand[i + 1]["s"] ** 3).numerator, Fr(cand[i + 1]["w2"], cand[i + 1]["s"] ** 3).denominator],
+                ],
+                "exact_rho_at_320": [
+                    [rho320[i].numerator, rho320[i].denominator],
+                    [rho320[i + 1].numerator, rho320[i + 1].denominator],
+                ],
+                "exact_separation_margin": [
+                    (gaps[i] - (rho320[i] + rho320[i + 1])).numerator,
+                    (gaps[i] - (rho320[i] + rho320[i + 1])).denominator,
+                ],
+                "separation_margin_float": float(gaps[i] - (rho320[i] + rho320[i + 1])),
+            }
             for i in range(m - 1)
             if not (thetas[i + 1] - rho320[i + 1] > thetas[i] + rho320[i])
         ],
@@ -812,7 +865,6 @@ def _residual_eig_certificate(Mm, base_prec):
     midpoint spectrum. Widening each by the recomputed ||R||_inf encloses the true spectrum.
     Ordering uses EXACT rational comparison of p_i/s_i (no float)."""
     from fractions import Fraction as Fr
-    from math import isqrt
     m = len(Mm)
     A0 = [[_arb_exact_fraction(Mm[i][j].mid()) for j in range(m)] for i in range(m)]
     Rinf_frac = max(sum(_arb_exact_fraction(Mm[i][j].rad()) for j in range(m)) for i in range(m))
@@ -821,6 +873,8 @@ def _residual_eig_certificate(Mm, base_prec):
     saved = flint.ctx.prec
     result = None
     resolution_bits = None
+    selected_mult = None
+    selected_W_prec = None
     try:
         for mult in (3, 6, 12, 20):
             flint.ctx.prec = base_prec * mult
@@ -841,26 +895,17 @@ def _residual_eig_certificate(Mm, base_prec):
             if not good:
                 continue
             cand.sort(key=lambda c: c["theta"])  # exact rational sort
-            # MIG-043: ADAPTIVE dyadic residual resolution. The former fixed SCALE = 1<<320
-            # imposed a rho floor of 2^-319 (~9.36e-97) regardless of eigenvector precision,
-            # which prevented separation whenever the center gap fell below that floor
-            # (the H=8 min gap is ~2.2e-103). We now select the SMALLEST bit resolution B on
-            # the deterministic ladder {320,640,...,20480,W} (<= W = working precision) at which
-            # every rho_i = ceil(2^B * sqrt(w2_i/s_i^3)) / 2^B (integer sqrt; rho^2 s^3 >= w2)
-            # yields pairwise-disjoint ordered intervals. Same theorem, same formula, same
-            # postcondition; only the grid fineness adapts.
+            # MIG-044 correction: the production path now calls the SAME _adaptive_rho
+            # helper used by the diagnostic (exact ceiling rho = ceil(2^B sqrt(w2/s^3))/2^B,
+            # integer sqrt only, no unconditional "+2", no undocumented safety doubling).
+            # Previously this loop duplicated a separate, looser isqrt(...)+2-with-safety-
+            # doubling formula; that defect is removed. We select the SMALLEST B on the
+            # deterministic ladder {320,640,...,20480,W} (<= W = working precision) at which
+            # every rho_i (via _adaptive_rho) yields pairwise-disjoint ordered intervals.
             ladder = sorted({b for b in (320, 640, 1280, 2560, 5120, 10240, 20480) if b <= W_prec} | {W_prec})
             chosen = None
             for B in ladder:
-                SCALE = 1 << B
-                rhos = []
-                for c in cand:
-                    rho2 = Fr(c["w2"], c["s"] ** 3)
-                    rs = isqrt((rho2.numerator * SCALE * SCALE) // rho2.denominator) + 2
-                    rho = Fr(rs, SCALE)
-                    if rho * rho * c["s"] ** 3 < c["w2"]:
-                        rho = rho * 2  # safety (never triggers)
-                    rhos.append(rho)
+                rhos = [_adaptive_rho(c["w2"], c["s"], B) for c in cand]
                 if all(cand[i]["theta"] - rhos[i] > cand[i - 1]["theta"] + rhos[i - 1] for i in range(1, m)):
                     chosen = (B, rhos); break
             if chosen is None:
@@ -869,11 +914,17 @@ def _residual_eig_certificate(Mm, base_prec):
             for c, r in zip(cand, rhos):
                 c["rho"] = r
             resolution_bits = B_used
+            selected_mult = mult
+            selected_W_prec = W_prec
             result = cand; break
     finally:
         flint.ctx.prec = saved
     if result is None:
         raise RuntimeError("residual eig certificate: could not obtain disjoint ordered midpoint intervals")
+    # MIG-044 item B/C: canonical provenance hashes binding this exact matrix and this
+    # exact ordered witness set (residual-center order) to the certificate.
+    midpoint_hash = _canonical_midpoint_hash(Mm)
+    witness_hash = _canonical_witness_hash([c["v"] for c in result])
     # widened enclosures (exact) and serialization
     eigpairs = []
     enclosures = []
@@ -887,12 +938,21 @@ def _residual_eig_certificate(Mm, base_prec):
             "lower_decimal": _frac_to_decimal(lo, 45, ROUND_FLOOR),
             "upper_decimal": _frac_to_decimal(hi, 45, ROUND_CEILING),
         })
-        # rho serialized as dyadic upper bound (adaptive B-ladder resolution, MIG-043)
+        # rho serialized as dyadic upper bound (adaptive B-ladder resolution, exact ceiling)
         eigpairs.append({
             "v": [_dyadic_from_fraction(x) for x in c["v"]],
             "rho": _dyadic_from_fraction(c["rho"]),
         })
-    return eigpairs, enclosures, Rinf, Rinf_frac, all_pos, resolution_bits
+    provenance = {
+        "eigenvector_multiplier": selected_mult,
+        "eigenvector_working_precision_bits": selected_W_prec,
+        "working_precision_identity": "profile_bits * multiplier",
+        "working_precision_check": (selected_W_prec == base_prec * selected_mult),
+        "canonical_encoding_version": CANON_ENCODING_VERSION,
+        "midpoint_matrix_sha256": midpoint_hash,
+        "ordered_witness_sha256": witness_hash,
+    }
+    return eigpairs, enclosures, Rinf, Rinf_frac, all_pos, resolution_bits, provenance
 
 def _dyadic_from_fraction(fr):
     """Serialize an exact dyadic Fraction (denominator a power of 2) as {mantissa, exponent}.
@@ -955,7 +1015,7 @@ def run_rational_height_certified(H, profiles=None):
     _sfr = [_Frac(s) for s in scales]
     max_ratio = max(_sfr) / min(_sfr)
     profile_dispositions = []
-    Mm = pivots = eigpairs = eig_encl_ser = None; Rinf = Rinf_frac = None; resolution_bits = None; status = "INDETERMINATE"; base_bits = N = M = None
+    Mm = pivots = eigpairs = eig_encl_ser = None; Rinf = Rinf_frac = None; resolution_bits = None; residual_provenance = None; status = "INDETERMINATE"; base_bits = N = M = None
     for (bb, NN, MM) in profiles:
         # MIG-042 structural-applicability guard: the prime-tail geometric expansion
         # requires N > r/q for every ordered pair, i.e. N > max_ratio (strict). A profile
@@ -980,7 +1040,7 @@ def run_rational_height_certified(H, profiles=None):
             print(f"  profile bits={bb} N={NN} M={MM}: LDL {status} -> escalate")
             continue
         try:
-            eigpairs, eig_encl_ser, Rinf, Rinf_frac, all_pos, resolution_bits = _residual_eig_certificate(Mm, bb)
+            eigpairs, eig_encl_ser, Rinf, Rinf_frac, all_pos, resolution_bits, residual_provenance = _residual_eig_certificate(Mm, bb)
         except RuntimeError as ex:
             profile_dispositions.append({"bits": bb, "N": NN, "M": MM, "outcome": "LDL PD; RESIDUAL-ISOLATION-FAILURE",
                                          "detail": str(ex)})
@@ -993,9 +1053,11 @@ def run_rational_height_certified(H, profiles=None):
             status = "INDETERMINATE"
             continue
         print(f"  profile bits={bb} N={NN} M={MM}: LDL PD and eigenvalues residual-certified "
-              f"(disjoint at adaptive resolution B={resolution_bits}, all positive)")
+              f"(disjoint at adaptive resolution B={resolution_bits}, mult={residual_provenance['eigenvector_multiplier']}, all positive)")
         profile_dispositions.append({"bits": bb, "N": NN, "M": MM, "outcome": "CERTIFIED",
-                                     "residual_resolution_bits": resolution_bits})
+                                     "residual_resolution_bits": resolution_bits,
+                                     "eigenvector_multiplier": residual_provenance["eigenvector_multiplier"],
+                                     "eigenvector_working_precision_bits": residual_provenance["eigenvector_working_precision_bits"]})
         break
     if status != "PD" or eigpairs is None:
         raise ValueError(f"H={H}: not fully certified at max profile (LDL {status})")
@@ -1050,9 +1112,18 @@ def run_rational_height_certified(H, profiles=None):
             "primary_pd_proof": True,
             "residual_theorem": "Hermitian residual: exists eigenvalue in [theta-rho, theta+rho] when ||A0 v - theta v||_2 <= rho ||v||_2",
             "residual_resolution_bits": resolution_bits,
-            "residual_resolution_note": ("MIG-043 adaptive dyadic resolution: rho_i = ceil(2^B sqrt(w2_i/s_i^3))/2^B "
+            "residual_resolution_note": ("MIG-043/044 adaptive dyadic resolution: rho_i = ceil(2^B sqrt(w2_i/s_i^3))/2^B "
+                                         "(exact integer-sqrt ceiling, no unconditional +2, no safety doubling; single "
+                                         "shared _adaptive_rho implementation used by both production and diagnostic) "
                                          "at the smallest ladder B in {320,640,...,W} giving pairwise-disjoint "
                                          "ordered intervals (replaces the fixed 2^-320 grid; same theorem/formula)."),
+            "eigenvector_multiplier": residual_provenance["eigenvector_multiplier"],
+            "eigenvector_working_precision_bits": residual_provenance["eigenvector_working_precision_bits"],
+            "working_precision_identity": residual_provenance["working_precision_identity"],
+            "working_precision_check": residual_provenance["working_precision_check"],
+            "canonical_encoding_version": residual_provenance["canonical_encoding_version"],
+            "midpoint_matrix_sha256": residual_provenance["midpoint_matrix_sha256"],
+            "ordered_witness_sha256": residual_provenance["ordered_witness_sha256"],
             "eigenpairs": eigpairs,
             "R_inf_upper": Rinf_cert,
         },
