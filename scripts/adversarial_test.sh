@@ -80,7 +80,7 @@ PY
   _check_tamper_output "$rc" "$out" "$desc"
 }
 
-echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12; MIG-037 13-14; MIG-038 15; MIG-040 16; MIG-043 17; MIG-044 18):"
+echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12; MIG-037 13-14; MIG-038 15; MIG-040 16; MIG-043 17; MIG-044 18; MIG-045 19):"
 tamper_must_fail "counterfeit H=3 (H=2 payload, H:3 name)" metadata/weil_QH3_certificate.json \
   'q2=json.load(open("metadata/weil_QH2_certificate.json")); c["scales"]=q2["scales"]; c["basis"]=q2["basis"]; c["dim"]=q2["dim"]; c["pivots"]=q2["pivots"]'
 tamper_must_fail "broken moment identity in basis[0]" metadata/weil_QH2_certificate.json \
@@ -220,5 +220,34 @@ tamper_must_fail "H=8 ordered-witness hash altered (provenance-binding attack)" 
 h=ec["ordered_witness_sha256"]
 flipped = ("0" if h[0]!="0" else "1") + h[1:]
 ec["ordered_witness_sha256"]=flipped'
+
+# --- MIG-045 permanent test (H=9 hash-aware matrix-to-residual counterfeit) ---
+
+# 19. Alter one H=9 diagonal matrix midpoint substantially, RECOMPUTE midpoint_matrix_sha256
+#     under the accepted canonical encoding so the provenance hash stays internally
+#     consistent with the tampered matrix (defeating a naive stale-hash check), while
+#     preserving nonnegative radius, valid displayed outward endpoints, and Hermitian
+#     structure, and leaving all residual witnesses, radii, and eigenvalue enclosures
+#     unchanged. Rejection must arise from the exact residual/spectral binding (the
+#     unchanged witness vectors no longer satisfy their residual bound against the altered
+#     A0), NOT from a stale matrix hash, malformed JSON, negative radius, broken Hermitian
+#     symmetry, or invalid displayed endpoints.
+tamper_must_fail "H=9 diagonal midpoint altered with recomputed matrix hash (hash-aware counterfeit)" metadata/weil_QH9_certificate.json \
+  'B=c["compressed_matrix_balls"]
+b=B["9_9"]
+rd=b["radius_dyadic"]
+from decimal import Decimal as _D, getcontext as _gc
+_gc().prec=80
+b["mid_dyadic"]={"mantissa":"1","exponent":-40}
+v=_D(2)**-40; _r=_D(int(rd["mantissa"]))*(_D(2)**int(rd["exponent"]))
+b["mid_decimal"]=format(v,".45e")
+b["lower_decimal"]=format(v-_r-_D(10)**-50,".45e"); b["upper_decimal"]=format(v+_r+_D(10)**-50,".45e")
+b["sign_certified"]="positive"
+dim=c["dim"]
+def _cdy(d): return str(int(d["mantissa"])) + ":" + str(int(d["exponent"]))
+parts=[_cdy(B[f"{i}_{j}"]["mid_dyadic"]) for i in range(dim) for j in range(dim)]
+import hashlib as _hl
+recomputed=_hl.sha256(("MIG044-canon-v1|MID|"+";".join(parts)).encode("ascii")).hexdigest()
+c["eigenvalue_certificate"]["midpoint_matrix_sha256"]=recomputed'
 
 exit $fail

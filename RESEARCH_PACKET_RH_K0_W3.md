@@ -239,3 +239,43 @@ Weil test. Nothing in this reconciliation licenses an RH theorem-step, inference
 universal Weil positivity, SCC promotion, or canonical-status change. Certified heights: H = 2,
 3, 4, 5, 6, 7, 8. H=9+ remains unauthorized. The independent Weil-core / SCC specialist review
 continues in parallel, logically separate.
+
+---
+
+# MIG-045 — H=9 Certified Rational-Height Weil Test
+
+H=9 is certified using the accepted structural-applicability guard, active-profile boundary
+constant, exact-ceiling adaptive residual radii, and MIG-044 provenance-binding format,
+without any engine change. Q9 contains exactly 55 ordered reduced rational scales with Q8 as
+its exact ordered prefix (length 43); the exact maximum scale ratio is 81. The base profile
+(350,64,48) is STRUCTURALLY INAPPLICABLE (64 <= 81) and is correctly skipped by the existing
+guard. The two-moment nullspace has dimension 53 (53 basis vectors of length 55, both moment
+identities exact per vector, exact rational rank 53). Profiles (500,192,112) and
+(700,384,160) are LDL INDETERMINATE; **(900,512,224) certifies**: 53x53 Hermitian
+dyadic-ball matrix (2,809 entries), LDL positive-definite, 53 residual-certified
+pairwise-disjoint Weyl-widened strictly-positive eigenvalue intervals at eigenvector
+multiplier 3, working precision 2,700 bits, adaptive resolution B=640, with
+
+    lambda_min >= 6.151990046628809826938542867495171925044805315583451888 x 10^-128.
+
+All 30 required certificate properties are verified, including exact deterministic equality
+with Q_height(9), exact rank 53, complete profile history (STRUCTURALLY INAPPLICABLE / LDL
+INDETERMINATE / CERTIFIED), explicit multiplier/precision/resolution provenance, canonical
+midpoint and witness SHA-256 hashes, generator-hash agreement, and boundary_constant_mode
+recorded as active-profile. The restricted profile-extension permission was not triggered
+(no engine change was needed or made).
+
+A permanent H=9 hash-aware matrix-to-residual counterfeit (adversarial test 19) is added: a
+diagonal midpoint is altered substantially while the midpoint_matrix_sha256 is recomputed
+under the accepted canonical encoding to stay internally consistent with the tampered
+matrix, defeating a naive stale-hash check. It is rejected downstream through the exact
+residual bound (the unchanged witness vector no longer satisfies its residual inequality
+against the altered matrix), confirmed by direct inspection of the validator's reported
+reason, not through a hash mismatch, malformed JSON, or broken Hermitian structure.
+
+**Classification (unchanged, load-bearing).** H=9 is one additional finite restricted
+rational-height Weil test. It is not an RH theorem-step, does not constitute logical or
+probabilistic evidence from finite-height positivity toward universal Weil positivity, and
+licenses no RH, SCC, or canonical-status promotion. Certified heights: H = 2, 3, 4, 5, 6, 7,
+8, 9. H=10+ remains unauthorized. The independent Weil-core / SCC specialist review
+continues in parallel, logically separate.
