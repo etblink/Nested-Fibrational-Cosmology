@@ -83,6 +83,7 @@ metadata/weil_QH6_certificate.json
 metadata/weil_QH7_certificate.json
 metadata/weil_QH8_certificate.json
 metadata/weil_QH8_residual_diagnostic.json
+metadata/weil_QH9_certificate.json
 migrations/MAINTENANCE_MIGRATION_v1.1.md
 migrations/MIGRATIONS.md
 release/ARCHIVE_MANIFEST_v1.0.sha256
