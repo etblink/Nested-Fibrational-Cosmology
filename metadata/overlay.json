@@ -50,11 +50,13 @@
     "reviewer_note": "S1-ARC-0 PAUSED (F4, 2026-07-03) and now additionally gated on RH-K0 (kernel-criterion audit) upstream of RH-P0 (probe-space repair). Order: K0 -> P0 -> S1-ARC-0."
   },
   "def:scc-admissible-probes": {
+    "review_packet": "MIG-048",
     "review_needed": true,
     "reviewer_note": "F4 GATE (2026-07-03): SCC-M3 (f(qx)=f(x), all q in Q^x) + SCC-M4 (f in L^2(R_+,dx/x)) jointly force f=0 a.e. (g(t)=f(e^t) is log2-periodic with finite L^2(R) norm). Probe space is trivial as written. [D]-level re-declaration required; research program RH-P0 opened. No canon edit authorized yet.",
     "last_reviewed": "2026-07-03"
   },
   "thm:scc-rh-equivalence": {
+    "review_packet": "MIG-048",
     "review_needed": true,
     "reviewer_note": "K0+F4 GATES (2026-07-03, upd. MIG-022): inherits prop:rh-kernel-positivity defects D1-D3 PLUS its own D4 (Mellin-Plancherel domain error): the proof claims Gaussians fail SCC-M4, but psi_gamma=e^{-(tau-gamma)^2} IS the Mellin transform of an explicit L^2(dx/x) function (verified); Gaussians fail only SCC-M3 as written. Also F4: trivial probe space under current Def; restriction-only converse gap. Kernel/multiplier mismatch visible in this theorem's own display. Gated on RH-K0 then RH-P0.",
     "last_reviewed": "2026-07-03"
@@ -64,16 +66,19 @@
     "last_reviewed": "2026-07-03"
   },
   "def:rh-kernel": {
+    "review_packet": "MIG-048",
     "review_needed": true,
     "reviewer_note": "K0 GATE (2026-07-03): F is declared as a difference kernel K(t,u)=F(t-u) but used downstream as a spectral multiplier (Q=int F|psi|^2); the displayed zero-sum has a sign error (leading minus makes sigma>1/2 contributions POSITIVE) and functional-equation partners rho and 1-conj(rho) cancel exactly in the displayed Re sum. Regularization (zeta'/zeta '~') undefined. See RESEARCH_PACKET_RH_K0.md.",
     "last_reviewed": "2026-07-03"
   },
   "prop:rh-kernel-positivity": {
+    "review_packet": "MIG-048",
     "review_needed": true,
     "reviewer_note": "K0 GATE (2026-07-03): three independent defects verified against the text: (1) proof asserts 'negative bump' for sigma>1/2 but the definition's leading minus makes that contribution positive; (2) partner zeros at 1-sigma+i*gamma cancel it exactly (Re xi'/xi vanishes on the critical line off zeros, RH or not), so the displayed sum cannot detect off-critical pairs; (3) even granting a bump, a positive-definite function may take negative values (cos t), so the equivalence step is invalid for the declared difference kernel. [C] proposition's claimed equivalence is unestablished as written. See RESEARCH_PACKET_RH_K0.md.",
     "last_reviewed": "2026-07-03"
   },
   "rem:scc-rh-governance": {
+    "review_packet": "MIG-048",
     "review_needed": true,
     "reviewer_note": "D4/K0 GATE (2026-07-03): this remark repeats (a) that the Theorem 'establishes' the RH equivalence (unestablished as written: defects D1-D3) and (b) that the M1-M4 restriction 'excludes artificial localization probes' - the theorem's Gaussian-exclusion argument is wrong on M4 (D4, Mellin-Plancherel domain error: psi_gamma = Mellin of f_gamma(x)=(1/(2 sqrt(pi))) x^{-i gamma} exp(-(log x)^2/4) in L^2(dx/x), verified). Gaussians fail only SCC-M3 as written; M2 undecidable until formalized. Gated on RH-K0.",
     "last_reviewed": "2026-07-03"
