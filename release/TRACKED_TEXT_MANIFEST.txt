@@ -75,6 +75,7 @@ metadata/views.json
 metadata/weil_M3_result.json
 metadata/weil_M4_certificate.json
 metadata/weil_Q12_certificates.json
+metadata/weil_QH10_certificate.json
 metadata/weil_QH2_certificate.json
 metadata/weil_QH3_certificate.json
 metadata/weil_QH4_certificate.json
