@@ -279,3 +279,38 @@ probabilistic evidence from finite-height positivity toward universal Weil posit
 licenses no RH, SCC, or canonical-status promotion. Certified heights: H = 2, 3, 4, 5, 6, 7,
 8, 9. H=10+ remains unauthorized. The independent Weil-core / SCC specialist review
 continues in parallel, logically separate.
+
+---
+
+# MIG-047 — H=10 Certified Rational-Height Weil Test
+
+H=10 is certified with the accepted machinery unchanged (guard, active-profile boundary
+constant, exact-ceiling adaptive residual, MIG-044 canonical hashing; engine and validator
+byte-identical to MIG-044). Q10 = 63 ordered reduced scales with Q9 as its exact ordered
+prefix (55); exact max ratio 100; base profile (350,64,48) STRUCTURALLY INAPPLICABLE
+(64 <= 100, skipped, no matrix built); (500,192,112) and (700,384,160) LDL INDETERMINATE;
+**(900,512,224) certifies**: 61x61 Hermitian dyadic-ball matrix (3,721 entries), LDL-PD,
+61 residual-certified pairwise-disjoint Weyl-widened strictly-positive eigenvalue intervals
+at multiplier 3, working precision 2,700 bits, adaptive resolution B=640 (all 61 radii
+exactly 2^-640), with
+
+    lambda_min >= 3.067234911366905072790276317367011771743557885459758895 x 10^-138.
+
+All 30 required certificate properties verified, including exact deterministic equality
+with Q_height(10), exact rank 61, complete profile history, explicit
+multiplier/precision/resolution provenance, canonical midpoint and witness SHA-256 hashes,
+generator-hash agreement, boundary_constant_mode active-profile, and generation_start_commit
+recorded as the FULL accepted MIG-045 head hash aee3942dfb3b6170fdfba16c9957d3b850145241
+(per the MIG-047 authorization; achieved via repo-local git core.abbrev=40 configuration,
+no engine change). The restricted profile-extension permission was not triggered.
+
+Permanent adversarial test 20 (H=10 hash-aware matrix-to-residual counterfeit, mirroring
+tamper 19) is added and rejected through the exact residual bound with an internally
+consistent recomputed provenance hash.
+
+**Classification (unchanged, load-bearing).** H=10 is one additional finite restricted
+rational-height Weil test. It is not an RH theorem-step, does not constitute logical or
+probabilistic evidence from finitely many positive matrices toward universal Weil
+positivity, and licenses no RH, SCC, or canonical-status promotion. Certified heights:
+H = 2, 3, 4, 5, 6, 7, 8, 9, 10. H=11+ remains unauthorized. The independent Weil-core /
+SCC specialist review continues in parallel, logically separate.

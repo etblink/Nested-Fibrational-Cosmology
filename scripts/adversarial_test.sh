@@ -80,7 +80,7 @@ PY
   _check_tamper_output "$rc" "$out" "$desc"
 }
 
-echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12; MIG-037 13-14; MIG-038 15; MIG-040 16; MIG-043 17; MIG-044 18; MIG-045 19):"
+echo "Adversarial validator tests (MIG-032 1-5; MIG-033 6-7; MIG-035 8-11; MIG-036 12; MIG-037 13-14; MIG-038 15; MIG-040 16; MIG-043 17; MIG-044 18; MIG-045 19; MIG-047 20):"
 tamper_must_fail "counterfeit H=3 (H=2 payload, H:3 name)" metadata/weil_QH3_certificate.json \
   'q2=json.load(open("metadata/weil_QH2_certificate.json")); c["scales"]=q2["scales"]; c["basis"]=q2["basis"]; c["dim"]=q2["dim"]; c["pivots"]=q2["pivots"]'
 tamper_must_fail "broken moment identity in basis[0]" metadata/weil_QH2_certificate.json \
@@ -246,6 +246,32 @@ b["sign_certified"]="positive"
 dim=c["dim"]
 def _cdy(d): return str(int(d["mantissa"])) + ":" + str(int(d["exponent"]))
 parts=[_cdy(B[f"{i}_{j}"]["mid_dyadic"]) for i in range(dim) for j in range(dim)]
+import hashlib as _hl
+recomputed=_hl.sha256(("MIG044-canon-v1|MID|"+";".join(parts)).encode("ascii")).hexdigest()
+c["eigenvalue_certificate"]["midpoint_matrix_sha256"]=recomputed'
+
+# --- MIG-047 permanent test (H=10 hash-aware matrix-to-residual counterfeit) ---
+
+# 20. Same hash-aware attack against H=10: alter a diagonal midpoint substantially,
+#     RECOMPUTE midpoint_matrix_sha256 under the accepted canonical encoding (internally
+#     consistent provenance), preserve radius/Hermitian/displayed endpoints, leave
+#     witnesses/radii/enclosures unchanged. Must reject via the exact residual/spectral
+#     binding, not a stale hash. NOTE: mutate block is bash-single-quoted -- it must
+#     contain ZERO literal single-quote characters (MIG-045 lesson).
+tamper_must_fail "H=10 diagonal midpoint altered with recomputed matrix hash (hash-aware counterfeit)" metadata/weil_QH10_certificate.json \
+  'B=c["compressed_matrix_balls"]
+b=B["10_10"]
+rd=b["radius_dyadic"]
+from decimal import Decimal as _D, getcontext as _gc
+_gc().prec=80
+b["mid_dyadic"]={"mantissa":"1","exponent":-40}
+v=_D(2)**-40; _r=_D(int(rd["mantissa"]))*(_D(2)**int(rd["exponent"]))
+b["mid_decimal"]=format(v,".45e")
+b["lower_decimal"]=format(v-_r-_D(10)**-50,".45e"); b["upper_decimal"]=format(v+_r+_D(10)**-50,".45e")
+b["sign_certified"]="positive"
+dim=c["dim"]
+def _cdy(d): return str(int(d["mantissa"])) + ":" + str(int(d["exponent"]))
+parts=[_cdy(B[str(i)+"_"+str(j)]["mid_dyadic"]) for i in range(dim) for j in range(dim)]
 import hashlib as _hl
 recomputed=_hl.sha256(("MIG044-canon-v1|MID|"+";".join(parts)).encode("ascii")).hexdigest()
 c["eigenvalue_certificate"]["midpoint_matrix_sha256"]=recomputed'
