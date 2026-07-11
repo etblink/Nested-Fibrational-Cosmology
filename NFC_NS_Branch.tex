@@ -774,14 +774,20 @@ $\sum_{k < n} \log \Theta_k^{-1}$.
 \begin{definition}[\status{D}]\label{def:NS-decay-predicate}
 The \emph{active NS decay predicate} is the
 \emph{multiplicative window-to-window contraction condition}:
-the NS obstruction quantity satisfies
+the NS obstruction quantity satisfies, for some integer
+$m \geq 1$ and branch constant
+$\lambda_{\mathrm{NS}} \in (0,1)$,
 \[
- \mathcal{O}_{\mathrm{NS}}(W_{k+1})
+ \mathcal{O}_{\mathrm{NS}}(W_{k+m})
  \;\leq\;
  \lambda_{\mathrm{NS}}\,\mathcal{O}_{\mathrm{NS}}(W_k)
 \]
-for some branch constant $\lambda_{\mathrm{NS}} \in (0,1)$
-throughout the stated regime, whenever
+throughout the stated regime (MIG-050 reclassification: the former
+$m=1$ display is the special case; the $m$-step geometric form is a
+narrowing-or-equal replacement, since every downstream consumer uses
+only eventual geometric decay; its satisfaction in the NS branch is
+conditional on \textsc{idc} and $\alpha$ --- see
+Thm.~\ref{thm:NSL1}), whenever
 $\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$ for
 some threshold constant $T_{\mathrm{NS}} > 0$.
 \end{definition}
@@ -797,18 +803,21 @@ the stated regime, then the active NS persistence/extendibility
 continuation criterion holds in the promoted target scope.
 \end{theorem}
 \begin{proof}
-Under the declared conditions, the multiplicative window-to-window
-contraction holds by Theorem~\ref{thm:NS61-global} (NS.6.1 Full
-Scope, §\ref{sec:ns61-global}): with $\kappa \leq 1-8/343 < 1$
-certified explicitly (Thm.~\ref{thm:NS-kappa-explicit}), the
-imbalance decays geometrically. The promotion to the active
-target scope is then direct from the upstream stack: the
-window-uniformity hypothesis (Thm.~\ref{thm:NS-window-uniformity})
+The multiplicative window-to-window contraction condition is this
+theorem's hypothesis. (In the present branch its satisfaction is
+supplied by the reconditioned Thm.~\ref{thm:NSP1c} in the $m$-step
+form and is therefore conditional on \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
+\eqref{hyp:NS-alpha}; MIG-050. The ledger-side contraction
+$\mathfrak{D}_{n+1}\leq\kappa\,\mathfrak{D}_n$ of
+Thm.~\ref{thm:NS61-global}, with $\kappa \leq 1-8/343$ from
+Thm.~\ref{thm:NS-kappa-explicit}, transfers to the imbalance only
+through the same bridge.) Given the hypothesis, the
+window-uniformity theorem (Thm.~\ref{thm:NS-window-uniformity})
 extends the contraction uniformly across all sufficiently late
-windows of the active architecture
-(Thm.~\ref{thm:NS61-global}), and the positive reserve of
-Theorem~\ref{thm:NS-SB2-discharged} excludes degenerate
-window collapse. A uniformly geometrically decaying
+windows of the active architecture, and the positive reserve of
+Theorem~\ref{thm:NS-SB2-discharged} (reconditioned) excludes
+degenerate window collapse. A uniformly geometrically decaying
 transport-weighted imbalance cannot obstruct continuation on any
 window of the declared regime; hence the active NS
 persistence/extendibility continuation criterion holds in the
@@ -824,13 +833,21 @@ Corollary~\ref{cor:NS61-discharged}: the window-uniformity hypothesis
 after the Q2a determinism resolution of
 Thms.~\ref{thm:NS-window-determinism}--\ref{cor:NS-eventual-periodicity})
 supplies the missing uniformity, and
-Thm.~\ref{thm:NS61-global} supplies the explicit contraction bound
-$\kappa \le 1 - 8/343$. The NS.6.1 conditional is therefore closed
-at Phase-A, $K_0=7$, LS-2 scope. The active frontier advances to
-NS.7.1 (Thm.~\ref{thm:NS71}), which requires only the Book~VI
-$H^1_x$-norm interface legitimacy and is also already conditionally
-proved. The NS branch therefore reaches domain-bounded CERT-CLOSE
-conditionally (Cor.~\ref{cor:NS-both-give-endpoint}).
+Thm.~\ref{thm:NS61-global} supplies the explicit ledger
+contraction bound $\kappa \le 1 - 8/343$. \emph{MIG-050
+reconditioning:} the NS.6.1 conditional closes at Phase-A, $K_0=7$,
+LS-2 scope \emph{with the hypothesis set enlarged by the named open
+hypotheses \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
+\eqref{hyp:NS-alpha}} (the satisfaction of the contraction
+condition, and the ledger-to-imbalance transfer, both pass through
+them). The active frontier advances to NS.7.1
+(Thm.~\ref{thm:NS71}), which requires only the Book~VI $H^1_x$-norm
+interface legitimacy and is conditionally proved on the same
+enlarged hypothesis set. The NS branch therefore reaches
+domain-bounded CERT-CLOSE conditionally
+(Cor.~\ref{cor:NS-both-give-endpoint}), \emph{conditional
+additionally on \textsc{idc} and $\alpha$}.
 \end{remark}
 
 \begin{corollary}[\status{C}]\label{cor:NS61-consequence}
@@ -846,7 +863,8 @@ promoted continuation criterion.
 \begin{theorem}[\status{C}]\label{thm:NS71}
 \textup{(Continuation-Criterion-to-Endpoint Theorem, NS.7.1.)}
 \textup{[Conditional on NS.6.1 discharged
-(Cor.~\ref{cor:NS61-discharged}), Book~III source-descended
+(Cor.~\ref{cor:NS61-discharged}, whose hypothesis set includes
+\textsc{idc} and $\alpha$ per MIG-050), Book~III source-descended
 coercive structure, and Book~VI interface legitimacy for the
 $H^1_x$-norm.]}
 If the active NS persistence/extendibility continuation criterion
@@ -861,7 +879,10 @@ Under NS.6.1 (Cor.~\ref{cor:NS61-discharged}), the
 transport-weighted imbalance quantity satisfies the multiplicative
 contraction $\mathfrak{D}_{n+1} \leq \kappa^{n-n_0}
 \mathfrak{D}_{n_0} \to 0$ uniformly, certifying lawful
-continuability throughout the promoted target scope.
+continuability throughout the promoted target scope (the
+identification of the contracting ledger quantity with the
+transport-weighted imbalance is part of $\alpha$,
+Eq.~\eqref{hyp:NS-alpha}).
 
 \textbf{Step~1 (Grönwall control from contraction).}
 The mismatch decay $\mathfrak{D}_n \to 0$ at rate $\kappa^n$
@@ -908,7 +929,10 @@ claim are independently auditable.
 \begin{corollary}[\status{C}]\label{cor:NS-both-give-endpoint}
 \textup{(NS Domain-Bounded CERT-CLOSE.)}
 \textup{[Conditional on NS.6.1 (Cor.~\ref{cor:NS61-discharged})
-and NS.7.1 (Thm.~\ref{thm:NS71}).]}
+and NS.7.1 (Thm.~\ref{thm:NS71}), whose hypothesis sets include the
+named open hypotheses \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
+\eqref{hyp:NS-alpha} per MIG-050.]}
 The NS endpoint target --- the Leray weak solution
 $u \in L^\infty_t H^1_x$ --- follows from the declared
 source-descended obstruction-decay law. The NS branch
@@ -1097,116 +1121,169 @@ Theorem~\ref{thm:NSP1b} should follow from comparability of
 successor windows, stability of the transport-weighted averaging
 operator, and the source-descended three-source decomposition
 (transported content, internal defect, boundary defect) from
-Book~III. It is marked~[O] because the explicit bound on
-$\vartheta_k$ and the definition of $\mathfrak{D}_k$ require
-branch-local verification.
+Book~III. It is stated at conditional force~[C]; an earlier intake draft
+carried it at~[O] pending the explicit bound on $\vartheta_k$ and the
+branch-local definition of $\mathfrak{D}_k$, both since supplied
+(SB2/SCT.6b chain; Book~III three-source decomposition).
+\emph{MIG-050 note:} identifying $\vartheta_k$ with the \emph{net}
+ratio $\kappa$ conflates the gross Book~III transport factor
+$\Theta_n$ with the net SCT.6b ratio; the reconditioned contraction
+chain (Thm.~\ref{thm:NSL1}) does not rely on that identification.
 \end{remark}
 
 \begin{theorem}[\status{C}]\label{thm:NSP1c}
 \textup{(Above-Threshold Contraction Theorem, NS.P1c.)}
-There exist branch constants $T_{\mathrm{NS}} > 0$ and
-$\lambda_{\mathrm{NS}} \in (0,1)$ such that for every successor
-step $W_k \to W_{k+1}$ in the active admissible window family,
-whenever $\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$,
+\textup{[Conditional on \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
+\eqref{hyp:NS-alpha}, via Thm.~\ref{thm:NSL1} (MIG-050).]}
+There exist branch constants $T_{\mathrm{NS}} > 0$, an integer
+$m \geq 1$, and $\lambda_{\mathrm{NS}} \in (0,1)$ such that in
+the active admissible window family, whenever
+$\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$,
 \[
- \mathcal{O}_{\mathrm{NS}}(W_{k+1})
+ \mathcal{O}_{\mathrm{NS}}(W_{k+m})
  \;\leq\;
  \lambda_{\mathrm{NS}}\,\mathcal{O}_{\mathrm{NS}}(W_k).
 \]
 \end{theorem}
 \begin{proof}
-Under the strict gap (Thm.~\ref{thm:NSG1plus}: budget $\leq
-1 - \delta_{\mathrm{NS}}$) and the successor-step decomposition
-(Thm.~\ref{thm:NSP1b}): the obstruction sequence satisfies
-$\mathcal{O}(W_{k+1}) \leq (1-\delta_{\mathrm{NS}})
-\mathcal{O}(W_k)$ for all sufficiently late $k$.
-Hence the contraction $\mathcal{O}(W_k) \to 0$ geometrically,
-completing the above-threshold contraction. \qed
+Immediate from the reconditioned Theorem~\ref{thm:NSL1} (NS.L1$'$),
+whose conclusion is exactly the stated $m$-step contraction; the
+geometric decay $\mathcal{O}(W_k) \to 0$ above threshold follows at
+per-step-equivalent rate $\lambda_{\mathrm{NS}}^{1/m}$. \qed
 \end{proof}
 
 
-\begin{proof}[Proof assuming NS.L1]
-By Theorem~\ref{thm:NSP1b},
-\[
- \mathcal{O}_{\mathrm{NS}}(W_{k+1})
- \leq \vartheta_k\,\mathcal{O}_{\mathrm{NS}}(W_k)
- + \mathfrak{D}_k.
-\]
-Writing $\mathfrak{D}_k = \mathfrak{D}_k^{\mathrm{int}} +
-\mathfrak{D}_k^{\mathrm{bdry}}$ and applying
-Theorem~\ref{thm:NSL1} (NS.L1) above threshold:
-\[
- \mathfrak{D}_k
- \;\leq\;
- (\mu_{\mathrm{int}} + \mu_{\mathrm{bdry}})\,
- \mathcal{O}_{\mathrm{NS}}(W_k).
-\]
-Hence
-\[
- \mathcal{O}_{\mathrm{NS}}(W_{k+1})
- \leq
- \bigl(\vartheta_k + \mu_{\mathrm{int}} + \mu_{\mathrm{bdry}}\bigr)
- \mathcal{O}_{\mathrm{NS}}(W_k).
-\]
-Set $\lambda_{\mathrm{NS}} := \sup_k \vartheta_k +
-\mu_{\mathrm{int}} + \mu_{\mathrm{bdry}}$. By
-Theorem~\ref{thm:NSL1}, $\lambda_{\mathrm{NS}} < 1$.
-\qed
-\end{proof}
+\medskip\noindent\textbf{Withdrawn alternative derivation
+(MIG-050).} A former second proof of NS.P1c derived a per-step
+contraction by combining the NS.P1b decomposition with the per-step
+$\mu$-budget of the former NS.L1. That derivation is withdrawn with
+the budget it consumed (see the removal record following
+Thm.~\ref{thm:NSL1}); no per-step contraction claim is retained.
 
 \subsection{The bottleneck lemma}
 
+\medskip\noindent\textbf{Named open hypotheses (MIG-050; unproved
+--- not claimed).} The NS-0A--NS-0D constants audit (scratch record;
+see migrations/MIGRATIONS.md, MIG-050) established that the successor
+budget previously asserted here is not proved by the cited
+subordination lemmas, and that the honest repair route requires two
+statements not currently available in canon. They are recorded as
+explicit conditional hypotheses; every downstream use names them.
+Neither is proved; neither may be cited as proved.
+
+\emph{Interior Defect Control on the NS safe tail} (\textsc{idc}):
+with $\Psi_k = \Psi_k^{\mathrm{int}}+\Psi_k^{\mathrm{bdry}}$ the
+total per-step ledger inflow and $\mathcal{E}_k,\mathcal{B}_k$ the
+interior and boundary components of the Book~II obstruction ledger,
+\begin{equation}\label{hyp:NS-IDC-i}
+ \Psi_k^{\mathrm{int}} \;\leq\; \eta_{\mathrm{int}}\,\Phi_k
+ \quad\text{with}\quad \eta+\eta_{\mathrm{int}}<1,
+\end{equation}
+\begin{equation}\label{hyp:NS-IDC-ii}
+ \mathcal{E}_k \;\leq\; C_{\mathcal{E}}\,\mathcal{B}_k,
+\end{equation}
+for all sufficiently late $k$ on every active admissible tail.
+(Theorem~\ref{thm:NS-H3-PASS-incoherent} proves the
+\emph{boundary}-channel subordination only; the interior channel is
+open.)
+
+\emph{Obstruction/ledger alignment} ($\alpha$):
+\begin{equation}\label{hyp:NS-alpha}
+ I_n \;=\; \mathcal{B}_n
+\end{equation}
+on the NS active-window regime: the Book~III interface burden
+(Definition interface-burden) coincides with the boundary component
+of the Book~II ledger. This definitional alignment across the two
+formalisms is required by the obstruction/defect bridge below and is
+pending.
+
 \begin{theorem}[\status{C}]\label{thm:NSL1}
-\textup{(Split-Defect Successor Subordination Lemma, NS.L1.)}
-There exist branch constants $T_{\mathrm{NS}} > 0$,
-$\mu_{\mathrm{int}} \geq 0$, and $\mu_{\mathrm{bdry}} \geq 0$
-such that whenever
-$\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$:
+\textup{(Reconditioned Successor Contraction, NS.L1$'$.)}
+\textup{[Conditional on \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
+\eqref{hyp:NS-alpha}, in addition to the standing NS hypotheses.]}
+Assume \textsc{idc} and $\alpha$. Set
+$\widetilde\eta := \eta + \eta_{\mathrm{int}} < 1$ and
+$\widetilde\kappa := 1 - (1-\widetilde\eta)(c_1+c_2) < 1$. Then
+the ledger contracts on the late safe tail,
+$\mathfrak{D}_{k+1} \leq \widetilde\kappa\,\mathfrak{D}_k$, and
+there exist a symbolic constant
+$a = T_{\mathrm{NS}}/\bigl(M(1+C_{\mathcal{E}})\bigr) > 0$ (with
+$M$ the SCT.4 bounded-obstruction ceiling) and an integer
+$m > \log(1/a)/\log(1/\widetilde\kappa)$ such that, whenever
+$\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$,
 \[
- \mathfrak{D}_k^{\mathrm{int}}
- \;\leq\;
- \mu_{\mathrm{int}}\,\mathcal{O}_{\mathrm{NS}}(W_k),
+ \mathcal{O}_{\mathrm{NS}}(W_{k+m})
+ \;\leq\; \lambda_{\mathrm{NS}}\,
+ \mathcal{O}_{\mathrm{NS}}(W_k),
  \qquad
- \mathfrak{D}_k^{\mathrm{bdry}}
- \;\leq\;
- \mu_{\mathrm{bdry}}\,\mathcal{O}_{\mathrm{NS}}(W_k),
+ \lambda_{\mathrm{NS}} := \widetilde\kappa^{\,m}/a \;<\; 1.
 \]
-and moreover
-$\sup_k \vartheta_k + \mu_{\mathrm{int}} + \mu_{\mathrm{bdry}}
-< 1$ throughout the active admissible window family.
+No per-step $\mu$-budget of the previous form is asserted.
 \end{theorem}
 \begin{proof}
-Combines NS.L1a (Thm.~\ref{thm:NSL1a}: $\mu_{\mathrm{int}}=1/7$)
-and NS.L1b+ (Thm.~\ref{thm:NSL1b}: $\mu_{\mathrm{bdry}}=1/49$)
-with the transport ceiling $\vartheta_k = \kappa \leq 1-8/343$
-(Thm.~\ref{thm:NS-kappa-explicit}). Total budget:
-$\kappa + \mu_{\mathrm{int}} + \mu_{\mathrm{bdry}}
-= (1-8/343) + 1/7 + 1/49
-= 1 - 8/343 + 8/49
-= 1 - 8/343 + 56/343
-= 1 + 48/343 > 1$.
-Wait --- recompute: $\kappa$ already absorbs $c_1$ and $c_2$:
-$\kappa = 1-(1-\eta)(c_1+c_2)$ and the defect terms
-$\mu_{\mathrm{int}}, \mu_{\mathrm{bdry}}$ are the \emph{additional}
-contributions beyond the transport decay.
-Setting $\mu_{\mathrm{int}} = c_1(1-\eta)/2 = 1/98$,
-$\mu_{\mathrm{bdry}} = c_2(1-\eta)/2 = 1/686$, and $\vartheta_k
-= \kappa$ gives total budget $\kappa + 1/98 + 1/686
-< 1 - 8/343 + 10/686 = 1 - 6/686 < 1$.
-Hence the strict budget requirement holds with margin
-$\delta_{\mathrm{NS}} = 6/686 > 0$. \qed
+\emph{Ledger balance.} The obstruction ledger is additive
+($\mathcal{D}=\mathcal{E}+\mathcal{B}$, Book~II \S SCT), its
+per-step inflow is exhaustively $E_k+B_k$ (Unified
+Coercive-Transport Inequality; \emph{rmk:three-sources}; Book~V
+excludes hidden channels, as invoked in the proof of SCT.1), and the
+H1/H2 loss channels are genuine removals disjoint from inflow; hence
+$\mathfrak{D}_{k+1} \leq \mathfrak{D}_k - \Phi_k + \Psi_k$ with
+$\Psi_k = E_k + B_k$.
+\emph{Net contraction.} By \textsc{idc}~\eqref{hyp:NS-IDC-i}
+together with Theorem~\ref{thm:NS-H3-PASS-incoherent},
+$\Psi_k \leq \widetilde\eta\,\Phi_k$; with
+$\Phi_k \geq (c_1+c_2)\mathfrak{D}_k$
+(Props.~\ref{prop:NS-quantitative-c1}--\ref{prop:NS-quantitative-c2})
+this gives $\mathfrak{D}_{k+1} \leq \widetilde\kappa\,
+\mathfrak{D}_k$.
+\emph{Bridge.} By $\alpha$~\eqref{hyp:NS-alpha} and
+$C_n = B^{\mathrm{bulk}}_n - I_n$ (Book~III), the obstruction is
+$\mathcal{O}_{\mathrm{NS}}(W_k) =
+\mathrm{Avg}^{\mathrm{tr}}_{W_k}(\mathcal{B}_n - (E_n+B_n))$;
+since $E_n, B_n \geq 0$,
+$\mathcal{O}_{\mathrm{NS}}(W_k) \leq \mathfrak{D}_k$. Above
+threshold, $\mathrm{Avg}(\mathcal{B}) \geq T_{\mathrm{NS}}$;
+by \textsc{idc}~\eqref{hyp:NS-IDC-ii},
+$\mathfrak{D}_k \leq (1+C_{\mathcal{E}})\,
+\mathrm{Avg}(\mathcal{B})$; by the SCT.4 ceiling,
+$\mathrm{Avg}(\mathcal{B}) \leq M$; hence
+$\mathcal{O}_{\mathrm{NS}}(W_k) \geq a\,\mathfrak{D}_k$ with
+$a = T_{\mathrm{NS}}/(M(1+C_{\mathcal{E}}))$.
+\emph{Combination.} Over $m$ steps,
+$\mathcal{O}(W_{k+m}) \leq \mathfrak{D}_{k+m} \leq
+\widetilde\kappa^{\,m}\mathfrak{D}_k \leq
+(\widetilde\kappa^{\,m}/a)\,\mathcal{O}(W_k)$, and
+$\lambda_{\mathrm{NS}} < 1$ for the stated $m$. \qed
 \end{proof}
+
+\medskip\noindent\textbf{Replacement classification and removal
+record (MIG-050).} The former proof of NS.L1 asserted a per-step
+budget using the unsourced $(1-\eta)/2$-normalized values
+$c_1(1-\eta)/2$ and $c_2(1-\eta)/2$ in place of the NS.L1a/NS.L1b
+values; the first computation in
+that proof, with the constants as actually stated by NS.L1a/NS.L1b,
+gives $1+48/343>1$, and the substituted constants are proved nowhere
+in the corpus. That proof (including its editorial residue) is
+removed, and no per-step claim is retained. The $m$-step form above
+is a \emph{narrowing-or-equal} replacement for every downstream
+consumer: all downstream uses consume only eventual geometric decay
+of the window obstruction, which the $m$-step form supplies at rate
+$\lambda_{\mathrm{NS}}^{1/m}$ per step. All constants above are
+symbolic; none is invented, and the unsourced factor $1/2$ is used
+nowhere.
 
 
 \begin{remark}[\status{R}]
 NS.L1 is the true bottleneck lemma of the branch. It is minimal:
 it does not try to prove continuation, non-accumulation, or
-endpoint closure. It only proves that the successor defect
-(internal and boundary combined) is uniformly proportionally
-subordinate to the current obstruction above threshold, and that
-the total budget $\sup \vartheta_k + \mu_{\mathrm{int}} +
-\mu_{\mathrm{bdry}}$ remains strictly below $1$. Once NS.L1 is
-available, NS.P1c is essentially complete.
+endpoint closure. In its MIG-050 reconditioned form (NS.L1$'$) it asserts an
+$m$-step geometric contraction of the obstruction, conditional on
+the named open hypotheses \textsc{idc} and $\alpha$; no per-step
+$\mu$-budget claim survives the constants audit. With the
+reconditioned NS.L1$'$ available, NS.P1c holds in the corresponding
+$m$-step, \textsc{idc}/$\alpha$-conditional form.
 \end{remark}
 
 NS.L1 splits into two subordinate lemmas:
@@ -1221,15 +1298,21 @@ T_{\mathrm{NS}}$:
  \;\leq\;
  \mu_{\mathrm{int}}\,\mathcal{O}_{\mathrm{NS}}(W_k).
 \]
+This is a one-sided rate bound only; it asserts no successor-budget
+closure (MIG-050 re-scope; see the note preceding
+Theorem~\ref{thm:NSL1}).
 \end{theorem}
 \begin{proof}
 The internal defect $\mathfrak{D}_k^{\mathrm{int}}$ arises from
 interior-site transported defect increments. By the Phase-A
 defect-floor structure (Book~II, Phase-A dynamical defect budget):
 the per-site internal defect contribution is bounded by the
-collar-type transition rate, which is at most $c_1 = 1/K_0 = 1/7$
-times the current obstruction (Prop.~\ref{prop:NS-quantitative-c1}).
-Setting $\mu_{\mathrm{int}} = c_1 = 1/7$ and
+collar-type transition rate, which is at most $1/K_0 = 1/7$
+times the current obstruction by the finite collar alphabet
+(numerically equal to the quotient-loss \emph{lower} bound of
+Prop.~\ref{prop:NS-quantitative-c1}; the two roles are distinct ---
+MIG-050 constants audit).
+Setting $\mu_{\mathrm{int}} = 1/7$ and
 $T_{\mathrm{NS}} = 1$ (threshold calibrated to the safe tail)
 gives the stated bound for all $\mathcal{O}_{\mathrm{NS}}(W_k)
 \geq T_{\mathrm{NS}}$. \qed
@@ -1259,6 +1342,9 @@ $\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$:
 and moreover the promoted target scope has spike-resistant
 boundary control: every active admissible tail is eventually
 boundary-safe.
+This is a one-sided rate bound (plus spike resistance) only; it
+asserts no successor-budget closure (MIG-050 re-scope; see the note
+preceding Theorem~\ref{thm:NSL1}).
 \end{theorem}
 \begin{proof}
 \textbf{Pointwise proportional subordination.}
@@ -1266,8 +1352,10 @@ By Theorem~\ref{thm:NS-H-CODIM2} (H-CODIM2, §\ref{sec:ns-hlr}):
 the LR-weighted depth-sum satisfies $\sum_d |\partial_d U_n|
 e^{-\mu d} = O(|\partial U_n|)$, giving the boundary-order bound
 $N_{\mathrm{cert}}^{\mathrm{bdry}} \leq C_\partial |\partial U_n|$.
-Setting $\mu_{\mathrm{bdry}} = c_2 = 1/49$ (Prop.~\ref{prop:NS-quantitative-c2})
-and $T_{\mathrm{NS}}$ calibrated to the LR-decay scale gives the
+Setting $\mu_{\mathrm{bdry}} = 1/49$ (numerically equal to the
+mixing-loss \emph{lower} bound of
+Prop.~\ref{prop:NS-quantitative-c2}; the two roles are distinct ---
+MIG-050 constants audit) and $T_{\mathrm{NS}}$ calibrated to the LR-decay scale gives the
 proportional subordination bound.
 
 \textbf{Spike resistance.}
@@ -1363,13 +1451,23 @@ ingredient:
 is spike-free in the boundary term, the boundary budget remains
 quantitatively separated from its saturation ceiling by a
 positive margin: there exists $\varepsilon_{\mathrm{bdry}} > 0$
-such that
+such that the SCT.6b separation
 \[
- \mu_{\mathrm{bdry}} \;<\; 1 - \sup_k \vartheta_k -
- \mu_{\mathrm{int}} - \varepsilon_{\mathrm{bdry}}
+ \mathcal{D}_n \;\leq\; (1-\varepsilon_{\mathrm{bdry}})\,
+ \mathcal{C}_n
 \]
-on every sufficiently late successor step of every active
-admissible tail.
+holds on every sufficiently late step of every active admissible
+tail. \emph{MIG-050 reconditioning:} the window-budget inequality
+formerly displayed here
+($\mu_{\mathrm{bdry}} < 1-\sup_k\vartheta_k-\mu_{\mathrm{int}}
+-\varepsilon_{\mathrm{bdry}}$) is withdrawn as unproved; its
+derivation from the separation above is exactly the
+$\alpha$/\textsc{idc} bridge
+(\eqref{hyp:NS-alpha}, \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii})
+and is pending. Moreover the SCT.6b application below is conditional
+additionally on \textsc{idc}~\eqref{hyp:NS-IDC-i}: hypothesis (H3)
+as proved (Thm.~\ref{thm:NS-H3-PASS-incoherent}) covers the boundary
+inflow channel only.
 
 \textup{Conditional on} the three primitive-derived
 dissipation-bias hypotheses of Book~II
@@ -1389,8 +1487,11 @@ defect satisfies $\mathcal{D}_{n+1} \leq \mathcal{D}_n -
 coercive quantity (guaranteed by the retained transport ceiling
 and non-collapse of the coercive structure), this gives
 $\mathcal{D}_n \leq (1-\varepsilon)\mathcal{C}_n$ eventually,
-which translates to the stated positive reserve margin
-$\varepsilon_{\mathrm{bdry}} > 0$. The key asymmetry:
+which is the stated separation with
+$\varepsilon_{\mathrm{bdry}} = \varepsilon$. (The former further
+step translating this separation into a window-budget inequality is
+withdrawn as unproved --- MIG-050; it requires the
+$\alpha$/\textsc{idc} bridge.) The key asymmetry:
 \emph{defect cannot regenerate what the quotient deletes}
 (H1), while finite-collar mixing prevents indefinite coherent
 preservation of incompatible fine structure (H2), and PASS
@@ -1629,37 +1730,39 @@ boundary-side chain.
 \subsection{The gap theorem}
 
 \begin{theorem}[\status{C}]\label{thm:NSG1plus}
-\textup{(Strict Gap Estimate under Spike-Resistant Boundary
-Control, NS.G1+.)} Assume NS.L1a, NS.L1b+, and a
-branch-uniform retained transport ceiling $\vartheta_k \leq
-\vartheta_{\mathrm{NS}} < 1$. Then there exists a branch margin
-$\delta_{\mathrm{NS}} > 0$ such that on every sufficiently late
-successor step of every active admissible tail,
+\textup{(Strict Gap Estimate --- Reconditioned, NS.G1+.)}
+\textup{[Conditional on \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
+\eqref{hyp:NS-alpha}, via Thm.~\ref{thm:NSL1} (MIG-050).]}
+There exists a branch margin
+$\delta_{\mathrm{NS}} := 1 - \lambda_{\mathrm{NS}} > 0$ (symbolic;
+$\lambda_{\mathrm{NS}}$ as in Thm.~\ref{thm:NSL1}) such that on
+every sufficiently late $m$-step of every active admissible tail the
+$m$-step contraction factor satisfies
 \[
- \vartheta_{\mathrm{NS}} + \mu_{\mathrm{int}} +
- \mu_{\mathrm{bdry}}
- \;\leq\;
- 1 - \delta_{\mathrm{NS}}.
+ \lambda_{\mathrm{NS}} \;\leq\; 1 - \delta_{\mathrm{NS}}.
 \]
+No per-step $\mu$-budget inequality is asserted, and no numerical
+value of $\delta_{\mathrm{NS}}$ is claimed.
 \end{theorem}
 \begin{proof}
-By NS.L1 (Thm.~\ref{thm:NSL1}): the total budget
-$\vartheta_{\mathrm{NS}} + \mu_{\mathrm{int}} + \mu_{\mathrm{bdry}}
-\leq 1 - \delta_{\mathrm{NS}}$ with $\delta_{\mathrm{NS}} = 6/686 > 0$.
-This is exactly the strict gap estimate with
-$\delta_{\mathrm{NS}} = 6/686 \approx 0.00875$. \qed
+Immediate from Theorem~\ref{thm:NSL1} (NS.L1$'$):
+$\lambda_{\mathrm{NS}} = \widetilde\kappa^{\,m}/a < 1$ under
+\textsc{idc} and $\alpha$. The former derivation via
+a numerical per-step margin rested on the withdrawn per-step
+budget and is not retained. \qed
 \end{proof}
 
 
 \begin{remark}[\status{R}]
-NS.G1+ follows from NS.L1a + NS.L1b+ (which supplies both the
-internal and boundary subordination with spike-resistant
-guarantees) together with SB2 (which supplies the positive
-reserve margin). The proof is then: the combined budget is at
-most $\vartheta_{\mathrm{NS}} + \mu_{\mathrm{int}} +
-\mu_{\mathrm{bdry}}$, and by SB2 this is at most
-$1 - \varepsilon_{\mathrm{bdry}}$, giving $\delta_{\mathrm{NS}}
-= \varepsilon_{\mathrm{bdry}}$.
+Formerly NS.G1+ was derived from NS.L1a + NS.L1b+ together with
+SB2's reserve margin ($\delta_{\mathrm{NS}} =
+\varepsilon_{\mathrm{bdry}}$). MIG-050 note: the translation of the
+SB2 defect/coercive separation into a window-budget margin is itself
+the $\alpha$/\textsc{idc} bridge (see the reconditioned
+Thm.~\ref{thm:NSSB2}); that route is therefore not independent of
+the hypotheses named above, and NS.G1+ stands only in the
+reconditioned, \textsc{idc}/$\alpha$-conditional form.
 \end{remark}
 
 \subsection{The full continuation stack}
@@ -1913,6 +2016,7 @@ stage NS.6.1 (full) and NS.7.1 were still open, and the remaining
 items were quantitative $c_1,c_2,\eta$ certification, full-scope
 promotion of NS.6.1, and NS.7.1; the quantitative certification is
 supplied immediately below.
+\end{remark}
 
 
 %%----------------------------------------------------------------
@@ -2029,8 +2133,6 @@ promotion from the safe-tail window to the full NS regime:
 this requires showing that the window-by-window contraction
 extends uniformly across all windows in the NS architecture,
 not just the minimal safe-tail case.
-\end{remark}
-
 \end{remark}
 
 %% ---------------------------------------------------------------
@@ -2264,15 +2366,23 @@ The conditional hypotheses are:
  window geometry);
  \item $K_0=7$ (unconditional by Thm.~\ref{thm:K0-prime});
  \item Phase-A (conditional on $K_0=7$);
- \item PASS (conditional theorem, Thm.~\ref{thm:PASS-derived}).
+ \item PASS (conditional theorem, Thm.~\ref{thm:PASS-derived});
+ \item \textsc{idc} --- Interior Defect Control
+ \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} (named open
+ hypothesis; MIG-050);
+ \item $\alpha$ --- obstruction/ledger alignment
+ \eqref{hyp:NS-alpha} (named open hypothesis; MIG-050).
 \end{enumerate}
 \end{corollary}
 
 \begin{proof}
 Theorems~\ref{thm:NS61-global} and~\ref{thm:NS-SB2-discharged}
-together supply the multiplicative contraction and the positive
-reserve. The continuation criterion of Theorem~\ref{thm:NS61}
-follows. \qed
+(reconditioned) supply the ledger contraction and the SCT.6b
+separation; their transfer to the window obstruction, and the
+satisfaction of the contraction condition itself
+(Thm.~\ref{thm:NSP1c}), are conditional on hypotheses (5)--(6). The
+continuation criterion of Theorem~\ref{thm:NS61} follows on the
+stated hypothesis set. \qed
 \end{proof}
 
 \begin{remark}[\status{R}]\label{rem:NS7-now-accessible}
@@ -2294,8 +2404,11 @@ complete at conditional force:
  \Rightarrow \mathrm{NS.7.1}\,[C],
 \]
 yielding the domain-bounded conditional CERT-CLOSE of
-Prop.~\ref{prop:NS-status}. The residual is the external
-unconditional Stage-3 question.
+Prop.~\ref{prop:NS-status} --- with the hypothesis set enlarged by
+MIG-050 to include the named open hypotheses \textsc{idc} and
+$\alpha$ (see Thm.~\ref{thm:NSL1}). The residuals are the external
+unconditional Stage-3 question and the internal
+\textsc{idc}/$\alpha$ burden.
 \end{remark}
 
 %% ---------------------------------------------------------------
@@ -2417,14 +2530,23 @@ mass gap. This completes the 8-step pre-canonical resolution chain
 \begin{proposition}[\status{C}]\label{prop:NS-status}
 \textup{(NS Branch Status Proposition --- Updated.)}
 The NS branch is a lawful descendant of the canonical spine and
-has reached domain-bounded conditional CERT-CLOSE.
+has reached domain-bounded conditional CERT-CLOSE, the conditional
+hypothesis set including --- in addition to Phase-A, $K_0=7$, LS-2,
+and PASS --- the named open hypotheses \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
+\eqref{hyp:NS-alpha} introduced by the MIG-050 constants-audit
+reconditioning. No claim in this proposition may be cited without
+that enlarged hypothesis set.
 \end{proposition}
 
 \begin{proof}
 Lawful descent: Proposition~\ref{prop:NS-lawful}.
 NS.6.1 conditionally discharged:
 Cor.~\ref{cor:NS61-discharged} (window-uniformity + $K_0=7$
-+ Phase-A + PASS + $\kappa\le 1-8/343$).
++ Phase-A + PASS + \textsc{idc} + $\alpha$; the ledger ratio
+$\kappa\le 1-8/343$ stands, its transfer to the window obstruction
+being part of the \textsc{idc}/$\alpha$ bridge --- MIG-050; the
+former per-step margin claim is withdrawn).
 Window determinism: Thm.~\ref{thm:NS-window-determinism}
 (Q2a resolved), giving clean [C] without recurrence caveat.
 NS.7.1 conditionally discharged: Thm.~\ref{thm:NS71}
@@ -2447,13 +2569,21 @@ The NS branch may claim:
  \item a lawful bridge-stack formulation whose named theorems
  (NS.6.1, NS.7.1) are conditionally discharged
  (Cor.~\ref{cor:NS61-discharged}, Thm.~\ref{thm:NS71},
- Cor.~\ref{cor:NS-both-give-endpoint}),
+ Cor.~\ref{cor:NS-both-give-endpoint}) --- conditionally on the
+ enlarged hypothesis set including \textsc{idc} and $\alpha$
+ (MIG-050),
  \item domain-bounded conditional CERT-CLOSE at the declared
- scope (Prop.~\ref{prop:NS-status}), and
+ scope (Prop.~\ref{prop:NS-status}), conditional on the same
+ enlarged hypothesis set including \textsc{idc} and $\alpha$
+ (MIG-050), and
  \item an explicit named failure frontier: originally Ren.5 and
- SB2, both now conditionally discharged; the residual frontier is
- the \emph{external unconditional} Stage-3 question
- (unconditional global regularity).
+ SB2, both now conditionally discharged; the residual frontier
+ comprises the \emph{external unconditional} Stage-3 question
+ (unconditional global regularity) and the \emph{internal}
+ quantitative frontier reopened by the MIG-050 constants audit:
+ the named open hypotheses \textsc{idc}
+ \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
+ \eqref{hyp:NS-alpha}.
 \end{enumerate}
 The NS branch may not claim unconditional endpoint closure or
 unconditional global regularity.
