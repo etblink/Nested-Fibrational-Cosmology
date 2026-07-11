@@ -3415,6 +3415,12 @@
   },
   {
     "from": "prop:NS-status",
+    "to": "ob:NS-common-state-bridge",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:NS-status",
     "to": "prop:NS-lawful",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
@@ -3601,6 +3607,12 @@
   },
   {
     "from": "thm:NS61",
+    "to": "ob:NS-common-state-bridge",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61",
     "to": "thm:NS-SB2-discharged",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
@@ -3684,8 +3696,20 @@
     "kind": "proof-cite"
   },
   {
+    "from": "thm:NS71",
+    "to": "ob:NS-common-state-bridge",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
     "from": "thm:NSDI2",
     "to": "def:NSSF",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSG1plus",
+    "to": "ob:NS-common-state-bridge",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
@@ -3703,13 +3727,13 @@
   },
   {
     "from": "thm:NSL1",
-    "to": "hyp:NS-IDC-ii",
+    "to": "hyp:NS-alpha",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
   {
     "from": "thm:NSL1",
-    "to": "hyp:NS-alpha",
+    "to": "ob:NS-common-state-bridge",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },

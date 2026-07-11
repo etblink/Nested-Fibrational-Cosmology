@@ -4,13 +4,13 @@
     "U": 210,
     "C": 740,
     "B": 8,
-    "O": 5,
+    "O": 6,
     "R": 366,
     "_other": {}
   },
   "branch_posture_view": {
     "YM": "Conditional CERT-CLOSE (MSC-normalized NFC scope); B1/B2/B3 post-program",
-    "NS": "Domain-bounded conditional CERT-CLOSE, conditional on the standing branch hypotheses together with the named IDC and alpha hypotheses (MIG-050); unconditional global regularity external",
+    "NS": "CERT-PROJ, open common-state frontier (MIG-052): NS.6.1/NS.7.1 conditional chain complete on the ledger side, its transfer to the window obstruction passing through the open obligation ob:NS-common-state-bridge; alpha withdrawn as ill-typed; IDC subsidiary and insufficient; former conditional CERT-CLOSE wording superseded; unconditional global regularity external",
     "SCC": "Conditional CERT-CLOSE at declared structural endpoint (UCTI/depth-sum/threshold-stability + source-descent)",
     "GR": "Domain-bounded conditional CERT-CLOSE + CK-corner extension; global curvature-subcriticality open",
     "SM": "Conditionally intrinsic-structural closed, inherited-scope open",
@@ -21,11 +21,11 @@
     "RH": "CERT-PROJ; S1 arithmetic + RH4-6 frontier"
   },
   "obligation_roster_view": {
-    "total_ob_labels": 99,
+    "total_ob_labels": 100,
     "by_tag": {
       "B": 2,
       "C": 103,
-      "O": 5
+      "O": 6
     }
   },
   "reduced_frontier_view": [
@@ -63,15 +63,15 @@
     }
   ],
   "release_snapshot_view": {
-    "generated": "2026-07-11T07:42:17+00:00",
-    "census_commit": "b171e35",
-    "total_claims": 1790,
+    "generated": "2026-07-11T09:14:37+00:00",
+    "census_commit": "c5dab1f",
+    "total_claims": 1791,
     "census": {
       "D": 461,
       "U": 210,
       "C": 740,
       "B": 8,
-      "O": 5,
+      "O": 6,
       "R": 366
     }
   }

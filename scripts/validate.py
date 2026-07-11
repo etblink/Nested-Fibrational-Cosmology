@@ -29,7 +29,7 @@ BENIGN_DUP={
 # Pinned expected raw \status census. Update ONLY via migration.
 # MIG-007: R 349->366 (+17) for the 17 Current Status Capsules (Phase 7).
 # MIG-008: U 212->211, C 748->749 for prop:scc-status [U]->[C] (C-2 correction, weakening).
-EXPECTED_CENSUS={"D":461,"U":211,"C":749,"B":9,"O":5,"R":366}
+EXPECTED_CENSUS={"D":461,"U":211,"C":749,"B":9,"O":6,"R":366}
 
 def brace_body(text,env,start):
     m=re.search(r'\\end\{'+re.escape(env)+r'\}',text[start:])

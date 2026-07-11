@@ -4,17 +4,17 @@
     "U": 210,
     "C": 740,
     "B": 8,
-    "O": 5,
+    "O": 6,
     "R": 366
   },
   "environment_census_other": {},
-  "total_status_tagged_environments": 1790,
+  "total_status_tagged_environments": 1791,
   "raw_grep_census": {
     "R": 366,
     "D": 461,
     "U": 211,
     "C": 749,
-    "O": 5,
+    "O": 6,
     "B": 9
   },
   "prose_mention_delta": {
@@ -26,12 +26,13 @@
     "B": 1
   },
   "reconciliation_note": "raw_grep_census is the review-endorsed F-3 figure (counts every \\status{X}). environment_census counts only status-tagged environment declarations (the claim records). The delta is prose status mentions (e.g. GR narrative 'is \\status{C}', NS inline sub-lemma tags) that are not standalone declarations. Both are authoritative for their own question.",
-  "census_commit": "b171e35",
-  "generated": "2026-07-11T07:42:17+00:00",
+  "census_commit": "c5dab1f",
+  "generated": "2026-07-11T09:14:37+00:00",
   "frontier_accountings": {
     "I_syntactic_O_census": {
-      "count": 5,
+      "count": 6,
       "labels": [
+        "ob:NS-common-state-bridge",
         "ob:bio-BND-open",
         "ob:cryst-PHASE",
         "ob:cryst-PHASE-progress",
@@ -41,10 +42,11 @@
       "measures": "environments literally tagged \\status{O}"
     },
     "II_named_obligation_roster": {
-      "count": 99,
+      "count": 100,
       "labels": [
         "ob:B1-ClaySpec",
         "ob:B3-A2-reserve",
+        "ob:NS-common-state-bridge",
         "ob:O-CLU",
         "ob:O-ENC",
         "ob:O-GLOB",

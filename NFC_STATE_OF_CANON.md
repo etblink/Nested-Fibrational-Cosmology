@@ -1,7 +1,7 @@
 # NFC Canon: State of the Canon
 
 > **GENERATED SNAPSHOT** — produced by `scripts/generate_state_of_canon.py` from the
-> metadata layer (census commit `b171e35`, generated 2026-07-11 07:42Z).
+> metadata layer (census commit `c5dab1f`, generated 2026-07-11 09:14Z).
 > Do not hand-edit above the historical marker; run `make state` to refresh.
 > Historical session material is preserved verbatim below the marker.
 
@@ -10,29 +10,29 @@
 | Measure | Value |
 |---|---|
 | Canon files | 17 (7 spine + 10 branch) |
-| Status-tagged claim records | 1790 |
+| Status-tagged claim records | 1791 |
 | [D]-tagged (raw census) | **461** |
 | [U]-tagged (raw census) | **211** |
 | [C]-tagged (raw census) | **749** |
 | [B]-tagged (raw census) | **9** |
-| [O]-tagged (raw census) | **5** |
+| [O]-tagged (raw census) | **6** |
 | [R]-tagged (raw census) | **366** |
 | Prose-mention delta (raw − declarations) | {'R': 0, 'D': 0, 'U': 1, 'C': 9, 'O': 0, 'B': 1} |
-| Unique labels | 1993 |
+| Unique labels | 1994 |
 | Dangling references | 0 |
 | Proof-citation cycles | 0 |
 | Validation suite | **PASS** |
 
 *Counting note: the raw census counts every `\status{X}` occurrence; the
 environment-declaration census (claim records) excludes inline prose mentions.
-Declarations: {'D': 461, 'U': 210, 'C': 740, 'B': 8, 'O': 5, 'R': 366}. Both are regenerated, never hand-typed (F-3 resolution).*
+Declarations: {'D': 461, 'U': 210, 'C': 740, 'B': 8, 'O': 6, 'R': 366}. Both are regenerated, never hand-typed (F-3 resolution).*
 
 ## Branch Status Summary (generated)
 
 | Branch | Current posture (verbatim A1 status proposition) | D | U | C | B | O | R |
 |---|---|---|---|---|---|---|---|
 | YM | Conditional CERT-CLOSE (MSC-normalized NFC scope); B1/B2/B3 post-program | 47 | 19 | 185 | 0 | 0 | 46 |
-| NS | Domain-bounded conditional CERT-CLOSE, conditional on the standing branch hypotheses together with the named IDC and alpha hypotheses (MIG-050); unconditional global regularity external | 20 | 17 | 39 | 0 | 0 | 36 |
+| NS | CERT-PROJ, open common-state frontier (MIG-052): NS.6.1/NS.7.1 conditional chain complete on the ledger side, its transfer to the window obstruction passing through the open obligation ob:NS-common-state-bridge; alpha withdrawn as ill-typed; IDC subsidiary and insufficient; former conditional CERT-CLOSE wording superseded; unconditional global regularity external | 20 | 17 | 39 | 0 | 1 | 36 |
 | SCC | Conditional CERT-CLOSE at declared structural endpoint (UCTI/depth-sum/threshold-stability + source-descent) | 15 | 8 | 40 | 0 | 0 | 19 |
 | GR | Domain-bounded conditional CERT-CLOSE + CK-corner extension; global curvature-subcriticality open | 11 | 9 | 29 | 1 | 0 | 15 |
 | SM | Conditionally intrinsic-structural closed, inherited-scope open | 6 | 1 | 42 | 0 | 0 | 19 |
@@ -43,10 +43,11 @@ Declarations: {'D': 461, 'U': 210, 'C': 740, 'B': 8, 'O': 5, 'R': 366}. Both are
 | RH | CERT-PROJ; S1 arithmetic + RH4-6 frontier | 26 | 0 | 86 | 0 | 1 | 17 |
 | SPINE (Books I–VII) | Stable foundational/governance layer | 185 | 153 | 146 | 0 | 1 | 135 |
 
-## Open Obligation Register (generated — syntactic [O] census: 5 items)
+## Open Obligation Register (generated — syntactic [O] census: 6 items)
 
 | Label | Branch | Section | Discharge basis / residual |
 |---|---|---|---|
+| `ob:NS-common-state-bridge` | NS | The bottleneck lemma | — |
 | `ob:bio-BND-open` | BIO | O-BIO.BND: Principal Biology Frontier (Remains Open) | toolkit-boundary residual; BND forced except trivial-core. |
 | `ob:cryst-PHASE` | CRYST | Phase Problem Obligation: Formal Statement | phase problem modulo certified invariance group; toolkit-boundary. |
 | `ob:cryst-PHASE-progress` | CRYST | Updated Phase Problem Status | — |
@@ -57,8 +58,8 @@ Declarations: {'D': 461, 'U': 210, 'C': 740, 'B': 8, 'O': 5, 'R': 366}. Both are
 
 | # | Accounting | Count | Measures |
 |---|---|---|---|
-| I | Syntactic [O] census | 5 | environments literally tagged \status{O} |
-| II | Named `ob:` roster | 99 | all ob:-labelled obligation environments regardless of tag |
+| I | Syntactic [O] census | 6 | environments literally tagged \status{O} |
+| II | Named `ob:` roster | 100 | all ob:-labelled obligation environments regardless of tag |
 | III | Reduced irreducible frontier | 4 | genuinely open deep mathematics after all reductions |
 | IV | Branch posture | 10 branches | closure ladder position per branch (see views.branch_posture) |
 

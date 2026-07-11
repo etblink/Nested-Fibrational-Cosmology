@@ -22810,7 +22810,54 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@112345",
+    "claim_id": "NFC_NS_Branch:remark@101625",
+    "source_file": "NFC_NS_Branch.tex",
+    "source_section": "NS.6.1 Partial Discharge via SB2",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "NS",
+    "dependencies": [],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "NFC_NS_Branch:remark@105322",
+    "source_file": "NFC_NS_Branch.tex",
+    "source_section": "NS Window-Uniformity Verification",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "NS",
+    "dependencies": [
+      "cor:window-uniform-coeffs",
+      "ob:NS-common-state-bridge",
+      "thm:NS-window-uniformity",
+      "thm:NS61-global"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "NFC_NS_Branch:remark@119802",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "H-LR: Lieb--Robinson Bound and NS Stage-3 Canonical Import",
     "claim_type": "remark",
@@ -22819,6 +22866,7 @@
     "status_force": "remark (non-load-bearing)",
     "branch": "NS",
     "dependencies": [
+      "ob:NS-common-state-bridge",
       "thm:NS-H-CODIM2",
       "thm:NS-H-LR"
     ],
@@ -22834,7 +22882,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@116027",
+    "claim_id": "NFC_NS_Branch:remark@124651",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22859,7 +22907,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@117555",
+    "claim_id": "NFC_NS_Branch:remark@126179",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22887,7 +22935,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@119924",
+    "claim_id": "NFC_NS_Branch:remark@128548",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Boundary of the NS Branch Book",
     "claim_type": "remark",
@@ -22911,7 +22959,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@28296",
+    "claim_id": "NFC_NS_Branch:remark@28929",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Source-Descended Obstruction Quantity",
     "claim_type": "remark",
@@ -22936,7 +22984,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@43332",
+    "claim_id": "NFC_NS_Branch:remark@44862",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Frontier Statement",
     "claim_type": "remark",
@@ -22957,7 +23005,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@44021",
+    "claim_id": "NFC_NS_Branch:remark@45551",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Frontier Statement",
     "claim_type": "remark",
@@ -22978,7 +23026,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@47057",
+    "claim_id": "NFC_NS_Branch:remark@48587",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Subtheorem decomposition",
     "claim_type": "remark",
@@ -23002,7 +23050,30 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@54469",
+    "claim_id": "NFC_NS_Branch:remark@60422",
+    "source_file": "NFC_NS_Branch.tex",
+    "source_section": "The bottleneck lemma",
+    "claim_type": "remark",
+    "environment": "remark",
+    "status_tag": "R",
+    "status_force": "remark (non-load-bearing)",
+    "branch": "NS",
+    "dependencies": [
+      "ob:NS-common-state-bridge"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "body_claim",
+    "frontier_accounting": [],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
+    "claim_id": "NFC_NS_Branch:remark@62367",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23023,7 +23094,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@56318",
+    "claim_id": "NFC_NS_Branch:remark@64566",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23044,28 +23115,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@58517",
-    "source_file": "NFC_NS_Branch.tex",
-    "source_section": "The bottleneck lemma",
-    "claim_type": "remark",
-    "environment": "remark",
-    "status_tag": "R",
-    "status_force": "remark (non-load-bearing)",
-    "branch": "NS",
-    "dependencies": [],
-    "discharge_basis": null,
-    "supersedes": null,
-    "superseded_by": null,
-    "historical": false,
-    "authority_level": "body_claim",
-    "frontier_accounting": [],
-    "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
-  },
-  {
-    "claim_id": "NFC_NS_Branch:remark@76366",
+    "claim_id": "NFC_NS_Branch:remark@82767",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The gap theorem",
     "claim_type": "remark",
@@ -23088,52 +23138,6 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@95087",
-    "source_file": "NFC_NS_Branch.tex",
-    "source_section": "NS.6.1 Partial Discharge via SB2",
-    "claim_type": "remark",
-    "environment": "remark",
-    "status_tag": "R",
-    "status_force": "remark (non-load-bearing)",
-    "branch": "NS",
-    "dependencies": [],
-    "discharge_basis": null,
-    "supersedes": null,
-    "superseded_by": null,
-    "historical": false,
-    "authority_level": "body_claim",
-    "frontier_accounting": [],
-    "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
-  },
-  {
-    "claim_id": "NFC_NS_Branch:remark@98784",
-    "source_file": "NFC_NS_Branch.tex",
-    "source_section": "NS Window-Uniformity Verification",
-    "claim_type": "remark",
-    "environment": "remark",
-    "status_tag": "R",
-    "status_force": "remark (non-load-bearing)",
-    "branch": "NS",
-    "dependencies": [
-      "cor:window-uniform-coeffs",
-      "thm:NS-window-uniformity",
-      "thm:NS61-global"
-    ],
-    "discharge_basis": null,
-    "supersedes": null,
-    "superseded_by": null,
-    "historical": false,
-    "authority_level": "body_claim",
-    "frontier_accounting": [],
-    "generated_from": null,
-    "last_reviewed": null,
-    "reviewer_note": null,
-    "review_needed": false
-  },
-  {
     "claim_id": "cap:NS-status",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "(front matter)",
@@ -23143,6 +23147,10 @@
     "status_force": "remark (non-load-bearing)",
     "branch": "NS",
     "dependencies": [
+      "hyp:NS-IDC-i",
+      "hyp:NS-IDC-ii",
+      "hyp:NS-alpha",
+      "ob:NS-common-state-bridge",
       "prop:NS-status"
     ],
     "discharge_basis": null,
@@ -23195,6 +23203,7 @@
       "hyp:NS-IDC-i",
       "hyp:NS-IDC-ii",
       "hyp:NS-alpha",
+      "ob:NS-common-state-bridge",
       "prop:NS-status",
       "thm:NS71"
     ],
@@ -23665,6 +23674,7 @@
     "status_force": "definitional/standing",
     "branch": "NS",
     "dependencies": [
+      "ob:NS-common-state-bridge",
       "thm:NSL1"
     ],
     "discharge_basis": null,
@@ -23936,6 +23946,32 @@
     "review_needed": false
   },
   {
+    "claim_id": "ob:NS-common-state-bridge",
+    "source_file": "NFC_NS_Branch.tex",
+    "source_section": "The bottleneck lemma",
+    "claim_type": "obligation",
+    "environment": "obligation",
+    "status_tag": "O",
+    "status_force": "open (undischarged)",
+    "branch": "NS",
+    "dependencies": [
+      "def:NS-obstruction"
+    ],
+    "discharge_basis": null,
+    "supersedes": null,
+    "superseded_by": null,
+    "historical": false,
+    "authority_level": "A3_closure_ledger",
+    "frontier_accounting": [
+      "I_syntactic_O",
+      "II_named_roster"
+    ],
+    "generated_from": null,
+    "last_reviewed": null,
+    "reviewer_note": null,
+    "review_needed": false
+  },
+  {
     "claim_id": "prop:NS-criterion-required",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Active Continuation Criterion",
@@ -24077,6 +24113,7 @@
     "dependencies": [
       "cor:NS-both-give-endpoint",
       "cor:NS61-discharged",
+      "ob:NS-common-state-bridge",
       "prop:NS-lawful",
       "thm:NS-frontier",
       "thm:NS-window-determinism",
@@ -24172,6 +24209,7 @@
     "dependencies": [
       "cor:NS-both-give-endpoint",
       "cor:NS61-discharged",
+      "ob:NS-common-state-bridge",
       "prop:NS-status",
       "thm:NS71"
     ],
@@ -24199,6 +24237,7 @@
       "cor:NS-both-give-endpoint",
       "cor:NS61-discharged",
       "def:NS-strong-ba",
+      "ob:NS-common-state-bridge",
       "prop:NS-status",
       "sch:NS-final",
       "thm:NS61",
@@ -24249,6 +24288,7 @@
     "branch": "NS",
     "dependencies": [
       "cor:NS-both-give-endpoint",
+      "ob:NS-common-state-bridge",
       "prop:NS-status",
       "thm:NS71",
       "thm:NSL1"
@@ -24394,6 +24434,7 @@
       "hyp:NS-IDC-i",
       "hyp:NS-IDC-ii",
       "hyp:NS-alpha",
+      "ob:NS-common-state-bridge",
       "thm:NS-window-determinism",
       "thm:NS-window-uniformity",
       "thm:NS61",
@@ -24592,6 +24633,7 @@
     "status_force": "remark (non-load-bearing)",
     "branch": "NS",
     "dependencies": [
+      "ob:NS-common-state-bridge",
       "prop:NS-status"
     ],
     "discharge_basis": null,
@@ -25031,6 +25073,7 @@
       "hyp:NS-IDC-i",
       "hyp:NS-IDC-ii",
       "hyp:NS-alpha",
+      "ob:NS-common-state-bridge",
       "thm:NS-SB2-discharged",
       "thm:NS-kappa-explicit",
       "thm:NS-window-uniformity",
@@ -25110,7 +25153,8 @@
     "dependencies": [
       "cor:NS61-discharged",
       "def:continuum-interface-regime",
-      "hyp:NS-alpha"
+      "hyp:NS-alpha",
+      "ob:NS-common-state-bridge"
     ],
     "discharge_basis": null,
     "supersedes": null,
@@ -25156,6 +25200,7 @@
     "status_force": "conditional",
     "branch": "NS",
     "dependencies": [
+      "ob:NS-common-state-bridge",
       "thm:NSL1"
     ],
     "discharge_basis": null,
@@ -25180,8 +25225,8 @@
     "branch": "NS",
     "dependencies": [
       "hyp:NS-IDC-i",
-      "hyp:NS-IDC-ii",
       "hyp:NS-alpha",
+      "ob:NS-common-state-bridge",
       "prop:NS-quantitative-c1",
       "prop:NS-quantitative-c2",
       "thm:NS-H3-PASS-incoherent"

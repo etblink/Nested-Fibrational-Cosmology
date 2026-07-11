@@ -36,6 +36,7 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{scholium}[theorem]{Scholium}
+\newtheorem{obligation}[theorem]{Open Obligation}
 
 %% Status tag macro
 \newcommand{\status}[1]{\textup{[#1]}}
@@ -75,11 +76,11 @@
 % ============================================================
 \begin{remark}[\status{R}]\label{cap:NS-status}
 \textbf{Current Status Capsule.}
-\emph{Current posture:} Domain-bounded conditional CERT-CLOSE reached (NS.6.1 and NS.7.1 conditionally discharged); unconditional global regularity (the Clay Stage-3 question) remains the external frontier.
+\emph{Current posture:} CERT-PROJ with the obstruction/ledger common-state frontier open (MIG-052): the NS.6.1/NS.7.1 conditional chain is complete on the ledger side, and its transfer to the window obstruction --- hence the endpoint --- passes through the open common-state bridge obligation (Obl.~\ref{ob:NS-common-state-bridge}); the former domain-bounded conditional CERT-CLOSE posture (MIG-050 wording) is superseded and may not be cited; unconditional global regularity (the Clay Stage-3 question) remains the external frontier.
 
 \emph{Authoritative source:} \ref{prop:NS-status}~(final status proposition (current posture)).
 
-\emph{Frontier accountings (never summed): syntactic~[O] in this branch --- 0; reduced irreducible frontier --- none (unconditional global regularity is external, tracked as the NS frontier theorem); branch posture --- domain-bounded conditional CERT-CLOSE.}
+\emph{Frontier accountings (never summed): syntactic~[O] in this branch --- 1 (Obl.~\ref{ob:NS-common-state-bridge}); curated named-obligation roster --- ob:NS-common-state-bridge, with \textsc{idc}~\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} recorded under it as subsidiary and insufficient and $\alpha$~\eqref{hyp:NS-alpha} withdrawn; reduced irreducible frontier --- the internal common-state bridge and the external unconditional-regularity question; branch posture --- CERT-PROJ, open common-state frontier.}
 
 \emph{Constitutional intake:} Front-block material below is constitutional intake, not current status.
 \end{remark}
@@ -786,8 +787,9 @@ throughout the stated regime (MIG-050 reclassification: the former
 $m=1$ display is the special case; the $m$-step geometric form is a
 narrowing-or-equal replacement, since every downstream consumer uses
 only eventual geometric decay; its satisfaction in the NS branch is
-conditional on \textsc{idc} and $\alpha$ --- see
-Thm.~\ref{thm:NSL1}), whenever
+conditional on the open common-state bridge obligation,
+Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc} subsidiary
+--- see Thm.~\ref{thm:NSL1}, MIG-052), whenever
 $\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$ for
 some threshold constant $T_{\mathrm{NS}} > 0$.
 \end{definition}
@@ -806,13 +808,16 @@ continuation criterion holds in the promoted target scope.
 The multiplicative window-to-window contraction condition is this
 theorem's hypothesis. (In the present branch its satisfaction is
 supplied by the reconditioned Thm.~\ref{thm:NSP1c} in the $m$-step
-form and is therefore conditional on \textsc{idc}
-\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
-\eqref{hyp:NS-alpha}; MIG-050. The ledger-side contraction
+form and is therefore conditional on the open common-state bridge
+obligation, Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} subsidiary; MIG-052;
+the former hypothesis $\alpha$~\eqref{hyp:NS-alpha} is withdrawn.
+The ledger-side contraction
 $\mathfrak{D}_{n+1}\leq\kappa\,\mathfrak{D}_n$ of
 Thm.~\ref{thm:NS61-global}, with $\kappa \leq 1-8/343$ from
 Thm.~\ref{thm:NS-kappa-explicit}, transfers to the imbalance only
-through the same bridge.) Given the hypothesis, the
+through that open bridge, so the discharge holds at CERT-PROJ
+force.) Given the hypothesis, the
 window-uniformity theorem (Thm.~\ref{thm:NS-window-uniformity})
 extends the contraction uniformly across all sufficiently late
 windows of the active architecture, and the positive reserve of
@@ -835,19 +840,22 @@ Thms.~\ref{thm:NS-window-determinism}--\ref{cor:NS-eventual-periodicity})
 supplies the missing uniformity, and
 Thm.~\ref{thm:NS61-global} supplies the explicit ledger
 contraction bound $\kappa \le 1 - 8/343$. \emph{MIG-050
-reconditioning:} the NS.6.1 conditional closes at Phase-A, $K_0=7$,
-LS-2 scope \emph{with the hypothesis set enlarged by the named open
-hypotheses \textsc{idc}
+reconditioning (historical intake):} the hypothesis set was enlarged
+by the named open hypotheses \textsc{idc}
 \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
-\eqref{hyp:NS-alpha}} (the satisfaction of the contraction
-condition, and the ledger-to-imbalance transfer, both pass through
-them). The active frontier advances to NS.7.1
-(Thm.~\ref{thm:NS71}), which requires only the Book~VI $H^1_x$-norm
-interface legitimacy and is conditionally proved on the same
-enlarged hypothesis set. The NS branch therefore reaches
-domain-bounded CERT-CLOSE conditionally
-(Cor.~\ref{cor:NS-both-give-endpoint}), \emph{conditional
-additionally on \textsc{idc} and $\alpha$}.
+\eqref{hyp:NS-alpha}. \emph{MIG-052 reconditioning (current):}
+$\alpha$ is withdrawn (ill-typed; see the withdrawal record at the
+hypothesis block), \textsc{idc} is subsidiary and insufficient, and
+the satisfaction of the contraction condition together with the
+ledger-to-imbalance transfer both pass through the open common-state
+bridge obligation (Obl.~\ref{ob:NS-common-state-bridge}). The
+frontier advances to NS.7.1 (Thm.~\ref{thm:NS71}), which requires
+only the Book~VI $H^1_x$-norm interface legitimacy and is
+conditionally proved on the same enlarged, bridge-inclusive
+hypothesis set. The NS branch therefore holds its domain-bounded
+conditional endpoint claim at CERT-PROJ force
+(Cor.~\ref{cor:NS-both-give-endpoint}); the former conditional
+CERT-CLOSE wording is superseded (MIG-052).
 \end{remark}
 
 \begin{corollary}[\status{C}]\label{cor:NS61-consequence}
@@ -863,8 +871,10 @@ promoted continuation criterion.
 \begin{theorem}[\status{C}]\label{thm:NS71}
 \textup{(Continuation-Criterion-to-Endpoint Theorem, NS.7.1.)}
 \textup{[Conditional on NS.6.1 discharged
-(Cor.~\ref{cor:NS61-discharged}, whose hypothesis set includes
-\textsc{idc} and $\alpha$ per MIG-050), Book~III source-descended
+(Cor.~\ref{cor:NS61-discharged}, whose hypothesis set includes the
+open common-state bridge obligation
+Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc} subsidiary,
+per MIG-052), Book~III source-descended
 coercive structure, and Book~VI interface legitimacy for the
 $H^1_x$-norm.]}
 If the active NS persistence/extendibility continuation criterion
@@ -881,8 +891,9 @@ contraction $\mathfrak{D}_{n+1} \leq \kappa^{n-n_0}
 \mathfrak{D}_{n_0} \to 0$ uniformly, certifying lawful
 continuability throughout the promoted target scope (the
 identification of the contracting ledger quantity with the
-transport-weighted imbalance is part of $\alpha$,
-Eq.~\eqref{hyp:NS-alpha}).
+transport-weighted imbalance is exactly the open common-state
+bridge, Obl.~\ref{ob:NS-common-state-bridge}; the former identity
+$\alpha$~\eqref{hyp:NS-alpha} is withdrawn --- MIG-052).
 
 \textbf{Step~1 (Grönwall control from contraction).}
 The mismatch decay $\mathfrak{D}_n \to 0$ at rate $\kappa^n$
@@ -927,16 +938,21 @@ claim are independently auditable.
 \end{remark}
 
 \begin{corollary}[\status{C}]\label{cor:NS-both-give-endpoint}
-\textup{(NS Domain-Bounded CERT-CLOSE.)}
+\textup{(NS Domain-Bounded Conditional Endpoint --- CERT-PROJ;
+MIG-052.)}
 \textup{[Conditional on NS.6.1 (Cor.~\ref{cor:NS61-discharged})
 and NS.7.1 (Thm.~\ref{thm:NS71}), whose hypothesis sets include the
-named open hypotheses \textsc{idc}
-\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
-\eqref{hyp:NS-alpha} per MIG-050.]}
+open common-state bridge obligation
+Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} subsidiary, per
+MIG-052.]}
 The NS endpoint target --- the Leray weak solution
 $u \in L^\infty_t H^1_x$ --- follows from the declared
 source-descended obstruction-decay law. The NS branch
-achieves domain-bounded CERT-CLOSE on the declared interval.
+holds this endpoint claim at CERT-PROJ force on the declared
+interval; the former domain-bounded CERT-CLOSE wording is
+superseded (MIG-052) while Obl.~\ref{ob:NS-common-state-bridge}
+is open.
 \end{corollary}
 
 \begin{proof}
@@ -1133,9 +1149,11 @@ chain (Thm.~\ref{thm:NSL1}) does not rely on that identification.
 
 \begin{theorem}[\status{C}]\label{thm:NSP1c}
 \textup{(Above-Threshold Contraction Theorem, NS.P1c.)}
-\textup{[Conditional on \textsc{idc}
-\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
-\eqref{hyp:NS-alpha}, via Thm.~\ref{thm:NSL1} (MIG-050).]}
+\textup{[Conditional on the common-state bridge obligation
+Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} subsidiary; the former
+hypothesis $\alpha$~\eqref{hyp:NS-alpha} is withdrawn as ill-typed
+(MIG-052); via Thm.~\ref{thm:NSL1}.]}
 There exist branch constants $T_{\mathrm{NS}} > 0$, an integer
 $m \geq 1$, and $\lambda_{\mathrm{NS}} \in (0,1)$ such that in
 the active admissible window family, whenever
@@ -1163,14 +1181,21 @@ Thm.~\ref{thm:NSL1}); no per-step contraction claim is retained.
 
 \subsection{The bottleneck lemma}
 
-\medskip\noindent\textbf{Named open hypotheses (MIG-050; unproved
---- not claimed).} The NS-0A--NS-0D constants audit (scratch record;
-see migrations/MIGRATIONS.md, MIG-050) established that the successor
-budget previously asserted here is not proved by the cited
-subordination lemmas, and that the honest repair route requires two
-statements not currently available in canon. They are recorded as
-explicit conditional hypotheses; every downstream use names them.
-Neither is proved; neither may be cited as proved.
+\medskip\noindent\textbf{Named hypotheses (MIG-050 intake;
+re-scoped MIG-052).} The NS-0A--NS-0D constants audit (scratch
+record; see migrations/MIGRATIONS.md, MIG-050) established that the
+successor budget previously asserted here is not proved by the cited
+subordination lemmas, and recorded two explicit conditional
+hypotheses (\textsc{idc} and $\alpha$) as the then-identified
+repair route; every downstream use names its hypotheses. Neither
+was proved. \emph{MIG-052 re-scope (NS-0E/NS-0F/NS-0G):} the
+subsequent common-state analysis established that $\alpha$ is false
+as written (a stock/increment type mismatch --- withdrawn below),
+that \textsc{idc} is subsidiary and insufficient for the
+obstruction bridge, and that the true frontier is the single open
+common-state bridge obligation
+(Obl.~\ref{ob:NS-common-state-bridge} below). Nothing in this block
+is proved; nothing here may be cited as proved.
 
 \emph{Interior Defect Control on the NS safe tail} (\textsc{idc}):
 with $\Psi_k = \Psi_k^{\mathrm{int}}+\Psi_k^{\mathrm{bdry}}$ the
@@ -1186,39 +1211,107 @@ interior and boundary components of the Book~II obstruction ledger,
 for all sufficiently late $k$ on every active admissible tail.
 (Theorem~\ref{thm:NS-H3-PASS-incoherent} proves the
 \emph{boundary}-channel subordination only; the interior channel is
-open.)
+open. \emph{MIG-052 re-scope:} \textsc{idc} is \emph{subsidiary
+and insufficient}: \eqref{hyp:NS-IDC-i} lacks a canonical object to
+bound --- no $\Psi^{\mathrm{int}}$ exists in canon, NS-H3 routing
+all renewal through the boundary/halo channel --- and
+\eqref{hyp:NS-IDC-ii} admits an interior-dominated countermodel
+shape; moreover, even granted in full, \textsc{idc} yields only the
+ledger-side contraction and does not bridge the level-stock
+obstruction $\mathcal{O}_{\mathrm{NS}}$ to the contracting
+increment ledger $\mathfrak{D}$; that bridge is the open obligation
+Obl.~\ref{ob:NS-common-state-bridge}.)
 
-\emph{Obstruction/ledger alignment} ($\alpha$):
+\emph{Obstruction/ledger alignment} ($\alpha$) ---
+\textbf{withdrawn as ill-typed (MIG-052)}:
 \begin{equation}\label{hyp:NS-alpha}
  I_n \;=\; \mathcal{B}_n
 \end{equation}
-on the NS active-window regime: the Book~III interface burden
-(Definition interface-burden) coincides with the boundary component
-of the Book~II ledger. This definitional alignment across the two
-formalisms is required by the obstruction/defect bridge below and is
-pending.
+on the NS active-window regime. \emph{Withdrawal record
+(NS-0E/NS-0G verifier ruling):} this identity equates a \emph{level
+stock} ($I_n$, the Book~III interface burden --- a collar load at
+$\partial U_n$) with a \emph{step increment} ($\mathcal{B}_n$, the
+boundary defect of step $n \to n{+}1$); the two live on different
+temporal state spaces, so the identity is false as written --- a
+type mismatch, not a normalization gap. The equation and its label
+are retained solely as the historical record of the withdrawn
+MIG-050 intake hypothesis; $\alpha$ may not be cited, at any force,
+anywhere in the corpus. The bridging role $\alpha$ was intended to
+play is carried by the open obligation
+Obl.~\ref{ob:NS-common-state-bridge} below.
+
+\begin{obligation}[\status{O}]\label{ob:NS-common-state-bridge}
+\textup{(Obstruction/Ledger Common-State Bridge.)}
+Exhibit a common contracting state carrying both the level-stock
+window obstruction $\mathcal{O}_{\mathrm{NS}}$ and the contracting
+increment ledger $\mathfrak{D}_k$, in one of the two well-posed
+frames identified by the NS-0G common-state analysis:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item \emph{State-vector frame:} a state
+ $X_n = (I_n, \mathcal{E}_n, \mathcal{B}_n, \dots)$ with an
+ exhibited transition operator $T_n$ (whose $I$-row is a proved
+ evolution law for the interface burden, including a genuine
+ boundary-loss channel), a weight vector $w \geq 0$ with
+ $V(X) = \langle w, X\rangle$ such that $T_n$ has $V$-spectral
+ radius $< 1$ on the late tail, and a two-sided comparison
+ $\mathcal{O}_{\mathrm{NS}} \asymp V(X_n)$; or
+ \item \emph{Discounted-memory frame:} a declared discount
+ $\rho \in (0,1)$ tied to the loss structure (new data --- not
+ sourced from canon), the discounted accumulation
+ $\widehat{\mathfrak{B}}^{(\rho)}_n
+ = \sum_{j<n} \rho^{\,n-1-j}\,\mathcal{B}_j$ with its closed
+ recurrence
+ $\widehat{\mathfrak{B}}^{(\rho)}_n
+ = \rho\,\widehat{\mathfrak{B}}^{(\rho)}_{n-1}
+ + \mathcal{B}_{n-1}$, and a proved comparison
+ $I_n \asymp \widehat{\mathfrak{B}}^{(\rho)}_n$ on the active
+ tail.
+\end{enumerate}
+Recorded impossibilities (NS-0G; binding): flat accumulation
+($\widehat{\mathfrak{B}}_n = \sum_{j<n}\mathcal{B}_j$) is
+structurally insufficient --- a sum of nonnegative increments is
+non-decreasing and never contracts; and the incremental
+reformulation $\mathcal{O}^{\Delta}$ changes
+Definition~\ref{def:NS-obstruction} and re-bases every downstream
+consumer, a heavier canon change not authorized here. Until this
+obligation is discharged, no ledger contraction transfers to the
+window obstruction, every NS.6.1/NS.7.1 conditional discharge holds
+at CERT-PROJ force only, and no NS closure claim may be cited at
+CERT-CLOSE force.
+\end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:NSL1}
 \textup{(Reconditioned Successor Contraction, NS.L1$'$.)}
-\textup{[Conditional on \textsc{idc}
-\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
-\eqref{hyp:NS-alpha}, in addition to the standing NS hypotheses.]}
-Assume \textsc{idc} and $\alpha$. Set
+\textup{[Conditional on the common-state bridge obligation
+Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} subsidiary, in addition
+to the standing NS hypotheses; the former hypothesis
+$\alpha$~\eqref{hyp:NS-alpha} is withdrawn as ill-typed
+(MIG-052).]}
+Assume \textsc{idc} and the common-state bridge
+(Obl.~\ref{ob:NS-common-state-bridge}). Set
 $\widetilde\eta := \eta + \eta_{\mathrm{int}} < 1$ and
 $\widetilde\kappa := 1 - (1-\widetilde\eta)(c_1+c_2) < 1$. Then
 the ledger contracts on the late safe tail,
 $\mathfrak{D}_{k+1} \leq \widetilde\kappa\,\mathfrak{D}_k$, and
-there exist a symbolic constant
-$a = T_{\mathrm{NS}}/\bigl(M(1+C_{\mathcal{E}})\bigr) > 0$ (with
-$M$ the SCT.4 bounded-obstruction ceiling) and an integer
-$m > \log(1/a)/\log(1/\widetilde\kappa)$ such that, whenever
+there exist symbolic constants $0 < a \leq b$ (the two-sided
+bridge-comparison constants furnished by
+Obl.~\ref{ob:NS-common-state-bridge}; the former expression
+$a = T_{\mathrm{NS}}/\bigl(M(1+C_{\mathcal{E}})\bigr)$ rested on
+the withdrawn $\alpha$-route and misattributed to SCT.4 (Book~II) a
+``bounded-obstruction ceiling'' $M$ that SCT.4 does not supply ---
+SCT.4 asserts strict separation
+$\mathcal{D}_n \leq (1-\varepsilon)\mathcal{C}_n$ under
+non-saturation, no absolute ceiling; the unsourced $M$ falls with
+that route --- MIG-052) and an integer
+$m > \log(b/a)/\log(1/\widetilde\kappa)$ such that, whenever
 $\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$,
 \[
  \mathcal{O}_{\mathrm{NS}}(W_{k+m})
  \;\leq\; \lambda_{\mathrm{NS}}\,
  \mathcal{O}_{\mathrm{NS}}(W_k),
  \qquad
- \lambda_{\mathrm{NS}} := \widetilde\kappa^{\,m}/a \;<\; 1.
+ \lambda_{\mathrm{NS}} := (b/a)\,\widetilde\kappa^{\,m} \;<\; 1.
 \]
 No per-step $\mu$-budget of the previous form is asserted.
 \end{theorem}
@@ -1238,23 +1331,25 @@ $\Phi_k \geq (c_1+c_2)\mathfrak{D}_k$
 (Props.~\ref{prop:NS-quantitative-c1}--\ref{prop:NS-quantitative-c2})
 this gives $\mathfrak{D}_{k+1} \leq \widetilde\kappa\,
 \mathfrak{D}_k$.
-\emph{Bridge.} By $\alpha$~\eqref{hyp:NS-alpha} and
-$C_n = B^{\mathrm{bulk}}_n - I_n$ (Book~III), the obstruction is
-$\mathcal{O}_{\mathrm{NS}}(W_k) =
-\mathrm{Avg}^{\mathrm{tr}}_{W_k}(\mathcal{B}_n - (E_n+B_n))$;
-since $E_n, B_n \geq 0$,
-$\mathcal{O}_{\mathrm{NS}}(W_k) \leq \mathfrak{D}_k$. Above
-threshold, $\mathrm{Avg}(\mathcal{B}) \geq T_{\mathrm{NS}}$;
-by \textsc{idc}~\eqref{hyp:NS-IDC-ii},
-$\mathfrak{D}_k \leq (1+C_{\mathcal{E}})\,
-\mathrm{Avg}(\mathcal{B})$; by the SCT.4 ceiling,
-$\mathrm{Avg}(\mathcal{B}) \leq M$; hence
-$\mathcal{O}_{\mathrm{NS}}(W_k) \geq a\,\mathfrak{D}_k$ with
-$a = T_{\mathrm{NS}}/(M(1+C_{\mathcal{E}}))$.
-\emph{Combination.} Over $m$ steps,
-$\mathcal{O}(W_{k+m}) \leq \mathfrak{D}_{k+m} \leq
-\widetilde\kappa^{\,m}\mathfrak{D}_k \leq
-(\widetilde\kappa^{\,m}/a)\,\mathcal{O}(W_k)$, and
+\emph{Bridge.} The former bridge step invoked
+$\alpha$~\eqref{hyp:NS-alpha} to rewrite the obstruction as
+$\mathrm{Avg}^{\mathrm{tr}}_{W_k}(\mathcal{B}_n - (E_n+B_n))$
+and an ``SCT.4 ceiling'' $\mathrm{Avg}(\mathcal{B}) \leq M$ to
+obtain the lower comparison. Both are withdrawn (MIG-052):
+$\alpha$ equates a level stock with a step increment (ill-typed),
+and SCT.4 (Book~II) supplies no absolute ceiling. The two-sided
+comparison $a\,\mathfrak{D}_k \leq
+\mathcal{O}_{\mathrm{NS}}(W_k) \leq b\,\mathfrak{D}_k$ against
+the \emph{same contracting} ledger --- or a closed contracting
+recurrence for $\mathcal{O}_{\mathrm{NS}}$ itself --- is precisely
+the content of the common-state bridge,
+Obl.~\ref{ob:NS-common-state-bridge}, and is assumed here, not
+derived.
+\emph{Combination.} Over $m$ steps, using both sides of the
+bridge comparison,
+$\mathcal{O}(W_{k+m}) \leq b\,\mathfrak{D}_{k+m} \leq
+b\,\widetilde\kappa^{\,m}\mathfrak{D}_k \leq
+(b/a)\,\widetilde\kappa^{\,m}\,\mathcal{O}(W_k)$, and
 $\lambda_{\mathrm{NS}} < 1$ for the stated $m$. \qed
 \end{proof}
 
@@ -1280,10 +1375,12 @@ NS.L1 is the true bottleneck lemma of the branch. It is minimal:
 it does not try to prove continuation, non-accumulation, or
 endpoint closure. In its MIG-050 reconditioned form (NS.L1$'$) it asserts an
 $m$-step geometric contraction of the obstruction, conditional on
-the named open hypotheses \textsc{idc} and $\alpha$; no per-step
-$\mu$-budget claim survives the constants audit. With the
-reconditioned NS.L1$'$ available, NS.P1c holds in the corresponding
-$m$-step, \textsc{idc}/$\alpha$-conditional form.
+the open common-state bridge obligation
+(Obl.~\ref{ob:NS-common-state-bridge}) with \textsc{idc}
+subsidiary (MIG-052; the former hypothesis $\alpha$ is withdrawn);
+no per-step $\mu$-budget claim survives the constants audit. With
+the reconditioned NS.L1$'$ available, NS.P1c holds in the
+corresponding $m$-step, bridge-conditional form.
 \end{remark}
 
 NS.L1 splits into two subordinate lemmas:
@@ -1462,9 +1559,11 @@ formerly displayed here
 ($\mu_{\mathrm{bdry}} < 1-\sup_k\vartheta_k-\mu_{\mathrm{int}}
 -\varepsilon_{\mathrm{bdry}}$) is withdrawn as unproved; its
 derivation from the separation above is exactly the
-$\alpha$/\textsc{idc} bridge
-(\eqref{hyp:NS-alpha}, \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii})
-and is pending. Moreover the SCT.6b application below is conditional
+obstruction/ledger bridge, formerly attempted via $\alpha$ --- now
+withdrawn as ill-typed (MIG-052) --- and carried by the open
+obligation Obl.~\ref{ob:NS-common-state-bridge} (with \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} subsidiary); it
+remains pending. Moreover the SCT.6b application below is conditional
 additionally on \textsc{idc}~\eqref{hyp:NS-IDC-i}: hypothesis (H3)
 as proved (Thm.~\ref{thm:NS-H3-PASS-incoherent}) covers the boundary
 inflow channel only.
@@ -1731,9 +1830,11 @@ boundary-side chain.
 
 \begin{theorem}[\status{C}]\label{thm:NSG1plus}
 \textup{(Strict Gap Estimate --- Reconditioned, NS.G1+.)}
-\textup{[Conditional on \textsc{idc}
-\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
-\eqref{hyp:NS-alpha}, via Thm.~\ref{thm:NSL1} (MIG-050).]}
+\textup{[Conditional on the common-state bridge obligation
+Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} subsidiary; the former
+hypothesis $\alpha$~\eqref{hyp:NS-alpha} is withdrawn as ill-typed
+(MIG-052); via Thm.~\ref{thm:NSL1}.]}
 There exists a branch margin
 $\delta_{\mathrm{NS}} := 1 - \lambda_{\mathrm{NS}} > 0$ (symbolic;
 $\lambda_{\mathrm{NS}}$ as in Thm.~\ref{thm:NSL1}) such that on
@@ -1747,8 +1848,9 @@ value of $\delta_{\mathrm{NS}}$ is claimed.
 \end{theorem}
 \begin{proof}
 Immediate from Theorem~\ref{thm:NSL1} (NS.L1$'$):
-$\lambda_{\mathrm{NS}} = \widetilde\kappa^{\,m}/a < 1$ under
-\textsc{idc} and $\alpha$. The former derivation via
+$\lambda_{\mathrm{NS}} = (b/a)\,\widetilde\kappa^{\,m} < 1$
+under \textsc{idc} and the common-state bridge
+(Obl.~\ref{ob:NS-common-state-bridge}). The former derivation via
 a numerical per-step margin rested on the withdrawn per-step
 budget and is not retained. \qed
 \end{proof}
@@ -2006,10 +2108,12 @@ The full NS discharge chain now stands, at conditional force, as:
 Every link in the chain is conditionally discharged: NS.6.1 at full
 scope (Cor.~\ref{cor:NS61-discharged}) and NS.7.1
 (Thm.~\ref{thm:NS71}, Cor.~\ref{cor:NS-both-give-endpoint}), yielding
-the domain-bounded conditional CERT-CLOSE recorded in
-Prop.~\ref{prop:NS-status}. The residual to \emph{unconditional} force
-is the external Stage-3 question (unconditional global regularity),
-not any link of this chain.
+the CERT-PROJ posture recorded in
+Prop.~\ref{prop:NS-status} (MIG-052; the former conditional
+CERT-CLOSE wording is superseded). The residuals are the external
+Stage-3 question (unconditional global regularity) and the internal
+common-state bridge (Obl.~\ref{ob:NS-common-state-bridge}), through
+which every link's transfer to the window obstruction passes.
 \emph{Transition snapshot (as recorded when this remark was first
 written; retained as intake --- migration \texttt{MIG-014}):} at that
 stage NS.6.1 (full) and NS.7.1 were still open, and the remaining
@@ -2212,11 +2316,14 @@ The NS branch closure chain is:
  \mathrm{Ren.5}\,[C] \Rightarrow \cdots \Rightarrow
  \mathrm{SB2}\,[C] \Rightarrow \mathrm{NS.6.1}\,[C]
  \Rightarrow \mathrm{NS.7.1}\,[C]
- \Rightarrow \text{CERT-CLOSE}\,[C].
+ \Rightarrow \text{CERT-PROJ}\,[C].
 \]
 All steps now carry the same conditional hypotheses:
 Phase-A, $K_0=7$, LS-2, PASS (derived), and the NS
-architecture declaration.
+architecture declaration --- and, per MIG-052, the terminal step
+holds at CERT-PROJ force only: the ledger-to-obstruction transfer
+is the open common-state bridge
+(Obl.~\ref{ob:NS-common-state-bridge}).
 \end{remark}
 
 \begin{remark}[\status{R}]\label{rem:NS-window-Q2a-hardening}
@@ -2355,10 +2462,13 @@ Hence the contraction holds globally. \qed
 \begin{corollary}[\status{C}]\label{cor:NS61-discharged}
 \textup{(NS.6.1 Conditionally Discharged.)}
 Theorem~\ref{thm:NS61} (the Obstruction-to-Continuation-Criterion
-Theorem NS.6.1) is conditionally discharged:
-the multiplicative window-to-window contraction condition holds
-uniformly, certifying the active NS persistence/extendibility
-continuation criterion.
+Theorem NS.6.1) is conditionally discharged \emph{at CERT-PROJ
+force} (MIG-052): the multiplicative window-to-window contraction
+condition holds uniformly \emph{on the ledger side}; its transfer
+to the window obstruction, and hence the certification of the
+active NS persistence/extendibility continuation criterion, passes
+through the open common-state bridge
+(Obl.~\ref{ob:NS-common-state-bridge}).
 
 The conditional hypotheses are:
 \begin{enumerate}[label=\textup{(\arabic*)}]
@@ -2368,10 +2478,13 @@ The conditional hypotheses are:
  \item Phase-A (conditional on $K_0=7$);
  \item PASS (conditional theorem, Thm.~\ref{thm:PASS-derived});
  \item \textsc{idc} --- Interior Defect Control
- \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} (named open
- hypothesis; MIG-050);
- \item $\alpha$ --- obstruction/ledger alignment
- \eqref{hyp:NS-alpha} (named open hypothesis; MIG-050).
+ \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} (subsidiary and
+ insufficient per the MIG-052 re-scope; MIG-050 intake);
+ \item the obstruction/ledger common-state bridge,
+ Obl.~\ref{ob:NS-common-state-bridge} (open obligation; MIG-052).
+ The former hypothesis at this position --- $\alpha$,
+ obstruction/ledger alignment \eqref{hyp:NS-alpha} (MIG-050) ---
+ is withdrawn as ill-typed (MIG-052).
 \end{enumerate}
 \end{corollary}
 
@@ -2403,12 +2516,14 @@ complete at conditional force:
  \mathrm{SB2}\,[C] \Rightarrow \mathrm{NS.6.1}\,[C]
  \Rightarrow \mathrm{NS.7.1}\,[C],
 \]
-yielding the domain-bounded conditional CERT-CLOSE of
-Prop.~\ref{prop:NS-status} --- with the hypothesis set enlarged by
-MIG-050 to include the named open hypotheses \textsc{idc} and
-$\alpha$ (see Thm.~\ref{thm:NSL1}). The residuals are the external
-unconditional Stage-3 question and the internal
-\textsc{idc}/$\alpha$ burden.
+yielding the CERT-PROJ posture of
+Prop.~\ref{prop:NS-status} (MIG-052; the former conditional
+CERT-CLOSE wording is superseded) --- the hypothesis set now
+comprises the open common-state bridge obligation
+(Obl.~\ref{ob:NS-common-state-bridge}) with \textsc{idc}
+subsidiary; the former hypothesis $\alpha$ is withdrawn (see
+Thm.~\ref{thm:NSL1}). The residuals are the external unconditional
+Stage-3 question and the internal common-state bridge.
 \end{remark}
 
 %% ---------------------------------------------------------------
@@ -2492,9 +2607,12 @@ Strong BA ($N_{\mathrm{cert}} = O(|\partial U_n|)$) implies:
  \sup_n Q_n \;:=\; \sup_n D_{\mathrm{floor}}(U_n)/a_n^2 \;<\; \infty,
 \]
 closing NS Stage-3. Combined with the canonical NS closure chain
-(NS.6.1 [C] $\to$ NS.7.1 [C]), the NS branch achieves
-$u \in C^\infty(\mathbb{R}^3 \times (0,\infty))$
-conditionally at status $\mathsf{Cond}(K_0=7)$.
+(NS.6.1 [C] $\to$ NS.7.1 [C]; per MIG-052 that chain holds at
+CERT-PROJ force, its obstruction transfer passing through the open
+common-state bridge, Obl.~\ref{ob:NS-common-state-bridge}), the NS
+branch achieves $u \in C^\infty(\mathbb{R}^3 \times (0,\infty))$
+conditionally at status $\mathsf{Cond}(K_0=7)$, on the same
+enlarged, bridge-inclusive hypothesis set.
 \end{corollary}
 
 \begin{proof}
@@ -2517,41 +2635,54 @@ closes NS Stage-3 conditionally. The NS closure chain is now:
  \Rightarrow \mathrm{LR\;bound}\,[C]
  \Rightarrow \mathrm{Strong\;BA}\,[C]
  \Rightarrow \sup_n Q_n < \infty\,[C]
- \Rightarrow \mathrm{CERT\text{-}CLOSE}\,[C]
+ \Rightarrow \mathrm{CERT\text{-}PROJ}\,[C]
 \]
 All steps conditional on Phase-A, $K_0=7$, O\_CLU, and the YM
-mass gap. This completes the 8-step pre-canonical resolution chain
-(Papers BW + BX + BS) in canonical form.
+mass gap --- and, per MIG-052, on the open common-state bridge
+(Obl.~\ref{ob:NS-common-state-bridge}), through which the terminal
+composition with NS.6.1/NS.7.1 passes; the terminal token is
+accordingly CERT-PROJ, not CERT-CLOSE. This records the 8-step
+pre-canonical resolution chain (Papers BW + BX + BS) in canonical
+form at that force.
 \end{remark}
 
 \section{Final Status Proposition}
 %% ---------------------------------------------------------------
 
 \begin{proposition}[\status{C}]\label{prop:NS-status}
-\textup{(NS Branch Status Proposition --- Updated.)}
+\textup{(NS Branch Status Proposition --- Updated, MIG-052.)}
 The NS branch is a lawful descendant of the canonical spine and
-has reached domain-bounded conditional CERT-CLOSE, the conditional
-hypothesis set including --- in addition to Phase-A, $K_0=7$, LS-2,
-and PASS --- the named open hypotheses \textsc{idc}
-\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
-\eqref{hyp:NS-alpha} introduced by the MIG-050 constants-audit
-reconditioning. No claim in this proposition may be cited without
-that enlarged hypothesis set.
+holds a domain-bounded conditional endpoint claim at
+\emph{CERT-PROJ} force: the NS.6.1/NS.7.1 conditional chain is
+complete on the ledger side, and its transfer to the window
+obstruction --- hence the endpoint --- passes through the open
+common-state bridge obligation
+(Obl.~\ref{ob:NS-common-state-bridge}). The conditional hypothesis
+set comprises --- in addition to Phase-A, $K_0=7$, LS-2, and PASS
+--- the bridge obligation together with the subsidiary,
+insufficient \textsc{idc}
+\eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii}; the former hypothesis
+$\alpha$~\eqref{hyp:NS-alpha} (MIG-050) is withdrawn. The former
+domain-bounded conditional CERT-CLOSE wording (MIG-050) is
+superseded; no claim in this proposition may be cited at CERT-CLOSE
+force, nor without the enlarged, bridge-inclusive hypothesis set.
 \end{proposition}
 
 \begin{proof}
 Lawful descent: Proposition~\ref{prop:NS-lawful}.
 NS.6.1 conditionally discharged:
 Cor.~\ref{cor:NS61-discharged} (window-uniformity + $K_0=7$
-+ Phase-A + PASS + \textsc{idc} + $\alpha$; the ledger ratio
++ Phase-A + PASS + \textsc{idc} (subsidiary) +
+Obl.~\ref{ob:NS-common-state-bridge}; the ledger ratio
 $\kappa\le 1-8/343$ stands, its transfer to the window obstruction
-being part of the \textsc{idc}/$\alpha$ bridge --- MIG-050; the
-former per-step margin claim is withdrawn).
+being exactly the open common-state bridge --- MIG-052; $\alpha$
+withdrawn; the former per-step margin claim remains withdrawn).
 Window determinism: Thm.~\ref{thm:NS-window-determinism}
 (Q2a resolved), giving clean [C] without recurrence caveat.
 NS.7.1 conditionally discharged: Thm.~\ref{thm:NS71}
 (Book~VI $H^1_x$ interface + Gr\"{o}nwall control).
-Domain-bounded CERT-CLOSE: Cor.~\ref{cor:NS-both-give-endpoint}.
+Domain-bounded conditional endpoint at CERT-PROJ force:
+Cor.~\ref{cor:NS-both-give-endpoint}.
 The NS Frontier Theorem (Thm.~\ref{thm:NS-frontier}) now describes
 the \emph{formal conditional} frontier, not an unconditional barrier:
 under the stated Phase-A/$K_0=7$/PASS/LS-2 hypotheses,
@@ -2567,26 +2698,32 @@ The NS branch may claim:
  \item lawful branch admissibility under Book~V,
  \item a well-defined source-descended obstruction quantity,
  \item a lawful bridge-stack formulation whose named theorems
- (NS.6.1, NS.7.1) are conditionally discharged
+ (NS.6.1, NS.7.1) are conditionally discharged at CERT-PROJ force
  (Cor.~\ref{cor:NS61-discharged}, Thm.~\ref{thm:NS71},
  Cor.~\ref{cor:NS-both-give-endpoint}) --- conditionally on the
- enlarged hypothesis set including \textsc{idc} and $\alpha$
- (MIG-050),
- \item domain-bounded conditional CERT-CLOSE at the declared
- scope (Prop.~\ref{prop:NS-status}), conditional on the same
- enlarged hypothesis set including \textsc{idc} and $\alpha$
- (MIG-050), and
+ enlarged hypothesis set including the open common-state bridge
+ obligation Obl.~\ref{ob:NS-common-state-bridge} with \textsc{idc}
+ subsidiary (MIG-052; $\alpha$ withdrawn),
+ \item a domain-bounded conditional endpoint claim at CERT-PROJ
+ force at the declared scope (Prop.~\ref{prop:NS-status}),
+ conditional on the same enlarged, bridge-inclusive hypothesis set
+ (MIG-052; the former conditional CERT-CLOSE wording is
+ superseded), and
  \item an explicit named failure frontier: originally Ren.5 and
  SB2, both now conditionally discharged; the residual frontier
  comprises the \emph{external unconditional} Stage-3 question
  (unconditional global regularity) and the \emph{internal}
- quantitative frontier reopened by the MIG-050 constants audit:
- the named open hypotheses \textsc{idc}
- \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
- \eqref{hyp:NS-alpha}.
+ frontier as sharpened by the MIG-052 common-state analysis:
+ the open common-state bridge obligation
+ Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc}
+ \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} recorded under it as
+ subsidiary and insufficient, and the withdrawn hypothesis
+ $\alpha$~\eqref{hyp:NS-alpha} retained only as historical
+ intake.
 \end{enumerate}
-The NS branch may not claim unconditional endpoint closure or
-unconditional global regularity.
+The NS branch may not claim unconditional endpoint closure,
+unconditional global regularity, or CERT-CLOSE at any scope while
+Obl.~\ref{ob:NS-common-state-bridge} is open.
 \end{corollary}
 
 \begin{remark}[\status{R}]
@@ -2766,11 +2903,16 @@ frontier items that once blocked it --- UH.3 on the proof-program
 side and SB2 on the reserve-side structural side, each with a
 precise mathematical statement, a clear logical role in the proof
 graph, and an explicit anti-circularity argument --- have been
-conditionally discharged, and the branch has reached domain-bounded
-conditional CERT-CLOSE (Prop.~\ref{prop:NS-status}). What remains
-is the single \emph{external unconditional} frontier: unconditional
-global regularity (the Stage-3 Clay question), which lies outside
-the declared conditional scope and is claimed nowhere in this book.
+conditionally discharged, and the branch holds its domain-bounded
+conditional endpoint claim at CERT-PROJ force
+(Prop.~\ref{prop:NS-status}; MIG-052). What remains is a pair of
+named residuals: the \emph{internal} obstruction/ledger
+common-state bridge (Obl.~\ref{ob:NS-common-state-bridge}), through
+which every transfer from the contracting ledger to the window
+obstruction passes, and the \emph{external unconditional} frontier
+--- unconditional global regularity (the Stage-3 Clay question) ---
+which lies outside the declared conditional scope and is claimed
+nowhere in this book.
 That precision --- named items, named conditions, named residual ---
 is the discipline Book~VII mandates, and the NS branch book
 satisfies it.
@@ -2793,9 +2935,13 @@ resolution path shows it does under $K_0=7$. That import is now
 reflected in the canonical body: NS.6.1 is conditionally discharged
 (Cor.~\ref{cor:NS61-discharged}), NS.7.1 is conditionally proved
 (Thm.~\ref{thm:NS71}, Cor.~\ref{cor:NS-both-give-endpoint}), and the
-branch has reached domain-bounded conditional CERT-CLOSE
-(Prop.~\ref{prop:NS-status}). Unconditional global regularity (NS
-Stage-3, the Clay Prize question) remains the external frontier.
+branch holds its domain-bounded conditional endpoint claim at
+CERT-PROJ force (Prop.~\ref{prop:NS-status}; MIG-052 --- the
+transfer to the window obstruction passes through the open
+common-state bridge, Obl.~\ref{ob:NS-common-state-bridge}).
+Unconditional global regularity (NS Stage-3, the Clay Prize
+question) and the internal common-state bridge are the named
+residual frontiers.
 \end{remark}
 
 \end{document}
