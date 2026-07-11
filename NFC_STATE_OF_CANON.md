@@ -1,7 +1,7 @@
 # NFC Canon: State of the Canon
 
 > **GENERATED SNAPSHOT** — produced by `scripts/generate_state_of_canon.py` from the
-> metadata layer (census commit `bfa0fc7`, generated 2026-07-04 00:32Z).
+> metadata layer (census commit `b171e35`, generated 2026-07-11 07:42Z).
 > Do not hand-edit above the historical marker; run `make state` to refresh.
 > Historical session material is preserved verbatim below the marker.
 
@@ -18,7 +18,7 @@
 | [O]-tagged (raw census) | **5** |
 | [R]-tagged (raw census) | **366** |
 | Prose-mention delta (raw − declarations) | {'R': 0, 'D': 0, 'U': 1, 'C': 9, 'O': 0, 'B': 1} |
-| Unique labels | 1990 |
+| Unique labels | 1993 |
 | Dangling references | 0 |
 | Proof-citation cycles | 0 |
 | Validation suite | **PASS** |
@@ -32,7 +32,7 @@ Declarations: {'D': 461, 'U': 210, 'C': 740, 'B': 8, 'O': 5, 'R': 366}. Both are
 | Branch | Current posture (verbatim A1 status proposition) | D | U | C | B | O | R |
 |---|---|---|---|---|---|---|---|
 | YM | Conditional CERT-CLOSE (MSC-normalized NFC scope); B1/B2/B3 post-program | 47 | 19 | 185 | 0 | 0 | 46 |
-| NS | Domain-bounded conditional CERT-CLOSE; unconditional global regularity external | 20 | 17 | 39 | 0 | 0 | 36 |
+| NS | Domain-bounded conditional CERT-CLOSE, conditional on the standing branch hypotheses together with the named IDC and alpha hypotheses (MIG-050); unconditional global regularity external | 20 | 17 | 39 | 0 | 0 | 36 |
 | SCC | Conditional CERT-CLOSE at declared structural endpoint (UCTI/depth-sum/threshold-stability + source-descent) | 15 | 8 | 40 | 0 | 0 | 19 |
 | GR | Domain-bounded conditional CERT-CLOSE + CK-corner extension; global curvature-subcriticality open | 11 | 9 | 29 | 1 | 0 | 15 |
 | SM | Conditionally intrinsic-structural closed, inherited-scope open | 6 | 1 | 42 | 0 | 0 | 19 |

@@ -10,7 +10,7 @@
   },
   "branch_posture_view": {
     "YM": "Conditional CERT-CLOSE (MSC-normalized NFC scope); B1/B2/B3 post-program",
-    "NS": "Domain-bounded conditional CERT-CLOSE; unconditional global regularity external",
+    "NS": "Domain-bounded conditional CERT-CLOSE, conditional on the standing branch hypotheses together with the named IDC and alpha hypotheses (MIG-050); unconditional global regularity external",
     "SCC": "Conditional CERT-CLOSE at declared structural endpoint (UCTI/depth-sum/threshold-stability + source-descent)",
     "GR": "Domain-bounded conditional CERT-CLOSE + CK-corner extension; global curvature-subcriticality open",
     "SM": "Conditionally intrinsic-structural closed, inherited-scope open",
@@ -63,8 +63,8 @@
     }
   ],
   "release_snapshot_view": {
-    "generated": "2026-07-04T00:32:36+00:00",
-    "census_commit": "bfa0fc7",
+    "generated": "2026-07-11T07:42:17+00:00",
+    "census_commit": "b171e35",
     "total_claims": 1790,
     "census": {
       "D": 461,

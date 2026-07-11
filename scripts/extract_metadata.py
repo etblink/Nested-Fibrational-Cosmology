@@ -277,7 +277,7 @@ def _branch_posture_view():
     # sourced from each branch's A1 status proposition (verbatim postures, review-approved)
     return {
         "YM":"Conditional CERT-CLOSE (MSC-normalized NFC scope); B1/B2/B3 post-program",
-        "NS":"Domain-bounded conditional CERT-CLOSE; unconditional global regularity external",
+        "NS":"Domain-bounded conditional CERT-CLOSE, conditional on the standing branch hypotheses together with the named IDC and alpha hypotheses (MIG-050); unconditional global regularity external",
         "SCC":"Conditional CERT-CLOSE at declared structural endpoint (UCTI/depth-sum/threshold-stability + source-descent)",
         "GR":"Domain-bounded conditional CERT-CLOSE + CK-corner extension; global curvature-subcriticality open",
         "SM":"Conditionally intrinsic-structural closed, inherited-scope open",

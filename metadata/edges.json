@@ -3360,6 +3360,12 @@
     "kind": "proof-cite"
   },
   {
+    "from": "cor:NS61-discharged",
+    "to": "thm:NSP1c",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
     "from": "cor:window-uniform-coeffs",
     "to": "prop:NS-quantitative-c1",
     "file": "NFC_NS_Branch.tex",
@@ -3577,7 +3583,19 @@
   },
   {
     "from": "thm:NS61",
-    "to": "sec:ns61-global",
+    "to": "hyp:NS-IDC-i",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61",
+    "to": "hyp:NS-IDC-ii",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61",
+    "to": "hyp:NS-alpha",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
@@ -3602,6 +3620,12 @@
   {
     "from": "thm:NS61",
     "to": "thm:NS61-global",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61",
+    "to": "thm:NSP1c",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
@@ -3654,6 +3678,12 @@
     "kind": "proof-cite"
   },
   {
+    "from": "thm:NS71",
+    "to": "hyp:NS-alpha",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
     "from": "thm:NSDI2",
     "to": "def:NSSF",
     "file": "NFC_NS_Branch.tex",
@@ -3667,19 +3697,37 @@
   },
   {
     "from": "thm:NSL1",
-    "to": "thm:NS-kappa-explicit",
+    "to": "hyp:NS-IDC-i",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
   {
     "from": "thm:NSL1",
-    "to": "thm:NSL1a",
+    "to": "hyp:NS-IDC-ii",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
   {
     "from": "thm:NSL1",
-    "to": "thm:NSL1b",
+    "to": "hyp:NS-alpha",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSL1",
+    "to": "prop:NS-quantitative-c1",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSL1",
+    "to": "prop:NS-quantitative-c2",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSL1",
+    "to": "thm:NS-H3-PASS-incoherent",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
@@ -3739,13 +3787,7 @@
   },
   {
     "from": "thm:NSP1c",
-    "to": "thm:NSG1plus",
-    "file": "NFC_NS_Branch.tex",
-    "kind": "proof-cite"
-  },
-  {
-    "from": "thm:NSP1c",
-    "to": "thm:NSP1b",
+    "to": "thm:NSL1",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },

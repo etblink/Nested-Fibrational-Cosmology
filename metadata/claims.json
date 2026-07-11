@@ -22810,7 +22810,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@105194",
+    "claim_id": "NFC_NS_Branch:remark@112345",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "H-LR: Lieb--Robinson Bound and NS Stage-3 Canonical Import",
     "claim_type": "remark",
@@ -22834,7 +22834,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@107920",
+    "claim_id": "NFC_NS_Branch:remark@116027",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22859,7 +22859,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@109448",
+    "claim_id": "NFC_NS_Branch:remark@117555",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22887,7 +22887,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@111817",
+    "claim_id": "NFC_NS_Branch:remark@119924",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Boundary of the NS Branch Book",
     "claim_type": "remark",
@@ -22936,7 +22936,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@42041",
+    "claim_id": "NFC_NS_Branch:remark@43332",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Frontier Statement",
     "claim_type": "remark",
@@ -22957,7 +22957,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@42730",
+    "claim_id": "NFC_NS_Branch:remark@44021",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Frontier Statement",
     "claim_type": "remark",
@@ -22978,7 +22978,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@45766",
+    "claim_id": "NFC_NS_Branch:remark@47057",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Subtheorem decomposition",
     "claim_type": "remark",
@@ -22987,6 +22987,7 @@
     "status_force": "remark (non-load-bearing)",
     "branch": "NS",
     "dependencies": [
+      "thm:NSL1",
       "thm:NSP1b"
     ],
     "discharge_basis": null,
@@ -23001,7 +23002,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@49459",
+    "claim_id": "NFC_NS_Branch:remark@54469",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23022,7 +23023,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@50995",
+    "claim_id": "NFC_NS_Branch:remark@56318",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23043,7 +23044,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@52918",
+    "claim_id": "NFC_NS_Branch:remark@58517",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23064,7 +23065,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@69868",
+    "claim_id": "NFC_NS_Branch:remark@76366",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The gap theorem",
     "claim_type": "remark",
@@ -23072,7 +23073,9 @@
     "status_tag": "R",
     "status_force": "remark (non-load-bearing)",
     "branch": "NS",
-    "dependencies": [],
+    "dependencies": [
+      "thm:NSSB2"
+    ],
     "discharge_basis": null,
     "supersedes": null,
     "superseded_by": null,
@@ -23085,7 +23088,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@88532",
+    "claim_id": "NFC_NS_Branch:remark@95087",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS.6.1 Partial Discharge via SB2",
     "claim_type": "remark",
@@ -23106,7 +23109,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@92243",
+    "claim_id": "NFC_NS_Branch:remark@98784",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS Window-Uniformity Verification",
     "claim_type": "remark",
@@ -23189,6 +23192,9 @@
     "dependencies": [
       "cor:NS-both-give-endpoint",
       "cor:NS61-discharged",
+      "hyp:NS-IDC-i",
+      "hyp:NS-IDC-ii",
+      "hyp:NS-alpha",
       "prop:NS-status",
       "thm:NS71"
     ],
@@ -23394,7 +23400,8 @@
     "dependencies": [
       "thm:NS-SB2-discharged",
       "thm:NS61",
-      "thm:NS61-global"
+      "thm:NS61-global",
+      "thm:NSP1c"
     ],
     "discharge_basis": null,
     "supersedes": null,
@@ -23657,7 +23664,9 @@
     "status_tag": "D",
     "status_force": "definitional/standing",
     "branch": "NS",
-    "dependencies": [],
+    "dependencies": [
+      "thm:NSL1"
+    ],
     "discharge_basis": null,
     "supersedes": null,
     "superseded_by": null,
@@ -24164,8 +24173,7 @@
       "cor:NS-both-give-endpoint",
       "cor:NS61-discharged",
       "prop:NS-status",
-      "thm:NS71",
-      "thm:PASS-derived"
+      "thm:NS71"
     ],
     "discharge_basis": null,
     "supersedes": null,
@@ -24242,7 +24250,8 @@
     "dependencies": [
       "cor:NS-both-give-endpoint",
       "prop:NS-status",
-      "thm:NS71"
+      "thm:NS71",
+      "thm:NSL1"
     ],
     "discharge_basis": null,
     "supersedes": null,
@@ -24382,6 +24391,9 @@
       "cor:NS-both-give-endpoint",
       "cor:NS-eventual-periodicity",
       "cor:NS61-discharged",
+      "hyp:NS-IDC-i",
+      "hyp:NS-IDC-ii",
+      "hyp:NS-alpha",
       "thm:NS-window-determinism",
       "thm:NS-window-uniformity",
       "thm:NS61",
@@ -25016,11 +25028,14 @@
     "status_force": "conditional",
     "branch": "NS",
     "dependencies": [
-      "sec:ns61-global",
+      "hyp:NS-IDC-i",
+      "hyp:NS-IDC-ii",
+      "hyp:NS-alpha",
       "thm:NS-SB2-discharged",
       "thm:NS-kappa-explicit",
       "thm:NS-window-uniformity",
-      "thm:NS61-global"
+      "thm:NS61-global",
+      "thm:NSP1c"
     ],
     "discharge_basis": null,
     "supersedes": null,
@@ -25094,7 +25109,8 @@
     "branch": "NS",
     "dependencies": [
       "cor:NS61-discharged",
-      "def:continuum-interface-regime"
+      "def:continuum-interface-regime",
+      "hyp:NS-alpha"
     ],
     "discharge_basis": null,
     "supersedes": null,
@@ -25163,9 +25179,12 @@
     "status_force": "conditional",
     "branch": "NS",
     "dependencies": [
-      "thm:NS-kappa-explicit",
-      "thm:NSL1a",
-      "thm:NSL1b"
+      "hyp:NS-IDC-i",
+      "hyp:NS-IDC-ii",
+      "hyp:NS-alpha",
+      "prop:NS-quantitative-c1",
+      "prop:NS-quantitative-c2",
+      "thm:NS-H3-PASS-incoherent"
     ],
     "discharge_basis": null,
     "supersedes": null,
@@ -25285,8 +25304,7 @@
     "status_force": "conditional",
     "branch": "NS",
     "dependencies": [
-      "thm:NSG1plus",
-      "thm:NSP1b"
+      "thm:NSL1"
     ],
     "discharge_basis": null,
     "supersedes": null,
