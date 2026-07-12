@@ -1,7 +1,7 @@
 # NFC Canon: State of the Canon
 
 > **GENERATED SNAPSHOT** — produced by `scripts/generate_state_of_canon.py` from the
-> metadata layer (census commit `c5dab1f`, generated 2026-07-11 09:14Z).
+> metadata layer (census commit `d7907dc`, generated 2026-07-11 20:36Z).
 > Do not hand-edit above the historical marker; run `make state` to refresh.
 > Historical session material is preserved verbatim below the marker.
 
@@ -60,7 +60,7 @@ Declarations: {'D': 461, 'U': 210, 'C': 740, 'B': 8, 'O': 6, 'R': 366}. Both are
 |---|---|---|---|
 | I | Syntactic [O] census | 6 | environments literally tagged \status{O} |
 | II | Named `ob:` roster | 100 | all ob:-labelled obligation environments regardless of tag |
-| III | Reduced irreducible frontier | 4 | genuinely open deep mathematics after all reductions |
+| III | Reduced irreducible frontier | 5 | genuinely open deep mathematics after all reductions (INTERNAL canonical burdens only) |
 | IV | Branch posture | 10 branches | closure ladder position per branch (see views.branch_posture) |
 
 **Reduced irreducible frontier (III):**
@@ -68,6 +68,7 @@ Declarations: {'D': 461, 'U': 210, 'C': 740, 'B': 8, 'O': 6, 'R': 366}. Both are
 - **RH packet-local synthesis** — labels: `ob:rh-tloc-L3`, `ob:rh-tloc-L4`, `ob:rh-tloc-L5`, `ob:rh-tloc-L6`, `ob:rh-tloc-L7`
 - **SM matter content** — labels: `ob:SM-matter`, `ob:SM-IDcont-TV`, `ob:O-ID-cont`
 - **GR global curvature-subcriticality** — labels: `def:curv-subcrit-global`
+- **NS obstruction/ledger common-state bridge** — labels: `ob:NS-common-state-bridge`
 
 <!-- ===== HISTORICAL HAND-MAINTAINED RECORD BELOW: GENERATOR PRESERVES VERBATIM ===== -->
 

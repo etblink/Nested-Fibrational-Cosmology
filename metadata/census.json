@@ -26,8 +26,8 @@
     "B": 1
   },
   "reconciliation_note": "raw_grep_census is the review-endorsed F-3 figure (counts every \\status{X}). environment_census counts only status-tagged environment declarations (the claim records). The delta is prose status mentions (e.g. GR narrative 'is \\status{C}', NS inline sub-lemma tags) that are not standalone declarations. Both are authoritative for their own question.",
-  "census_commit": "c5dab1f",
-  "generated": "2026-07-11T09:14:37+00:00",
+  "census_commit": "d7907dc",
+  "generated": "2026-07-11T20:36:33+00:00",
   "frontier_accountings": {
     "I_syntactic_O_census": {
       "count": 6,
@@ -148,7 +148,7 @@
       "measures": "all ob:-labelled obligation environments regardless of tag"
     },
     "III_reduced_irreducible_frontier": {
-      "count": 4,
+      "count": 5,
       "items": [
         {
           "item": "RH arithmetic orbit grammar",
@@ -181,9 +181,18 @@
           "labels": [
             "def:curv-subcrit-global"
           ]
+        },
+        {
+          "item": "NS obstruction/ledger common-state bridge",
+          "labels": [
+            "ob:NS-common-state-bridge"
+          ],
+          "scope": "internal",
+          "added": "MIG-052"
         }
       ],
-      "measures": "genuinely open deep mathematics after all reductions"
+      "measures": "genuinely open deep mathematics after all reductions (INTERNAL canonical burdens only)",
+      "external_note": "external (not counted): NS unconditional global regularity (Stage-3, Clay) -- tracked as the NS frontier theorem, outside the declared conditional scope"
     },
     "IV_branch_posture": {
       "source": "per-branch A1 status proposition",

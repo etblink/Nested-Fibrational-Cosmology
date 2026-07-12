@@ -22810,7 +22810,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@101625",
+    "claim_id": "NFC_NS_Branch:remark@104717",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS.6.1 Partial Discharge via SB2",
     "claim_type": "remark",
@@ -22831,7 +22831,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@105322",
+    "claim_id": "NFC_NS_Branch:remark@108414",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS Window-Uniformity Verification",
     "claim_type": "remark",
@@ -22857,7 +22857,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@119802",
+    "claim_id": "NFC_NS_Branch:remark@122894",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "H-LR: Lieb--Robinson Bound and NS Stage-3 Canonical Import",
     "claim_type": "remark",
@@ -22882,7 +22882,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@124651",
+    "claim_id": "NFC_NS_Branch:remark@127743",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22907,7 +22907,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@126179",
+    "claim_id": "NFC_NS_Branch:remark@129271",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22935,7 +22935,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@128548",
+    "claim_id": "NFC_NS_Branch:remark@131640",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Boundary of the NS Branch Book",
     "claim_type": "remark",
@@ -22984,7 +22984,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@44862",
+    "claim_id": "NFC_NS_Branch:remark@44938",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Frontier Statement",
     "claim_type": "remark",
@@ -23005,7 +23005,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@45551",
+    "claim_id": "NFC_NS_Branch:remark@45627",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Frontier Statement",
     "claim_type": "remark",
@@ -23026,7 +23026,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@48587",
+    "claim_id": "NFC_NS_Branch:remark@48663",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Subtheorem decomposition",
     "claim_type": "remark",
@@ -23050,7 +23050,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@60422",
+    "claim_id": "NFC_NS_Branch:remark@63448",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23073,7 +23073,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@62367",
+    "claim_id": "NFC_NS_Branch:remark@65393",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23094,7 +23094,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@64566",
+    "claim_id": "NFC_NS_Branch:remark@67592",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23115,7 +23115,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@82767",
+    "claim_id": "NFC_NS_Branch:remark@85859",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The gap theorem",
     "claim_type": "remark",
@@ -25072,7 +25072,6 @@
     "dependencies": [
       "hyp:NS-IDC-i",
       "hyp:NS-IDC-ii",
-      "hyp:NS-alpha",
       "ob:NS-common-state-bridge",
       "thm:NS-SB2-discharged",
       "thm:NS-kappa-explicit",
@@ -25153,7 +25152,6 @@
     "dependencies": [
       "cor:NS61-discharged",
       "def:continuum-interface-regime",
-      "hyp:NS-alpha",
       "ob:NS-common-state-bridge"
     ],
     "discharge_basis": null,
@@ -25225,7 +25223,6 @@
     "branch": "NS",
     "dependencies": [
       "hyp:NS-IDC-i",
-      "hyp:NS-alpha",
       "ob:NS-common-state-bridge",
       "prop:NS-quantitative-c1",
       "prop:NS-quantitative-c2",

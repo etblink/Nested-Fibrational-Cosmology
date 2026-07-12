@@ -9,7 +9,7 @@ carries its own date.*
 
 **Snapshot basis:** corpus state as of L+39 (post VRP closure L+36, post
 YM verification L+37, post cross-book integration L+38).
-**Total `ob:`-labelled obligations corpus-wide:** 109 (110 distinct labels after the L+40 de-duplication of ob:cryst-EWALD).
+**Total `ob:`-labelled obligations corpus-wide:** 109 (110 distinct labels after the L+40 de-duplication of ob:cryst-EWALD). **MIG-052 update:** 111 distinct `ob:` labels (the L+56 split retained `ob:vrp-charge-quant`; MIG-052 registers `ob:NS-common-state-bridge`), of which 100 are `obligation`-environment labels (the generated accounting II basis) and 11 are carried by other environments (remark-tagged etc., a registered convention wrinkle, §4).
 
 ---
 
@@ -20,9 +20,9 @@ different bases. This roster reconciles them:
 
 | Accounting | Basis | Count | What it measures |
 |---|---|---|---|
-| Syntactic `[O]`-tag census | environments tagged `\status{O}` | **4** | obligations marked open-unproved by tag |
+| Syntactic `[O]`-tag census | environments tagged `\status{O}` | **6** *(MIG-052; snapshot value was 4, L+56 made it 5, MIG-052 adds `ob:NS-common-state-bridge`)* | obligations marked open-unproved by tag |
 | Curated named-obligations (Book VII) | governance-significant not-fully-discharged items | "13" (pre-VRP snapshot) | the audit roster |
-| Reduced irreducible frontier (Book VII) | genuinely open deep mathematics | **4 distinct items** | mathematical distance to completion |
+| Reduced irreducible frontier (Book VII) | genuinely open deep mathematics (internal canonical burdens only) | **5 distinct items** *(MIG-052 adds the internal NS common-state bridge; the external NS Stage-3 question is classified external and NOT counted)* | mathematical distance to completion |
 | **This roster (objective partition)** | discharge-language + status tag, all 109 | **see §2** | complete, mechanical, auditable |
 
 The three are not contradictory; they measure different things. This
@@ -38,11 +38,13 @@ together with its status tag. This is mechanical and complete; it does
 (§2.5), whose discharge is recorded in their branch status proposition,
 not in the obligation's own title.
 
-### 2.1 Genuinely OPEN — 4 (the syntactic `[O]` census)
+### 2.1 Genuinely OPEN — 6 (the syntactic `[O]` census; MIG-052 current)
 - `ob:rh-s1-formal` (RH) — O-RH.S1 Arithmetic Witness Assembly, formal statement.
 - `ob:cryst-PHASE` (CRYST) — O-CRYST.PHASE Phase Problem, formal statement.
 - `ob:cryst-PHASE-progress` (CRYST) — O-CRYST.PHASE current status/remaining frontier.
 - `ob:bio-BND-open` (BIO) — O-BIO.BND Boundary Self-Organization, reduced frontier.
+- `ob:vrp-charge-quant` (Book III) — O_Charge.Quant-cont.b2, numeric isolation of Ω_B (remark-tagged `[O]`; added to this list by the L+56 split, see the L+56 addendum).
+- `ob:NS-common-state-bridge` (NS) — Obstruction/Ledger Common-State Bridge (registered MIG-052; the single open NS obligation — see the MIG-052 addendum below).
 
 ### 2.2 CONDITIONALLY DISCHARGED at named scope (live residual) — 31
 Includes the entire VRP dynamical-core arc (9 items, Book III) plus
@@ -130,6 +132,16 @@ labels:
 4. **GR global curvature-subcriticality** — tracked as
    `def:curv-subcrit-global` (GR), **not** an `ob:` label: GR uses a
    fourth tracking convention (definition-as-frontier-marker). Flagged.
+5. **NS obstruction/ledger common-state bridge** *(internal; added
+   MIG-052)* — `ob:NS-common-state-bridge`: a common temporal state
+   carrying both the level-stock window obstruction and the
+   contracting increment ledger, with a proved state-evolution law,
+   a uniform same-functional contraction (or equivalent uniform
+   product estimate), a two-sided same-state comparison (or direct
+   closed contracting recurrence), and complete channel accounting.
+   **External, deliberately not counted here:** NS unconditional
+   global regularity (Stage-3, Clay) remains classified external and
+   must never be silently merged into this internal count.
 
 The reduced frontier is consistent with the current live labels. The
 VRP closure (L+36) does **not** touch the reduced frontier: every VRP
@@ -165,8 +177,8 @@ the governance roster.
 
 ## 5. Reconciled headline
 
-- **Genuinely open (`[O]`):** 4 — all toolkit-boundary (RH, CRYST×2, BIO).
-- **Deep open mathematics (reduced frontier):** 4 — RH×2, SM, GR.
+- **Genuinely open (`[O]`):** 6 *(MIG-052)* — RH, CRYST×2, BIO, Book III charge-quant (L+56), NS common-state bridge (MIG-052).
+- **Deep open mathematics (reduced frontier, internal):** 5 *(MIG-052)* — RH×2, SM, GR, NS common-state bridge; the external NS Stage-3 question is classified external and not counted.
 - **Conditionally discharged with live residual:** 31 (incl. full VRP arc).
 - **Fully discharged / bridge-discharged:** 12.
 - **Base declarations (62):** 52 conditionally established / endpoint-discharged at named scope; **10 are the live deep frontier** (RH orbit grammar ×3, RH packet synthesis ×5, SM matter ×2) — exactly the reduced irreducible frontier.
@@ -212,3 +224,50 @@ pass; the Canon Ledger is the live record between snapshots.*
 
 Net: [O] count unchanged at 5 (b2 remains the open tag); the obligation is now properly split, with the charge and abstract-frequency halves conditionally discharged. Corrects the L+46 over-coarse conflation of charge and frequency continuum survival as "the identical deferral."
 
+
+---
+
+### MIG-052 update — NS common-state bridge registered (corrected delivery)
+
+**New obligation:** `ob:NS-common-state-bridge` (NS branch, `[O]`) — the
+obstruction/ledger common-state bridge. Its burden (canon text is
+authoritative): a common temporal state carrying both the window
+obstruction and the contracting/coercive quantity; a proved
+state-evolution law (including an interface-burden evolution law with a
+genuine boundary-loss channel); a **uniform** same-functional
+contraction V(T_nX) ≤ λV(X), λ<1, uniformly on the late tail with
+controlled remainder, or an equivalent uniform product/joint
+contraction estimate (individual per-step spectral-radius statements
+for time-dependent T_n are insufficient); a genuine two-sided
+same-state comparison a𝔇_k ≤ 𝒪_NS(W_k) ≤ b𝔇_k + ρ_k on the declared
+threshold regime, or a direct closed contracting recurrence for 𝒪_NS;
+and explicit accounting of every channel (level stock, transported
+survivor, transported loss (1−Θ_n)C_n, interior/boundary defect
+increments, renewal inflow, redistribution, remainder). The
+state-vector and discounted-memory frames are research directions
+only; neither is assumed; the discounted comparison I_n ≍ 𝔅̂^(ρ)_n
+alone is insufficient.
+
+**Context:** `hyp:NS-alpha` withdrawn as ill-typed as a canonical
+identity and unsupported by current canon (level stock vs. step
+increment; equation and label retained as historical intake only);
+`hyp:NS-IDC-i/ii` re-scoped subsidiary and insufficient (Ψ^int occurs
+inside the IDC-i hypothesis itself but has no independent preceding
+definition, no projection/decomposition theorem from the canonical Ψ,
+and no bridge to the Book III interior increment E_n).
+
+**Branch posture:** NS = **CERT-PROJ / open-common-state-frontier**;
+the former domain-bounded conditional CERT-CLOSE wording is
+superseded; no NS closure claim may be cited at CERT-CLOSE force while
+the bridge is open; no endpoint-regularity claim.
+
+**The four accounting bases (kept separate; never summed):**
+1. Syntactic `[O]` census: **6**.
+2. Named-obligation accountings: **111** distinct `ob:` labels
+   corpus-wide (all environments); **100** on the
+   obligation-environment basis used by the generated accounting II.
+3. Reduced irreducible frontier (internal): **5**, now including the
+   NS common-state bridge; the external NS Stage-3 question stays
+   classified external and uncounted.
+4. Branch posture: per-branch A1 status proposition (NS: CERT-PROJ,
+   open common-state frontier).

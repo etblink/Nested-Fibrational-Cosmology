@@ -3601,12 +3601,6 @@
   },
   {
     "from": "thm:NS61",
-    "to": "hyp:NS-alpha",
-    "file": "NFC_NS_Branch.tex",
-    "kind": "proof-cite"
-  },
-  {
-    "from": "thm:NS61",
     "to": "ob:NS-common-state-bridge",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
@@ -3691,12 +3685,6 @@
   },
   {
     "from": "thm:NS71",
-    "to": "hyp:NS-alpha",
-    "file": "NFC_NS_Branch.tex",
-    "kind": "proof-cite"
-  },
-  {
-    "from": "thm:NS71",
     "to": "ob:NS-common-state-bridge",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
@@ -3722,12 +3710,6 @@
   {
     "from": "thm:NSL1",
     "to": "hyp:NS-IDC-i",
-    "file": "NFC_NS_Branch.tex",
-    "kind": "proof-cite"
-  },
-  {
-    "from": "thm:NSL1",
-    "to": "hyp:NS-alpha",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },

@@ -60,11 +60,19 @@
       "labels": [
         "def:curv-subcrit-global"
       ]
+    },
+    {
+      "item": "NS obstruction/ledger common-state bridge",
+      "labels": [
+        "ob:NS-common-state-bridge"
+      ],
+      "scope": "internal",
+      "added": "MIG-052"
     }
   ],
   "release_snapshot_view": {
-    "generated": "2026-07-11T09:14:37+00:00",
-    "census_commit": "c5dab1f",
+    "generated": "2026-07-11T20:36:33+00:00",
+    "census_commit": "d7907dc",
     "total_claims": 1791,
     "census": {
       "D": 461,

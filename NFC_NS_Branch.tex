@@ -811,7 +811,8 @@ supplied by the reconditioned Thm.~\ref{thm:NSP1c} in the $m$-step
 form and is therefore conditional on the open common-state bridge
 obligation, Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc}
 \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} subsidiary; MIG-052;
-the former hypothesis $\alpha$~\eqref{hyp:NS-alpha} is withdrawn.
+the former hypothesis $\alpha$ (label \texttt{hyp:NS-alpha}) is
+withdrawn as ill-typed and unsupported.
 The ledger-side contraction
 $\mathfrak{D}_{n+1}\leq\kappa\,\mathfrak{D}_n$ of
 Thm.~\ref{thm:NS61-global}, with $\kappa \leq 1-8/343$ from
@@ -893,7 +894,8 @@ continuability throughout the promoted target scope (the
 identification of the contracting ledger quantity with the
 transport-weighted imbalance is exactly the open common-state
 bridge, Obl.~\ref{ob:NS-common-state-bridge}; the former identity
-$\alpha$~\eqref{hyp:NS-alpha} is withdrawn --- MIG-052).
+$\alpha$ (label \texttt{hyp:NS-alpha}) is withdrawn as ill-typed
+and unsupported --- MIG-052).
 
 \textbf{Step~1 (Grönwall control from contraction).}
 The mismatch decay $\mathfrak{D}_n \to 0$ at rate $\kappa^n$
@@ -1189,8 +1191,10 @@ subordination lemmas, and recorded two explicit conditional
 hypotheses (\textsc{idc} and $\alpha$) as the then-identified
 repair route; every downstream use names its hypotheses. Neither
 was proved. \emph{MIG-052 re-scope (NS-0E/NS-0F/NS-0G):} the
-subsequent common-state analysis established that $\alpha$ is false
-as written (a stock/increment type mismatch --- withdrawn below),
+subsequent common-state analysis established that $\alpha$ is
+ill-typed as a canonical identity and unsupported by current canon
+(a stock/increment type mismatch --- withdrawn from active use
+below),
 that \textsc{idc} is subsidiary and insufficient for the
 obstruction bridge, and that the true frontier is the single open
 common-state bridge obligation
@@ -1212,9 +1216,13 @@ for all sufficiently late $k$ on every active admissible tail.
 (Theorem~\ref{thm:NS-H3-PASS-incoherent} proves the
 \emph{boundary}-channel subordination only; the interior channel is
 open. \emph{MIG-052 re-scope:} \textsc{idc} is \emph{subsidiary
-and insufficient}: \eqref{hyp:NS-IDC-i} lacks a canonical object to
-bound --- no $\Psi^{\mathrm{int}}$ exists in canon, NS-H3 routing
-all renewal through the boundary/halo channel --- and
+and insufficient}: \eqref{hyp:NS-IDC-i} lacks a well-founded object
+to bound --- $\Psi^{\mathrm{int}}$ occurs inside
+\eqref{hyp:NS-IDC-i} itself but has no independent preceding
+definition in canon, no projection/decomposition theorem defines it
+from the canonical $\Psi$, and no bridge connects it to the
+Book~III interior increment $E_n$; NS-H3 proves the boundary
+channel only, routing renewal through the boundary/halo --- and
 \eqref{hyp:NS-IDC-ii} admits an interior-dominated countermodel
 shape; moreover, even granted in full, \textsc{idc} yields only the
 ledger-side contraction and does not bridge the level-stock
@@ -1232,8 +1240,13 @@ on the NS active-window regime. \emph{Withdrawal record
 stock} ($I_n$, the Book~III interface burden --- a collar load at
 $\partial U_n$) with a \emph{step increment} ($\mathcal{B}_n$, the
 boundary defect of step $n \to n{+}1$); the two live on different
-temporal state spaces, so the identity is false as written --- a
-type mismatch, not a normalization gap. The equation and its label
+temporal state spaces, so the identity is \emph{ill-typed as a
+canonical identity} and \emph{unsupported by current canon} --- a
+type mismatch, not a normalization gap --- and it is withdrawn from
+active use because it identifies a level stock with a step
+increment. (Whether the two numerical values could coincide under
+some additional model constraint is not adjudicated here; no such
+constraint exists in canon.) The equation and its label
 are retained solely as the historical record of the withdrawn
 MIG-050 intake hypothesis; $\alpha$ may not be cited, at any force,
 anywhere in the corpus. The bridging role $\alpha$ was intended to
@@ -1242,30 +1255,63 @@ Obl.~\ref{ob:NS-common-state-bridge} below.
 
 \begin{obligation}[\status{O}]\label{ob:NS-common-state-bridge}
 \textup{(Obstruction/Ledger Common-State Bridge.)}
-Exhibit a common contracting state carrying both the level-stock
-window obstruction $\mathcal{O}_{\mathrm{NS}}$ and the contracting
-increment ledger $\mathfrak{D}_k$, in one of the two well-posed
-frames identified by the NS-0G common-state analysis:
-\begin{enumerate}[label=\textup{(\roman*)}]
- \item \emph{State-vector frame:} a state
- $X_n = (I_n, \mathcal{E}_n, \mathcal{B}_n, \dots)$ with an
- exhibited transition operator $T_n$ (whose $I$-row is a proved
- evolution law for the interface burden, including a genuine
- boundary-loss channel), a weight vector $w \geq 0$ with
- $V(X) = \langle w, X\rangle$ such that $T_n$ has $V$-spectral
- radius $< 1$ on the late tail, and a two-sided comparison
- $\mathcal{O}_{\mathrm{NS}} \asymp V(X_n)$; or
- \item \emph{Discounted-memory frame:} a declared discount
- $\rho \in (0,1)$ tied to the loss structure (new data --- not
- sourced from canon), the discounted accumulation
+Discharge of this obligation requires \emph{all} of the following;
+none is presently available, and none is assumed anywhere in this
+book:
+\begin{enumerate}[label=\textup{(\alph*)}]
+ \item \emph{Common temporal state.} A state $X_n$ on a single
+ temporal state space carrying both the window obstruction
+ $\mathcal{O}_{\mathrm{NS}}$ and the contracting/coercive
+ quantity, without identifying a level stock with a step
+ increment.
+ \item \emph{Proved state-evolution law.} An exhibited, proved
+ evolution law for $X_n$ --- in particular a proved evolution law
+ for the interface burden $I_n$, including a genuine boundary-loss
+ channel (no such law exists in current canon).
+ \item \emph{Uniform contraction.} A uniform same-functional
+ contraction law: a positive functional $V$ with
+ $V(T_n X) \leq \lambda\,V(X)$, $\lambda < 1$, holding
+ \emph{uniformly} on the late tail with controlled remainder, or
+ an equivalent uniform product/joint contraction estimate for the
+ time-dependent family $(T_n)$. Individual per-step
+ spectral-radius statements for time-dependent $T_n$ are
+ \emph{not} sufficient.
+ \item \emph{Two-sided same-state comparison.} A genuine
+ two-sided comparison
+ $a\,\mathfrak{D}_k \leq \mathcal{O}_{\mathrm{NS}}(W_k)
+ \leq b\,\mathfrak{D}_k + \rho_k$
+ on the declared threshold regime, with constants $0 < a \leq b$
+ and controlled remainder $\rho_k$, against the \emph{same
+ contracting} quantity --- or, equivalently, a direct closed
+ contracting recurrence for $\mathcal{O}_{\mathrm{NS}}$ itself.
+ \item \emph{Complete channel accounting.} Explicit treatment of
+ every channel of the three-source/loss--renewal map: the level
+ stock $I_n$; the transported survivor $\Theta_n C_n$; the
+ transported loss $(1-\Theta_n)C_n$ (presently \emph{unassigned}
+ --- neither loss $\Phi_n$ nor renewal $\Psi_n$); the interior
+ and boundary defect increments $E_n, B_n$; the renewal inflow
+ $\Psi_n$; redistribution; and remainder.
+ \item \emph{Research directions (neither assumed true).}
+ (i)~\emph{State-vector frame}
+ $X_n = (I_n, \mathcal{E}_n, \mathcal{B}_n, \dots)$: requires
+ (b) and the uniform law of (c). (ii)~\emph{Discounted-memory
+ frame}: a declared discount $\rho \in (0,1)$ tied to the loss
+ structure (new data --- not sourced from canon), the discounted
+ accumulation
  $\widehat{\mathfrak{B}}^{(\rho)}_n
- = \sum_{j<n} \rho^{\,n-1-j}\,\mathcal{B}_j$ with its closed
+ = \sum_{j<n} \rho^{\,n-1-j}\,\mathcal{B}_j$ with closed
  recurrence
  $\widehat{\mathfrak{B}}^{(\rho)}_n
  = \rho\,\widehat{\mathfrak{B}}^{(\rho)}_{n-1}
- + \mathcal{B}_{n-1}$, and a proved comparison
+ + \mathcal{B}_{n-1}$, together with a proved comparison
  $I_n \asymp \widehat{\mathfrak{B}}^{(\rho)}_n$ on the active
- tail.
+ tail --- \emph{and} control of the current $E_n + B_n$
+ subtraction in
+ $\mathcal{O}_{\mathrm{NS}} =
+ \mathrm{Avg}^{\mathrm{tr}}(I_n - (E_n + B_n))$ with the
+ obstruction positivity/threshold comparison of (d); the
+ comparison $I_n \asymp \widehat{\mathfrak{B}}^{(\rho)}_n$
+ \emph{alone is insufficient}.
 \end{enumerate}
 Recorded impossibilities (NS-0G; binding): flat accumulation
 ($\widehat{\mathfrak{B}}_n = \sum_{j<n}\mathcal{B}_j$) is
@@ -1274,10 +1320,11 @@ non-decreasing and never contracts; and the incremental
 reformulation $\mathcal{O}^{\Delta}$ changes
 Definition~\ref{def:NS-obstruction} and re-bases every downstream
 consumer, a heavier canon change not authorized here. Until this
-obligation is discharged, no ledger contraction transfers to the
-window obstruction, every NS.6.1/NS.7.1 conditional discharge holds
-at CERT-PROJ force only, and no NS closure claim may be cited at
-CERT-CLOSE force.
+obligation is discharged: no ledger contraction transfers to the
+window obstruction; every NS.6.1/NS.7.1 conditional discharge holds
+at CERT-PROJ force only; no NS closure claim may be cited at
+CERT-CLOSE force; and no constant, comparison, or recurrence may be
+cited as furnished by this obligation.
 \end{obligation}
 
 \begin{theorem}[\status{C}]\label{thm:NSL1}
@@ -1288,22 +1335,29 @@ Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc}
 to the standing NS hypotheses; the former hypothesis
 $\alpha$~\eqref{hyp:NS-alpha} is withdrawn as ill-typed
 (MIG-052).]}
-Assume \textsc{idc} and the common-state bridge
-(Obl.~\ref{ob:NS-common-state-bridge}). Set
+Assume \textsc{idc}, and assume that
+Obl.~\ref{ob:NS-common-state-bridge} \emph{has been discharged},
+yielding the two-sided same-state comparison
+$a\,\mathfrak{D}_k \leq \mathcal{O}_{\mathrm{NS}}(W_k) \leq
+b\,\mathfrak{D}_k + \rho_k$ of its burden (d) on the declared
+threshold regime, with constants $0 < a \leq b$ and remainder
+$\rho_k$ absorbed on the late tail (or, equivalently, its direct
+closed contracting recurrence for $\mathcal{O}_{\mathrm{NS}}$).
+Nothing in this theorem asserts that discharge, and the presently
+open obligation furnishes no constants. Set
 $\widetilde\eta := \eta + \eta_{\mathrm{int}} < 1$ and
 $\widetilde\kappa := 1 - (1-\widetilde\eta)(c_1+c_2) < 1$. Then
 the ledger contracts on the late safe tail,
-$\mathfrak{D}_{k+1} \leq \widetilde\kappa\,\mathfrak{D}_k$, and
-there exist symbolic constants $0 < a \leq b$ (the two-sided
-bridge-comparison constants furnished by
-Obl.~\ref{ob:NS-common-state-bridge}; the former expression
+$\mathfrak{D}_{k+1} \leq \widetilde\kappa\,\mathfrak{D}_k$,
+and, with $a, b$ the discharged comparison's constants (the former
+expression
 $a = T_{\mathrm{NS}}/\bigl(M(1+C_{\mathcal{E}})\bigr)$ rested on
 the withdrawn $\alpha$-route and misattributed to SCT.4 (Book~II) a
 ``bounded-obstruction ceiling'' $M$ that SCT.4 does not supply ---
 SCT.4 asserts strict separation
 $\mathcal{D}_n \leq (1-\varepsilon)\mathcal{C}_n$ under
 non-saturation, no absolute ceiling; the unsourced $M$ falls with
-that route --- MIG-052) and an integer
+that route --- MIG-052), there exists an integer
 $m > \log(b/a)/\log(1/\widetilde\kappa)$ such that, whenever
 $\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$,
 \[
@@ -1331,20 +1385,23 @@ $\Phi_k \geq (c_1+c_2)\mathfrak{D}_k$
 (Props.~\ref{prop:NS-quantitative-c1}--\ref{prop:NS-quantitative-c2})
 this gives $\mathfrak{D}_{k+1} \leq \widetilde\kappa\,
 \mathfrak{D}_k$.
-\emph{Bridge.} The former bridge step invoked
-$\alpha$~\eqref{hyp:NS-alpha} to rewrite the obstruction as
+\emph{Bridge.} The former bridge step invoked the withdrawn
+hypothesis $\alpha$ (label \texttt{hyp:NS-alpha}) to rewrite the
+obstruction as
 $\mathrm{Avg}^{\mathrm{tr}}_{W_k}(\mathcal{B}_n - (E_n+B_n))$
 and an ``SCT.4 ceiling'' $\mathrm{Avg}(\mathcal{B}) \leq M$ to
 obtain the lower comparison. Both are withdrawn (MIG-052):
-$\alpha$ equates a level stock with a step increment (ill-typed),
-and SCT.4 (Book~II) supplies no absolute ceiling. The two-sided
+$\alpha$ is ill-typed as a canonical identity (level stock vs.\
+step increment) and unsupported by current canon, and SCT.4
+(Book~II) supplies no absolute ceiling. The two-sided same-state
 comparison $a\,\mathfrak{D}_k \leq
-\mathcal{O}_{\mathrm{NS}}(W_k) \leq b\,\mathfrak{D}_k$ against
-the \emph{same contracting} ledger --- or a closed contracting
-recurrence for $\mathcal{O}_{\mathrm{NS}}$ itself --- is precisely
-the content of the common-state bridge,
-Obl.~\ref{ob:NS-common-state-bridge}, and is assumed here, not
-derived.
+\mathcal{O}_{\mathrm{NS}}(W_k) \leq b\,\mathfrak{D}_k + \rho_k$
+(remainder absorbed on the late tail) --- or a direct closed
+contracting recurrence for $\mathcal{O}_{\mathrm{NS}}$ --- is
+supplied here \emph{only} by the discharge of
+Obl.~\ref{ob:NS-common-state-bridge} hypothesized in the
+statement; it is not derived, and the presently open obligation
+supplies nothing.
 \emph{Combination.} Over $m$ steps, using both sides of the
 bridge comparison,
 $\mathcal{O}(W_{k+m}) \leq b\,\mathfrak{D}_{k+m} \leq
@@ -1849,8 +1906,9 @@ value of $\delta_{\mathrm{NS}}$ is claimed.
 \begin{proof}
 Immediate from Theorem~\ref{thm:NSL1} (NS.L1$'$):
 $\lambda_{\mathrm{NS}} = (b/a)\,\widetilde\kappa^{\,m} < 1$
-under \textsc{idc} and the common-state bridge
-(Obl.~\ref{ob:NS-common-state-bridge}). The former derivation via
+under \textsc{idc} and the hypothesized \emph{discharge} of
+Obl.~\ref{ob:NS-common-state-bridge} (the presently open
+obligation furnishes no constants). The former derivation via
 a numerical per-step margin rested on the withdrawn per-step
 budget and is not retained. \qed
 \end{proof}

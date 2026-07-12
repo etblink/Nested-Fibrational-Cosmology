@@ -192,14 +192,22 @@ def main():
         {"item":"RH packet-local synthesis","labels":["ob:rh-tloc-L3","ob:rh-tloc-L4","ob:rh-tloc-L5","ob:rh-tloc-L6","ob:rh-tloc-L7"]},
         {"item":"SM matter content","labels":["ob:SM-matter","ob:SM-IDcont-TV","ob:O-ID-cont"]},
         {"item":"GR global curvature-subcriticality","labels":["def:curv-subcrit-global"]},
+        {"item":"NS obstruction/ledger common-state bridge","labels":["ob:NS-common-state-bridge"],"scope":"internal","added":"MIG-052"},
     ]
+    # MIG-052: this list counts INTERNAL canonical burdens only. The NS unconditional
+    # global regularity question (Stage-3, Clay) is EXTERNAL and is deliberately NOT
+    # counted here; it must never be silently merged into the internal count.
+    reduced_frontier_external_note=("external (not counted): NS unconditional global "
+        "regularity (Stage-3, Clay) -- tracked as the NS frontier theorem, outside the "
+        "declared conditional scope")
     accountings={
         "I_syntactic_O_census":{"count":len(syntactic_O),"labels":sorted(syntactic_O),
             "measures":"environments literally tagged \\status{O}"},
         "II_named_obligation_roster":{"count":len(ob_labels),"labels":sorted(ob_labels),
             "measures":"all ob:-labelled obligation environments regardless of tag"},
         "III_reduced_irreducible_frontier":{"count":len(reduced_frontier),"items":reduced_frontier,
-            "measures":"genuinely open deep mathematics after all reductions"},
+            "measures":"genuinely open deep mathematics after all reductions (INTERNAL canonical burdens only)",
+            "external_note":reduced_frontier_external_note},
         "IV_branch_posture":{"source":"per-branch A1 status proposition",
             "measures":"closure ladder position per branch (see views.branch_posture)"},
         "_warning":"These four accountings measure different things and MUST NOT be summed.",
