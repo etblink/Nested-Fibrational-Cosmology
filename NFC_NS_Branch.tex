@@ -1308,11 +1308,34 @@ theorem templates that assume a future discharge (e.g.\ NS.L1$'$):
  remainder, and every other renewal channel, the renewal term
  entering the ledger law
  $\mathfrak{D}_{n+1} \leq \mathfrak{D}_n - \Phi_n + \Psi_n$
- must be exactly $\Psi_n = E_n + B_n$, or must satisfy the
- inequality $\Psi_n \leq E_n + B_n$, which suffices for the
- ledger-contraction argument of NS.L1$'$. Explicit channel
- treatment without this identity (or inequality) does \emph{not}
- discharge this burden.
+ must be controlled by one of the following mutually exclusive
+ routes, and the discharge must name which:
+ \emph{Route~A (renewal-channel decomposition)} --- an explicit,
+ exhaustive, disjoint decomposition
+ $\Psi_n = \Psi_n^{\mathrm{int}} + \Psi_n^{\mathrm{bdry}} + R_n$
+ with each component bounded in its own object system
+ ($\Psi_n^{\mathrm{int}} \leq \eta_{\mathrm{int}}\Phi_n$,
+ $\Psi_n^{\mathrm{bdry}} \leq \eta\Phi_n$, and residual
+ $R_n \leq \eta_R\Phi_n$), yielding
+ $\Psi_n \leq \widetilde\eta\,\Phi_n$ directly;
+ \emph{Route~B (increment-to-renewal map)} --- a discharged map
+ that both identifies or bounds the Book~III increments relative to
+ the renewal channels \emph{and} supplies
+ $E_n + B_n \leq \widetilde\eta\,\Phi_n$, after which
+ $\Psi_n \leq E_n + B_n$ may be used; or
+ \emph{Route~C (direct net-bias)} --- a discharged
+ $\Psi_n \leq \widetilde\eta\,\Phi_n$ ($\widetilde\eta<1$)
+ furnished directly, not routed through $E_n + B_n$.
+ \emph{The bare relation
+ $\Psi_n \leq E_n + B_n$ does not by itself suffice for the
+ ledger-contraction argument}: it constrains $E_n+B_n$ from below
+ and supplies no upper bound on $\Psi_n$ in terms of $\Phi_n$
+ without one of the routes above. No route may combine inequalities
+ from different object systems (Book~III increments vs.\ SCT renewal
+ channels) without an explicit mapping theorem or discharged mapping
+ burden. NS.L1$'$ consumes Route~A. Explicit channel treatment
+ without one of these routes does \emph{not} discharge this
+ burden.
  \item \emph{Research directions (neither assumed true).}
  (i)~\emph{State-vector frame}
  $X_n = (I_n, \mathcal{E}_n, \mathcal{B}_n, \dots)$: requires
@@ -1372,15 +1395,32 @@ burden (d) only}; a discharge supplying instead the
 direct-recurrence alternative would require its own separate
 conditional template with the recurrence's own stated contraction
 constant, and no formula involving $a$, $b$, $c$ is asserted under
-such a discharge. \emph{Of the two accounting alternatives of
-burden (e), this theorem consumes only the inequality branch}
-$\Psi_k \leq E_k + B_k$ (the equality
-$\Psi_k = E_k + B_k$ is a stronger optional special case and is
-\emph{not} inferred here from a generic discharge); an
-equality-only argument, where needed, would be a separate template.
-Nothing in this theorem asserts the discharge itself, and the
+such a discharge. \emph{This theorem consumes the renewal-channel-decomposition
+route of burden (e)} (Route~A): the hypothesised discharge supplies
+an explicit, exhaustive, and disjoint decomposition
+$\Psi_k = \Psi_k^{\mathrm{int}} + \Psi_k^{\mathrm{bdry}} + R_k$
+with the residual channel $R_k$ either absent or quantitatively
+controlled ($R_k \leq \eta_R\,\Phi_k$), together with the
+component bounds
+$\Psi_k^{\mathrm{int}} \leq \eta_{\mathrm{int}}\,\Phi_k$
+(the interior channel of \textsc{idc}~\eqref{hyp:NS-IDC-i}, whose
+object $\Psi_k^{\mathrm{int}}$ is defined only under this
+discharge) and
+$\Psi_k^{\mathrm{bdry}} \leq \eta\,\Phi_k$ (the boundary
+channel, Thm.~\ref{thm:NS-H3-PASS-incoherent}), with
+$\widetilde\eta := \eta + \eta_{\mathrm{int}} + \eta_R < 1$.
+\emph{This theorem does not route contraction through the Book~III
+defect increments $E_k, B_k$; no map from $E_k, B_k$ to the renewal
+channels $\Psi_k^{\mathrm{int}}, \Psi_k^{\mathrm{bdry}}$ is
+asserted or used} (the equality/inequality branch
+$\Psi_k \lesseqgtr E_k + B_k$ of burden (e) is \emph{not}
+consumed by this template, precisely because current canon supplies
+no such increment-to-renewal map). Nothing in this theorem asserts
+the discharge itself, and the
 presently open obligation furnishes no constants. Set
-$\widetilde\eta := \eta + \eta_{\mathrm{int}} < 1$ and
+$\widetilde\eta := \eta + \eta_{\mathrm{int}} + \eta_R < 1$
+(the three renewal-channel coefficients of the Route~A discharge;
+$\eta_R = 0$ when the residual channel is absent) and
 $\widetilde\kappa := 1 - (1-\widetilde\eta)(c_1+c_2) < 1$. Then
 the ledger contracts on the late safe tail,
 $\mathfrak{D}_{k+1} \leq \widetilde\kappa\,\mathfrak{D}_k$,
@@ -1410,31 +1450,32 @@ No per-step $\mu$-budget of the previous form is asserted.
 ($\mathcal{D}=\mathcal{E}+\mathcal{B}$, Book~II \S SCT), and the
 H1/H2 loss channels are genuine removals disjoint from inflow, so
 $\mathfrak{D}_{k+1} \leq \mathfrak{D}_k - \Phi_k + \Psi_k$.
-\emph{The inflow accounting bound}
-$\Psi_k \leq E_k + B_k$ --- the inequality branch of burden (e):
-after the stated assignment or exclusion of every per-step channel
-(level stock, transported survivor $\Theta_k C_k$, transported loss
-$(1-\Theta_k)C_k$, interior and boundary defect increments
-$E_k, B_k$, renewal inflow, redistribution, remainder), including in
-particular the assignment or exclusion of the transported loss
-$(1-\Theta_k)C_k$, the renewal term entering the ledger law is
-bounded by $E_k + B_k$ --- is \emph{not} available in current
-canon: no decomposition theorem defines
+\emph{The renewal-channel decomposition} (Route~A of burden (e))
+is \emph{not} available in current canon: the interior renewal
+object $\Psi^{\mathrm{int}}$ has no independent definition, no
+decomposition theorem defines
 $\Psi^{\mathrm{int}}, \Psi^{\mathrm{bdry}}$ from the canonical
-$\Psi$, and no proved map connects $\Psi^{\mathrm{int}}$ to $E_k$.
-It is precisely part~(e) of
+$\Psi$, and no proved map connects the Book~III defect increments
+$E_k, B_k$ to the renewal channels. It is precisely part~(e) of
 Obl.~\ref{ob:NS-common-state-bridge} and is taken here \emph{only}
 under the hypothesised discharge of that obligation, alongside the
 comparison of part~(d); it is not attributed to current canon.
-Under that hypothesised discharge, $\Psi_k \leq E_k + B_k$ (with
-equality $\Psi_k = E_k + B_k$ the stronger optional special case,
-not inferred here); the contraction argument below uses only the
-inequality.
-\emph{Net contraction.} From $\Psi_k \leq E_k + B_k$ and, by
-\textsc{idc}~\eqref{hyp:NS-IDC-i} together with
-Theorem~\ref{thm:NS-H3-PASS-incoherent},
-$E_k + B_k \leq \widetilde\eta\,\Phi_k$, we obtain
-$\Psi_k \leq \widetilde\eta\,\Phi_k$; with
+Under that hypothesised discharge we have the exhaustive, disjoint
+decomposition
+$\Psi_k = \Psi_k^{\mathrm{int}} + \Psi_k^{\mathrm{bdry}} + R_k$
+with $R_k \leq \eta_R\,\Phi_k$.
+\emph{Net contraction.} Each renewal channel is bounded in its own
+object system, with no cross-system conversion:
+$\Psi_k^{\mathrm{int}} \leq \eta_{\mathrm{int}}\,\Phi_k$ by the
+interior channel of \textsc{idc}~\eqref{hyp:NS-IDC-i} (under the
+discharge that defines $\Psi_k^{\mathrm{int}}$), and
+$\Psi_k^{\mathrm{bdry}} \leq \eta\,\Phi_k$ by the
+boundary-channel bound of
+Theorem~\ref{thm:NS-H3-PASS-incoherent}. Summing,
+$\Psi_k = \Psi_k^{\mathrm{int}} + \Psi_k^{\mathrm{bdry}} + R_k
+\leq (\eta_{\mathrm{int}} + \eta + \eta_R)\,\Phi_k
+= \widetilde\eta\,\Phi_k$. The Book~III increments $E_k, B_k$ do
+not enter this estimate. With
 $\Phi_k \geq (c_1+c_2)\mathfrak{D}_k$
 (Props.~\ref{prop:NS-quantitative-c1}--\ref{prop:NS-quantitative-c2})
 this gives $\mathfrak{D}_{k+1} \leq \widetilde\kappa\,
@@ -1753,18 +1794,29 @@ precisely as a named open obligation:
  collar-incompatible patterns at a rate that is comparable to the
  mismatch scale, not merely bounded.
 \item \textbf{(H3) PASS-incoherent renewal in NS safe-tail regime}
- [Open]: Show that fresh boundary renewal on the NS safe tail
- cannot remain phase-locked with the protected backbone transport,
- so that $\Psi_n \leq \eta(\Phi_n^{\mathrm{quot}} +
+ [Open, boundary channel]: Show that fresh boundary renewal on the
+ NS safe tail cannot remain phase-locked with the protected
+ backbone transport, so that
+ $\Psi_n^{\mathrm{bdry}} \leq \eta(\Phi_n^{\mathrm{quot}} +
  \Phi_n^{\mathrm{mix}})$ for some $\eta < 1$ certified for the
- NS safe-tail regime. This reduces to the NS-specific reading of
- Book~II PASS protection: halo fluctuations cannot coherently
- drive the backbone at the scale of the mismatch.
+ NS safe-tail regime (this is the boundary channel only; see
+ Thm.~\ref{thm:NS-H3-PASS-incoherent}). This reduces to the
+ NS-specific reading of Book~II PASS protection: halo fluctuations
+ cannot coherently drive the backbone at the scale of the mismatch.
+ \emph{Lifting this boundary bound to the total-renewal bound
+ $\Psi_n \leq \widetilde\eta\,\Phi_n$ that SCT.6b consumes is a
+ separate open burden} --- the renewal-control route
+ (Route~A/B/C of Obl.~\ref{ob:NS-common-state-bridge}, part~(e)).
 \end{itemize}
-These three are the \emph{only} remaining NS frontier items. If
-all three are verified, SCT.6b fires, SB2 is discharged
-unconditionally, and the NS continuation theorem (NS.6.1) follows
-from the assembled proof record. The branch note from SB2b is
+These three (with H3 in its boundary-channel form) together with
+the renewal-control route that lifts boundary-only H3 to a
+total-renewal bound (Obl.~\ref{ob:NS-common-state-bridge},
+part~(e)) are the remaining NS frontier items. If H1, H2, and
+boundary-only H3 are verified \emph{and} the renewal-control route
+is discharged, SCT.6b fires and SB2 is discharged; absent that
+route, SB2 stands at CERT-PROJ force. The NS continuation theorem
+(NS.6.1) then follows from the assembled proof record on the same
+conditional footing. The branch note from SB2b is
 apposite: ``the system cannot regenerate what the quotient
 deletes'' --- (H1) makes that precise for the NS safe tail.
 \end{remark}
@@ -1858,11 +1910,16 @@ protection, LS-2.]}
 Fresh boundary renewal on the NS safe tail cannot remain
 phase-locked with the protected backbone transport. Specifically,
 there exists $\eta < 1$ (certified for the NS safe-tail regime)
-such that
+such that the \emph{boundary} renewal channel obeys
 \[
- \Psi_n \;\leq\;
+ \Psi_n^{\mathrm{bdry}} \;\leq\;
  \eta\bigl(\Phi_n^{\mathrm{quot}} + \Phi_n^{\mathrm{mix}}\bigr).
 \]
+This bounds the boundary/halo renewal channel only; it makes no
+claim about the interior renewal channel $\Psi_n^{\mathrm{int}}$
+or about the undifferentiated total $\Psi_n$, and it supplies no
+map from the Book~III defect increments $E_n, B_n$ to either
+channel.
 \end{theorem}
 
 \begin{proof}
@@ -1884,41 +1941,64 @@ such that
  \item \emph{$\eta$ bound}: the coefficient $\eta$ is the
  ratio of the halo coupling to the backbone transfer rate,
  certified as $< 1$ from the NS safe-tail window structure.
- Formally, $\eta = \sup_n (\Psi_n / (\Phi_n^{\mathrm{quot}}
- + \Phi_n^{\mathrm{mix}})) < 1$ by the PASS screening
- bound on the halo amplitude. \qed
+ Formally,
+ $\eta = \sup_n (\Psi_n^{\mathrm{bdry}} /
+ (\Phi_n^{\mathrm{quot}} + \Phi_n^{\mathrm{mix}})) < 1$ by the
+ PASS screening bound on the halo amplitude; the supremum is over
+ the boundary channel only. \qed
 \end{enumerate}
 \end{proof}
 
 \begin{theorem}[\status{C}]\label{thm:NS-SB2-discharged}
 \textup{(SB2 Conditionally Discharged via SCT.6b.)}
-\textup{[Conditional on H1--H3 above and the NS safe-tail
-architecture.]}
-Under Theorems~\ref{thm:NS-H1-quotient-loss},
-\ref{thm:NS-H2-collar-mixing}, and~\ref{thm:NS-H3-PASS-incoherent},
-the three SCT.6b hypotheses are satisfied in the NS safe-tail
-regime. Hence SCT.6b fires and SB2 (Positive Reserve on the
+\textup{[Conditional on H1--H2 above, boundary-only H3
+(Thm.~\ref{thm:NS-H3-PASS-incoherent}), the NS safe-tail
+architecture, \emph{and} a hypothetical renewal-control route
+(Route~A/B/C of Obl.~\ref{ob:NS-common-state-bridge}, part~(e))
+lifting boundary-only H3 to a total-renewal bound.]}
+Under Theorems~\ref{thm:NS-H1-quotient-loss} and
+\ref{thm:NS-H2-collar-mixing}, the boundary-channel H3 of
+Theorem~\ref{thm:NS-H3-PASS-incoherent}, and the hypothetical
+renewal-control route, the three SCT.6b hypotheses are satisfied in
+the NS safe-tail regime \emph{at CERT-PROJ force} (the total-renewal
+lift is not proved in current canon). Hence SCT.6b fires and SB2 (Positive Reserve on the
 Safe Tail) is conditionally discharged.
 \end{theorem}
 
 \begin{proof}
 By Theorem~\ref{thm:NS-H1-quotient-loss}: H1 holds with $c_1>0$.
 By Theorem~\ref{thm:NS-H2-collar-mixing}: H2 holds with $c_2>0$.
-By Theorem~\ref{thm:NS-H3-PASS-incoherent}: H3 holds with $\eta<1$.
-The SCT.6b theorem (Book~II, Theorem~\ref{thm:SCT6b}) then applies
-directly: the primitive-derived dissipation bias forces
-$D_{n+1} \leq D_n - (1-\eta)\Phi_n$, where $\Phi_n =
+By Theorem~\ref{thm:NS-H3-PASS-incoherent}: H3 holds with
+$\eta<1$ \emph{for the boundary renewal channel
+$\Psi_n^{\mathrm{bdry}}$ only}. SCT.6b as stated in Book~II
+consumes a bound on the \emph{total} renewal $\Psi_n$; boundary-only
+H3 therefore discharges SCT.6b(H3) only \emph{conditionally on a
+renewal-control route} (Route~A/B/C of
+Obl.~\ref{ob:NS-common-state-bridge}, part~(e)) that lifts the
+boundary bound to a total-renewal bound
+$\Psi_n \leq \widetilde\eta\,\Phi_n$. Under that hypothetical
+discharge the SCT.6b theorem (Book~II, Theorem~\ref{thm:SCT6b})
+applies: the primitive-derived dissipation bias forces
+$D_{n+1} \leq D_n - (1-\widetilde\eta)\Phi_n$, where $\Phi_n =
 \Phi_n^{\mathrm{quot}} + \Phi_n^{\mathrm{mix}} \geq
 (c_1 + c_2)\mathfrak{D}_n > 0$. This is the positive-reserve
-conclusion of SB2 (Theorem~\ref{thm:NSSB2}). Hence SB2 is
-conditionally discharged. \qed
+conclusion of SB2 (Theorem~\ref{thm:NSSB2}), at CERT-PROJ force
+while that renewal-control route is open. Hence SB2 is
+conditionally discharged on the same hypothetical-discharge
+footing. \qed
 \end{proof}
 
 \begin{remark}[\status{R}]\label{rem:NS-SB2-status}
 \textbf{Post-discharge status of SB2.}
-SCT.6b hypotheses (H1)--(H3) are now conditionally proved in
-the NS safe-tail regime. The remaining named open conditions
-before \emph{unconditional} discharge are:
+SCT.6b hypotheses (H1)--(H2) are conditionally proved in the NS
+safe-tail regime, and (H3) is conditionally proved \emph{for the
+boundary renewal channel only}
+(Thm.~\ref{thm:NS-H3-PASS-incoherent}); lifting boundary-only H3
+to the total-renewal bound that SCT.6b consumes is itself
+conditional on a renewal-control route (Route~A/B/C of
+Obl.~\ref{ob:NS-common-state-bridge}, part~(e)), open. The
+remaining named open conditions before \emph{unconditional}
+discharge are:
 \begin{enumerate}[label=\textup{(\arabic*)}]
  \item \emph{$c_1$ certification}: the quotient-loss rate
  $c_1 > 0$ must be computed explicitly from the NS window
@@ -1932,8 +2012,10 @@ before \emph{unconditional} discharge are:
 \end{enumerate}
 These are quantitative verifications within a fully specified
 finite model (the NS safe-tail window), not new structural
-proofs. The NS branch is upgraded: all three SCT.6b hypotheses
-have conditional proofs. The spike-free chain
+proofs. The NS branch stands as follows: H1, H2, and boundary-only
+H3 have conditional proofs, while total-renewal control (hence the
+full SCT.6b firing) remains conditional on the open renewal-control
+route (Obl.~\ref{ob:NS-common-state-bridge}, part~(e)). The spike-free chain
 $\mathrm{Ren.5} \Rightarrow \mathrm{Ren.4} \Rightarrow
 \mathrm{SB1e} \Rightarrow \mathrm{SB1d} \Rightarrow
 \mathrm{SB1c} \Rightarrow \mathrm{SB1}$ is now supplemented by

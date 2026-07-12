@@ -3463,6 +3463,12 @@
   },
   {
     "from": "thm:NS-SB2-discharged",
+    "to": "ob:NS-common-state-bridge",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS-SB2-discharged",
     "to": "thm:NS-H1-quotient-loss",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
