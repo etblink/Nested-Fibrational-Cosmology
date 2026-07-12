@@ -22810,7 +22810,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@104717",
+    "claim_id": "NFC_NS_Branch:remark@106231",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS.6.1 Partial Discharge via SB2",
     "claim_type": "remark",
@@ -22831,7 +22831,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@108414",
+    "claim_id": "NFC_NS_Branch:remark@109928",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS Window-Uniformity Verification",
     "claim_type": "remark",
@@ -22857,7 +22857,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@122894",
+    "claim_id": "NFC_NS_Branch:remark@124411",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "H-LR: Lieb--Robinson Bound and NS Stage-3 Canonical Import",
     "claim_type": "remark",
@@ -22882,7 +22882,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@127743",
+    "claim_id": "NFC_NS_Branch:remark@129266",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22907,7 +22907,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@129271",
+    "claim_id": "NFC_NS_Branch:remark@130794",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22935,7 +22935,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@131640",
+    "claim_id": "NFC_NS_Branch:remark@133163",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Boundary of the NS Branch Book",
     "claim_type": "remark",
@@ -22959,7 +22959,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@28929",
+    "claim_id": "NFC_NS_Branch:remark@28932",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Source-Descended Obstruction Quantity",
     "claim_type": "remark",
@@ -22984,7 +22984,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@44938",
+    "claim_id": "NFC_NS_Branch:remark@44944",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Frontier Statement",
     "claim_type": "remark",
@@ -23005,7 +23005,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@45627",
+    "claim_id": "NFC_NS_Branch:remark@45633",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Frontier Statement",
     "claim_type": "remark",
@@ -23026,7 +23026,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@48663",
+    "claim_id": "NFC_NS_Branch:remark@48669",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Subtheorem decomposition",
     "claim_type": "remark",
@@ -23050,7 +23050,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@63448",
+    "claim_id": "NFC_NS_Branch:remark@64959",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23073,7 +23073,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@65393",
+    "claim_id": "NFC_NS_Branch:remark@66904",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23094,7 +23094,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@67592",
+    "claim_id": "NFC_NS_Branch:remark@69103",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23115,7 +23115,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@85859",
+    "claim_id": "NFC_NS_Branch:remark@87373",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The gap theorem",
     "claim_type": "remark",
@@ -23149,7 +23149,6 @@
     "dependencies": [
       "hyp:NS-IDC-i",
       "hyp:NS-IDC-ii",
-      "hyp:NS-alpha",
       "ob:NS-common-state-bridge",
       "prop:NS-status"
     ],
@@ -23202,7 +23201,6 @@
       "cor:NS61-discharged",
       "hyp:NS-IDC-i",
       "hyp:NS-IDC-ii",
-      "hyp:NS-alpha",
       "ob:NS-common-state-bridge",
       "prop:NS-status",
       "thm:NS71"
@@ -24433,7 +24431,6 @@
       "cor:NS61-discharged",
       "hyp:NS-IDC-i",
       "hyp:NS-IDC-ii",
-      "hyp:NS-alpha",
       "ob:NS-common-state-bridge",
       "thm:NS-window-determinism",
       "thm:NS-window-uniformity",

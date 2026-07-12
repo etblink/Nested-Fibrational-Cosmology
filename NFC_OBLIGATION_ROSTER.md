@@ -9,7 +9,7 @@ carries its own date.*
 
 **Snapshot basis:** corpus state as of L+39 (post VRP closure L+36, post
 YM verification L+37, post cross-book integration L+38).
-**Total `ob:`-labelled obligations corpus-wide:** 109 (110 distinct labels after the L+40 de-duplication of ob:cryst-EWALD). **MIG-052 update:** 111 distinct `ob:` labels (the L+56 split retained `ob:vrp-charge-quant`; MIG-052 registers `ob:NS-common-state-bridge`), of which 100 are `obligation`-environment labels (the generated accounting II basis) and 11 are carried by other environments (remark-tagged etc., a registered convention wrinkle, §4).
+**Total `ob:`-labelled obligations corpus-wide (current, MIG-052):** 111 distinct `ob:` labels, of which 100 are `obligation`-environment labels (the generated accounting II basis) and 11 are carried by other environments (remark-tagged etc., a registered convention wrinkle, §4). *(Historical snapshot: 109 at L+39 / 110 distinct labels after the L+40 de-duplication of ob:cryst-EWALD; the L+56 split retained `ob:vrp-charge-quant` and MIG-052 registered `ob:NS-common-state-bridge`, bringing the current distinct-label total to 111.)*
 
 ---
 
@@ -23,14 +23,14 @@ different bases. This roster reconciles them:
 | Syntactic `[O]`-tag census | environments tagged `\status{O}` | **6** *(MIG-052; snapshot value was 4, L+56 made it 5, MIG-052 adds `ob:NS-common-state-bridge`)* | obligations marked open-unproved by tag |
 | Curated named-obligations (Book VII) | governance-significant not-fully-discharged items | "13" (pre-VRP snapshot) | the audit roster |
 | Reduced irreducible frontier (Book VII) | genuinely open deep mathematics (internal canonical burdens only) | **5 distinct items** *(MIG-052 adds the internal NS common-state bridge; the external NS Stage-3 question is classified external and NOT counted)* | mathematical distance to completion |
-| **This roster (objective partition)** | discharge-language + status tag, all 109 | **see §2** | complete, mechanical, auditable |
+| **This roster (objective partition)** | discharge-language + status tag, all 111 | **see §2** | complete, mechanical, auditable |
 
 The three are not contradictory; they measure different things. This
 roster supplies the objective substrate they each curate from.
 
 ---
 
-## 2. Objective partition of all 109 obligations
+## 2. Objective partition of all 111 obligations
 
 Classification by the discharge-language in each obligation's own title
 together with its status tag. This is mechanical and complete; it does
@@ -110,17 +110,25 @@ was read and the 62 base declarations partitioned exactly:
     closure stack confirmed at [C] by prop:YM-status (verified L+37).
 
 **Verification:** the live-frontier subset of the base declarations
-(10) is exactly the reduced irreducible frontier (RH×2 blocks + SM
-matter), confirming §3 against the branch-level evidence. The roster is
-now fully mechanical: every one of the 109 ob: labels has a determined
-category.
+(10) accounts for the `ob:`-labelled part of the reduced irreducible
+frontier that lives in the base-declaration bucket (RH×2 blocks + SM
+matter). It is **not** the whole reduced frontier: the reduced
+irreducible frontier (§3) has **5** items, of which GR is tracked
+through a different convention (`def:curv-subcrit-global`, outside the
+`ob:` namespace) and the NS common-state bridge
+(`ob:NS-common-state-bridge`, MIG-052) is a genuinely-open `[O]`
+obligation (§2.1), not a base declaration. The roster is fully
+mechanical: every one of the 111 `ob:` labels has a determined
+category, and the category counts sum to 111
+($6+31+2+10+62$).
 
 ---
 
 ## 3. The reduced irreducible frontier (deep open mathematics) — verified
 
-Book VII's 4-item reduced frontier, verified L+39 against the live
-labels:
+The reduced irreducible frontier (Book VII's original 4-item list,
+extended to **5** by MIG-052; internal canonical burdens only),
+verified against the live labels:
 1. **RH arithmetic orbit grammar** (first hard block) — live labels
    `ob:rh-sf-logderiv-legality`, `ob:rh-sf-trace-pairing-law`,
    `ob:rh-sf-d2-audit`.
@@ -181,7 +189,7 @@ the governance roster.
 - **Deep open mathematics (reduced frontier, internal):** 5 *(MIG-052)* — RH×2, SM, GR, NS common-state bridge; the external NS Stage-3 question is classified external and not counted.
 - **Conditionally discharged with live residual:** 31 (incl. full VRP arc).
 - **Fully discharged / bridge-discharged:** 12.
-- **Base declarations (62):** 52 conditionally established / endpoint-discharged at named scope; **10 are the live deep frontier** (RH orbit grammar ×3, RH packet synthesis ×5, SM matter ×2) — exactly the reduced irreducible frontier.
+- **Base declarations (62):** 52 conditionally established / endpoint-discharged at named scope; **10 are the `ob:`-labelled live deep frontier in this bucket** (RH orbit grammar ×3, RH packet synthesis ×5, SM matter ×2). These 10 are the base-declaration part of the reduced frontier; the full reduced irreducible frontier is **5 items** (§3), adding GR (tracked as `def:curv-subcrit-global`) and the NS common-state bridge (`ob:NS-common-state-bridge`, a genuinely-open `[O]` obligation in §2.1).
 - The genuinely-open and deep-frontier sets barely overlap (RH only);
   the corpus's "what is open" depends on which question is asked, and
   this roster answers all of them on one page.

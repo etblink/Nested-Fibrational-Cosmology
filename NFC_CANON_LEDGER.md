@@ -8526,3 +8526,5 @@ Flags for the verifier: (a) Book VII NS summary lines (ll. 1189, 1274, ~1814) re
 #### [O] Register (MIG-052, 6)
 
 ob:vrp-charge-quant (O_Charge.Quant-cont.b2); ob:rh-s1-formal, ob:cryst-PHASE, ob:cryst-PHASE-progress, ob:bio-BND-open; **ob:NS-common-state-bridge (NS obstruction/ledger common-state bridge — added MIG-052).**
+
+**Corrective B (final consistency):** NS.L1' attributes the exhaustive inflow accounting Ψ=E+B to the hypothesised discharge of the obligation (burden (e)), not to current canon (incl. assignment/exclusion of transported loss (1−Θ)C); remainder algebra repaired with an explicit absorption bound ρ_k ≤ c𝔇_k (λ_NS := ((b+c)/a)κ̃^m); α removed from claims.json dependency arrays as well as edges.json (0 active refs; historical `\texttt{hyp:NS-alpha}` only); α prohibition narrowed to 'not as active support or sufficient hypothesis'; obligation roster reconciled to one current accounting (111 distinct ob:, 100 obligation-env, [O] census 6, reduced internal frontier 5).
