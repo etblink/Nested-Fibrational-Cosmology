@@ -1286,16 +1286,33 @@ theorem templates that assume a future discharge (e.g.\ NS.L1$'$):
  on the declared threshold regime, with constants $0 < a \leq b$
  and a remainder $\rho_k$ carrying a stated absorption bound
  $\rho_k \leq c\,\mathfrak{D}_k$ ($c \geq 0$) on the late tail,
- against the \emph{same contracting} quantity --- or, equivalently,
- a direct closed contracting recurrence for
- $\mathcal{O}_{\mathrm{NS}}$ itself.
- \item \emph{Complete channel accounting.} Explicit treatment of
- every channel of the three-source/loss--renewal map: the level
- stock $I_n$; the transported survivor $\Theta_n C_n$; the
- transported loss $(1-\Theta_n)C_n$ (presently \emph{unassigned}
- --- neither loss $\Phi_n$ nor renewal $\Psi_n$); the interior
- and boundary defect increments $E_n, B_n$; the renewal inflow
- $\Psi_n$; redistribution; and remainder.
+ against the \emph{same contracting} quantity; \emph{or}, as a
+ separate alternative route --- not shown equivalent to, and not
+ interchangeable with, the comparison route --- a direct closed
+ contracting recurrence for $\mathcal{O}_{\mathrm{NS}}$ itself,
+ with its own stated contraction constant. Any downstream
+ conditional template must name which route it consumes; no
+ formula involving $a$, $b$, $c$ may be asserted under a discharge
+ that supplies only the direct recurrence.
+ \item \emph{Complete channel accounting, with the exact result
+ consumed downstream.} Explicit treatment of every channel of the
+ three-source/loss--renewal map: the level stock $I_n$; the
+ transported survivor $\Theta_n C_n$; the transported loss
+ $(1-\Theta_n)C_n$ (presently \emph{unassigned} --- neither loss
+ $\Phi_n$ nor renewal $\Psi_n$); the interior and boundary defect
+ increments $E_n, B_n$; the renewal inflow $\Psi_n$;
+ redistribution; and remainder. This treatment must be stated so
+ as to yield the exact accounting result the conditional templates
+ consume: after the stated assignment or exclusion of the
+ transported survivor, the transported loss, redistribution, the
+ remainder, and every other renewal channel, the renewal term
+ entering the ledger law
+ $\mathfrak{D}_{n+1} \leq \mathfrak{D}_n - \Phi_n + \Psi_n$
+ must be exactly $\Psi_n = E_n + B_n$, or must satisfy the
+ inequality $\Psi_n \leq E_n + B_n$, which suffices for the
+ ledger-contraction argument of NS.L1$'$. Explicit channel
+ treatment without this identity (or inequality) does \emph{not}
+ discharge this burden.
  \item \emph{Research directions (neither assumed true).}
  (i)~\emph{State-vector frame}
  $X_n = (I_n, \mathcal{E}_n, \mathcal{B}_n, \dots)$: requires
@@ -1349,11 +1366,14 @@ threshold regime, with constants $0 < a \leq b$ and a remainder
 $\rho_k$ satisfying a stated absorption bound
 $\rho_k \leq c\,\mathfrak{D}_k$ ($c \geq 0$) on the late tail
 (so that the upper comparison reads
-$\mathcal{O}_{\mathrm{NS}}(W_k) \leq (b+c)\,\mathfrak{D}_k$),
-or, equivalently, its direct closed contracting recurrence for
-$\mathcal{O}_{\mathrm{NS}}$.
-Nothing in this theorem asserts that discharge, and the presently
-open obligation furnishes no constants. Set
+$\mathcal{O}_{\mathrm{NS}}(W_k) \leq (b+c)\,\mathfrak{D}_k$).
+\emph{This theorem consumes the two-sided-comparison route of
+burden (d) only}; a discharge supplying instead the
+direct-recurrence alternative would require its own separate
+conditional template with the recurrence's own stated contraction
+constant, and no formula involving $a$, $b$, $c$ is asserted under
+such a discharge. Nothing in this theorem asserts the discharge
+itself, and the presently open obligation furnishes no constants. Set
 $\widetilde\eta := \eta + \eta_{\mathrm{int}} < 1$ and
 $\widetilde\kappa := 1 - (1-\widetilde\eta)(c_1+c_2) < 1$. Then
 the ledger contracts on the late safe tail,
@@ -1385,13 +1405,15 @@ No per-step $\mu$-budget of the previous form is asserted.
 H1/H2 loss channels are genuine removals disjoint from inflow, so
 $\mathfrak{D}_{k+1} \leq \mathfrak{D}_k - \Phi_k + \Psi_k$.
 \emph{The exhaustive inflow accounting}
-$\Psi_k = E_k + B_k$ --- equivalently, the assignment of every
+$\Psi_k = E_k + B_k$ --- that is, the exact requirement of
+burden (e) that, after the stated assignment or exclusion of every
 per-step channel (level stock, transported survivor
 $\Theta_k C_k$, transported loss $(1-\Theta_k)C_k$, interior and
-boundary defect increments $E_k, B_k$, renewal inflow, redistribution,
-remainder), including in particular the assignment or exclusion of
-the transported loss $(1-\Theta_k)C_k$ --- is \emph{not} available
-in current canon: no decomposition theorem defines
+boundary defect increments $E_k, B_k$, renewal inflow,
+redistribution, remainder), including in particular the assignment
+or exclusion of the transported loss $(1-\Theta_k)C_k$, the renewal
+term entering the ledger law is exactly $E_k + B_k$ --- is
+\emph{not} available in current canon: no decomposition theorem defines
 $\Psi^{\mathrm{int}}, \Psi^{\mathrm{bdry}}$ from the canonical
 $\Psi$, and no proved map connects $\Psi^{\mathrm{int}}$ to $E_k$.
 It is precisely part~(e) of
@@ -1419,9 +1441,9 @@ comparison $a\,\mathfrak{D}_k \leq
 \mathcal{O}_{\mathrm{NS}}(W_k) \leq b\,\mathfrak{D}_k + \rho_k$
 with the stated absorption bound $\rho_k \leq c\,\mathfrak{D}_k$
 (hence $\mathcal{O}_{\mathrm{NS}}(W_k) \leq
-(b+c)\,\mathfrak{D}_k$) --- or a direct closed contracting
-recurrence for $\mathcal{O}_{\mathrm{NS}}$ --- is supplied here
-\emph{only} by the discharge of
+(b+c)\,\mathfrak{D}_k$) --- the two-sided-comparison route of
+burden (d), the only route this theorem consumes --- is supplied
+here \emph{only} by the discharge of
 Obl.~\ref{ob:NS-common-state-bridge} hypothesized in the
 statement; it is not derived, and the presently open obligation
 supplies nothing.
@@ -1932,8 +1954,8 @@ value of $\delta_{\mathrm{NS}}$ is claimed.
 \end{theorem}
 \begin{proof}
 Immediate from Theorem~\ref{thm:NSL1} (NS.L1$'$):
-$\lambda_{\mathrm{NS}} = (b/a)\,\widetilde\kappa^{\,m} < 1$
-under \textsc{idc} and the hypothesized \emph{discharge} of
+$\lambda_{\mathrm{NS}} = \bigl((b+c)/a\bigr)\,\widetilde\kappa^{\,m}
+< 1$ under \textsc{idc} and the hypothesized \emph{discharge} of
 Obl.~\ref{ob:NS-common-state-bridge} (the presently open
 obligation furnishes no constants). The former derivation via
 a numerical per-step margin rested on the withdrawn per-step

@@ -22810,7 +22810,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@106231",
+    "claim_id": "NFC_NS_Branch:remark@107638",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS.6.1 Partial Discharge via SB2",
     "claim_type": "remark",
@@ -22831,7 +22831,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@109928",
+    "claim_id": "NFC_NS_Branch:remark@111335",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "NS Window-Uniformity Verification",
     "claim_type": "remark",
@@ -22857,7 +22857,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@124411",
+    "claim_id": "NFC_NS_Branch:remark@125818",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "H-LR: Lieb--Robinson Bound and NS Stage-3 Canonical Import",
     "claim_type": "remark",
@@ -22882,7 +22882,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@129266",
+    "claim_id": "NFC_NS_Branch:remark@130673",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22907,7 +22907,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@130794",
+    "claim_id": "NFC_NS_Branch:remark@132201",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Final Status Proposition",
     "claim_type": "remark",
@@ -22935,7 +22935,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@133163",
+    "claim_id": "NFC_NS_Branch:remark@134570",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "Boundary of the NS Branch Book",
     "claim_type": "remark",
@@ -23050,7 +23050,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@64959",
+    "claim_id": "NFC_NS_Branch:remark@66352",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23073,7 +23073,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@66904",
+    "claim_id": "NFC_NS_Branch:remark@68297",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23094,7 +23094,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@69103",
+    "claim_id": "NFC_NS_Branch:remark@70496",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The bottleneck lemma",
     "claim_type": "remark",
@@ -23115,7 +23115,7 @@
     "review_needed": false
   },
   {
-    "claim_id": "NFC_NS_Branch:remark@87373",
+    "claim_id": "NFC_NS_Branch:remark@88780",
     "source_file": "NFC_NS_Branch.tex",
     "source_section": "The gap theorem",
     "claim_type": "remark",
