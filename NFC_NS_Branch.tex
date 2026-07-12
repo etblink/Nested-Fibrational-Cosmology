@@ -1372,8 +1372,14 @@ burden (d) only}; a discharge supplying instead the
 direct-recurrence alternative would require its own separate
 conditional template with the recurrence's own stated contraction
 constant, and no formula involving $a$, $b$, $c$ is asserted under
-such a discharge. Nothing in this theorem asserts the discharge
-itself, and the presently open obligation furnishes no constants. Set
+such a discharge. \emph{Of the two accounting alternatives of
+burden (e), this theorem consumes only the inequality branch}
+$\Psi_k \leq E_k + B_k$ (the equality
+$\Psi_k = E_k + B_k$ is a stronger optional special case and is
+\emph{not} inferred here from a generic discharge); an
+equality-only argument, where needed, would be a separate template.
+Nothing in this theorem asserts the discharge itself, and the
+presently open obligation furnishes no constants. Set
 $\widetilde\eta := \eta + \eta_{\mathrm{int}} < 1$ and
 $\widetilde\kappa := 1 - (1-\widetilde\eta)(c_1+c_2) < 1$. Then
 the ledger contracts on the late safe tail,
@@ -1404,25 +1410,30 @@ No per-step $\mu$-budget of the previous form is asserted.
 ($\mathcal{D}=\mathcal{E}+\mathcal{B}$, Book~II \S SCT), and the
 H1/H2 loss channels are genuine removals disjoint from inflow, so
 $\mathfrak{D}_{k+1} \leq \mathfrak{D}_k - \Phi_k + \Psi_k$.
-\emph{The exhaustive inflow accounting}
-$\Psi_k = E_k + B_k$ --- that is, the exact requirement of
-burden (e) that, after the stated assignment or exclusion of every
-per-step channel (level stock, transported survivor
-$\Theta_k C_k$, transported loss $(1-\Theta_k)C_k$, interior and
-boundary defect increments $E_k, B_k$, renewal inflow,
-redistribution, remainder), including in particular the assignment
-or exclusion of the transported loss $(1-\Theta_k)C_k$, the renewal
-term entering the ledger law is exactly $E_k + B_k$ --- is
-\emph{not} available in current canon: no decomposition theorem defines
+\emph{The inflow accounting bound}
+$\Psi_k \leq E_k + B_k$ --- the inequality branch of burden (e):
+after the stated assignment or exclusion of every per-step channel
+(level stock, transported survivor $\Theta_k C_k$, transported loss
+$(1-\Theta_k)C_k$, interior and boundary defect increments
+$E_k, B_k$, renewal inflow, redistribution, remainder), including in
+particular the assignment or exclusion of the transported loss
+$(1-\Theta_k)C_k$, the renewal term entering the ledger law is
+bounded by $E_k + B_k$ --- is \emph{not} available in current
+canon: no decomposition theorem defines
 $\Psi^{\mathrm{int}}, \Psi^{\mathrm{bdry}}$ from the canonical
 $\Psi$, and no proved map connects $\Psi^{\mathrm{int}}$ to $E_k$.
 It is precisely part~(e) of
 Obl.~\ref{ob:NS-common-state-bridge} and is taken here \emph{only}
 under the hypothesised discharge of that obligation, alongside the
 comparison of part~(d); it is not attributed to current canon.
-Under that hypothesised discharge, $\Psi_k = E_k + B_k$.
-\emph{Net contraction.} By \textsc{idc}~\eqref{hyp:NS-IDC-i}
-together with Theorem~\ref{thm:NS-H3-PASS-incoherent},
+Under that hypothesised discharge, $\Psi_k \leq E_k + B_k$ (with
+equality $\Psi_k = E_k + B_k$ the stronger optional special case,
+not inferred here); the contraction argument below uses only the
+inequality.
+\emph{Net contraction.} From $\Psi_k \leq E_k + B_k$ and, by
+\textsc{idc}~\eqref{hyp:NS-IDC-i} together with
+Theorem~\ref{thm:NS-H3-PASS-incoherent},
+$E_k + B_k \leq \widetilde\eta\,\Phi_k$, we obtain
 $\Psi_k \leq \widetilde\eta\,\Phi_k$; with
 $\Phi_k \geq (c_1+c_2)\mathfrak{D}_k$
 (Props.~\ref{prop:NS-quantitative-c1}--\ref{prop:NS-quantitative-c2})
@@ -1966,12 +1977,18 @@ budget and is not retained. \qed
 \begin{remark}[\status{R}]
 Formerly NS.G1+ was derived from NS.L1a + NS.L1b+ together with
 SB2's reserve margin ($\delta_{\mathrm{NS}} =
-\varepsilon_{\mathrm{bdry}}$). MIG-050 note: the translation of the
-SB2 defect/coercive separation into a window-budget margin is itself
-the $\alpha$/\textsc{idc} bridge (see the reconditioned
-Thm.~\ref{thm:NSSB2}); that route is therefore not independent of
-the hypotheses named above, and NS.G1+ stands only in the
-reconditioned, \textsc{idc}/$\alpha$-conditional form.
+\varepsilon_{\mathrm{bdry}}$). MIG-050 note (historical): the translation of the
+SB2 defect/coercive separation into a window-budget margin was, in
+the withdrawn MIG-050 route, attempted via the former
+$\alpha$/\textsc{idc} bridge (see the reconditioned
+Thm.~\ref{thm:NSSB2}). \emph{MIG-052 posture (current):} that
+$\alpha$-route is withdrawn ($\alpha$ supplies no active support);
+the translation is carried by the open common-state bridge
+obligation Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc}
+subsidiary and insufficient. NS.G1+ therefore stands only in the
+reconditioned form conditional on a hypothetical discharge of
+Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc} subsidiary
+and $\alpha$ retained only as withdrawn historical intake.
 \end{remark}
 
 \subsection{The full continuation stack}
