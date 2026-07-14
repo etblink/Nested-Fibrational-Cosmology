@@ -1202,9 +1202,18 @@ common-state bridge obligation
 is proved; nothing here may be cited as proved.
 
 \emph{Interior Defect Control on the NS safe tail} (\textsc{idc}):
-with $\Psi_k = \Psi_k^{\mathrm{int}}+\Psi_k^{\mathrm{bdry}}$ the
-total per-step ledger inflow and $\mathcal{E}_k,\mathcal{B}_k$ the
-interior and boundary components of the Book~II obstruction ledger,
+here $\Psi_k^{\mathrm{int}}$ and $\Psi_k^{\mathrm{bdry}}$ denote
+proposed interior and boundary renewal components of the total
+per-step ledger inflow $\Psi_k$ --- \emph{present-but-not-
+independently-defined targets}: this block does \emph{not} assert
+that $\Psi_k = \Psi_k^{\mathrm{int}}+\Psi_k^{\mathrm{bdry}}$ is an
+exhaustive canonical decomposition (no such decomposition theorem
+exists in canon; the first exhaustive, disjoint decomposition
+$\Psi_k = \Psi_k^{\mathrm{int}}+\Psi_k^{\mathrm{bdry}}+R_k$ is
+supplied only under a hypothetical Route~A discharge of
+Obl.~\ref{ob:NS-common-state-bridge}, part~(e)). With
+$\mathcal{E}_k,\mathcal{B}_k$ the interior and boundary components
+of the Book~II obstruction ledger,
 \begin{equation}\label{hyp:NS-IDC-i}
  \Psi_k^{\mathrm{int}} \;\leq\; \eta_{\mathrm{int}}\,\Phi_k
  \quad\text{with}\quad \eta+\eta_{\mathrm{int}}<1,
@@ -1721,34 +1730,55 @@ obstruction/ledger bridge, formerly attempted via $\alpha$ --- now
 withdrawn as ill-typed (MIG-052) --- and carried by the open
 obligation Obl.~\ref{ob:NS-common-state-bridge} (with \textsc{idc}
 \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} subsidiary); it
-remains pending. Moreover the SCT.6b application below is conditional
-additionally on \textsc{idc}~\eqref{hyp:NS-IDC-i}: hypothesis (H3)
-as proved (Thm.~\ref{thm:NS-H3-PASS-incoherent}) covers the boundary
-inflow channel only.
+remains pending. Moreover, hypothesis (H3) as proved
+(Thm.~\ref{thm:NS-H3-PASS-incoherent}) covers the \emph{boundary}
+inflow channel only, and \textsc{idc}-i alone does \emph{not}
+supply an exhaustive total-renewal decomposition; the SCT.6b
+application below is therefore conditional additionally on a
+hypothetical renewal-control discharge (Route~A/B/C of
+Obl.~\ref{ob:NS-common-state-bridge}, part~(e)) supplying the total
+bound $\Psi_n \leq \widetilde\eta\,\Phi_n$ with
+$\widetilde\eta < 1$.
 
-\textup{Conditional on} the three primitive-derived
-dissipation-bias hypotheses of Book~II
-Theorem~\ref{thm:SCT6b}~(SCT.6b): quotient-loss on defect~(H1),
-finite-collar mixing loss~(H2), and PASS-incoherent renewal~(H3).
+\textup{Conditional on} quotient-loss on defect~(H1), finite-collar
+mixing loss~(H2), \emph{boundary-only} PASS-incoherent renewal~(H3,
+Thm.~\ref{thm:NS-H3-PASS-incoherent}), \emph{and} a hypothetical
+renewal-control discharge (Obl.~\ref{ob:NS-common-state-bridge},
+part~(e)) lifting the boundary bound to the total-renewal bound
+$\Psi_n \leq \widetilde\eta\,\Phi_n$ that Book~II
+Theorem~\ref{thm:SCT6b}~(SCT.6b) consumes.
 \end{theorem}
 
 \begin{proof}
 By Theorem~\ref{thm:NSRen5} (Ren.5, now discharged), the
 proof-program frontier has been cleared: the tail is spike-free
-in the boundary term. By the Spine SCT.6b
-(Book~II~\S\,\ref{sec:sct-doctrine}), once the three
-primitive-derived hypotheses (H1)--(H3) hold in the declared NS
-safe-tail regime, strict dissipation bias follows:
-defect satisfies $\mathcal{D}_{n+1} \leq \mathcal{D}_n -
-(1-\eta)\Phi_n$ on the late tail. With tail positivity of the
+in the boundary term. H3 as proved
+(Thm.~\ref{thm:NS-H3-PASS-incoherent}) bounds the \emph{boundary}
+renewal channel only; SCT.6b consumes a bound on the \emph{total}
+renewal $\Psi_n$. That total bound,
+$\Psi_n \leq \widetilde\eta\,\Phi_n$ with
+$\widetilde\eta < 1$, is supplied here \emph{only} by the
+hypothetical renewal-control discharge of
+Obl.~\ref{ob:NS-common-state-bridge}, part~(e), named in the
+statement (boundary-only $\eta$ is \emph{not} used as a
+total-renewal coefficient; no discharge proving
+$\widetilde\eta = \eta$ is asserted). Under that hypothetical
+discharge, by the Spine SCT.6b
+(Book~II~\S\,\ref{sec:sct-doctrine}) strict dissipation bias
+follows: defect satisfies $\mathcal{D}_{n+1} \leq \mathcal{D}_n -
+(1-\widetilde\eta)\Phi_n$ on the late tail, at CERT-PROJ force
+while that route is open. With tail positivity of the
 coercive quantity (guaranteed by the retained transport ceiling
 and non-collapse of the coercive structure), this gives
 $\mathcal{D}_n \leq (1-\varepsilon)\mathcal{C}_n$ eventually,
 which is the stated separation with
 $\varepsilon_{\mathrm{bdry}} = \varepsilon$. (The former further
 step translating this separation into a window-budget inequality is
-withdrawn as unproved --- MIG-050; it requires the
-$\alpha$/\textsc{idc} bridge.) The key asymmetry:
+withdrawn as unproved --- MIG-050; the former $\alpha$/\textsc{idc}
+route for it is \emph{withdrawn} ($\alpha$ supplies no active
+support; \textsc{idc} is subsidiary and insufficient), and the
+translation now depends on the hypothetical discharge of
+Obl.~\ref{ob:NS-common-state-bridge}.) The key asymmetry:
 \emph{defect cannot regenerate what the quotient deletes}
 (H1), while finite-collar mixing prevents indefinite coherent
 preservation of incompatible fine structure (H2), and PASS
@@ -1757,17 +1787,23 @@ incoherence prevents phase-locked renewal (H3). \qed
 
 \begin{remark}[\status{R}]\label{rmk:SB2-SCT6b}
 SB2 has been upgraded from \emph{provisionally independent
-structural input} to a \emph{conditional theorem}. The
-remaining open obligation is verification that the three
-SCT.6b hypotheses (H1)--(H3) hold in the NS safe-tail regime.
-Filtration evidence that spike-free tails can approach
-saturation without positive reserve is fully explained: without
-SCT.6b, bounded control does not imply strict separation.
-With SCT.6b, the equilibrium failure mode is excluded because
-the quotient erases mismatch faster than PASS-incoherent renewal
-can regenerate it. The NS branch is now \emph{conditionally
-blocked by one primitive-derived bias packet} rather than by a
-vague structural gap.
+structural input} to a \emph{conditional theorem}.
+\emph{(Historical transition note, MIG-014-era, superseded in
+part:)} the burden was then described as verification of
+(H1)--(H3) alone, the branch ``conditionally blocked by one
+primitive-derived bias packet.'' \emph{Current posture (MIG-052):}
+the controlling open burden is the common-state renewal-control
+route (Obl.~\ref{ob:NS-common-state-bridge}, part~(e)) --- H3 as
+proved covers the boundary channel only, and lifting it to the
+total-renewal bound SCT.6b consumes passes through that route ---
+in addition to the explicitly retained quantitative verifications
+of H1, H2, and boundary-only H3. Filtration evidence that
+spike-free tails can approach saturation without positive reserve
+is fully explained: without SCT.6b, bounded control does not imply
+strict separation. With SCT.6b (available here only under the
+hypothetical renewal-control discharge), the equilibrium failure
+mode is excluded because the quotient erases mismatch faster than
+PASS-incoherent renewal can regenerate it.
 \end{remark}
 
 \begin{remark}[\status{R}]\label{rmk:SCT6b-verification-obligations}

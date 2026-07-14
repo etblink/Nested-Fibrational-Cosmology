@@ -3811,7 +3811,19 @@
   },
   {
     "from": "thm:NSSB2",
+    "to": "ob:NS-common-state-bridge",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSSB2",
     "to": "sec:sct-doctrine",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSSB2",
+    "to": "thm:NS-H3-PASS-incoherent",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
