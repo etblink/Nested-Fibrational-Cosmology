@@ -814,11 +814,15 @@ obligation, Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc}
 the former hypothesis $\alpha$ (label \texttt{hyp:NS-alpha}) is
 withdrawn as ill-typed and unsupported.
 The ledger-side contraction
-$\mathfrak{D}_{n+1}\leq\kappa\,\mathfrak{D}_n$ of
-Thm.~\ref{thm:NS61-global}, with $\kappa \leq 1-8/343$ from
-Thm.~\ref{thm:NS-kappa-explicit}, transfers to the imbalance only
-through that open bridge, so the discharge holds at CERT-PROJ
-force.) Given the hypothesis, the
+$\mathfrak{D}_{n+1}\leq\widetilde\kappa\,\mathfrak{D}_n$ of
+Thm.~\ref{thm:NS61-global} --- with
+$\widetilde\kappa = 1-(1-\widetilde\eta)(c_1+c_2)$ symbolic and
+route-conditional (Thm.~\ref{thm:NS-kappa-explicit},
+reconditioned): current canon certifies only the boundary
+coefficient $\eta \leq 6/7$, not $\eta_{\mathrm{int}}$ or
+$\eta_R$, so no explicit numerical total ratio is presently
+certified --- transfers to the imbalance only through that open
+bridge, so the discharge holds at CERT-PROJ force.) Given the hypothesis, the
 window-uniformity theorem (Thm.~\ref{thm:NS-window-uniformity})
 extends the contraction uniformly across all sufficiently late
 windows of the active architecture, and the positive reserve of
@@ -839,8 +843,12 @@ Corollary~\ref{cor:NS61-discharged}: the window-uniformity hypothesis
 after the Q2a determinism resolution of
 Thms.~\ref{thm:NS-window-determinism}--\ref{cor:NS-eventual-periodicity})
 supplies the missing uniformity, and
-Thm.~\ref{thm:NS61-global} supplies the explicit ledger
-contraction bound $\kappa \le 1 - 8/343$. \emph{MIG-050
+Thm.~\ref{thm:NS61-global} supplies the ledger contraction in its
+route-conditional symbolic form
+$\widetilde\kappa = 1-(1-\widetilde\eta)(c_1+c_2) < 1$ (the
+former explicit bound $\kappa \le 1-8/343$ treated the
+boundary-only $\eta$ as a total-renewal coefficient and is
+withdrawn from active use --- MIG-052). \emph{MIG-050
 reconditioning (historical intake):} the hypothesis set was enlarged
 by the named open hypotheses \textsc{idc}
 \eqref{hyp:NS-IDC-i}--\eqref{hyp:NS-IDC-ii} and $\alpha$
@@ -1125,9 +1133,13 @@ source-side transport: the three-source decomposition
 (transported content $\vartheta_k \mathcal{O}$, internal defect
 $\mathfrak{D}_k^{\mathrm{int}}$, boundary defect
 $\mathfrak{D}_k^{\mathrm{bdry}}$) is canonical. The retained
-transport factor $\vartheta_k \in [0,1]$ is the transfer
-factor from Theorem~\ref{thm:NS-SB2-discharged} (SB2):
-$\vartheta_k = 1-(1-\eta)(c_1+c_2) = \kappa \leq 1 - 8/343$.
+transport factor satisfies $\vartheta_k \in [0,1]$ generically:
+it is the gross Book~III transported-survivor factor, and no
+identification of $\vartheta_k$ with any net SCT loss/renewal
+contraction ratio is made here. (The former identification
+$\vartheta_k = \kappa \leq 1-8/343$ is \emph{withdrawn} ---
+MIG-052; it conflated the gross transport factor with the net
+ratio and used the boundary-only $\eta$ as a total coefficient.)
 The normalized defect contributions $\mathfrak{D}_k$ are bounded
 by Propositions~\ref{prop:NS-quantitative-c1}--\ref{prop:NS-quantitative-c2}.
 \qed
@@ -1143,10 +1155,13 @@ Book~III. It is stated at conditional force~[C]; an earlier intake draft
 carried it at~[O] pending the explicit bound on $\vartheta_k$ and the
 branch-local definition of $\mathfrak{D}_k$, both since supplied
 (SB2/SCT.6b chain; Book~III three-source decomposition).
-\emph{MIG-050 note:} identifying $\vartheta_k$ with the \emph{net}
-ratio $\kappa$ conflates the gross Book~III transport factor
-$\Theta_n$ with the net SCT.6b ratio; the reconditioned contraction
-chain (Thm.~\ref{thm:NSL1}) does not rely on that identification.
+\emph{MIG-050 note, sharpened MIG-052:} identifying $\vartheta_k$
+with the \emph{net} ratio $\kappa$ conflates the gross Book~III
+transport factor $\Theta_n$ with the net SCT.6b ratio; that former
+identification \emph{is withdrawn} (not merely unrelied-upon): the
+theorem asserts only the generic $\vartheta_k \in [0,1]$, and the
+reconditioned contraction chain (Thm.~\ref{thm:NSL1}) does not use
+any such identification.
 \end{remark}
 
 \begin{theorem}[\status{C}]\label{thm:NSP1c}
@@ -1808,9 +1823,11 @@ PASS-incoherent renewal can regenerate it.
 
 \begin{remark}[\status{R}]\label{rmk:SCT6b-verification-obligations}
 \textbf{SCT.6b Verification Obligations (Named Remaining NS Frontier).}
-The exact remaining NS frontier is the verification of the three
-SCT.6b hypotheses in the NS safe-tail regime. Each is stated
-precisely as a named open obligation:
+The controlling open NS burden is the common-state
+renewal-control route (Obl.~\ref{ob:NS-common-state-bridge},
+part~(e)); the verification of the SCT.6b hypotheses in the NS
+safe-tail regime --- H1, H2, and boundary-only H3 below --- is
+\emph{subsidiary} to it. Each subsidiary item is stated precisely:
 \begin{itemize}
 \item \textbf{(H1) Quotient-loss on defect in NS safe-tail regime}
  [Open]: Show that in the NS active architecture, boundary or
@@ -2032,9 +2049,10 @@ boundary renewal channel only}
 (Thm.~\ref{thm:NS-H3-PASS-incoherent}); lifting boundary-only H3
 to the total-renewal bound that SCT.6b consumes is itself
 conditional on a renewal-control route (Route~A/B/C of
-Obl.~\ref{ob:NS-common-state-bridge}, part~(e)), open. The
-remaining named open conditions before \emph{unconditional}
-discharge are:
+Obl.~\ref{ob:NS-common-state-bridge}, part~(e)), open ---
+\emph{that route is the controlling open burden}. The
+\emph{subsidiary} quantitative requirements (the original named
+list; their boundary/geometry scope has since been certified) are:
 \begin{enumerate}[label=\textup{(\arabic*)}]
  \item \emph{$c_1$ certification}: the quotient-loss rate
  $c_1 > 0$ must be computed explicitly from the NS window
@@ -2291,14 +2309,20 @@ partial discharge of NS.6.1.
 Window-Contraction.)}
 \textup{[Conditional on SB2 discharge,
 Theorems~\ref{thm:NS-H1-quotient-loss}--\ref{thm:NS-SB2-discharged},
-and the NS safe-tail architecture.]}
+the hypothetical renewal-control discharge
+(Obl.~\ref{ob:NS-common-state-bridge}, part~(e)) those theorems
+now consume, and the NS safe-tail architecture.]}
 Under the conditions of SB2, the declared source-descended
 transport-weighted imbalance quantity satisfies the active
 multiplicative window-to-window contraction condition on the NS
-safe tail: there exists $\kappa < 1$ (the contraction ratio,
-certified from $c_1$, $c_2$, $\eta$) such that
+safe tail: there exists a symbolic
+$\widetilde\kappa < 1$ (the route-conditional contraction ratio
+$\widetilde\kappa = 1-(1-\widetilde\eta)(c_1+c_2)$; $c_1$,
+$c_2$, and the boundary coefficient $\eta$ are certified, while
+$\eta_{\mathrm{int}}$ and $\eta_R$ are supplied only by the
+hypothetical renewal-control discharge) such that
 \[
- \mathfrak{D}_{n+1} \;\leq\; \kappa\,\mathfrak{D}_n
+ \mathfrak{D}_{n+1} \;\leq\; \widetilde\kappa\,\mathfrak{D}_n
  \qquad \text{for all } n \text{ on the late safe tail.}
 \]
 Hence the multiplicative-contraction clause of NS.6.1
@@ -2306,11 +2330,17 @@ Hence the multiplicative-contraction clause of NS.6.1
 \end{theorem}
 
 \begin{proof}
-By Theorem~\ref{thm:NS-SB2-discharged}:
-$D_{n+1} \leq D_n - (1-\eta)(c_1+c_2)\mathfrak{D}_n$.
-Setting $\kappa = 1 - (1-\eta)(c_1+c_2) < 1$ (since
-$(1-\eta)(c_1+c_2) > 0$ from $\eta < 1$, $c_1,c_2 > 0$),
-we get $\mathfrak{D}_{n+1} \leq \kappa\,\mathfrak{D}_n$.
+By Theorem~\ref{thm:NS-SB2-discharged} under its hypothetical
+renewal-control discharge (Obl.~\ref{ob:NS-common-state-bridge},
+part~(e)), the total-renewal bound
+$\Psi_n \leq \widetilde\eta\,\Phi_n$ gives
+$D_{n+1} \leq D_n - (1-\widetilde\eta)\Phi_n \leq D_n -
+(1-\widetilde\eta)(c_1+c_2)\mathfrak{D}_n$.
+Setting $\widetilde\kappa = 1 - (1-\widetilde\eta)(c_1+c_2) < 1$
+(since $(1-\widetilde\eta)(c_1+c_2) > 0$ from
+$\widetilde\eta < 1$, $c_1,c_2 > 0$; $\widetilde\eta$ remains
+symbolic while the route is open), we get
+$\mathfrak{D}_{n+1} \leq \widetilde\kappa\,\mathfrak{D}_n$.
 This is the multiplicative window-to-window contraction
 condition of Theorem~\ref{thm:NS61}. \qed
 \end{proof}
@@ -2319,18 +2349,27 @@ condition of Theorem~\ref{thm:NS61}. \qed
 \textup{(NS.6.1 Reduction.)}
 Under the conditional SB2 discharge, NS.6.1 reduces to:
 \begin{enumerate}[label=\textup{(\arabic*)}]
- \item \emph{Explicit $\kappa$ computation}: certify
- $\kappa = 1-(1-\eta)(c_1+c_2)$ explicitly from the
- safe-tail window geometry (this reduces to the quantitative
- $c_1$, $c_2$, $\eta$ certification of
- Remark~\ref{rem:NS-SB2-status}).
+ \item \emph{Explicit $\widetilde\kappa$ computation}: certify
+ $\widetilde\kappa = 1-(1-\widetilde\eta)(c_1+c_2)$ explicitly.
+ The boundary/geometry quantities $c_1$, $c_2$, $\eta$ are
+ certified (Remark~\ref{rem:NS-SB2-status} and the quantitative
+ propositions), but
+ $\widetilde\eta = \eta + \eta_{\mathrm{int}} + \eta_R$ also
+ requires the route coefficients
+ $\eta_{\mathrm{int}}, \eta_R$, supplied only by discharging
+ the renewal-control route
+ (Obl.~\ref{ob:NS-common-state-bridge}, part~(e)); until then
+ $\widetilde\kappa$ is symbolic.
  \item \emph{Promotion to target scope}: show the contraction
  is uniform across the full declared NS regime (not just
  the safe tail), which requires extending the SB2 argument
  from the safe-tail window to the global NS architecture.
 \end{enumerate}
-Item~(1) is a finite quantitative computation.
-Item~(2) is the remaining structural burden of NS.6.1.
+Item~(1) becomes a finite quantitative computation \emph{only
+after} the renewal-control route is discharged; its
+$c_1, c_2, \eta$ part is complete.
+Item~(2) is a remaining structural burden of NS.6.1, alongside the
+controlling renewal-control route itself.
 \end{corollary}
 
 \begin{remark}[\status{R}]\label{rem:NS-chain-status}
@@ -2438,47 +2477,65 @@ the renewal coupling to the backbone is bounded by $\eta \leq
 \end{proof}
 
 \begin{theorem}[\status{C}]\label{thm:NS-kappa-explicit}
-\textup{(Explicit NS.6.1 Contraction Ratio $\kappa$.)}
-Under the quantitative bounds above, the NS.6.1 multiplicative
-contraction ratio is explicitly:
+\textup{(NS.6.1 Contraction Ratio --- Symbolic, Route-Conditional;
+Reconditioned MIG-052.)}
+Under the quantitative bounds above \emph{and a hypothetical
+discharge of the renewal-control route
+(Obl.~\ref{ob:NS-common-state-bridge}, part~(e)) supplying the
+coefficients $\eta_{\mathrm{int}}, \eta_R$ with
+$\widetilde\eta = \eta + \eta_{\mathrm{int}} + \eta_R < 1$},
+the NS.6.1 multiplicative contraction ratio is
 \[
- \kappa \;=\; 1 - (1-\eta)(c_1 + c_2)
- \;\leq\; 1 - \frac{1}{7}\!\left(\frac{1}{7}+\frac{1}{49}\right)
- \;=\; 1 - \frac{8}{343}
- \;\approx\; 0.9767.
+ \widetilde\kappa \;=\; 1 - (1-\widetilde\eta)(c_1 + c_2)
+ \;<\; 1,
 \]
-In particular $\kappa < 1$ is certified explicitly,
-completing the quantitative certification for NS.6.1.
+symbolic until that route is discharged. Current canon certifies
+only $c_1 \geq 1/7$, $c_2 \geq 1/49$, and the \emph{boundary}
+coefficient $\eta \leq 6/7$; it certifies neither
+$\eta_{\mathrm{int}}$ nor $\eta_R$, so \emph{no explicit
+numerical total-ledger contraction bound is presently certified}.
+\emph{Superseded (MIG-052; retained as historical intake):} the
+former content of this theorem displayed
+$\kappa = 1-(1-\eta)(c_1+c_2) \leq 1-8/343 \approx 0.9767$ and
+claimed completion of the quantitative certification for NS.6.1;
+that display treated the boundary-only $\eta$ as a total-renewal
+coefficient and is withdrawn from active use.
 \end{theorem}
 
 \begin{proof}
-Substitute $\eta \leq 6/7$, $c_1 \geq 1/7$, $c_2 \geq 1/49$
-into $\kappa = 1-(1-\eta)(c_1+c_2)$:
-\[
- \kappa \;\leq\; 1 - \left(1 - \frac{6}{7}\right)
- \left(\frac{1}{7} + \frac{1}{49}\right)
- = 1 - \frac{1}{7} \cdot \frac{8}{49}
- = 1 - \frac{8}{343}.
-\]
-Since $8/343 > 0$, we have $\kappa < 1$ explicitly. \qed
+With $\widetilde\eta < 1$ supplied by the hypothesised route
+discharge (Obl.~\ref{ob:NS-common-state-bridge}, part~(e)) and
+$c_1 + c_2 > 0$ from the certified quantitative propositions,
+$(1-\widetilde\eta)(c_1+c_2) > 0$, hence
+$\widetilde\kappa < 1$. No numerical value is asserted: the
+former substitution of $\eta \leq 6/7$ into a total ratio used
+the boundary coefficient beyond its proved scope. \qed
 \end{proof}
 
 \begin{remark}[\status{R}]
-\textbf{NS quantitative summary.}
-All three SCT.6b coefficients are now certified with explicit
-lower/upper bounds:
+\textbf{NS quantitative summary (reconditioned MIG-052).}
+The three boundary/geometry quantities are certified with explicit
+bounds:
 \begin{align*}
  c_1 &\geq 1/7, \\
  c_2 &\geq 1/49 \text{ (min window; improves with larger $k$)}, \\
- \eta &\leq 6/7.
+ \eta &\leq 6/7 \text{ (boundary renewal channel only)}.
 \end{align*}
-The contraction ratio $\kappa \leq 1 - 8/343 \approx 0.977 < 1$
-is explicit. NS.6.1 (partial) is now quantitatively certified.
-The remaining open burden for NS.6.1 (full scope) is the global
-promotion from the safe-tail window to the full NS regime:
-this requires showing that the window-by-window contraction
-extends uniformly across all windows in the NS architecture,
-not just the minimal safe-tail case.
+These are \emph{subsidiary} quantitative requirements. \emph{No
+explicit total contraction ratio is presently certified}: the
+total-renewal coefficient
+$\widetilde\eta = \eta + \eta_{\mathrm{int}} + \eta_R$
+requires the route coefficients $\eta_{\mathrm{int}}, \eta_R$,
+supplied only by the open renewal-control route
+(Obl.~\ref{ob:NS-common-state-bridge}, part~(e)) --- the
+controlling open burden. The former display
+$\kappa \leq 1-8/343 \approx 0.977$ used the boundary-only
+$\eta$ as a total coefficient and is superseded (MIG-052). The
+remaining burdens for NS.6.1 (full scope) are that controlling
+route together with the global promotion from the safe-tail window
+to the full NS regime: the window-by-window contraction must extend
+uniformly across all windows in the NS architecture, including
+uniformity of the route data, not just the minimal safe-tail case.
 \end{remark}
 
 %% ---------------------------------------------------------------
@@ -2529,12 +2586,17 @@ collar-type labelling. \qed
 
 \begin{corollary}[\status{C}]\label{cor:window-uniform-coeffs}
 \textup{(Uniform Coefficient Bounds Across Windows.)}
-Under Theorem~\ref{thm:NS-window-uniformity}: the coefficients
-$c_1 \geq 1/7$, $c_2 \geq 1/49$, and $\eta \leq 6/7$ hold
-uniformly across all sufficiently late windows (not just the
-minimal window). Hence the contraction ratio $\kappa \leq
-1 - 8/343$ is uniform, and the NS window-uniformity hypothesis
-of Theorem~\ref{thm:NS61-global} is verified.
+Under Theorem~\ref{thm:NS-window-uniformity}: the
+boundary/geometry coefficients $c_1 \geq 1/7$, $c_2 \geq 1/49$,
+and $\eta \leq 6/7$ hold uniformly across all sufficiently late
+windows (not just the minimal window). \emph{This certifies those
+three quantities only}: no total-renewal ratio
+$\widetilde\kappa$ is inferred here, because uniformity of the
+remaining route data ($\eta_{\mathrm{int}}, \eta_R$ of the
+hypothetical renewal-control discharge) is not supplied by window
+geometry. The \emph{geometric} part of the window-uniformity
+hypothesis of Theorem~\ref{thm:NS61-global} is verified; its
+route part remains hypothetical (MIG-052).
 \end{corollary}
 
 \begin{proof}
@@ -2546,13 +2608,17 @@ isometric windows. Hence the bounds are uniform. \qed
 \end{proof}
 
 \begin{remark}[\status{R}]
-\textbf{NS.6.1 open condition now closed.}
-The window-uniformity hypothesis of Theorem~\ref{thm:NS61-global}
-is verified by Theorem~\ref{thm:NS-window-uniformity} and
+\textbf{NS.6.1 geometric uniformity condition closed; route
+condition open (MIG-052).}
+The \emph{geometric} window-uniformity hypothesis of
+Theorem~\ref{thm:NS61-global} is verified by
+Theorem~\ref{thm:NS-window-uniformity} and
 Corollary~\ref{cor:window-uniform-coeffs}. The NS.6.1 global
-contraction theorem is now fully conditional on Phase-A, $K_0=7$,
-LS-2, and the NS architecture declaration alone --- no
-additional external uniformity hypothesis is required.
+contraction theorem is conditional on Phase-A, $K_0=7$, LS-2, the
+NS architecture declaration, \emph{and} the hypothetical
+renewal-control discharge with uniform route data
+(Obl.~\ref{ob:NS-common-state-bridge}, part~(e)); no additional
+external \emph{geometric} uniformity hypothesis is required.
 The NS branch closure chain is:
 \[
  \mathrm{Ren.5}\,[C] \Rightarrow \cdots \Rightarrow
@@ -2654,12 +2720,16 @@ promotes the contraction to the full NS regime.
 
 \begin{theorem}[\status{C}]\label{thm:NS61-global}
 \textup{(NS.6.1 Full Scope: Uniform Window-to-Window Contraction.)}
-\textup{[Conditional on the quantitative bounds of
-Theorem~\ref{thm:NS-kappa-explicit} and the NS window-uniformity
-hypothesis: the window geometry and the safe-tail active
-architecture are uniform across all sufficiently late windows.]}
+\textup{[Conditional on the symbolic route-conditional ratio of
+Theorem~\ref{thm:NS-kappa-explicit} --- hence on the hypothetical
+renewal-control discharge (Obl.~\ref{ob:NS-common-state-bridge},
+part~(e)) with its route data $\eta_{\mathrm{int}}, \eta_R$
+\emph{uniform across the declared windows} --- and the NS
+window-uniformity hypothesis: the window geometry and the safe-tail
+active architecture are uniform across all sufficiently late
+windows. Uniformity of $c_1, c_2, \eta$ alone is insufficient.]}
 The multiplicative contraction
-$\mathfrak{D}_{n+1} \leq \kappa\,\mathfrak{D}_n$
+$\mathfrak{D}_{n+1} \leq \widetilde\kappa\,\mathfrak{D}_n$
 holds uniformly across all windows in the NS active architecture
 for all sufficiently large $n$, not just within the minimal
 safe-tail window.
@@ -2694,11 +2764,19 @@ Under uniform window geometry:
 \end{itemize}
 
 \textbf{Step~3 (Global contraction).}
-The uniform coefficient bounds give the same contraction ratio
-$\kappa = 1 - (1-\eta)(c_1+c_2) \leq 1 - 8/343 < 1$ at every
-sufficiently late window. By induction, $\mathfrak{D}_n \leq
-\kappa^{n-n_0}\mathfrak{D}_{n_0} \to 0$ as $n \to \infty$.
-Hence the contraction holds globally. \qed
+The uniform boundary/geometry bounds, together with the
+hypothesised uniform route data $\eta_{\mathrm{int}}, \eta_R$
+supplied by the renewal-control discharge
+(Obl.~\ref{ob:NS-common-state-bridge}, part~(e)),
+give the same symbolic contraction ratio
+$\widetilde\kappa = 1 - (1-\widetilde\eta)(c_1+c_2) < 1$ at
+every sufficiently late window
+($\widetilde\eta = \eta + \eta_{\mathrm{int}} + \eta_R < 1$;
+no numerical value is certified while the route is open). By
+induction, $\mathfrak{D}_n \leq
+\widetilde\kappa^{\,n-n_0}\mathfrak{D}_{n_0} \to 0$ as
+$n \to \infty$. Hence the contraction holds globally, at
+CERT-PROJ force while the route is open. \qed
 \end{proof}
 
 \begin{corollary}[\status{C}]\label{cor:NS61-discharged}
@@ -2735,9 +2813,12 @@ Theorems~\ref{thm:NS61-global} and~\ref{thm:NS-SB2-discharged}
 (reconditioned) supply the ledger contraction and the SCT.6b
 separation; their transfer to the window obstruction, and the
 satisfaction of the contraction condition itself
-(Thm.~\ref{thm:NSP1c}), are conditional on hypotheses (5)--(6). The
-continuation criterion of Theorem~\ref{thm:NS61} follows on the
-stated hypothesis set. \qed
+(Thm.~\ref{thm:NSP1c}), are conditional on hypotheses (5)--(6) ---
+in particular on the open common-state bridge
+Obl.~\ref{ob:NS-common-state-bridge} --- and the ledger ratio is
+symbolic, route-conditional (Thm.~\ref{thm:NS-kappa-explicit},
+reconditioned). The continuation criterion of
+Theorem~\ref{thm:NS61} follows on the stated hypothesis set. \qed
 \end{proof}
 
 \begin{remark}[\status{R}]\label{rem:NS7-now-accessible}
@@ -2915,10 +2996,14 @@ Lawful descent: Proposition~\ref{prop:NS-lawful}.
 NS.6.1 conditionally discharged:
 Cor.~\ref{cor:NS61-discharged} (window-uniformity + $K_0=7$
 + Phase-A + PASS + \textsc{idc} (subsidiary) +
-Obl.~\ref{ob:NS-common-state-bridge}; the ledger ratio
-$\kappa\le 1-8/343$ stands, its transfer to the window obstruction
-being exactly the open common-state bridge --- MIG-052; $\alpha$
-withdrawn; the former per-step margin claim remains withdrawn).
+Obl.~\ref{ob:NS-common-state-bridge}; the ledger contraction
+stands in its symbolic route-conditional form
+$\widetilde\kappa = 1-(1-\widetilde\eta)(c_1+c_2) < 1$ --- the
+former explicit $\kappa\le 1-8/343$ used the boundary-only
+$\eta$ as a total coefficient and is superseded (MIG-052) --- its
+transfer to the window obstruction being exactly the open
+common-state bridge; $\alpha$ withdrawn; the former per-step
+margin claim remains withdrawn).
 Window determinism: Thm.~\ref{thm:NS-window-determinism}
 (Q2a resolved), giving clean [C] without recurrence caveat.
 NS.7.1 conditionally discharged: Thm.~\ref{thm:NS71}

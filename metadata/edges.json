@@ -3343,7 +3343,19 @@
   },
   {
     "from": "cor:NS61-discharged",
+    "to": "ob:NS-common-state-bridge",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:NS61-discharged",
     "to": "thm:NS-SB2-discharged",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:NS61-discharged",
+    "to": "thm:NS-kappa-explicit",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
@@ -3516,6 +3528,12 @@
     "kind": "proof-cite"
   },
   {
+    "from": "thm:NS-kappa-explicit",
+    "to": "ob:NS-common-state-bridge",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
     "from": "thm:NS-leray",
     "to": "def:NS-candidate",
     "file": "NFC_NS_Branch.tex",
@@ -3643,6 +3661,12 @@
   },
   {
     "from": "thm:NS61-global",
+    "to": "ob:NS-common-state-bridge",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61-global",
     "to": "prop:NS-quantitative-c1",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
@@ -3662,6 +3686,12 @@
   {
     "from": "thm:NS61-global",
     "to": "thm:PASS-derived",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61-partial",
+    "to": "ob:NS-common-state-bridge",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
@@ -3788,12 +3818,6 @@
   {
     "from": "thm:NSP1b",
     "to": "prop:NS-quantitative-c2",
-    "file": "NFC_NS_Branch.tex",
-    "kind": "proof-cite"
-  },
-  {
-    "from": "thm:NSP1b",
-    "to": "thm:NS-SB2-discharged",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
