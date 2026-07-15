@@ -1,7 +1,7 @@
 # NFC Canon: State of the Canon
 
 > **GENERATED SNAPSHOT** — produced by `scripts/generate_state_of_canon.py` from the
-> metadata layer (census commit `721d083`, generated 2025-07-15 01:00Z).
+> metadata layer (census commit `dc72e0b`, generated 2026-07-15 11:03Z).
 > Do not hand-edit above the historical marker; run `make state` to refresh.
 > Historical session material is preserved verbatim below the marker.
 
@@ -32,7 +32,7 @@ Declarations: {'D': 461, 'U': 210, 'C': 740, 'B': 8, 'O': 6, 'R': 366}. Both are
 | Branch | Current posture (verbatim A1 status proposition) | D | U | C | B | O | R |
 |---|---|---|---|---|---|---|---|
 | YM | Conditional CERT-CLOSE (MSC-normalized NFC scope); B1/B2/B3 post-program | 47 | 19 | 185 | 0 | 0 | 46 |
-| NS | CERT-PROJ, open common-state frontier (MIG-052): NS.6.1/NS.7.1 conditional chain complete on the ledger side, its transfer to the window obstruction passing through the open obligation ob:NS-common-state-bridge; alpha withdrawn as ill-typed; IDC subsidiary and insufficient; former conditional CERT-CLOSE wording superseded; unconditional global regularity external | 20 | 17 | 39 | 0 | 1 | 36 |
+| NS | CERT-PROJ / open common-state frontier, with UWB retained as a separate unproved conditional scope hypothesis (MIG-052): every active global-window consumer names hypothetical discharge of ob:NS-common-state-bridge and UWB; Ren.5/SB2/UH.3 are predecessor inputs; IDC subsidiary and insufficient; alpha withdrawn as ill-typed; former conditional CERT-CLOSE wording superseded; unconditional Stage-3 regularity external | 20 | 17 | 39 | 0 | 1 | 36 |
 | SCC | Conditional CERT-CLOSE at declared structural endpoint (UCTI/depth-sum/threshold-stability + source-descent) | 15 | 8 | 40 | 0 | 0 | 19 |
 | GR | Domain-bounded conditional CERT-CLOSE + CK-corner extension; global curvature-subcriticality open | 11 | 9 | 29 | 1 | 0 | 15 |
 | SM | Conditionally intrinsic-structural closed, inherited-scope open | 6 | 1 | 42 | 0 | 0 | 19 |

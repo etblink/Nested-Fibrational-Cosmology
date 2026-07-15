@@ -4,6 +4,12 @@
 
 ---
 
+### MIG-052 Corrective J — semantic synchronization addendum
+
+**No theorem reconstruction, proof, discharge, coefficient, obligation, label, status, endpoint, or census change.** Canonical NS posture is **CERT-PROJ / open common-state frontier, with UWB retained as a separate unproved conditional scope hypothesis**. Every active global-window consumer—window-chain theorem, endpoint corollary, Stage-3 composition, H-LR summary, and final status/claims surface—now names both the hypothetical discharge of `ob:NS-common-state-bridge` and UWB. The named frontier (`def:NS-frontier`, its theorem and rephrasing corollary), boundary account, and manual dependency ledger are synchronized: the common-state bridge is the sole formal internal `[O]`; UWB is a separate unproved conditional scope hypothesis and not a second obligation; Ren.5, SB2, and UH.3 are predecessor inputs; IDC is subsidiary and insufficient; α is withdrawn; unconditional Stage-3 regularity is external. The four-column active-surface inventory is the completeness test. The disclosed Book VII residue remains deliberately out of scope for a later cross-book hygiene migration. Census remains `D461/U211/C749/B9/O6/R366`; reduced internal frontier remains 5.
+
+---
+
 ## ╔══════════════════════════════════════════════════════════════╗
 ## ║               THE GOAL — READ THIS FIRST                    ║
 ## ╚══════════════════════════════════════════════════════════════╝

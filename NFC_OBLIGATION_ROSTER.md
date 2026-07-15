@@ -280,6 +280,8 @@ recurrence, lower bound, or comparison may pass between 𝒟_n and
 
 **Corrective I note (adaptive windows and UWB).** Burden item (f) is titled "branch-ledger implementation — option B of the Corrective-H authorization's correction 1; unrelated to the Route A/B/C renewal taxonomy of burden (e)"; the ledger-state map is never called "Route B". Separately from this obligation, the NS window chain now carries the **uniform window-boundary hypothesis (UWB)**: |∂W_k| ≤ K_* < ∞ on the late tail, *explicitly assumed, not proved* — adaptive finite windows did not by themselves give one finite global state space, and the per-window mixing bound K₀^{−k} **decreases** with k, so the uniform bound is c₂,* = K₀^{−K_*} under UWB (no global c₂ ≥ 1/49). UWB is a named textual hypothesis in the consuming theorem brackets, not a new obligation and not part of this obligation's burden; without it neither the finite window state space, nor eventual periodicity, nor global uniformity is available. Endpoint decay (NS.7.1) uses the route-conditional factor q = κ̃ ∈ (0,1) under parts (e)+(f), with finite extinction separate. No theorem, obligation, or hypothesis was discharged (Corrective I).
 
+**Corrective J note (semantic synchronization only).** Canonical NS posture: **CERT-PROJ / open common-state frontier, with UWB retained as a separate unproved conditional scope hypothesis.** Every active consumer of the global window chain names both the hypothetical discharge of `ob:NS-common-state-bridge` and UWB. UWB remains outside the `[O]` census and reduced-frontier counts; Ren.5, SB2, and UH.3 are predecessor inputs rather than the current formal burden; IDC remains subsidiary and insufficient; α remains withdrawn; unconditional Stage-3 regularity remains external. No theorem, hypothesis, obligation, label, status, proof force, endpoint posture, or census changed (Corrective J).
+
 **Context:** `hyp:NS-alpha` withdrawn as ill-typed as a canonical
 identity and unsupported by current canon (level stock vs. step
 increment; equation and label retained as historical intake only);
@@ -288,7 +290,7 @@ inside the IDC-i hypothesis itself but has no independent preceding
 definition, no projection/decomposition theorem from the canonical Ψ,
 and no bridge to the Book III interior increment E_n).
 
-**Branch posture:** NS = **CERT-PROJ / open-common-state-frontier**;
+**Branch posture:** NS = **CERT-PROJ / open common-state frontier, with UWB retained as a separate unproved conditional scope hypothesis**;
 the former domain-bounded conditional CERT-CLOSE wording is
 superseded; no NS closure claim may be cited at CERT-CLOSE force while
 the bridge is open; no endpoint-regularity claim.

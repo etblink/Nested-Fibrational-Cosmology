@@ -10,6 +10,8 @@ Every canon-facing change in Phase 7 is recorded here: what changed, where, why,
 
 Authority tiers refer to `CANON_AUTHORITY_MODEL.md`. Ruling IDs refer to the July 2 2026 review adjudication.
 
+**MIG-052 Corrective J addendum (semantic synchronization; current delivery).** Authorized surfaces only: `NFC_NS_Branch.tex`, the NS PDF and governance/generated records named by MIG-052. Canonical posture is **CERT-PROJ / open common-state frontier, with UWB retained as a separate unproved conditional scope hypothesis**. Every active global-window consumer names both the hypothetical discharge of `ob:NS-common-state-bridge` and UWB; the stale Ren.5/SB2/UH.3 named frontier is reclassified as predecessor input; the bridge remains the sole formal internal `[O]`; UWB remains separate and outside the obligation/reduced-frontier counts; IDC remains subsidiary-insufficient; α remains withdrawn; unconditional Stage-3 regularity remains external. No theorem reconstruction, proof, discharge, coefficient, label, status, endpoint, census, or reduced-frontier-count change. The four-column active-surface inventory is the completeness gate. Book VII residue remains disclosed and out of scope for later cross-book hygiene.
+
 | ID | phase-step | file | location (label) | class | authority basis | labels touched | status touched | gate |
 |---|---|---|---|---|---|---|---|---|
 | MIG-001 | 1 scaffold | NFC_CANON_LEDGER.md | PART 4 SM entry | SUPERSEDED (F-1) | A1 `prop:SM-status-reconciliation` | none (scaffold .md) | none | validate pass; no canon .tex touched |

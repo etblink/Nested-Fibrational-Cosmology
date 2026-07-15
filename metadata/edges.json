@@ -3535,19 +3535,13 @@
   },
   {
     "from": "thm:NS-frontier",
-    "to": "prop:NS-criterion-required",
+    "to": "ob:NS-common-state-bridge",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
   {
     "from": "thm:NS-frontier",
     "to": "prop:NS-lawful",
-    "file": "NFC_NS_Branch.tex",
-    "kind": "proof-cite"
-  },
-  {
-    "from": "thm:NS-frontier",
-    "to": "thm:NS61",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
