@@ -3379,6 +3379,12 @@
   },
   {
     "from": "cor:window-uniform-coeffs",
+    "to": "cor:NS-eventual-periodicity",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:window-uniform-coeffs",
     "to": "prop:NS-quantitative-c1",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
@@ -3386,6 +3392,12 @@
   {
     "from": "cor:window-uniform-coeffs",
     "to": "prop:NS-quantitative-eta",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:window-uniform-coeffs",
+    "to": "thm:NS-window-determinism",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
@@ -3661,6 +3673,12 @@
   },
   {
     "from": "thm:NS61-global",
+    "to": "cor:NS-eventual-periodicity",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61-global",
     "to": "ob:NS-common-state-bridge",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
@@ -3680,6 +3698,18 @@
   {
     "from": "thm:NS61-global",
     "to": "prop:NS-quantitative-eta",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61-global",
+    "to": "thm:NS-window-determinism",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61-global",
+    "to": "thm:NS-window-uniformity",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
@@ -3836,6 +3866,12 @@
   {
     "from": "thm:NSSB2",
     "to": "ob:NS-common-state-bridge",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NSSB2",
+    "to": "sec:ns61-partial",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },

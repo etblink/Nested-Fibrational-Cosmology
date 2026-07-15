@@ -256,6 +256,28 @@ state-vector and discounted-memory frames are research directions
 only; neither is assumed; the discounted comparison I_n ≍ 𝔅̂^(ρ)_n
 alone is insufficient.
 
+**Corrective H clarification (ledger-state burden, MIG-052).** The
+burden of `ob:NS-common-state-bridge` explicitly includes (canon
+burden item (f), the ledger-state map, together with parts (d)/(e)):
+(1) exact ledger-state identification or transfer — an explicit,
+typed map between the Book II visible obstruction ledger
+𝒟_n = ℰ_n + ℬ_n and the NS successor-defect quantity 𝔇_n (the
+Stage-2a defect-burden operator D_n is an operator, never ledger
+shorthand; current canon identifies none of these objects);
+(2) the same-state loss/renewal recurrence
+(𝔇_{k+1} ≤ 𝔇_k − Φ_k + Ψ_k is **not** a current-canon theorem);
+(3) the same-state H1/H2 lower bounds
+(Φ^quot_n ≥ c₁𝔇_n, Φ^mix_n ≥ c₂𝔇_n transferred to the state
+actually contracted);
+(4) the same-state obstruction comparison (part (d));
+(5) the positive contraction-factor domain — the resulting factor
+κ̃ = 1−(1−η̃)(c₁+c₂) must be furnished in (0,1), or the extinction
+case (1−η̃)(c₁+c₂) ≥ 1 (which forces 𝔇 = 0 in finitely many steps
+by nonnegativity) treated separately; no logarithmic threshold or
+geometric rate may be stated from κ̃ < 1 alone. Until discharge, no
+recurrence, lower bound, or comparison may pass between 𝒟_n and
+𝔇_n. The burden remains open and unproved.
+
 **Context:** `hyp:NS-alpha` withdrawn as ill-typed as a canonical
 identity and unsupported by current canon (level stock vs. step
 increment; equation and label retained as historical intake only);

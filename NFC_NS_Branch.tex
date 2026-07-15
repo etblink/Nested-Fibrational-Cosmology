@@ -1360,6 +1360,37 @@ theorem templates that assume a future discharge (e.g.\ NS.L1$'$):
  burden. NS.L1$'$ consumes Route~A. Explicit channel treatment
  without one of these routes does \emph{not} discharge this
  burden.
+ \item \emph{Ledger-state map (Route~B implementation --- the
+ route the NS chain consumes).} The active chain distinguishes
+ three objects that current canon never identifies: the Book~II
+ visible obstruction ledger
+ $\mathcal{D}_n = \mathcal{E}_n + \mathcal{B}_n$; the NS
+ successor-defect quantity $\mathfrak{D}_n$; and the Stage-2a
+ defect-burden operator $D_n$ (an operator, never ledger
+ shorthand). Discharge must supply an explicit, typed map from
+ the Book~II ledger $\mathcal{D}_n$ to the branch state
+ $\mathfrak{D}_n$ specifying: the temporal index; the
+ window/averaging convention; the normalization; the transfer of
+ the H1/H2 lower bounds
+ ($\Phi^{\mathrm{quot}}_n \geq c_1\,\mathfrak{D}_n$,
+ $\Phi^{\mathrm{mix}}_n \geq c_2\,\mathfrak{D}_n$) between the
+ two states; the transfer of the loss/renewal recurrence
+ ($\mathcal{D}$-side SCT.6b recurrence
+ $\to$ $\mathfrak{D}$-side
+ $\mathfrak{D}_{k+1} \leq \mathfrak{D}_k - \Phi_k + \Psi_k$);
+ the same-state obstruction comparison of part~(d); preservation
+ of nonnegativity; \emph{and the positive contraction-factor
+ domain}: the resulting factor
+ $\widetilde\kappa = 1-(1-\widetilde\eta)(c_1+c_2)$ must be
+ furnished in $(0,1)$ (equivalently
+ $0 < (1-\widetilde\eta)(c_1+c_2) < 1$), or the discharge must
+ treat the extinction case
+ $(1-\widetilde\eta)(c_1+c_2) \geq 1$ (which forces
+ $\mathfrak{D} = 0$ in finitely many steps by nonnegativity)
+ separately. Until this map is discharged, \emph{no recurrence,
+ lower bound, or comparison may pass between $\mathcal{D}_n$ and
+ $\mathfrak{D}_n$}, and no logarithmic threshold or geometric
+ rate may be stated for $\widetilde\kappa$.
  \item \emph{Research directions (neither assumed true).}
  (i)~\emph{State-vector frame}
  $X_n = (I_n, \mathcal{E}_n, \mathcal{B}_n, \dots)$: requires
@@ -1445,7 +1476,15 @@ presently open obligation furnishes no constants. Set
 $\widetilde\eta := \eta + \eta_{\mathrm{int}} + \eta_R < 1$
 (the three renewal-channel coefficients of the Route~A discharge;
 $\eta_R = 0$ when the residual channel is absent) and
-$\widetilde\kappa := 1 - (1-\widetilde\eta)(c_1+c_2) < 1$. Then
+$\widetilde\kappa := 1 - (1-\widetilde\eta)(c_1+c_2)$, with
+$\widetilde\kappa < 1$ from the certified bounds and
+$\widetilde\kappa > 0$ \emph{hypothesised as part of the
+burden-(f) contraction domain} (so
+$\widetilde\kappa \in (0,1)$; in the excluded extinction case
+$(1-\widetilde\eta)(c_1+c_2) \geq 1$, nonnegativity forces
+$\mathfrak{D} = 0$ in finitely many steps and every conclusion
+below holds trivially with any $m \geq 1$ --- the logarithmic
+threshold applies only in the geometric case). Then
 the ledger contracts on the late safe tail,
 $\mathfrak{D}_{k+1} \leq \widetilde\kappa\,\mathfrak{D}_k$,
 and, with $a, b$ the discharged comparison's constants (the former
@@ -1470,10 +1509,17 @@ $\mathcal{O}_{\mathrm{NS}}(W_k) \geq T_{\mathrm{NS}}$,
 No per-step $\mu$-budget of the previous form is asserted.
 \end{theorem}
 \begin{proof}
-\emph{Ledger balance.} The obstruction ledger is additive
-($\mathcal{D}=\mathcal{E}+\mathcal{B}$, Book~II \S SCT), and the
-H1/H2 loss channels are genuine removals disjoint from inflow, so
-$\mathfrak{D}_{k+1} \leq \mathfrak{D}_k - \Phi_k + \Psi_k$.
+\emph{Ledger balance.} Book~II supplies additivity and the
+loss/renewal recurrence for \emph{its own} visible ledger
+$\mathcal{D}=\mathcal{E}+\mathcal{B}$ (\S SCT), with the H1/H2
+loss channels genuine removals disjoint from inflow. \emph{The
+same-state recurrence for the branch quantity},
+$\mathfrak{D}_{k+1} \leq \mathfrak{D}_k - \Phi_k + \Psi_k$, is
+\emph{not} a current-canon theorem --- no map identifies or
+transfers between $\mathcal{D}_k$ and $\mathfrak{D}_k$ --- and is
+taken here \emph{only} from the ledger-state map of burden~(f)
+under the hypothesised discharge of
+Obl.~\ref{ob:NS-common-state-bridge}.
 \emph{The renewal-channel decomposition} (Route~A of burden (e))
 is \emph{not} available in current canon: the interior renewal
 object $\Psi^{\mathrm{int}}$ has no independent definition, no
@@ -1780,9 +1826,15 @@ total-renewal coefficient; no discharge proving
 $\widetilde\eta = \eta$ is asserted). Under that hypothetical
 discharge, by the Spine SCT.6b
 (Book~II~\S\,\ref{sec:sct-doctrine}) strict dissipation bias
-follows: defect satisfies $\mathcal{D}_{n+1} \leq \mathcal{D}_n -
+follows \emph{for the Book~II visible ledger}: 
+$\mathcal{D}_{n+1} \leq \mathcal{D}_n -
 (1-\widetilde\eta)\Phi_n$ on the late tail, at CERT-PROJ force
-while that route is open. With tail positivity of the
+while that route is open. This theorem concludes \emph{only} this
+$\mathcal{D}$-recurrence and the $\mathcal{D}$-separation below;
+no statement about the branch quantity $\mathfrak{D}_n$ is made
+here --- any transfer to $\mathfrak{D}_n$ passes through the
+ledger-state map of burden~(f), consumed downstream
+(\S\ref{sec:ns61-partial}). With tail positivity of the
 coercive quantity (guaranteed by the retained transport ceiling
 and non-collapse of the coercive structure), this gives
 $\mathcal{D}_n \leq (1-\varepsilon)\mathcal{C}_n$ eventually,
@@ -2031,14 +2083,22 @@ Obl.~\ref{ob:NS-common-state-bridge}, part~(e)) that lifts the
 boundary bound to a total-renewal bound
 $\Psi_n \leq \widetilde\eta\,\Phi_n$. Under that hypothetical
 discharge the SCT.6b theorem (Book~II, Theorem~\ref{thm:SCT6b})
-applies: the primitive-derived dissipation bias forces
-$D_{n+1} \leq D_n - (1-\widetilde\eta)\Phi_n$, where $\Phi_n =
-\Phi_n^{\mathrm{quot}} + \Phi_n^{\mathrm{mix}} \geq
-(c_1 + c_2)\mathfrak{D}_n > 0$. This is the positive-reserve
-conclusion of SB2 (Theorem~\ref{thm:NSSB2}), at CERT-PROJ force
-while that renewal-control route is open. Hence SB2 is
-conditionally discharged on the same hypothetical-discharge
-footing. \qed
+applies \emph{to the Book~II visible ledger}: the
+primitive-derived dissipation bias forces
+$\mathcal{D}_{n+1} \leq \mathcal{D}_n -
+(1-\widetilde\eta)\Phi_n$, with
+$\Phi_n = \Phi_n^{\mathrm{quot}} + \Phi_n^{\mathrm{mix}} > 0$ on
+the active tail. This is the positive-reserve conclusion of SB2
+(Theorem~\ref{thm:NSSB2}) --- a statement about
+$\mathcal{D}_n, \mathcal{C}_n$, and $\Phi_n$ \emph{only} --- at
+CERT-PROJ force while that renewal-control route is open. No
+conclusion about the branch quantity $\mathfrak{D}_n$ is drawn
+here (the branch-state lower bounds
+$\Phi^{\mathrm{quot}}_n \geq c_1\mathfrak{D}_n$,
+$\Phi^{\mathrm{mix}}_n \geq c_2\mathfrak{D}_n$ of H1/H2 enter
+the $\mathcal{D}$-recurrence only through the ledger-state map of
+burden~(f), consumed downstream). Hence SB2 is conditionally
+discharged on the same hypothetical-discharge footing. \qed
 \end{proof}
 
 \begin{remark}[\status{R}]\label{rem:NS-SB2-status}
@@ -2103,8 +2163,9 @@ value of $\delta_{\mathrm{NS}}$ is claimed.
 Immediate from Theorem~\ref{thm:NSL1} (NS.L1$'$):
 $\lambda_{\mathrm{NS}} = \bigl((b+c)/a\bigr)\,\widetilde\kappa^{\,m}
 < 1$ under \textsc{idc} and the hypothesized \emph{discharge} of
-Obl.~\ref{ob:NS-common-state-bridge} (the presently open
-obligation furnishes no constants). The former derivation via
+Obl.~\ref{ob:NS-common-state-bridge}, whose burden-(f) contraction
+domain places $\widetilde\kappa \in (0,1)$ (extinction case
+separate; the presently open obligation furnishes no constants). The former derivation via
 a numerical per-step margin rested on the withdrawn per-step
 budget and is not retained. \qed
 \end{proof}
@@ -2155,30 +2216,38 @@ path:
 
 \begin{center}
 \fbox{\begin{minipage}{0.9\textwidth}
-\textbf{Current NS frontier (updated).}
+\textbf{Current NS frontier (MIG-052).}
 \begin{itemize}
  \item \textbf{Proof-program frontier: DISCHARGED.} NS.Ren.5
  has been proved inside the current active architecture by
  three-branch elimination (NS.Ren.5a--5e). The spike-free
- chain Ren.5$\Rightarrow$SB1 is now active.
- \item \textbf{Reserve-side frontier: CONDITIONALLY CLOSED.}
- SB2 (Positive Reserve on the Safe Tail) is now a conditional
- theorem, dependent on the three primitive-derived
- dissipation-bias hypotheses of SCT.6b
- (Book~II~\S\,\ref{sec:sct-doctrine}): quotient-loss on defect
- (H1), finite-collar mixing loss (H2), and PASS-incoherent
- renewal (H3).
- \item \textbf{Remaining open obligation:} Verify SCT.6b
- hypotheses (H1)--(H3) in the declared NS safe-tail regime.
- The NS branch is conditionally blocked by one
- primitive-derived bias packet, not by a vague structural gap.
+ chain Ren.5$\Rightarrow$SB1 is active.
+ \item \textbf{Controlling open burden: the common-state
+ renewal-control/ledger-state obligation}
+ (Obl.~\ref{ob:NS-common-state-bridge}) --- total-renewal
+ control (part~(e)), the same-state two-sided obstruction
+ comparison (part~(d)), and the ledger-state map with its
+ positive contraction-factor domain (part~(f)). \emph{Current
+ canon does not establish a ledger-to-obstruction transfer};
+ every ledger contraction in this branch is a hypothetical
+ template pending that discharge.
+ \item \textbf{Subsidiary items:} H1, H2, and \emph{boundary-only}
+ H3 (Thm.~\ref{thm:NS-H3-PASS-incoherent}), with the certified
+ boundary/geometry quantities $c_1, c_2, \eta$. SB2 is a
+ conditional theorem whose SCT.6b application consumes the
+ hypothetical renewal-control discharge; its conclusion is a
+ Book~II $\mathcal{D}$-statement.
+ \item \textbf{Branch posture: CERT-PROJ, open common-state
+ frontier.} The former framing (``remaining open obligation:
+ verify H1--H3; blocked by one primitive-derived bias packet'')
+ is historical, MIG-014-era, and superseded.
 \end{itemize}
 \end{minipage}}
 \end{center}
 
 \section{Conditional Near-Closure Modes}\label{sec:NS-near-closure-modes}
 
-\noindent\textbf{Section 10 is the operational center of the branch.} It records the exact conditional package from which the continuation theorem follows once the proof-program frontier (\textbf{UH.3}) and the reserve-side structural input (\textbf{SB2}) are supplied.
+\noindent\textbf{Section 10 is the operational center of the branch.} It records the exact conditional package from which the continuation theorem follows once the proof-program frontier (\textbf{UH.3}), the reserve-side structural input (\textbf{SB2}), \emph{and the controlling common-state burden} (Obl.~\ref{ob:NS-common-state-bridge}: total-renewal control, same-state obstruction comparison, and the ledger-state map) are supplied. No conditional package in this branch closes without that common-state discharge (MIG-052).
 
 \subsection{Theoremic near-closure mode}
 
@@ -2188,7 +2257,8 @@ Assume:
 \begin{enumerate}[label=\textup{(\arabic*)}]
  \item internal defect subordination (NS.L1a),
  \item a retained transport ceiling $\vartheta_k \le \vartheta_{\mathrm{NS}} < 1$,
- \item discharge of the spike-free proof-program chain through \textbf{UH.3}, and
+ \item discharge of the spike-free proof-program chain through \textbf{UH.3},
+ \item the hypothetical discharge of the controlling common-state burden (Obl.~\ref{ob:NS-common-state-bridge}), and
  \item \textbf{SB2} (Positive Reserve on the Safe Tail).
 \end{enumerate}
 Then the NS branch satisfies $\mathrm{SB1}$, $\mathrm{NS.NS2}$, $\mathrm{NS.G1+}$, $\mathrm{NS.P1c}$, $\mathrm{NS.P1'}$, and therefore $\mathrm{NS.6.1}$.
@@ -2228,7 +2298,7 @@ Assume the hypotheses of Theorem~\ref{thm:NSDI2} and also \textbf{NS.7.1}. Then 
 \end{corollary}
 
 \begin{remark}[\status{R}]\label{rmk:NSMode1}
-The NS branch should presently be read in one of two conditional modes. In \emph{theoremic near-closure mode}, the spike-free side remains inside the proof program through \textbf{UH.3}, while \textbf{SB2} remains the reserve-side input. In \emph{dual-input mode}, the unresolved spike-free dissipation mechanism is entered explicitly as \textbf{NS.SF}, parallel to \textbf{SB2}. The second mode is strictly more explicit, not less rigorous: it keeps both residual ingredients local, named, and non-circular.
+The NS branch should presently be read in one of two conditional modes; \emph{in both modes the common-state burden (Obl.~\ref{ob:NS-common-state-bridge}) is an additional, controlling input --- neither mode closes without it (MIG-052)}. In \emph{theoremic near-closure mode}, the spike-free side remains inside the proof program through \textbf{UH.3}, while \textbf{SB2} remains the reserve-side input. In \emph{dual-input mode}, the unresolved spike-free dissipation mechanism is entered explicitly as \textbf{NS.SF}, parallel to \textbf{SB2}. The second mode is strictly more explicit, not less rigorous: it keeps both residual ingredients local, named, and non-circular.
 \end{remark}
 
 \begin{remark}[\status{R}]\label{rmk:SB2Freeze}
@@ -2243,7 +2313,7 @@ The Yang--Mills and Navier--Stokes branches do not share a terminal theorem, but
 
 \begin{remark}[\status{R}]\label{rmk:NSDualInput}
 \textup{(Dual-input conditional closure note.)}
-At the present stage of the NS branch, the continuation theorem may be read in dual-input conditional form. On the spike-free side, the unresolved proof-program content has been reduced to the finite-recurrence-to-dissipation implication represented by \textbf{UH.3} and its final micro-lemma \textbf{UH.4}. On the reserve side, the unresolved structural content remains \textbf{SB2} --- Positive Reserve on the Safe Tail --- whose independence from mere spike-freedom is now explicitly recognized. If the spike-free side is supplied --- either by proving \textbf{UH.3} or by entering its residual dissipation principle as an explicit local input --- and if \textbf{SB2} is supplied as the reserve-side input, then the remaining continuation stack follows exactly as recorded in the conditional package theorem.
+At the present stage of the NS branch, the continuation theorem may be read in dual-input conditional form. On the spike-free side, the unresolved proof-program content has been reduced to the finite-recurrence-to-dissipation implication represented by \textbf{UH.3} and its final micro-lemma \textbf{UH.4}. On the reserve side, the unresolved structural content remains \textbf{SB2} --- Positive Reserve on the Safe Tail --- whose independence from mere spike-freedom is now explicitly recognized. If the spike-free side is supplied --- either by proving \textbf{UH.3} or by entering its residual dissipation principle as an explicit local input --- if \textbf{SB2} is supplied as the reserve-side input, \emph{and if the controlling common-state burden (Obl.~\ref{ob:NS-common-state-bridge}: total-renewal control, same-state comparison, ledger-state map with positive contraction domain) is discharged}, then the remaining continuation stack follows exactly as recorded in the conditional package theorem; absent that discharge the stack stands at CERT-PROJ force with the common-state frontier open (MIG-052).
 \end{remark}
 
 %% ---------------------------------------------------------------
@@ -2306,7 +2376,8 @@ partial discharge of NS.6.1.
 
 \begin{theorem}[\status{C}]\label{thm:NS61-partial}
 \textup{(NS.6.1 Partial Discharge: Positive Reserve Implies
-Window-Contraction.)}
+Window-Contraction --- via the Hypothetical Ledger-State Map,
+burden~(f).)}
 \textup{[Conditional on SB2 discharge,
 Theorems~\ref{thm:NS-H1-quotient-loss}--\ref{thm:NS-SB2-discharged},
 the hypothetical renewal-control discharge
@@ -2316,7 +2387,10 @@ Under the conditions of SB2, the declared source-descended
 transport-weighted imbalance quantity satisfies the active
 multiplicative window-to-window contraction condition on the NS
 safe tail: there exists a symbolic
-$\widetilde\kappa < 1$ (the route-conditional contraction ratio
+$\widetilde\kappa \in (0,1)$ --- positivity supplied by the
+burden-(f) contraction domain, with the extinction case
+$(1-\widetilde\eta)(c_1+c_2) \geq 1$ treated separately in the
+proof --- (the route-conditional contraction ratio
 $\widetilde\kappa = 1-(1-\widetilde\eta)(c_1+c_2)$; $c_1$,
 $c_2$, and the boundary coefficient $\eta$ are certified, while
 $\eta_{\mathrm{int}}$ and $\eta_R$ are supplied only by the
@@ -2333,16 +2407,32 @@ Hence the multiplicative-contraction clause of NS.6.1
 By Theorem~\ref{thm:NS-SB2-discharged} under its hypothetical
 renewal-control discharge (Obl.~\ref{ob:NS-common-state-bridge},
 part~(e)), the total-renewal bound
-$\Psi_n \leq \widetilde\eta\,\Phi_n$ gives
-$D_{n+1} \leq D_n - (1-\widetilde\eta)\Phi_n \leq D_n -
-(1-\widetilde\eta)(c_1+c_2)\mathfrak{D}_n$.
-Setting $\widetilde\kappa = 1 - (1-\widetilde\eta)(c_1+c_2) < 1$
-(since $(1-\widetilde\eta)(c_1+c_2) > 0$ from
-$\widetilde\eta < 1$, $c_1,c_2 > 0$; $\widetilde\eta$ remains
-symbolic while the route is open), we get
-$\mathfrak{D}_{n+1} \leq \widetilde\kappa\,\mathfrak{D}_n$.
-This is the multiplicative window-to-window contraction
-condition of Theorem~\ref{thm:NS61}. \qed
+$\Psi_n \leq \widetilde\eta\,\Phi_n$ gives the \emph{Book~II
+ledger} recurrence
+$\mathcal{D}_{n+1} \leq \mathcal{D}_n -
+(1-\widetilde\eta)\Phi_n$. \emph{This is a
+$\mathcal{D}$-statement; no $\mathfrak{D}$-recurrence follows
+from it in current canon.} The passage to the branch state is
+supplied \emph{only} by the ledger-state map of burden~(f) under
+the same hypothesised discharge: that map transfers the
+loss/renewal recurrence to
+$\mathfrak{D}_{n+1} \leq \mathfrak{D}_n - \Phi_n + \Psi_n$ and
+the H1/H2 lower bounds to the same state
+($\Phi_n \geq (c_1+c_2)\mathfrak{D}_n$), whence
+$\mathfrak{D}_{n+1} \leq \mathfrak{D}_n -
+(1-\widetilde\eta)(c_1+c_2)\mathfrak{D}_n
+= \widetilde\kappa\,\mathfrak{D}_n$ with
+$\widetilde\kappa = 1 - (1-\widetilde\eta)(c_1+c_2)$. The
+certified bounds give $\widetilde\kappa < 1$; the domain
+$\widetilde\kappa > 0$ is part of the burden-(f) contraction
+domain (if instead $(1-\widetilde\eta)(c_1+c_2) \geq 1$, then
+nonnegativity forces $\mathfrak{D} = 0$ in finitely many steps ---
+the extinction case, in which the contraction condition of
+Theorem~\ref{thm:NS61} holds trivially). In either case, we get
+$\mathfrak{D}_{n+1} \leq \widetilde\kappa\,\mathfrak{D}_n$
+with $\widetilde\kappa \in (0,1)$, or finite extinction. This is
+the multiplicative window-to-window contraction condition of
+Theorem~\ref{thm:NS61}. \qed
 \end{proof}
 
 \begin{corollary}[\status{C}]\label{cor:NS61-almost}
@@ -2487,9 +2577,14 @@ $\widetilde\eta = \eta + \eta_{\mathrm{int}} + \eta_R < 1$},
 the NS.6.1 multiplicative contraction ratio is
 \[
  \widetilde\kappa \;=\; 1 - (1-\widetilde\eta)(c_1 + c_2)
- \;<\; 1,
+ \;\in\; (0,1),
 \]
-symbolic until that route is discharged. Current canon certifies
+symbolic until that route is discharged --- $\widetilde\kappa < 1$
+from the certified bounds, $\widetilde\kappa > 0$ from the
+burden-(f) contraction domain (the extinction case
+$(1-\widetilde\eta)(c_1+c_2) \geq 1$, which forces
+$\mathfrak{D} = 0$ in finitely many steps, is treated separately
+wherever consumed). Current canon certifies
 only $c_1 \geq 1/7$, $c_2 \geq 1/49$, and the \emph{boundary}
 coefficient $\eta \leq 6/7$; it certifies neither
 $\eta_{\mathrm{int}}$ nor $\eta_R$, so \emph{no explicit
@@ -2507,9 +2602,14 @@ With $\widetilde\eta < 1$ supplied by the hypothesised route
 discharge (Obl.~\ref{ob:NS-common-state-bridge}, part~(e)) and
 $c_1 + c_2 > 0$ from the certified quantitative propositions,
 $(1-\widetilde\eta)(c_1+c_2) > 0$, hence
-$\widetilde\kappa < 1$. No numerical value is asserted: the
-former substitution of $\eta \leq 6/7$ into a total ratio used
-the boundary coefficient beyond its proved scope. \qed
+$\widetilde\kappa < 1$; and $\widetilde\kappa > 0$ holds by the
+burden-(f) contraction domain hypothesised with the same discharge
+($0 < (1-\widetilde\eta)(c_1+c_2) < 1$), so
+$\widetilde\kappa \in (0,1)$. The certified lower bounds on
+$c_1, c_2$ alone prove only $\widetilde\kappa < 1$, not
+positivity. No numerical value is asserted: the former
+substitution of $\eta \leq 6/7$ into a total ratio used the
+boundary coefficient beyond its proved scope. \qed
 \end{proof}
 
 \begin{remark}[\status{R}]
@@ -2550,13 +2650,21 @@ geometry is eventually periodic and the coefficient bounds
 $c_1, c_2, \eta$ are uniform across all sufficiently late windows.
 
 \begin{theorem}[\status{C}]\label{thm:NS-window-uniformity}
-\textup{(NS Window-Uniformity.)}
+\textup{(NS Window Finite-State and Isometry Classification ---
+reconditioned MIG-052.)}
 \textup{[Conditional on $K_0=7$, Phase-A, LS-2, NS active
 architecture declaration.]}
-The NS safe-tail window geometry is eventually periodic: there
-exists $n_0 \geq 1$ and period $T \geq 1$ such that for all
-$n \geq n_0$, the $n$-th and $(n+T)$-th safe-tail windows are
-isometric under the canonical collar-type labelling.
+(i)~The NS safe-tail window configurations take values in a finite
+state space: the number of distinct canonical collar-labelled
+window configurations is at most $K_0^{|\partial W|} < \infty$.
+(ii)~Any two safe-tail windows with the same canonical
+collar-labelled configuration are isometric under the canonical
+collar-type labelling. \emph{This theorem does not assert eventual
+periodicity}: finiteness alone yields recurrence, not periodicity;
+eventual periodicity is derived in
+Cor.~\ref{cor:NS-eventual-periodicity} from this finite-state
+result together with the deterministic transition of
+Thm.~\ref{thm:NS-window-determinism}.
 \end{theorem}
 
 \begin{proof}
@@ -2567,29 +2675,30 @@ The NS active window structure is a sequence of windows, each
 described by a configuration of collar types on a finite
 boundary. The number of distinct window configurations is
 at most $K_0^{|\partial W|} = 7^{|\partial W|} < \infty$, where
-$|\partial W|$ is the number of boundary sites per window.
+$|\partial W|$ is the number of boundary sites per window. This
+proves (i). (\emph{Note, MIG-052:} the former Step~2 of this
+proof invoked the Pigeonhole Principle to conclude eventual
+periodicity; pigeonhole on a finite set yields only recurrence of
+some value, not $w_{n+T} = w_n$ for all late $n$. That step is
+withdrawn; eventual periodicity is \emph{not} concluded here.)
 
-\textbf{Step 2 (Pigeonhole periodicity).}
-By the Pigeonhole Principle: the sequence of window configurations
-$(w_n)_{n \geq 1}$ takes values in a finite set of size
-$\leq 7^{|\partial W|}$. Therefore it must repeat: there exist
-$n_0, T \geq 1$ such that $w_{n+T} = w_n$ for all $n \geq n_0$.
-This establishes eventual periodicity.
-
-\textbf{Step 3 (Isometry of periodic windows).}
+\textbf{Step 2 (Isometry classification).}
 Under Phase-A transitivity ($K_0 = 7$ collar walk visits all
-symbols), the collar-type equivalence relation on the boundary
-is the same at each window period. Hence two windows with the
-same collar-type configuration are isometric under the canonical
-collar-type labelling. \qed
+symbols), the collar-type equivalence relation on the boundary is
+canonical, so two windows with the same collar-type configuration
+are isometric under the canonical collar-type labelling. This
+proves (ii). \qed
 \end{proof}
 
 \begin{corollary}[\status{C}]\label{cor:window-uniform-coeffs}
 \textup{(Uniform Coefficient Bounds Across Windows.)}
-Under Theorem~\ref{thm:NS-window-uniformity}: the
-boundary/geometry coefficients $c_1 \geq 1/7$, $c_2 \geq 1/49$,
-and $\eta \leq 6/7$ hold uniformly across all sufficiently late
-windows (not just the minimal window). \emph{This certifies those
+Under the finite-state/isometry classification of
+Theorem~\ref{thm:NS-window-uniformity} \emph{and the eventual
+periodicity of Cor.~\ref{cor:NS-eventual-periodicity}} (which
+supplies the periodicity consumed here; finiteness alone would
+not): the boundary/geometry coefficients $c_1 \geq 1/7$,
+$c_2 \geq 1/49$, and $\eta \leq 6/7$ hold uniformly across all
+sufficiently late windows (not just the minimal window). \emph{This certifies those
 three quantities only}: no total-renewal ratio
 $\widetilde\kappa$ is inferred here, because uniformity of the
 remaining route data ($\eta_{\mathrm{int}}, \eta_R$ of the
@@ -2600,8 +2709,12 @@ route part remains hypothetical (MIG-052).
 \end{corollary}
 
 \begin{proof}
-By Theorem~\ref{thm:NS-window-uniformity}: all sufficiently late
-windows belong to one of finitely many isometry classes. The
+By Cor.~\ref{cor:NS-eventual-periodicity} (finite state space of
+Thm.~\ref{thm:NS-window-uniformity}(i) plus the deterministic
+transition of Thm.~\ref{thm:NS-window-determinism}): the window
+sequence is eventually periodic, so all sufficiently late windows
+belong to the finitely many isometry classes along the cycle
+(Thm.~\ref{thm:NS-window-uniformity}(ii)). The
 coefficient bounds $c_1, c_2, \eta$ depend only on $K_0$ and
 the window boundary geometry (Propositions~\ref{prop:NS-quantitative-c1}--\ref{prop:NS-quantitative-eta}), which is uniform across
 isometric windows. Hence the bounds are uniform. \qed
@@ -2692,11 +2805,15 @@ finite state space plus deterministic transition implies eventual cycle.
 \end{corollary}
 
 \begin{proof}
-By Thm.~\ref{thm:NS-window-uniformity}, the sequence takes values in a
-finite set. By Thm.~\ref{thm:NS-window-determinism}, the transition
-function $\sigma$ is well-defined and deterministic. A deterministic
-map on a finite set must eventually enter a cycle. Hence the sequence
-is eventually periodic.
+By Thm.~\ref{thm:NS-window-uniformity}(i), the sequence takes
+values in a finite set (finiteness alone would yield only
+recurrence). By Thm.~\ref{thm:NS-window-determinism}, the
+transition function $\sigma$ is well-defined and deterministic. A
+deterministic map on a finite set must eventually enter a cycle:
+once any configuration repeats, determinism forces the entire
+subsequent segment to repeat. Hence the sequence is eventually
+periodic, and the isometry classification of
+Thm.~\ref{thm:NS-window-uniformity}(ii) applies along the cycle.
 \qed
 \end{proof}
 
@@ -2705,18 +2822,31 @@ is eventually periodic.
 Thm.~\ref{thm:NS-window-determinism} and
 Cor.~\ref{cor:NS-eventual-periodicity} close the Q2a micro-hardening
 gap. Thm.~\ref{thm:NS-window-uniformity} now carries clean [C] status
-without the recurrence-vs-periodicity caveat: finite state space,
-deterministic transition, eventual cycle, uniform coefficient bounds,
-global NS.6.1 contraction.
+in its reconditioned finite-state/isometry form: finite state
+space, deterministic transition
+(Thm.~\ref{thm:NS-window-determinism}), eventual cycle
+(Cor.~\ref{cor:NS-eventual-periodicity}), uniform
+boundary/geometry coefficient bounds
+(Cor.~\ref{cor:window-uniform-coeffs}). The global NS.6.1
+contraction remains \emph{route-conditional}: it consumes the
+hypothetical common-state discharge
+(Obl.~\ref{ob:NS-common-state-bridge}) and stands at CERT-PROJ
+force while that burden is open (MIG-052).
 \end{remark}
 
 
 \label{sec:ns61-global}
 %% ---------------------------------------------------------------
 
-The quantitative certification (§\ref{sec:ns61-partial}) established
-$\kappa < 1$ on the minimal safe-tail window. This section
-promotes the contraction to the full NS regime.
+Section~\ref{sec:ns61-partial} established the
+\emph{route-conditional, symbolic} contraction
+$\widetilde\kappa \in (0,1)$ on the minimal safe-tail window ---
+conditional on the hypothetical common-state discharge
+(Obl.~\ref{ob:NS-common-state-bridge}); the certified quantities
+are the boundary/geometry bounds $c_1, c_2, \eta$ only, and no
+numerical total ratio is certified (MIG-052). This section
+promotes that conditional contraction to the full NS regime on the
+same hypothetical footing.
 
 \begin{theorem}[\status{C}]\label{thm:NS61-global}
 \textup{(NS.6.1 Full Scope: Uniform Window-to-Window Contraction.)}
@@ -2739,12 +2869,16 @@ safe-tail window.
 Three steps:
 
 \textbf{Step~1 (Uniform window geometry).}
-By the NS architecture declaration (Book~II LS-2 and the NS
-active regime specification), the active window structure on
-the NS safe tail is eventually periodic: for all sufficiently
-large $n$, the $n$-th window is isometric to the $(n+k)$-th
-for some fixed period $k \geq 1$. This gives uniform geometry
-across windows.
+By Cor.~\ref{cor:NS-eventual-periodicity} (the finite
+configuration-state space of
+Thm.~\ref{thm:NS-window-uniformity}(i) together with the
+deterministic transition of
+Thm.~\ref{thm:NS-window-determinism}), the active window structure
+on the NS safe tail is eventually periodic: for all sufficiently
+large $n$, the $n$-th window is isometric to the $(n+T)$-th for
+some fixed period $T \geq 1$
+(Thm.~\ref{thm:NS-window-uniformity}(ii)). This gives uniform
+geometry across windows.
 
 \textbf{Step~2 (Uniform coefficient bounds).}
 Under uniform window geometry:
@@ -2769,11 +2903,15 @@ hypothesised uniform route data $\eta_{\mathrm{int}}, \eta_R$
 supplied by the renewal-control discharge
 (Obl.~\ref{ob:NS-common-state-bridge}, part~(e)),
 give the same symbolic contraction ratio
-$\widetilde\kappa = 1 - (1-\widetilde\eta)(c_1+c_2) < 1$ at
-every sufficiently late window
+$\widetilde\kappa = 1 - (1-\widetilde\eta)(c_1+c_2)
+\in (0,1)$ at every sufficiently late window
 ($\widetilde\eta = \eta + \eta_{\mathrm{int}} + \eta_R < 1$;
-no numerical value is certified while the route is open). By
-induction, $\mathfrak{D}_n \leq
+positivity from the burden-(f) contraction domain; no numerical
+value is certified while the route is open; in the extinction case
+$(1-\widetilde\eta)(c_1+c_2) \geq 1$ nonnegativity forces
+$\mathfrak{D} = 0$ in finitely many steps and the conclusion holds
+trivially). In the geometric case, by induction,
+$\mathfrak{D}_n \leq
 \widetilde\kappa^{\,n-n_0}\mathfrak{D}_{n_0} \to 0$ as
 $n \to \infty$. Hence the contraction holds globally, at
 CERT-PROJ force while the route is open. \qed
@@ -2951,8 +3089,14 @@ volume-dominated, exactly matching the $a_n^2$ decay. \qed
 \begin{remark}[\status{R}]
 \textbf{NS canonical status after H-LR import.}
 The import of H-LR (Thm.~\ref{thm:NS-H-LR}) and H-CODIM2
-(Thm.~\ref{thm:NS-H-CODIM2}) into the canonical NS Branch formally
-closes NS Stage-3 conditionally. The NS closure chain is now:
+(Thm.~\ref{thm:NS-H-CODIM2}) into the canonical NS Branch
+completes the H-ladder inputs of the conditional Stage-3 chain.
+\emph{This does not close NS Stage-3, even conditionally, on its
+own (MIG-052):} the chain's transfer to the window obstruction ---
+hence any Stage-3 reading --- passes through the controlling open
+common-state burden (Obl.~\ref{ob:NS-common-state-bridge}), and
+the branch remains at CERT-PROJ force with that frontier open. The
+conditional chain is now:
 \[
  A_{\mathrm{fluid}} = W_A \,[C]
  \Rightarrow \mathrm{LR\;bound}\,[C]
@@ -3011,9 +3155,15 @@ NS.7.1 conditionally discharged: Thm.~\ref{thm:NS71}
 Domain-bounded conditional endpoint at CERT-PROJ force:
 Cor.~\ref{cor:NS-both-give-endpoint}.
 The NS Frontier Theorem (Thm.~\ref{thm:NS-frontier}) now describes
-the \emph{formal conditional} frontier, not an unconditional barrier:
-under the stated Phase-A/$K_0=7$/PASS/LS-2 hypotheses,
-the branch reaches closure. Unconditional global regularity
+the \emph{formal conditional} frontier, not an unconditional
+barrier: under the stated Phase-A/$K_0=7$/PASS/LS-2 hypotheses
+\emph{together with the hypothetical discharge of the controlling
+common-state burden (Obl.~\ref{ob:NS-common-state-bridge}:
+total-renewal control, same-state obstruction comparison,
+ledger-state map with positive contraction domain)}, the branch
+would reach its declared conditional endpoint; absent that
+discharge it stands at CERT-PROJ force with the common-state
+frontier open (MIG-052). Unconditional global regularity
 (NS Stage-3 Clay Prize) remains the external frontier.
 \qed
 \end{proof}
