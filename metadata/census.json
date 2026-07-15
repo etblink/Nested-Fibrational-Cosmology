@@ -26,7 +26,7 @@
     "B": 1
   },
   "reconciliation_note": "raw_grep_census is the review-endorsed F-3 figure (counts every \\status{X}). environment_census counts only status-tagged environment declarations (the claim records). The delta is prose status mentions (e.g. GR narrative 'is \\status{C}', NS inline sub-lemma tags) that are not standalone declarations. Both are authoritative for their own question.",
-  "census_commit": "7689be9",
+  "census_commit": "721d083",
   "generated": "2025-07-15T01:00:00+00:00",
   "frontier_accountings": {
     "I_syntactic_O_census": {

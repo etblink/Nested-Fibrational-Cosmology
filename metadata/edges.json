@@ -3391,6 +3391,12 @@
   },
   {
     "from": "cor:window-uniform-coeffs",
+    "to": "prop:NS-quantitative-c2",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "cor:window-uniform-coeffs",
     "to": "prop:NS-quantitative-eta",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
@@ -3416,6 +3422,12 @@
   {
     "from": "prop:NS-inherits",
     "to": "prop:NS-lawful",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "prop:NS-quantitative-c2",
+    "to": "thm:NS-window-uniformity",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },
@@ -3624,6 +3636,18 @@
     "kind": "proof-cite"
   },
   {
+    "from": "thm:NS-window-uniformity",
+    "to": "def:NS-window",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61",
+    "to": "cor:NS-eventual-periodicity",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
     "from": "thm:NS61",
     "to": "hyp:NS-IDC-i",
     "file": "NFC_NS_Branch.tex",
@@ -3650,6 +3674,12 @@
   {
     "from": "thm:NS61",
     "to": "thm:NS-kappa-explicit",
+    "file": "NFC_NS_Branch.tex",
+    "kind": "proof-cite"
+  },
+  {
+    "from": "thm:NS61",
+    "to": "thm:NS-window-determinism",
     "file": "NFC_NS_Branch.tex",
     "kind": "proof-cite"
   },

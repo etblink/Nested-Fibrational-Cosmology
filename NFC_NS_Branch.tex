@@ -822,10 +822,17 @@ reconditioned): current canon certifies only the boundary
 coefficient $\eta \leq 6/7$, not $\eta_{\mathrm{int}}$ or
 $\eta_R$, so no explicit numerical total ratio is presently
 certified --- transfers to the imbalance only through that open
-bridge, so the discharge holds at CERT-PROJ force.) Given the hypothesis, the
-window-uniformity theorem (Thm.~\ref{thm:NS-window-uniformity})
-extends the contraction uniformly across all sufficiently late
-windows of the active architecture, and the positive reserve of
+bridge, so the discharge holds at CERT-PROJ force.) Given the
+hypothesis, uniformity across all sufficiently late windows of the
+active architecture is supplied by the complete chain actually
+consumed --- no single element extends the contraction uniformly by
+itself (Corrective~I): the finite-state/isometry classification
+(Thm.~\ref{thm:NS-window-uniformity}, under its \textsc{uwb}
+uniform window-boundary hypothesis), the deterministic transition
+(Thm.~\ref{thm:NS-window-determinism}), the eventual-periodicity
+corollary (Cor.~\ref{cor:NS-eventual-periodicity}, conditional on
+\textsc{uwb}), and the global contraction theorem
+(Thm.~\ref{thm:NS61-global}); and the positive reserve of
 Theorem~\ref{thm:NS-SB2-discharged} (reconditioned) excludes
 degenerate window collapse. A uniformly geometrically decaying
 transport-weighted imbalance cannot obstruct continuation on any
@@ -838,11 +845,13 @@ promoted target scope. \qed
 \begin{remark}[\status{R}]\label{rmk:NS61-missing}
 \textbf{NS.6.1 status update.}
 Theorem~\ref{thm:NS61} has been conditionally discharged by
-Corollary~\ref{cor:NS61-discharged}: the window-uniformity hypothesis
-(Thm.~\ref{thm:NS-window-uniformity}, now with clean [C] status
-after the Q2a determinism resolution of
+Corollary~\ref{cor:NS61-discharged}: the window-uniformity
+hypothesis (Thm.~\ref{thm:NS-window-uniformity} in its
+finite-state/isometry form, conditional on the \textsc{uwb}
+uniform window-boundary hypothesis --- Corrective~I --- with the
+Q2a determinism resolution of
 Thms.~\ref{thm:NS-window-determinism}--\ref{cor:NS-eventual-periodicity})
-supplies the missing uniformity, and
+supplies the missing uniformity under \textsc{uwb}, and
 Thm.~\ref{thm:NS61-global} supplies the ledger contraction in its
 route-conditional symbolic form
 $\widetilde\kappa = 1-(1-\widetilde\eta)(c_1+c_2) < 1$ (the
@@ -882,10 +891,13 @@ promoted continuation criterion.
 \textup{[Conditional on NS.6.1 discharged
 (Cor.~\ref{cor:NS61-discharged}, whose hypothesis set includes the
 open common-state bridge obligation
-Obl.~\ref{ob:NS-common-state-bridge}, with \textsc{idc} subsidiary,
-per MIG-052), Book~III source-descended
-coercive structure, and Book~VI interface legitimacy for the
-$H^1_x$-norm.]}
+Obl.~\ref{ob:NS-common-state-bridge} --- in particular the
+hypothetical discharge of its renewal-control burden, part~(e), and
+its ledger-state map with positive contraction-factor domain,
+part~(f) --- with \textsc{idc} subsidiary and the \textsc{uwb}
+uniform window-boundary hypothesis, per MIG-052/Corrective~I),
+Book~III source-descended coercive structure, and Book~VI interface
+legitimacy for the $H^1_x$-norm.]}
 If the active NS persistence/extendibility continuation criterion
 holds in the promoted target scope (as established by
 Corollary~\ref{cor:NS61-discharged}), then the NS endpoint
@@ -894,21 +906,41 @@ the declared interval --- follows.
 \end{theorem}
 
 \begin{proof}
-Under NS.6.1 (Cor.~\ref{cor:NS61-discharged}), the
-transport-weighted imbalance quantity satisfies the multiplicative
-contraction $\mathfrak{D}_{n+1} \leq \kappa^{n-n_0}
-\mathfrak{D}_{n_0} \to 0$ uniformly, certifying lawful
-continuability throughout the promoted target scope (the
-identification of the contracting ledger quantity with the
-transport-weighted imbalance is exactly the open common-state
-bridge, Obl.~\ref{ob:NS-common-state-bridge}; the former identity
+Under NS.6.1 (Cor.~\ref{cor:NS61-discharged}), the ledger-side
+quantity satisfies, in the geometric case, the iterated
+multiplicative contraction
+\[
+ \mathfrak{D}_{n} \;\leq\; q^{\,n-n_0}\,\mathfrak{D}_{n_0}
+ \;\longrightarrow\; 0,
+ \qquad
+ q = \widetilde\kappa \in (0,1),
+\]
+with the declared factor $q = \widetilde\kappa =
+1-(1-\widetilde\eta)(c_1+c_2)$ route-conditional and symbolic:
+$q < 1$ from the certified bounds and $q > 0$ furnished by the
+positive contraction-factor domain of the ledger-state burden
+(Obl.~\ref{ob:NS-common-state-bridge}, part~(f)), under the
+hypothetical discharge of parts~(e) and~(f) (Corrective~I; the
+former display here used a superseded plain $\kappa$ and the
+incorrect index $\mathfrak{D}_{n+1}$ on the left). In the separate
+finite-extinction case $(1-\widetilde\eta)(c_1+c_2) \geq 1$,
+nonnegativity forces $\mathfrak{D}_n = 0$ for all large $n$. In
+either case lawful continuability holds throughout the promoted
+target scope, at CERT-PROJ force: the identification of the
+contracting ledger quantity with the transport-weighted imbalance
+is exactly the open common-state bridge
+(Obl.~\ref{ob:NS-common-state-bridge}); the former identity
 $\alpha$ (label \texttt{hyp:NS-alpha}) is withdrawn as ill-typed
-and unsupported --- MIG-052).
+and unsupported --- MIG-052.
 
 \textbf{Step~1 (Grönwall control from contraction).}
-The mismatch decay $\mathfrak{D}_n \to 0$ at rate $\kappa^n$
-gives a summable obstruction sequence
-$\sum_{n \geq n_0} \mathfrak{D}_n < \infty$.
+In the geometric case, the decay
+$\mathfrak{D}_n \leq q^{\,n-n_0}\mathfrak{D}_{n_0}$ with
+$q \in (0,1)$ gives the summable obstruction sequence
+$\sum_{n \geq n_0} \mathfrak{D}_n \leq
+\mathfrak{D}_{n_0}/(1-q) < \infty$; in the finite-extinction
+case the sequence has finitely many nonzero terms and is summable
+trivially.
 By the Book~III coercive-transport structure (transfer
 maps are contractive on the null-observable subspace), the
 accumulated defect over the full continuation interval is
@@ -1360,8 +1392,10 @@ theorem templates that assume a future discharge (e.g.\ NS.L1$'$):
  burden. NS.L1$'$ consumes Route~A. Explicit channel treatment
  without one of these routes does \emph{not} discharge this
  burden.
- \item \emph{Ledger-state map (Route~B implementation --- the
- route the NS chain consumes).} The active chain distinguishes
+ \item \emph{Ledger-state map (branch-ledger implementation ---
+ option~B of the Corrective-H authorization's correction~1;
+ unrelated to the Route~A/B/C renewal taxonomy of burden~(e), whose
+ Route~A is the route NS.L1$'$ consumes).} The active chain distinguishes
  three objects that current canon never identifies: the Book~II
  visible obstruction ledger
  $\mathcal{D}_n = \mathcal{E}_n + \mathcal{B}_n$; the NS
@@ -2457,7 +2491,9 @@ Under the conditional SB2 discharge, NS.6.1 reduces to:
 \end{enumerate}
 Item~(1) becomes a finite quantitative computation \emph{only
 after} the renewal-control route is discharged; its
-$c_1, c_2, \eta$ part is complete.
+$c_1, \eta$ part is complete, and its $c_2$ part is complete
+per-window ($c_2 \geq K_0^{-k}$), uniformly only as
+$c_{2,*} = K_0^{-K_*}$ under \textsc{uwb} (Corrective~I).
 Item~(2) is a remaining structural burden of NS.6.1, alongside the
 controlling renewal-control route itself.
 \end{corollary}
@@ -2537,8 +2573,16 @@ by the finite-alphabet pigeonhole principle. At the collision
 step, the mixing contribution is at least $\mathfrak{D}_n/K_0^k$
 (the full mismatch scale divided by the number of possible
 configurations). For the minimal NS window with $k=2$ boundary
-sites: $c_2 \geq K_0^{-2} = 1/49$. More refined windows give
-larger $c_2$. \qed
+sites: $c_2 \geq K_0^{-2} = 1/49$. \emph{The bound $K_0^{-k}$
+decreases as $k$ increases} (Corrective~I; the former closing
+sentence ``more refined windows give larger $c_2$'' asserted the
+opposite size dependence and is withdrawn): larger windows give a
+\emph{weaker} lower bound. A uniform positive lower bound across
+the variable-size window family therefore requires a uniform bound
+$k \leq K_*$ on the active boundary size (the \textsc{uwb}
+hypothesis, Thm.~\ref{thm:NS-window-uniformity}), under which
+$c_2 \geq K_0^{-K_*} > 0$ uniformly. The numerical value $1/49$
+is the $k = 2$ (minimal-window) instance only. \qed
 \end{proof}
 
 \begin{proposition}[\status{C}]\label{prop:NS-quantitative-eta}
@@ -2585,8 +2629,12 @@ burden-(f) contraction domain (the extinction case
 $(1-\widetilde\eta)(c_1+c_2) \geq 1$, which forces
 $\mathfrak{D} = 0$ in finitely many steps, is treated separately
 wherever consumed). Current canon certifies
-only $c_1 \geq 1/7$, $c_2 \geq 1/49$, and the \emph{boundary}
-coefficient $\eta \leq 6/7$; it certifies neither
+only $c_1 \geq 1/7$, $c_2 \geq 1/49$ \emph{on the minimal
+($k=2$) window} (the per-window bound $K_0^{-k}$ decreases with
+$k$; a uniform positive $c_2$ requires the \textsc{uwb}
+hypothesis, giving $c_{2,*} = K_0^{-K_*}$ --- Corrective~I), and
+the \emph{boundary} coefficient $\eta \leq 6/7$; it certifies
+neither
 $\eta_{\mathrm{int}}$ nor $\eta_R$, so \emph{no explicit
 numerical total-ledger contraction bound is presently certified}.
 \emph{Superseded (MIG-052; retained as historical intake):} the
@@ -2618,7 +2666,10 @@ The three boundary/geometry quantities are certified with explicit
 bounds:
 \begin{align*}
  c_1 &\geq 1/7, \\
- c_2 &\geq 1/49 \text{ (min window; improves with larger $k$)}, \\
+ c_2 &\geq K_0^{-k} \text{ (per-window, $k$ boundary sites;
+ minimal window $k=2$: $1/49$; the bound \emph{decreases} with
+ $k$ --- a uniform positive bound requires \textsc{uwb}, giving
+ $c_{2,*} = K_0^{-K_*}$; Corrective~I)}, \\
  \eta &\leq 6/7 \text{ (boundary renewal channel only)}.
 \end{align*}
 These are \emph{subsidiary} quantitative requirements. \emph{No
@@ -2644,39 +2695,66 @@ uniformity of the route data, not just the minimal safe-tail case.
 \label{sec:ns-window-uniformity}
 %% ---------------------------------------------------------------
 
-This section verifies the window-uniformity hypothesis required
-by Theorem~\ref{thm:NS61-global}: that the NS safe-tail window
-geometry is eventually periodic and the coefficient bounds
-$c_1, c_2, \eta$ are uniform across all sufficiently late windows.
+This section verifies the \emph{geometric} window-uniformity
+hypothesis required by Theorem~\ref{thm:NS61-global} \emph{under
+the uniform window-boundary hypothesis} (\textsc{uwb},
+Corrective~I: $|\partial W_k| \leq K_* < \infty$ on the late
+tail, explicitly assumed --- the scale-adaptive window family of
+Definition~\ref{def:NS-window} bounds no $|\partial W_k|$ by
+itself): under \textsc{uwb}, the NS safe-tail window geometry is
+eventually periodic and the coefficient bounds ($c_1, \eta$;
+$c_2 \geq K_0^{-K_*}$) are uniform across all sufficiently late
+windows.
 
 \begin{theorem}[\status{C}]\label{thm:NS-window-uniformity}
 \textup{(NS Window Finite-State and Isometry Classification ---
-reconditioned MIG-052.)}
-\textup{[Conditional on $K_0=7$, Phase-A, LS-2, NS active
-architecture declaration.]}
-(i)~The NS safe-tail window configurations take values in a finite
-state space: the number of distinct canonical collar-labelled
-window configurations is at most $K_0^{|\partial W|} < \infty$.
+reconditioned MIG-052, Corrective~I.)}
+\textup{[Conditional on $K_0=7$, Phase-A, LS-2, the NS active
+architecture declaration, \emph{and the uniform window-boundary
+hypothesis} (\textsc{uwb}, Corrective~I): there exists
+$K_* < \infty$ with $|\partial W_k| \leq K_*$ for all
+sufficiently late windows $W_k$. \textsc{uwb} is an explicit
+additional hypothesis, \emph{explicitly assumed, not proved}: the
+active window family of Definition~\ref{def:NS-window} is
+scale-adaptive --- window size adapts to the local contraction
+geometry --- and current canon bounds no $|\partial W_k|$;
+finiteness of each individual window does not make
+$\bigcup_k \Sigma_\partial^{\,|\partial W_k|}$ finite.]}
+(i)~Under \textsc{uwb}, the late-tail NS safe-tail window
+configurations take values in a finite state space: each window
+with $k$ boundary sites admits at most $K_0^{k}$ distinct canonical
+collar-labelled configurations, and under
+$|\partial W_k| \leq K_*$ the total configuration-state space is
+bounded by $\sum_{j \leq K_*} K_0^{j} < \infty$. \emph{Without
+\textsc{uwb} no globally finite state space is asserted.}
 (ii)~Any two safe-tail windows with the same canonical
 collar-labelled configuration are isometric under the canonical
 collar-type labelling. \emph{This theorem does not assert eventual
 periodicity}: finiteness alone yields recurrence, not periodicity;
-eventual periodicity is derived in
-Cor.~\ref{cor:NS-eventual-periodicity} from this finite-state
-result together with the deterministic transition of
-Thm.~\ref{thm:NS-window-determinism}.
+eventual periodicity is derived in the eventual-periodicity
+corollary (\texttt{cor:NS-eventual-periodicity}) from this
+finite-state result together with the deterministic-transition
+theorem (\texttt{thm:NS-window-determinism}) --- textual labels,
+not dependencies: those results consume this one, not conversely
+(Corrective~I).
 \end{theorem}
 
 \begin{proof}
-\textbf{Step 1 (Finite collar-type state space).}
+\textbf{Step 1 (Finite collar-type state space, under
+\textsc{uwb}).}
 By Book~II LS-2: the stabilized collar type alphabet
 $\Sigma_\partial$ is finite with $|\Sigma_\partial| = K_0 = 7$.
-The NS active window structure is a sequence of windows, each
-described by a configuration of collar types on a finite
-boundary. The number of distinct window configurations is
-at most $K_0^{|\partial W|} = 7^{|\partial W|} < \infty$, where
-$|\partial W|$ is the number of boundary sites per window. This
-proves (i). (\emph{Note, MIG-052:} the former Step~2 of this
+Each window $W_k$ with $|\partial W_k| = j$ boundary sites is
+described by a configuration of collar types on those sites, so it
+admits at most $K_0^{j}$ distinct configurations. \emph{This
+per-window finiteness alone does not bound the global state space}:
+the window family is scale-adaptive
+(Definition~\ref{def:NS-window}), and if $|\partial W_k|$ is
+unbounded then $\bigcup_k \Sigma_\partial^{\,|\partial W_k|}$ is
+infinite (Corrective~I). Under the \textsc{uwb} hypothesis
+$|\partial W_k| \leq K_*$ of the bracket, the total late-tail
+configuration-state space is bounded by
+$\sum_{j \leq K_*} K_0^{j} < \infty$. This proves (i). (\emph{Note, MIG-052:} the former Step~2 of this
 proof invoked the Pigeonhole Principle to conclude eventual
 periodicity; pigeonhole on a finite set yields only recurrence of
 some value, not $w_{n+T} = w_n$ for all late $n$. That step is
@@ -2696,9 +2774,16 @@ Under the finite-state/isometry classification of
 Theorem~\ref{thm:NS-window-uniformity} \emph{and the eventual
 periodicity of Cor.~\ref{cor:NS-eventual-periodicity}} (which
 supplies the periodicity consumed here; finiteness alone would
-not): the boundary/geometry coefficients $c_1 \geq 1/7$,
-$c_2 \geq 1/49$, and $\eta \leq 6/7$ hold uniformly across all
-sufficiently late windows (not just the minimal window). \emph{This certifies those
+not, and on the \textsc{uwb} uniform window-boundary hypothesis
+those results carry --- Corrective~I): the coefficients
+$c_1 \geq 1/7$ and $\eta \leq 6/7$ (both independent of the
+window boundary size) hold uniformly across all sufficiently late
+windows, and the mixing coefficient satisfies the uniform positive
+lower bound $c_2 \geq c_{2,*} = K_0^{-K_*} > 0$ under
+\textsc{uwb}. \emph{No global $c_2 \geq 1/49$ is asserted}: the
+per-window bound $K_0^{-k}$ decreases with $k$, and $1/49$ is its
+$k = 2$ (minimal-window) instance, valid globally only were
+$k \leq 2$ uniform --- which is not proved (Corrective~I). \emph{This certifies those
 three quantities only}: no total-renewal ratio
 $\widetilde\kappa$ is inferred here, because uniformity of the
 remaining route data ($\eta_{\mathrm{int}}, \eta_R$ of the
@@ -2714,10 +2799,17 @@ Thm.~\ref{thm:NS-window-uniformity}(i) plus the deterministic
 transition of Thm.~\ref{thm:NS-window-determinism}): the window
 sequence is eventually periodic, so all sufficiently late windows
 belong to the finitely many isometry classes along the cycle
-(Thm.~\ref{thm:NS-window-uniformity}(ii)). The
-coefficient bounds $c_1, c_2, \eta$ depend only on $K_0$ and
-the window boundary geometry (Propositions~\ref{prop:NS-quantitative-c1}--\ref{prop:NS-quantitative-eta}), which is uniform across
-isometric windows. Hence the bounds are uniform. \qed
+(Thm.~\ref{thm:NS-window-uniformity}(ii)). The bounds
+$c_1 \geq 1/7$ and $\eta \leq 6/7$ depend only on $K_0$
+(Propositions~\ref{prop:NS-quantitative-c1}
+and~\ref{prop:NS-quantitative-eta}) and are therefore uniform.
+The mixing bound is per-window:
+$c_2 \geq K_0^{-k}$ for a window with $k$ boundary sites
+(Prop.~\ref{prop:NS-quantitative-c2}), and $K_0^{-k}$
+\emph{decreases} with $k$; under \textsc{uwb} every late window
+has $k \leq K_*$, so along the finitely many cycle classes
+$c_2 \geq K_0^{-K_*} = c_{2,*} > 0$ uniformly (the worst class
+governs). Hence the stated bounds are uniform. \qed
 \end{proof}
 
 \begin{remark}[\status{R}]
@@ -2726,12 +2818,16 @@ condition open (MIG-052).}
 The \emph{geometric} window-uniformity hypothesis of
 Theorem~\ref{thm:NS61-global} is verified by
 Theorem~\ref{thm:NS-window-uniformity} and
-Corollary~\ref{cor:window-uniform-coeffs}. The NS.6.1 global
-contraction theorem is conditional on Phase-A, $K_0=7$, LS-2, the
-NS architecture declaration, \emph{and} the hypothetical
-renewal-control discharge with uniform route data
-(Obl.~\ref{ob:NS-common-state-bridge}, part~(e)); no additional
-external \emph{geometric} uniformity hypothesis is required.
+Corollary~\ref{cor:window-uniform-coeffs} \emph{under the
+\textsc{uwb} uniform window-boundary hypothesis those results now
+carry} (Corrective~I; \textsc{uwb} is explicitly assumed, not
+proved). The NS.6.1 global contraction theorem is conditional on
+Phase-A, $K_0=7$, LS-2, the NS architecture declaration,
+\textsc{uwb}, \emph{and} the hypothetical renewal-control and
+ledger-state discharge with uniform route data
+(Obl.~\ref{ob:NS-common-state-bridge}, parts~(e) and~(f)); beyond
+\textsc{uwb} no additional external \emph{geometric} uniformity
+hypothesis is required.
 The NS branch closure chain is:
 \[
  \mathrm{Ren.5}\,[C] \Rightarrow \cdots \Rightarrow
@@ -2749,9 +2845,11 @@ is the open common-state bridge
 
 \begin{remark}[\status{R}]\label{rem:NS-window-Q2a-hardening}
 \textbf{Micro-hardening note: Deterministic Finite Transition Lemma.}
-The pigeonhole argument in Thm.~\ref{thm:NS-window-uniformity} shows
-that the safe-tail window configuration sequence takes values in a
-finite set and therefore must repeat some state. For the conclusion of
+The former pigeonhole argument of
+Thm.~\ref{thm:NS-window-uniformity} (withdrawn --- MIG-052) showed
+only that the configuration sequence, \emph{granted the finite
+state space now conditional on \textsc{uwb} (Corrective~I)}, must
+repeat some state --- recurrence, not periodicity. For the conclusion of
 \emph{eventual periodicity} --- not merely recurrence --- the proof
 requires that window transitions be deterministic. This was the named
 hardening item (Q2a). The MSC uniqueness argument supplies it:
@@ -2799,9 +2897,13 @@ Therefore $W'_1 = W'_2$, and the transition is unique.
 \begin{corollary}[\status{C}]\label{cor:NS-eventual-periodicity}
 \textup{(Eventual Periodicity of Window Configurations.)}
 \textup{[Conditional on Thm.~\ref{thm:NS-window-determinism} and
-Thm.~\ref{thm:NS-window-uniformity}.]}
+Thm.~\ref{thm:NS-window-uniformity} --- in particular on the
+\textsc{uwb} uniform window-boundary hypothesis carried by the
+latter (Corrective~I); without \textsc{uwb} no finite global state
+space, and hence no eventual periodicity, is available.]}
 The safe-tail window configuration sequence is eventually periodic:
-finite state space plus deterministic transition implies eventual cycle.
+finite state space (under \textsc{uwb}) plus deterministic
+transition implies eventual cycle.
 \end{corollary}
 
 \begin{proof}
@@ -2822,8 +2924,9 @@ Thm.~\ref{thm:NS-window-uniformity}(ii) applies along the cycle.
 Thm.~\ref{thm:NS-window-determinism} and
 Cor.~\ref{cor:NS-eventual-periodicity} close the Q2a micro-hardening
 gap. Thm.~\ref{thm:NS-window-uniformity} now carries clean [C] status
-in its reconditioned finite-state/isometry form: finite state
-space, deterministic transition
+in its reconditioned finite-state/isometry form (finite state
+space \emph{under the \textsc{uwb} uniform window-boundary
+hypothesis} --- Corrective~I), deterministic transition
 (Thm.~\ref{thm:NS-window-determinism}), eventual cycle
 (Cor.~\ref{cor:NS-eventual-periodicity}), uniform
 boundary/geometry coefficient bounds
@@ -2846,18 +2949,24 @@ conditional on the hypothetical common-state discharge
 are the boundary/geometry bounds $c_1, c_2, \eta$ only, and no
 numerical total ratio is certified (MIG-052). This section
 promotes that conditional contraction to the full NS regime on the
-same hypothetical footing.
+same hypothetical footing, under the additional \textsc{uwb}
+uniform window-boundary hypothesis (Corrective~I) that makes the
+window state space finite.
 
 \begin{theorem}[\status{C}]\label{thm:NS61-global}
 \textup{(NS.6.1 Full Scope: Uniform Window-to-Window Contraction.)}
 \textup{[Conditional on the symbolic route-conditional ratio of
 Theorem~\ref{thm:NS-kappa-explicit} --- hence on the hypothetical
-renewal-control discharge (Obl.~\ref{ob:NS-common-state-bridge},
-part~(e)) with its route data $\eta_{\mathrm{int}}, \eta_R$
-\emph{uniform across the declared windows} --- and the NS
-window-uniformity hypothesis: the window geometry and the safe-tail
-active architecture are uniform across all sufficiently late
-windows. Uniformity of $c_1, c_2, \eta$ alone is insufficient.]}
+discharge of the renewal-control and ledger-state burdens
+(Obl.~\ref{ob:NS-common-state-bridge}, parts~(e) and~(f)) with the
+route data $\eta_{\mathrm{int}}, \eta_R$ \emph{uniform across
+the declared windows} and the contraction factor furnished in the
+burden-(f) positive domain --- the \textsc{uwb} uniform
+window-boundary hypothesis ($|\partial W_k| \leq K_*$,
+Corrective~I), and the NS window-uniformity hypothesis: the window
+geometry and the safe-tail active architecture are uniform across
+all sufficiently late windows. Uniformity of $c_1, c_2, \eta$
+alone is insufficient.]}
 The multiplicative contraction
 $\mathfrak{D}_{n+1} \leq \widetilde\kappa\,\mathfrak{D}_n$
 holds uniformly across all windows in the NS active architecture
@@ -2871,8 +2980,9 @@ Three steps:
 \textbf{Step~1 (Uniform window geometry).}
 By Cor.~\ref{cor:NS-eventual-periodicity} (the finite
 configuration-state space of
-Thm.~\ref{thm:NS-window-uniformity}(i) together with the
-deterministic transition of
+Thm.~\ref{thm:NS-window-uniformity}(i) --- available under the
+\textsc{uwb} hypothesis of the bracket, Corrective~I --- together
+with the deterministic transition of
 Thm.~\ref{thm:NS-window-determinism}), the active window structure
 on the NS safe tail is eventually periodic: for all sufficiently
 large $n$, the $n$-th window is isometric to the $(n+T)$-th for
@@ -2887,9 +2997,12 @@ Under uniform window geometry:
  (Proposition~\ref{prop:NS-quantitative-c1}): the quotient-loss
  rate depends only on $K_0$ and Book~I quotient discipline,
  both of which are uniform across windows.
- \item $c_2 \geq 1/49$ holds uniformly
- (Proposition~\ref{prop:NS-quantitative-c2}): the mixing rate
- depends only on $K_0$ and the window size $k$, both uniform.
+ \item $c_2 \geq c_{2,*} = K_0^{-K_*} > 0$ holds uniformly
+ (Proposition~\ref{prop:NS-quantitative-c2} with the
+ \textsc{uwb} bound $k \leq K_*$, Corrective~I): the per-window
+ bound $K_0^{-k}$ \emph{decreases} with $k$, so the uniform
+ bound is governed by the largest boundary size along the cycle;
+ no global $1/49$ is asserted.
  \item $\eta \leq 6/7$ holds uniformly
  (Proposition~\ref{prop:NS-quantitative-eta}): the PASS
  screening ratio depends only on $K_0$ and the PASS
@@ -2931,7 +3044,9 @@ through the open common-state bridge
 The conditional hypotheses are:
 \begin{enumerate}[label=\textup{(\arabic*)}]
  \item NS safe-tail window-uniformity (eventually periodic
- window geometry);
+ window geometry, under the \textsc{uwb} uniform
+ window-boundary hypothesis $|\partial W_k| \leq K_*$ ---
+ explicitly assumed, Corrective~I);
  \item $K_0=7$ (unconditional by Thm.~\ref{thm:K0-prime});
  \item Phase-A (conditional on $K_0=7$);
  \item PASS (conditional theorem, Thm.~\ref{thm:PASS-derived});
@@ -3149,7 +3264,9 @@ transfer to the window obstruction being exactly the open
 common-state bridge; $\alpha$ withdrawn; the former per-step
 margin claim remains withdrawn).
 Window determinism: Thm.~\ref{thm:NS-window-determinism}
-(Q2a resolved), giving clean [C] without recurrence caveat.
+(Q2a resolved); the finite state space it acts on --- hence
+eventual periodicity --- is conditional on the \textsc{uwb}
+uniform window-boundary hypothesis (Corrective~I).
 NS.7.1 conditionally discharged: Thm.~\ref{thm:NS71}
 (Book~VI $H^1_x$ interface + Gr\"{o}nwall control).
 Domain-bounded conditional endpoint at CERT-PROJ force:
