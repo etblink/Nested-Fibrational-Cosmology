@@ -1,8 +1,22 @@
 # Nested Fibrational Cosmology
 
-Nested Fibrational Cosmology (NFC) is a mathematical-physics research program centered on a canonical seven-book spine and derived branch books. This repository hosts the PDF and TeX source files for the current public materials.
+Nested Fibrational Cosmology (NFC) is a mathematical-physics research program centered on a canonical seven-book spine and derived branch books.
 
-## Repository contents
+> **Repository routing:** the default `main` branch is a lightweight publication, citation, and provenance landing surface. It is **not** the controlling theorem-bearing source tree. For the frozen scientific canon, use `archive/nfc-canonical-ed3047c2` at commit `ed3047c2cbc0abc34d2549dd27754e4d3d05af78`, tree `00ef55ff36d5e9663ca1ef2c9566e2bc1396f973`.
+
+See [`PROVENANCE.md`](PROVENANCE.md) for the exact relationship between publication `main`, the isolated canon lineage, release anchors, and the source-selection rule.
+
+## Frozen scientific corpus
+
+The TeX/PDF corpus listed below is on the frozen canon lineage, not in the default `main` tree.
+
+Canonical source:
+
+```text
+ref    archive/nfc-canonical-ed3047c2
+commit ed3047c2cbc0abc34d2549dd27754e4d3d05af78
+tree   00ef55ff36d5e9663ca1ef2c9566e2bc1396f973
+```
 
 ### Canonical spine
 - `NFC_Book_I.*` — Primitive Relational Foundations
@@ -18,6 +32,10 @@ Nested Fibrational Cosmology (NFC) is a mathematical-physics research program ce
 - `NFC_NS_Branch.*` — Navier–Stokes branch
 - `NFC_GR_Branch.*` — Gravity / GR branch
 - `NFC_SCC_Branch.*` — Structural Counterfactual Capacity branch
+
+## Publication surface
+
+The default branch intentionally keeps the repository landing surface compact. Scientific analysis of the frozen canon should cite/use the exact archive ref/commit/tree above rather than assuming that default-branch files define theorem authority.
 
 ## Author
 
